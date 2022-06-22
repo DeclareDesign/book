@@ -1,4 +1,5 @@
-# Ethics
+# Ethics {.unnumbered}
+
 
 
 ```{r}

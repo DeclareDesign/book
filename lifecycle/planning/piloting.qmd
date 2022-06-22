@@ -1,4 +1,5 @@
-# Piloting
+# Piloting {.unnumbered}
+
 
 ```{r}
 #| echo: false

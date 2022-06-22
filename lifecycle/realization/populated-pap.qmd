@@ -1,4 +1,5 @@
-# Populated preanalysis plan 
+# Populated preanalysis plan  {.unnumbered}
+
 
 ```{r}
 #| echo: false

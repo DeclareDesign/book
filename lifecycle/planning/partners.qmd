@@ -1,4 +1,5 @@
-# Partners
+# Partners {.unnumbered}
+
 
 ```{r}
 #| echo: false

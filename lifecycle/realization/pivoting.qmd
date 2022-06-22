@@ -1,4 +1,5 @@
-# Pivoting
+# Pivoting {.unnumbered}
+
 
 ```{r}
 #| echo: false

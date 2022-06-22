@@ -1,4 +1,5 @@
-# Meta-analysis
+# Meta-analysis {.unnumbered}
+
 
 ```{r}
 #| echo: false
