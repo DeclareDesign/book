@@ -6,7 +6,6 @@
 bookwide_packages <-
   c(
     # bookdown and knitr related packages
-    "bookdown",
     "knitr",
     "kableExtra",
     "gridExtra",
