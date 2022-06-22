@@ -1,4 +1,4 @@
-# Conjoint experiments 
+# Conjoint experiments  {.unnumbered}
 
 ```{r}
 #| echo: false

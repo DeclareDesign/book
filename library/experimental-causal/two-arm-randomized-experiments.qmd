@@ -1,4 +1,4 @@
-# Two-arm randomized experiments
+# Two-arm randomized experiments {.unnumbered}
 
 ```{r}
 #| echo: false

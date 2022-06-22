@@ -1,4 +1,4 @@
-# Process tracing
+# Process tracing {.unnumbered}
 
 ```{r}
 #| echo: false

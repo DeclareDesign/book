@@ -1,4 +1,4 @@
-# Audit experiments
+# Audit experiments {.unnumbered}
 
 ```{r}
 #| echo: false

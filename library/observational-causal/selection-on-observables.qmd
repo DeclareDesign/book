@@ -1,4 +1,4 @@
-# Selection-on-observables
+# Selection-on-observables {.unnumbered}
 
 ```{r}
 #| echo: false

@@ -1,4 +1,4 @@
-# Instrumental variables 
+# Instrumental variables  {.unnumbered}
 
 ```{r}
 #| echo: false

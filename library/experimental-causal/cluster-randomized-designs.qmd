@@ -1,4 +1,4 @@
-# Cluster-randomized experiments
+# Cluster-randomized experiments {.unnumbered}
 
 ```{r}
 #| echo: false

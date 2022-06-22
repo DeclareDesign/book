@@ -1,4 +1,4 @@
-# Experiments over networks
+# Experiments over networks {.unnumbered}
 
 ```{r}
 #| echo: false

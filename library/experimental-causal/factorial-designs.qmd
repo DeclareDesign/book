@@ -1,4 +1,4 @@
-# Factorial experiments 
+# Factorial experiments  {.unnumbered}
 
 ```{r}
 #| echo: false
