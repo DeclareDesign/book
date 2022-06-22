@@ -198,8 +198,10 @@ knitr:
 format:
   html:
     theme: cosmo
+    default-image-extension: svg
   # pdf:
   #   documentclass: book
+  #   default-image-extension: pdf
 
 
 

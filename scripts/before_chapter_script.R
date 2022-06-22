@@ -2,7 +2,6 @@ source("scripts/package_list.R")
 
 lapply(bookwide_packages, function(x)
   if (!require(x, character.only = TRUE)) {
-    pak::pkg_install(x)
     library(x, character.only = TRUE)
   })
 

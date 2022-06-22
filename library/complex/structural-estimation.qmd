@@ -1,4 +1,4 @@
-# Structural estimation
+# Structural estimation {.unnumbered}
 
 ```{r}
 #| echo: false
