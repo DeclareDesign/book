@@ -1,5 +1,6 @@
 project:
   type: book
+  execute-dir: project
 
 book:
   title: "Research Design"
@@ -187,8 +188,6 @@ book:
 bibliography: references.bib
 
 knitr:
-  opts_knit: 
-    root.dir: ~/declare/rdddr-quarto
   opts_chunk: 
     collapse: true
     comment: "#>" 

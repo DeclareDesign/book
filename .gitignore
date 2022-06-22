@@ -5,3 +5,6 @@
 _book
 .quarto
 /.quarto/
+*.html
+*.markdown
+*.rmarkdown
