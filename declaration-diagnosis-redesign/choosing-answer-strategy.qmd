@@ -1,0 +1,589 @@
+# Choosing an answer strategy
+
+```{r}
+#| echo: false
+#| include: false
+#| purl:  false
+source("scripts/before_chapter_script.R")
+```
+
+The answer strategy is a plan for what to do with the information gathered from the world in order to generate an answer to the inquiry. Qualitative and quantitative methods courses provide guidance about the properties of different strategies and the conditions under which they work well or poorly. Under what conditions should we use ordinary least squares, when should we use logit? When is a machine learning algorithm the appropriate choice and when would a comparative case study be more informative? When is *no* answer strategy worth pursuing because of the fundamental limitations of the data strategy?
+
+Following Principle \@ref(exm:designforpurpose): Design for purpose, the evaluation of an answer strategy depends on our ultimate goals: what is the answer to be used for? A perfect answer is generally elusive in empirical research so in practice we often need to select among strategies that come with different strengths and weaknesses. For instance some might suffer less from bias while others might be more precise. In other words, which answer strategy is best for you depends on what diagnosands you care about.
+
+This chapter first describes the elements of the answer strategy, the most important of which are the type of answer and the approach to assessing the level of uncertainty in the answer. We then describe four distinct approaches to answering a question: point estimation, hypothesis tests, Bayesian posteriors, and interval estimation.  Last we identify some general principles for selecting an answer strategy highlighting especially how the choice of *A* depends on the other three elements of research design. Principle \@ref(exm:designholistically) is a reminder to diagnose holistically: we can't choose answer strategies in isolation from the the other design elements.
+
+## Elements of answer strategies
+
+The three core elements of an answer strategy are the identification of a type of answer, the strategy for conceptualizing and reporting uncertainty about the answer, and a procedure for obtaining both.
+
+### Answer characterization
+
+At its most basic an answer strategy delivers a guess at the value of an estimand. The answer itself, like the inquiry, generally requires a specification of units, outcomes, and conditions. Like the inquiry, it requires a domain.
+
+*Domain*: We often think of the answer as a number: 55% or an effect of 0.25. But the domain of the answer can be much broader: it could be a logical statement, TRUE or FALSE; a vector of predictions; a statement "This theory is helpful"; even a model. The domain is likely matched with the domain of the estimand, but it might not be. For instance the estimand might be 5 and the answer an interval $[3, 6]$. The rubber hits the road when a diagnosand has to establish the usefulness of an answer; the primary question is whether the usefulness of an answer can be assessed or not. 
+
+*Units*: The units that serve as input to the answer strategy are, likely, either the same as those in the inquiry or good stand-ins. How good is determined by choices in the data strategy: were study units drawn in a random sample from the population? Are some subgroups excluded from the sampling procedure, because they are hard-to-reach? In some cases, the sampling procedure will be complex and some units will stand in for more than one unit in the population. In this case, the answer strategy should take account of this fact. In some cases the data is measured using units that are not defined  at the same "level" as the units that define the inquiry. For instance you might be interested in women's voting but have data on polling station level outcomes only. This generates what is called a challenge of ecological inference and your answer strategy should address this.
+
+*Outcomes*: Answer strategies summarize outcomes that represent measured characteristics of each unit. The outcomes must be measured in the data strategy, and should usually match closely the outcomes defined in the inquiry. However, we always have imperfect measures of outcomes; how good is determined by the data strategy. Answer strategies then often involve multiple measured outcomes to best represent an unobserved outcome such as an attitude. The measures might be analyzed separately and interpreted together or formally combined using an indexing method. 
+
+*Conditions*: Inquiries define the treatment conditions over which outcomes are compared. Sometimes outcomes from than one treatment condition are compared, in the case of causal inquiries, whereas only one is used in the case of descriptive inquiries. The data strategy then determines which treatment conditions are assigned to which units, and thus linking units' outcomes to the potential outcomes used in the inquiries. This linking occurs in the answer strategy. Just as sampled units will be analyzed to stand in for units in the population, units assigned to a control group often stand in for the control potential outcome for all units (and the same for treated units). Just as with sampling weights, assignment weights may be used to allow some units to stand in for more than one (or fewer than one) unit in the inquiry when units are assigned to treatments with different probabilities. For descriptive inquiries, all units may be used to stand in for the naturally-assigned potential outcome in the inquiry. 
+
+### Uncertainty
+
+Much empirical work involves *inference*: making guesses about quantities that we cannot directly observe. Sometimes the challenge is descriptive inference, sometimes causal inference, sometimes generalization, and oftentimes all three at once. 
+
+In general when we are doing inference our answers are uncertain and we need to find ways to communicate that uncertainty. Two prominent and clearly distinct perspectives on estimating uncertainty are the Bayesian approach and the frequentist approach. 
+
+*Bayesian uncertainty.* The simplest way of thinking about uncertainty about inferences that arise from data is nicely described by Bayes' rule.
+
+The probability of a quantity of interest $\theta$ is given by:
+
+$$\Pr(\theta = \theta'|d = d') = \frac{\Pr(d = d'|\theta = \theta')\Pr(\theta = \theta')}{\sum_{\theta''}\Pr(d = d'|\theta = \theta'')\Pr(\theta = \theta'')}$$
+
+\noindent where $\theta'$ and $\theta''$ represent particular values of $\theta$, $d$ represents data, and $d'$ a particular realization of the data. 
+
+Using *MIDA* notation, we might think that a quantity of interest $a_{m^*}$ could take on a range of possible values $a \in A$. Given *M* and *D*, we can assess the probability of a particular data realization, *d*, given any particular value for $a$. For instance if   $a_{m^*}$ is the share of women in a very large population and you sample $m$ individuals of which $d$ are women, then $\Pr(d = d'|a = a') = {m \choose d} a^d(1-a)^{m-d}$. We can then use Bayes rule to calculate $\Pr(a_{m^*} = a'|d = d')$.
+
+Applying the rule over different values of $\theta$ we build up a full probability distribution over possible answers. The probability distribution *simultaneously* represents our answer and our certainty in the answer. For instance we might report the mean of the distribution ("posterior mean") as our best guess and the variance as our uncertainty ("posterior variance"). Or we might just report the whole posterior distribution as an answer.
+
+While this approach is intuitive, many are uncomfortable with it. One reason is that the method requires a specification of prior uncertainty $\Pr(\theta = \theta')$. A second reason is philosophical. If we think that the estimand has some particular value then what does it mean to say something like $\Pr(a_{m^*} = a) = 0.5$? Surely either $a_{m^*} = a$ or  $a_{m^*} \neq a$. The Bayesian response is that the probability does not refer to a physical probability  but to "degrees of belief": essentially a measure of how confident you are in the claim.
+
+*Frequentist uncertainty.* Say you wanted to make a statement about your uncertainty about an answer but did not want to specify prior beliefs about what the answer is. Instead, you want any statements about probability to come from physical processes---actual randomization for instance. Can you do it?
+
+The short answer is no. You can't escape Bayes' rule if you want to make a claim about the probability that some answer is correct given the data. However, you can do something related.
+
+Leaving $\Pr(\theta = \theta')$ aside you can pick out one element of Bayes' rule from above and report the simpler quantity:
+
+$$\Pr(d = d'|\theta = \theta')$$
+
+In other words: how likely is it that we would see data like this if indeed $\theta$ were $\theta'$. You can answer this without thinking of probability as representing strengths of beliefs but working instead from the idea that $\theta$ generates an actual  probability distribution over possible data, $d$. And of course you can do this for many different possible values of $\theta$.
+
+When you go this route you can get a number that you can defend (as Fisher put it: "a reasoned basis for inference"). The basic idea gives rise to a set of useful tools: 
+
+* The $p$ value for a null hypothesis $\theta_0$ corresponds exactly to $\Pr(d = d_{m*}|\theta = \theta_0)$.
+* The maximum likelihood approach to estimation corresponds to finding the value $\theta'$ for which $\Pr(d = d'|\theta = \theta')$ is greatest.
+* The 95% confidence interval is interpretable as the set of values for which $\Pr(d = d'|\theta = \theta') \leq 0.05$.
+
+
+In short $\Pr(d = d'|\theta = \theta')$ is a powerful quantity and the frequentist approach that uses it is currently the  dominant approach in social sciences, and the most commonly used approach in this book also. But it is worth being very clear on what this quantity does and does not do. We seek estimates of uncertainty, but this quantity does *not* provide  a statement about your confidence in your answer. Rather it provides a statement about the consistency between possible answers and the data you have. It lets you say that you are certain in your answer to the extent that the  world is not as we would expect it to be if other answers were correct. For this reason we often think of it as an approach to ruling out possible answers: an answer is ruled out if the patterns we see are out of line with what the answer would predict. 
+
+
+
+
+### Procedure
+
+*How* the outcomes of study units are analyzed and, if relevant, compared across conditions is the method of the answer strategy. This element is the choice of estimator (e.g., OLS or difference-in-means) but also the regression specification and if-then procedures for model selection. 
+
+The method should be thought of like a procedure or a function: data goes in, answers come out. The output responds to the inputs. If the events generated by the world had been different, the data produced by the data strategy would be different too. If the data produced by the data strategy had been different, the answers rendered by the answer strategy would be different too. We want to understand the functions as *M*, *I*, and *D* vary. 
+
+Critically, when declaring answer strategies as functions, we have to think about more than just the single estimation function that ends up in the final paper. To see this, consider an estimator that is selected through on an exploratory procedure in which multiple estimators are compared on the basis of fit statistics. The answer strategy is not this final estimator---it is this entire multi-step if-then procedure.  The reason to declare the procedure rather than the final estimator is that the diagnosis of the design may differ. The procedure may be more powerful, if for example we assessed multiple sets of covariate controls and selected the specification with the lowest standard error of the estimate. But that procedure would also exhibit poor coverage, since the confidence interval produced by the final estimator does not account for these multiple bites at the apple. 
+
+Answer strategies can become multi-stage procedures in unexpected ways. For example, sometimes a planned-on maximum likelihood estimator won't converge when executed on the realized data. In these cases, analysts switch estimators (or sometimes inquiries!). The full set of steps --- a decision tree, depending on what is estimable --- is the answer strategy we want to declare and compare to alternative decision trees.
+
+This principle extends to settings in which analysts run diagnostic tests, like falsification or placebo tests. If we learn from a sensitivity test that a mediation estimate is very sensitive to unobserved confounding, we might choose not to present it at all. By this logic, the answer strategy includes the sensitivity test, the decision made on the basis of the test. When we inspect the resulting distribution of mediation estimates, some are undefined.
+
+Writing down the full set of if-then choices we might make in the answer strategy depending on revealed data is hard to do. We often imagine answer strategies if things go right but spend less imagination on elaborating what might happen if things go wrong. When things do go wrong --- missing data, noncompliance, suspension of the data collection --- answer strategies will change. One way to guard against over-correcting to the revealed data is to adopt a *standard operating procedures* document that systematizes these procedures in advance [@Green2015].
+
+## Types of answer strategies
+
+We identify four distinct types of answers that might be provided by an answer strategy. In each case we describe how information regarding uncertainty is communicated.
+
+### Point estimation
+
+#### Answer
+The most familiar class of answer strategies are point-estimators that produce estimates of scalar parameters. The sample mean of an outcome, the difference-in-means estimate, the coefficient on a variable in a logistic regression, and the estimated number of topics in a text corpus are all examples of point estimators. 
+
+To illustrate point estimation in general, we'll try to estimate the average age of the citizens of a small village in Italy. Our model is straightforward -- the citizens of the small village all have ages -- and the inquiry is the average of them. In our data strategy, we randomly sample three citizens whose ages are then measured via survey to be 5, 15, and 25. Our answer strategy is the sample mean estimator, so our estimate of the population average age is a point estimate of 15. 
+
+#### Uncertainty
+
+A standard way to report uncertainty of a point estimate is to provide a "standard error." In this case we know that our answer is probably not a good answer. It is almost certainly wrong in the sense that the population average age in the small village is probably not fifteen (Italy's population is aging!), but we don't know how wrong because, of course, we don't actually know the value of the inquiry under study. We have instead to evaluate the properties of the procedure. Under a random sampling design -- even an egregiously stingy random sampling design that only selects three citizens! -- we can justify the approach on the basis of the "bias" diagnosand.^[Bias is the idea that the average of all the answers you would get if you repeated the data strategy (random sampling) and the answer strategy (taking the sample average) over and over would correspond to the correct answer.]  
+
+But that doesn't tell us much about how confident we should be in this answer. The design in Declaration \@ref(def:declaration-9-1) can be used to generate a view of what answers we might get when we choose just three subjects for our sample.^[We use a linear regression of the age variable on a constant to estimate the sample mean. Using OLS in this way is a neat trick for estimating sample means along with various uncertainty statistics, discussed in more detail in the next section.]
+
+:::{.definition #declaration-9-1}
+
+Italian village design
+
+```{r, file = "scripts_declarations/declaration_9.1.R"}
+```
+
+$~$
+
+:::
+
+We now diagnose the design by simulating this design repeatedly, plotting the sampling distribution along with the true population mean age, and calculating the bias.
+
+:::{.lemma #diagnosis-9-1}
+
+Italian village design diagnosis
+
+```{r}
+#| eval: false
+
+diagnosis_9.1 <- diagnose_design(declaration_9.1)
+```
+
+
+```{r, echo = FALSE, purl = FALSE}
+diagnosis_9.1 <- get_rdddr_file_local("diagnosis_9.1")
+```
+
+Figure \@ref(fig:figure-9-1) shows that we are right on average but usually quite wrong. The average estimate lies right on top of the true value of the estimand (40), but the estimates range enormously widely, from close to zero to close to 80 in some draws. The answer strategy -- the sample mean estimator -- is just fine, the problem here lies in the data strategy that generates tiny samples. Substantively this does not mean that we now believe we are wrong. But it does tell us that the data is just as consistent with lots of other possibilities as it is with the estimate that we got from a single run of the design.
+
+```{r figure-9-1, fig.cap="Sampling distribution of the estimates from the point estimator answer strategy", fig.width=6.5, fig.height=3.5, echo = FALSE}
+imgsufx <- if(is_html_output()) "svg" else "pdf"
+include_graphics(path = paste0("figures/figure_9.1.", imgsufx))
+```
+
+:::
+
+### Hypothesis Tests
+
+#### Answer
+Tests are an elemental kind of answer strategy. Tests yield binary yes/no answers to a binary yes/no inquiry. In some qualitative traditions, hoop tests, straw-in-the-wind tests, smoking-gun tests, and doubly-decisive tests are common. These tests are procedures for making analysis decisions in a structured way. Similarly, many forms of quantitative tests have been developed. Sign tests assess whether a test statistic is positive, negative, or zero. Null hypothesis significance tests assess whether a parameter is different than a null value, such as zero. Equivalence tests assess whether a parameter falls within a range, rather than comparing to a fixed value. Many procedures for conducting tests are also available, with different assumptions about the null hypothesis, the distributions of variables, and the data strategy.
+
+A typical null hypothesis test proceeds by imagining a null model $M_{0}$ and imagining the sampling distribution of the empirical answer $a_{d_0}$ under a hypothetical design *M$_{0}$IDA*. That sampling distribution enumerates all the ways the design could have come out if the null model $M_{0}$ were the correct one. For a null hypothesis test, we *entertain* the null model and consider its implications. We ask, under $M_{0}$ how frequently would we obtain an answer as large or larger than the empirical answer $a_d$ (or other test statistic)? That frequency is known as a $p$-value.^[The $p$-value can be thought of as a diagnosand of the *M$_{0}$IDA* design. If $M_{0}$ were true, what fraction of simulations would generate answers as big as some value?] The last step of the test is to turn the $p$-value into a binary decision about statistical significance. The typical threshold in the social sciences is 0.05: hypothesis test with $p$-values less than 0.05 indicate statistical significance. This threshold is arbitrary, reflecting the inertia of the scientific community much more than some a priori scientific standard. The appropriate threshold value for statistical significance is a matter of furious debate, with some authors calling for the threshold to be lowered to $0.005$ to guard against false positives [@Benjamin:2018vj].
+
+We'll illustrate the idea of a hypothesis test in general with the Italian village example. Here, we test against the hypothesis that the average age is 20. If we have strong evidence against this hypothesis, we will reject it. If we have weak evidence against the hypothesis, we will fail to reject it. For instance, we might reject 10 and 70 but fail to reject 35 and 45. 
+
+:::{.definition #declaration-9-2}
+
+Italian village design, continued
+
+```{r, file = "scripts_declarations/declaration_9.2.R"}
+```
+
+$~$
+
+:::
+
+Here's one run of that design. The output can be confusing. By default, most statistical software tests against the null hypothesis that the true parameter value is zero -- so the `p.value` in the first row refers to that null hypothesis test. The second row is the test against the hypothesis that the mean is equal to twenty. The "estimate" in the second row is the difference of the observed estimate from 20. The `p.value` in the second row is the one we care about when testing against the null hypothesis that the average age is 20.
+
+```{r}
+#| eval: false
+
+run_design(declaration_9.2)
+```
+
+```{r italianagetestrun, echo=FALSE}
+run_design(declaration_9.2) |> 
+  select(estimator, estimate, p.value) |> 
+  kable(booktabs = TRUE, align = "c", digits = 2, caption = "Estimates from the test of the mean age equalling 20 from Italian villages example")
+```
+
+Next, we diagnose the modified design, by running the design many times. Figure \@ref(fig:figure-9-2) shows how frequently we reject the null that the average age is 20. When estimate is close to 20, we rarely reject the null, but when the estimate is far from 20, we are more like to reject. Again, this diagnosis comes from a design with a weak data strategy of sampling only three citizens at time. We need to see estimates breaking 60 before the testing answer strategy reliably rejects this (false) null hypothesis.
+
+:::{.lemma #diagnosis-9-2}
+
+Italian village diagnosis, continued
+
+```{r}
+#| eval: false
+
+diagnosis_9.2 <- diagnose_design(declaration_9.2)
+```
+
+```{r, echo = FALSE, purl = FALSE}
+diagnosis_9.2 <- get_rdddr_file_local("diagnosis_9.2")
+```
+
+```{r figure-9-2, fig.cap="Sampling distribution of the test answer strategy", fig.width=6.5, fig.height=4, echo = FALSE}
+imgsufx <- if(is_html_output()) "svg" else "pdf"
+include_graphics(path = paste0("figures/figure_9.2.", imgsufx))
+```
+
+:::
+
+#### Uncertainty
+
+Classic hypothesis tests do not provide estimates of uncertainty regarding any associated estimate. They do however let you impose stricter or weaker conditions before rejecting an null hypothesis. If you wanted to be very conservative you could stipulate that you will only reject a hypothesis if the associated $p$  values is less than $0.0001$. In this case you are not likely to reject many null hypotheses close to your estimate but those that you do reject you may feel you reject with greater confidence. Not to belabor the point, it is not that the procedure tells you how sure you should be that the null is wrong, it is just that you figure out that the data is very unusual if the null were right.   
+
+
+### Bayesian formalizations
+
+#### Answer
+Bayesian answer strategies sometimes target the same inquiries as classical approaches, but rather than seeking a point estimate, they try to generate rational beliefs over possible values of the estimand. Rather than trying to provide a single best guess for the average age in a village, a Bayesian answer would try to figure out how likely different answers are given the data. To do so they need to know how likely different age distributions are *before* seeing the data---the priors---and the likelihood of different types of data for each possible age distribution. A Bayesian would likely not be very impressed by the 15 answer given by the point estimator in Section \@ref(point-estimation) because, prior to see any samples, they would likely expect that the answer had to be bigger than this. Bayesians would chalk the answer "15" down to an unusual draw.
+
+The Bayesian answer strategy specifies a prior distribution (here distributed normal centered on 50 to reflect a prior that Italian villages skew older) as well as a log normal distribution for ages. Here we retain the (median) posterior estimates for average age alongside a standard error based on the posterior variance. In the `.summary` argument we ask the tidier to exponentiate the coefficient estimate and standard error before returning them.
+
+:::{.definition #declaration-9-4} 
+
+Italian village design a la Bayes
+
+```{r, file = "scripts_declarations/declaration_9.4.R"}
+```
+
+:::
+
+:::{.lemma #diagnosis-9-4}
+
+We can then simulate this design in the same way and examine the distribution of estimates we might get. 
+
+```{r}
+#| eval: false
+
+diagnosis_9.4 <- diagnose_design(declaration_9.4)
+```
+
+What we see in Figure \@ref(fig:figure-9-3) is that using the same (poor) data strategy as before, a Bayesian answer strategy gets us a somewhat tighter distribution on our answer, but exhibits greater bias: the average estimate is higher than the estimand. We might accept higher bias for lower variance if overall, the root-mean-squared error is lower for the Bayesian approach. See Section \@ref(exploring-design-tradeoffs) for a further discussion of RMSE. The main difference between the Bayesian and classical approaches is the handling of prior beliefs, which carry a lot of weight in the Bayesian estimation but no weight in the classical approach.
+
+```{r figure-9-3, fig.cap = "Sampling distribution of the Bayesian answer strategy", echo = FALSE}
+imgsufx <- if(is_html_output()) "svg" else "pdf"
+include_graphics(path = paste0("figures/figure_9.3.", imgsufx))
+```
+
+:::
+
+Bayesian approaches are also used by qualitative researchers drawing case level inferences from causal process observations. Recent developments in qualitative methods have sought to take Bayes' rule "from metaphor to analytic tool" [@BennettAppendix]. This approach characterizes qualitative inference as one in which prior beliefs about the world can be specified numerically and then are updated on the basis of evidence observed. At a minimum, writing down such an answer strategy on a computer requires specifying beliefs, expressed as probabilities, about the likelihood of seeing certain kinds of evidence under different hypotheses. We provide an example of such a strategy the design library Section \@ref(process-tracing). @herron2016careful provide one approach to formalizing a qualitative answer strategy that focuses on understanding an average treatment effect. @humphreys2015mixing provide an approach that can be used to formalize answer strategies targeting both causal effect and causal attribution inquiries, while @fairfield2017explicit formalize a Bayesian approach that approaches causal attribution as a problem of attaching a posterior probability to competing alternative hypotheses. @abell2019subjective suggest the use of "supra-Bayesian" methods to aggregate multiple participant-provided narratives in ethnographic studies targeting causal attribution estimands. 
+
+#### Uncertainty
+
+In the Bayes approach parameter estimates and uncertainty estimates are generated simultaneously. One could imagine introducing uncertainty arising also from uncertainty about the prior or uncertainty about the model but in practice this is rarely done and in principle can be done by respecifying the prior and the model.
+
+
+### Interval estimation
+
+#### Answer
+
+For point and interval estimators, uncertainty is often expressed as a standard error estimate or confidence interval. Many approaches to standard error estimation are available. Indeed, just like point estimators for inquiries, we have point estimators for standard errors. You might choose classical standard errors or cluster-robust standard errors; you might bootstrap your standard errors or use the jackknife. Similarly, many approaches to confidence interval construction are available. Most often, confidence intervals are built from variance estimates under an appeal to sampling theory. Alternatively, a confidence interval can be formed by "inverting the test," i.e. finding the range of null hypotheses we fail to reject. Whether any particular approach to uncertainty estimation is appropriate in a context will depend on the full set of design parameters and we encourage you to diagnose your uncertainty estimates as well.
+
+Here is the output of the answer strategy from Declaration \@ref(def:declaration-9-1), applied to the realized data set. We see the sample mean estimate of 15, the standard error estimate of 6, and the confidence interval from -10 to 40. These numbers communicate that our answer is 15 -- but also that we *know* that number is shaky. We're uncertain because the tool we used to answer the inquiry is high variance: it could bounce around a lot depending on which three people we happened to sample. 
+
+```{r}
+#| eval: false
+
+three_italian_citizens <- fabricate(N = 3, age = c(5, 15, 25))
+answer_strategy <- declare_estimator(age ~ 1)
+answer_strategy(three_italian_citizens)
+```
+
+```{r italianuncertainty, echo = FALSE}
+three_italian_citizens <- fabricate(N = 3, age = c(5, 15, 25))
+answer_strategy <- declare_estimator(age ~ 1)
+answer_strategy(three_italian_citizens) |>
+  select(-estimator,-term,-outcome,-df) |>
+  kable(
+    booktabs = TRUE,
+    align = "c",
+    digits = 2,
+    caption = "One draw of the answer strategy"
+  )
+```
+
+For tests, uncertainty is expressed by describing the properties of a procedure in terms of error rates. A test is an answer strategy that returns a binary answer to a binary estimand. The result of a test is an error if the empirical answer $a_d$ does not equal the truth $a_{m^*}$. Conventionally, a Type 1 error occurs when $a_d = 1$ but $a_{m^*} = 0$ and a Type 2 error occurs when $a_d = 0$ but $a_{m^*} = 1$. A perfect test (i.e., a test about about which we are fully certain) has Type 1 error rate of 0% and a Type 2 error rate of 0% as well. A test about which we are less certain might return $a_d = 1$ 40% of the time when $a_{m^*} = 0$ (a Type I error rate of 40%) and might return $a_d = 1$ 90% of the time when $a_{m^*} = 1$ (a Type II error rate of 10%).
+
+The test reported by the `answer_strategy` function is a null hypothesis significance test against the null hypothesis that the average age in this Italian village is equal to exactly zero. The test returns "yes" if we reject the null and "no" if we fail to reject it. If we use the standard significance threshold of $\alpha = 0.05$ we fail to reject the null model because the `p.value` reported in the table is 0.12. It's a silly test, but silly tests like these are reported by default in many statistical software languages and in many scientific papers to boot. It's a silly test because we always knew the average age was not zero!
+
+Our uncertainty about the decision we made in the hypothesis test to fail to reject is *not* represented by the information in the table. Importantly, the $p$-value does not represent the probability that the null model is correct. The `p.value` is the probability that with our data and answer strategy, draws from the null model would lead to estimates of 15 or larger. According to our calculations, draws from the null model will do so 12 percent of the time. We use this probability along the way to making a decision about whether to reject the null model, but amazingly, a `p.value` does *not* describe our certainty about the significance test!
+
+What does characterize our uncertainty about a significance test? The Type I and type II error rates of the test. The Type I error rate is controlled by the significance threshold. A Type I error occurs if we reject the null model when it is true. If we use $\alpha = 0.05$ and the test is correctly accounts for all design elements, then a Type I error should only happen 5% of the time. Type II error rates are harder to learn about. In our case, we failed to reject the null model. To characterize our uncertainty about the test, we also want to calculate the probability that a design like this one would generate Type II errors. To do so, we have to imagine what it means for the null model to be *false*, since they can be false in many ways. One approach is to imagine how the test would perform on under a series of non-null models.
+
+Figure \@ref(fig:figure-9-4) describes the Type II error rate over a range of non-null models. If the true population mean is around 25 or lower, we fail to reject the null 75% of the time or more. With this comically small sample size, even if the true mean were 75, we would still fail to reject 20% of the time. We are rightly uncertain about this test -- it may have a low enough Type I error rate (set as $\alpha = 0.05$), but the Type II errors are way too big. 
+
+:::{.definition #declaration-9-5} 
+
+Italian village declaration, varying the true mean age parameter
+
+```{r, file = "scripts_declarations/declaration_9.5.R"}
+```
+
+:::
+
+:::{.lemma #diagnosis-9-5}
+
+Diagnosing the Italian village design over many values of the true mean age parameter
+
+```{r, eval=FALSE}
+diagnosis_9.5 <- diagnose_designs(declaration_9.5)
+```
+
+
+```{r figure-9-4, echo = FALSE, fig.cap="Type II error rates of the Italian village design", fig.height=3.5, fig.width=6.5}
+imgsufx <- if(is_html_output()) "svg" else "pdf"
+include_graphics(path = paste0("figures/figure_9.4.", imgsufx))
+```
+
+:::
+
+A second type of interval estimation is bounding. In many circumstances, the details of the data strategy alone are insufficient to "point-identify" the inquiry, which means we can't generate a point estimate without adding further assumptions. A standard approach is to simply make those further assumptions and move on to reporting point estimates. Under an agnostic approach -- we don't know if those assumptions are right because they aren't grounded in the data strategy -- we can turn to interval estimation instead.
+
+One way to handle settings in which parameters are not point-identified is to generate "extreme value bounds." These bounds report the the best and worst possibilities according to the logical extrema of the outcome variable. 
+
+We illustrate interval estimation back in our Italian village where we have learned the ages of three of the 100 citizens. Suppose we *did not know* whether the data strategy used random sampling, so we can't rely on the guarantee that, under random sampling, the sample mean is unbiased for the population mean.  Now we have reason about best and worst case scenarios. Let's agree that the youngest a person can be is zero and the oldest is 110. Starting with an estimate of 15 among three citizens, we can generate lower and upper bound estimates for the average age of the entire 100-person village like this:
+
+```{r}
+#| results: hide
+
+lower_bound <- (3 * 15 + 97 * 0)/100
+upper_bound <- (3 * 15 + 97 * 110)/100
+ c(lower_bound, upper_bound)
+```
+
+```{r evbiv, echo = FALSE}
+kable(
+  booktabs = TRUE,
+  align = "c",
+  tibble(`Lower bound` = lower_bound,
+         `Upper bound` = upper_bound),
+  digits = 2,
+  caption = "Extreme value bounds estimate"
+)
+```
+
+This procedure generates enormously wide bounds -- we already knew before we started that the average age had to be somewhere between 0.45 and 107.15 years. But consider if we had data on 90 of the 100 citizens and among those 90, the average is 44.  Now when we generate the bounds, they are still wide but not ridiculously so -- the bounds put the average age somewhere between 40 and 50. 
+
+```{r}
+#| results: hide
+
+lower_bound <- (90 * 44 + 10 * 0)/100
+upper_bound <- (90 * 44 + 10 * 110)/100
+c(lower_bound, upper_bound)
+```
+
+```{r evbiv2, echo = FALSE}
+kable(
+  booktabs = TRUE,
+  align = "c",
+  tibble(`Lower bound` = lower_bound,
+         `Upper bound` = upper_bound),
+  digits = 2,
+  caption = "The extreme value bounds are tighter with more data"
+)
+```
+
+Extreme value bounds and variations on the idea can be applied when experiments encounter missingness or when we want to estimate effects among subgroups that only reveal themselves in some but not all treatment conditions [see @aronow2019note or @coppock_2019b for examples]. The extreme value bound approach can also be used in qualitative settings in which we can impute some but not all of the missing potential outcomes using qualitative information; the bounds reflect our uncertainty about those missing values [@coppock_kaur_2021].
+
+#### Uncertainty
+
+Bounding approaches are built around about researcher uncertainty over models, however it's important to remember that the bounds are themselves estimates that could have come out differently depending on the realization of the data. By this logic, we can attach standard errors and confidence intervals to the bounds [see @coppock2017double for an example]. 
+
+
+## How to choose an answer strategy
+
+Now that we have discussed all four research design elements in detail, we describe how to choose an answer strategy.
+
+The model and the inquiry form the empirical half of the design, and the data and answer strategies make up the empirical half. Research designs that have *parallel* theoretical and empirical halves tend to be strong (though not all strong designs need be parallel in this way). This principle is motivated by the intersection of two ideas from statistics: the "plug-in principle" and "analyze as you randomize" ("AAYR").
+
+### Plug-in principle
+
+The plug-in principle refers to the idea that sometimes, the answer strategy function and the inquiry function are very similar in form. The estimand, $I(m) = a_m$, can often be estimated by choosing an *A* that is very similar to *I* and then "plugging-in" the realized data $d$ that result from the data strategy for the unobserved data $m$, i.e. $A(d) = a_d$.
+
+More formally, @aronow2019foundations describe a plug-in estimator as:
+
+> For i.i.d. random variables $X_1, X_2, \ldots, X_n$ with common CDF $F$, the plug-in estimator of $\theta = T(F)$ is: $\widehat\theta = T(\widehat F)$.
+
+where $\widehat F$ is an estimate of $F$.
+
+### Illustration of estimates using the plug-in principle 
+
+To illustrate the plug-in principle, suppose that our inquiry is the average treatment effect among the $N$ units in the population.
+
+$I(m) = \frac{1}{N}\sum_1^N[Y_i(1) - Y_i(0)] = \frac{1}{N}\sum_1^NY_i(1) - \frac{1}{N}\sum_1^NY_i(0) = \mathrm{ATE}$
+
+Here $T()$ is the difference-in-means function.
+
+We can develop a plug-in ATE estimator by replacing the population means --- $\frac{1}{N}\sum_1^N Y_i(1)$ and $\frac{1}{N}\sum_1^N Y_i(0)$ --- with sample analogues:
+
+$A(d) = \frac{1}{m}\sum_1^m{Y_i} - \frac{1}{N - m}\sum_{m+1}^N{Y_i}$,
+
+where units 1 though $m$ reveal their treated potential outcomes and the remainder reveal their untreated potential outcomes.
+
+We could do the same thing for other functions, such as quantiles of the distribution or the variance of the distribution. In general plug-in estimators are not guaranteed to be unbiased but they can have nice asymptotic properties, converging to targets as the data increases [for conditions see @van2000asymptotic]. 
+
+### Illustration of estimates of uncertainty using the plug-in principle 
+
+The plug-in principle can be used also for generating estimates of uncertainty. For instance if we are interested in understanding the variance of the sampling distribution of estimates that we get from our procedure, we can use the bootstrap. With the bootstrap, we "plug-in" the sample for the population data, then repeatedly *re*sample from our existing data. We can then approximate the true sampling distribution by calculating estimates on each resampled dataset, from which we can estimate the variance. (We use this nonparametric bootstrapping approach when generating estimates of uncertainty of diagnosands, see Section \@ref(simulation-error)).
+
+As an illustration of the logic of the approach using `DeclareDesign`, we compare usual the standard error estimate that accompanies a difference-in-means estimate with a bootstrapped standard error.
+
+First we set up a design that resamples from the @clingingsmith2009estimating's study of the effect of being randomly assigned to go on Hajj on tolerance of foreigners. 
+
+:::{.definition #bootstrapping}
+
+Bootstrapped standard errors
+
+```{r, file = "scripts_declarations/declaration_9.5.R"}
+```
+
+:::
+
+
+
+:::{.lemma #diagnosis-9-bootstrap}
+
+Bootstrap diagnosis
+
+The bootstrapped estimates are gotten by summarizing over multiple runs of the design:
+
+```{r, echo=TRUE, eval = FALSE}
+diagnosis_9.5 <- 
+  declaration_9.5 |> 
+  simulate_design(sims = sims) |> 
+  summarize(se = sd(estimate)) 
+```
+
+
+```{r, echo=FALSE}
+get_rdddr_file_local("diagnosis_9.5") |>
+  knitr::kable(digits = 3, caption = "Bootstrapped standard error estimate")
+```
+
+:::
+
+We can compare the standard error estimates using the standard deviation of the bootstrapped estimates to the standard error provided by the difference in means estimator implemented on the original data to see that they are quite close:
+
+```{r}
+#| eval: false
+
+get_estimates(design = declaration_9.5, data = clingingsmith_etal) 
+```
+
+```{r, echo = FALSE}
+get_estimates(design = declaration_9.5, data = clingingsmith_etal) |> 
+  select(estimate, std.error) |> 
+  kable(digits = 3, caption = "Analytic standard error estimate")
+```
+
+### Analyze as you randomize
+
+Following the plug-in principle only yields good answer strategies under some circumstances. Those circumstances are determined by the data strategy. We need data strategies that sample units, assign treatment conditions, and measure outcomes such that the revealed data can indeed by "plugged in" to the inquiry function. Whether this plug-in ATE estimator is a good answer strategy depends on features of the data strategy. It's a good estimator when units are assigned to treatment with equal probabilities, but it's a bad estimator if the probabilities differ from unit to unit.
+
+When the data strategy introduces distortions like differential probabilities of assignment, the answer strategy function should *not* equal the inquiry function: we can no longer just plug in the observed data. We have to compensate for those distortions, reversing them to reestablish parallelism.
+
+This idea can be summarized as "analyze as you randomize," a dictum attributed to R.A. Fisher. We use known features of the data strategy to adjust the answer strategy. We can undo the distortion introduced by differential probabilities of assignment by weighting units by the inverse of the probability of being in the condition that they are in. If we use an inverse-probability weighted (IPW) estimator, we restore parallelism because even though *A* no longer equals *I*, the relationship of *D* to *A* once again parallels the relationship of *M* to *I*.
+
+### Illustration of estimates using the AAYR principle 
+
+Declaration \@ref(def:declaration-9-6) illustrates this idea. We declare the theoretical half of the design as `MI` then consider the intersection of two data strategies with two answer strategies. `D1` has constant probabilities of assignment and `D2` has differential probabilities of assignment. `A1` is the plug-in estimator and `A2` is the IPW estimator with the inverse probability weights generated by the `D2` randomization protocol. 
+
+:::{.definition #declaration-9-6}
+
+Restoring parallelism design
+
+```{r, file = "scripts_declarations/declaration_9.6.R"}
+```
+
+:::
+
+
+:::{.lemma #diagnosis-9-6}
+
+Restoring parallelism diagnosis
+
+```{r}
+#| eval: false
+
+diagnosis_9.6 <- diagnose_design(declaration_9.6)
+```
+
+We diagnose the bias of all four design. Figure \@ref(fig:figure-9-5) shows that when the answer strategy and the data strategy match (`D1 + A1` and `D2 + A2`), we have no bias. When they do not match (`D1 + A2` and `D2 + A1`), we do. In this case, seeking parallelism in the choice of answer strategy improves the design. Of course, an alternative answer strategy we might call `A3` that implements the weights corresponding to whatever the data strategy says they should be unbiased under both `D1` and `D2`.
+
+```{r figure-9-5, fig.cap="When data and answer strategies are mismatched, we obtain bias.",  fig.width = 6.5, fig.height = 3.5, echo=FALSE}
+imgsufx <- if(is_html_output()) "svg" else "pdf"
+include_graphics(path = paste0("figures/figure_9.5.", imgsufx))
+```
+
+:::
+
+This principle applies most clearly to the bias diagnosand, but it applies to others as well. For example, @abadie2017clustering recommend that answer strategies should include clustered standard errors at the level of sampling or assignment, whichever is higher. The data strategies that include clustering introduce a dependence among units that was not present in the model; clustered standard errors account for this dependence. If we did not do so, our estimated standard error would be a bad estimate of the "standard deviation" diagnosand.
+
+More generally, the principle to "design agnostically" implies that we should choose "agnostic" answer strategies, by which we mean answer strategies that produce good answers under a wide range of models. Selecting answer strategies that are robust to multiple models ensures that we not only get good answers when our model is spot on --- which is rare! --- but under many possible circumstances.
+
+Understanding whether the choices over answer strategies --- logit or probit or OLS --- depend on the model being a particular way is crucial to making a choice. For example, many people have been taught that whenever the outcome variable is binary, OLS is inappropriate and they must use a binary choice model like logit instead. When the inquiry is the probabilities of success for each unit and we use covariates to model them, how much better logit performs at estimating probabilities depends on the model. When probabilities are all close to 0.5, the two answer strategies both perform well. When the probabilities spread out from 0.5, OLS is less robust and logit beats it. In the same breath, however, we can consider these same two estimators in the context of a randomized experiment with a binary outcome. Here, OLS is just as strong as logit, no matter the distribution of the potential outcomes. In this setting, when design agnostically, we find that both estimators are robust (see Section \@ref(redesigning-over-estimators-logit-probit-or-ols)).
+
+Designing agnostically has something in common with robustness checks: both share the motivation that we have fundamental uncertainty about the true model. A robustness check is an *alternative* answer strategy that changes some model assumption that the main answer strategy depends on. Presenting three estimates of the same parameter under different answer strategies (logit, probit, and OLS) and making a joint decision based on the set of estimates about whether the main analysis is "robust" is a procedure for assessing "model dependence." But robustness checks are just answer strategies themselves, and we should declare them and diagnose them to understand whether they are good answer strategies. We want to understand the *properties* of the robustness check, e.g., under what models and how frequently does it correctly describe the main answer strategy as "robust."
+
+### Illustration of estimates of uncertainty using the AAYR principle
+
+Randomization inference describes a large class of procedures for generating $p$-values that merit special attention. Randomization inference leverages known features of the randomization procedure to simulate trials under a null model (see @Gerber2012, chapter 3, for an introduction to randomization inference). In a common case, a randomization inference test proceeds by stipulating a null model under which the counterfactual outcomes of each unit are exactly equal to the observed outcomes, the so-called "sharp null hypothesis of no effect." Under this null hypothesis, the treated and untreated potential outcomes are exactly equal for each unit, reflecting a model in which the treatment has exactly zero effect for each unit.
+
+As described above, a $p$-value is an answer to the question: what is the probability the null model would generate estimates as large or larger in absolute value than the observed estimate? We can answer this question by diagnosing the design under the sharp null model. Importantly, the randomization inference procedure follows the "analyze as you randomize" principle by conducting repeated random assignments according to the original randomization protocol.
+
+We illustrate randomization inference with a voter mobilization experiment reported by @Foos2021. The design was blocked and clustered: voters were clustered by their street, and the assignment was blocked by ward. Wards vary in their size and in the probability of assignment, so we have to recompute inverse probability weights in each draw from the null model.  
+
+Here is the observed estimate, indicating that our best guess is that average effect of the mobilization treatment on voter turnout is 2.8 percentage points.
+
+```{r}
+#| results: hide
+
+observed_estimate <-
+  lm_robust(
+    marked_register_2014 ~ treat + ward,
+    weights = weights,
+    clusters = street,
+    data = foos_etal
+  ) 
+```
+```{r foosresults, echo = FALSE}
+observed_estimate |>
+  tidy() |>
+  filter(term == "treat") |> 
+  select(term, estimate) |> 
+  kable(
+    booktabs = TRUE,
+    align = "c",
+    digits = 3,
+    caption = "Results from @Foos2021"
+  )
+```
+
+Here we declare the null model (indicated by `potential_outcomes(Y ~ 0 * Z + marked_register_2014)`) and add it to the data and answer strategies:
+
+:::{.definition #randomizationinference}
+
+Randomization inference under the sharp null
+
+```{r, file = "scripts_declarations/declaration_9.3.R"}
+```
+
+:::
+
+:::{.lemma #diagnosis-9-3}
+
+Randomization inference "diagnosis"
+
+We diagnose the null design with respect to the `p.value` diagnosand: what fraction of simulations under the null model exceed the observed estimate? We find that the `p.value` is 0.13, so the estimate is not deemed statistically significant. 
+
+:::
+
+```{r, eval=FALSE}
+p.value <-
+  declare_diagnosands(
+    p.value = mean(abs(estimate) >= abs(observed_estimate$coefficients))
+  )
+
+diagnosis_9.7 <-
+  diagnose_design(
+    declaration_9.7,
+    diagnosands = p.value
+  )
+
+tidy(diagnosis_9.7)
+```
+
+
+```{r, echo=FALSE}
+diagnosis_9.7 <- get_rdddr_file_local("diagnosis_9.7")
+```
+
+```{r ridiagnosands, echo = FALSE}
+diagnosis_9.7 |>
+  tidy() |>
+  select(design, diagnosand, estimate) |>
+  kable(
+    booktabs = TRUE,
+    align = "c",
+    digits = 2,
+    caption = "Randomization inference 'diagnosis' to obtain a p-value"
+  )
+```
+
+
+Some naive procedures for generating $p$-values might ignore or otherwise fail to incorporate the important design information (in this example, the blocking and clustering procedures). Randomization inference naturally incorporates this design information by holding the data and answer strategies fixed, while swapping in a null model. Simulating the resulting design yields a sampling distribution under the null, which can then be compared to the observed estimate.
+
+
+## Summary
+
+The answer strategy describes what we do with the data once we've got it. We use the data to generate estimates that, if we've calibrated our design correctly, will with high frequency come close to the estimand, the value of the inquiry. Answer strategies are defined with respect to units, their conditions, their outcomes, and a summary method for generating estimates. We like to include measures of uncertainty without estimates; these measures are like estimates of design properties. Answer strategies come in a many varieties but the main four are point estimation, interval estimation, tests, and summaries of Bayesian posterior distributions. Choosing a good answer strategy means staying responsive to the relevant model, inquiry, and data strategy elements.

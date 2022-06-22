@@ -1,0 +1,58 @@
+# Reconciliation 
+
+```{r}
+#| echo: false
+#| include: false
+#| purl:  false
+source("scripts/before_chapter_script.R")
+```
+
+Reconciliation is the process of comparing the final design to the planned design. Understanding the differences between the two and the justifications for the changes can help us understand what to learn from the final results.
+
+Suppose the original design described a three-arm trial: one control and two treatments, but the design as implemented drops all subjects assigned to the second treatment. Sometimes, this is an entirely appropriate and reasonable design modification. Perhaps the second treatment was simply not delivered due to an implementation failure. Other times, these modifications are less benign. Perhaps the second treatment effect estimate did not achieve statistical significance, so the author omitted it from the analysis. 
+
+For this reason, we recommend that authors reconcile the design as planned with the design as implemented. A reconciliation can be a plain description of the deviations from the PAP, with justifications where appropriate. A more involved reconciliation would include a declaration of the planned design, a declaration of the implemented design, and a list of the differences. This "diff" of the designs can be automated through the declaration of both designs in computer code, then comparing the two design objects line-by-line (see the function `compare_designs()` in DeclareDesign). 
+
+In some cases, reconciliation will lead to additional learning beyond what can be inferred from the final design itself. When some units refuse to be included in the study sample or some units refuse measurement, we learn that important information about those units. Understanding sample exclusions, noncompliance, and attrition not only may inform future research design planning choices but contribute substantively to our understanding of the social setting.
+
+There are no current standards for how to report reconciliation. We recommend however providing two types of tables, a qualitative *Inquiry reconciliation* table and a quantitative *Answer strategy reconciliation table*. In the latter case especially, guiding readers to relevant discussions or sections of replication code can make the reconciliation tables easier to evaluate. Such answer strategy reconciliation tables could also usefully include output from diagnosis comparisons to provide motivation for change. 
+
+
+We provide illustrations for both of these below:
+
+| Inquiry        | In the preanalysis plan | In the paper  | In the appendix |
+|:--------------:|:-----------------------:|:-------------:|:---------------:|
+| Gender effect  | X                       |       X       |                 |
+| Age effect     |                         |               |        X        |
+
+Table: (\#tab:reconciliation1) Illustration of an *Inquiry  reconciliation* table.
+
+
+| Inquiry       | Following *A* from the PAP| Following *A* from the paper    | Notes               |
+| --------------|:------------------------- :|:-------------------------------:|------------------- |
+| Gender effect | estimate = 0.6, s.e = 0.31 | estimate = 0.6, s.e = 0.25       |  Difference due to change in control variables  [provide cross references to tables and code] |
+
+Table: (\#tab:reconciliation2) Illustration of an  *Answer strategy reconciliation* table.
+
+
+## Example
+
+In Section \@ref(planning), we described the preanalysis plan registered by @bonilla_tillery_2020. We reconcile the set of conditional average treatment effect (CATE) analyses planned in that PAP, the analyses reported in the paper, and those reported in the appendix at the request of reviewers in Table \@ref(tab:reconciliation). In column two, we see that the authors planned four CATE estimations: effects by familiarity with Black Lives Matter; by gender; LGBTQ status; and linked fate. Only two of those are reported in the paper; the others may have been excluded for space reasons. Another way to handle these uninteresting results would be to present them in a populated PAP posted on their Web site or in the paper's appendix.
+
+In their appendix, the authors report on a set of analyses requested by reviewers. We see this as an excellent example of transparently presenting the set of planned analyses and highlighting the analyses that were added afterward and why they were added. They write: "We have been asked to consider other pertinent moderations beyond gender and LGBTQ+ status. They are contained in the four following sections."
+
+This small Inquiry reconciliation table describes the heterogeneous effects analyses the researchers planned, those reported in the paper, and those reported in the appendix at the request of reviewers. 
+
+| Covariate            | In the preanalysis plan | In the paper  | In the appendix (at the request of reviewers) |
+|:---------------------|:-----------------------:|:-------------:|:---------------------------------------------:|
+| Familiarity with BLM | X                       |               |                                               |
+| Gender               | X                       | X             |                                               |
+| LGBTQ status         | X                       | X             |                                               |
+| Linked fate          | X                       |               |                                               |
+| Religiosity          |                         |               | X                                             |
+| Region               |                         |               | X                                             |
+| Age                  |                         |               | X                                             |
+| Education            |                         |               | X                                             |
+
+Table: (\#tab:reconciliation) *Inquiry reconciliation* table  from  Bonilla and Tillery (2020) analysis with their preanalysis plan.
+

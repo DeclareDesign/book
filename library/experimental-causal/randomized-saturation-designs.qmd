@@ -1,0 +1,68 @@
+# Randomized saturation experiments 
+
+```{r}
+#| echo: false
+#| include: false
+#| purl:  false
+source("scripts/before_chapter_script.R")
+```
+
+:::: {.ddbox}
+We declare a multilevel design in which we randomize first the "saturation" or probability of assignment with clusters and then randomly assign within the clusters based on that saturation probability. The diagnosis highlights that the efficiency for estimating the causal effect of the saturation level is low, because assignment is clustered, and higher for estimating the individual treatment effect within clusters of a given saturation.
+::::
+
+
+We study most treatments at an isolated, atomized, individualistic level. We define potential outcomes with respect to a unit's own treatment status, ignoring the treatment status of all other units in the study. Accordingly, our inquiries tend to be averages of individual-level causal effects and our data strategies tend to assign treatments at the individual level as well. All of the experimental designs we have considered to this point have been of this flavor.
+
+However, when the potential outcome revealed by a unit depends on the treatment status of other units, then we have to make adjustments to every part of the design. We have to redefine the model *M* to specify what potential outcomes are possible. Under a no-spillover model, we might only have the treated and untreated potential outcome $Y_i(1)$ and $Y_i(0)$. But under spillover models, we have to expand the set of possibilities. For example, we might imagine that unit $i$'s potential outcomes can be written as a function of their own treatment status and that of their housemate, unit $j$: $Y_i(Z_i, Z_j)$. We have to redefine our inquiry *I* with respect to those reimagined potential outcomes. The average treatment effect is typically defined as $\E[Y_i(1) - Y_i(0)]$, but if $Y_i(1)$ and $Y_i(0)$ no longer exist, we need to choose a new inquiry, like the average direct effect of treatment when unit $j$ is not treated: $\E[Y_i(1, 0) - Y_i(0, 0)]$. We have to alter our data strategy *D* so that the randomization procedure produces healthy samples of all of the potential outcomes involved in the inquiries, and we have to amend our answer strategy *A* to account for the important features of the new randomization protocol.
+
+We divide up our investigation of experimental designs to learn about spillovers into two sets. This chapter addresses randomized saturation designs, which are appropriate when we can exploit a hierarchical clustering of subjects into groups within which spillover can occur but across which spillover can't occur. The next chapter addresses experiments over networks, which are appropriate when spillover occurs over geographic, temporal, or social networks.
+
+The randomized saturation design (sometimes called the partial population design, as in @bairdetal2018) is purpose-built for scenarios in we have good reason to imagine that a unit's potential outcomes depend on the fraction of treated units within the same cluster. For example, we might want to consider the fraction of people within a neighborhood assigned to receive a vaccine: a person's health outcomes could easily depend on whether two-thirds or one-third of neighbors have been treated. 
+
+In the model, we now have to define potential outcomes with respect to both the individual level treatment and also the saturation level. We can imagine a variety of different kinds of potential outcomes functions. Consider the vaccine example, imagining a 100\% effective vaccine against infection. Directly treated individuals never contract the illness, but the probability of infection for untreated units depends on the fraction who are treated nearby. If the treatment is a persuasive message to vote for a particular candidate, we might imagine that direct treatment is ineffective when only a few people around you hear the message, but becomes much more effective when many people hear the message at the same time. The main challenge in developing intuitions about complex interactions like this is articulating the discrete potential outcomes that each subject could express, then reasoning about the plausible values for each potential outcome.
+
+The randomized saturation design is a factorial design of sorts, and like any factorial design can support a number of different inquiries. We can describe the average effect of direct treatment at low saturation, at high saturation, the average of the two, or the difference between the two. Similarly, we could describe the average effect of high versus low saturation among the untreated, among the treated, the average of the two, or the difference between the two. In some settings, all eight of these inquiries might be appropriate to report, in others just a subset.
+
+The design employs a two-stage data strategy. First, pre-defined clusters of units are randomly assigned to treatment saturation levels, for example 25\% or 75\%. Then, in each cluster, individual units are assigned to treatment or control with probabilities determined by their clusters' saturation level. The main answer strategy complication is that now there are two levels of randomization that must be respected. The saturation of treatment varies at the cluster level, so whenever we are estimating saturation effects, we have to cluster standard errors at the level saturation was assigned. The direct treatments are assigned at the individual level, so we do not need to cluster.
+
+Declaration \@ref(def:declaration-18-12) describes 50 groups of 20 individuals each. We imagine one source of unobserved variation at the group level (the `group_shock`) and another at the individual level (the `individual shock`). We built potential outcomes in which the individual and saturation treatment assignments each have additive (non-interacting) effects, though more complex potential outcomes functions are of course possible. We choose two inquiries in particular: the conditional average effect of saturation among the untreated and the conditional average effect of treatment when saturation is low. 
+
+We can learn about the effects of the dosage of indirect treatment by comparing units with the same individual treatment status across the levels of dosage. For example, we could compare untreated units across the 25\% and 75\% saturation clusters. We can also learn about the direct effects of treatment at either saturation level, e.g., the effect of treatment when saturation is low. We use difference-in-means estimators of both inquiries, subsetted and clustered appropriately.
+
+:::{.definition #declaration-18-12} 
+
+Randomized saturation design
+
+```{r, file = "scripts_declarations/declaration_18.12.R"}
+```
+
+:::
+
+
+:::{.lemma #diagnosis-18-12}
+
+Randomized saturation diagnosis
+
+```{r}
+#| eval: false
+
+diagnosis_18.12 <- diagnose_design(declaration_18.12)
+```
+
+The diagnosis plot in Figure \@ref(fig:figure-18-14) shows the sampling distribution of the two estimators with the value of the relevant inquiry overlaid. Both estimators are unbiased for their targets, but the thing to notice from this plot is that the estimator of the saturation inquiry is far more variable than the estimator of the direct treatment inquiry. Saturation is by its nature a group-level treatment, so must be assigned at a group level. The clustered nature of the assignment to saturation level brings extra uncertainty. When designing randomized saturation experiments, researchers should be aware that we typically have much better precision for individually-randomized treatments than cluster-randomized treatments, and should plan accordingly.
+
+```{r figure-18-14, echo = FALSE,fig.cap="Sampling distributions of indirect and direct treatment effect estimators", fig.width=6.5, fig.height=3.5}
+imgsufx <- if(is_html_output()) "svg" else "pdf"
+include_graphics(path = paste0("figures/figure_18.14.", imgsufx))
+```
+
+:::
+
+## Design examples
+
+- @cheema_khan_liaqat_mohmand_2022 used a randomized saturation design in their study of a get-out-the-vote campaign in Pakistan. Wards could be assigned to one of three treatment conditions or a control condition; within treated wards, four of five study households received the assigned condition but the fifth was assigned to control. A comparison of untreated household in treated wards to untreated household in untreated wards generates an estimate of the spillover effect (small and nonsignificant in this case).
+
+- @Egger2019 study how a cash transfer program implemented in one locality may affect outcomes in neighboring localities. In Kenya, the authors grouped villages into "saturation groups" and randomized the saturation groups to have one-third or two-thirds of their constituent villages assigned to treatment. A comparison of the untreated villages in the one-third and two-thirds saturation groups yields an estimate of the spillover effect.
+
+

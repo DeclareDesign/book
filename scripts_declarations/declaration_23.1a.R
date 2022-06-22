@@ -1,0 +1,10 @@
+# X is not a confounder and is measured pretreatment
+model_1 <- 
+  declare_model(
+    N = 100,
+    U = rnorm(N),
+    X = rnorm(N),
+    Z = rbinom(N, 1, prob = plogis(0.5)),
+    potential_outcomes(Y ~ 0.1 * Z + 0.25 * X + U),
+    Y = reveal_outcomes(Y ~ Z)
+  ) 

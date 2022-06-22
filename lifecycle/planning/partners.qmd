@@ -1,0 +1,33 @@
+# Partners
+
+```{r}
+#| echo: false
+#| include: false
+#| purl:  false
+source("scripts/before_chapter_script.R")
+```
+
+Partnering with third-party organizations in research entails cooperating to intervene in the world or to measure outcomes. Researchers seek to produce (and publish) scientific knowledge; they work with political parties, government agencies, nonprofit organizations, and businesses to learn more than they could if they worked independently. These groups join the collaborations to learn about how to achieve their own organizational goals. Governments may want to expand access to healthcare, corporations to improve their ad targeting, and nonprofits to demonstrate program impact to funding organizations.
+
+In the best-case scenario, the goals of the researchers and partner organizations are aligned. When the scientific question to be answered is the same as the practical question the organization cares about, the gains from cooperation are clear. The research team gains access to the organization's financial and logistical capacity to act in the world, and the partner organization gains access to the researchers' scientific expertise. Finding the right research partner almost always amounts to finding an organization with a common -- or at least not conflicting -- goal. Selecting a research design amenable to both parties requires understanding each partners' private goals. Research design declaration and diagnosis can help with this problem by formalizing tradeoffs between the two sets of goals.
+
+One frequent divergence between partner and researcher goals is that partner organizations often want to learn, but they care most about their primary mission [@levine2021form]. This dynamic is sometimes referred to as the "learning versus doing" tradeoff. (In business settings, this tradeoff goes by names like "learning versus earning" or "exploration versus exploitation"). An aid organization cares about delivering their program to as many people as possible. Learning whether the program has the intended effects on the outcomes of interest is obviously also important, but resources spent on evaluation are resources *not* spent on program delivery. 
+
+:::{.lemma #diagnosis-21-1}
+
+Learning versus doing diagnosis
+
+Research design diagnosis can help navigate the learning versus doing tradeoff. One instance of the tradeoff is that the proportion of units that receive a treatment represents the rate of "doing," but this rate also affects the amount of learning. In the extreme, if all units are treated, we can't measure the effect of the treatment. The tradeoff here is represented in Figure \@ref(fig:figure-21-2), which shows the study's power versus the proportion treated (top facet) and the partner's utility (bottom facet). The researchers have a power cutoff at the standard 80% threshold. The partner also has a strict cutoff: they need to treat at least 2/3 of the sample to fulfill a donor requirement. 
+
+Researchers might simply ignore the proportion treated and select the design with the highest power in the absence of partners. With a partner organization, the researcher might use this graph in conversation with the partner to jointly select the design that has the highest power that has a sufficiently high proportion treated to meet the partner's needs. This is represented in the "zone of agreement" in gray: in this region, the design has at least 80% power and at least two-thirds of the sample are treated. Deciding within this region involves a tradeoff between power (which is decreasing in the proportion treated here) and the partner's utility (which is increasing in proportion treated). The diagnosis surfaces the zone of the agreement and clarifies the choice between designs in that region. Unfortunately, some partnerships simply will not work out if the zone of agreement is empty.
+
+```{r figure-21-2, echo = FALSE, fig.cap = "Finding the zone of agreement in a research partnership.", fig.width = 6.5, fig.height = 6.5}
+imgsufx <- if(is_html_output()) "svg" else "pdf"
+include_graphics(path = paste0("figures/figure_21.2.", imgsufx))
+```
+
+Choosing the proportion treated is one example of integrating partner constraints into research designs. A second common problem is that there are a set of units that must be treated or that must not be treated for ethical or political reasons (e.g., the home district of a government partner must receive the treatment). If these constraints are discovered after treatment assignment, they lead to noncompliance, which may substantially complicate the analysis of the experiment and even prevent providing an answer to the original inquiry. @Gerber2012 recommend, before randomizing treatment, exploring possible treatment assignments with the partner organization and using this exercise to elicit the set of units that must or cannot be treated. @king2007politically describe a "politically-robust" design, which uses pair-matched block randomization. In this design, when any unit is dropped due to political constraints, the whole pair is dropped from the study.^[This procedure is prone to bias for the average treatment effect among the "politically feasible" units if within some pairs, one unit is treatable but the other is not.]
+
+A major benefit of working with partners is their deep knowledge of the substantive area. For this reason, we recommend involving them in the design declaration and diagnosis process. How can we develop intuitions about the means, variances, and covariances of the variables to be measured? Ask your partner for their best guesses, which may be far more educated than your own. For experimental studies, solicit your partner's beliefs about the magnitude of the treatment effect on each outcome variable, subgroup by subgroup if possible. Engaging partners in the declaration process improves design -- and it very quickly sharpens the discussion of key design details. Pro-tip: share your design diagnoses and mock analyses *before* the study is launched to quickly build consensus around the study's goals.
+
+:::

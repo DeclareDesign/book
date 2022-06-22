@@ -1,0 +1,12 @@
+# Realization
+
+```{r}
+#| echo: false
+#| include: false
+#| purl:  false
+source("scripts/before_chapter_script.R")
+```
+
+Realization is the implementation phase of a study. Implementing the data strategy means sampling the units as planned, allocating treatments according to the randomization procedure, and executing the measurement protocol. Implementing the answer strategy means applying the planned summary functions to the realized data. Of course, things never go so smoothly. Inevitably, some portion of the design fails to go according to plan: subjects do not comply with treatments, others cannot be located to answer survey questions, or governments interfere with the study as a whole. Sometimes, the answer strategies are discovered to be biased or imprecise or otherwise wanting. Declared designs can be adapted as the study changes, both to help make choices when you need to pivot and so that at the end there is a "realized design" to compare to the "planned design." 
+
+When implementation is complete, the design preregistered in an analysis plan can be "populated" to report on analyses as planned and the realized design reconciled with the planned design. In writing up the study, the design forms the center: why we should believe the answers we report. The declared design can be used in the write-up to convince reviewers of the study's quality, and also a tool to assess the impact of reviewer suggestions on the design.

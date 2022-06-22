@@ -1,0 +1,44 @@
+# Introduction
+
+\pagestyle{main}
+
+```{r}
+#| echo: false
+#| include: false
+#| purl:  false
+source("scripts/before_chapter_script.R")
+```
+
+This book introduces a new way of thinking about research designs in the social sciences. Our hope is that this approach will make it easier to develop and to share strong research designs.
+
+At the heart of our approach is the *MIDA* framework, in which a research design is characterized by four elements: a model, an inquiry, a data strategy, and an answer strategy. We have to understand each of the four on their own and also how they interrelate. The design encodes your beliefs about the world, it describes your questions, and it lays out how you go about answering those questions, both in terms of what data you collect and how you analyze it. In strong designs, choices made in the model and inquiry are reflected in the data and answer strategies, and vice-versa.
+
+We think of designs as objects that can be interrogated. Each of the four design elements can be "declared" in computer code and -- if done right -- the information provided is enough to "diagnose" the quality of the design through computer simulation. Researchers can then select the best design for their purposes by "redesigning" over alternative, feasible designs.
+
+This way of thinking pays dividends at multiple points in the research design lifecycle: planning the design, implementing it, and integrating the results into the broader research literature. The declaration, diagnosis, and redesign process informs choices made from the beginning to the end of a research project.
+
+## How to read this book
+
+We had multiple audiences in mind when writing this book. First, we're thinking of people looking for a high-level introduction to these ideas. If we only had 30 minutes with a person to try and communicate the core ideas, we would give them Part I. We're thinking of people who are new to the practice of research design and who are embarking on their first empirical projects. The *MIDA* framework introduced in Part I accommodates many different empirical approaches: qualitative and quantitative, descriptive and causal, observational and experimental. Beginners starting out in any of these traditions can use our framework to consider how the design elements in those approaches fit together. We're also thinking of researchers-in-training: graduate students in seminar courses where the main purpose is to read papers and discuss the credibility of research findings. Such discussions can sometimes feel like a laundry list of complaints, but we hope our framework can focus attention on the most relevant concerns. What, exactly, is the inquiry? Is it the right one to be posing. Are the data and answer strategies suited to the inquiry?  We're also thinking of funders and decision-makers, who often wish to assess research not in terms of its results but its design. Our approach provides a way of defining the design and diagnosing its quality.
+
+Part II is more involved. We provide the formal foundations of the *MIDA* framework. We walk through each component of a research design in detail, describe the finer points of design diagnosis, and explain how to carry out a "redesign." Part II will resonate with several audiences of applied researchers both inside and outside of academia. We imagine it could be assigned early in a graduate course on research design in any of the social sciences. We hope data scientists and monitoring and evaluation professionals will find value in our framework for learning about research designs. Scholars will find value in declaring, diagnosing, and redesigning designs whether they are implementing randomized trials, multi-method archival studies, or calibrating structural theories with data.
+
+In Part III, we apply the general framework to specific research designs. The result is a library of common designs. Many empirical research designs are included in the library, but not all. The set of entries covers a large portion of what we see in current empirical practice across social sciences, but it is not meant to be exhaustive. We don't expect that any readers will read straight through the design library, but will instead pick-and-choose depending on their interests.
+
+We are thinking of three kinds of uses for entries in the design library. Collectively, the design entries serve to illustrate the fundamental principles of design. The entries clarify the variety of ways in which models, inquiries, data strategies, and answer strategies can be connected and show how high level principles operate in common ways across very different designs. The second use is pedagogical. The library entries provide hands-on illustrations of designs in action. A researcher interested in understanding the "regression discontinuity design," for example, can quickly see a complete implementation and learn under what conditions the standard design performs well or poorly. They can also compare the suitability of one type of design against another for a given problem. We emphasize that these descriptions of different designs provide entry points but they are not exhaustive, so we refer readers to recent methodological treatments of the different topics. The third use is as a starter kit to help readers get going on designs of their own. Each entry includes code for a basic design that can be fine-tuned to capture the specificities of particular research settings.
+
+The last section of the book describes how our framework can help at different stages of the research process. Each of these sections should be readable for anyone who has read Part I. The entry on preanalysis plans, for example, can be assigned in an experiments course as guidance for students filing their first preanalysis plan. The entry on research ethics could be shared among coauthors at the start of a project. The entry on writing a research paper could be assigned to college seniors writing their first original research papers.
+
+
+## How to work this book
+
+We will often describe research designs not just in words, but in computer code. If you want to work through the code and exercises, fantastic. This path requires investment in `R`, the `tidyverse`, and the `DeclareDesign` software package. Chapter \@ref(getting-started) helps get you started. We think working through the code is very rewarding, but we understand that there is a learning curve. You could, of course, tackle the declaration, diagnosis, and redesign processes using any computer language you like,^[On our Web site, we provide [examples in `R`, Python, Stata, and Excel](https://declaredesign.org/pap/).] but it is easier in `DeclareDesign` because the software guides you to articulate each of the four design elements.
+
+If you want nothing to do with the code, you can skip it and just focus on the text. We have written the book so that understanding of the code is not required in order to understand research design concepts.  
+
+## What this book will not do
+
+This is a research design book, not a statistics textbook, or a cookbook with recipes applicable to all situations. We will not derive estimators, we will provide no guarantees of the general optimality of designs, and we will present no mathematical proofs. Nor will we provide all the answers to all the practical questions you might have about your design.
+
+What we do offer is a language to express research designs. We can help you learn that language so you can describe your own design in it. When you can declare your design in this language, then you can diagnose it, figure out if it works the way you think it should, and then improve it through redesign.
+
