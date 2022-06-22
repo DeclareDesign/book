@@ -17,6 +17,9 @@ jobs:
         # with:
           # uncomment below and fill to pin a version
           # version: 0.9.105
+          
+      - name: Install packages
+        uses: r-lib/actions/setup-r-dependencies@v2
 
       - name: Render book to all format
         # Add any command line argument needed
