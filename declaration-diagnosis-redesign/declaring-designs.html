@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.613">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Research Design - 5&nbsp; Declaring designs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../declaration-diagnosis-redesign/specifying-model.html" rel="next">
+<link href="../introduction/getting-started.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Research Design</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../introduction/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../library/" class="sidebar-item-text sidebar-link">Research design library</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../library/observational-descriptive/" class="sidebar-item-text sidebar-link">Observational : descriptive</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/observational-descriptive/simple-random-sampling.html" class="sidebar-item-text sidebar-link">Simple random sampling</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/observational-descriptive/cluster-random-sampling.html" class="sidebar-item-text sidebar-link">Cluster random sampling</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/observational-descriptive/multilevel-regression-poststratification.html" class="sidebar-item-text sidebar-link">Multi-level regression and poststratification</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/observational-descriptive/index-creation.html" class="sidebar-item-text sidebar-link">Index creation</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../library/observational-causal/" class="sidebar-item-text sidebar-link">Observational : causal</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link">Process tracing</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link">Selection-on-observables</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link">Difference-in-differences</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link">Instrumental variables</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/observational-causal/regression-discontinuity.html" class="sidebar-item-text sidebar-link">Regression discontinuity designs</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../library/experimental-descriptive/" class="sidebar-item-text sidebar-link">Experimental : descriptive</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-descriptive/audit-experiments.html" class="sidebar-item-text sidebar-link">Audit experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-descriptive/list-experiments.html" class="sidebar-item-text sidebar-link">List experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-descriptive/conjoint-experiments.html" class="sidebar-item-text sidebar-link">Conjoint experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-descriptive/behavioral-games.html" class="sidebar-item-text sidebar-link">Behavioral games</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../library/experimental-causal/" class="sidebar-item-text sidebar-link">Experimental : causal</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-causal/two-arm-randomized-experiments.html" class="sidebar-item-text sidebar-link">Two-arm randomized experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-causal/block-randomized-designs.html" class="sidebar-item-text sidebar-link">Block-randomized experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-causal/cluster-randomized-designs.html" class="sidebar-item-text sidebar-link">Cluster-randomized experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-causal/subgroup-designs.html" class="sidebar-item-text sidebar-link">Subgroup designs</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-causal/factorial-designs.html" class="sidebar-item-text sidebar-link">Factorial experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-causal/encouragement-designs.html" class="sidebar-item-text sidebar-link">Encouragement designs</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-causal/placebo-controlled-experiments.html" class="sidebar-item-text sidebar-link">Placebo-controlled experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-causal/stepped-wedge-designs.html" class="sidebar-item-text sidebar-link">Stepped-wedge experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-causal/randomized-saturation-designs.html" class="sidebar-item-text sidebar-link">Randomized saturation experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-causal/experiments-over-networks.html" class="sidebar-item-text sidebar-link">Experiments over networks</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../library/complex/" class="sidebar-item-text sidebar-link">Complex</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/complex/discovery-causal-forests.html" class="sidebar-item-text sidebar-link">Discovery using causal forests</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/complex/structural-estimation.html" class="sidebar-item-text sidebar-link">Structural estimation</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/complex/meta-analysis.html" class="sidebar-item-text sidebar-link">Meta-analysis</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/complex/multi-site-studies.html" class="sidebar-item-text sidebar-link">Multi-site studies</a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../lifecycle/planning/" class="sidebar-item-text sidebar-link">Planning</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/planning/ethics.html" class="sidebar-item-text sidebar-link">Ethics</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/planning/partners.html" class="sidebar-item-text sidebar-link">Partners</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/planning/funding.html" class="sidebar-item-text sidebar-link">Funding</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/planning/piloting.html" class="sidebar-item-text sidebar-link">Piloting</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/planning/criticism.html" class="sidebar-item-text sidebar-link">Criticism</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/planning/preanalysis-plan.html" class="sidebar-item-text sidebar-link">Preanalysis Plan</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../lifecycle/realization/" class="sidebar-item-text sidebar-link">Realization</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/realization/pivoting.html" class="sidebar-item-text sidebar-link">Pivoting</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/realization/populated-pap.html" class="sidebar-item-text sidebar-link">Populated preanalysis plan</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/realization/reconciliation.html" class="sidebar-item-text sidebar-link">Reconciliation</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/realization/writing.html" class="sidebar-item-text sidebar-link">Writing</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../lifecycle/integration/" class="sidebar-item-text sidebar-link">Integration</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/integration/communicating.html" class="sidebar-item-text sidebar-link">Communicating</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/integration/archiving.html" class="sidebar-item-text sidebar-link">Archiving</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/integration/reanalysis.html" class="sidebar-item-text sidebar-link">Reanalysis</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/integration/replication.html" class="sidebar-item-text sidebar-link">Replication</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/integration/meta-analysis.html" class="sidebar-item-text sidebar-link">Meta-analysis</a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../epilogue.html" class="sidebar-item-text sidebar-link">Epilogue</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#designingcode" id="toc-designingcode" class="nav-link active" data-scroll-target="#designingcode"> <span class="header-section-number">6</span> Designing in code</a>
+  <ul class="collapse">
+  <li><a href="#definition-of-research-designs" id="toc-definition-of-research-designs" class="nav-link" data-scroll-target="#definition-of-research-designs"> <span class="header-section-number">6.1</span> Definition of research designs</a></li>
+  <li><a href="#declaration-in-code" id="toc-declaration-in-code" class="nav-link" data-scroll-target="#declaration-in-code"> <span class="header-section-number">6.2</span> Declaration in code</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="designingcode" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Designing in code</h1>
+<p>In Chapter 2, we gave a high-level overview of our framework for describing research designs in terms of their models, inquiries, data strategies, and answer strategies, our process for diagnosing their properties, and a general purpose approach for improving them to better fit research goals. Now in this chapter, we place our approach on a firmer formal footing. We employ elements from Pearl’s <span class="citation" data-cites="pearl2009causality">(<a href="../references.html#ref-pearl2009causality" role="doc-biblioref">2009</a>)</span> approach to causal modeling, which provides a syntax for mapping design inputs to design outputs. We also use the potential outcomes framework as presented, for example, in <span class="citation" data-cites="Imbens2015">Imbens and Rubin (<a href="../references.html#ref-Imbens2015" role="doc-biblioref">2015</a>)</span>, which many social scientists use to clarify their inferential targets.</p>
+<p>Describing a research design in the <em>MIDA</em> framework allows us to see the fundamental symmetries across the theoretical (M and I) and empirical (D and A) halves of a research design. A recurring theme of our book is that research designs tend to be stronger when the relationship of M to I is mirrored by the relationship of D to A; the aim of this chapter is to make this somewhat abstract claim more concrete.</p>
+<section id="definition-of-research-designs" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="definition-of-research-designs"><span class="header-section-number">6.1</span> Definition of research designs</h2>
+<p>Research designs are defined by four elements: a model <em>M</em>, an inquiry <em>I</em>, a data strategy <em>D</em>, and an answer strategy <em>A</em>. Describing a research design entails “declaring” each of these four elements.</p>
+<p><em>M</em> is a set of possible models of how the world works. Following Pearl’s definition of a probabilistic causal model, a model in <em>M</em> contains three core elements. The first is the “signature” <span class="citation" data-cites="halpern2000">(<a href="../references.html#ref-halpern2000" role="doc-biblioref">Halpern 2000</a>)</span>, or the specification of the variables <span class="math inline">\(X\)</span> about which research is being conducted, including the endogenous and exogenous variables (<span class="math inline">\(V\)</span> and <span class="math inline">\(U\)</span> respectively) and their ranges. The second element (<span class="math inline">\(F\)</span>) is a specification of how each endogenous variable depends on other variables. These dependencies can be considered functional relations or, as in <span class="citation" data-cites="Imbens2015">Imbens and Rubin (<a href="../references.html#ref-Imbens2015" role="doc-biblioref">2015</a>)</span>, potential outcomes because they describe what <em>would</em> happen under different possible conditions. The third and final element is a probability distribution over exogenous variables, written as <span class="math inline">\(P(U)\)</span>. Sometimes it is useful to think of the draws from <span class="math inline">\(U\)</span> as implying distinct models of their own, in which case we might think of <em>M</em> as a family of models that fully specifies what would happen under all conditions and a particular model <span class="math inline">\(m\)</span> as an element of <em>M</em> that describes one of those conditions. We eschew the phrase “data generating process” when referring to <em>M</em> (since data are generated by the data strategy) and instead use the phrase “event generating process.”</p>
+<p>The <strong>inquiry</strong> <em>I</em> is a summary of the variables <span class="math inline">\(X\)</span>. All inquiries are either descriptive or causal. Descriptive inquiries are those that do not involve comparisons across counterfactual worlds, for example, the average value of an outcome Y over all N units in the population: <span class="math inline">\(\frac{\sum_i^N Y_i}{N}\)</span>. Causal inquiries do involve comparisons across counterfactuals, as in the average treatment effect: <span class="math inline">\(\frac{\sum_i^N Y_i(Z_i = 1) -Y_i(Z_i = 0)}{N}\)</span>.</p>
+<p>We let <span class="math inline">\(a_m\)</span> denote the answer to <em>I</em> <em>under the model</em>. Conditional on the model, <span class="math inline">\(a_m\)</span> is the value of the estimand, the quantity that the researcher wants to learn about, or would want to learn about if the world were like the model. The connection of <span class="math inline">\(a_m\)</span> to the model is given by: <span class="math inline">\(a_m = I(m)\)</span>.</p>
+<p>As the saying goes, models are wrong but some may be useful. We denote the <em>true</em> causal process as <span class="math inline">\(m^*\)</span>: the process that generates events in the real world. The <em>right</em> answer, then, is <span class="math inline">\(a_{m^*} = I(m^*)\)</span>. The answer under a reference model <span class="math inline">\(a_m\)</span> may be close or far from the true value <span class="math inline">\(a_{m^*}\)</span>, which is to say it could be wrong. If the model <span class="math inline">\(m\)</span> is far from <span class="math inline">\(m^*\)</span>, then of course <span class="math inline">\(a_m\)</span> need not be correct. Moreover <span class="math inline">\(a_{m^*}\)</span> might even be undefined, since inquiries can only be stated in terms of theoretical models. If the theoretical model is wrong enough—for instance it conditions on events that could not arise—then the inquiry might be nonsensical. For example, “what is the ideological slant of a speech that is not given” is an inquiry that is undefined.</p>
+<p>A <strong>data</strong> strategy <em>D</em> generates data <span class="math inline">\(d\)</span>. Data <span class="math inline">\(d\)</span> arises under model <em>M</em> with probability <span class="math inline">\(P_M(d|D)\)</span>. The data strategy includes sampling, assignment, and measurement strategies. Nearly all data strategies sample and measure, but not all assign treatments. Whether or not the data strategy includes assignment is the defining distinction between experimental and observational studies. When applied in the real world, the data strategy operates on <span class="math inline">\(m^*\)</span> to produce the realized data: <span class="math inline">\(D(m^*) = d^*\)</span>. When we simulate research designs, the data strategy operates on a simulated model draw <span class="math inline">\(m\)</span> to produce fabricated data: <span class="math inline">\(D(m) = d\)</span>.</p>
+<p>Finally, the <strong>answer</strong> strategy <em>A</em> generates answers using data. When applied to realized data, the answer strategy returns the empirical answer: <span class="math inline">\(A(d^*) = a_{d^*}\)</span>. When applied to simulated data, it returns a simulated answer: <span class="math inline">\(A(d) = a_{d}\)</span>.</p>
+<p>Table @ref(tab:elementsofresearchdesign) provides a concise description of each element of a research design and relates them to some common terms. We flag here that the term estimand has a slightly different meaning in our framework than elsewhere. We say that an estimand <span class="math inline">\(a_m\)</span> is the value of an inquiry <span class="math inline">\(I\)</span>, whereas in some traditions “estimand” can refer to the inquiry <span class="math inline">\(I\)</span> or to an intermediate parameter that happens to be targeted by an estimator.</p>
+<table class="table">
+<caption>(#tab:elementsofresearchdesign) Elements of research design.</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 43%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Notation</th>
+<th>Description</th>
+<th>Related terms</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>M</em></td>
+<td>a stipulated collection of causal models</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(m\)</span></td>
+<td>a single model in <span class="math inline">\(M\)</span>, represented by events</td>
+<td>a hypothetical data generating process</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(m^*\)</span></td>
+<td>the true model</td>
+<td>true data generating process</td>
+</tr>
+<tr class="even">
+<td><em>I</em></td>
+<td>the inquiry</td>
+<td>estimand, quantity of interest</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(a_m = I(m)\)</span></td>
+<td>the answer under the model, an estimand</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a_{m^*} = I(m^*)\)</span></td>
+<td>the true answer, the estimand</td>
+<td>quantity of interest</td>
+</tr>
+<tr class="odd">
+<td><em>D</em></td>
+<td>the data strategy</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(d = D(m)\)</span></td>
+<td>fabricated data; simulated data</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(d^* = D(m^*)\)</span></td>
+<td>realized data</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><em>A</em></td>
+<td>the answer strategy</td>
+<td>data analysis, estimator, method</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(a_{d} = A(d)\)</span></td>
+<td>a simulated answer, an estimate</td>
+<td>a hypothetical estimate</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a_{d^*} = A(d^*)\)</span></td>
+<td>the empirical answer, the estimate</td>
+<td>the observed estimate</td>
+</tr>
+</tbody>
+</table>
+<p>The full set of causal relationships between <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em>, with respect to <span class="math inline">\(m\)</span> and <span class="math inline">\(m^*\)</span>, <span class="math inline">\(a_m\)</span> and <span class="math inline">\(a_{m^*}\)</span>, <span class="math inline">\(d\)</span> and <span class="math inline">\(d^*\)</span>, and <span class="math inline">\(a_d\)</span> and <span class="math inline">\(a_{d^*}\)</span> can be seen in the schematic representation of a research design given in Figure @ref(fig:worldandtheory). The figure illustrates how a research design involves a correspondence between <span class="math inline">\(I(m) = a_m\)</span> and <span class="math inline">\(A(d) = a_d\)</span>. The theoretical half of a research design produces an answer to the inquiry <em>in theory</em>. The empirical half of a research design produces an <em>empirical estimate</em> of the answer to the inquiry. Neither answer is necessarily close to the truth <span class="math inline">\(a_{m^*}\)</span>, of course. And, as shown in the figure, the truth is not directly accessible either to us in theory or in empirics. Our gamble in empirical research, however, is that our theoretical models are close enough to the truth; that the truth is like the set of models we imagine. If the models in <span class="math inline">\(M\)</span> do not contain <span class="math inline">\(m^*\)</span> or are too different from it, then even seemingly strong research designs could yield incorrect answers.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/figure_2.1.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">The <em>MIDA</em> framework</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Figure @ref(fig:worldandtheory) reveals a striking analogy between the <em>M</em>, <em>I</em> relationship and the <em>D</em>, <em>A</em> relationship. The answer we aim for (the estimand) is obtained by applying <em>I</em> to a draw from <em>M</em>. The answer we have access to (the estimate) is obtained by applying <em>A</em> to a draw from <em>D</em>. Our hope, usually, is that these two answers are quite similar. In some cases, this parallelism suggests that the function <em>A</em> should be “like” the function <em>I</em>. For instance, if we are interested in the mean of a population and we have access to a random sample, the data available to us from <em>D</em> is like the ideal data we would have if we could observe the nodes and edges in <em>M</em> directly.</p>
+<p>Finally, in Figure @ref(fig:worldandtheory) no arrows go into <em>M</em>, <em>I</em>, <em>D</em>, or <em>A</em>, since they are not caused by any of the other nodes. We could have included a node for the research designer, who deliberately sets the details of <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em>, but we omit it for clarity.</p>
+</section>
+<section id="declaration-in-code" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="declaration-in-code"><span class="header-section-number">6.2</span> Declaration in code</h2>
+<p>Table @ref(tab:midarealizations) illustrates these different quantities through <code>DeclareDesign</code>. We stipulate a model, <span class="math inline">\(M\)</span>, in which <span class="math inline">\(Y\)</span> depends on <span class="math inline">\(X\)</span>. We define a inquiry, <span class="math inline">\(I\)</span>: what is the average value of <span class="math inline">\(Y\)</span> when <span class="math inline">\(X=1\)</span>? We calculate what the value of our inquiry (the estimand) would be under one of our simulated models, <span class="math inline">\(I(m)\)</span>. We also imagine we could describe how the world in fact is, <span class="math inline">\(m^*\)</span>, and calculate what the right answer would be in that case, <span class="math inline">\(a_{m^*}\)</span>. We then apply the data strategy <span class="math inline">\(D\)</span> to produce realized data <span class="math inline">\(d^*\)</span> and use an answer strategy <span class="math inline">\(A\)</span> and use it to calculate the answer <span class="math inline">\(a_d^*\)</span> we would get given <span class="math inline">\(d^*\)</span>.</p>
+<p>For each of these steps we show DeclareDesign code in the first column. In the second column, we show the simulated <span class="math inline">\(m\)</span>, <span class="math inline">\(m^*\)</span>, and <span class="math inline">\(d^*\)</span> datasets, along with the values of <span class="math inline">\(a_m\)</span>, <span class="math inline">\(a_{m^*}\)</span>, and <span class="math inline">\(a_{d^*}\)</span> for one run of the simulation.</p>
+<table class="table">
+<caption>(#tab:midarealizations) Elements of research design in code.</caption>
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Draw</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code>M &lt;- declare_model(N = 1000,
+  U = rnorm(N),
+  X = rbinom(N, 1, prob = pnorm(U)),
+  Y = rbinom(N, 1, prob = pnorm(U + X)))
+m &lt;- M()</code></pre></td>
+<td><img src="../figures/ch6-m.svg" title="fig:" class="img-fluid" style="width:100.0%" alt="Draw of events from m"></td>
+</tr>
+<tr class="even">
+<td><pre><code>I &lt;- declare_inquiry(Ybar = mean(Y[X==1]))
+a_m &lt;- I(m)</code></pre></td>
+<td><img src="../figures/ch6-am.svg" title="fig:" class="img-fluid" style="width:100.0%" alt="Draw of am"></td>
+</tr>
+<tr class="odd">
+<td><pre><code>mstar &lt;- fabricate(N = 1000,
+  U = rnorm(N),
+  X = rbinom(N, 1, prob = pnorm(U)),
+  Y = rbinom(N, 1, prob = pnorm(U)))</code></pre></td>
+<td><img src="../figures/ch6-mstar.svg" title="fig:" class="img-fluid" style="width:100.0%" alt="Draw of events from mstar"></td>
+</tr>
+<tr class="even">
+<td><pre><code>a_mstar &lt;- I(mstar)</code></pre></td>
+<td><img src="../figures/ch6-amstar.svg" title="fig:" class="img-fluid" style="width:100.0%" alt="Draw of amstar"></td>
+</tr>
+<tr class="odd">
+<td><pre><code>D &lt;- declare_sampling(
+  S = simple_rs(N, prob = 0.1))
+dstar &lt;- D(mstar)</code></pre></td>
+<td><img src="../figures/ch6-dstar.svg" title="fig:" class="img-fluid" style="width:100.0%" alt="Draw of dstar"></td>
+</tr>
+<tr class="even">
+<td><pre><code>A &lt;- declare_estimator(
+ Y ~ 1, .method = lm_robust,
+ subset = X == 1, inquiry = "Ybar")
+a_dstar &lt;- A(dstar)</code></pre></td>
+<td><img src="../figures/ch6-adstar.svg" title="fig:" class="img-fluid" style="width:100.0%" alt="Draw of adstar"></td>
+</tr>
+</tbody>
+</table>
+<p>As described in the getting started guide in <a href="@\ref(getting-started)">Chapter 4</a>, we concatenate the design steps into a full design declaration using the <code>+</code> operator:</p>
+<div id="declaration-5-1" class="definition">
+<p>Example declaration</p>
+<div class="cell" data-file="scripts_declarations/declaration_5.1.R">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>declaration_5<span class="fl">.1</span> <span class="ot">&lt;-</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_model</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">N =</span> <span class="dv">1000</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">U =</span> <span class="fu">rnorm</span>(N),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">X =</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="at">prob =</span> <span class="fu">pnorm</span>(U)),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y =</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="at">prob =</span> <span class="fu">pnorm</span>(U <span class="sc">+</span> X))</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_inquiry</span>(<span class="at">Ybar =</span> <span class="fu">mean</span>(Y[X <span class="sc">==</span> <span class="dv">1</span>])) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_sampling</span>(<span class="at">S =</span> <span class="fu">simple_rs</span>(N, <span class="at">prob =</span> <span class="fl">0.1</span>)) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_estimator</span>(Y <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">.method =</span> lm_robust,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">subset =</span> X <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                    <span class="at">inquiry =</span> <span class="st">"Ybar"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This design declaration includes a specification of all four design elements: model, inquiry, data strategy, and answer strategy. The next four chapters will describe each of these four design elements in great detail. For now, notice that the declaration does not include a specification of <span class="math inline">\(m^*\)</span> (the true causal model), only <span class="math inline">\(M\)</span>, a model we entertain for research planning purposes.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-halpern2000" class="csl-entry" role="doc-biblioentry">
+Halpern, Joseph Y. 2000. <span>“Axiomatizing Causal Reasoning.”</span> <em>Journal of Artificial Intelligence Research</em> 12: 317–37.
+</div>
+<div id="ref-Imbens2015" class="csl-entry" role="doc-biblioentry">
+Imbens, Guido W., and Donald B. Rubin. 2015. <em>Causal Inference in Statistics, Social, and Biomedical Sciences</em>. Cambridge: Cambridge University Press.
+</div>
+<div id="ref-pearl2009causality" class="csl-entry" role="doc-biblioentry">
+Pearl, Judea. 2009. <em>Causality: Models, Reasoning and Inference</em>. Second Edition. Cambridge: Cambridge University Press.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../introduction/getting-started.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../declaration-diagnosis-redesign/specifying-model.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">Copyright 2022 Graeme Blair, Alexander Coppock, and Macartan Humphreys</div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.613">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Research Design - Conjoint experiments</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../library/experimental-descriptive/behavioral-games.html" rel="next">
+<link href="../../library/experimental-descriptive/list-experiments.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Conjoint experiments</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Research Design</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../introduction/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../library/" class="sidebar-item-text sidebar-link">Research design library</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../library/observational-descriptive/" class="sidebar-item-text sidebar-link">Observational : descriptive</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-descriptive/simple-random-sampling.html" class="sidebar-item-text sidebar-link">Simple random sampling</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-descriptive/cluster-random-sampling.html" class="sidebar-item-text sidebar-link">Cluster random sampling</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-descriptive/multilevel-regression-poststratification.html" class="sidebar-item-text sidebar-link">Multi-level regression and poststratification</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-descriptive/index-creation.html" class="sidebar-item-text sidebar-link">Index creation</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../library/observational-causal/" class="sidebar-item-text sidebar-link">Observational : causal</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link">Process tracing</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link">Selection-on-observables</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link">Difference-in-differences</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link">Instrumental variables</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-causal/regression-discontinuity.html" class="sidebar-item-text sidebar-link">Regression discontinuity designs</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../library/experimental-descriptive/" class="sidebar-item-text sidebar-link">Experimental : descriptive</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-descriptive/audit-experiments.html" class="sidebar-item-text sidebar-link">Audit experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-descriptive/list-experiments.html" class="sidebar-item-text sidebar-link">List experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-descriptive/conjoint-experiments.html" class="sidebar-item-text sidebar-link active">Conjoint experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-descriptive/behavioral-games.html" class="sidebar-item-text sidebar-link">Behavioral games</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../library/experimental-causal/" class="sidebar-item-text sidebar-link">Experimental : causal</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/two-arm-randomized-experiments.html" class="sidebar-item-text sidebar-link">Two-arm randomized experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/block-randomized-designs.html" class="sidebar-item-text sidebar-link">Block-randomized experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/cluster-randomized-designs.html" class="sidebar-item-text sidebar-link">Cluster-randomized experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/subgroup-designs.html" class="sidebar-item-text sidebar-link">Subgroup designs</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/factorial-designs.html" class="sidebar-item-text sidebar-link">Factorial experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/encouragement-designs.html" class="sidebar-item-text sidebar-link">Encouragement designs</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/placebo-controlled-experiments.html" class="sidebar-item-text sidebar-link">Placebo-controlled experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/stepped-wedge-designs.html" class="sidebar-item-text sidebar-link">Stepped-wedge experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/randomized-saturation-designs.html" class="sidebar-item-text sidebar-link">Randomized saturation experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/experiments-over-networks.html" class="sidebar-item-text sidebar-link">Experiments over networks</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../library/complex/" class="sidebar-item-text sidebar-link">Complex</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/complex/discovery-causal-forests.html" class="sidebar-item-text sidebar-link">Discovery using causal forests</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/complex/structural-estimation.html" class="sidebar-item-text sidebar-link">Structural estimation</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/complex/meta-analysis.html" class="sidebar-item-text sidebar-link">Meta-analysis</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/complex/multi-site-studies.html" class="sidebar-item-text sidebar-link">Multi-site studies</a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../lifecycle/planning/" class="sidebar-item-text sidebar-link">Planning</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/planning/ethics.html" class="sidebar-item-text sidebar-link">Ethics</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/planning/partners.html" class="sidebar-item-text sidebar-link">Partners</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/planning/funding.html" class="sidebar-item-text sidebar-link">Funding</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/planning/piloting.html" class="sidebar-item-text sidebar-link">Piloting</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/planning/criticism.html" class="sidebar-item-text sidebar-link">Criticism</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/planning/preanalysis-plan.html" class="sidebar-item-text sidebar-link">Preanalysis Plan</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../lifecycle/realization/" class="sidebar-item-text sidebar-link">Realization</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/realization/pivoting.html" class="sidebar-item-text sidebar-link">Pivoting</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/realization/populated-pap.html" class="sidebar-item-text sidebar-link">Populated preanalysis plan</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/realization/reconciliation.html" class="sidebar-item-text sidebar-link">Reconciliation</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/realization/writing.html" class="sidebar-item-text sidebar-link">Writing</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../lifecycle/integration/" class="sidebar-item-text sidebar-link">Integration</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/integration/communicating.html" class="sidebar-item-text sidebar-link">Communicating</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/integration/archiving.html" class="sidebar-item-text sidebar-link">Archiving</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/integration/reanalysis.html" class="sidebar-item-text sidebar-link">Reanalysis</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/integration/replication.html" class="sidebar-item-text sidebar-link">Replication</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/integration/meta-analysis.html" class="sidebar-item-text sidebar-link">Meta-analysis</a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../epilogue.html" class="sidebar-item-text sidebar-link">Epilogue</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#design-examples" id="toc-design-examples" class="nav-link active" data-scroll-target="#design-examples">Design examples</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Conjoint experiments</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="ddbox">
+<p>We declare a forced-choice conjoint experiment design in which respondents choose one of two profiles in three sets of tasks, each with three attributes. The design highlights the complexity of defining the inquiries for conjoints, and their lower power at common sample sizes.</p>
+</div>
+<p>Conjoint survey experiments have become hugely popular in political science and beyond for describing multidimensional preferences over profiles <span class="citation" data-cites="Hainmueller2014">(<a href="../../references.html#ref-Hainmueller2014" role="doc-biblioref">Hainmueller, Hopkins, and Yamamoto 2014</a>)</span>. The designs have been used to study preferences over political candidates, types of immigrants to admit, neighborhoods to live in, policies to select, and many more questions. Conjoint experiments come in two basic varieties: the single profile design and the forced-choice design. Throughout this chapter, we’ll discuss these studies in the context of hypothetical candidate experiments, in which candidates are described in terms of a number of attributes each of which can take on multiple values, known as levels. In the single profile design, subjects are asked to rate one profile at a time using, for example, a 1 - 7 support scale. In a forced-choice conjoint experiment, subjects are shown two profiles at a time, then asked to make a binary choice between them. Forced choice conjoint experiments are especially useful for studying electoral behavior because they closely mirror the real-world behavior of choosing between two candidates at the ballot box. A similar logic applies to purchasing behavior when consumers have to choose one product over another. Occasionally, forced-choice conjoint experiments are applied even when no real-world analogue for the binary choice exists. For example, we rarely face a binary choice between two immigrants or between two refugees.</p>
+<p>We take the unorthodox position that conjoint experiments target descriptive, rather than casual inquiries. The reason can be most easily seen in the single profile design case. For concreteness, imagine subjects are presented with one profile at a time that describes the age (young, middle-aged, old), gender (woman, man), and employment sector (public, private) of a candidate for office and are asked to rate their support for the candidate on a 1-7 Likert scale. This set of attributes and levels generates 2 * 3 * 2 = 12 possible profiles. We <em>could</em> ask subjects to rate all 12, but we typically ask them instead to rate only a random subset. If our goal were to estimate the average ratings of each of the 12 profiles, clearly we would be targeting descriptive quantities.</p>
+<p>The most common inquiry in conjoint experimentation is the Average Marginal Component Effect or AMCE, which summarizes the average difference in preference between two levels of one attribute, averaging over all of the levels of the other attributes. The AMCE for gender, for example, considers the average difference in preference for women candidates versus men candidates among young candidates who work in the private sector, among middle-aged candidates who work in the public sector, and so on for all six combinations. The overall AMCE is a weighted average of all six of these average preference differences, where the weights are given by the relative frequency of each type of candidate. Despite its name, we think of the AMCE as a descriptive quantity. We of course agree there is a sense in which the AMCE is a causal quantity, since it is the average effect on preferences of describing a hypothetical candidate as a man or a woman. But we can see this quantity as descriptive if we just imagine asking subjects about both candidates and describing the difference in their preferences. We then could aggregate these descriptive differences across profiles. The only reason we don’t ask about all possible profiles is that there are far too many to get through in a typical survey, so we ask subjects about a random subset.</p>
+<p>Just like single-profile conjoints, forced-choice conjoints also target descriptive inquiries, but the inquiry is one step removed from raw preferences over profiles. Instead, we aim to describe the fraction of pairwise contests that a profile would win, averaging over all subjects in the experiment. That is, we aim to describe a profile’s average win rate. We can further describe the differences in the average win rate across profiles, for example, among young candidates who work in the private sector, what is the average difference in win rates for women versus men? Just as in the single profile case, the AMCE is a weighted average of these differences, weighted by the relative frequency of each type of candidate.</p>
+<p>Here again, we <em>could</em> think of the AMCE as a causal effect, i.e., the average effect of describing a profile as a woman versus a man. But we can also imagine asking subjects to consider all 12 * 12 = 144 possible pairwise contests, then using those binary choices to fully describe subjects preferences over contests. A forced-choice conjoint asks subjects to rate just a random subset of those contests, since asking about all of them would be impractical.</p>
+<p>One final wrinkle about the AMCE inquiries, in both the single-profile and forced-choice cases: they are “data-strategy-dependent” inquiries in the sense that, AMCEs average over the distribution of the other profile attributes, and that distribution is controlled by the researcher.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The AMCE of gender for profiles that do not include partisanship is different from the AMCE of gender for profiles that include partisanship due to masking (discussed below). Further, and more subtly, the AMCE of gender for profiles that are 75% public sector and 25% private sector is different from the AMCE of gender for profiles that are 50% public sector and 50% private sector, because those relative frequencies are part of the very definition of the inquiry. For contrast, consider a vignette-style hypothetical candidate experiment in which all or most of the other candidate features are fixed, save gender. In that design, we estimate an ATE of gender under only one set of conditions, but in the conjoint design, the AMCE averages over ATEs under many sets of conditions. There is a great benefit of doing so: our inferences are not specific to that one set of conditions. But it also means that what conditions inferences depends crucially on researcher choices about which characteristics are chosen and the randomization scheme.</p>
+<p>The data strategy for conjoints, then, requires making these four choices, in addition to the usual measurement, sampling, and assignment concerns:</p>
+<ol type="1">
+<li>Which attributes to include in the profiles,</li>
+<li>Which levels to include in each attribute (and in what proportion),</li>
+<li>How many profiles subjects are asked to rate at a time, and</li>
+<li>How many sets of profiles subjects are asked to rate in total.</li>
+</ol>
+<p>The right set of attributes is governed by the “masking/satisficing” tradeoff <span class="citation" data-cites="bansak_hainmueller_hopkins_yamamoto_2019">(<a href="../../references.html#ref-bansak_hainmueller_hopkins_yamamoto_2019" role="doc-biblioref">Bansak et al. 2021</a>)</span>. If we don’t include an important attribute (like partisanship in a candidate choice experiment), we’re worried that subjects will partially infer partisanship from other attributes (like race or gender). If so, partisanship is “masked”, and the estimates for the effects of race or gender will be biased by these “omitted variables.” But if we include too many attributes in order to avoid masking, we may induce “satisficing” among subjects, whereby they only take in a little bit of information, enough to make a “good enough” choice among the candidates.</p>
+<p>The right set of levels to include is a tricky choice. We want to include all of the most important levels, but every additional level harms statistical precision. If an attribute has three levels, it’s like we’re conducting a three-arm trial, so we’ll want to have enough subjects for each arm. The more levels, the lower the precision.</p>
+<p>How many profiles to rate at the same time is also tricky. Our point of view is that this choice should be guided by the real-world analogue of the survey task. If we’re learning about binary choices between options in the real world, then the forced-choice, paired design makes good sense. If we’re learning about preferences over many possibilities, the single profile design may be more appropriate. That said, the paired design can yield precision gains over the single profile design in the sense that subjects rate two profiles at the same time, so we effectively generate twice as many observations for perhaps less than twice as much cognitive effort.</p>
+<p>Finally, the right number of choice tasks usually depends on the survey budget. We can always add more conjoint tasks and the only cost is the opportunity cost of asking a different question of the survey that may serve another scientific purpose. If we’re worried that respondents will get bored with the task, we can always throw out profile pairs that come later in the survey. <span class="citation" data-cites="bansak_hainmueller_hopkins_yamamoto_2019">Bansak et al. (<a href="../../references.html#ref-bansak_hainmueller_hopkins_yamamoto_2019" role="doc-biblioref">2021</a>)</span> suggest that you can ask many tasks without much loss of data quality.</p>
+<p>The declaration of conjoint experiments is complex, so we provide a series of helper functions specifically for forced-choice conjoint design in the <code>rdddr</code> companion software package.</p>
+<p>We begin by establishing the number of subjects and the number of tasks they will accomplish. We then establish the attributes and their levels (this design assumes complete random assignment of all attributes with equal probabilities). Finally, we describe a utility function that governs subject preferences. This function can be simple, as we have it here, or it can be complex, building in differences in preferences by subject type or other details.</p>
+<p>In Declaration @ref(def:declaration-17-5), we imagine a forced-choice candidate choice conjoint in which the attributes are gender, party, and region. We sample 500 subjects and ask them to complete three tasks each.</p>
+<div id="declaration-17-5" class="definition">
+<p>Conjoint experiment design</p>
+<div class="cell" data-file="scripts_declarations/declaration_17.5.R">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rdddr) <span class="co"># for helper functions</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cjoint)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: sandwich</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: lmtest</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: zoo</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Attaching package: 'zoo'</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     as.Date, as.Date.numeric</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: survey</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: grid</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: Matrix</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Attaching package: 'Matrix'</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following objects are masked from 'package:tidyr':</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     expand, pack, unpack</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: survival</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Attaching package: 'survey'</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following object is masked from 'package:dagitty':</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     neighbours</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following object is masked from 'package:graphics':</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     dotchart</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; cjoint: AMCE Estimator for Conjoint Experiments</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Version: 2.1.0</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Authors: Soubhik Barari, Elissa Berwick, Jens Hainmueller, Daniel Hopkins, Sean Liu, Anton Strezhnev, Teppei Yamamoto</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Attaching package: 'cjoint'</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following object is masked from 'package:tibble':</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     view</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Design features</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>N_subjects <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>N_tasks <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Attributes and levels</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>levels_list <span class="ot">=</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">gender =</span> <span class="fu">c</span>(<span class="st">"Man"</span>, <span class="st">"Woman"</span>),</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">party =</span> <span class="fu">c</span>(<span class="st">"Left"</span>, <span class="st">"Right"</span>),</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">region =</span> <span class="fu">c</span>(<span class="st">"North"</span>, <span class="st">"South"</span>, <span class="st">"East"</span>, <span class="st">"West"</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Conjectured utility function</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>conjoint_utility <span class="ot">&lt;-</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  <span class="cf">function</span>(data){</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    data <span class="sc">|&gt;</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">U =</span> <span class="fl">0.25</span><span class="sc">*</span>(gender <span class="sc">==</span> <span class="st">"Woman"</span>)<span class="sc">*</span>(region <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"North"</span>, <span class="st">"East"</span>)) <span class="sc">+</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>               <span class="fl">0.5</span><span class="sc">*</span>(party <span class="sc">==</span> <span class="st">"Right"</span>)<span class="sc">*</span>(region <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"North"</span>, <span class="st">"South"</span>)) <span class="sc">+</span> uij)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>declaration_17<span class="fl">.5</span> <span class="ot">&lt;-</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_model</span>(</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">subject =</span> <span class="fu">add_level</span>(<span class="at">N =</span> N_subjects),</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">task =</span> <span class="fu">add_level</span>(<span class="at">N =</span> N_tasks, <span class="at">task =</span> <span class="dv">1</span><span class="sc">:</span>N_tasks),</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">profile =</span> <span class="fu">add_level</span>(</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>      <span class="at">N =</span> <span class="dv">2</span>,</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      <span class="at">profile =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>      <span class="at">uij =</span> <span class="fu">rnorm</span>(N, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_inquiry</span>(<span class="at">handler =</span> conjoint_inquiries,</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>                  <span class="at">levels_list =</span> levels_list,</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>                  <span class="at">utility_fn =</span> conjoint_utility) <span class="sc">+</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_assignment</span>(<span class="at">handler =</span> conjoint_assignment,</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>                     <span class="at">levels_list =</span> levels_list) <span class="sc">+</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_measurement</span>(<span class="at">handler =</span> conjoint_measurement,</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>                      <span class="at">utility_fn =</span> conjoint_utility) <span class="sc">+</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_estimator</span>(choice <span class="sc">~</span> gender <span class="sc">+</span> party <span class="sc">+</span> region,</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>                    <span class="at">respondent.id =</span> <span class="st">"subject"</span>,</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>                    <span class="at">.method =</span> amce)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="diagnosis-17-4" class="lemma">
+<p>Diagnosis of the conjoint experiment design</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>diagnosis_17<span class="fl">.4</span> <span class="ot">&lt;-</span> <span class="fu">diagnose_design</span>(declaration_17<span class="fl">.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Figure @ref(fig:figure-17-3) shows the sampling distribution of the five AMCE estimators. All five are unbiased, but with only 500 subjects evaluating three pairs of candidates, the power for the smaller AMCEs is less than ideal.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/figure_17.3.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Sampling Distribution of five AMCE estimators. Statistical significance of estimates indicated by color</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<section id="design-examples" class="level2">
+<h2 class="anchored" data-anchor-id="design-examples">Design examples</h2>
+<ul>
+<li><p><span class="citation" data-cites="Kao2022">Kao and Revkin (<a href="../../references.html#ref-Kao2022" role="doc-biblioref">2022</a>)</span> uses a conjoint experiment in an Iraqi city that was controlled by the Islamic State to understand residents’ preferences over punishments for civilian collaborators, depending on the type of collaboration they engaged in.</p></li>
+<li><p><span class="citation" data-cites="aguilar2015">Aguilar, Cunow, and Desposato (<a href="../../references.html#ref-aguilar2015" role="doc-biblioref">2015</a>)</span> conduct a candidate choice experiment to measure the difference in how voters evaluate candidates depending on whether they are identified as a man or a woman in Brazil.</p></li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-aguilar2015" class="csl-entry" role="doc-biblioentry">
+Aguilar, Rosario, Saul Cunow, and Scott Desposato. 2015. <span>“Choice Sets, Gender, and Candidate Choice in Brazil.”</span> <em>Electoral Studies</em> 39: 230–42. https://doi.org/<a href="https://doi.org/10.1016/j.electstud.2015.03.011">https://doi.org/10.1016/j.electstud.2015.03.011</a>.
+</div>
+<div id="ref-bansak_hainmueller_hopkins_yamamoto_2019" class="csl-entry" role="doc-biblioentry">
+Bansak, Kirk, Jens Hainmueller, Daniel J. Hopkins, and Teppei Yamamoto. 2021. <span>“Beyond the Breaking Point? Survey Satisficing in Conjoint Experiments.”</span> <em>Political Science Research and Methods</em> 9 (1): 53–71.
+</div>
+<div id="ref-Hainmueller2014" class="csl-entry" role="doc-biblioentry">
+Hainmueller, Jens, Daniel J. Hopkins, and Teppei Yamamoto. 2014. <span>“<span class="nocase">Causal Inference in Conjoint Analysis: Understanding Multidimensional Choices via Stated Preference Experiments</span>.”</span> <em>Political Analysis</em> 22 (1): 1–30.
+</div>
+<div id="ref-Kao2022" class="csl-entry" role="doc-biblioentry">
+Kao, Kristen, and Mara R. Revkin. 2022. <span>“Retribution or Reconciliation? Post-Conflict Attitudes Toward Enemy Collaborators.”</span> <em>American Journal of Political Science</em>.
+</div>
+</div>
+</section>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>The AMCE need not be data-dependent. We could write down one distribution of profiles in the model to establish the AMCE inquiry, then randomly sample the profiles shown to respondents for a different distribution. This would be a headache, because the estimator would need to be reweighted to successfully target the AMCE inquiry. Better to bring the data strategy in line with the model in the first place.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../library/experimental-descriptive/list-experiments.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">List experiments</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../library/experimental-descriptive/behavioral-games.html" class="pagination-link">
+        <span class="nav-page-text">Behavioral games</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">Copyright 2022 Graeme Blair, Alexander Coppock, and Macartan Humphreys</div>
+  </div>
+</footer>
+
+
+
+</body></html>

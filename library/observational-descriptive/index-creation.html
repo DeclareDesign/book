@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.613">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Research Design - Index creation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../library/observational-causal/" rel="next">
+<link href="../../library/observational-descriptive/multilevel-regression-poststratification.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Index creation</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Research Design</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../introduction/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../library/" class="sidebar-item-text sidebar-link">Research design library</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../library/observational-descriptive/" class="sidebar-item-text sidebar-link">Observational : descriptive</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-descriptive/simple-random-sampling.html" class="sidebar-item-text sidebar-link">Simple random sampling</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-descriptive/cluster-random-sampling.html" class="sidebar-item-text sidebar-link">Cluster random sampling</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-descriptive/multilevel-regression-poststratification.html" class="sidebar-item-text sidebar-link">Multi-level regression and poststratification</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-descriptive/index-creation.html" class="sidebar-item-text sidebar-link active">Index creation</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../library/observational-causal/" class="sidebar-item-text sidebar-link">Observational : causal</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link">Process tracing</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link">Selection-on-observables</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link">Difference-in-differences</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link">Instrumental variables</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/observational-causal/regression-discontinuity.html" class="sidebar-item-text sidebar-link">Regression discontinuity designs</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../library/experimental-descriptive/" class="sidebar-item-text sidebar-link">Experimental : descriptive</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-descriptive/audit-experiments.html" class="sidebar-item-text sidebar-link">Audit experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-descriptive/list-experiments.html" class="sidebar-item-text sidebar-link">List experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-descriptive/conjoint-experiments.html" class="sidebar-item-text sidebar-link">Conjoint experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-descriptive/behavioral-games.html" class="sidebar-item-text sidebar-link">Behavioral games</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../library/experimental-causal/" class="sidebar-item-text sidebar-link">Experimental : causal</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/two-arm-randomized-experiments.html" class="sidebar-item-text sidebar-link">Two-arm randomized experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/block-randomized-designs.html" class="sidebar-item-text sidebar-link">Block-randomized experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/cluster-randomized-designs.html" class="sidebar-item-text sidebar-link">Cluster-randomized experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/subgroup-designs.html" class="sidebar-item-text sidebar-link">Subgroup designs</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/factorial-designs.html" class="sidebar-item-text sidebar-link">Factorial experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/encouragement-designs.html" class="sidebar-item-text sidebar-link">Encouragement designs</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/placebo-controlled-experiments.html" class="sidebar-item-text sidebar-link">Placebo-controlled experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/stepped-wedge-designs.html" class="sidebar-item-text sidebar-link">Stepped-wedge experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/randomized-saturation-designs.html" class="sidebar-item-text sidebar-link">Randomized saturation experiments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/experimental-causal/experiments-over-networks.html" class="sidebar-item-text sidebar-link">Experiments over networks</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../library/complex/" class="sidebar-item-text sidebar-link">Complex</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/complex/discovery-causal-forests.html" class="sidebar-item-text sidebar-link">Discovery using causal forests</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/complex/structural-estimation.html" class="sidebar-item-text sidebar-link">Structural estimation</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/complex/meta-analysis.html" class="sidebar-item-text sidebar-link">Meta-analysis</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../library/complex/multi-site-studies.html" class="sidebar-item-text sidebar-link">Multi-site studies</a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../lifecycle/planning/" class="sidebar-item-text sidebar-link">Planning</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/planning/ethics.html" class="sidebar-item-text sidebar-link">Ethics</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/planning/partners.html" class="sidebar-item-text sidebar-link">Partners</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/planning/funding.html" class="sidebar-item-text sidebar-link">Funding</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/planning/piloting.html" class="sidebar-item-text sidebar-link">Piloting</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/planning/criticism.html" class="sidebar-item-text sidebar-link">Criticism</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/planning/preanalysis-plan.html" class="sidebar-item-text sidebar-link">Preanalysis Plan</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../lifecycle/realization/" class="sidebar-item-text sidebar-link">Realization</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/realization/pivoting.html" class="sidebar-item-text sidebar-link">Pivoting</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/realization/populated-pap.html" class="sidebar-item-text sidebar-link">Populated preanalysis plan</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/realization/reconciliation.html" class="sidebar-item-text sidebar-link">Reconciliation</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/realization/writing.html" class="sidebar-item-text sidebar-link">Writing</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="../../lifecycle/integration/" class="sidebar-item-text sidebar-link">Integration</a>
+      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/integration/communicating.html" class="sidebar-item-text sidebar-link">Communicating</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/integration/archiving.html" class="sidebar-item-text sidebar-link">Archiving</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/integration/reanalysis.html" class="sidebar-item-text sidebar-link">Reanalysis</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/integration/replication.html" class="sidebar-item-text sidebar-link">Replication</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lifecycle/integration/meta-analysis.html" class="sidebar-item-text sidebar-link">Meta-analysis</a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../epilogue.html" class="sidebar-item-text sidebar-link">Epilogue</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#design-examples" id="toc-design-examples" class="nav-link active" data-scroll-target="#design-examples">Design examples</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Index creation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="ddbox">
+<p>We declare a design is which we take multiple measures and combine them to learn about a latent, unobservable quantity. The design diagnosis shows that it is possible to generate interpretable conditional estimates of this quantity and assess bias even though the metric of the unobservable quantity is unknown. The diagnosis highlights how subtle differences in scale construction generate different biases.</p>
+</div>
+<p>Models often specify a latent variable (<code>Y_star</code>) that we can’t observe directly. The measurement procedures we use to produce observed variables (<code>Y_1</code>, <code>Y_2</code>, <code>Y_3</code>) are not perfect: observed values may be related to the latent variables but are often on different scales. A common strategy for addressing measurement error is to combine multiple measures of the same latent variable into an index. The basic intuition for this procedure is that when we combine multiple measures, the errors attending to each measure will tend to cancel one another out. When this happens, the index itself has lower measurement error than any of the constituent parts.</p>
+<p>The first difficult feature of such problems is that we do not have access to the <em>scale</em> on which <code>Y_star</code> is measured and so it may seem like a hopeless exercise to try to assess whether we have got good or bad estimates of <code>Y_star</code> when we combine the measured data.</p>
+<p>One way around this is to normalize the scale of both the latent variable and the measured variable so that they have a mean of zero and a standard deviation of one. But in that case, we are guaranteed that our estimate of the mean of the normalized variable will be unbiased because we will certainly estimate a mean of 0! That may be — but as we show in the declaration below, if your model is correct this approach may still be useful for calculating other quantities (such as conditional means) that you don’t just get right by construction.</p>
+<p>A second challenge is deciding which measurements to combine into the index. We clearly only want to create indices using measurements of the same latent variable, but it can hard to be sure which latent variable, exactly, is being measured. Just relying on whether the measurements are positively correlated or not is not sufficient, because measurements can be correlated even if they are not measurements of the same underlying variable. Ultimately we have to rely on theory to make these decisions, as uncomfortable as that may make us.</p>
+<p>In Declaration @ref(def:declaration-15-6), our inquiry is the average level of the latent variable among units whose binary covariate <code>X</code> is equal to one.</p>
+<p>In the declaration below <code>Y_star</code> has a normal distribution but it is not centered on zero. The measured variables <code>Y_1</code>, <code>Y_2</code>, <code>Y_3</code> are also normally distributed but each has its own scale; they are all related to <code>Y_star</code>, though some more strongly than others. Many procedures for combining these measured variables into an index exist. Here we’ll consider a few of the common approaches:</p>
+<ul>
+<li><p><code>Y_avg</code> is constructed by first scaling each of these measured variables, then averaging and then scaling again. This is akin to the approach used in <span class="citation" data-cites="kling2007experimental">Kling, Liebman, and Katz (<a href="../../references.html#ref-kling2007experimental" role="doc-biblioref">2007</a>)</span>.</p></li>
+<li><p><code>Y_avg_adjusted</code> is the same as <code>Y_avg</code>, but we scale the measured values by the units with <code>X = 0</code>.</p></li>
+<li><p><code>Y_avg_rescaled</code> is the same as <code>Y_avg</code>, but instead of taking an equally-weighted average of the scaled components, we rescale their sum by its mean and standard deviation.</p></li>
+<li><p><code>Y_first_factor</code> extracts the first factor from a ‘principal components analysis’ which, intuitively, seeks to find a weighting that minimizes the distance to the measured variables.</p></li>
+</ul>
+<div id="declaration-15-6" class="definition">
+<p>Latent variable design</p>
+<div class="cell" data-file="scripts_declarations/declaration_15.6.R">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>declaration_15<span class="fl">.6</span> <span class="ot">&lt;-</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_model</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">N =</span> <span class="dv">500</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">X =</span> <span class="fu">rep</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, N <span class="sc">/</span> <span class="dv">2</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y_star =</span> <span class="dv">1</span> <span class="sc">+</span> X <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">rnorm</span>(N)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_inquiry</span>(<span class="at">Y_bar_X1 =</span> <span class="fu">mean</span>(<span class="fu">scale</span>(Y_star)[X <span class="sc">==</span> <span class="dv">1</span>])) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_measurement</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y_1 =</span> <span class="dv">3</span> <span class="sc">+</span> <span class="fl">0.1</span> <span class="sc">*</span> Y_star <span class="sc">+</span> <span class="fu">rnorm</span>(N, <span class="at">sd =</span> <span class="dv">5</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y_2 =</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">1.0</span> <span class="sc">*</span> Y_star <span class="sc">+</span> <span class="fu">rnorm</span>(N, <span class="at">sd =</span> <span class="dv">2</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y_3 =</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> Y_star <span class="sc">+</span> <span class="fu">rnorm</span>(N, <span class="at">sd =</span> <span class="dv">1</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y_avg =</span> ((<span class="fu">scale</span>(Y_1) <span class="sc">+</span> <span class="fu">scale</span>(Y_2) <span class="sc">+</span> <span class="fu">scale</span>(Y_3)))<span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y_avg_adjusted =</span> (</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="co"># rescaling according to the X = 0 group</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>      (Y_1 <span class="sc">-</span> <span class="fu">mean</span>(Y_1[X <span class="sc">==</span> <span class="dv">0</span>])) <span class="sc">/</span> <span class="fu">sd</span>(Y_1[X <span class="sc">==</span> <span class="dv">0</span>]) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        (Y_2 <span class="sc">-</span> <span class="fu">mean</span>(Y_2[X <span class="sc">==</span> <span class="dv">0</span>])) <span class="sc">/</span> <span class="fu">sd</span>(Y_2[X <span class="sc">==</span> <span class="dv">0</span>]) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        (Y_3 <span class="sc">-</span> <span class="fu">mean</span>(Y_3[X <span class="sc">==</span> <span class="dv">0</span>])) <span class="sc">/</span> <span class="fu">sd</span>(Y_3[X <span class="sc">==</span> <span class="dv">0</span>])</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">/</span> <span class="dv">3</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y_avg_rescaled =</span> <span class="fu">scale</span>((<span class="fu">scale</span>(Y_1) <span class="sc">+</span> <span class="fu">scale</span>(Y_2) <span class="sc">+</span> <span class="fu">scale</span>(Y_3))),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y_first_factor  =</span> <span class="fu">princomp</span>( <span class="sc">~</span> Y_1 <span class="sc">+</span> Y_2 <span class="sc">+</span> Y_2, <span class="at">cor =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>scores[, <span class="dv">1</span>]</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">declare_estimator</span>(</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cbind</span>(Y_avg, Y_avg_adjusted, Y_avg_rescaled, Y_first_factor) <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">.method =</span> lm_robust,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">inquiry =</span> <span class="st">"Y_bar_X1"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">subset =</span> X <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">term =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">"Average"</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>In Figure @ref(fig:figure-15-6) we show that the correlation between all the indices and the underlying quantity is quite good, even though the strength of the correlations for some of the components is weak. Trickier however is being sure we have an interpretable <em>scale</em>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/figure_15.6.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Correlations between the latent variable, measured components, and indices.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="diagnosis-15-5" class="lemma">
+<p>Latent variables diagnosis over alternative answer strategies</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>diagnosis_15<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">diagnose_design</span>(declaration_15<span class="fl">.6</span>, <span class="at">make_groups =</span> <span class="fu">vars</span>(outcome)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Figure @ref(fig:figure-15-7) shows the distribution of estimates from different approaches to generating indices. A few features stand out from the distribution of estimates.</p>
+<p>The simple averaging of the normalized scales also generates estimates that are too small. Rescaling the scaled components instead of taking the average helps only a small amount. The principal component version appears to do especially poorly, but there is a simple reason for this: the method does not presuppose knowledge of the <em>direction</em> of the scale of the latent variable and can come up with index that reverse the actual scale of interest. Avoiding this requires an interpretative step after the principal components analysis is implemented (more subtly the averaging approach also has an interpretative step <em>before</em> averaging, when components are introduced with a metric that presupposes a positive correlation with the underlying quantity). Even accounting for the different sign patterns however, the estimates are too small.</p>
+<p>Scaling by units with <code>X = 1</code> does best in this case. The key insight here is that the total variation in the latent variable combines the variation within groups and between them: we want to measure outcomes on a scale benchmarked to the within group variation and so have to take out the between group variation when rescaling.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/figure_15.7.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Distribution of estimates from different approaches to generating indices</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Overall we see from the diagnosis that we <em>can</em> do quite well here in recovering the conditional mean of the standardized latent variable. Though we see risks here. We declared a design under optimistic conditions in which we knew the relevant components and these were all related to the latent variable in a simple way. Even in this case we had difficulty getting the answer right.</p>
+</div>
+<section id="design-examples" class="level2">
+<h2 class="anchored" data-anchor-id="design-examples">Design examples</h2>
+<ul>
+<li><p><span class="citation" data-cites="Jefferson2022">Jefferson (<a href="../../references.html#ref-Jefferson2022" role="doc-biblioref">2022</a>)</span> introduces the “Respectability Politics Scale,” which is a six-item additive index. Responses on 1-7 Likert scales are rescaled to the 0-1 range, then averaged.</p></li>
+<li><p><span class="citation" data-cites="broockman2016durably">Broockman and Kalla (<a href="../../references.html#ref-broockman2016durably" role="doc-biblioref">2016</a>)</span> conduct a randomized experiment in which the main outcome is an index of attitudes toward transgender people, which is constructed by taking the first factor from a factor analysis of multiple survey questions.</p></li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-broockman2016durably" class="csl-entry" role="doc-biblioentry">
+Broockman, David, and Joshua Kalla. 2016. <span>“Durably Reducing Transphobia: A Field Experiment on Door-to-Door Canvassing.”</span> <em>Science</em> 352 (6282): 220–24.
+</div>
+<div id="ref-Jefferson2022" class="csl-entry" role="doc-biblioentry">
+Jefferson, Hakeem. 2022. <span>“Respectability and the Politics of Punishment Among Black Americans.”</span> <em>Unpublished Manuscript</em>.
+</div>
+<div id="ref-kling2007experimental" class="csl-entry" role="doc-biblioentry">
+Kling, Jeffrey R, Jeffrey B Liebman, and Lawrence F Katz. 2007. <span>“Experimental Analysis of Neighborhood Effects.”</span> <em>Econometrica</em> 75 (1): 83–119.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../library/observational-descriptive/multilevel-regression-poststratification.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Multi-level regression and poststratification</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../library/observational-causal/" class="pagination-link">
+        <span class="nav-page-text">Observational : causal</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">Copyright 2022 Graeme Blair, Alexander Coppock, and Macartan Humphreys</div>
+  </div>
+</footer>
+
+
+
+</body></html>
