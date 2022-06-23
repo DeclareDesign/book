@@ -198,6 +198,7 @@ format:
     theme: cosmo
     default-image-extension: svg
     cover-image: figures/figure_2.1.svg
+    code-link: true
   # pdf:
   #   documentclass: book
   #   default-image-extension: pdf
