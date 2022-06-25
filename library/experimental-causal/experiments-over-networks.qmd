@@ -36,11 +36,6 @@ To illustrate these ideas, we declare a hypothetical experimental design to esti
 
 First, we load the Fairfax County, Virginia, voting precincts shapefile, removing one singleton voting precinct, and we plot the precincts in Figure \@ref(fig:figure-18-15).
 
-```{r figure-18-15, fig.cap="", fig.height=6.5, fig.width=6.5, echo=FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.15.", imgsufx))
-```
-
 ![Voting Precincts in Fairfax County, Virginia](/figures/figure-18-5){#fig:figure-18-5}
 
 To declare the full design, shown in Declaration \@ref(def:declaration-18-13), we first need to obtain the adjacency matrix of precincts in Fairfax. Second, we obtain a permutation matrix of possible random assignments, from which probabilities of assignment to each condition can be calculated. The `declare_model` call builds in a dependence of potential outcomes on the length of each precinct's perimeter to reflect the idea that outcomes are correlated with geography in some way. The `declare_inquiry` call describes the three inquiries in terms of potential outcomes. The `declare_assignment` call first conducts a random assignment according to the procedure describes by `declare_ra` earlier in the code, then obtains the exposures that the assignment generates. Finally, all the relevant information is fed into the Aronow and Samii estimation functions via `estimator_AS` (the `get_exposure_AS` and `estimator_AS` helper functions are available in the `rdddr` package).
