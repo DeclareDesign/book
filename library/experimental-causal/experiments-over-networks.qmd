@@ -34,13 +34,13 @@ We need to adjust our answer strategy to compensate for the differential probabi
 
 To illustrate these ideas, we declare a hypothetical experimental design to estimate the effects of lawn signs [modeled after @green2016lawnsigns]. The units are the lowest level at which we can observe vote margin, the voting precinct. In our model, we define four potential outcomes. Precincts can be both directly and indirectly treated, only directly treated, only indirectly treated, or neither. Indirect treatment occurs when a neighboring precinct is treated. This model could support many possible inquiries, but here we will focus on three: the direct effect of treatment when the precinct is not indirectly treated, the effect of indirect treatment when the precinct is not directly treated, and the total effect of direct and indirect treatment versus pure control. The data strategy will involve randomly assigning some units to direct treatment, which will in turn cause other units to be indirectly treated. We will need to learn via simulation the probabilities of assignments to conditions that this procedure produces. We'll make use of two answer strategies: the Horvitz-Thompson and Hajek estimators proposed by @aronow2017estimating, along with their associated variance estimators, as implemented in the `interference` package.
 
-First, we load the Fairfax County, Virginia, voting precincts shapefile, removing one singleton voting precinct, and we plot the precincts in Figure @fig-figure-18-15.
+First, we load the Fairfax County, Virginia, voting precincts shapefile, removing one singleton voting precinct, and we plot the precincts in Figure @fig-ch18fig15.
 
-![Voting Precincts in Fairfax County, Virginia](/figures/figure-18-5){#fig:figure-18-5}
+![Voting Precincts in Fairfax County, Virginia](/figures/figure-18-5){#fig-ch18fig5}
 
-To declare the full design, shown in Declaration @def:declaration-18-13, we first need to obtain the adjacency matrix of precincts in Fairfax. Second, we obtain a permutation matrix of possible random assignments, from which probabilities of assignment to each condition can be calculated. The `declare_model` call builds in a dependence of potential outcomes on the length of each precinct's perimeter to reflect the idea that outcomes are correlated with geography in some way. The `declare_inquiry` call describes the three inquiries in terms of potential outcomes. The `declare_assignment` call first conducts a random assignment according to the procedure describes by `declare_ra` earlier in the code, then obtains the exposures that the assignment generates. Finally, all the relevant information is fed into the Aronow and Samii estimation functions via `estimator_AS` (the `get_exposure_AS` and `estimator_AS` helper functions are available in the `rdddr` package).
+To declare the full design, shown in Declaration @def-declarationch18dec13, we first need to obtain the adjacency matrix of precincts in Fairfax. Second, we obtain a permutation matrix of possible random assignments, from which probabilities of assignment to each condition can be calculated. The `declare_model` call builds in a dependence of potential outcomes on the length of each precinct's perimeter to reflect the idea that outcomes are correlated with geography in some way. The `declare_inquiry` call describes the three inquiries in terms of potential outcomes. The `declare_assignment` call first conducts a random assignment according to the procedure describes by `declare_ra` earlier in the code, then obtains the exposures that the assignment generates. Finally, all the relevant information is fed into the Aronow and Samii estimation functions via `estimator_AS` (the `get_exposure_AS` and `estimator_AS` helper functions are available in the `rdddr` package).
 
-:::{.definition #declaration-18-13} 
+:::{.definition #declarationch18dec13} 
 
 Experiments over spatial networks design
 
@@ -49,16 +49,16 @@ Experiments over spatial networks design
 
 :::
 
-The maps in Figure @fig-figure-18-16 show how this procedure generates differential probabilities of assignment to each exposure condition. Units that are in denser areas of the county are more likely to be in the `Indirect Exposure Only` and `Direct and Indirect Exposure` conditions than those in less dense areas.
+The maps in Figure @fig-ch18fig16 show how this procedure generates differential probabilities of assignment to each exposure condition. Units that are in denser areas of the county are more likely to be in the `Indirect Exposure Only` and `Direct and Indirect Exposure` conditions than those in less dense areas.
 
-![Probabilities of assignment to each of four conditions depend on position in geographic space.](/figures/figure-18-16){#fig:figure-18-16}
+![Probabilities of assignment to each of four conditions depend on position in geographic space.](/figures/figure-18-16){#fig-ch18fig16}
 
 
-:::{.lemma #diagnosis-18-13}
+:::{.lemma #diagnosisch18diag13}
 
 Experiments over spatial networks diagnosis
 
-Figure @fig-figure-18-17 compares the performance of the Hajek and Horvitz-Thompson estimators. Both are approximately unbiased for their targets, but the Horvitz-Thompson estimator exhibits much higher variance, suggesting that in many design settings, researchers will want to opt for the Hajek estimator. 
+Figure @fig-ch18fig17 compares the performance of the Hajek and Horvitz-Thompson estimators. Both are approximately unbiased for their targets, but the Horvitz-Thompson estimator exhibits much higher variance, suggesting that in many design settings, researchers will want to opt for the Hajek estimator. 
 
 ```{r}
 #| eval: false
@@ -66,7 +66,7 @@ Figure @fig-figure-18-17 compares the performance of the Hajek and Horvitz-Thomp
 diagnosis_18.13 <- diagnose_design(declaration_18.13)
 ```
 
-![Sampling distribution of the Hajek and Horvitz-Thompson estimators of direct, indirect, and direct plus indirect effects. The vertical lines refer to the true values of the inquiries.](/figures/figure-18-17){#fig:figure-18-17}
+![Sampling distribution of the Hajek and Horvitz-Thompson estimators of direct, indirect, and direct plus indirect effects. The vertical lines refer to the true values of the inquiries.](/figures/figure-18-17){#fig-ch18fig17}
 
 :::
 

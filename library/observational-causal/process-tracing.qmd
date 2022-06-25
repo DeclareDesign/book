@@ -30,9 +30,9 @@ The model can be described using the `CausalQueries` package thus:
 ```{r, file = "scripts_declarations/declaration_16.1a.R", eval = TRUE}
 ```
 
-The DAG of the causal model is shown in figure @fig-figure-16-1.
+The DAG of the causal model is shown in figure @fig-ch16fig1.
 
-![Directed acyclic graph of a process tracing model](/figures/figure-16-1){#fig:figure-16-1}
+![Directed acyclic graph of a process tracing model](/figures/figure-16-1){#fig-ch16fig1}
 
 This model definition describes the DAG but also specifies a set of restrictions on causal relations. By default, flat priors are then placed over all other possible causal relations, though of course other prior beliefs could also be specified. 
 
@@ -69,9 +69,9 @@ We see here that $M$ provides a hoop test since we are certain that $X$ does not
 
 We think it useful to fold these quantities into a design declaration so that research consumers can access the data strategies and answer strategies in the same way as they would for any other problem.
 
-Declaration @def:declaration-16-1 provides a flexible process tracing design. You can use this design with a different causal model and substituting in different causal queries and process tracing strategies. Given a background causal model, the design first draws a "causal type"---that is a case together with all its causal relations. The value of the estimand (EoC) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query---like those in the Table @tbl-ptprobative---but given different possible observed values for all nodes. No data strategy is provided explicitly as this is tied up here in the estimation, that is, the estimation step describes what data will be used.
+Declaration @def-declarationch16dec1 provides a flexible process tracing design. You can use this design with a different causal model and substituting in different causal queries and process tracing strategies. Given a background causal model, the design first draws a "causal type"---that is a case together with all its causal relations. The value of the estimand (EoC) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query---like those in the Table @tbl-ptprobative---but given different possible observed values for all nodes. No data strategy is provided explicitly as this is tied up here in the estimation, that is, the estimation step describes what data will be used.
 
-:::{.definition #declaration-16-1} 
+:::{.definition #declarationch16dec1} 
 
 Process tracing design declaration
 
@@ -80,17 +80,17 @@ Process tracing design declaration
 
 :::
 
-:::{.lemma #diagnosis-16-1}
+:::{.lemma #diagnosisch16diag1}
 
 Process tracing diagnosis
 
 Given such a model, a case in which $X = Y = 1$ (for instance), and limited resources, we now want to know whether we would be better gathering data on $M$ or on $W$ or both.  
 
-The answers are given in Figure @fig-figure-16-2. Here we show the expected error from inferences given each process tracing strategy. We break up the diagnoses according to the $X$, $Y$ data already observed---thus illustrating how an unconditional model can be used to assess designs even after some data is observed. Across the four possible data patterns we see equivalent implications for settings in which we are interested in a case with $X=Y=1$ and a case with $X=Y=0$. For the cases with $X \neq Y$ we already know---because of the monotonicity restrictions in the model---that $X$ did not cause $Y$ and so we learn nothing from all strategies. 
+The answers are given in Figure @fig-ch16fig2. Here we show the expected error from inferences given each process tracing strategy. We break up the diagnoses according to the $X$, $Y$ data already observed---thus illustrating how an unconditional model can be used to assess designs even after some data is observed. Across the four possible data patterns we see equivalent implications for settings in which we are interested in a case with $X=Y=1$ and a case with $X=Y=0$. For the cases with $X \neq Y$ we already know---because of the monotonicity restrictions in the model---that $X$ did not cause $Y$ and so we learn nothing from all strategies. 
 
 We see only modest declines in expected errors from observation of the mediator $M$ (consistent with the manual calculation above), but large declines from observing $W$. If we already observe $W$ the gains from observing $M$ are still more slight. Broadly this confirms a more general observation that mediators can provide limited traction for learning about causes of effects relative to moderators [@dawid2022bounding].
 
-![Inferences from four different process tracing data strategies on whether $X$ caused $Y$ given four different observed $X,Y$ data patterns.](/figures/figure-16-2){#fig:figure-16-2}
+![Inferences from four different process tracing data strategies on whether $X$ caused $Y$ given four different observed $X,Y$ data patterns.](/figures/figure-16-2){#fig-ch16fig2}
 
 :::
 

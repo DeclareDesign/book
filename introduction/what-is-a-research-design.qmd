@@ -17,7 +17,7 @@ Research designs share in common that they all have an inquiry *I*, a data strat
 
 We think of *MIDA* as having two sides. *M* and *I* form the theoretical half, comprising your beliefs about the world and your target of inference. *D* and *A* form the empirical half, comprising your strategies for collecting and summarizing information. The theoretical side sets the research challenges for you to overcome and the empirical side captures your responses to those challenges.^[We call *M* and *I* the theoretical half because specifying them requires conceptualizing contexts, imagining processes, and posing questions. We call *D* and *A* the empirical half because it describes the empirical strategies. We recognize of course that the theories on the *MI* side may be very thin and that strategies on the *DA* side must be theoretically motivated.] 
 
-Figure @fig-midaplot shows how these four elements of a design relate to one another, how they relate to real world quantities, and how they relate to simulated quantities. We will unpack this figure in the remainder of this chapter, highlighting two especially important parallelisms, first between the upper and lower halves representing actual processes and simulated processes and second between the left (*M*, *I*) and right (*D*, *A*) halves representing these theoretical and empirical sides of research designs.
+@fig-midaplot shows how these four elements of a design relate to one another, how they relate to real world quantities, and how they relate to simulated quantities. We will unpack this figure in the remainder of this chapter, highlighting two especially important parallelisms, first between the upper and lower halves representing actual processes and simulated processes and second between the left (*M*, *I*) and right (*D*, *A*) halves representing these theoretical and empirical sides of research designs.
 
 <!-- align center -->
 
@@ -222,9 +222,9 @@ The two designs cost the same but differ on the empirical side. Which strategy s
 
 * *A*: The answer strategy takes the difference-in-means between the treated and untreated units. Thus the answer strategy uses a function similar to the inquiry itself.
 
-When we put these all together we have a design, Declaration @def:declaration-2-1.
+When we put these all together we have a design, Declaration @def-declarationch2dec1.
 
-:::{.definition #declaration-2-1} 
+:::{.definition #declarationch2dec1} 
 
 Two-arm trial design
 
@@ -256,9 +256,9 @@ program_diagnosands  <-
 
 The alternative design that differs on the empirical side in three ways. First fewer subjects are sampled. Second, information about the subjects' background information (their "history") is used to implement a block randomization that conditions assignment on history. Third the subjects' history is taken into account in the analysis. This choice is an instance of adjusting the answer strategy in light of a change to the data strategy. 
 
-In Declaration @def:declaration-2-2, we can leave the model and inquiry intact and but we have to work on the data and answer strategies.
+In Declaration @def-declarationch2dec2, we can leave the model and inquiry intact and but we have to work on the data and answer strategies.
 
-:::{.definition #declaration-2-2} 
+:::{.definition #declarationch2dec2} 
 
 A design that exploits background information
 
@@ -285,11 +285,11 @@ declaration_2.2 |>
 
 The results are shown in the next figure.
 
-:::{.lemma #diagnosis-2-1} 
+:::{.lemma #diagnosisch2diag1} 
 
 Diagnosis of `declaration_2.1` and `declaration_2.2`
 
-![How success depends on choice of *D* and *A* given different possibilities for *M*](/figures/figure-2-2){#fig:figure-2-2}
+![How success depends on choice of *D* and *A* given different possibilities for *M*](/figures/figure-2-2){#fig-ch2fig2}
 
 :::
 

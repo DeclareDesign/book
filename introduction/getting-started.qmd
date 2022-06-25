@@ -91,9 +91,9 @@ Every step in a research design can be declared using one of the `declare_*` fun
 
 Table: (\#tab:declarationfunctions) Declaration functions in DeclareDesign
 
-We use the `+` operator to build from elements of a design to a design. Declaration @def:declaration-4-1 shows the format of most declarations throughout the book. This declaration represents a two-arm randomized experiment with 100 units from which we aim to estimate the average treatment effect.
+We use the `+` operator to build from elements of a design to a design. Declaration @def-declarationch4dec1 shows the format of most declarations throughout the book. This declaration represents a two-arm randomized experiment with 100 units from which we aim to estimate the average treatment effect.
 
-:::{.definition #declaration-4-1}
+:::{.definition #declarationch4dec1}
 
 Two-arm randomized experiment
 
@@ -108,7 +108,7 @@ $~$
 
 Diagnosis is the process of simulating the design many times and calculating summary statistics about the design that describe its properties, which we call diagnosands. Once a design is declared, diagnosis is as simple as using the `diagnose_design` function on it.
 
-:::{.lemma #diagnosis-4-1} 
+:::{.lemma #diagnosisch4diag1} 
 
 Example design diagnosis
 

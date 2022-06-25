@@ -72,9 +72,9 @@ Estimation of the CACE is not as straightforward subsetting the analysis to comp
 
 Two alternative answer strategies are biased and should be avoided. An "as-treated" analysis ignores the encouragement $Z$ and instead compares units by their revealed treatment status $D$. This procedure is prone to bias because those who come to be treated may differ systematically from those who do not. The "per protocol" analysis is similarly biased. It drops any unit that fails to comply with its assignment, but those who take treatment in the treatment group (compliers and always-takers) may differ systematically from those who do not take treatment in the control group (compliers and never-takers). Both the "as-treated" and "per-protocol" answer strategies suffer from a special case of post-treatment bias, wherein conditioning on a post-assignment variable (treatment status) essentially de-randomizes the study.
 
-Declaration @def:declaration-18-9 elaborates the model to include the four compliance types, setting the share of defiers to zero to match the assumption of monotonicity. It imagines that the potential outcomes of the outcomes $Y$ with respect to the treatment $D$ are different for each compliance type, reflecting the idea that compliance type could be correlated with potential outcomes. The declaration also links compliance type to the potential outcomes of the treatment $D$ with respect to the randomized encouragement $Z$. We then move on to declaring two inquiries (the CACE and the ATE) and three answer strategies (two-stage least squares, as-treated analysis, and per-protocol analysis).
+Declaration @def-declarationch18dec9 elaborates the model to include the four compliance types, setting the share of defiers to zero to match the assumption of monotonicity. It imagines that the potential outcomes of the outcomes $Y$ with respect to the treatment $D$ are different for each compliance type, reflecting the idea that compliance type could be correlated with potential outcomes. The declaration also links compliance type to the potential outcomes of the treatment $D$ with respect to the randomized encouragement $Z$. We then move on to declaring two inquiries (the CACE and the ATE) and three answer strategies (two-stage least squares, as-treated analysis, and per-protocol analysis).
 
-:::{.definition #declaration-18-8} 
+:::{.definition #declarationch18dec8} 
 
 Encouragement design
 
@@ -83,11 +83,11 @@ Encouragement design
 
 :::
 
-Figure @fig-figure-18-9 represents the encouragement design as a DAG. No arrows lead into $Z$, because the treatment was randomly assigned. The compliance type $C$, the assignment $Z$, and unobserved heterogeneity $U$ conspire to set the level of $D$. The outcome $Y$ is affected by the treatment $D$ of course, but also by compliance type $C$ and unobserved heterogeneity $U$. The required exclusion restriction that $Z$ only affect $Y$ through $D$ is represented by the *lack* of an arrow from $Z$ to $Y$.  The deficiencies of the as-treated and per-protocol analysis strategies can be learned from the DAG as well. $D$ is a collider, so conditioning on it would open up back-door paths between $Z$, $C$, and $U$, leading to bias of unknown direction and magnitude.
+Figure @fig-ch18fig9 represents the encouragement design as a DAG. No arrows lead into $Z$, because the treatment was randomly assigned. The compliance type $C$, the assignment $Z$, and unobserved heterogeneity $U$ conspire to set the level of $D$. The outcome $Y$ is affected by the treatment $D$ of course, but also by compliance type $C$ and unobserved heterogeneity $U$. The required exclusion restriction that $Z$ only affect $Y$ through $D$ is represented by the *lack* of an arrow from $Z$ to $Y$.  The deficiencies of the as-treated and per-protocol analysis strategies can be learned from the DAG as well. $D$ is a collider, so conditioning on it would open up back-door paths between $Z$, $C$, and $U$, leading to bias of unknown direction and magnitude.
 
-![Directed acyclic graph of the encouragement design](/figures/figure-18-9){#fig:figure-18-9}
+![Directed acyclic graph of the encouragement design](/figures/figure-18-9){#fig-ch18fig9}
 
-:::{.lemma #diagnosis-18-9}
+:::{.lemma #diagnosisch18diag9}
 
 Diagnosis of encouragement design
 
@@ -101,7 +101,7 @@ Two-stage least squares does a much better job of estimating the complier averag
 diagnosis_18.9 <- diagnose_design(declaration_18.8)
 ```
 
-![Sampling distributions of the two-stage least squares, per protocol, and as-treated answer strategies.](/figures/figure-18-10){#fig:figure-18-10}
+![Sampling distributions of the two-stage least squares, per protocol, and as-treated answer strategies.](/figures/figure-18-10){#fig-ch18fig10}
 
 :::
 

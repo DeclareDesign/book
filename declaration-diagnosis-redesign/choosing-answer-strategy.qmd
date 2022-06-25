@@ -100,9 +100,9 @@ To illustrate point estimation in general, we'll try to estimate the average age
 
 A standard way to report uncertainty of a point estimate is to provide a "standard error." In this case we know that our answer is probably not a good answer. It is almost certainly wrong in the sense that the population average age in the small village is probably not fifteen (Italy's population is aging!), but we don't know how wrong because, of course, we don't actually know the value of the inquiry under study. We have instead to evaluate the properties of the procedure. Under a random sampling design -- even an egregiously stingy random sampling design that only selects three citizens! -- we can justify the approach on the basis of the "bias" diagnosand.^[Bias is the idea that the average of all the answers you would get if you repeated the data strategy (random sampling) and the answer strategy (taking the sample average) over and over would correspond to the correct answer.]  
 
-But that doesn't tell us much about how confident we should be in this answer. The design in Declaration @def:declaration-9-1 can be used to generate a view of what answers we might get when we choose just three subjects for our sample.^[We use a linear regression of the age variable on a constant to estimate the sample mean. Using OLS in this way is a neat trick for estimating sample means along with various uncertainty statistics, discussed in more detail in the next section.]
+But that doesn't tell us much about how confident we should be in this answer. The design in Declaration @def-declarationch9dec1 can be used to generate a view of what answers we might get when we choose just three subjects for our sample.^[We use a linear regression of the age variable on a constant to estimate the sample mean. Using OLS in this way is a neat trick for estimating sample means along with various uncertainty statistics, discussed in more detail in the next section.]
 
-:::{.definition #declaration-9-1}
+:::{.definition #declarationch9dec1}
 
 Italian village design
 
@@ -115,7 +115,7 @@ $~$
 
 We now diagnose the design by simulating this design repeatedly, plotting the sampling distribution along with the true population mean age, and calculating the bias.
 
-:::{.lemma #diagnosis-9-1}
+:::{.lemma #diagnosisch9diag1}
 
 Italian village design diagnosis
 
@@ -130,9 +130,9 @@ diagnosis_9.1 <- diagnose_design(declaration_9.1)
 diagnosis_9.1 <- get_rdddr_file_local("diagnosis_9.1")
 ```
 
-Figure @fig-figure-9-1 shows that we are right on average but usually quite wrong. The average estimate lies right on top of the true value of the estimand (40), but the estimates range enormously widely, from close to zero to close to 80 in some draws. The answer strategy -- the sample mean estimator -- is just fine, the problem here lies in the data strategy that generates tiny samples. Substantively this does not mean that we now believe we are wrong. But it does tell us that the data is just as consistent with lots of other possibilities as it is with the estimate that we got from a single run of the design.
+Figure @fig-ch9fig1 shows that we are right on average but usually quite wrong. The average estimate lies right on top of the true value of the estimand (40), but the estimates range enormously widely, from close to zero to close to 80 in some draws. The answer strategy -- the sample mean estimator -- is just fine, the problem here lies in the data strategy that generates tiny samples. Substantively this does not mean that we now believe we are wrong. But it does tell us that the data is just as consistent with lots of other possibilities as it is with the estimate that we got from a single run of the design.
 
-![Sampling distribution of the estimates from the point estimator answer strategy](/figures/figure-9-1){#fig:figure-9-1}
+![Sampling distribution of the estimates from the point estimator answer strategy](/figures/figure-9-1){#fig-ch9fig1}
 
 :::
 
@@ -145,7 +145,7 @@ A typical null hypothesis test proceeds by imagining a null model $M_{0}$ and im
 
 We'll illustrate the idea of a hypothesis test in general with the Italian village example. Here, we test against the hypothesis that the average age is 20. If we have strong evidence against this hypothesis, we will reject it. If we have weak evidence against the hypothesis, we will fail to reject it. For instance, we might reject 10 and 70 but fail to reject 35 and 45. 
 
-:::{.definition #declaration-9-2}
+:::{.definition #declarationch9dec2}
 
 Italian village design, continued
 
@@ -170,9 +170,9 @@ run_design(declaration_9.2) |>
   kable(booktabs = TRUE, align = "c", digits = 2, caption = "Estimates from the test of the mean age equalling 20 from Italian villages example")
 ```
 
-Next, we diagnose the modified design, by running the design many times. Figure @fig-figure-9-2 shows how frequently we reject the null that the average age is 20. When estimate is close to 20, we rarely reject the null, but when the estimate is far from 20, we are more like to reject. Again, this diagnosis comes from a design with a weak data strategy of sampling only three citizens at time. We need to see estimates breaking 60 before the testing answer strategy reliably rejects this (false) null hypothesis.
+Next, we diagnose the modified design, by running the design many times. Figure @fig-ch9fig2 shows how frequently we reject the null that the average age is 20. When estimate is close to 20, we rarely reject the null, but when the estimate is far from 20, we are more like to reject. Again, this diagnosis comes from a design with a weak data strategy of sampling only three citizens at time. We need to see estimates breaking 60 before the testing answer strategy reliably rejects this (false) null hypothesis.
 
-:::{.lemma #diagnosis-9-2}
+:::{.lemma #diagnosisch9diag2}
 
 Italian village diagnosis, continued
 
@@ -186,7 +186,7 @@ diagnosis_9.2 <- diagnose_design(declaration_9.2)
 diagnosis_9.2 <- get_rdddr_file_local("diagnosis_9.2")
 ```
 
-![Sampling distribution of the test answer strategy](/figures/figure-9-2){#fig:figure-9-2}
+![Sampling distribution of the test answer strategy](/figures/figure-9-2){#fig-ch9fig2}
 
 
 :::
@@ -203,7 +203,7 @@ Bayesian answer strategies sometimes target the same inquiries as classical appr
 
 The Bayesian answer strategy specifies a prior distribution (here distributed normal centered on 50 to reflect a prior that Italian villages skew older) as well as a log normal distribution for ages. Here we retain the (median) posterior estimates for average age alongside a standard error based on the posterior variance. In the `.summary` argument we ask the tidier to exponentiate the coefficient estimate and standard error before returning them.
 
-:::{.definition #declaration-9-4} 
+:::{.definition #declarationch9dec4} 
 
 Italian village design a la Bayes
 
@@ -212,7 +212,7 @@ Italian village design a la Bayes
 
 :::
 
-:::{.lemma #diagnosis-9-4}
+:::{.lemma #diagnosisch9diag4}
 
 We can then simulate this design in the same way and examine the distribution of estimates we might get. 
 
@@ -222,9 +222,9 @@ We can then simulate this design in the same way and examine the distribution of
 diagnosis_9.4 <- diagnose_design(declaration_9.4)
 ```
 
-What we see in Figure @fig-figure-9-3 is that using the same (poor) data strategy as before, a Bayesian answer strategy gets us a somewhat tighter distribution on our answer, but exhibits greater bias: the average estimate is higher than the estimand. We might accept higher bias for lower variance if overall, the root-mean-squared error is lower for the Bayesian approach. See Section @exploring-design-tradeoffs for a further discussion of RMSE. The main difference between the Bayesian and classical approaches is the handling of prior beliefs, which carry a lot of weight in the Bayesian estimation but no weight in the classical approach.
+What we see in Figure @fig-ch9fig3 is that using the same (poor) data strategy as before, a Bayesian answer strategy gets us a somewhat tighter distribution on our answer, but exhibits greater bias: the average estimate is higher than the estimand. We might accept higher bias for lower variance if overall, the root-mean-squared error is lower for the Bayesian approach. See Section @exploring-design-tradeoffs for a further discussion of RMSE. The main difference between the Bayesian and classical approaches is the handling of prior beliefs, which carry a lot of weight in the Bayesian estimation but no weight in the classical approach.
 
-![Sampling distribution of the Bayesian answer strategy](/figures/figure-9-3){#fig:figure-9-3}
+![Sampling distribution of the Bayesian answer strategy](/figures/figure-9-3){#fig-ch9fig3}
 
 :::
 
@@ -241,7 +241,7 @@ In the Bayes approach parameter estimates and uncertainty estimates are generate
 
 For point and interval estimators, uncertainty is often expressed as a standard error estimate or confidence interval. Many approaches to standard error estimation are available. Indeed, just like point estimators for inquiries, we have point estimators for standard errors. You might choose classical standard errors or cluster-robust standard errors; you might bootstrap your standard errors or use the jackknife. Similarly, many approaches to confidence interval construction are available. Most often, confidence intervals are built from variance estimates under an appeal to sampling theory. Alternatively, a confidence interval can be formed by "inverting the test," i.e. finding the range of null hypotheses we fail to reject. Whether any particular approach to uncertainty estimation is appropriate in a context will depend on the full set of design parameters and we encourage you to diagnose your uncertainty estimates as well.
 
-Here is the output of the answer strategy from Declaration @def:declaration-9-1, applied to the realized data set. We see the sample mean estimate of 15, the standard error estimate of 6, and the confidence interval from -10 to 40. These numbers communicate that our answer is 15 -- but also that we *know* that number is shaky. We're uncertain because the tool we used to answer the inquiry is high variance: it could bounce around a lot depending on which three people we happened to sample. 
+Here is the output of the answer strategy from Declaration @def-declarationch9dec1, applied to the realized data set. We see the sample mean estimate of 15, the standard error estimate of 6, and the confidence interval from -10 to 40. These numbers communicate that our answer is 15 -- but also that we *know* that number is shaky. We're uncertain because the tool we used to answer the inquiry is high variance: it could bounce around a lot depending on which three people we happened to sample. 
 
 ```{r}
 #| eval: false
@@ -272,9 +272,9 @@ Our uncertainty about the decision we made in the hypothesis test to fail to rej
 
 What does characterize our uncertainty about a significance test? The Type I and type II error rates of the test. The Type I error rate is controlled by the significance threshold. A Type I error occurs if we reject the null model when it is true. If we use $\alpha = 0.05$ and the test is correctly accounts for all design elements, then a Type I error should only happen 5% of the time. Type II error rates are harder to learn about. In our case, we failed to reject the null model. To characterize our uncertainty about the test, we also want to calculate the probability that a design like this one would generate Type II errors. To do so, we have to imagine what it means for the null model to be *false*, since they can be false in many ways. One approach is to imagine how the test would perform on under a series of non-null models.
 
-Figure @fig-figure-9-4 describes the Type II error rate over a range of non-null models. If the true population mean is around 25 or lower, we fail to reject the null 75% of the time or more. With this comically small sample size, even if the true mean were 75, we would still fail to reject 20% of the time. We are rightly uncertain about this test -- it may have a low enough Type I error rate (set as $\alpha = 0.05$), but the Type II errors are way too big. 
+Figure @fig-ch9fig4 describes the Type II error rate over a range of non-null models. If the true population mean is around 25 or lower, we fail to reject the null 75% of the time or more. With this comically small sample size, even if the true mean were 75, we would still fail to reject 20% of the time. We are rightly uncertain about this test -- it may have a low enough Type I error rate (set as $\alpha = 0.05$), but the Type II errors are way too big. 
 
-:::{.definition #declaration-9-5} 
+:::{.definition #declarationch9dec5} 
 
 Italian village declaration, varying the true mean age parameter
 
@@ -283,7 +283,7 @@ Italian village declaration, varying the true mean age parameter
 
 :::
 
-:::{.lemma #diagnosis-9-5}
+:::{.lemma #diagnosisch9diag5}
 
 Diagnosing the Italian village design over many values of the true mean age parameter
 
@@ -291,7 +291,7 @@ Diagnosing the Italian village design over many values of the true mean age para
 diagnosis_9.5 <- diagnose_designs(declaration_9.5)
 ```
 
-![Type II error rates of the Italian village design](/figures/figure-9-4){#fig:figure-9-4}
+![Type II error rates of the Italian village design](/figures/figure-9-4){#fig-ch9fig4}
 
 :::
 
@@ -399,7 +399,7 @@ Bootstrapped standard errors
 
 
 
-:::{.lemma #diagnosis-9-bootstrap}
+:::{.lemma #diagnosisch9diagbootstrap}
 
 Bootstrap diagnosis
 
@@ -444,9 +444,9 @@ This idea can be summarized as "analyze as you randomize," a dictum attributed t
 
 ### Illustration of estimates using the AAYR principle 
 
-Declaration @def:declaration-9-6 illustrates this idea. We declare the theoretical half of the design as `MI` then consider the intersection of two data strategies with two answer strategies. `D1` has constant probabilities of assignment and `D2` has differential probabilities of assignment. `A1` is the plug-in estimator and `A2` is the IPW estimator with the inverse probability weights generated by the `D2` randomization protocol. 
+Declaration @def-declarationch9dec6 illustrates this idea. We declare the theoretical half of the design as `MI` then consider the intersection of two data strategies with two answer strategies. `D1` has constant probabilities of assignment and `D2` has differential probabilities of assignment. `A1` is the plug-in estimator and `A2` is the IPW estimator with the inverse probability weights generated by the `D2` randomization protocol. 
 
-:::{.definition #declaration-9-6}
+:::{.definition #declarationch9dec6}
 
 Restoring parallelism design
 
@@ -456,7 +456,7 @@ Restoring parallelism design
 :::
 
 
-:::{.lemma #diagnosis-9-6}
+:::{.lemma #diagnosisch9diag6}
 
 Restoring parallelism diagnosis
 
@@ -466,9 +466,9 @@ Restoring parallelism diagnosis
 diagnosis_9.6 <- diagnose_design(declaration_9.6)
 ```
 
-We diagnose the bias of all four design. Figure @fig-figure-9-5 shows that when the answer strategy and the data strategy match (`D1 + A1` and `D2 + A2`), we have no bias. When they do not match (`D1 + A2` and `D2 + A1`), we do. In this case, seeking parallelism in the choice of answer strategy improves the design. Of course, an alternative answer strategy we might call `A3` that implements the weights corresponding to whatever the data strategy says they should be unbiased under both `D1` and `D2`.
+We diagnose the bias of all four design. Figure @fig-ch9fig5 shows that when the answer strategy and the data strategy match (`D1 + A1` and `D2 + A2`), we have no bias. When they do not match (`D1 + A2` and `D2 + A1`), we do. In this case, seeking parallelism in the choice of answer strategy improves the design. Of course, an alternative answer strategy we might call `A3` that implements the weights corresponding to whatever the data strategy says they should be unbiased under both `D1` and `D2`.
 
-![When data and answer strategies are mismatched, we obtain bias.](/figures/figure-9-5){#fig:figure-9-5}
+![When data and answer strategies are mismatched, we obtain bias.](/figures/figure-9-5){#fig-ch9fig5}
 
 :::
 
@@ -525,7 +525,7 @@ Randomization inference under the sharp null
 
 :::
 
-:::{.lemma #diagnosis-9-3}
+:::{.lemma #diagnosisch9diag3}
 
 Randomization inference "diagnosis"
 

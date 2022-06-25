@@ -53,7 +53,7 @@ Table: (\#tab:elementsofresearchdesign) Elements of research design.
 
 The full set of causal relationships between *M*, *I*, *D*, and *A*, with respect to $m$ and $m^*$, $a_m$ and $a_{m^*}$, $d$ and $d^*$, and $a_d$ and $a_{d^*}$ can be seen in the schematic representation of a research design given in Figure @fig-worldandtheory. The figure illustrates how a research design involves a correspondence between $I(m) = a_m$ and $A(d) = a_d$. The theoretical half of a research design produces an answer to the inquiry *in theory*. The empirical half of a research design produces an *empirical estimate* of the answer to the inquiry. Neither answer is necessarily close to the truth $a_{m^*}$, of course. And, as shown in the figure, the truth is not directly accessible either to us in theory or in empirics. Our gamble in empirical research, however, is that our theoretical models are close enough to the truth; that the truth is like the set of models we imagine. If the models in $M$ do not contain $m^*$ or are too different from it, then even seemingly strong research designs could yield incorrect answers.
 
-![The *MIDA* framework](/figures/figure-2-1){#fig:figure-2-1}
+![The *MIDA* framework](/figures/figure-2-1){#fig-ch2fig1}
 
 Figure @fig-worldandtheory reveals a striking analogy between the *M*, *I* relationship and the *D*, *A* relationship. The answer we aim for (the estimand) is obtained by applying *I* to a draw from *M*. The answer we have access to (the estimate) is obtained by applying *A* to a draw from *D*. Our hope, usually, is that these two answers are quite similar. In some cases, this parallelism suggests that the function *A* should be "like" the function *I*. For instance, if we are interested in the mean of a population and we have access to a random sample, the data available to us from *D* is like the ideal data we would have if we could observe the nodes and edges in *M* directly. 
 
@@ -110,7 +110,7 @@ Table: (\#tab:midarealizations) Elements of research design in code.
 
 As described in the getting started guide in [Chapter 4](@\ref(getting-started)), we concatenate the design steps into a full design declaration using the `+` operator:
 
-:::{.definition #declaration-5-1} 
+:::{.definition #declarationch5dec1} 
 
 Example declaration
 

@@ -26,11 +26,11 @@ The randomized saturation design is a factorial design of sorts, and like any fa
 
 The design employs a two-stage data strategy. First, pre-defined clusters of units are randomly assigned to treatment saturation levels, for example 25\% or 75\%. Then, in each cluster, individual units are assigned to treatment or control with probabilities determined by their clusters' saturation level. The main answer strategy complication is that now there are two levels of randomization that must be respected. The saturation of treatment varies at the cluster level, so whenever we are estimating saturation effects, we have to cluster standard errors at the level saturation was assigned. The direct treatments are assigned at the individual level, so we do not need to cluster.
 
-Declaration @def:declaration-18-12 describes 50 groups of 20 individuals each. We imagine one source of unobserved variation at the group level (the `group_shock`) and another at the individual level (the `individual shock`). We built potential outcomes in which the individual and saturation treatment assignments each have additive (non-interacting) effects, though more complex potential outcomes functions are of course possible. We choose two inquiries in particular: the conditional average effect of saturation among the untreated and the conditional average effect of treatment when saturation is low. 
+Declaration @def-declarationch18dec12 describes 50 groups of 20 individuals each. We imagine one source of unobserved variation at the group level (the `group_shock`) and another at the individual level (the `individual shock`). We built potential outcomes in which the individual and saturation treatment assignments each have additive (non-interacting) effects, though more complex potential outcomes functions are of course possible. We choose two inquiries in particular: the conditional average effect of saturation among the untreated and the conditional average effect of treatment when saturation is low. 
 
 We can learn about the effects of the dosage of indirect treatment by comparing units with the same individual treatment status across the levels of dosage. For example, we could compare untreated units across the 25\% and 75\% saturation clusters. We can also learn about the direct effects of treatment at either saturation level, e.g., the effect of treatment when saturation is low. We use difference-in-means estimators of both inquiries, subsetted and clustered appropriately.
 
-:::{.definition #declaration-18-12} 
+:::{.definition #declarationch18dec12} 
 
 Randomized saturation design
 
@@ -40,7 +40,7 @@ Randomized saturation design
 :::
 
 
-:::{.lemma #diagnosis-18-12}
+:::{.lemma #diagnosisch18diag12}
 
 Randomized saturation diagnosis
 
@@ -50,9 +50,9 @@ Randomized saturation diagnosis
 diagnosis_18.12 <- diagnose_design(declaration_18.12)
 ```
 
-The diagnosis plot in Figure @fig-figure-18-14 shows the sampling distribution of the two estimators with the value of the relevant inquiry overlaid. Both estimators are unbiased for their targets, but the thing to notice from this plot is that the estimator of the saturation inquiry is far more variable than the estimator of the direct treatment inquiry. Saturation is by its nature a group-level treatment, so must be assigned at a group level. The clustered nature of the assignment to saturation level brings extra uncertainty. When designing randomized saturation experiments, researchers should be aware that we typically have much better precision for individually-randomized treatments than cluster-randomized treatments, and should plan accordingly.
+The diagnosis plot in Figure @fig-ch18fig14 shows the sampling distribution of the two estimators with the value of the relevant inquiry overlaid. Both estimators are unbiased for their targets, but the thing to notice from this plot is that the estimator of the saturation inquiry is far more variable than the estimator of the direct treatment inquiry. Saturation is by its nature a group-level treatment, so must be assigned at a group level. The clustered nature of the assignment to saturation level brings extra uncertainty. When designing randomized saturation experiments, researchers should be aware that we typically have much better precision for individually-randomized treatments than cluster-randomized treatments, and should plan accordingly.
 
-![Sampling distributions of indirect and direct treatment effect estimators](/figures/figure-18-14){#fig:figure-18-14}
+![Sampling distributions of indirect and direct treatment effect estimators](/figures/figure-18-14){#fig-ch18fig14}
 
 :::
 
