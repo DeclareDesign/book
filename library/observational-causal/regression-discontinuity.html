@@ -606,8 +606,8 @@ div.csl-indent {
 </div>
 <p>The inquiry in a regression discontinuity design is the effect of the treatment exactly at the cutoff. Formally, it is the difference in the conditional expectation functions of the control and treatment potential outcomes when the running variable is exactly zero. The black vertical line in the plot shows this difference.</p>
 <p>The data strategy is to collect the outcome data for all units within a interval (bandwidth) around the cutoff. The choice of bandwidth involves a tradeoff between bias and variance. The wider we make the bandwidth, the more data we have, and thus the more precision we may be able to achieve. However, the claim of causal identification comes from the comparability of units <em>just</em> above and <em>just</em> below the threshold. Units far from the cutoff are not likely to be comparable: at a minimum they differ in their values of the running variable and if that is correlated with other unobserved heterogeneity then they may differ in that too. Thus, the more units we compare further from the threshold, the more likely we are to induce bias in our estimates of the treatment effect. The ultimate bandwidth chosen for analysis is a function of the data collected in the data strategy and the bandwidth chosen in the answer strategy, which is often the output of an automated process.</p>
-<div id="declarationch16num5" class="definition">
-<p>Regression discontinuity design</p>
+<div id="def-ch16num5" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration -1.1 (Regression discontinuity design) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_16.5.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdrobust</span><span class="op">)</span></span>
@@ -640,8 +640,8 @@ div.csl-indent {
 </div>
 <p>Regression discontinuity answer strategies approximate the treated and untreated conditional expectation functions to the left and right of the cutoff. The choice of answer strategy involves two key choices: the bandwidth of data around the threshold that is used for estimation, and the model used to fit that data. We declare the local polynomial regression discontinuity estimator with the robust bias-corrected inference procedures described in <span class="citation" data-cites="calonico2014robust">Calonico, Cattaneo, and Titiunik (<a href="../../references.html#ref-calonico2014robust" role="doc-biblioref">2014</a>)</span>, which fits a nonparametric model to the data and chooses an optimal bandwidth that minimizes bias. This robust estimator is now widely used in practice, because it navigates the bias-variance tradeoff in selecting bandwidths and statistical model specifications in a data-driven manner. The procedure also obviates the need for researchers to select these parameters themselves.</p>
 <p>Figure <a href="#fig-ch16num10">Figure&nbsp;<span>-1.3</span></a> illustrates the tradeoff in bandwidth selection for a one-degree polynomial (linear interaction). We see the bias-variance tradeoff directly. The bias increases the wider the bandwidth and the more we are relying on data further from the threshold whereas the variance (here, the standard deviation of the estimates) is decreasing the more data we add by widening the bandwidth.</p>
-<div id="declarationch16num6" class="definition">
-<p>Regression discontinuity designs with varying bandwidths</p>
+<div id="def-ch16num6" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration -1.2 (Regression discontinuity designs with varying bandwidths) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_16.6.R">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_16.6</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">declaration_16.5</span> <span class="op">+</span> </span>
@@ -654,9 +654,9 @@ div.csl-indent {
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosisch16num5" class="lemma">
-<p>Regression discontinuity diagnosis across varying bandwidths</p>
+<div id="lem-ch16num5" class="theorem lemma">
 <div class="cell">
+<span class="theorem-title"><strong>Diagnosis -1.1 (Regression discontinuity diagnosis across varying bandwidths) </strong></span>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>diagnosis_16<span class="fl">.5</span> <span class="ot">&lt;-</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  declaration_16<span class="fl">.6</span> <span class="sc">|&gt;</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">redesign</span>(<span class="at">bandwidth =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">0.05</span>, <span class="at">to =</span> <span class="fl">0.5</span>, <span class="at">by =</span> <span class="fl">0.05</span>)) <span class="sc">|&gt;</span> </span>

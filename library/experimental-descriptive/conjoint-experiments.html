@@ -606,9 +606,9 @@ div.csl-indent {
 <p>Finally, the right number of choice tasks usually depends on the survey budget. We can always add more conjoint tasks and the only cost is the opportunity cost of asking a different question of the survey that may serve another scientific purpose. If we’re worried that respondents will get bored with the task, we can always throw out profile pairs that come later in the survey. <span class="citation" data-cites="bansak_hainmueller_hopkins_yamamoto_2019">Bansak et al. (<a href="../../references.html#ref-bansak_hainmueller_hopkins_yamamoto_2019" role="doc-biblioref">2021</a>)</span> suggest that you can ask many tasks without much loss of data quality.</p>
 <p>The declaration of conjoint experiments is complex, so we provide a series of helper functions specifically for forced-choice conjoint design in the <code>rdddr</code> companion software package.</p>
 <p>We begin by establishing the number of subjects and the number of tasks they will accomplish. We then establish the attributes and their levels (this design assumes complete random assignment of all attributes with equal probabilities). Finally, we describe a utility function that governs subject preferences. This function can be simple, as we have it here, or it can be complex, building in differences in preferences by subject type or other details.</p>
-<p>In Declaration <span class="quarto-unresolved-ref">?def-declarationch17num5</span>, we imagine a forced-choice candidate choice conjoint in which the attributes are gender, party, and region. We sample 500 subjects and ask them to complete three tasks each.</p>
-<div id="declarationch17num5" class="definition">
-<p>Conjoint experiment design</p>
+<p>In Declaration <a href="#def-ch17num5">Declaration&nbsp;<span>-1.1</span></a>, we imagine a forced-choice candidate choice conjoint in which the attributes are gender, party, and region. We sample 500 subjects and ask them to complete three tasks each.</p>
+<div id="def-ch17num5" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration -1.1 (Conjoint experiment design) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_17.5.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">cjoint</span><span class="op">)</span></span>
@@ -688,9 +688,9 @@ div.csl-indent {
 <span>                    .method <span class="op">=</span> <span class="va">amce</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosisch17num4" class="lemma">
-<p>Diagnosis of the conjoint experiment design</p>
+<div id="lem-ch17num4" class="theorem lemma">
 <div class="cell">
+<span class="theorem-title"><strong>Diagnosis -1.1 (Diagnosis of the conjoint experiment design) </strong></span>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_17.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_17.4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Figure <a href="#fig-ch17num3">Figure&nbsp;<span>-1.1</span></a> shows the sampling distribution of the five AMCE estimators. All five are unbiased, but with only 500 subjects evaluating three pairs of candidates, the power for the smaller AMCEs is less than ideal.</p>

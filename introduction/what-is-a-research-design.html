@@ -765,9 +765,9 @@ div.csl-indent {
 <li><p><em>D</em>: We imagine a data strategy with three components relating to units, conditions, and outcomes: we sample 100 deputies to participate in the experiment, assign exactly half to treatment and the remainder to control, and finally measure their outcomes through a survey.</p></li>
 <li><p><em>A</em>: The answer strategy takes the difference-in-means between the treated and untreated units. Thus the answer strategy uses a function similar to the inquiry itself.</p></li>
 </ul>
-<p>When we put these all together we have a design, Declaration <span class="quarto-unresolved-ref">?def-declarationch2num1</span>.</p>
-<div id="declarationch2num1" class="definition">
-<p>Two-arm trial design</p>
+<p>When we put these all together we have a design, Declaration <a href="#def-ch2num1">Declaration&nbsp;<span>2.1</span></a>.</p>
+<div id="def-ch2num1" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration 2.1 (Two-arm trial design) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_2.1.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">b</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
 <span></span>
@@ -876,9 +876,9 @@ div.csl-indent {
 </section><section id="design-2-n-100-baseline-measurement-block-random-assignment" class="level3" data-number="2.3.2"><h3 data-number="2.3.2" class="anchored" data-anchor-id="design-2-n-100-baseline-measurement-block-random-assignment">
 <span class="header-section-number">2.3.2</span> Design 2: N = 100, baseline measurement, block random assignment</h3>
 <p>The alternative design that differs on the empirical side in three ways. First fewer subjects are sampled. Second, information about the subjects’ background information (their “history”) is used to implement a block randomization that conditions assignment on history. Third the subjects’ history is taken into account in the analysis. This choice is an instance of adjusting the answer strategy in light of a change to the data strategy.</p>
-<p>In Declaration <span class="quarto-unresolved-ref">?def-declarationch2num2</span>, we can leave the model and inquiry intact and but we have to work on the data and answer strategies.</p>
-<div id="declarationch2num2" class="definition">
-<p>A design that exploits background information</p>
+<p>In Declaration <a href="#def-ch2num2">Declaration&nbsp;<span>2.2</span></a>, we can leave the model and inquiry intact and but we have to work on the data and answer strategies.</p>
+<div id="def-ch2num2" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration 2.2 (A design that exploits background information) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_2.2.R">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_strategy_2</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_sampling</span><span class="op">(</span>S <span class="op">=</span> <span class="fu">complete_rs</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, n <span class="op">=</span> <span class="fl">100</span><span class="op">)</span>, </span>
@@ -907,8 +907,8 @@ div.csl-indent {
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span>diagnosands <span class="op">=</span> <span class="va">program_diagnosands</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The results are shown in the next figure.</p>
-<div id="diagnosisch2num1" class="lemma">
-<p>Diagnosis of <code>declaration_2.1</code> and <code>declaration_2.2</code></p>
+<div id="lem-ch2num1" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 2.1 (Diagnosis of <code>declaration_2.1</code> and <code>declaration_2.2</code>) </strong></span></p>
 <div id="fig-ch2num2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-2-2.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.2: How success depends on choice of <em>D</em> and <em>A</em> given different possibilities for <em>M</em></figcaption><p></p>

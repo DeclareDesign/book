@@ -1228,9 +1228,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="header-section-number">13.4.1</span> Statistical modeling functions</h3>
 <p>In <code>DeclareDesign</code>, we call these two steps <code>.method</code> and <code>.summary</code> (these arguments are preceded by <code>.</code>’s to avoid argument conflicts). The <code>.method</code> argument in <code>declare_estimator</code> can take almost any modelling function in <code>R</code> (e.g., <code>lm</code> for linear regression) and <code>.summary</code> consists of a summary function that calculates statistics from the fit such as <code>tidy</code> or <code>glance</code>. You can write your own model or model summary. When your answer strategy does not fit this two-step structure, you can (as with all <code>declare_</code> functions) write your own handler.</p>
 <p>We break down each part of a standard answer strategy declaration using the example of a linear regression of the effect of a variable <code>Z</code> on an outcome <code>Y</code> in Declaration @ref(def:declaration-13-1}. The first argument in our <code>declare_estimator</code> step defines the method we will use, here <code>lm_robust</code> which is our function in the <code>estimatr</code> package for running linear regressions with robust standard errors. The second is the main argument for <code>lm_robust</code>, the formula for the regression specification, in this case Y on Z with no controls.</p>
-<div id="declarationch13num1" class="definition">
-<p>Linear regression design</p>
+<div id="def-ch13num1" class="theorem definition">
 <div class="cell" data-file="scripts_declarations/declaration_13.1.R">
+<span class="theorem-title"><strong>Declaration 13.1 (Linear regression design) </strong></span>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_13.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>                U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
@@ -1388,9 +1388,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Often you may want to construct a test as part of your answer strategy that does not target an inquiry. Our <code>declare_test</code> function works just like <code>declare_estimator</code> except you need not include an inquiry. The <code>label_test</code> infrastructure works just like <code>label_estimator</code> for custom test functions.</p>
 </section></section><section id="declaration-code" class="level2" data-number="13.5"><h2 data-number="13.5" class="anchored" data-anchor-id="declaration-code">
 <span class="header-section-number">13.5</span> Declaration</h2>
-<p>To construct a research <em>design</em> object that we can operate on — diagnose it, redesign it, draw data from it, etc. — we add research design elements together with the <code>+</code> operator. In Declaration <span class="quarto-unresolved-ref">?def-declarationch13num2</span>, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.</p>
-<div id="declarationch13num2" class="definition">
-<p>Declaration of two-arm randomized experiment</p>
+<p>To construct a research <em>design</em> object that we can operate on — diagnose it, redesign it, draw data from it, etc. — we add research design elements together with the <code>+</code> operator. In Declaration <a href="#def-ch13num2">Declaration&nbsp;<span>13.2</span></a>, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.</p>
+<div id="def-ch13num2" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration 13.2 (Declaration of two-arm randomized experiment) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_13.2.R">
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">1000</span>,</span>
@@ -1455,9 +1455,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="diagnosis-code" class="level2" data-number="13.6"><h2 data-number="13.6" class="anchored" data-anchor-id="diagnosis-code">
 <span class="header-section-number">13.6</span> Diagnosis</h2>
 <p>Once a design is declared in code, diagnosing it is usually the easy part. <code>diagnose_design</code> handles all the details and bookkeeping for you. In this section, we outline how to conduct a diagnosis using our default tools for standard diagnoses and also how you might operate directly on the simulations for more complicated analyses.</p>
-<div id="diagnosisch10num6" class="lemma">
-<p>Diagnosis of two-arm randomized experiment</p>
-<p>Here we use <code>diagnose_design</code> to diagnose the design. By default, we conduct 500 simulations and characterize simulation error with 100 bootstraps of the diagnosands. <code>reshape_diagnosis</code> prepares the output for nice printing.</p>
+<div id="lem-ch10num6" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 13.1 (Diagnosis of two-arm randomized experiment) </strong></span>Here we use <code>diagnose_design</code> to diagnose the design. By default, we conduct 500 simulations and characterize simulation error with 100 bootstraps of the diagnosands. <code>reshape_diagnosis</code> prepares the output for nice printing.</p>
 <div class="cell">
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_13.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_13.2</span>,</span>
@@ -1766,7 +1765,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Plotting simulations using <code>ggplot2</code> is often a great way to gain a deeper sense of the properties of the design.</p>
-<p>The answer strategy for Declaration <span class="quarto-unresolved-ref">?def-declarationch13num1</span> includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using <code>geom_histogram</code>, then faceting by estimator using <code>facet_wrap</code>. We often want to overlay the true value of the estimand on these plots, which we do here with <code>geom_vline</code>. Notice that in order to do, we had to create a <code>summary_df</code> that includes the value of the estimand. The resulting plot shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.</p>
+<p>The answer strategy for Declaration <a href="#def-ch13num1">Declaration&nbsp;<span>13.1</span></a> includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using <code>geom_histogram</code>, then faceting by estimator using <code>facet_wrap</code>. We often want to overlay the true value of the estimand on these plots, which we do here with <code>geom_vline</code>. Notice that in order to do, we had to create a <code>summary_df</code> that includes the value of the estimand. The resulting plot shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.</p>
 <div class="cell">
 <div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># first create summary for vertical lines</span></span>
 <span><span class="va">summary_df</span> <span class="op">&lt;-</span> </span>

@@ -607,8 +607,8 @@ div.csl-indent {
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure -1.1: Directed acyclic graph of a two-arm randomized experiment</figcaption><p></p>
 </figure>
 </div>
-<div id="declarationch18num1" class="definition">
-<p>Canonical two arm trial design</p>
+<div id="def-ch18num1" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration -1.1 (Canonical two arm trial design) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_18.1.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_18.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>,</span>
@@ -620,9 +620,8 @@ div.csl-indent {
 <span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosisch18num1" class="lemma">
-<p>Two arm trial diagnosis</p>
-<p>Diagnosing this two arm trial design, we see that as expected, we encountered no bias, but high variance. In the model, we set the ATE at 0.2 standard units, but the true standard deviation of the estimator (the true standard error) is nearly the same value, at 0.19 standard units. We have low statistical power, at 16%. Two approaches to increasing the precision of the estimate include increasing the sample size and including prognostic pre-treatment covariates in the answer strategy. We explore both of these approaches in the next section.</p>
+<div id="lem-ch18num1" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis -1.1 (Two arm trial diagnosis) </strong></span>Diagnosing this two arm trial design, we see that as expected, we encountered no bias, but high variance. In the model, we set the ATE at 0.2 standard units, but the true standard deviation of the estimator (the true standard error) is nearly the same value, at 0.19 standard units. We have low statistical power, at 16%. Two approaches to increasing the precision of the estimate include increasing the sample size and including prognostic pre-treatment covariates in the answer strategy. We explore both of these approaches in the next section.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.1</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_18.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -656,9 +655,9 @@ div.csl-indent {
 <p>When treatments are randomized, whether we adjust for pre-treatment covariates makes little difference for bias. By contrast, when treatments are not randomized, we often do need on adjust for covariates in order to account for the confounding introduced by “omitted variables” (see <span class="citation" data-cites="selection-on-observables">(<a href="../../references.html#ref-selection-on-observables" role="doc-biblioref"><strong>selection-on-observables?</strong></a>)</span>).</p>
 <p>The purpose of adjusting for covariates in an experimental study is to increase precision. The more predictive the covariates are of the outcome, the more they help the precision of the estimates.</p>
 <p>One way to think about how much the inclusion of covariates will help precision is to summarize their predictive power in a statistic like <span class="math inline">\(R^2\)</span>. The <span class="math inline">\(R^2\)</span> value from a regression of the outcome on the covariates alone (i.e., without the treatment indicator) gives an understanding of how jointly predictive the covariates are. If <span class="math inline">\(R^2\)</span> is close to zero, including the covariates will make almost no difference for precision. If <span class="math inline">\(R^2\)</span> is close to one, we can achieve dramatic increases in precision and statistical power.</p>
-<p>Declaration <span class="quarto-unresolved-ref">?def-declarationch18num2</span> draws a summary covariate <code>X</code> and unobserved heterogeneity <code>U</code> from a multivariate normal distribution with a specified covariance between the two variables. By redesigning over the values of that correlation, we can learn how covariate adjustment affects precision depending on the level of <span class="math inline">\(R^2\)</span>. The answer strategy uses the estimator proposed in <span class="citation" data-cites="lin2013agnostic">Lin (<a href="../../references.html#ref-lin2013agnostic" role="doc-biblioref">2013</a>)</span> for reasons explained in the next section.</p>
-<div id="declarationch18num2" class="definition">
-<p>Two arm trial with covariate adjustment</p>
+<p>Declaration <a href="#def-ch18num2">Declaration&nbsp;<span>-1.2</span></a> draws a summary covariate <code>X</code> and unobserved heterogeneity <code>U</code> from a multivariate normal distribution with a specified covariance between the two variables. By redesigning over the values of that correlation, we can learn how covariate adjustment affects precision depending on the level of <span class="math inline">\(R^2\)</span>. The answer strategy uses the estimator proposed in <span class="citation" data-cites="lin2013agnostic">Lin (<a href="../../references.html#ref-lin2013agnostic" role="doc-biblioref">2013</a>)</span> for reasons explained in the next section.</p>
+<div id="def-ch18num2" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration -1.2 (Two arm trial with covariate adjustment) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_18.2.R">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
 <span><span class="va">r_sq</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
@@ -679,8 +678,8 @@ div.csl-indent {
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosisch18num2" class="lemma">
-<p>Two arm trial diagnosis</p>
+<div id="lem-ch18num2" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis -1.2 (Two arm trial diagnosis) </strong></span></p>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.2</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">declaration_18.2</span> <span class="op">|&gt;</span> </span>
@@ -697,9 +696,9 @@ div.csl-indent {
 </section><section id="can-controlling-for-covariates-hurt-precision" class="level2"><h2 class="anchored" data-anchor-id="can-controlling-for-covariates-hurt-precision">Can controlling for covariates hurt precision?</h2>
 <p><span class="citation" data-cites="freedman2008regression">Freedman (<a href="../../references.html#ref-freedman2008regression" role="doc-biblioref">2008</a>)</span> critiques the practice of using OLS regression to adjust experimental data. While the difference-in-means estimator is unbiased for the average treatment effect, the covariate-adjusted OLS estimator exhibits a small sample bias (sometimes called “Freedman bias”) that diminishes quickly as sample sizes increase. More worrying is the critique that covariate adjustment can even hurt precision.</p>
 <p><span class="citation" data-cites="lin2013agnostic">Lin (<a href="../../references.html#ref-lin2013agnostic" role="doc-biblioref">2013</a>)</span> unpacks the circumstances under which this precision loss occurs and offers an alternative estimator that is guaranteed to be at least as precise as the unadjusted estimator. The trouble occurs when the correlation of covariates with the outcome is quite different in the treatment condition from in the control condition and when designs are strongly imbalanced in the sense of having large proportions of treated or untreated units. We refer the reader to this excellent paper for details and the connection between covariate adjustment in randomized experiments and covariate adjustment in random sampling designs. In sum, the Lin estimator deals with the problem by performing covariate adjustment in each arm of the experiment separately, which is equivalent to the inclusion of a full set of treatment-by-covariate interactions. In a clever bit of regression magic, Lin shows how first pre-processing the data by de-meaning the covariates renders the coefficient on the treatment regressor an estimate of the overall ATE. The <code>lm_lin</code> estimator in the <code>estimatr</code> package implements this pre-processing in one step.</p>
-<p>Declaration <span class="quarto-unresolved-ref">?def-declarationch18num3</span> will help us to explore the precision of three estimators under a variety of circumstances. We want to understand the performance of the difference-in-means, OLS, and Lin estimators depending on how different the correlation between <code>X</code> and the outcome is by treatment arm, and depending on the fraction of units assigned to treatment.</p>
-<div id="declarationch18num3" class="definition">
-<p>Lin estimator design</p>
+<p>Declaration <a href="#def-ch18num3">Declaration&nbsp;<span>-1.3</span></a> will help us to explore the precision of three estimators under a variety of circumstances. We want to understand the performance of the difference-in-means, OLS, and Lin estimators depending on how different the correlation between <code>X</code> and the outcome is by treatment arm, and depending on the fraction of units assigned to treatment.</p>
+<div id="def-ch18num3" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration -1.3 (Lin estimator design) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_18.3.R">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">prob</span> <span class="op">=</span> <span class="fl">0.5</span></span>
 <span><span class="va">control_slope</span> <span class="op">=</span> <span class="op">-</span><span class="fl">1</span></span>
@@ -719,9 +718,9 @@ div.csl-indent {
 <span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, covariates <span class="op">=</span> <span class="op">~</span><span class="va">X</span>, .method <span class="op">=</span> <span class="va">lm_lin</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span>, label <span class="op">=</span> <span class="st">"Lin"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosisch18num3" class="lemma">
-<p>Lin estimator diagnosis</p>
+<div id="lem-ch18num3" class="theorem lemma">
 <div class="cell">
+<span class="theorem-title"><strong>Diagnosis -1.3 (Lin estimator diagnosis) </strong></span>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.3</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">diagnosis_18.3</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">redesign</span><span class="op">(</span></span>

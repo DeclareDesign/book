@@ -608,8 +608,8 @@ div.csl-indent {
 <span class="header-section-number">10.1</span> Redesigning over data strategies</h2>
 <p>A redesign over a data strategy choice can be summarized with a “power curve.” We want to learn the power of a test at many sample sizes, either so we can learn the price of precision, or so we can learn what sample size is required for a minimum level of statistical power.</p>
 <p>We start with a minimal design declaration: we draw samples of size <span class="math inline">\(N\)</span> and measure a single binary outcome <span class="math inline">\(Y\)</span>, then conduct a test against the null hypothesis that the true proportion of successes is equal to 0.5.</p>
-<div id="declarationch11num1" class="definition">
-<p>A baseline declaration intended to be redesigned over <span class="math inline">\(N\)</span>.</p>
+<div id="def-ch11num1" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration 10.1 (A baseline declaration intended to be redesigned over <span class="math inline">\(N\)</span>.) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_11.1.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
 <span></span>
@@ -623,9 +623,8 @@ div.csl-indent {
 <span>                 <span class="op">}</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosisch11num1" class="lemma">
-<p>Diagnosing over a redesign</p>
-<p>To construct a power curve, we redesign our baseline declaration over values of <span class="math inline">\(N\)</span> that vary from 100 to 1000.</p>
+<div id="lem-ch11num1" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 10.1 (Diagnosing over a redesign) </strong></span>To construct a power curve, we redesign our baseline declaration over values of <span class="math inline">\(N\)</span> that vary from 100 to 1000.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.1</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">declaration_11.1</span> <span class="op">|&gt;</span></span>
@@ -647,9 +646,9 @@ div.csl-indent {
 <p>When we diagnose studies, we do so over the many theoretical possibilities we entertain in the model. Through diagnosis, we learn how the values of the diagnosands change depending on model parameters. When we redesign, we explore a <em>range</em> of empirical strategies over the set of model possibilities. Redesign might indicate that one design is optimal under one set of assumptions, but that a different design would be preferred if a different set holds.</p>
 <p>We illustrate this idea with an analysis of the minimum detectable effect (MDE) and how it changes at different sample sizes. The MDE diagnosand is complex. Whereas most diagnosands can be calculated with respect to a single possible model in <span class="math inline">\(M\)</span>, the MDE is defined over a range of possible models. It is obtained by calculating the statistical power of the design over a range of possible effect sizes (holding the empirical design constant), then reporting the effect size that is associated with (typically) 80% statistical power.</p>
 <p>MDEs can be a useful heuristic for thinking about the multiplicity of possibilities in the model. If the minimum detectable effect of a study is enormous – a one standard deviation effect, say – then we don’t have to think much harder about our beliefs about the true effect size. Whatever our priors over the true effect size are, they are probably smaller than 1.0 SDs, so we can immediately conclude that the design is too small.</p>
-<p>Declaration <span class="quarto-unresolved-ref">?def-declarationch11num2</span> contains uncertainty over the true effect size. This uncertainty is encoded in the <code>runif(n = 1, min = 0, max = 0.5)</code> command, which corresponds to our uncertainty over the ATE. It could be as small as 0.0 SDs or as large as 0.5 SDs, and we are equally uncertain about all the values in between. We redesign over three values of <span class="math inline">\(N\)</span>: 100, 500, and 1000, then simulate each design. Each run of simulation features a different true ATE somewhere between 0.0 and 0.5.</p>
-<div id="declarationch11num2" class="definition">
-<p>Uncertainty over effect size design</p>
+<p>Declaration <a href="#def-ch11num2">Declaration&nbsp;<span>10.2</span></a> contains uncertainty over the true effect size. This uncertainty is encoded in the <code>runif(n = 1, min = 0, max = 0.5)</code> command, which corresponds to our uncertainty over the ATE. It could be as small as 0.0 SDs or as large as 0.5 SDs, and we are equally uncertain about all the values in between. We redesign over three values of <span class="math inline">\(N\)</span>: 100, 500, and 1000, then simulate each design. Each run of simulation features a different true ATE somewhere between 0.0 and 0.5.</p>
+<div id="def-ch11num2" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration 10.2 (Uncertainty over effect size design) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_11.2.R">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
 <span><span class="va">declaration_11.2</span> <span class="op">&lt;-</span></span>
@@ -662,9 +661,9 @@ div.csl-indent {
 <span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosisch11num2" class="lemma">
-<p>Redesigning under uncertainty</p>
+<div id="lem-ch11num2" class="theorem lemma">
 <div class="cell">
+<span class="theorem-title"><strong>Diagnosis 10.2 (Redesigning under uncertainty) </strong></span>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.2</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">declaration_11.2</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">500</span>, <span class="fl">1000</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -690,8 +689,8 @@ div.csl-indent {
 \end{align*}\]</span></p>
 <p>where <span class="math inline">\(L\)</span> is a loss function, increasing in the difference between <span class="math inline">\(a^{d}\)</span> and <span class="math inline">\(a^{m}\)</span>.</p>
 <p>We can explore this optimization with bare-bones declaration of a two-arm trial that depends on two separate data strategy parameters, <code>N</code> and <code>prob</code>:</p>
-<div id="declarationch11num3" class="definition">
-<p>Bare-bones two-arm trial</p>
+<div id="def-ch11num3" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration 10.3 (Bare-bones two-arm trial) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_11.3.R">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
 <span></span>
@@ -704,9 +703,8 @@ div.csl-indent {
 <span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosisch11num3" class="lemma">
-<p>Redesigning over two parameters</p>
-<p>We redesign, varying those two parameters over reasonable ranges: 100 to 1000 subjects, with probabilities of assignment from 0.1 to 0.5. The redesign function smartly generates designs with all combinations of the two parameters. We want to consider the consequences of these data strategy choices for two diagnosands: cost and a very common loss function: mean squared error.</p>
+<div id="lem-ch11num3" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 10.3 (Redesigning over two parameters) </strong></span>We redesign, varying those two parameters over reasonable ranges: 100 to 1000 subjects, with probabilities of assignment from 0.1 to 0.5. The redesign function smartly generates designs with all combinations of the two parameters. We want to consider the consequences of these data strategy choices for two diagnosands: cost and a very common loss function: mean squared error.</p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosands</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_diagnosands</span><span class="op">(</span>cost <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">N</span> <span class="op">*</span> <span class="fl">2</span> <span class="op">+</span> <span class="va">prob</span> <span class="op">*</span> <span class="va">N</span> <span class="op">*</span> <span class="fl">20</span><span class="op">)</span>,</span>
@@ -733,9 +731,9 @@ div.csl-indent {
 <p>Redesign can also take place over possible answer strategies. An inquiry like the average treatment effect could be estimated using many different estimators: difference-in-means, logistic regression, covariate-adjusted ordinary least squares, the stratified estimator, doubly robust regression, targeted maximum likelihood regression, regression trees – the list of possibilities is long. Redesign is an opportunity to explore how many alternative analysis approaches work.</p>
 <p>A key tradeoff in the choice of answer strategy is the bias-variance tradeoff. Some answer strategies exhibit higher bias but lower variance while others have lower bias but higher variance. Choosing which side of the bias-variance tradeoff to take is complicated and the process for choosing among alternatives must be motivated by the scientific goals at hand.</p>
 <p>A common heuristic for trading off bias and variance is the mean squared error (MSE) diagnosand. Mean squared error is equal to the square of bias plus variance, which is to say MSE weighs bias and variance equally. Typically, researchers choose among alternative answer strategies by minimizing MSE. If in your scientific context, bias is more important than variance, you might choose a an answer strategy that accepts slightly more variance in exchange for a decrease in bias.</p>
-<p>To illustrate the bias-variance tradeoff, Declaration <span class="quarto-unresolved-ref">?def-declarationch11num4</span> describes a setting in which the goal is to estimate the conditional expectation of some outcome variable Y with respect to a covariate X. The true conditional expectation function (produced by the custom <code>dip</code> function) is not smooth, but we estimate it with smooth polynomial functions of increasing order.</p>
-<div id="declarationch11num4" class="definition">
-<p>Conditional expectation function design</p>
+<p>To illustrate the bias-variance tradeoff, Declaration <a href="#def-ch11num4">Declaration&nbsp;<span>10.4</span></a> describes a setting in which the goal is to estimate the conditional expectation of some outcome variable Y with respect to a covariate X. The true conditional expectation function (produced by the custom <code>dip</code> function) is not smooth, but we estimate it with smooth polynomial functions of increasing order.</p>
+<div id="def-ch11num4" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration 10.4 (Conditional expectation function design) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_11.4.R">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://purrr.tidyverse.org">purrr</a></span><span class="op">)</span></span>
 <span></span>
@@ -770,9 +768,8 @@ div.csl-indent {
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.4: Estimating a CEF with polynomials of increasing order</figcaption><p></p>
 </figure>
 </div>
-<div id="diagnosisch11num4" class="lemma">
-<p>Conditional expectation function diagnosis</p>
-<p>Increasing the order of the polynomial decreases bias, but this decrease comes at the cost of variance. Figure <a href="#fig-ch11num4">Figure&nbsp;<span>10.4</span></a> shows how, when the order increases, bias goes down while variance goes up. Mean squared error is one way to trade these two diagnosands off one another. Here, MSE is minimized with a polynomial of order 3. If we were to care much more about bias than variance, perhaps we would choose a polynomial of even higher order.</p>
+<div id="lem-ch11num4" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 10.4 (Conditional expectation function diagnosis) </strong></span>Increasing the order of the polynomial decreases bias, but this decrease comes at the cost of variance. Figure <a href="#fig-ch11num4">Figure&nbsp;<span>10.4</span></a> shows how, when the order increases, bias goes down while variance goes up. Mean squared error is one way to trade these two diagnosands off one another. Here, MSE is minimized with a polynomial of order 3. If we were to care much more about bias than variance, perhaps we would choose a polynomial of even higher order.</p>
 <div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">diagnosis_11.4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -788,8 +785,8 @@ div.csl-indent {
 <section id="redesigning-over-estimators-logit-probit-or-ols" class="level3" data-number="10.3.1"><h3 data-number="10.3.1" class="anchored" data-anchor-id="redesigning-over-estimators-logit-probit-or-ols">
 <span class="header-section-number">10.3.1</span> Redesigning over estimators: Logit, Probit, or OLS?</h3>
 <p>A perennial debate among social scientists is whether to use a binary choice model like logit or probit when the outcome is binary, or if the workhorse OLS estimator is preferable. Unsurprisingly, who is right in this debate depends on other features of the research design. For example, in an observational descriptive study in which the inquiry is a prediction for the probability of success among a particular group of units, explicitly accounting for the binary nature the outcome variable is important; OLS can generate predictions that lie outside the theoretically permissible zero to one range. However, in an experimental causal study in which the inquiry is the average treatment effect, it is not possible for a comparison of treatment and control group means (as estimated by OLS) to generate a nonsense treatment effect estimate in the sense of being outside the theoretically permissible -100 to +100 percentage point range. By contrast, binary choice models like logit or probit can theoretically impossible average treatment effect estimates, once average marginal effect estimates are calculated. This problem is demonstrated in the following declaration, diagnosis, and redesign:</p>
-<div id="declarationch11num5" class="definition">
-<p>Choosing logit, probit, or OLS</p>
+<div id="def-ch11num5" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration 10.5 (Choosing logit, probit, or OLS) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_11.5.R">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/leeper/margins">margins</a></span><span class="op">)</span></span>
 <span></span>
@@ -830,9 +827,9 @@ div.csl-indent {
 <span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosisch11num5" class="lemma">
-<p>Redesigning alternative estimators over sample sizes</p>
+<div id="lem-ch11num5" class="theorem lemma">
 <div class="cell">
+<span class="theorem-title"><strong>Diagnosis 10.5 (Redesigning alternative estimators over sample sizes) </strong></span>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.5</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">declaration_11.5</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span>, by <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>

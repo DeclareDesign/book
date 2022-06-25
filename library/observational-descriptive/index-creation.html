@@ -591,7 +591,7 @@ div.csl-indent {
 <p>The first difficult feature of such problems is that we do not have access to the <em>scale</em> on which <code>Y_star</code> is measured and so it may seem like a hopeless exercise to try to assess whether we have got good or bad estimates of <code>Y_star</code> when we combine the measured data.</p>
 <p>One way around this is to normalize the scale of both the latent variable and the measured variable so that they have a mean of zero and a standard deviation of one. But in that case, we are guaranteed that our estimate of the mean of the normalized variable will be unbiased because we will certainly estimate a mean of 0! That may be — but as we show in the declaration below, if your model is correct this approach may still be useful for calculating other quantities (such as conditional means) that you don’t just get right by construction.</p>
 <p>A second challenge is deciding which measurements to combine into the index. We clearly only want to create indices using measurements of the same latent variable, but it can hard to be sure which latent variable, exactly, is being measured. Just relying on whether the measurements are positively correlated or not is not sufficient, because measurements can be correlated even if they are not measurements of the same underlying variable. Ultimately we have to rely on theory to make these decisions, as uncomfortable as that may make us.</p>
-<p>In Declaration <span class="quarto-unresolved-ref">?def-declarationch15num6</span>, our inquiry is the average level of the latent variable among units whose binary covariate <code>X</code> is equal to one.</p>
+<p>In Declaration <a href="#def-ch15num6">Declaration&nbsp;<span>-1.1</span></a>, our inquiry is the average level of the latent variable among units whose binary covariate <code>X</code> is equal to one.</p>
 <p>In the declaration below <code>Y_star</code> has a normal distribution but it is not centered on zero. The measured variables <code>Y_1</code>, <code>Y_2</code>, <code>Y_3</code> are also normally distributed but each has its own scale; they are all related to <code>Y_star</code>, though some more strongly than others. Many procedures for combining these measured variables into an index exist. Here we’ll consider a few of the common approaches:</p>
 <ul>
 <li><p><code>Y_avg</code> is constructed by first scaling each of these measured variables, then averaging and then scaling again. This is akin to the approach used in <span class="citation" data-cites="kling2007experimental">Kling, Liebman, and Katz (<a href="../../references.html#ref-kling2007experimental" role="doc-biblioref">2007</a>)</span>.</p></li>
@@ -599,8 +599,8 @@ div.csl-indent {
 <li><p><code>Y_avg_rescaled</code> is the same as <code>Y_avg</code>, but instead of taking an equally-weighted average of the scaled components, we rescale their sum by its mean and standard deviation.</p></li>
 <li><p><code>Y_first_factor</code> extracts the first factor from a ‘principal components analysis’ which, intuitively, seeks to find a weighting that minimizes the distance to the measured variables.</p></li>
 </ul>
-<div id="declarationch15num6" class="definition">
-<p>Latent variable design</p>
+<div id="def-ch15num6" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration -1.1 (Latent variable design) </strong></span></p>
 <div class="cell" data-file="scripts_declarations/declaration_15.6.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_15.6</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -639,9 +639,9 @@ div.csl-indent {
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure -1.1: Correlations between the latent variable, measured components, and indices.</figcaption><p></p>
 </figure>
 </div>
-<div id="diagnosisch15num5" class="lemma">
-<p>Latent variables diagnosis over alternative answer strategies</p>
+<div id="lem-ch15num5" class="theorem lemma">
 <div class="cell">
+<span class="theorem-title"><strong>Diagnosis -1.1 (Latent variables diagnosis over alternative answer strategies) </strong></span>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_15.5</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_15.6</span>, make_groups <span class="op">=</span> <span class="fu">vars</span><span class="op">(</span><span class="va">outcome</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Figure <a href="#fig-ch15num7">Figure&nbsp;<span>-1.2</span></a> shows the distribution of estimates from different approaches to generating indices. A few features stand out from the distribution of estimates.</p>

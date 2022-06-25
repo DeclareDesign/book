@@ -728,22 +728,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>We use the <code>+</code> operator to build from elements of a design to a design. Declaration <span class="quarto-unresolved-ref">?def-declarationch4num1</span> shows the format of most declarations throughout the book. This declaration represents a two-arm randomized experiment with 100 units from which we aim to estimate the average treatment effect.</p>
-<div id="declarationch4num1" class="definition">
-<p>Two-arm randomized experiment</p>
-<div id="fig:designannotated" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/declaration-example.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Two-arm randomized experiment declaration</figcaption><p></p>
-</figure>
-</div>
+<p>We use the <code>+</code> operator to build from elements of a design to a design. Declaration <a href="#def-ch4num1">Declaration&nbsp;<span>4.1</span></a> shows the format of most declarations throughout the book. This declaration represents a two-arm randomized experiment with 100 units from which we aim to estimate the average treatment effect.</p>
+<div id="def-ch4num1" class="theorem definition">
+<p><span class="theorem-title"><strong>Declaration 4.1 (Two-arm randomized experiment) </strong></span><img src="../figures/declaration-example.svg" title="fig:" id="fig:designannotated" class="img-fluid" alt="Two-arm randomized experiment declaration"></p>
 <p><span class="math inline">\(~\)</span></p>
 </div>
 </section><section id="diagnose-design-function" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="diagnose-design-function">
 <span class="header-section-number">4.3</span> Diagnosis</h2>
 <p>Diagnosis is the process of simulating the design many times and calculating summary statistics about the design that describe its properties, which we call diagnosands. Once a design is declared, diagnosis is as simple as using the <code>diagnose_design</code> function on it.</p>
-<div id="diagnosisch4num1" class="lemma">
-<p>Example design diagnosis</p>
+<div id="lem-ch4num1" class="theorem lemma">
 <div class="cell">
+<span class="theorem-title"><strong>Diagnosis 4.1 (Example design diagnosis) </strong></span>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://declaredesign.org/r/declaredesign/reference/diagnose_design.html">diagnose_design</a></span><span class="op">(</span><span class="va">declaration_4.1</span>, sims <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
