@@ -2,7 +2,7 @@
 sidebar: true
 ---
 
-::: {.content-hidden when-format="html"}
+::: {.content-hidden}
 
 # Welcome {.unnumbered}
 
