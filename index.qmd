@@ -1,5 +1,7 @@
 ---
-sidebar: true
+format: 
+  html:
+    page-layout: full
 ---
 
 Forthcoming, *Princeton University Press*.
