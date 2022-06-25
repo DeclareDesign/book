@@ -53,10 +53,7 @@ diagnosis_18.7 <-
   diagnose_designs()
 ```
 
-```{r figure-18-7, echo=FALSE, fig.cap="Power curves for factorial inquires", fig.height = 6.5, fig.width = 6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.7.", imgsufx))
-```
+![Power curves for factorial inquires](/figures/figure-18-7){#fig:figure-18-7}
 
 :::
 
@@ -85,10 +82,7 @@ diagnosis_18.8 <-
 
 Figure \@ref(fig:figure-18-8) shows that the error rate when we consider the statistical significance of the interaction term is nominal. Only 5% of the time do we falsely reject the null that the difference-in-CATEs is zero, which is what we expect when we adopt an $\alpha = 0.05$ threshold. But when we claim "treatment effect heterogeneity!" when one CATE is significant but not the other, we make egregious errors. When the true (constant) average effect of `Z1` approaches 0.2, we falsely conclude that the treatment has heterogeneous effects nearly 50\% of the time! 
 
-```{r figure-18-8, echo=FALSE, fig.cap="Comparing the significance of CATE estimates generates misleading inferences.", fig.height = 6.5, fig.width = 6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.8.", imgsufx))
-```
+![Comparing the significance of CATE estimates generates misleading inferences.](/figures/figure-18-8){#fig:figure-18-8}
 
 :::
 

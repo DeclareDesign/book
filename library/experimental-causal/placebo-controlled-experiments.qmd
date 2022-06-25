@@ -61,11 +61,7 @@ diagnosis_18.10_placebo <-
   diagnose_designs(sims = sims, bootstrap_sims = bootstrap_sims)
 ```
 
-
-```{r figure-18-11, echo=FALSE, fig.width = 6.5, fig.height=3, fig.cap="Comparison of the placebo-controlled design to a standard encouragment design"}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.11.", imgsufx))
-```
+![Comparison of the placebo-controlled design to a standard encouragment design](/figures/figure-18-11){#fig:figure-18-11}
 
 :::
 

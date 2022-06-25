@@ -30,8 +30,5 @@ Design details help future scholars not only assess, but replicate, reanalyze, a
 
 Figure \@ref(fig:filestructure) below shows the file structure for an example replication. Our view on replication archives shares much in common with the [TIER protocol](https://www.projecttier.org) and the proposals in @alvarez2018. It includes raw data in a platform-independent format (.csv) and cleaned data in a language-specific format (.rds, a format for R data files). Data features like labels, attributes, and factor levels are preserved when imported by the analysis scripts. The analysis scripts are labeled by the outputs they create, such as figures and tables. A master script is included that runs the cleaning and analysis scripts in the correct order. The documents folder consists of the paper, the supplemental appendix, the pre-analysis plan, the populated analysis plan, and codebooks that describe the data. A README file explains each part of the replication archive. We also suggest that authors include a script that consists of a design declaration and diagnosis. @Bowers2011 offers one reason above and beyond research transparency to go to all this effort: good archiving is like collaborating with your future self.
 
-```{r filestructure, echo = FALSE, fig.cap = "File structure for archiving", fig.width = 6.5}
-imgsufx <- if(knitr::is_html_output()) "svg" else "pdf"
-knitr::include_graphics(path = paste0("figures/file_structure.", imgsufx))
-```
+![File structure for archiving](/figures/file-structure){#fig:file-structure}
 

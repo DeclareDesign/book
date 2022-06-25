@@ -42,10 +42,7 @@ Latent variable design
 
 In Figure \@ref(fig:figure-15-6) we show that the correlation between all the indices and the underlying quantity is quite good, even though the strength of the correlations for some of the components is weak. Trickier however is being sure we have an interpretable  *scale*.
 
-```{r figure-15-6, echo = FALSE, fig.cap = "Correlations between the latent variable, measured components, and indices."}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_15.6.", imgsufx))
-```
+![Correlations between the latent variable, measured components, and indices.](/figures/figure-15-6){#fig:figure-15-6}
 
 :::{.lemma #diagnosis-15-5}
 
@@ -63,10 +60,7 @@ The simple averaging of the normalized scales also generates estimates that are 
 
 Scaling by units with `X = 1` does best in this case. The key insight here is that the total variation in the latent variable combines the variation within groups and between them: we want to measure outcomes on a scale benchmarked to the within group variation and so have to take out the between group variation when rescaling. 
 
-```{r figure-15-7, fig.cap = "Distribution of estimates from different approaches to generating indices", fig.width = 6.5, fig.height = 2.5, echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_15.7.", imgsufx))
-```
+![Distribution of estimates from different approaches to generating indices](/figures/figure-15-7){#fig:figure-15-7}
 
 Overall we see from the diagnosis that we *can* do quite well here in recovering the conditional mean of the standardized latent variable. Though we see risks here. We declared a design under optimistic conditions in which we knew the relevant components and these were all related to the latent variable in a simple way. Even in this case we had difficulty getting the answer right. 
 

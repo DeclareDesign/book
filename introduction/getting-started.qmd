@@ -97,10 +97,7 @@ We use the `+` operator to build from elements of a design to a design. Declarat
 
 Two-arm randomized experiment
 
-```{r designannotated, fig.cap = "Two-arm randomized experiment declaration", fig.align = "center", echo = FALSE, fig.width = 6.5}
-imgsufx <- if(knitr::is_html_output()) "svg" else "pdf"
-knitr::include_graphics(path = paste0("figures/declaration_example.", imgsufx))
-```
+![Two-arm randomized experiment declaration](/figures/declaration-example){#fig:designannotated}
 
 $~$
 

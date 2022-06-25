@@ -98,11 +98,7 @@ M <-
   ) 
 ```
 
-
-```{r figure-13-1, echo = FALSE, fig.cap = "Six kinds of characteristics of units", fig.width = 6.5, fig.height = 6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_13.1.", imgsufx))
-```
+![Six kinds of characteristics of units](/figures/figure-13-1){#fig:figure-13-1}
 
 Binary variables are very important in the socials science, but they can be particularly tricky to make, so we'll spend a little more time on them. In a common way of thinking, binary variables are translations from a latent, continuous variable into an observed binary outcomes.
 
@@ -960,10 +956,7 @@ ggplot(simulations_df) +
   theme_minimal()
 ```
 
-```{r, echo = FALSE, fig.cap = "Example visualization of a diagnosis", fig.width=6.5, fig.height = 3}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_13.2.", imgsufx))
-```
+![Example visualization of a diagnosis](/figures/figure-13-2){#fig:figure-13-2}
 
 Diagnosing over model uncertainty is a crucial part of diagnosis. We want to understand when our design performs well and when it does not. A classical example of this in wide practice is the power curve. In a power curve, we display the power of a design (the probability of achieving statistical significance) along different possible effect sizes. In this setting, plotting the simulations directly with an indicator for whether that simulation's estimate is statistically significant is the easiest way to learn about the properties of the design.
 
@@ -998,10 +991,7 @@ ggplot(simulations_df) +
   theme_minimal()
 ```
 
-```{r, echo = FALSE, fig.cap = "Example visualization of a diagnosis", fig.width=6.5, fig.height = 2}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_13.3.", imgsufx))
-```
+![Example visualization of a diagnosis](/figures/figure-13-3){#fig:figure-13-3}
 
 ## Redesign {#redesign-code}
 

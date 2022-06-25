@@ -13,10 +13,7 @@ We declare a stepped-wedge design in which units are assigned a *sequence* of tr
 
 We often face an ethical dilemma in allocating treatments to some units but not others, since we would rather not withhold treatment from anyone. However, practical constraints often make it impossible to allocate treatments to everyone at the same time. In these circumstances, a stepped-wedge experiment, also known as a waitlist design, can help. Under a stepped-wedge design, we follow an allocation rule that randomly assigns a portion of units to treatment in each of one or more periods, and then in a final period, everyone is allocated treatment. We conduct posttreatment measurement after each period except for the last one. Figure \@ref(fig:figure-18-12) illustrates the allocation procedure. A common design is allocating one third to treatment in the first period, an additional third in the second period, and the remaining third in the final period.
 
-```{r figure-18-12, eval = TRUE, echo = FALSE, fig.cap = "Illustration of random assignment in a stepped-wedge design.", echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.12.", imgsufx))
-```
+![Illustration of random assignment in a stepped-wedge design.](/figures/figure-18-12){#fig:figure-18-12}
 
 Our model describes unit-specific effects, time-specific effects, and time trends in the potential outcomes. Our inquiry is the average treatment effect among time periods *before* the last period, since in the stepped-wedge design, we don't obtain information about the control potential outcome in the final period. In the data strategy, the assign treatment by randomly assigning the wave each unit will receive treatment. We use cluster assignment at the unit level because the data is at the unit-period level. We then transform this treatment variable into a unit-period treatment indicator, if the time period is at or after the treatment wave. The answer strategy also only uses the data from the first two periods (we probably would not collect outcome data after the last period for this reason). We fit a two-way fixed effects regression model by periods and units with standard errors clustered at the unit level. 
 
@@ -83,10 +80,7 @@ diagnosis_18.11 <- diagnose_design(designs)
 
 We plot power curves for the three comparison designs in Figure \@ref(fig:figure-18-13). The top line (blue dashed) is the 200-unit study, which is preferred in terms of power, and by a considerable margin. That design involves the same amount of measurement and treatment as the stepped-wedge so may be the same cost. However, if only 100 units are available for study, then the relevant comparison is between the stepped-wedge and the 100-unit two arm study. Here, the stepped-wedge design is preferable in terms of power and may satisfy ethical requirements to eventually treat all subjects.
 
-```{r figure-18-13, fig.cap = "Power analysis of three designs: stepped wedge with 100 units and 1/3-1/3-1/3 allocation, two-arm experiment with 100 units, and two-arm experiment with 200 units.", echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.13.", imgsufx))
-```
+![Power analysis of three designs: stepped wedge with 100 units and 1/3-1/3-1/3 allocation, two-arm experiment with 100 units, and two-arm experiment with 200 units.](/figures/figure-18-13){#fig:figure-18-13}
 
 :::
 

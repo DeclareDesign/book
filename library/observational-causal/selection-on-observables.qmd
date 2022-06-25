@@ -19,10 +19,7 @@ The quality of causal inferences we draw comes down to whether our claims about 
 
 The problems don't end there. We risk bias if we fail to adjust for $X$ under some models --- but we will also risk bias if we *do* adjust for $X$ under other models. In Figure \@ref(fig:figure-16-3) we illustrate four of the possible roles for an observable variable $X$: as a confounder of the relationship between $D$ and $Y$; as a collider, which is affected by both $D$ and $Y$; as a mediator of the relationship between $D$ and $Y$; and as a predictor of $Y$ with no connection to $D$. We set aside in these DAGs the possible roles of an unobservable variable $U$ that would introduce additional problems of confounding.
 
-```{r figure-16-3, fig.cap = "Four roles for an observable variable X.", echo=FALSE, fig.width=6.5, fig.height=2}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_16.3.", imgsufx))
-```
+![Four roles for an observable variable X.](/figures/figure-16-3){#fig:figure-16-3}
 
 If $X$ is a confounder, failing to adjust for it in studying the relationship between the treatment $D$ and outcome $Y$ will lead to confounding bias. We often think of fourth DAG as the alternative to this, where $X$ is a predictor of $Y$ but has no link to $D$. In this circumstance, we still want to adjust for $X$ to seek efficiency improvements by soaking up additional variation in $Y$, but failing to do so will not introduce bias. If the true model is definitely represented by either the first or fourth DAG, we should clearly choose to adjust for $X$. In the first case, we should adjust to close the back-door path and in the fourth case, we will do no worse in terms of bias and may in fact increase precision.
 
@@ -51,10 +48,7 @@ Matching design diagnosis
 
 In Figure \@ref(fig:figure-16-4), we see that the raw, unmatched estimate is quite biased (about 20% of the average estimate) and that the matched estimate is unbiased. If we fail to adjust for the observable features of the selection process, we have biased answers. But if we do control in this case, we obtain unbiased answers. However, as highlighted earlier, these results depend on the plausibility of our model, which in this case involves observed confounding of the relationship between $D$ and $Y$ by $X$. If there was *unobservable* confounding from $U$, or if $X$ was a collider or mediator, there would be bias even if we control for $X$.
 
-```{r figure-16-4, fig.cap = "Sampling distribution of two estimators.", echo=FALSE, fig.width=6.5, fig.height=2.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_16.4.", imgsufx))
-```
+![Sampling distribution of two estimators.](/figures/figure-16-4){#fig:figure-16-4}
 
 :::
 

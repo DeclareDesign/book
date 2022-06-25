@@ -18,8 +18,4 @@ We recommended in Section \@ref(preanalysis-plan) that authors include mock anal
 
 In Section \@ref(planning), we declared the design for @bonilla_tillery_2020 following their preanalysis plan. In doing so, we declared an answer strategy in code. In our populated PAP, we can run that same answer strategy code, but swap out the simulated data for the real data collected during the study. 
 
-```{r populatedpapcontactsheet, echo = FALSE, fig.cap = "Example Populated PAP"}
-imgsufx <- if(knitr::is_html_output()) "svg" else "pdf"
-
-knitr::include_graphics(path = paste0("figures/example_populated_pap.", imgsufx))
-```
+![Example populated PAP](/figures/example-populated-pap){#fig:populatedpapcontactsheet}

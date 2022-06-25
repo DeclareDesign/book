@@ -23,10 +23,7 @@ The data strategy $D$ has two components: a survey question $Q$ and a sampling p
 
 The model and data strategy are represented by the DAG in Figure \@ref(fig:figure-15-1). The DAG shows that the observed outcome $Y$ is a function of the latent score $Y^*$ and the survey question $Q$. The observed outcome $Y$ is only measured for sampled units, i.e., units that have $S = 1$. This simple diagram represents important design assumptions. First, no arrow leads from $Y^*$ to $S$. If such an arrow were present, then units with higher or lower latent ideologies would be more likely to be sampled. Second, an arrow does lead from $Y^*$ to $Y$, indicating that we assume the measured variable does indeed respond to the latent variable. Finally, the diagram includes an explicit role for the survey question, which helps us to consider how alternative wordings of $Q$ might change the observed variable $Y$.
 
-```{r figure-15-1, fig.cap = "Directed acyclic graph for the simple random sampling design", echo=FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_15.1.", imgsufx))
-```
+![Directed acyclic graph for the simple random sampling design](/figures/figure-15-1){#fig:figure-15-1}
 
 Our inquiry $I$ is the population mean of the *measured* variable $Y$: $\frac{1}{N} \sum_1^N Y_i = \bar{Y}$, rather than the mean of the latent variable $Y^*$. In this sense, our inquiry is "data-strategy dependent", since we are interested in the average value of what we *would* measure for any member of the population were we to sample them. 
 
@@ -117,10 +114,7 @@ diagnosis_15.2 <-
 diagnosis_15.2 <- get_rdddr_file_local("diagnosis_15.2")
 ```
 
-```{r figure-15-2, echo = FALSE, fig.cap="Redesigning the random sampling design over researcher effort", fig.height=5,fig.width=6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_15.2.", imgsufx))
-```
+![Redesigning the random sampling design over researcher effort](/figures/figure-15-2){#fig:figure-15-2}
 
 :::
 

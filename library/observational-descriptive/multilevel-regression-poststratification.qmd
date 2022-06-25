@@ -30,10 +30,7 @@ Multilevel regression and poststratification design
 
 Figure \@ref(fig:figure-15-4) shows one draw from this design, plotting the MRP estimates against the true level of opinion. 
 
-```{r figure-15-4, fig.cap="Estimates of state-level option plotted against their true levels", fig.width = 6.5, fig.height=6.5, echo=FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_15.4.", imgsufx))
-```
+![Estimates of state-level option plotted against their true levels](/figures/figure-15-4){#fig:figure-15-4}
 
 ## Redesign over answer strategies
 
@@ -64,10 +61,7 @@ On the right side of the figure, we see the bias, RMSE, and standard deviation d
 
 Partial pooling represents a Goldilocks compromise between full and no pooling.  Yes, we have some positive bias for low-opinion states and negative bias for high opinion states, but variance has been brought under control. As a result, the RMSE for both small and large states is small.
 
-```{r figure-15-5, echo = FALSE, fig.cap="Comparison of three answer strategies", fig.height = 5, fig.width=6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_15.5.", imgsufx))
-```
+![Comparison of three answer strategies](/figures/figure-15-5){#fig:figure-15-5}
 
 :::
 

@@ -52,10 +52,7 @@ diagnosis_18.12 <- diagnose_design(declaration_18.12)
 
 The diagnosis plot in Figure \@ref(fig:figure-18-14) shows the sampling distribution of the two estimators with the value of the relevant inquiry overlaid. Both estimators are unbiased for their targets, but the thing to notice from this plot is that the estimator of the saturation inquiry is far more variable than the estimator of the direct treatment inquiry. Saturation is by its nature a group-level treatment, so must be assigned at a group level. The clustered nature of the assignment to saturation level brings extra uncertainty. When designing randomized saturation experiments, researchers should be aware that we typically have much better precision for individually-randomized treatments than cluster-randomized treatments, and should plan accordingly.
 
-```{r figure-18-14, echo = FALSE,fig.cap="Sampling distributions of indirect and direct treatment effect estimators", fig.width=6.5, fig.height=3.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.14.", imgsufx))
-```
+![Sampling distributions of indirect and direct treatment effect estimators](/figures/figure-18-14){#fig:figure-18-14}
 
 :::
 

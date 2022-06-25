@@ -37,10 +37,7 @@ Under these two extra assumptions, the list experimental estimate of the prevale
 
 Figure \@ref(fig:daglist) represents the list experimental design. The no liars assumption is represented by the lack of an edge from sensitivity bias $S$ to the list experiment outcome $Y^L$. The no design effects assumption is not represented on the DAG. 
 
-```{r daglist, fig.cap = "Directed acyclic graph for the list experiment.", echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_17.1.", imgsufx))
-```
+![Directed acyclic graph for the list experiment.](/figures/figure-17-1){#fig:figure-17-1}
 
 Declaration \@ref(def:declaration-17-3) describes a list experimental design. The model includes subjects' true attitude (`Y_star`) and whether or not their direct question answers are contaminated by sensitivity bias (`S`). These two variables combine to determine how subjects will respond when asked directly about support for the policy. The potential outcomes model combines three types of information to determine how subjects will respond to the list experiment: their responses to the three control items (`control_count`), their true attitude (`Y_star`), and whether they are assigned to see the treatment or the control list (`Z`). Our definition of the potential outcomes embeds the no liars and no design effects assumptions. 
 
@@ -115,10 +112,7 @@ diagnosis_17.3 <-
 
 :::
 
-```{r figure-17-2, fig.cap = "Redesign to illustrate tradeoffs in RMSE between list experiment and direct question", echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_17.2.", imgsufx))
-```
+![Redesign to illustrate tradeoffs in RMSE between list experiment and direct question](/figures/figure-17-2){#fig:figure-17-2}
 
 ### Design examples
 

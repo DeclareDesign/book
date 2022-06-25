@@ -49,10 +49,7 @@ In short, in principle, ethical decisions can be informed by diagnosis both of h
 
 Calculations of this form however always open up risks that researchers overestimate the importance of their research or are blind to  ethical costs (in this case for instance an additional cost might arise if because of the study subjects, or other officials, became more skeptical of future real applicants). In practice strategies that maximize autonomy for implicated actors can make these choices easier. In this case for instance if prior consultations with members of the subject population that assessed how *they* saw the benefits of the research relative to the costs, and how they assessed the costs from this type of deception, would go a long way to ally ethical concerns. 
 
-```{r figure-21-1, fig.cap = "Tradeoffs between ethical costs and scientific benefits. A design might have too *many* subjects but also too *few* subjects.", echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_21.1.", imgsufx))
-```
+![Tradeoffs between ethical costs and scientific benefits. A design might have too *many* subjects but also too *few* subjects.](/figures/figure-21-1){#fig:figure-21-1}
 
 ## Institutional review boards
 

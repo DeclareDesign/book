@@ -47,10 +47,7 @@ diagnosis_19.3 <- diagnose_design(declaration_19.3)
 diagnosis_19.3 <- get_rdddr_file_local("diagnosis_19.3")
 ```
 
-```{r figure-19-5, echo = FALSE, fig.cap="Coverage and bias of the fixed and random effects under two settings, effect homogeneity and effect heterogeneity.", fig.height = 5, fig.width=6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_19.5.", imgsufx))
-```
+![Coverage and bias of the fixed and random effects under two settings, effect homogeneity and effect heterogeneity.](/figures/figure-19-5){#fig:figure-19-5}
 
 :::
 

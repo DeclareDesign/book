@@ -65,10 +65,7 @@ diagnosis_17.4 <- diagnose_design(declaration_17.4)
 
 Figure \@ref(fig:figure-17-3) shows the sampling distribution of the five AMCE estimators. All five are unbiased, but with only 500 subjects evaluating three pairs of candidates, the power for the smaller AMCEs is less than ideal. 
 
-```{r figure-17-3, fig.cap='Sampling Distribution of five AMCE estimators. Statistical significance of estimates indicated by color', fig.width = 6.5, fig.height=6.5, echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_17.3.", imgsufx))
-```
+![Sampling Distribution of five AMCE estimators. Statistical significance of estimates indicated by color](/figures/figure-17-3){#fig:figure-17-3}
 
 :::
 

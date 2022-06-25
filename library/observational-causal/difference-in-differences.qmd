@@ -43,10 +43,7 @@ Difference-in-Differences diagnosis
 diagnosis_16.3 <- diagnose_design(declaration_16.3)
 ```
 
-```{r figure-16-5, fig.cap="Sampling distributions of two difference-in-differences estimators.", echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_16.5.", imgsufx))
-```
+![Sampling distributions of two difference-in-differences estimators.](/figures/figure-16-5){#fig:figure-16-5}
 
 Figure \@ref(fig:figure-16-5) shows that the two-way fixed effects estimator is biased for both the ATT and the ATT on the switchers. By contrast, the @chaisemartin estimator is unbiased for the ATT on the switchers. Neither estimator recovers unbiased estimates of the ATT. The next section explains why.
 
@@ -62,10 +59,7 @@ The timing of treatment, nature of heterogeneous effects, and answer strategies 
 
 When treatment effects happen to be homogeneous (middle panel), both estimators recover unbiased estimates of both the ATT and the ATT for switchers, which of course are equal to one another because of treatment effect homogeneity. However, when treatment effects vary with the timing of treatment (left or right panels), the two-way fixed-effects estimator is biased for both inquiries. The @chaisemartin estimator is also biased for the ATT, but remains unbiased for the ATT among switchers regardless of the pattern of treatment effect heterogeneity.
 
-```{r figure-16-6, fig.cap = "Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes.", fig.width = 6.5, fig.height = 7.5, echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_16.6.", imgsufx))
-```
+![Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes.](/figures/figure-16-6){#fig:figure-16-6}
 
 :::
 

@@ -34,10 +34,7 @@ The estimated standard error can be used as an input for two other statistical p
 
 The DAG corresponding to a two-arm randomized trial is very simple. An outcome $Y$ is affected by unknown factors $U$ and a treatment $Z$. The measurement procedure $Q$ affects $Y$ in the sense that it measures a latent $Y$ and records the measurement in a dataset. No arrows lead into $Z$ because it is randomly assigned. No arrow leads from $Z$ to $Q$, because we assume no excludability violations wherein the treatment changes how units are measured. This simple DAG confirms that the average causal effect of $Z$ on $Y$ is nonparametrically identified because no back-door paths lead from $Z$ to $Y$.
 
-```{r statdag, fig.cap = "Directed acyclic graph of a two-arm randomized experiment", echo=FALSE, fig.height = 3.5, fig.width = 7}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.1.", imgsufx))
-```
+![Directed acyclic graph of a two-arm randomized experiment](/figures/figure-18-1){#fig:figure-18-1}
 
 :::{.definition #declaration-18-1} 
 
@@ -110,10 +107,7 @@ diagnosis_18.2 <-
 
 Figure \@ref(fig:figure-18-2) plots sample size on the horizontal axis and diagnosand estimates on the vertical axis. In the left hand panel, we see that, as usual, statistical power increases with sample size. Different values of $R^2$ are distinguished by colored lines. Higher values of $R^2$ lead to higher statistical power. The gains can be dramatic. The no-adjustment benchmark is represented by the $R^2 = 0$ line. We achieve approximately the same statistical power as a 1,000 unit experiment with no adjustment when we the pre-treatment covariates yield an $R^2$ of 0.8 and we have just 200 units. The right panel tells a similar story, though it emphasizes that the marginal benefits of covariate adjustment get smaller as the sample size gets bigger. In any real experimental scenario, designers should take care to generate informed guesses about the probable $R^2$ of the covariates and then explore the tradeoffs between pre-treatment data collection and additional sample size.
 
-```{r figure-18-2, echo=FALSE, fig.cap="Power and precision increases from covariate adjustment", fig.height=6.5, fig.width=6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.2.", imgsufx))
-```
+![Power and precision increases from covariate adjustment](/figures/figure-18-2){#fig:figure-18-2}
 
 ## Can controlling for covariates hurt precision?
 
@@ -151,10 +145,7 @@ When the control slope is -1, we can see Freedman's precision critique. The stan
 
 All along this range, however, the Lin estimator dominates OLS and difference-in-means. Regardless of the fraction assigned to treatment and the model of potential outcomes, the Lin estimator achieves equal or better precision than either difference-in-means or OLS.
 
-```{r figure-18-3, echo=FALSE, fig.cap="Comparing the Lin estimator to OLS and difference-in-means, varying fraction assigned to treatment and correlation of potential outcomes with the covariate.", fig.height=6.5, fig.width=6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.3.", imgsufx))
-```
+![Comparing the Lin estimator to OLS and difference-in-means, varying fraction assigned to treatment and correlation of potential outcomes with the covariate.](/figures/figure-18-3){#fig:figure-18-3}
 
 :::
 

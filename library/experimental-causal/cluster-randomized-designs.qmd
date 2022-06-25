@@ -46,10 +46,7 @@ Figure \@ref(fig:figure-18-5) shows the sampling distribution of the difference-
 
 The top row of panels plots the treatment effect on the vertical axis and the untreated potential outcome on the horizontal axis. Clusters of units are circled. At low levels of ICC, the circles all overlap, because the differences across clusters are smaller than the differences within cluster. At high levels of ICC, the differences across clusters are more pronounced than differences within cluster. The bottom row of panels shows that the sampling distribution of the difference-in-means estimator spreads out as the ICC increases. At low levels of ICC, the standard error is small; at high levels the standard error is high.
 
-```{r figure-18-5, echo=FALSE, fig.cap="Sampling distribution under differenct ICCs", fig.width=6.5, fig.height=6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.5.", imgsufx))
-```
+![Sampling distribution under differenct ICCs](/figures/figure-18-5){#fig:figure-18-5}
 
 This diagnosis clarifies the *costs* of cluster assignment. These costs are greatest when there are few clusters and when units within clusters have similar potential outcomes. Diagnosis can be further used to compare these costs to advantages and assess the merits of variations in the design that seek to alter the number or size of clusters.
 

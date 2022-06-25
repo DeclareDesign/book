@@ -22,10 +22,7 @@ Like main studies, pilot studies can be declared and diagnosed -- but importantl
 
 Figure \@ref(fig:figure-21-3) shows the relationship between effect size and the sample size required to achieve 80\% statistical power for a two-arm trial using simple random assignment. Uncertainty about the true effect size has enormous design consequences. If the effect size is 0.17, we need about 1,100 subjects to achieve 80% power. If it's 0.1, we need 3200. 
 
-```{r figure-21-3, fig.cap = "Minimum required sample sizes and uncertainty over effect size", fig.width=6.5, fig.height=6.5, echo=FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_21.3.", imgsufx))
-```
+![Minimum required sample sizes and uncertainty over effect size](/figures/figure-21-3){#fig:figure-21-3}
 
 Suppose we have prior beliefs about the effect size that can be summarized as a normal distribution centered at 0.3 with a standard deviation of 0.1, as in the bottom panel of Figure \@ref(fig:figure-21-2). We could choose a design that corresponds to this best guess, the average of our prior belief distribution. If the true effect size is 0.3, then a study with 350 subjects will have 80% power. 
 
@@ -37,9 +34,6 @@ A pilot study can help researchers update their priors about important design pa
 
 This exercise reveals that a pilot study can be quite valuable. Without a pilot study, we would chose to sample 1100 subjects, but since the true effect size is only 0.1 (not our best guess of 0.3), the experiment would be underpowered. The pilot study helps us correct our diffuse and incorrect prior beliefs. However, since the pilot is small, we don't update our priors all the way to the truth. We still end up with a main study that is on average too small (1800), with a corresponding power of 56%. That said, a 56% chance of finding a statistically significant result is better than a 38% chance.
 
-```{r figure-21-4, echo=FALSE, fig.width=6.5, fig.cap = "Distribution of post-pilot sample size choices"}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_21.4.", imgsufx))
-```
+![Distribution of post-pilot sample size choices](/figures/figure-21-4){#fig:figure-21-4}
 
 In summary, pilots are most useful when we are uncertain -- or outright wrong -- about important design parameters. This uncertainty can often be shrunk by quite a bit without running pilot studies by meta-analyzing past empirical studies. Some things are hard to learn by reading others' work; pilot studies are especially useful tools for learning about those things. 

@@ -32,10 +32,7 @@ The model can be described using the `CausalQueries` package thus:
 
 The DAG of the causal model is shown in figure \@ref(fig:figure-16-1).
 
-```{r figure-16-1, echo = FALSE, fig.cap="Directed acyclic graph of a process tracing model", fig.height=5,fig.width=6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_16.1.", imgsufx))
-```
+![Directed acyclic graph of a process tracing model](/figures/figure-16-1){#fig:figure-16-1}
 
 This model definition describes the DAG but also specifies a set of restrictions on causal relations. By default, flat priors are then placed over all other possible causal relations, though of course other prior beliefs could also be specified. 
 
@@ -93,10 +90,7 @@ The answers are given in Figure \@ref(fig:figure-16-2). Here we show the expecte
 
 We see only modest declines in expected errors from observation of the mediator $M$ (consistent with the manual calculation above), but large declines from observing $W$. If we already observe $W$ the gains from observing $M$ are still more slight. Broadly this confirms a more general observation that mediators can provide limited traction for learning about causes of effects relative to moderators [@dawid2022bounding].
 
-```{r figure-16-2, echo = FALSE, fig.cap="Inferences from four different process tracing data strategies on whether $X$ caused $Y$ given four different observed $X,Y$ data patterns.", fig.height=5,fig.width=6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_16.2.", imgsufx))
-```
+![Inferences from four different process tracing data strategies on whether $X$ caused $Y$ given four different observed $X,Y$ data patterns.](/figures/figure-16-2){#fig:figure-16-2}
 
 :::
 

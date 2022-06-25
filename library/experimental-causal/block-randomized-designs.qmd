@@ -36,10 +36,7 @@ Diagnosis comparing block random assignment and complete random assignment
 
 This intuition behind blocking is illustrated in Figure \@ref(fig:figure-18-4), which shows the sampling distribution of the difference-in-means estimator under *complete* random assignment. The histogram is shaded according to whether the particular random assignment is permissible under a procedure that blocks on the binary covariate $X$. The sampling distribution of the estimator among the set of assignments that are permissible under blocking is more tightly distributed around the true average treatment effect than the estimates associated with assignments that are not perfectly balanced. Here we can see the value of a blocking procedure -- it *it rules out by design* those assignments that are not perfectly balanced. 
 
-```{r figure-18-4, echo=FALSE, fig.cap='Sampling distribution under complete random assignment, by covariate balance', fig.height = 3, fig.width = 7, echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.4.", imgsufx))
-```
+![Sampling distribution under complete random assignment, by covariate balance](/figures/figure-18-4){#fig:figure-18-4}
 
 :::
  

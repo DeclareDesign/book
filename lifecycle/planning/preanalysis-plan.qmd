@@ -28,9 +28,5 @@ We provide an example preanalysis plan in the appendix for @bonilla_tillery_2020
 
 We show in section \@ref(populated-preanalysis-plan) how to "populate" this PAP once the data have been realized and collected.
 
-```{r papcontactsheet, echo = FALSE, fig.cap = "Example Preanalysis Plan"}
-imgsufx <- if(knitr::is_html_output()) "svg" else "pdf"
-
-knitr::include_graphics(path = paste0("figures/example_preanalysis_plan.", imgsufx))
-```
+![Example preanalysis plan](/figures/example-preanalysis-plan){#fig:papcontactsheet}
 

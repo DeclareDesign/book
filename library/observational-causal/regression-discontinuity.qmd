@@ -25,17 +25,11 @@ A major assumption required for the regression discontinuity design is that the 
 
 The regression discontinuity design is closely related to the selection-on-observables design in that exact knowledge of the assignment mechanism is needed. In Figure \@ref(fig:figure-16-8), we illustrate the DAG for the RD design, which includes a treatment with a known assignment mechanism (that units with $X>\mathrm{cutoff}$ are treated and those below are not). The running variable $X$, is a common cause both of treatment and the outcome, and so must be adjusted for (indicated by the dashed box) in order to identify the effect of treatment on the outcome and avoid confounding bias.  
 
-```{r figure-16-8, fig.cap = "Directed acyclic graph for the regression discontinuity design.", echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_16.8.", imgsufx))
-```
+![Directed acyclic graph for the regression discontinuity design.](/figures/figure-16-8){#fig:figure-16-8}
 
 Figure \@ref(fig:figure-16-9) illustrates the major features of the model for the regression discontinuity using simulated data. The untreated units (blue points) are plotted to the left of the cutoff (vertical line), and the treated units (red points) are plotted to the right. The true conditional expectation functions for both the treated and untreated potential outcomes are displayed as colored lines, dashed where they are unobservable and solid where they are observable. 
 
-```{r figure-16-9, fig.cap = "Data from a regression discontinuity design. On the x-axis is the running variable, which defines the cut off between control (here, below 0 on the running variable) and treatment (above 0). The outcome Y is on the y-axis. We illustrate smooth potential outcomes by showing the observed data curve (solid) and the counterfactual potential outcome (dashed).", echo=FALSE, warning=FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_16.9.", imgsufx))
-```
+![Data from a regression discontinuity design. On the x-axis is the running variable, which defines the cut off between control (here, below 0 on the running variable) and treatment (above 0). The outcome Y is on the y-axis. We illustrate smooth potential outcomes by showing the observed data curve (solid) and the counterfactual potential outcome (dashed).](/figures/figure-16-9){#fig:figure-16-9}
 
 The inquiry in a regression discontinuity design is the effect of the treatment exactly at the cutoff. Formally, it is the difference in the conditional expectation functions of the control and treatment potential outcomes when the running variable is exactly zero. The black vertical line in the plot shows this difference.
 
@@ -76,10 +70,7 @@ diagnosis_16.5 <-
   diagnose_designs
 ```
 
-```{r figure-16-10, echo = FALSE, fig.cap = "Bias-variance tradeoff in bandwidth selection for the regression discontinuity design."}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_16.10.", imgsufx))
-```
+![Bias-variance tradeoff in bandwidth selection for the regression discontinuity design.](/figures/figure-16-10){#fig:figure-16-10}
 
 :::
 

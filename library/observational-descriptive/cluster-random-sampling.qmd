@@ -60,10 +60,7 @@ diagnosis_15.3 <- diagnose_design(designs)
 diagnosis_15.3 <- get_rdddr_file_local("diagnosis_15.3")
 ```
 
-```{r figure-15-3,echo=FALSE, fig.cap="Trading off the number of clusters and the number of individuals per cluster", fig.height=3.5, fig.width=6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_15.3.", imgsufx))
-```
+![Trading off the number of clusters and the number of individuals per cluster](/figures/figure-15-3){#fig:figure-15-3}
 
 :::
 

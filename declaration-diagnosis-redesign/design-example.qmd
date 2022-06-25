@@ -122,10 +122,7 @@ diagnosis_12.2 <-
 
 In Figure \@ref(fig:figure-12-1), we illustrate the results of our redesign exercise across all four diagnosands. The number of citizens per village is plotted on the horizontal axis and the value of the diagnosand is shown on the vertical axis. The plot is faceted by diagnosand and each line represents a different possible number of villages. We focus here on the social treatment only.
 
-```{r figure-12-1, fig.cap = "Redesign of Gulzar and Khan (2020)", echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_12.1.", imgsufx))
-```
+![Redesign of Gulzar and Khan (2020)](/figures/figure-12-1){#fig:figure-12-1}
 
 What we see is that bias is invariant to these choices. The study is unbiased regardless of the number of villages and the number of citizens interviewed per village. However, our other three diagnosands do change. Power is increasing in the number of citizens per village, and is always higher with more villages. We might reject designs with 192 villages with only 25 citizens per village, because they fall below the 80% power threshold (in fact, the number chosen by the researchers, 48, is just over the threshold, suggesting they chose the most cost-effective design in terms of power). Root mean-squared error, a measure capturing both bias and efficiency of the design, is improving (decreasing) in the number of citizens per village and the number of villages. Cost is, of course, increasing in both sample size parameters. We can use the cost parameters to make decisions about what sample sizes to choose accounting both for scientific diagnosands of the design (i.e., power) and cost at the same time.
 

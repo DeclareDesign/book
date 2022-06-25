@@ -53,10 +53,7 @@ Table: (\#tab:elementsofresearchdesign) Elements of research design.
 
 The full set of causal relationships between *M*, *I*, *D*, and *A*, with respect to $m$ and $m^*$, $a_m$ and $a_{m^*}$, $d$ and $d^*$, and $a_d$ and $a_{d^*}$ can be seen in the schematic representation of a research design given in Figure \@ref(fig:worldandtheory). The figure illustrates how a research design involves a correspondence between $I(m) = a_m$ and $A(d) = a_d$. The theoretical half of a research design produces an answer to the inquiry *in theory*. The empirical half of a research design produces an *empirical estimate* of the answer to the inquiry. Neither answer is necessarily close to the truth $a_{m^*}$, of course. And, as shown in the figure, the truth is not directly accessible either to us in theory or in empirics. Our gamble in empirical research, however, is that our theoretical models are close enough to the truth; that the truth is like the set of models we imagine. If the models in $M$ do not contain $m^*$ or are too different from it, then even seemingly strong research designs could yield incorrect answers.
 
-```{r worldandtheory, echo = FALSE, fig.cap = "The *MIDA* framework", fig.width = 7, fig.height = 2.75}
-imgsufx <- if(knitr::is_html_output()) "svg" else "pdf"
-knitr::include_graphics(path = paste0("figures/figure_2.1.", imgsufx))
-```
+![The *MIDA* framework](/figures/figure-2-1){#fig:figure-2-1}
 
 Figure \@ref(fig:worldandtheory) reveals a striking analogy between the *M*, *I* relationship and the *D*, *A* relationship. The answer we aim for (the estimand) is obtained by applying *I* to a draw from *M*. The answer we have access to (the estimate) is obtained by applying *A* to a draw from *D*. Our hope, usually, is that these two answers are quite similar. In some cases, this parallelism suggests that the function *A* should be "like" the function *I*. For instance, if we are interested in the mean of a population and we have access to a random sample, the data available to us from *D* is like the ideal data we would have if we could observe the nodes and edges in *M* directly. 
 

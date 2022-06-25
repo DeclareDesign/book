@@ -85,10 +85,7 @@ Encouragement design
 
 Figure \@ref(fig:figure-18-9) represents the encouragement design as a DAG. No arrows lead into $Z$, because the treatment was randomly assigned. The compliance type $C$, the assignment $Z$, and unobserved heterogeneity $U$ conspire to set the level of $D$. The outcome $Y$ is affected by the treatment $D$ of course, but also by compliance type $C$ and unobserved heterogeneity $U$. The required exclusion restriction that $Z$ only affect $Y$ through $D$ is represented by the *lack* of an arrow from $Z$ to $Y$.  The deficiencies of the as-treated and per-protocol analysis strategies can be learned from the DAG as well. $D$ is a collider, so conditioning on it would open up back-door paths between $Z$, $C$, and $U$, leading to bias of unknown direction and magnitude.
 
-```{r figure-18-9, fig.cap = "Directed acyclic graph of the encouragement design", echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.9.", imgsufx))
-```
+![Directed acyclic graph of the encouragement design](/figures/figure-18-9){#fig:figure-18-9}
 
 :::{.lemma #diagnosis-18-9}
 
@@ -104,10 +101,7 @@ Two-stage least squares does a much better job of estimating the complier averag
 diagnosis_18.9 <- diagnose_design(declaration_18.8)
 ```
 
-```{r figure-18-10, echo=FALSE, fig.width = 6.5, fig.height=6.5, fig.cap="Sampling distributions of the two-stage least squares, per protocol, and as-treated answer strategies."}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_18.10.", imgsufx))
-```
+![Sampling distributions of the two-stage least squares, per protocol, and as-treated answer strategies.](/figures/figure-18-10){#fig:figure-18-10}
 
 :::
 

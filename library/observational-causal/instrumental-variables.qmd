@@ -19,10 +19,7 @@ Instruments are special. They are variables that are randomly assigned by nature
 
 We illustrate the logic of instrumental variables with the DAG shown in Figure \@ref(fig:figure-16-7). An instrument $Z$ affects an endogenous treatment $D$ which subsequently affects an outcome $Y$. Many other common causes, summarized in terms of unknown heterogeneity $U$, affect both $D$ and $Y$. It is because of this unmeasured confounding that we cannot learn about the effect of $D$ on $Y$ directly using standard tools.
 
-```{r figure-16-7, fig.cap = "Directed acyclic graph of an instrumental variables design.", echo = FALSE}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_16.7.", imgsufx))
-```
+![Directed acyclic graph of an instrumental variables design.](/figures/figure-16-7){#fig:figure-16-7}
 
 We can naturally imagine an inquiry that represents the effect of the instrument ($Z$) on an outcome of interest such as the effect of the draft number on future earnings. In the terminology of instrumental variables, this inquiry is called the "reduced form" or the  "intention-to-treat" (ITT) effect. If it's really true that the instrument is randomly assigned by the world, estimation of the reduced form effect is straightforward: we estimate the causal effect of $Z$ on $Y$ using, for example, a difference-in-means estimator. Sometimes, we are also interested in the "first-stage" effect of the instrument on the treatment variable. Similarly, we can target this inquiry by studying the causal effect of $Z$ on $D$, for example using the difference-in-means estimator again.
 

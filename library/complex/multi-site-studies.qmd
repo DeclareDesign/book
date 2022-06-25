@@ -44,10 +44,7 @@ Multi-site studies diagnosis
 
 We now diagnose the two designs, with and without coordination, and assess the bias for the average common effect treatment and the average effect of the site-specific optimal treatment inquiries. Figure \@ref(fig:figure-19-6) displays the sampling distribution of the estimates from the two designs along with the estimands from these two inquiries in each case.
 
-```{r figure-19-6, echo = FALSE, fig.cap="Sampling distribution of the meta-analytic estimates from a multi-site trial compared to the true average common treatment effect and the true average effect of the site-specific optimal treatment effect.", fig.height = 7, fig.width=6.5}
-imgsufx <- if(is_html_output()) "svg" else "pdf"
-include_graphics(path = paste0("figures/figure_19.6.", imgsufx))
-```
+![Sampling distribution of the meta-analytic estimates from a multi-site trial compared to the true average common treatment effect and the true average effect of the site-specific optimal treatment effect.](/figures/figure-19-6){#fig:figure-19-6}
 
 In the coordinated trial, of course, the common treatment and the implemented treatment are the same. Only the coordinated study produces unbiased estimates for the coordinated inquiry.  However the diagnosis shows that *both* approaches (strongly  and weakly coordinated trials) are unbiased for the (more powerful) "selected treatment" inquiry. This inquiry then is well defined and can be estimated without bias. The difficulty with this inquiry though is that being able to make an out-of-sample predictions for this inquiry requires information you might not have: what version of a treatment is likely to be selected in that new  context. 
 
