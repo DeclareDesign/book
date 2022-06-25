@@ -657,14 +657,10 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_16.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_16.3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_16.5.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-16-5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../../figures/figure-16-5.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Sampling distributions of two difference-in-differences estimators.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>Figure @ref(fig:figure-16-5) shows that the two-way fixed effects estimator is biased for both the ATT and the ATT on the switchers. By contrast, the <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator is unbiased for the ATT on the switchers. Neither estimator recovers unbiased estimates of the ATT. The next section explains why.</p>
 </div>
@@ -673,14 +669,10 @@ div.csl-indent {
 <p>The issues with the two-way fixed effects estimator emerge when treatment effects differ for units that are treated later versus earlier. Following Principle @ref(exm:designagnostically): Design agnostically, we declare a model with homogeneous treatment effects, as well as two kinds of time-varying heterogeneous treatment effects: one in which effects are lower for units treated later and one in which effects are higher for units treated later.</p>
 <p>The timing of treatment, nature of heterogeneous effects, and answer strategies interact to determine the properties of the design. Figure @ref(fig:figure-16-6) shows the diagnosis under all three sets of potential outcomes, and examines both the ATT and the ATT for switchers inquiries. We consider both the two-way fixed effects estimator and the <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator.</p>
 <p>When treatment effects happen to be homogeneous (middle panel), both estimators recover unbiased estimates of both the ATT and the ATT for switchers, which of course are equal to one another because of treatment effect homogeneity. However, when treatment effects vary with the timing of treatment (left or right panels), the two-way fixed-effects estimator is biased for both inquiries. The <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator is also biased for the ATT, but remains unbiased for the ATT among switchers regardless of the pattern of treatment effect heterogeneity.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_16.6.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-16-6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../../figures/figure-16-6.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 </div>
 <section id="design-examples" class="level2"><h2 class="anchored" data-anchor-id="design-examples">Design examples</h2>

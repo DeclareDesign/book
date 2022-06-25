@@ -612,14 +612,10 @@ div.csl-indent {
 <span><span class="va">strategies</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X-Y"</span>, <span class="st">"X-Y-M"</span>, <span class="st">"X-Y-W"</span>,  <span class="st">"X-Y-W-M"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The DAG of the causal model is shown in figure @ref(fig:figure-16-1).</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_16.1.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-16-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../../figures/figure-16-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Directed acyclic graph of a process tracing model</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>This model definition describes the DAG but also specifies a set of restrictions on causal relations. By default, flat priors are then placed over all other possible causal relations, though of course other prior beliefs could also be specified.</p>
 <p>We now have all we need to assess what inferences we might make given different sorts of observations on <span class="math inline">\(W\)</span> and <span class="math inline">\(M\)</span>.</p>
@@ -695,14 +691,10 @@ div.csl-indent {
 <p>Given such a model, a case in which <span class="math inline">\(X = Y = 1\)</span> (for instance), and limited resources, we now want to know whether we would be better gathering data on <span class="math inline">\(M\)</span> or on <span class="math inline">\(W\)</span> or both.</p>
 <p>The answers are given in Figure @ref(fig:figure-16-2). Here we show the expected error from inferences given each process tracing strategy. We break up the diagnoses according to the <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> data already observed—thus illustrating how an unconditional model can be used to assess designs even after some data is observed. Across the four possible data patterns we see equivalent implications for settings in which we are interested in a case with <span class="math inline">\(X=Y=1\)</span> and a case with <span class="math inline">\(X=Y=0\)</span>. For the cases with <span class="math inline">\(X \neq Y\)</span> we already know—because of the monotonicity restrictions in the model—that <span class="math inline">\(X\)</span> did not cause <span class="math inline">\(Y\)</span> and so we learn nothing from all strategies.</p>
 <p>We see only modest declines in expected errors from observation of the mediator <span class="math inline">\(M\)</span> (consistent with the manual calculation above), but large declines from observing <span class="math inline">\(W\)</span>. If we already observe <span class="math inline">\(W\)</span> the gains from observing <span class="math inline">\(M\)</span> are still more slight. Broadly this confirms a more general observation that mediators can provide limited traction for learning about causes of effects relative to moderators <span class="citation" data-cites="dawid2022bounding">(<a href="../../references.html#ref-dawid2022bounding" role="doc-biblioref">Dawid, Humphreys, and Musio 2022</a>)</span>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_16.2.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-16-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../../figures/figure-16-2.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Inferences from four different process tracing data strategies on whether <span class="math inline">\(X\)</span> caused <span class="math inline">\(Y\)</span> given four different observed <span class="math inline">\(X,Y\)</span> data patterns.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 </div>
 <section id="design-examples" class="level2"><h2 class="anchored" data-anchor-id="design-examples">Design examples</h2>

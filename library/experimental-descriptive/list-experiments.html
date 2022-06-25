@@ -626,14 +626,10 @@ div.csl-indent {
 </ul>
 <p>Under these two extra assumptions, the list experimental estimate of the prevalence of opposition to granting Muslim immigrants citizenship is 21.9%.</p>
 <p>Figure @ref(fig:daglist) represents the list experimental design. The no liars assumption is represented by the lack of an edge from sensitivity bias <span class="math inline">\(S\)</span> to the list experiment outcome <span class="math inline">\(Y^L\)</span>. The no design effects assumption is not represented on the DAG.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_17.1.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-17-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../../figures/figure-17-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Directed acyclic graph for the list experiment.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>Declaration @ref(def:declaration-17-3) describes a list experimental design. The model includes subjects’ true attitude (<code>Y_star</code>) and whether or not their direct question answers are contaminated by sensitivity bias (<code>S</code>). These two variables combine to determine how subjects will respond when asked directly about support for the policy. The potential outcomes model combines three types of information to determine how subjects will respond to the list experiment: their responses to the three control items (<code>control_count</code>), their true attitude (<code>Y_star</code>), and whether they are assigned to see the treatment or the control list (<code>Z</code>). Our definition of the potential outcomes embeds the no liars and no design effects assumptions.</p>
 <p>The inquiry is the prevalence rate of the sensitive item. In the data strategy, we randomly assign 50% of our 500 subjects to treatment and the remainder to control. In the survey, we ask subjects the list experiment question (<code>Y_list</code>). Our answer strategy estimates the prevalence rate by calculating the difference-in-means in the list outcome between treatment and control.</p>
@@ -717,14 +713,10 @@ div.csl-indent {
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_17.2.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-17-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../../figures/figure-17-2.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Redesign to illustrate tradeoffs in RMSE between list experiment and direct question</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <section id="design-examples" class="level3"><h3 class="anchored" data-anchor-id="design-examples">Design examples</h3>
 <ul>

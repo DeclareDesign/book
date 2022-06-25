@@ -659,14 +659,10 @@ div.csl-indent {
 <span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">500</span>, <span class="fl">3000</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_18.7.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-18-7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../../figures/figure-18-7.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Power curves for factorial inquires</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 </div>
 <section id="avoiding-misleading-inferences" class="level2"><h2 class="anchored" data-anchor-id="avoiding-misleading-inferences">Avoiding misleading inferences</h2>
@@ -685,14 +681,10 @@ div.csl-indent {
 <span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Figure @ref(fig:figure-18-8) shows that the error rate when we consider the statistical significance of the interaction term is nominal. Only 5% of the time do we falsely reject the null that the difference-in-CATEs is zero, which is what we expect when we adopt an <span class="math inline">\(\alpha = 0.05\)</span> threshold. But when we claim “treatment effect heterogeneity!” when one CATE is significant but not the other, we make egregious errors. When the true (constant) average effect of <code>Z1</code> approaches 0.2, we falsely conclude that the treatment has heterogeneous effects nearly 50% of the time!</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_18.8.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-18-8" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../../figures/figure-18-8.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Comparing the significance of CATE estimates generates misleading inferences.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 </div>
 </section><section id="design-examples" class="level2"><h2 class="anchored" data-anchor-id="design-examples">Design examples</h2>

@@ -674,14 +674,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span>    X6 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span><span class="op">)</span>, <span class="va">N</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_13.1.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-13-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../figures/figure-13-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Six kinds of characteristics of units</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>Binary variables are very important in the socials science, but they can be particularly tricky to make, so we’ll spend a little more time on them. In a common way of thinking, binary variables are translations from a latent, continuous variable into an observed binary outcomes.</p>
 <p>We can draw binary outcomes in one of three ways. First, we can simulate a binary outcomes using the <code>rbinom</code> function as we have already seen. The function <code>rbinom(N, size = 1, prob = 0.5)</code> flips 1 coin for each of <code>N</code> subjects with a constant latent probability of success across units.</p>
@@ -1791,14 +1787,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Estimate"</span>, y <span class="op">=</span> <span class="st">"Count of simulations"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_13.2.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-13-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../figures/figure-13-2.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Example visualization of a diagnosis</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>Diagnosing over model uncertainty is a crucial part of diagnosis. We want to understand when our design performs well and when it does not. A classical example of this in wide practice is the power curve. In a power curve, we display the power of a design (the probability of achieving statistical significance) along different possible effect sizes. In this setting, plotting the simulations directly with an indicator for whether that simulation’s estimate is statistically significant is the easiest way to learn about the properties of the design.</p>
 <div class="cell">
@@ -1829,14 +1821,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span>       y <span class="op">=</span> <span class="st">"Diagnosand: statistical power"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_13.3.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-13-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../figures/figure-13-3.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Example visualization of a diagnosis</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 </section></section><section id="redesign-code" class="level2" data-number="14.7"><h2 data-number="14.7" class="anchored" data-anchor-id="redesign-code">
 <span class="header-section-number">14.7</span> Redesign</h2>

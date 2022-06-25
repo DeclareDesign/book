@@ -594,14 +594,10 @@ div.csl-indent {
 <p>Imagine we seek to estimate the average political ideology of adult residents of the small town of Portola, California (population 2,100). Under our model <em>M</em>, the latent ideology <span class="math inline">\(Y^*\)</span> is drawn from a standard normal distribution.</p>
 <p>The data strategy <span class="math inline">\(D\)</span> has two components: a survey question <span class="math inline">\(Q\)</span> and a sampling procedure <span class="math inline">\(S\)</span>. The survey question asks subjects to place themselves on a left-right scale that varies from 1 (most liberal) to 7 (most conservative). We approximate this measurement procedure with a function that “cuts” the latent ideology into 7 separate groups. This survey question will introduce measurement error insofar as it does not distinguish among people with different latent ideologies who, because of our measurement tool, place themselves at the same place on the seven-point scale.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Our main hope for this measurement procedure is that all of the people who give themselves higher scores are indeed more conservative than those who give themselves lower scores. The sampling procedure is “complete” random sampling. We draw a sample of exactly <span class="math inline">\(n = 100\)</span>, where every member of the population has an equal probability of inclusion in the sample, <span class="math inline">\(\frac{n}{N}\)</span>.</p>
 <p>The model and data strategy are represented by the DAG in Figure @ref(fig:figure-15-1). The DAG shows that the observed outcome <span class="math inline">\(Y\)</span> is a function of the latent score <span class="math inline">\(Y^*\)</span> and the survey question <span class="math inline">\(Q\)</span>. The observed outcome <span class="math inline">\(Y\)</span> is only measured for sampled units, i.e., units that have <span class="math inline">\(S = 1\)</span>. This simple diagram represents important design assumptions. First, no arrow leads from <span class="math inline">\(Y^*\)</span> to <span class="math inline">\(S\)</span>. If such an arrow were present, then units with higher or lower latent ideologies would be more likely to be sampled. Second, an arrow does lead from <span class="math inline">\(Y^*\)</span> to <span class="math inline">\(Y\)</span>, indicating that we assume the measured variable does indeed respond to the latent variable. Finally, the diagram includes an explicit role for the survey question, which helps us to consider how alternative wordings of <span class="math inline">\(Q\)</span> might change the observed variable <span class="math inline">\(Y\)</span>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_15.1.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-15-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../../figures/figure-15-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Directed acyclic graph for the simple random sampling design</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>Our inquiry <span class="math inline">\(I\)</span> is the population mean of the <em>measured</em> variable <span class="math inline">\(Y\)</span>: <span class="math inline">\(\frac{1}{N} \sum_1^N Y_i = \bar{Y}\)</span>, rather than the mean of the latent variable <span class="math inline">\(Y^*\)</span>. In this sense, our inquiry is “data-strategy dependent”, since we are interested in the average value of what we <em>would</em> measure for any member of the population were we to sample them.</p>
 <p>Our answer strategy is the sample mean estimator: <span class="math inline">\(\widehat{\overline{Y}} = \frac{1}{n} \sum_1^n Y_i\)</span>, implemented here as an ordinary least squares regression to facilitate the easy calculation of auxiliary statistics like the standard error of the estimate and the 95% confidence interval.</p>
@@ -696,14 +692,10 @@ div.csl-indent {
 <div class="cell">
 
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="figures/figure_15.2.svg" class="img-fluid figure-img"></p>
+<div id="fig:figure-15-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="../../figures/figure-15-2.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Redesigning the random sampling design over researcher effort</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 </div>
 </section><section id="design-examples" class="level2"><h2 class="anchored" data-anchor-id="design-examples">Design Examples</h2>
