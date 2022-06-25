@@ -12,6 +12,7 @@ book:
   chapters:
     - index.qmd
     - acknowledgements.qmd
+    - authors.qmd
     - part: "Introduction"
       chapters: 
         - introduction/index.qmd
@@ -93,6 +94,10 @@ book:
       collapse-level: 2
       align: left
       contents:
+        - section: "About the authors"
+          href: "authors.html"
+        - section: "Acknowledgements"
+          href: "acknowledgements.html"
         - section: "Introduction"
           contents:
             - introduction/index.qmd

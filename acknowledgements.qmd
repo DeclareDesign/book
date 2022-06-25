@@ -1,4 +1,4 @@
-# Acknowledgements {-}
+# Acknowledgements 
 
 We are grateful to have worked with Jasper Cooper for six years on the ideas and tools introduced in this book. His words, ideas, and voice echo throughout the entire project.
 
