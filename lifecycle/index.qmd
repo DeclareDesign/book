@@ -17,7 +17,7 @@ source("scripts/before_chapter_script.R")
 
 A research design begins with a spark of inspiration or opportunity, develops through a planning phase, comes to fruition in the stages of realization, and adds to knowledge and influences decisions as it is integrated into collective scientific understanding. At each step in the research design lifecycle, your specification of *M*, *I*, *D*, and *A* shapes your choices and how others will learn from your work.
 
-This part of the book works through stages of the research design lifecycle, illustrated in Figure @fig-ch20num1. As the nonlinear, circular path in the figure illustrates, the steps are all intertwined by their shared connection to the research design. We describe in each entry how we can use the declaration, diagnosis, and redesign framework to make progress at each step. Of course not every research project will feature each and every stage but the list should serve we hope as a useful checklist as you work through the major phases of your research.  
+This part of the book works through stages of the research design lifecycle, illustrated in @fig-ch20num1. As the nonlinear, circular path in the figure illustrates, the steps are all intertwined by their shared connection to the research design. We describe in each entry how we can use the declaration, diagnosis, and redesign framework to make progress at each step. Of course not every research project will feature each and every stage but the list should serve we hope as a useful checklist as you work through the major phases of your research.  
 
 ![The research design lifecycle](/figures/figure-20-1){#fig-ch20num1}
 

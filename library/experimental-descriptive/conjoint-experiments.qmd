@@ -42,7 +42,7 @@ The declaration of conjoint experiments is complex, so we provide a series of he
 
 We begin by establishing the number of subjects and the number of tasks they will accomplish. We then establish the attributes and their levels (this design assumes complete random assignment of all attributes with equal probabilities). Finally, we describe a utility function that governs subject preferences. This function can be simple, as we have it here, or it can be complex, building in differences in preferences by subject type or other details.
 
-In Declaration @def-ch17num5, we imagine a forced-choice candidate choice conjoint in which the attributes are gender, party, and region. We sample 500 subjects and ask them to complete three tasks each. 
+In @def-ch17num5, we imagine a forced-choice candidate choice conjoint in which the attributes are gender, party, and region. We sample 500 subjects and ask them to complete three tasks each. 
 
 ::: {#def-ch17num5} 
 
@@ -63,7 +63,7 @@ In Declaration @def-ch17num5, we imagine a forced-choice candidate choice conjoi
 diagnosis_17.4 <- diagnose_design(declaration_17.4)
 ```
 
-Figure @fig-ch17num3 shows the sampling distribution of the five AMCE estimators. All five are unbiased, but with only 500 subjects evaluating three pairs of candidates, the power for the smaller AMCEs is less than ideal. 
+@fig-ch17num3 shows the sampling distribution of the five AMCE estimators. All five are unbiased, but with only 500 subjects evaluating three pairs of candidates, the power for the smaller AMCEs is less than ideal. 
 
 ![Sampling Distribution of five AMCE estimators. Statistical significance of estimates indicated by color](/figures/figure-17-3){#fig-ch17num3}
 

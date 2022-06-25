@@ -19,7 +19,7 @@ One way around this is to normalize the scale of both the latent variable and th
 
 A second challenge is deciding which measurements to combine into the index. We clearly only want to create indices using measurements of the same latent variable, but it can hard to be sure which latent variable, exactly, is being measured. Just relying on whether the measurements are positively correlated or not is not sufficient, because measurements can be correlated even if they are not measurements of the same underlying variable. Ultimately we have to rely on theory to make these decisions, as uncomfortable as that may make us.
 
-In Declaration @def-ch15num6, our inquiry is the average level of the latent variable among units whose binary covariate `X` is equal to one.
+In @def-ch15num6, our inquiry is the average level of the latent variable among units whose binary covariate `X` is equal to one.
 
 In the declaration below `Y_star` has a normal distribution but it is not centered on zero. The measured variables `Y_1`, `Y_2`, `Y_3` are also normally distributed but each has its own scale; they are all related to `Y_star`, though some more strongly than others. Many procedures for combining these measured variables into an index exist. Here we'll consider a few of the common approaches: 
 
@@ -40,7 +40,7 @@ In the declaration below `Y_star` has a normal distribution but it is not center
 
 :::
 
-In Figure @fig-ch15num6 we show that the correlation between all the indices and the underlying quantity is quite good, even though the strength of the correlations for some of the components is weak. Trickier however is being sure we have an interpretable  *scale*.
+In @fig-ch15num6 we show that the correlation between all the indices and the underlying quantity is quite good, even though the strength of the correlations for some of the components is weak. Trickier however is being sure we have an interpretable  *scale*.
 
 ![Correlations between the latent variable, measured components, and indices.](/figures/figure-15-6){#fig-ch15num6}
 
@@ -54,7 +54,7 @@ In Figure @fig-ch15num6 we show that the correlation between all the indices and
 diagnosis_15.5 <- diagnose_design(declaration_15.6, make_groups = vars(outcome)) 
 ```
 
-Figure @fig-ch15num7 shows the distribution of estimates from different approaches to generating indices. A few features stand out from the distribution of estimates. 
+@fig-ch15num7 shows the distribution of estimates from different approaches to generating indices. A few features stand out from the distribution of estimates. 
 
 The simple averaging of the normalized scales also generates estimates that are too small. Rescaling the scaled components instead of taking the average helps only a small amount. The principal component version appears to do especially poorly, but there is a simple reason for this: the method does not presuppose knowledge of the *direction* of the scale of the latent variable and can come up with index that reverse the actual scale of interest. Avoiding this requires an interpretative step after the principal components analysis is implemented (more subtly the averaging approach also has an interpretative step *before* averaging, when components are introduced with a metric that presupposes a positive correlation with the underlying quantity). Even accounting for the different sign patterns however, the estimates are too small.
 

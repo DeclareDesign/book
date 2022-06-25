@@ -18,7 +18,7 @@ The difference-in-differences design relies on a strong assumption in $M$: the p
 
 The design has been famously used for analyses of two periods (before and after) and two groups (treated and untreated) such as a policy change in one state compared to another before and after the policy change. Today, difference-in-differences is most often used in many-period many-group settings with observational panel data. Here, the logic of the two-period two-group design is extended through analogy. Parallel trends between treated and control groups are assumed *on average* across treated groups and periods. Unfortunately, the analogy holds only under limited circumstances, a fact only recently discovered. 
 
-Declaration @def-ch16num3 describes a 20-period, 20-unit design in which eventually-treated units become treated at different times, a common setting in empirical social science often referred to as the staggered adoption design. The treatment effect of interest might be a state-level policy adopted in 20 states at some point within a 20-year period, so we draw on comparisons before and after policy adoption within states and comparisons across states that have and have not yet adopted treatment. We use the `did_multiplegt_tidy` function (available in the `rdddr` companion package) to prepare the output from the `DIDmultiplegt` package that implements the estimation procedure.
+@def-ch16num3 describes a 20-period, 20-unit design in which eventually-treated units become treated at different times, a common setting in empirical social science often referred to as the staggered adoption design. The treatment effect of interest might be a state-level policy adopted in 20 states at some point within a 20-year period, so we draw on comparisons before and after policy adoption within states and comparisons across states that have and have not yet adopted treatment. We use the `did_multiplegt_tidy` function (available in the `rdddr` companion package) to prepare the output from the `DIDmultiplegt` package that implements the estimation procedure.
 
 ::: {#def-ch16num3} 
 
@@ -45,7 +45,7 @@ diagnosis_16.3 <- diagnose_design(declaration_16.3)
 
 ![Sampling distributions of two difference-in-differences estimators.](/figures/figure-16-5){#fig-ch16num5}
 
-Figure @fig-ch16num5 shows that the two-way fixed effects estimator is biased for both the ATT and the ATT on the switchers. By contrast, the @chaisemartin estimator is unbiased for the ATT on the switchers. Neither estimator recovers unbiased estimates of the ATT. The next section explains why.
+@fig-ch16num5 shows that the two-way fixed effects estimator is biased for both the ATT and the ATT on the switchers. By contrast, the @chaisemartin estimator is unbiased for the ATT on the switchers. Neither estimator recovers unbiased estimates of the ATT. The next section explains why.
 
 :::
 
@@ -53,9 +53,9 @@ Figure @fig-ch16num5 shows that the two-way fixed effects estimator is biased fo
 
 ## Redesigning over alternative models of treatment effect heterogeneity
 
-The issues with the two-way fixed effects estimator emerge when treatment effects differ for units that are treated later versus earlier. Following Principle @exm-designagnostically: Design agnostically, we declare a model with homogeneous treatment effects, as well as two kinds of time-varying heterogeneous treatment effects: one in which effects are lower for units treated later and one in which effects are higher for units treated later. 
+The issues with the two-way fixed effects estimator emerge when treatment effects differ for units that are treated later versus earlier. Following @exm-designagnostically: Design agnostically, we declare a model with homogeneous treatment effects, as well as two kinds of time-varying heterogeneous treatment effects: one in which effects are lower for units treated later and one in which effects are higher for units treated later. 
 
-The timing of treatment, nature of heterogeneous effects, and answer strategies interact to determine the properties of the design. Figure @fig-ch16num6 shows the diagnosis under all three sets of potential outcomes, and examines both the ATT and the ATT for switchers inquiries. We consider both the two-way fixed effects estimator and the @chaisemartin estimator. 
+The timing of treatment, nature of heterogeneous effects, and answer strategies interact to determine the properties of the design. @fig-ch16num6 shows the diagnosis under all three sets of potential outcomes, and examines both the ATT and the ATT for switchers inquiries. We consider both the two-way fixed effects estimator and the @chaisemartin estimator. 
 
 When treatment effects happen to be homogeneous (middle panel), both estimators recover unbiased estimates of both the ATT and the ATT for switchers, which of course are equal to one another because of treatment effect homogeneity. However, when treatment effects vary with the timing of treatment (left or right panels), the two-way fixed-effects estimator is biased for both inquiries. The @chaisemartin estimator is also biased for the ATT, but remains unbiased for the ATT among switchers regardless of the pattern of treatment effect heterogeneity.
 

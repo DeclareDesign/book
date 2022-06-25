@@ -33,7 +33,7 @@ Here we have an original study design of size 1000. The original study design's 
 
 4. Do we fail to affirm equivalence^[For an introduction to equivalence testing see @hartman2018equivalence] between the replication and original estimate, using a tolerance of 0.2? 
 
-Figure @fig-replications shows that no matter how big we make the replication, we find that the rate of concluding the difference-in-SATEs is nonzero only occurs about 10% of the time. Similarly, the replication estimate is rarely outside of the original confidence interval, because it's rare to be more extreme than a wide confidence interval. The relatively high variance of the original study means that it is so uncertain, it's tough to distinguish it from any number in particular. 
+@fig-replications shows that no matter how big we make the replication, we find that the rate of concluding the difference-in-SATEs is nonzero only occurs about 10% of the time. Similarly, the replication estimate is rarely outside of the original confidence interval, because it's rare to be more extreme than a wide confidence interval. The relatively high variance of the original study means that it is so uncertain, it's tough to distinguish it from any number in particular. 
 
 Turning to the third metric (is the original outside the 95% confidence interval of the replication estimate), we that we become more and more likely to conclude that the original study fails to replicate as the quality replication study goes up. At very large sample sizes, the replication confidence intervals become extremely small, so in the limit, it will always exclude the original study estimate.
 

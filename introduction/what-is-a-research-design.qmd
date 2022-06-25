@@ -47,7 +47,7 @@ Summarizing, we can think of three functions of a model that characterize  *unit
 
 #### *M* as a set.
 
-In Figure @fig-midaplot, we describe *M* as the "the worlds you'll consider." The reason for this is that we are uncertain about how the world works. As scientists, we are skeptical of easy assertions about what the right model is and we freely admit we don't know the true causal model of the world. When conducting empirical research into the true model, we have to think through how our design would play out under different possible models, including ones we think more likely and those we think less likely. For instance, the correlation between two variables might be large and positive, but it could just as well be zero. We might believe that, conditional on some background variables, a treatment has been as-if randomly assigned by the world---but we might be wrong about that too. In the figure we use $m^*$ to denote the true model, or the actual, unknown, event generating process. We do not have access to $m^*$, but our hope is that $m^*$ is sufficiently well-represented in *M* so that we can reasonably imagine what will happen when our design is applied in the real world. 
+In @fig-midaplot, we describe *M* as the "the worlds you'll consider." The reason for this is that we are uncertain about how the world works. As scientists, we are skeptical of easy assertions about what the right model is and we freely admit we don't know the true causal model of the world. When conducting empirical research into the true model, we have to think through how our design would play out under different possible models, including ones we think more likely and those we think less likely. For instance, the correlation between two variables might be large and positive, but it could just as well be zero. We might believe that, conditional on some background variables, a treatment has been as-if randomly assigned by the world---but we might be wrong about that too. In the figure we use $m^*$ to denote the true model, or the actual, unknown, event generating process. We do not have access to $m^*$, but our hope is that $m^*$ is sufficiently well-represented in *M* so that we can reasonably imagine what will happen when our design is applied in the real world. 
 
 How can we construct a sufficiently varied set of models of the world? For this we can draw on existing data from past studies or on new information gathered from pilot studies. Reducing uncertainty over the set of possible models is a core purpose of theoretical reflection, literature review, meta-analysis, and formative research. If there are important known features about your context it generally makes sense to include them in $M$.
 
@@ -68,11 +68,11 @@ Examples of models
 
 The inquiry is a research question stated in terms of the model. For example, the inquiry might be the average causal effect of one variable on another, the descriptive distribution of a third variable, or a prediction about the value of a variable in the future. We refer to "the" inquiry when talking about the main research question, but in practice we may seek to learn about many inquiries in a single research study. 
 
-Many people use the word "estimand" to refer to an inquiry, and we do too when casually talking about research. When we are formally describing research designs, however, we distinguish between inquiries and estimands and Figure @fig-midaplot shows why. The inquiry *I* is the function that operates on the events generated (or conjectured to be generated) by the real world $m^*$ or a simulated world $m$. The estimand is the value of that function: $a_{m^*}$ or $a_{m}$. In other words, we use "inquiry" to refer to the question and "estimand" to refer to the answer to the question.
+Many people use the word "estimand" to refer to an inquiry, and we do too when casually talking about research. When we are formally describing research designs, however, we distinguish between inquiries and estimands and @fig-midaplot shows why. The inquiry *I* is the function that operates on the events generated (or conjectured to be generated) by the real world $m^*$ or a simulated world $m$. The estimand is the value of that function: $a_{m^*}$ or $a_{m}$. In other words, we use "inquiry" to refer to the question and "estimand" to refer to the answer to the question.
 
 As with models, inquiries are also defined with respect to *units*, *conditions*, and *outcomes*: they are summaries of outcomes of units in or across conditions. Inquiries may be causal, as in the sample average treatment effect (SATE). The SATE is the average difference in treated and untreated potential outcomes among units in a sample. Inquiries may also be descriptive, as in a population average of an outcome. While it may seem that descriptive inquiries do not involve conditions, they always do, since the realization of outcomes must take place under a particular set of circumstances, often set by the world and not the researcher.
 
-Figure @fig-midaplot shows that when *I* is applied to a model $m$, it produces an answer $a^m$. This set of relationships forces discipline on both *M* and *I*: *I* needs to be able to return an answer using information available from *M* and in turn *M* needs to provide enough information so that *I* can do its job.
+@fig-midaplot shows that when *I* is applied to a model $m$, it produces an answer $a^m$. This set of relationships forces discipline on both *M* and *I*: *I* needs to be able to return an answer using information available from *M* and in turn *M* needs to provide enough information so that *I* can do its job.
 
 
 :::: {.ddbox}
@@ -102,7 +102,7 @@ Data strategies also involve conditions. Most obviously, experimental interventi
 
 Measurement procedures are the ways in which researchers reduce the complex and multidimensional social world into a parsimonious set of empirical data. These data need not be quantitative data in the sense of being numbers or values on a pre-defined scale; qualitative data are data too. Measurement is the vexing but necessary reduction of reality to a few choice representations. 
 
-Figure @fig-midaplot shows how the data strategy is applied to both the imagined worlds in *M* and to the real world. When *D* is applied to the real world ($m^*$), we obtain the realized dataset $d^*$. When *D* is applied to the worlds we imagine in *M*, we obtain *simulated* datasets, which may or may not be anything like the dataset $d^*$ we would really get. When our models *M* more accurately represent the real world, our simulated datasets will look more like the real data we will eventually collect. 
+@fig-midaplot shows how the data strategy is applied to both the imagined worlds in *M* and to the real world. When *D* is applied to the real world ($m^*$), we obtain the realized dataset $d^*$. When *D* is applied to the worlds we imagine in *M*, we obtain *simulated* datasets, which may or may not be anything like the dataset $d^*$ we would really get. When our models *M* more accurately represent the real world, our simulated datasets will look more like the real data we will eventually collect. 
 
 
 :::: {.ddbox}
@@ -147,7 +147,7 @@ The answer strategy is more than the choice of an estimator. It includes the ful
 
 *A* and *I* also enjoy a tight connection stemming from the more general parallelism between (*M*, *I*) and (*D*, *A*). We elaborate the principle of parallel inquiries and answer strategies in Section @how-to-choose-an-answer-strategy.
 
-Figure @fig-midaplot shows how the same answer strategy *A* is applied both to the realized data $d^*$ and also to the simulated data $d$. We know that in practice, however, the *A* applied to the real data differs somewhat from the *A* applied to the data we plan for via simulation. Designs sometimes drift in response to data, but too much drift and the inferences we draw can become misleading. The *MIDA* framework encourages researchers to think through what the real data will actually look like, and adjust *A* accordingly *before* data strategies are implemented.
+@fig-midaplot shows how the same answer strategy *A* is applied both to the realized data $d^*$ and also to the simulated data $d$. We know that in practice, however, the *A* applied to the real data differs somewhat from the *A* applied to the data we plan for via simulation. Designs sometimes drift in response to data, but too much drift and the inferences we draw can become misleading. The *MIDA* framework encourages researchers to think through what the real data will actually look like, and adjust *A* accordingly *before* data strategies are implemented.
 
 :::: {.ddbox}
 ::: {.ddbox-title}
@@ -222,7 +222,7 @@ The two designs cost the same but differ on the empirical side. Which strategy s
 
 * *A*: The answer strategy takes the difference-in-means between the treated and untreated units. Thus the answer strategy uses a function similar to the inquiry itself.
 
-When we put these all together we have a design, Declaration @def-ch2num1.
+When we put these all together we have a design, @def-ch2num1.
 
 ::: {#def-ch2num1} 
 
@@ -259,7 +259,7 @@ program_diagnosands  <-
 
 The alternative design that differs on the empirical side in three ways. First fewer subjects are sampled. Second, information about the subjects' background information (their "history") is used to implement a block randomization that conditions assignment on history. Third the subjects' history is taken into account in the analysis. This choice is an instance of adjusting the answer strategy in light of a change to the data strategy. 
 
-In Declaration @def-ch2num2, we can leave the model and inquiry intact and but we have to work on the data and answer strategies.
+In @def-ch2num2, we can leave the model and inquiry intact and but we have to work on the data and answer strategies.
 
 ::: {#def-ch2num2} 
 
@@ -306,7 +306,7 @@ The overall result of this declaration, diagnosis, and redesign process is that 
 
 ### Three principles
 
-We see from this example the gains from entertaining a diverse model set rather than presupposing we already know *M*. We also see an example of design parts tailored to each other, most importantly the adjustment of answer strategies in light of data strategies. And we see that design choices are informed by a clear specification of a success criterion. In the next chapter we develop these three features as broader principles, referring to them Principle @exm-designholistically: Design holistically, Principle @exm-designagnostically: Design agnostically, and Principle @exm-designforpurpose: Design for purpose.
+We see from this example the gains from entertaining a diverse model set rather than presupposing we already know *M*. We also see an example of design parts tailored to each other, most importantly the adjustment of answer strategies in light of data strategies. And we see that design choices are informed by a clear specification of a success criterion. In the next chapter we develop these three features as broader principles, referring to them @exm-designholistically: Design holistically, @exm-designagnostically: Design agnostically, and @exm-designforpurpose: Design for purpose.
 
 
 ## Putting designs to use
@@ -325,4 +325,4 @@ A happy realization phase concludes with the publication of results. But the res
 
 ### Three more principles 
 
-This discussion motivates three more principles: Principle @exm-designearly: Design early to reap the benefits of clarity; Principle @exm-designoften: Design often so that you can correct course; and Principle @exm-designtoshare: Design to share so that you maximize transparency and contribute maximally to knowledge creation. 
+This discussion motivates three more principles: @exm-designearly: Design early to reap the benefits of clarity; @exm-designoften: Design often so that you can correct course; and @exm-designtoshare: Design to share so that you maximize transparency and contribute maximally to knowledge creation. 

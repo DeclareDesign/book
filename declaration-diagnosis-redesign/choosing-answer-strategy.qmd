@@ -9,9 +9,9 @@ source("scripts/before_chapter_script.R")
 
 The answer strategy is a plan for what to do with the information gathered from the world in order to generate an answer to the inquiry. Qualitative and quantitative methods courses provide guidance about the properties of different strategies and the conditions under which they work well or poorly. Under what conditions should we use ordinary least squares, when should we use logit? When is a machine learning algorithm the appropriate choice and when would a comparative case study be more informative? When is *no* answer strategy worth pursuing because of the fundamental limitations of the data strategy?
 
-Following Principle @exm-designforpurpose: Design for purpose, the evaluation of an answer strategy depends on our ultimate goals: what is the answer to be used for? A perfect answer is generally elusive in empirical research so in practice we often need to select among strategies that come with different strengths and weaknesses. For instance some might suffer less from bias while others might be more precise. In other words, which answer strategy is best for you depends on what diagnosands you care about.
+Following @exm-designforpurpose: Design for purpose, the evaluation of an answer strategy depends on our ultimate goals: what is the answer to be used for? A perfect answer is generally elusive in empirical research so in practice we often need to select among strategies that come with different strengths and weaknesses. For instance some might suffer less from bias while others might be more precise. In other words, which answer strategy is best for you depends on what diagnosands you care about.
 
-This chapter first describes the elements of the answer strategy, the most important of which are the type of answer and the approach to assessing the level of uncertainty in the answer. We then describe four distinct approaches to answering a question: point estimation, hypothesis tests, Bayesian posteriors, and interval estimation.  Last we identify some general principles for selecting an answer strategy highlighting especially how the choice of *A* depends on the other three elements of research design. Principle @exm-designholistically is a reminder to diagnose holistically: we can't choose answer strategies in isolation from the the other design elements.
+This chapter first describes the elements of the answer strategy, the most important of which are the type of answer and the approach to assessing the level of uncertainty in the answer. We then describe four distinct approaches to answering a question: point estimation, hypothesis tests, Bayesian posteriors, and interval estimation.  Last we identify some general principles for selecting an answer strategy highlighting especially how the choice of *A* depends on the other three elements of research design. @exm-designholistically is a reminder to diagnose holistically: we can't choose answer strategies in isolation from the the other design elements.
 
 ## Elements of answer strategies
 
@@ -100,7 +100,7 @@ To illustrate point estimation in general, we'll try to estimate the average age
 
 A standard way to report uncertainty of a point estimate is to provide a "standard error." In this case we know that our answer is probably not a good answer. It is almost certainly wrong in the sense that the population average age in the small village is probably not fifteen (Italy's population is aging!), but we don't know how wrong because, of course, we don't actually know the value of the inquiry under study. We have instead to evaluate the properties of the procedure. Under a random sampling design -- even an egregiously stingy random sampling design that only selects three citizens! -- we can justify the approach on the basis of the "bias" diagnosand.^[Bias is the idea that the average of all the answers you would get if you repeated the data strategy (random sampling) and the answer strategy (taking the sample average) over and over would correspond to the correct answer.]  
 
-But that doesn't tell us much about how confident we should be in this answer. The design in Declaration @def-ch9num1 can be used to generate a view of what answers we might get when we choose just three subjects for our sample.^[We use a linear regression of the age variable on a constant to estimate the sample mean. Using OLS in this way is a neat trick for estimating sample means along with various uncertainty statistics, discussed in more detail in the next section.]
+But that doesn't tell us much about how confident we should be in this answer. The design in @def-ch9num1 can be used to generate a view of what answers we might get when we choose just three subjects for our sample.^[We use a linear regression of the age variable on a constant to estimate the sample mean. Using OLS in this way is a neat trick for estimating sample means along with various uncertainty statistics, discussed in more detail in the next section.]
 
 ::: {#def-ch9num1} 
 
@@ -130,7 +130,7 @@ diagnosis_9.1 <- diagnose_design(declaration_9.1)
 diagnosis_9.1 <- get_rdddr_file_local("diagnosis_9.1")
 ```
 
-Figure @fig-ch9num1 shows that we are right on average but usually quite wrong. The average estimate lies right on top of the true value of the estimand (40), but the estimates range enormously widely, from close to zero to close to 80 in some draws. The answer strategy -- the sample mean estimator -- is just fine, the problem here lies in the data strategy that generates tiny samples. Substantively this does not mean that we now believe we are wrong. But it does tell us that the data is just as consistent with lots of other possibilities as it is with the estimate that we got from a single run of the design.
+@fig-ch9num1 shows that we are right on average but usually quite wrong. The average estimate lies right on top of the true value of the estimand (40), but the estimates range enormously widely, from close to zero to close to 80 in some draws. The answer strategy -- the sample mean estimator -- is just fine, the problem here lies in the data strategy that generates tiny samples. Substantively this does not mean that we now believe we are wrong. But it does tell us that the data is just as consistent with lots of other possibilities as it is with the estimate that we got from a single run of the design.
 
 ![Sampling distribution of the estimates from the point estimator answer strategy](/figures/figure-9-1){#fig-ch9num1}
 
@@ -170,7 +170,7 @@ run_design(declaration_9.2) |>
   kable(booktabs = TRUE, align = "c", digits = 2, caption = "Estimates from the test of the mean age equalling 20 from Italian villages example")
 ```
 
-Next, we diagnose the modified design, by running the design many times. Figure @fig-ch9num2 shows how frequently we reject the null that the average age is 20. When estimate is close to 20, we rarely reject the null, but when the estimate is far from 20, we are more like to reject. Again, this diagnosis comes from a design with a weak data strategy of sampling only three citizens at time. We need to see estimates breaking 60 before the testing answer strategy reliably rejects this (false) null hypothesis.
+Next, we diagnose the modified design, by running the design many times. @fig-ch9num2 shows how frequently we reject the null that the average age is 20. When estimate is close to 20, we rarely reject the null, but when the estimate is far from 20, we are more like to reject. Again, this diagnosis comes from a design with a weak data strategy of sampling only three citizens at time. We need to see estimates breaking 60 before the testing answer strategy reliably rejects this (false) null hypothesis.
 
 ::: {#lem-ch9num2} 
 
@@ -222,7 +222,7 @@ The Bayesian answer strategy specifies a prior distribution (here distributed no
 diagnosis_9.4 <- diagnose_design(declaration_9.4)
 ```
 
-What we see in Figure @fig-ch9num3 is that using the same (poor) data strategy as before, a Bayesian answer strategy gets us a somewhat tighter distribution on our answer, but exhibits greater bias: the average estimate is higher than the estimand. We might accept higher bias for lower variance if overall, the root-mean-squared error is lower for the Bayesian approach. See Section @exploring-design-tradeoffs for a further discussion of RMSE. The main difference between the Bayesian and classical approaches is the handling of prior beliefs, which carry a lot of weight in the Bayesian estimation but no weight in the classical approach.
+What we see in @fig-ch9num3 is that using the same (poor) data strategy as before, a Bayesian answer strategy gets us a somewhat tighter distribution on our answer, but exhibits greater bias: the average estimate is higher than the estimand. We might accept higher bias for lower variance if overall, the root-mean-squared error is lower for the Bayesian approach. See Section @exploring-design-tradeoffs for a further discussion of RMSE. The main difference between the Bayesian and classical approaches is the handling of prior beliefs, which carry a lot of weight in the Bayesian estimation but no weight in the classical approach.
 
 ![Sampling distribution of the Bayesian answer strategy](/figures/figure-9-3){#fig-ch9num3}
 
@@ -241,7 +241,7 @@ In the Bayes approach parameter estimates and uncertainty estimates are generate
 
 For point and interval estimators, uncertainty is often expressed as a standard error estimate or confidence interval. Many approaches to standard error estimation are available. Indeed, just like point estimators for inquiries, we have point estimators for standard errors. You might choose classical standard errors or cluster-robust standard errors; you might bootstrap your standard errors or use the jackknife. Similarly, many approaches to confidence interval construction are available. Most often, confidence intervals are built from variance estimates under an appeal to sampling theory. Alternatively, a confidence interval can be formed by "inverting the test," i.e. finding the range of null hypotheses we fail to reject. Whether any particular approach to uncertainty estimation is appropriate in a context will depend on the full set of design parameters and we encourage you to diagnose your uncertainty estimates as well.
 
-Here is the output of the answer strategy from Declaration @def-ch9num1, applied to the realized data set. We see the sample mean estimate of 15, the standard error estimate of 6, and the confidence interval from -10 to 40. These numbers communicate that our answer is 15 -- but also that we *know* that number is shaky. We're uncertain because the tool we used to answer the inquiry is high variance: it could bounce around a lot depending on which three people we happened to sample. 
+Here is the output of the answer strategy from @def-ch9num1, applied to the realized data set. We see the sample mean estimate of 15, the standard error estimate of 6, and the confidence interval from -10 to 40. These numbers communicate that our answer is 15 -- but also that we *know* that number is shaky. We're uncertain because the tool we used to answer the inquiry is high variance: it could bounce around a lot depending on which three people we happened to sample. 
 
 ```{r}
 #| eval: false
@@ -272,7 +272,7 @@ Our uncertainty about the decision we made in the hypothesis test to fail to rej
 
 What does characterize our uncertainty about a significance test? The Type I and type II error rates of the test. The Type I error rate is controlled by the significance threshold. A Type I error occurs if we reject the null model when it is true. If we use $\alpha = 0.05$ and the test is correctly accounts for all design elements, then a Type I error should only happen 5% of the time. Type II error rates are harder to learn about. In our case, we failed to reject the null model. To characterize our uncertainty about the test, we also want to calculate the probability that a design like this one would generate Type II errors. To do so, we have to imagine what it means for the null model to be *false*, since they can be false in many ways. One approach is to imagine how the test would perform on under a series of non-null models.
 
-Figure @fig-ch9num4 describes the Type II error rate over a range of non-null models. If the true population mean is around 25 or lower, we fail to reject the null 75% of the time or more. With this comically small sample size, even if the true mean were 75, we would still fail to reject 20% of the time. We are rightly uncertain about this test -- it may have a low enough Type I error rate (set as $\alpha = 0.05$), but the Type II errors are way too big. 
+@fig-ch9num4 describes the Type II error rate over a range of non-null models. If the true population mean is around 25 or lower, we fail to reject the null 75% of the time or more. With this comically small sample size, even if the true mean were 75, we would still fail to reject 20% of the time. We are rightly uncertain about this test -- it may have a low enough Type I error rate (set as $\alpha = 0.05$), but the Type II errors are way too big. 
 
 ::: {#def-ch9num5} 
 
@@ -444,7 +444,7 @@ This idea can be summarized as "analyze as you randomize," a dictum attributed t
 
 ### Illustration of estimates using the AAYR principle 
 
-Declaration @def-ch9num6 illustrates this idea. We declare the theoretical half of the design as `MI` then consider the intersection of two data strategies with two answer strategies. `D1` has constant probabilities of assignment and `D2` has differential probabilities of assignment. `A1` is the plug-in estimator and `A2` is the IPW estimator with the inverse probability weights generated by the `D2` randomization protocol. 
+@def-ch9num6 illustrates this idea. We declare the theoretical half of the design as `MI` then consider the intersection of two data strategies with two answer strategies. `D1` has constant probabilities of assignment and `D2` has differential probabilities of assignment. `A1` is the plug-in estimator and `A2` is the IPW estimator with the inverse probability weights generated by the `D2` randomization protocol. 
 
 ::: {#def-ch9num6} 
 
@@ -466,7 +466,7 @@ Declaration @def-ch9num6 illustrates this idea. We declare the theoretical half 
 diagnosis_9.6 <- diagnose_design(declaration_9.6)
 ```
 
-We diagnose the bias of all four design. Figure @fig-ch9num5 shows that when the answer strategy and the data strategy match (`D1 + A1` and `D2 + A2`), we have no bias. When they do not match (`D1 + A2` and `D2 + A1`), we do. In this case, seeking parallelism in the choice of answer strategy improves the design. Of course, an alternative answer strategy we might call `A3` that implements the weights corresponding to whatever the data strategy says they should be unbiased under both `D1` and `D2`.
+We diagnose the bias of all four design. @fig-ch9num5 shows that when the answer strategy and the data strategy match (`D1 + A1` and `D2 + A2`), we have no bias. When they do not match (`D1 + A2` and `D2 + A1`), we do. In this case, seeking parallelism in the choice of answer strategy improves the design. Of course, an alternative answer strategy we might call `A3` that implements the weights corresponding to whatever the data strategy says they should be unbiased under both `D1` and `D2`.
 
 ![When data and answer strategies are mismatched, we obtain bias.](/figures/figure-9-5){#fig-ch9num5}
 

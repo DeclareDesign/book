@@ -16,7 +16,7 @@ Behavioral games are often used to study difficult-to-measure characteristics of
 
 The approach holds enormous value. But, as highlighted by @green2012statistical, it also introduces many subtle design choices. Many of these can be revealed through declaration and diagnosis. 
 
-We illustrate using the "trust" game in which we specify three common inquiries and use a standard design in Declaration @def-ch17num6. The design is successful at generating unbiased estimates of the first inquiry but runs into problems with the other two.   
+We illustrate using the "trust" game in which we specify three common inquiries and use a standard design in @def-ch17num6. The design is successful at generating unbiased estimates of the first inquiry but runs into problems with the other two.   
 
 The trust game has been implemented hundreds of times to understand levels and correlates of social trust. Following the meta-analysis given in @johnson2011trust we consider a game in which one player (Player 1, the "trustor") can invest some share of $1. Whatever is invested is then doubled. A second player (Player 2, "the trustee") can then decide what share of the doubled amount to keep for themself and what share to return to the trustor.  
 
@@ -62,7 +62,7 @@ which is maximized at: $x = a_1$.
 
 The global maximum depends on which of these yields higher utility. 
 
-Figure @fig-ch17num4 shows the returns to the trustor from different investments given their own and the trustee's other-regarding preferences. We see that when other-regarding preferences are weak for both players, nothing is given and nothing is returned. When other regarding preferences are strong for player 1, they offer substantial amounts even when nothing is expected in return. When other-regarding preferences are sufficiently strong for player 2, player 1 invests fully in anticipation of a return. 
+@fig-ch17num4 shows the returns to the trustor from different investments given their own and the trustee's other-regarding preferences. We see that when other-regarding preferences are weak for both players, nothing is given and nothing is returned. When other regarding preferences are strong for player 1, they offer substantial amounts even when nothing is expected in return. When other-regarding preferences are sufficiently strong for player 2, player 1 invests fully in anticipation of a return. 
 
 ![Illustration of a trust game](/figures/figure-17-4){#fig-ch17num4}
 

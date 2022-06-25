@@ -83,7 +83,7 @@ M <-
   )
 ```
 
-You can use any of the enormous number of data simulation functions available in R for this purpose. Here we gather six functions we tend to use in our own declarations, but they are by no means exhaustive. Each function has arguments that govern exactly how the data are created; we chose arbitrary values here to show how they work. Figure @fig-ch13num1 shows what these six look like for a 1,000 unit model.
+You can use any of the enormous number of data simulation functions available in R for this purpose. Here we gather six functions we tend to use in our own declarations, but they are by no means exhaustive. Each function has arguments that govern exactly how the data are created; we chose arbitrary values here to show how they work. @fig-ch13num1 shows what these six look like for a 1,000 unit model.
 
 ```{r}
 M <-
@@ -264,7 +264,7 @@ M2 <-
   )
 ```
 
-A further question for `U` is how much it should vary. This question is tougher to answer. `U` is an important source of variation in outcomes, so it needs to be calibrated in a way that the simulated data look like the data you expect to generate or encounter in the world. So our best advice here is to follow Principle @exm-designagnostically: Design agnostically to figure out which ones seem reasonable.
+A further question for `U` is how much it should vary. This question is tougher to answer. `U` is an important source of variation in outcomes, so it needs to be calibrated in a way that the simulated data look like the data you expect to generate or encounter in the world. So our best advice here is to follow @exm-designagnostically: Design agnostically to figure out which ones seem reasonable.
 
 ### Potential outcomes
 
@@ -363,7 +363,7 @@ M <-
   )
 ```
 
-Where do our expectations about effect sizes, and the minimal plausible effect size, come from? We may conduct meta-analysis of past studies when there are more than one sufficiently relevant estimates of the same effect, or a systematic review or literature review when they are less comparable but we may want to find a range (see Section @meta-analysis for a discussion of meta-analysis). We may be tempted to conduct a pilot study to estimate the effect size. We need to be careful when doing so what to infer and how much to update from small pilot studies, as we discuss in Section @piloting, but we can often shrink our uncertainty about them. In the absence of pilot studies or past studies to draw on, we need to make educated guesses and understand under what true effect sizes our design will perform well and when it will not following Principle @exm-designholistically: Design holistically.
+Where do our expectations about effect sizes, and the minimal plausible effect size, come from? We may conduct meta-analysis of past studies when there are more than one sufficiently relevant estimates of the same effect, or a systematic review or literature review when they are less comparable but we may want to find a range (see Section @meta-analysis for a discussion of meta-analysis). We may be tempted to conduct a pilot study to estimate the effect size. We need to be careful when doing so what to infer and how much to update from small pilot studies, as we discuss in Section @piloting, but we can often shrink our uncertainty about them. In the absence of pilot studies or past studies to draw on, we need to make educated guesses and understand under what true effect sizes our design will perform well and when it will not following @exm-designholistically: Design holistically.
 
 #### Effect heterogeneity
 
@@ -812,7 +812,7 @@ Often you may want to construct a test as part of your answer strategy that does
 
 ## Declaration {#declaration-code}
 
-To construct a research *design* object that we can operate on --- diagnose it, redesign it, draw data from it, etc. --- we add research design elements together with the `+` operator. In Declaration @def-ch13num2, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.
+To construct a research *design* object that we can operate on --- diagnose it, redesign it, draw data from it, etc. --- we add research design elements together with the `+` operator. In @def-ch13num2, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.
 
 ::: {#def-ch13num2} 
 
@@ -931,7 +931,7 @@ simulations_df |>
 
 Plotting simulations using `ggplot2` is often a great way to gain a deeper sense of the properties of the design.
 
-The answer strategy for Declaration @def-ch13num1 includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using `geom_histogram`, then faceting by estimator using `facet_wrap`. We often want to overlay the true value of the estimand on these plots, which we do here with `geom_vline`. Notice that in order to do, we had to create a `summary_df` that includes the value of the estimand. The resulting plot shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.
+The answer strategy for @def-ch13num1 includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using `geom_histogram`, then faceting by estimator using `facet_wrap`. We often want to overlay the true value of the estimand on these plots, which we do here with `geom_vline`. Notice that in order to do, we had to create a `summary_df` that includes the value of the estimand. The resulting plot shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.
 
 ```{r samplingdistincode}
 #| eval: false

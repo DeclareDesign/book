@@ -17,7 +17,7 @@ In an MRP design, the answer strategy includes two steps: a multi-level regressi
 
 The regression model generates estimates of the average opinion for classes of people within each state. The post-stratification step reweights these estimates to *known* proportions of each class of person within each state. The knowledge of these proportions has to come from outside the survey. The US census is the usual source of these population proportions in the American context, though any reliable source of this information is suitable.
 
-In Declaration @def-ch15num4, we begin with a dataset of the fifty states that describes what fraction of people in each state has graduated from high school. This code block also establishes the true state means that will form our inquiry. In the model, we draw a nationally-representative sample of size 2,000, respecting the fraction of people within each state with a high school degree. The post-stratification weights are built from the that fraction as well. The binary public opinion variable `policy_support` is a function of the high school covariate, an individual-level shock, and a state-level shock. The inquiry is the mean policy support at the state level. The tricky part of this design is the two-step answer strategy. The first step is handled by the multilevel regression function `glmer`. The second step is handled by the `post_stratification_helper` function (available in the `rdddr` companion package) that obtains predictions from the model, then reweights them according to the post-stratification weights.
+In @def-ch15num4, we begin with a dataset of the fifty states that describes what fraction of people in each state has graduated from high school. This code block also establishes the true state means that will form our inquiry. In the model, we draw a nationally-representative sample of size 2,000, respecting the fraction of people within each state with a high school degree. The post-stratification weights are built from the that fraction as well. The binary public opinion variable `policy_support` is a function of the high school covariate, an individual-level shock, and a state-level shock. The inquiry is the mean policy support at the state level. The tricky part of this design is the two-step answer strategy. The first step is handled by the multilevel regression function `glmer`. The second step is handled by the `post_stratification_helper` function (available in the `rdddr` companion package) that obtains predictions from the model, then reweights them according to the post-stratification weights.
 
 ::: {#def-ch15num4} 
 
@@ -28,7 +28,7 @@ In Declaration @def-ch15num4, we begin with a dataset of the fifty states that d
   
 :::
 
-Figure @fig-ch15num4 shows one draw from this design, plotting the MRP estimates against the true level of opinion. 
+@fig-ch15num4 shows one draw from this design, plotting the MRP estimates against the true level of opinion. 
 
 ![Estimates of state-level option plotted against their true levels](/figures/figure-15-4){#fig-ch15num4}
 
@@ -55,7 +55,7 @@ The strengths of the MRP design are best appreciated by contrasting MRP's partia
 diagnosis_15.4 <- diagnose_design(declaration_15.5)
 ```
 
-Figure @fig-ch15num5 compares the three estimators. The first column of facets shows one draw of the estimates against the estimands. The main thing to notice here is that the full pooling estimate is more or less a flat line -- regardless of the estimand, the estimates are just above 50%. Relative to partial pooling, the no pooling estimates are further spread around the 45 degree line, with small states bouncing around the most. 
+@fig-ch15num5 compares the three estimators. The first column of facets shows one draw of the estimates against the estimands. The main thing to notice here is that the full pooling estimate is more or less a flat line -- regardless of the estimand, the estimates are just above 50%. Relative to partial pooling, the no pooling estimates are further spread around the 45 degree line, with small states bouncing around the most. 
 
 On the right side of the figure, we see the bias, RMSE, and standard deviation diagnosands for each inquiry under all three answer strategies. Under no pooling, bias is very low, but the RMSE and standard deviation for small states is very high. Under full pooling, the standard deviation is very low, but bias is very positive for states with low support and very negative for states with high support. The resulting RMSE has a funny "V" shape -- we only do well for states that happen to have opinion that is very close to the national average.
 
