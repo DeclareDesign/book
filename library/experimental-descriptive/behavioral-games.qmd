@@ -62,7 +62,7 @@ which is maximized at: $x = a_1$.
 
 The global maximum depends on which of these yields higher utility. 
 
-Figure \@ref(fig:figure-17-4) shows the returns to the trustor from different investments given their own and the trustee's other-regarding preferences. We see that when other-regarding preferences are weak for both players, nothing is given and nothing is returned. When other regarding preferences are strong for player 1, they offer substantial amounts even when nothing is expected in return. When other-regarding preferences are sufficiently strong for player 2, player 1 invests fully in anticipation of a return. 
+Figure @fig-figure-17-4 shows the returns to the trustor from different investments given their own and the trustee's other-regarding preferences. We see that when other-regarding preferences are weak for both players, nothing is given and nothing is returned. When other regarding preferences are strong for player 1, they offer substantial amounts even when nothing is expected in return. When other-regarding preferences are sufficiently strong for player 2, player 1 invests fully in anticipation of a return. 
 
 ![Illustration of a trust game](/figures/figure-17-4){#fig:figure-17-4}
 

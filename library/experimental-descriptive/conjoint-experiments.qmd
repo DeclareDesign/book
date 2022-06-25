@@ -63,7 +63,7 @@ Diagnosis of the conjoint experiment design
 diagnosis_17.4 <- diagnose_design(declaration_17.4)
 ```
 
-Figure \@ref(fig:figure-17-3) shows the sampling distribution of the five AMCE estimators. All five are unbiased, but with only 500 subjects evaluating three pairs of candidates, the power for the smaller AMCEs is less than ideal. 
+Figure @fig-figure-17-3 shows the sampling distribution of the five AMCE estimators. All five are unbiased, but with only 500 subjects evaluating three pairs of candidates, the power for the smaller AMCEs is less than ideal. 
 
 ![Sampling Distribution of five AMCE estimators. Statistical significance of estimates indicated by color](/figures/figure-17-3){#fig:figure-17-3}
 

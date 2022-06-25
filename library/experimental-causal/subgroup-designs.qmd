@@ -37,7 +37,7 @@ Subgroup design declaration
 
 Subgroup design diagnosis
 
-To show the benefits of stratified sampling for experiments, we redesign over many values of under- and over-sampling units with `X = 1`, holding the total sample size fixed at `1000`. The top panel of Figure \@ref(fig:figure-18-6) shows the distribution of difference-in-CATE estimates at each size of the `X = 1` group. When very small or very large fractions of the total sample have `X = 1`, the variance of the estimator is much larger than when the two groups the same size. 
+To show the benefits of stratified sampling for experiments, we redesign over many values of under- and over-sampling units with `X = 1`, holding the total sample size fixed at `1000`. The top panel of Figure @fig-figure-18-6 shows the distribution of difference-in-CATE estimates at each size of the `X = 1` group. When very small or very large fractions of the total sample have `X = 1`, the variance of the estimator is much larger than when the two groups the same size. 
 
 The bottom panel of the figure shows how three diagnosands change over the oversampling design parameter. Bias is never a problem -- even small subgroups will generate unbiased difference-in-CATE estimates. As suggested by the top panel, the standard error is minimized in the middle and is largest at the extremes. Likewise, statistical power is maximized in the middle, but drops off surprisingly quickly as we move away from evenly-balanced recruitment. 
 

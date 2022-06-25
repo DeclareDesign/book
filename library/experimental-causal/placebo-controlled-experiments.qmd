@@ -45,7 +45,7 @@ By contrast, here are the data and answer strategies for the placebo-controlled 
 
 Diagnosing the encouragement and placebo-controlled designs
 
-We diagnose both the encouragement design and the placebo-controlled design over a range of possible levels of noncompliance, focusing on the standard deviation of the estimates (the standard error) as our main diagnosand. Figure \@ref(fig:figure-18-11) shows the results of the diagnosis. At high levels of compliance, the standard encouragement design actually outperforms the placebo-controlled design. But when compliance is low, the placebo-controlled design is preferred. Which design is preferable in any particular scenario will depend on the compliance rate as well as other design features like the total number of attempts and the fraction treated [see @broockman_kalla_sekhon_2017].
+We diagnose both the encouragement design and the placebo-controlled design over a range of possible levels of noncompliance, focusing on the standard deviation of the estimates (the standard error) as our main diagnosand. Figure @fig-figure-18-11 shows the results of the diagnosis. At high levels of compliance, the standard encouragement design actually outperforms the placebo-controlled design. But when compliance is low, the placebo-controlled design is preferred. Which design is preferable in any particular scenario will depend on the compliance rate as well as other design features like the total number of attempts and the fraction treated [see @broockman_kalla_sekhon_2017].
 
 ```{r}
 #| eval: false

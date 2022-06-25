@@ -130,7 +130,7 @@ diagnosis_9.1 <- diagnose_design(declaration_9.1)
 diagnosis_9.1 <- get_rdddr_file_local("diagnosis_9.1")
 ```
 
-Figure \@ref(fig:figure-9-1) shows that we are right on average but usually quite wrong. The average estimate lies right on top of the true value of the estimand (40), but the estimates range enormously widely, from close to zero to close to 80 in some draws. The answer strategy -- the sample mean estimator -- is just fine, the problem here lies in the data strategy that generates tiny samples. Substantively this does not mean that we now believe we are wrong. But it does tell us that the data is just as consistent with lots of other possibilities as it is with the estimate that we got from a single run of the design.
+Figure @fig-figure-9-1 shows that we are right on average but usually quite wrong. The average estimate lies right on top of the true value of the estimand (40), but the estimates range enormously widely, from close to zero to close to 80 in some draws. The answer strategy -- the sample mean estimator -- is just fine, the problem here lies in the data strategy that generates tiny samples. Substantively this does not mean that we now believe we are wrong. But it does tell us that the data is just as consistent with lots of other possibilities as it is with the estimate that we got from a single run of the design.
 
 ![Sampling distribution of the estimates from the point estimator answer strategy](/figures/figure-9-1){#fig:figure-9-1}
 
@@ -170,7 +170,7 @@ run_design(declaration_9.2) |>
   kable(booktabs = TRUE, align = "c", digits = 2, caption = "Estimates from the test of the mean age equalling 20 from Italian villages example")
 ```
 
-Next, we diagnose the modified design, by running the design many times. Figure \@ref(fig:figure-9-2) shows how frequently we reject the null that the average age is 20. When estimate is close to 20, we rarely reject the null, but when the estimate is far from 20, we are more like to reject. Again, this diagnosis comes from a design with a weak data strategy of sampling only three citizens at time. We need to see estimates breaking 60 before the testing answer strategy reliably rejects this (false) null hypothesis.
+Next, we diagnose the modified design, by running the design many times. Figure @fig-figure-9-2 shows how frequently we reject the null that the average age is 20. When estimate is close to 20, we rarely reject the null, but when the estimate is far from 20, we are more like to reject. Again, this diagnosis comes from a design with a weak data strategy of sampling only three citizens at time. We need to see estimates breaking 60 before the testing answer strategy reliably rejects this (false) null hypothesis.
 
 :::{.lemma #diagnosis-9-2}
 
@@ -222,7 +222,7 @@ We can then simulate this design in the same way and examine the distribution of
 diagnosis_9.4 <- diagnose_design(declaration_9.4)
 ```
 
-What we see in Figure \@ref(fig:figure-9-3) is that using the same (poor) data strategy as before, a Bayesian answer strategy gets us a somewhat tighter distribution on our answer, but exhibits greater bias: the average estimate is higher than the estimand. We might accept higher bias for lower variance if overall, the root-mean-squared error is lower for the Bayesian approach. See Section \@ref(exploring-design-tradeoffs) for a further discussion of RMSE. The main difference between the Bayesian and classical approaches is the handling of prior beliefs, which carry a lot of weight in the Bayesian estimation but no weight in the classical approach.
+What we see in Figure @fig-figure-9-3 is that using the same (poor) data strategy as before, a Bayesian answer strategy gets us a somewhat tighter distribution on our answer, but exhibits greater bias: the average estimate is higher than the estimand. We might accept higher bias for lower variance if overall, the root-mean-squared error is lower for the Bayesian approach. See Section \@ref(exploring-design-tradeoffs) for a further discussion of RMSE. The main difference between the Bayesian and classical approaches is the handling of prior beliefs, which carry a lot of weight in the Bayesian estimation but no weight in the classical approach.
 
 ![Sampling distribution of the Bayesian answer strategy](/figures/figure-9-3){#fig:figure-9-3}
 
@@ -272,7 +272,7 @@ Our uncertainty about the decision we made in the hypothesis test to fail to rej
 
 What does characterize our uncertainty about a significance test? The Type I and type II error rates of the test. The Type I error rate is controlled by the significance threshold. A Type I error occurs if we reject the null model when it is true. If we use $\alpha = 0.05$ and the test is correctly accounts for all design elements, then a Type I error should only happen 5% of the time. Type II error rates are harder to learn about. In our case, we failed to reject the null model. To characterize our uncertainty about the test, we also want to calculate the probability that a design like this one would generate Type II errors. To do so, we have to imagine what it means for the null model to be *false*, since they can be false in many ways. One approach is to imagine how the test would perform on under a series of non-null models.
 
-Figure \@ref(fig:figure-9-4) describes the Type II error rate over a range of non-null models. If the true population mean is around 25 or lower, we fail to reject the null 75% of the time or more. With this comically small sample size, even if the true mean were 75, we would still fail to reject 20% of the time. We are rightly uncertain about this test -- it may have a low enough Type I error rate (set as $\alpha = 0.05$), but the Type II errors are way too big. 
+Figure @fig-figure-9-4 describes the Type II error rate over a range of non-null models. If the true population mean is around 25 or lower, we fail to reject the null 75% of the time or more. With this comically small sample size, even if the true mean were 75, we would still fail to reject 20% of the time. We are rightly uncertain about this test -- it may have a low enough Type I error rate (set as $\alpha = 0.05$), but the Type II errors are way too big. 
 
 :::{.definition #declaration-9-5} 
 
@@ -466,7 +466,7 @@ Restoring parallelism diagnosis
 diagnosis_9.6 <- diagnose_design(declaration_9.6)
 ```
 
-We diagnose the bias of all four design. Figure \@ref(fig:figure-9-5) shows that when the answer strategy and the data strategy match (`D1 + A1` and `D2 + A2`), we have no bias. When they do not match (`D1 + A2` and `D2 + A1`), we do. In this case, seeking parallelism in the choice of answer strategy improves the design. Of course, an alternative answer strategy we might call `A3` that implements the weights corresponding to whatever the data strategy says they should be unbiased under both `D1` and `D2`.
+We diagnose the bias of all four design. Figure @fig-figure-9-5 shows that when the answer strategy and the data strategy match (`D1 + A1` and `D2 + A2`), we have no bias. When they do not match (`D1 + A2` and `D2 + A1`), we do. In this case, seeking parallelism in the choice of answer strategy improves the design. Of course, an alternative answer strategy we might call `A3` that implements the weights corresponding to whatever the data strategy says they should be unbiased under both `D1` and `D2`.
 
 ![When data and answer strategies are mismatched, we obtain bias.](/figures/figure-9-5){#fig:figure-9-5}
 

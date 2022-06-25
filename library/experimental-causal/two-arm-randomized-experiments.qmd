@@ -105,7 +105,7 @@ diagnosis_18.2 <-
 
 :::
 
-Figure \@ref(fig:figure-18-2) plots sample size on the horizontal axis and diagnosand estimates on the vertical axis. In the left hand panel, we see that, as usual, statistical power increases with sample size. Different values of $R^2$ are distinguished by colored lines. Higher values of $R^2$ lead to higher statistical power. The gains can be dramatic. The no-adjustment benchmark is represented by the $R^2 = 0$ line. We achieve approximately the same statistical power as a 1,000 unit experiment with no adjustment when we the pre-treatment covariates yield an $R^2$ of 0.8 and we have just 200 units. The right panel tells a similar story, though it emphasizes that the marginal benefits of covariate adjustment get smaller as the sample size gets bigger. In any real experimental scenario, designers should take care to generate informed guesses about the probable $R^2$ of the covariates and then explore the tradeoffs between pre-treatment data collection and additional sample size.
+Figure @fig-figure-18-2 plots sample size on the horizontal axis and diagnosand estimates on the vertical axis. In the left hand panel, we see that, as usual, statistical power increases with sample size. Different values of $R^2$ are distinguished by colored lines. Higher values of $R^2$ lead to higher statistical power. The gains can be dramatic. The no-adjustment benchmark is represented by the $R^2 = 0$ line. We achieve approximately the same statistical power as a 1,000 unit experiment with no adjustment when we the pre-treatment covariates yield an $R^2$ of 0.8 and we have just 200 units. The right panel tells a similar story, though it emphasizes that the marginal benefits of covariate adjustment get smaller as the sample size gets bigger. In any real experimental scenario, designers should take care to generate informed guesses about the probable $R^2$ of the covariates and then explore the tradeoffs between pre-treatment data collection and additional sample size.
 
 ![Power and precision increases from covariate adjustment](/figures/figure-18-2){#fig:figure-18-2}
 
@@ -139,7 +139,7 @@ diagnosis_18.3 <-
   diagnose_designs()
 ```
 
-Figure \@ref(fig:figure-18-3) considers a range of designs under three possible models. The three models are described by the top row of facets. In all cases, the slope of the treated potential outcomes with respect to $X$ is set to 1. All the way to the left, the slope with respect to the control potential outcomes is set to -1, and all the way to the right, is set to +1. The bottom row of facets shows the performance of three estimators along a range of treatment assignment probabilities.
+Figure @fig-figure-18-3 considers a range of designs under three possible models. The three models are described by the top row of facets. In all cases, the slope of the treated potential outcomes with respect to $X$ is set to 1. All the way to the left, the slope with respect to the control potential outcomes is set to -1, and all the way to the right, is set to +1. The bottom row of facets shows the performance of three estimators along a range of treatment assignment probabilities.
 
 When the control slope is -1, we can see Freedman's precision critique. The standard error of the OLS is *larger* than difference-in-means for many designs, though they coincide when the fraction treated is 50%. This problem persists in some form until the slope of the control potential outcome with respect to $X$ gets close enough to the slope of the treated potential outcomes with respect to $X$.
 

@@ -42,7 +42,7 @@ Multi-site studies with and without coordination
 
 Multi-site studies diagnosis
 
-We now diagnose the two designs, with and without coordination, and assess the bias for the average common effect treatment and the average effect of the site-specific optimal treatment inquiries. Figure \@ref(fig:figure-19-6) displays the sampling distribution of the estimates from the two designs along with the estimands from these two inquiries in each case.
+We now diagnose the two designs, with and without coordination, and assess the bias for the average common effect treatment and the average effect of the site-specific optimal treatment inquiries. Figure @fig-figure-19-6 displays the sampling distribution of the estimates from the two designs along with the estimands from these two inquiries in each case.
 
 ![Sampling distribution of the meta-analytic estimates from a multi-site trial compared to the true average common treatment effect and the true average effect of the site-specific optimal treatment effect.](/figures/figure-19-6){#fig:figure-19-6}
 

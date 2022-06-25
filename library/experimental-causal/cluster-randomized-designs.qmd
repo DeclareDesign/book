@@ -42,7 +42,7 @@ diagnosis_18.5 <-
   diagnose_designs()
 ```
 
-Figure \@ref(fig:figure-18-5) shows the sampling distribution of the difference-in-means estimator under cluster random assignment at three levels of intra-cluster correlation ranging from 0.1 to 0.9.
+Figure @fig-figure-18-5 shows the sampling distribution of the difference-in-means estimator under cluster random assignment at three levels of intra-cluster correlation ranging from 0.1 to 0.9.
 
 The top row of panels plots the treatment effect on the vertical axis and the untreated potential outcome on the horizontal axis. Clusters of units are circled. At low levels of ICC, the circles all overlap, because the differences across clusters are smaller than the differences within cluster. At high levels of ICC, the differences across clusters are more pronounced than differences within cluster. The bottom row of panels shows that the sampling distribution of the difference-in-means estimator spreads out as the ICC increases. At low levels of ICC, the standard error is small; at high levels the standard error is high.
 

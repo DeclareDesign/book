@@ -15,7 +15,7 @@ When experimental subjects are embedded in a network, units' outcomes may depend
 
 This chapter describes the special challenges associated with experiments over networks. In the previous chapter, we discussed randomized saturation designs, which are appropriate when we can describe a hierarchy of units embedded in clusters, within which spillovers can occur but across which spillovers cannot occur. In other words, the randomized saturation design is appropriate when the network is composed of many disconnected network components (the clusters). But most networks are not disconnected. Instead, all or almost all units are typically connected in a vast web. This chapter describes how we need to modify the model, inquiry, data strategy, and answer strategy to learn from experiments over networks.
 
-In the model, our main challenge is to define how far apart (in social, geographic, or temporal space) units have to be in order for unit $i$'s potential outcomes not to depend on unit $j$. We might say units within 5km matter but units further away do not. We might say that units within two friendship links matter but more distal connections do not. We might allow the treatment statuses of three, two, or one periods ago to impact present outcomes differently from one another. For example, we might stipulate that each unit has only four potential outcomes that depend on whether a unit is directly treated or indirectly treated by virtue of being adjacent to a directly treated unit as in Table \@ref(tab:networksconditions).
+In the model, our main challenge is to define how far apart (in social, geographic, or temporal space) units have to be in order for unit $i$'s potential outcomes not to depend on unit $j$. We might say units within 5km matter but units further away do not. We might say that units within two friendship links matter but more distal connections do not. We might allow the treatment statuses of three, two, or one periods ago to impact present outcomes differently from one another. For example, we might stipulate that each unit has only four potential outcomes that depend on whether a unit is directly treated or indirectly treated by virtue of being adjacent to a directly treated unit as in Table @tbl-networksconditions.
 
 | Condition           | Potential outcomes                                |
 |---------------------|---------------------------------------------------|
@@ -34,7 +34,7 @@ We need to adjust our answer strategy to compensate for the differential probabi
 
 To illustrate these ideas, we declare a hypothetical experimental design to estimate the effects of lawn signs [modeled after @green2016lawnsigns]. The units are the lowest level at which we can observe vote margin, the voting precinct. In our model, we define four potential outcomes. Precincts can be both directly and indirectly treated, only directly treated, only indirectly treated, or neither. Indirect treatment occurs when a neighboring precinct is treated. This model could support many possible inquiries, but here we will focus on three: the direct effect of treatment when the precinct is not indirectly treated, the effect of indirect treatment when the precinct is not directly treated, and the total effect of direct and indirect treatment versus pure control. The data strategy will involve randomly assigning some units to direct treatment, which will in turn cause other units to be indirectly treated. We will need to learn via simulation the probabilities of assignments to conditions that this procedure produces. We'll make use of two answer strategies: the Horvitz-Thompson and Hajek estimators proposed by @aronow2017estimating, along with their associated variance estimators, as implemented in the `interference` package.
 
-First, we load the Fairfax County, Virginia, voting precincts shapefile, removing one singleton voting precinct, and we plot the precincts in Figure \@ref(fig:figure-18-15).
+First, we load the Fairfax County, Virginia, voting precincts shapefile, removing one singleton voting precinct, and we plot the precincts in Figure @fig-figure-18-15.
 
 ![Voting Precincts in Fairfax County, Virginia](/figures/figure-18-5){#fig:figure-18-5}
 
@@ -49,7 +49,7 @@ Experiments over spatial networks design
 
 :::
 
-The maps in Figure \@ref(fig:figure-18-16) show how this procedure generates differential probabilities of assignment to each exposure condition. Units that are in denser areas of the county are more likely to be in the `Indirect Exposure Only` and `Direct and Indirect Exposure` conditions than those in less dense areas.
+The maps in Figure @fig-figure-18-16 show how this procedure generates differential probabilities of assignment to each exposure condition. Units that are in denser areas of the county are more likely to be in the `Indirect Exposure Only` and `Direct and Indirect Exposure` conditions than those in less dense areas.
 
 ![Probabilities of assignment to each of four conditions depend on position in geographic space.](/figures/figure-18-16){#fig:figure-18-16}
 
@@ -58,7 +58,7 @@ The maps in Figure \@ref(fig:figure-18-16) show how this procedure generates dif
 
 Experiments over spatial networks diagnosis
 
-Figure \@ref(fig:figure-18-17) compares the performance of the Hajek and Horvitz-Thompson estimators. Both are approximately unbiased for their targets, but the Horvitz-Thompson estimator exhibits much higher variance, suggesting that in many design settings, researchers will want to opt for the Hajek estimator. 
+Figure @fig-figure-18-17 compares the performance of the Hajek and Horvitz-Thompson estimators. Both are approximately unbiased for their targets, but the Horvitz-Thompson estimator exhibits much higher variance, suggesting that in many design settings, researchers will want to opt for the Hajek estimator. 
 
 ```{r}
 #| eval: false

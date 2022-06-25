@@ -40,7 +40,7 @@ Latent variable design
 
 :::
 
-In Figure \@ref(fig:figure-15-6) we show that the correlation between all the indices and the underlying quantity is quite good, even though the strength of the correlations for some of the components is weak. Trickier however is being sure we have an interpretable  *scale*.
+In Figure @fig-figure-15-6 we show that the correlation between all the indices and the underlying quantity is quite good, even though the strength of the correlations for some of the components is weak. Trickier however is being sure we have an interpretable  *scale*.
 
 ![Correlations between the latent variable, measured components, and indices.](/figures/figure-15-6){#fig:figure-15-6}
 
@@ -54,7 +54,7 @@ Latent variables diagnosis over alternative answer strategies
 diagnosis_15.5 <- diagnose_design(declaration_15.6, make_groups = vars(outcome)) 
 ```
 
-Figure \@ref(fig:figure-15-7) shows the distribution of estimates from different approaches to generating indices. A few features stand out from the distribution of estimates. 
+Figure @fig-figure-15-7 shows the distribution of estimates from different approaches to generating indices. A few features stand out from the distribution of estimates. 
 
 The simple averaging of the normalized scales also generates estimates that are too small. Rescaling the scaled components instead of taking the average helps only a small amount. The principal component version appears to do especially poorly, but there is a simple reason for this: the method does not presuppose knowledge of the *direction* of the scale of the latent variable and can come up with index that reverse the actual scale of interest. Avoiding this requires an interpretative step after the principal components analysis is implemented (more subtly the averaging approach also has an interpretative step *before* averaging, when components are introduced with a metric that presupposes a positive correlation with the underlying quantity). Even accounting for the different sign patterns however, the estimates are too small.
 

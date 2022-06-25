@@ -30,7 +30,7 @@ The model can be described using the `CausalQueries` package thus:
 ```{r, file = "scripts_declarations/declaration_16.1a.R", eval = TRUE}
 ```
 
-The DAG of the causal model is shown in figure \@ref(fig:figure-16-1).
+The DAG of the causal model is shown in figure @fig-figure-16-1.
 
 ![Directed acyclic graph of a process tracing model](/figures/figure-16-1){#fig:figure-16-1}
 
@@ -38,7 +38,7 @@ This model definition describes the DAG but also specifies a set of restrictions
 
 We now have all we need to assess what inferences we might make given different sorts of observations on $W$ and $M$. 
 
-Table \@ref(tab:ptprobative) shows three types of quantities: beliefs upon observing $X=1, Y=1$, conditional inferences upon observing additional data on $M$ or $W$, and the conditional probability of seeing different outcomes for $M$ or $W$. 
+Table @tbl-ptprobative shows three types of quantities: beliefs upon observing $X=1, Y=1$, conditional inferences upon observing additional data on $M$ or $W$, and the conditional probability of seeing different outcomes for $M$ or $W$. 
 
 ```{r ptprobative, echo = FALSE}
 query_model(
@@ -65,11 +65,11 @@ query_model(
         digits = 2) 
 ```
 
-We see here that $M$ provides a hoop test since we are certain that $X$ does not cause $Y$ when $M=0$, but we are uncertain when $M=1$. (Moreover, we already expect to see $M=1$ given what we have seen for $X$ and $Y$). $W$ provides a smoking gun test since we are certain that $X$ causes $Y$ when $M=1$ but uncertain otherwise. Since we have access to both conditional inferences and the probability of seeing different types of data, we have enough data in Table \@ref(tab:ptprobative) to calculate how different strategies will perform. 
+We see here that $M$ provides a hoop test since we are certain that $X$ does not cause $Y$ when $M=0$, but we are uncertain when $M=1$. (Moreover, we already expect to see $M=1$ given what we have seen for $X$ and $Y$). $W$ provides a smoking gun test since we are certain that $X$ causes $Y$ when $M=1$ but uncertain otherwise. Since we have access to both conditional inferences and the probability of seeing different types of data, we have enough data in Table @tbl-ptprobative to calculate how different strategies will perform. 
 
 We think it useful to fold these quantities into a design declaration so that research consumers can access the data strategies and answer strategies in the same way as they would for any other problem.
 
-Declaration \@ref(def:declaration-16-1) provides a flexible process tracing design. You can use this design with a different causal model and substituting in different causal queries and process tracing strategies. Given a background causal model, the design first draws a "causal type"---that is a case together with all its causal relations. The value of the estimand (EoC) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query---like those in the Table \@ref(tab:ptprobative)---but given different possible observed values for all nodes. No data strategy is provided explicitly as this is tied up here in the estimation, that is, the estimation step describes what data will be used.
+Declaration \@ref(def:declaration-16-1) provides a flexible process tracing design. You can use this design with a different causal model and substituting in different causal queries and process tracing strategies. Given a background causal model, the design first draws a "causal type"---that is a case together with all its causal relations. The value of the estimand (EoC) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query---like those in the Table @tbl-ptprobative---but given different possible observed values for all nodes. No data strategy is provided explicitly as this is tied up here in the estimation, that is, the estimation step describes what data will be used.
 
 :::{.definition #declaration-16-1} 
 
@@ -86,7 +86,7 @@ Process tracing diagnosis
 
 Given such a model, a case in which $X = Y = 1$ (for instance), and limited resources, we now want to know whether we would be better gathering data on $M$ or on $W$ or both.  
 
-The answers are given in Figure \@ref(fig:figure-16-2). Here we show the expected error from inferences given each process tracing strategy. We break up the diagnoses according to the $X$, $Y$ data already observed---thus illustrating how an unconditional model can be used to assess designs even after some data is observed. Across the four possible data patterns we see equivalent implications for settings in which we are interested in a case with $X=Y=1$ and a case with $X=Y=0$. For the cases with $X \neq Y$ we already know---because of the monotonicity restrictions in the model---that $X$ did not cause $Y$ and so we learn nothing from all strategies. 
+The answers are given in Figure @fig-figure-16-2. Here we show the expected error from inferences given each process tracing strategy. We break up the diagnoses according to the $X$, $Y$ data already observed---thus illustrating how an unconditional model can be used to assess designs even after some data is observed. Across the four possible data patterns we see equivalent implications for settings in which we are interested in a case with $X=Y=1$ and a case with $X=Y=0$. For the cases with $X \neq Y$ we already know---because of the monotonicity restrictions in the model---that $X$ did not cause $Y$ and so we learn nothing from all strategies. 
 
 We see only modest declines in expected errors from observation of the mediator $M$ (consistent with the manual calculation above), but large declines from observing $W$. If we already observe $W$ the gains from observing $M$ are still more slight. Broadly this confirms a more general observation that mediators can provide limited traction for learning about causes of effects relative to moderators [@dawid2022bounding].
 

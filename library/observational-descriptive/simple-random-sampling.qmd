@@ -21,7 +21,7 @@ Imagine we seek to estimate the average political ideology of adult residents of
 
 The data strategy $D$ has two components: a survey question $Q$ and a sampling procedure $S$. The survey question asks subjects to place themselves on a left-right scale that varies from 1 (most liberal) to 7 (most conservative). We approximate this measurement procedure with a function that "cuts" the latent ideology into 7 separate groups. This survey question will introduce measurement error insofar as it does not distinguish among people with different latent ideologies who, because of our measurement tool, place themselves at the same place on the seven-point scale.^[Why do we choose this strategy? Respondents may have trouble placing them on a finer scale, and we cannot ask them on an infinitely-fine scale.] Our main hope for this measurement procedure is that all of the people who give themselves higher scores are indeed more conservative than those who give themselves lower scores. The sampling procedure is "complete" random sampling. We draw a sample of exactly $n = 100$, where every member of the population has an equal probability of inclusion in the sample, $\frac{n}{N}$. 
 
-The model and data strategy are represented by the DAG in Figure \@ref(fig:figure-15-1). The DAG shows that the observed outcome $Y$ is a function of the latent score $Y^*$ and the survey question $Q$. The observed outcome $Y$ is only measured for sampled units, i.e., units that have $S = 1$. This simple diagram represents important design assumptions. First, no arrow leads from $Y^*$ to $S$. If such an arrow were present, then units with higher or lower latent ideologies would be more likely to be sampled. Second, an arrow does lead from $Y^*$ to $Y$, indicating that we assume the measured variable does indeed respond to the latent variable. Finally, the diagram includes an explicit role for the survey question, which helps us to consider how alternative wordings of $Q$ might change the observed variable $Y$.
+The model and data strategy are represented by the DAG in Figure @fig-figure-15-1. The DAG shows that the observed outcome $Y$ is a function of the latent score $Y^*$ and the survey question $Q$. The observed outcome $Y$ is only measured for sampled units, i.e., units that have $S = 1$. This simple diagram represents important design assumptions. First, no arrow leads from $Y^*$ to $S$. If such an arrow were present, then units with higher or lower latent ideologies would be more likely to be sampled. Second, an arrow does lead from $Y^*$ to $Y$, indicating that we assume the measured variable does indeed respond to the latent variable. Finally, the diagram includes an explicit role for the survey question, which helps us to consider how alternative wordings of $Q$ might change the observed variable $Y$.
 
 ![Directed acyclic graph for the simple random sampling design](/figures/figure-15-1){#fig:figure-15-1}
 
@@ -74,7 +74,7 @@ diagnosis_15.1 |>
   )
 ```
 
-The diagnosis in table \@ref(tab:diagnosis-15-1) indicates that under complete random sampling, the sample mean estimator of the population mean is unbiased and that the root mean squared error is manageable at `r round(diagnosis_15.1$diagnosands_df$rmse,2)`.
+The diagnosis in table @tbl-diagnosis-15-1 indicates that under complete random sampling, the sample mean estimator of the population mean is unbiased and that the root mean squared error is manageable at `r round(diagnosis_15.1$diagnosands_df$rmse,2)`.
 
 :::
 

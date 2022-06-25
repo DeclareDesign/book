@@ -28,7 +28,7 @@ Multilevel regression and poststratification design
   
 :::
 
-Figure \@ref(fig:figure-15-4) shows one draw from this design, plotting the MRP estimates against the true level of opinion. 
+Figure @fig-figure-15-4 shows one draw from this design, plotting the MRP estimates against the true level of opinion. 
 
 ![Estimates of state-level option plotted against their true levels](/figures/figure-15-4){#fig:figure-15-4}
 
@@ -55,7 +55,7 @@ Diagnosing over answer strategies
 diagnosis_15.4 <- diagnose_design(declaration_15.5)
 ```
 
-Figure \@ref(fig:figure-15-5) compares the three estimators. The first column of facets shows one draw of the estimates against the estimands. The main thing to notice here is that the full pooling estimate is more or less a flat line -- regardless of the estimand, the estimates are just above 50%. Relative to partial pooling, the no pooling estimates are further spread around the 45 degree line, with small states bouncing around the most. 
+Figure @fig-figure-15-5 compares the three estimators. The first column of facets shows one draw of the estimates against the estimands. The main thing to notice here is that the full pooling estimate is more or less a flat line -- regardless of the estimand, the estimates are just above 50%. Relative to partial pooling, the no pooling estimates are further spread around the 45 degree line, with small states bouncing around the most. 
 
 On the right side of the figure, we see the bias, RMSE, and standard deviation diagnosands for each inquiry under all three answer strategies. Under no pooling, bias is very low, but the RMSE and standard deviation for small states is very high. Under full pooling, the standard deviation is very low, but bias is very positive for states with low support and very negative for states with high support. The resulting RMSE has a funny "V" shape -- we only do well for states that happen to have opinion that is very close to the national average.
 

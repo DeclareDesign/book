@@ -120,7 +120,7 @@ diagnosis_12.2 <-
   diagnose_designs(diagnosands = diagnosands)
 ```
 
-In Figure \@ref(fig:figure-12-1), we illustrate the results of our redesign exercise across all four diagnosands. The number of citizens per village is plotted on the horizontal axis and the value of the diagnosand is shown on the vertical axis. The plot is faceted by diagnosand and each line represents a different possible number of villages. We focus here on the social treatment only.
+In Figure @fig-figure-12-1, we illustrate the results of our redesign exercise across all four diagnosands. The number of citizens per village is plotted on the horizontal axis and the value of the diagnosand is shown on the vertical axis. The plot is faceted by diagnosand and each line represents a different possible number of villages. We focus here on the social treatment only.
 
 ![Redesign of Gulzar and Khan (2020)](/figures/figure-12-1){#fig:figure-12-1}
 

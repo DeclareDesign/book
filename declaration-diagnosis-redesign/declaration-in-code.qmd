@@ -83,7 +83,7 @@ M <-
   )
 ```
 
-You can use any of the enormous number of data simulation functions available in R for this purpose. Here we gather six functions we tend to use in our own declarations, but they are by no means exhaustive. Each function has arguments that govern exactly how the data are created; we chose arbitrary values here to show how they work. Figure \@ref(fig:figure-13-1) shows what these six look like for a 1,000 unit model.
+You can use any of the enormous number of data simulation functions available in R for this purpose. Here we gather six functions we tend to use in our own declarations, but they are by no means exhaustive. Each function has arguments that govern exactly how the data are created; we chose arbitrary values here to show how they work. Figure @fig-figure-13-1 shows what these six look like for a 1,000 unit model.
 
 ```{r}
 M <-

@@ -17,7 +17,7 @@ Sometimes, however, we know enough about selection in order to condition on the 
 
 The quality of causal inferences we draw comes down to whether our claims about selection into treatment are correct. If we've missed a cause (missed a back door path), then our inferences will be prone to bias. It is the nature of the selection-on-observables design that we can't know if our claims about the processes that cause selection are correct or not; the design amounts to a leap of faith in the theoretical model. 
 
-The problems don't end there. We risk bias if we fail to adjust for $X$ under some models --- but we will also risk bias if we *do* adjust for $X$ under other models. In Figure \@ref(fig:figure-16-3) we illustrate four of the possible roles for an observable variable $X$: as a confounder of the relationship between $D$ and $Y$; as a collider, which is affected by both $D$ and $Y$; as a mediator of the relationship between $D$ and $Y$; and as a predictor of $Y$ with no connection to $D$. We set aside in these DAGs the possible roles of an unobservable variable $U$ that would introduce additional problems of confounding.
+The problems don't end there. We risk bias if we fail to adjust for $X$ under some models --- but we will also risk bias if we *do* adjust for $X$ under other models. In Figure @fig-figure-16-3 we illustrate four of the possible roles for an observable variable $X$: as a confounder of the relationship between $D$ and $Y$; as a collider, which is affected by both $D$ and $Y$; as a mediator of the relationship between $D$ and $Y$; and as a predictor of $Y$ with no connection to $D$. We set aside in these DAGs the possible roles of an unobservable variable $U$ that would introduce additional problems of confounding.
 
 ![Four roles for an observable variable X.](/figures/figure-16-3){#fig:figure-16-3}
 
@@ -46,7 +46,7 @@ In our model, $U$ is not a confounder, because it affects $Y$ but not $D$; this 
 
 Matching design diagnosis
 
-In Figure \@ref(fig:figure-16-4), we see that the raw, unmatched estimate is quite biased (about 20% of the average estimate) and that the matched estimate is unbiased. If we fail to adjust for the observable features of the selection process, we have biased answers. But if we do control in this case, we obtain unbiased answers. However, as highlighted earlier, these results depend on the plausibility of our model, which in this case involves observed confounding of the relationship between $D$ and $Y$ by $X$. If there was *unobservable* confounding from $U$, or if $X$ was a collider or mediator, there would be bias even if we control for $X$.
+In Figure @fig-figure-16-4, we see that the raw, unmatched estimate is quite biased (about 20% of the average estimate) and that the matched estimate is unbiased. If we fail to adjust for the observable features of the selection process, we have biased answers. But if we do control in this case, we obtain unbiased answers. However, as highlighted earlier, these results depend on the plausibility of our model, which in this case involves observed confounding of the relationship between $D$ and $Y$ by $X$. If there was *unobservable* confounding from $U$, or if $X$ was a collider or mediator, there would be bias even if we control for $X$.
 
 ![Sampling distribution of two estimators.](/figures/figure-16-4){#fig:figure-16-4}
 
