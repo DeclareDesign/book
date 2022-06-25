@@ -196,7 +196,7 @@ knitr:
 format:
   html:
     theme: cosmo
-    number-offset: 0
+    number-offset: -1
     default-image-extension: svg
     cover-image: figures/figure_2.1.svg
     code-link: true
