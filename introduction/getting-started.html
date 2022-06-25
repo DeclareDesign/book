@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.619">
+<meta name="generator" content="quarto-0.9.622">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - 4&nbsp; Getting started</title>
 <style>
@@ -575,7 +575,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
 
 </header><p>This chapter serves as quick start guide for the code used throughout this book, and in particular the DeclareDesign package for the R programming language. DeclareDesign is a software implementation of every step of the declare-diagnose-redesign process. While you can declare, diagnose, and redesign using nearly any programming language, DeclareDesign is structured to make it easy to mix-and-match design elements while handling the tedious simulation bookkeeping behind the scenes.</p>
-<p>First, we provide instructions for getting started in R and RStudio. We then introduce the code structure for the three steps of the research planning process: declaration, diagnose, and redesign. After this introduction, readers should be able to <em>use</em> the code, but perhaps not write it themselves yet. We devote a longer section (Chapter @ref(designingcode)) to getting started <em>writing</em> the code.</p>
+<p>First, we provide instructions for getting started in R and RStudio. We then introduce the code structure for the three steps of the research planning process: declaration, diagnose, and redesign. After this introduction, readers should be able to <em>use</em> the code, but perhaps not write it themselves yet. We devote a longer section (Chapter <span class="citation" data-cites="designingcode">(<a href="../references.html#ref-designingcode" role="doc-biblioref"><strong>designingcode?</strong></a>)</span>) to getting started <em>writing</em> the code.</p>
 <section id="installing-r" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="installing-r">
 <span class="header-section-number">4.1</span> Installing R</h2>
 <p>You can download R for free from <a href="https://cran.r-project.org">CRAN</a>. We also recommend the free program <a href="https://rstudio.com/products/rstudio/download">RStudio</a>, which provides a friendly interface to R. Both R and RStudio are available on Windows, Mac, and Linux.</p>
@@ -677,7 +677,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 </div>
 </div>
-<p>Every step in a research design can be declared using one of the <code>declare_*</code> functions. Table @ref(tab:declarationfunctions) collects these according to the four elements of a research design. In Chapter @ref(designingcode), we detail how to build each kind of step.</p>
+<p>Every step in a research design can be declared using one of the <code>declare_*</code> functions. Table <span class="quarto-unresolved-ref">?tbl-declarationfunctions</span> collects these according to the four elements of a research design. In Chapter <span class="citation" data-cites="designingcode">(<a href="../references.html#ref-designingcode" role="doc-biblioref"><strong>designingcode?</strong></a>)</span>, we detail how to build each kind of step.</p>
 <table class="table">
 <caption>(#tab:declarationfunctions) Declaration functions in DeclareDesign</caption>
 <colgroup>
@@ -728,7 +728,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>We use the <code>+</code> operator to build from elements of a design to a design. Declaration @ref(def:declaration-4-1) shows the format of most declarations throughout the book. This declaration represents a two-arm randomized experiment with 100 units from which we aim to estimate the average treatment effect.</p>
+<p>We use the <code>+</code> operator to build from elements of a design to a design. Declaration <span class="citation" data-cites="def:declaration-4-1">(<a href="../references.html#ref-def:declaration-4-1" role="doc-biblioref"><strong>def:declaration-4-1?</strong></a>)</span> shows the format of most declarations throughout the book. This declaration represents a two-arm randomized experiment with 100 units from which we aim to estimate the average treatment effect.</p>
 <div id="declaration-4-1" class="definition">
 <p>Two-arm randomized experiment</p>
 <div id="fig:designannotated" class="quarto-figure quarto-figure-center anchored">
