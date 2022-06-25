@@ -235,8 +235,11 @@ Two-arm trial design
 
 The design is now ready to be used, diagnosed, developed. We can generate simulated data directly from the design using `draw_data(design_1)`. We show a snapshot of such simulated data below.
 
-```{r, echo = FALSE}
-draw_data(declaration_2.1) %>% head %>% kable(digits = 2, caption = "Simulated data from two-arm trial design")
+```{r}
+#| tbl-cap: "Simulated data from two-arm trial design"
+#| echo: false
+
+draw_data(declaration_2.1) %>% head %>% kable(digits = 2)
 ```
 
 To evaluate the design, we need to specify our criteria for what counts as a good design. We could assess the design in terms of its statistical power, whether estimation is unbiased and so on. For now though we will focus on a specific design characteristic, its "success rate." Here we call our study a "success" if we choose to scale-up the training across the force *and* its true effect is at least 0.2 (meaning it is in fact effective). If the true effect is below 0.2 or we if decide not to implement, we'll deem the study "not a success." Our decision to implement the program or not is based on the empirical results for the experiment. If we obtain a statistically significant estimate that is greater than 0.3 (the empirical threshold we agreed to with the Sheriff), we implement and we don't otherwise.^[We could define more complex diagnosands that, for example, give correct decisions to implement a positive weight and incorrect decisions a negative weight. The diagnosands you choose should reflect what you care about most in any given design setting.] The reason we choose a higher standard of evidence, 0.3, than the effectiveness is that the training is costly so we want to be sure we have enough evidence it works.
@@ -313,10 +316,6 @@ The two pillars of our approach are the language for describing research designs
 Broadly speaking, the lifecycle of an empirical research project has three phases: planning, realization, and integration. Having a clear characterization of your design in terms of *MIDA* is helpful in all three of these stages.
 
 ### Planning, realization, integration
-
-<!-- Of course, the life of a research project doesn't just begin with planning: it has to start with some spark of inspiration. The inspiration for a good research project can come from many sources: frustration with an article you're reading, a golden opportunity with a potential research partner, a conversation with a colleague (or adversary!). The spark of an idea might be some bit of a model, perhaps an inquiry in particular, maybe a portion of a data strategy, or just an itch to apply a new answer strategy you learned about. Wherever that kernel of an idea starts, the purpose of brainstorming is to develop each element (*M*, *I*, *D*, and *A*) such that the design becomes a coherent whole, *MIDA*. -->
-
-<!-- After an idea has been fleshed out sufficiently, it's time to start planning.  -->
 
 Planning entails some or all of the following steps, depending on the design: conducting an ethical review, seeking human subjects approval, gathering criticism from colleagues and mentors, running pilot studies, and preparing preanalysis documents. The design as encapsulated by *MIDA* will go through many iterations and refinements during this period, but the goal is simple: to assess whether your data strategy and answer strategy are capable of providing reliable answers to your inquiry given different models that you might entertain. Planning is the time when frequent re-application of the declare, diagnose, redesign algorithm will pay the highest dividends. How should we investigate the ethics of a study? By casting the ethical costs and benefits as diagnosands. How should we respond to criticism, constructive or not? By re-interpreting the feedback in terms of *M*, *I*, *D*, and *A*. How can we convince funders and partners that our research project is worth investing in? By credibly communicating our study's diagnosands: its statistical power, its unbiasedness, and its high chance of success, however the partner or funder defines it. What belongs in a pre-analysis plan? You guessed it -- a specification of the model, inquiry, data strategy, and answer strategy.
 
