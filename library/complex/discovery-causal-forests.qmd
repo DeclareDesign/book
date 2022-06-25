@@ -15,7 +15,7 @@ In most designs that we have discussed, researchers have a clear idea what they 
 
 We imagine a setting in which a researcher has access to a large group of covariates $X$ and has conducted an experiment to assess the effects of $Z$ on $Y$. The researcher is interested in the *heterogeneity* of effects of $Z$ as a function of variables in $X$ and in poses two inquiries. First, which covariate in $X$ best "explains" variation in the effect of $Z$? Second, what combination of values in $X$ characterize individuals for whom effects are particularly weak?
 
-Declaration @def-declarationch19num1 proceeds as follows. 
+Declaration @def-ch19num1 proceeds as follows. 
 
 For the model, we imagine a possibly complex function linking $Z$ to $Y$ in which the effect of $Z$ depends nonlinearly on some but not all variables in $X$. As always, this model can and should be altered to help understand whether diagnosis depends on the particular type of structure assumed. 
 
@@ -33,9 +33,9 @@ To implement causal forests in `DeclareDesign`, we wrote a "handler" that calls 
 
 Finally, we use regression to estimate the ATE as well as the weak effects and worst effects estimands using both the identified low performing group in the test set data and the identified low performing group in the full data. We assess the performance of these against both the `weak_effects` inquiry and the `worst_effects` inquiry. 
 
-:::{.definition #declarationch19num1} 
+::: {#def-ch19num1} 
 
-Random forests design
+## Random forests design
 
 ```{r, file = "scripts_declarations/declaration_19.1.R"}
 ```
@@ -52,9 +52,9 @@ To see how the design is choosing the best predictor, we illustrate the adjusted
 
 ![How the best predictor estimates are constructed, from ranking variables in terms of their prediction power of the individual treatment effects as measured by the r-squared in a regression.](/figures/figure-19-2){#fig-ch19num2}
 
-:::{.lemma #diagnosisch19num1}
+::: {#lem-ch19num1} 
 
-Causal forests diagnosis
+## Causal forests diagnosis
 
 For the diagnosis we need to take account of the fact that the answers to one of the inquiries ("Which X accounts for the most variation in effects?") should be treated as categorical. For this reason, we report the modal estimate and estimand, rather than relying on the average estimate and average estimand. We calculate the probability that we get the correct answer, rather than relying on bias. We illustrate the diagnosis in Figure @fig-ch19num3.
 

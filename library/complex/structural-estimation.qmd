@@ -15,7 +15,7 @@ Structural estimation is used when researchers have in mind a model for how proc
 
 We illustrate this design with a bargaining game, drawing on an example used in @wilke2020field. We imagine a customer $i$ makes payments from some endowment to a taxi driver. Bargaining proceeds as one player makes an offer that is accepted or rejected; if rejected the other player makes a counteroffer. The game continues for $n$ rounds with zero payoffs if no deal is agreed. Our main interest is the share of the endowment retained by the customer. 
 
-In Declaration @def-declarationch19num2, we imagine two types of customers, strategic ($\theta_i = 0$) and nonstrategic ($\theta_i = 1$). If a customer is strategic, the equilibrium offer made by the first mover is the one predicted by the solution given in @rubinstein1982perfect. If however, the player is nonstrategic then they always (successfully) insist on invoking a payment norm that lets them retaining a fixed share of their endowment, $\tilde{\pi}$. We let $\alpha$ denote the probability that a player is nonstrategic. A player's payoff then is given by:
+In Declaration @def-ch19num2, we imagine two types of customers, strategic ($\theta_i = 0$) and nonstrategic ($\theta_i = 1$). If a customer is strategic, the equilibrium offer made by the first mover is the one predicted by the solution given in @rubinstein1982perfect. If however, the player is nonstrategic then they always (successfully) insist on invoking a payment norm that lets them retaining a fixed share of their endowment, $\tilde{\pi}$. We let $\alpha$ denote the probability that a player is nonstrategic. A player's payoff then is given by:
 
 $$\pi_i =  (1-\theta_i)(z_i\hat{\pi} + (1-z_i)(1-\pi)) + \theta_i\tilde{\pi}$$
 
@@ -33,9 +33,9 @@ The answer strategy is implemented using maximum likelihood to identify which pa
 
 The heart of the estimation strategy is the specification of likelihood function. The likelihood function reports the probability of the data given particular stipulated values of the parameters. This value is different depending on $n$ so in fact we write down a function that writes a function given $n$. The likelihood function reflects the theoretical model described above, which means that in this declaration, the same event generating process is used in *M* and in the construction of the likelihood function in *A*. An optimistic assumption.
 
-:::{.definition #declarationch19num2} 
+::: {#def-ch19num2} 
 
-Structural estimation declaration
+## Structural estimation declaration
 
 With the likelihood function defined, we can declare a design with an estimation step that uses the `bbmle` package   
 
@@ -45,9 +45,9 @@ With the likelihood function defined, we can declare a design with an estimation
 
 :::
 
-:::{.lemma #diagnosisch19num2}
+::: {#lem-ch19num2} 
 
-Structural estimation diagnosis
+## Structural estimation diagnosis
 
 ```{r}
 #| eval: false

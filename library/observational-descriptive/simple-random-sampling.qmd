@@ -29,11 +29,11 @@ Our inquiry $I$ is the population mean of the *measured* variable $Y$: $\frac{1}
 
 Our answer strategy is the sample mean estimator: $\widehat{\overline{Y}} = \frac{1}{n} \sum_1^n Y_i$, implemented here as an ordinary least squares regression to facilitate the easy calculation of auxiliary statistics like the standard error of the estimate and the 95% confidence interval.
 
-We incorporate these design features into Declaration @def-declarationch15num1. The `portola` object is a fixed population of 2100 units with a latent ideology `Y_star`. The declaration of the measurement strategy comes before the declaration of the inquiry, showing how the inquiry is data strategy dependent.  
+We incorporate these design features into Declaration @def-ch15num1. The `portola` object is a fixed population of 2100 units with a latent ideology `Y_star`. The declaration of the measurement strategy comes before the declaration of the inquiry, showing how the inquiry is data strategy dependent.  
 
-:::{.definition #declarationch15num1} 
+::: {#def-ch15num1} 
 
-Simple random sampling design
+## Simple random sampling design
 
 ```{r file = "scripts_declarations/declaration_15.1.R"}
 ```
@@ -44,9 +44,9 @@ $~$
 
 Two main diagnosands for the simple random sampling design are bias and root mean-squared error. We want to know if we get the right answer on average and we want to know, on average, how far off from the truth we are.
 
-:::{.lemma #diagnosisch15num1} 
+::: {#lem-ch15num1} 
 
-Simple random sampling diagnosis
+## Simple random sampling diagnosis
 
 ```{r}
 #| eval: false
@@ -86,20 +86,20 @@ Depending on what information is available about the missing units, various answ
 
 Avoiding -- or dynamically responding to -- missingness in the data strategy is usually preferable to the addition of modeling assumptions in the answer strategy. Avoiding missingness often means adding extra effort and expense, such as monetary incentives for participation, multiple rounds of attempted contact, and attempting contact through a variety of modes (phone, mail, email, direct message, text, in-person visit). The best way to allocate extra effort will vary from context to context, as will the payoff from doing so. Our recommendation is to reason about the plausible response rates that would result from different levels of effort, then to consider how to optimize the bias-effort tradeoff. Sometimes, achieving zero bias would be far too costly, so we would be willing to tolerate some bias because effort is too expensive.
 
-Declaration @def-declarationch15num2 builds in a dependence between the latent outcome $Y*$ and the probability of responding to the survey. That probability also responds to researcher effort. The diagnosis shows how effort translates into higher response rates and lower bias:
+Declaration @def-ch15num2 builds in a dependence between the latent outcome $Y*$ and the probability of responding to the survey. That probability also responds to researcher effort. The diagnosis shows how effort translates into higher response rates and lower bias:
 
-:::{.definition #declarationch15num2}
+::: {#def-ch15num2} 
 
-Survey nonresponse design
+## Survey nonresponse design
   
 ```{r, file = "scripts_declarations/declaration_15.2.R"}
 ```
 
 :::
 
-:::{.lemma #diagnosisch15num2}
+::: {#lem-ch15num2} 
 
-Survey nonresponse diagnosis
+## Survey nonresponse diagnosis
 
 ```{r}
 #| eval: false

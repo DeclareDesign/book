@@ -29,18 +29,18 @@ However, if we are not so interested in the difference-in-CATEs, then factorial 
 
 Here we declare a factorial design with two treatments and a normally distributed outcome variable. We imagine that the CATE of `Z1` given `Z2 = 0` is 0.2 standard units, the CATE of `Z2` given `Z1 = 0` is equal to 0.1, and the interaction of the two treatments is 0.1.
 
-:::{.definition #declarationch18num7} 
+::: {#def-ch18num7} 
 
-Two-by-two factorial design
+## Two-by-two factorial design
 
 ```{r, file = "scripts_declarations/declaration_18.7.R"}
 ```
 
 :::
 
-:::{.lemma #diagnosisch18num7}
+::: {#lem-ch18num7} 
 
-Two-by-two factorial diagnosis
+## Two-by-two factorial diagnosis
 
 We now redesign this factorial over many sample sizes, considering the statistical power for each of the inquiries. Figure @fig-ch18num7 shows that depending on the inquiry, the statistical power of this design can vary dramatically. The average treatment effect of `Z1` is relatively large at 0.25 standard units, so power is above the 80% threshold at all the sample sizes we consider. The ATE of `Z2` is smaller, at 0.15 standard units, so power is lower, but not dramatically so. Both ATEs use all $N$ data points, so power is manageable for the average effects. The conditional average effects generally fare worse, mainly because each is estimated on only half the sample. The power for the 0.1 standard unit difference-in-CATEs is abysmal at all sample sizes considered here. This diagnosis underlines Principle @exm-designholistically: Design holistically. The power of a factorial design is not just one number -- we have to calculate power for each inquiry separately, as they can differ dramatically.
 
@@ -63,9 +63,9 @@ The very poor power for the difference-in-CATEs sometimes leads researchers to r
 
 Here we diagnose over the true values of the `Z1` ATE, setting the true interaction term to zero. Our diagnostic question will be, how frequently do we conclude the two CATEs are different, using two different strategies. The first is the usual approach, i.e., we consider the statistical significance of the interaction term. The second considers whether one, but not the other, of the two CATE estimates is significant.
 
-:::{.lemma #diagnosisch18num8}
+::: {#lem-ch18num8} 
 
-Redesign over models
+## Redesign over models
 
 ```{r}
 #| eval: false

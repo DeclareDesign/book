@@ -100,11 +100,11 @@ To illustrate point estimation in general, we'll try to estimate the average age
 
 A standard way to report uncertainty of a point estimate is to provide a "standard error." In this case we know that our answer is probably not a good answer. It is almost certainly wrong in the sense that the population average age in the small village is probably not fifteen (Italy's population is aging!), but we don't know how wrong because, of course, we don't actually know the value of the inquiry under study. We have instead to evaluate the properties of the procedure. Under a random sampling design -- even an egregiously stingy random sampling design that only selects three citizens! -- we can justify the approach on the basis of the "bias" diagnosand.^[Bias is the idea that the average of all the answers you would get if you repeated the data strategy (random sampling) and the answer strategy (taking the sample average) over and over would correspond to the correct answer.]  
 
-But that doesn't tell us much about how confident we should be in this answer. The design in Declaration @def-declarationch9num1 can be used to generate a view of what answers we might get when we choose just three subjects for our sample.^[We use a linear regression of the age variable on a constant to estimate the sample mean. Using OLS in this way is a neat trick for estimating sample means along with various uncertainty statistics, discussed in more detail in the next section.]
+But that doesn't tell us much about how confident we should be in this answer. The design in Declaration @def-ch9num1 can be used to generate a view of what answers we might get when we choose just three subjects for our sample.^[We use a linear regression of the age variable on a constant to estimate the sample mean. Using OLS in this way is a neat trick for estimating sample means along with various uncertainty statistics, discussed in more detail in the next section.]
 
-:::{.definition #declarationch9num1}
+::: {#def-ch9num1} 
 
-Italian village design
+## Italian village design
 
 ```{r, file = "scripts_declarations/declaration_9.1.R"}
 ```
@@ -115,9 +115,9 @@ $~$
 
 We now diagnose the design by simulating this design repeatedly, plotting the sampling distribution along with the true population mean age, and calculating the bias.
 
-:::{.lemma #diagnosisch9num1}
+::: {#lem-ch9num1} 
 
-Italian village design diagnosis
+## Italian village design diagnosis
 
 ```{r}
 #| eval: false
@@ -145,9 +145,9 @@ A typical null hypothesis test proceeds by imagining a null model $M_{0}$ and im
 
 We'll illustrate the idea of a hypothesis test in general with the Italian village example. Here, we test against the hypothesis that the average age is 20. If we have strong evidence against this hypothesis, we will reject it. If we have weak evidence against the hypothesis, we will fail to reject it. For instance, we might reject 10 and 70 but fail to reject 35 and 45. 
 
-:::{.definition #declarationch9num2}
+::: {#def-ch9num2} 
 
-Italian village design, continued
+## Italian village design, continued
 
 ```{r, file = "scripts_declarations/declaration_9.2.R"}
 ```
@@ -172,9 +172,9 @@ run_design(declaration_9.2) |>
 
 Next, we diagnose the modified design, by running the design many times. Figure @fig-ch9num2 shows how frequently we reject the null that the average age is 20. When estimate is close to 20, we rarely reject the null, but when the estimate is far from 20, we are more like to reject. Again, this diagnosis comes from a design with a weak data strategy of sampling only three citizens at time. We need to see estimates breaking 60 before the testing answer strategy reliably rejects this (false) null hypothesis.
 
-:::{.lemma #diagnosisch9num2}
+::: {#lem-ch9num2} 
 
-Italian village diagnosis, continued
+## Italian village diagnosis, continued
 
 ```{r}
 #| eval: false
@@ -203,18 +203,18 @@ Bayesian answer strategies sometimes target the same inquiries as classical appr
 
 The Bayesian answer strategy specifies a prior distribution (here distributed normal centered on 50 to reflect a prior that Italian villages skew older) as well as a log normal distribution for ages. Here we retain the (median) posterior estimates for average age alongside a standard error based on the posterior variance. In the `.summary` argument we ask the tidier to exponentiate the coefficient estimate and standard error before returning them.
 
-:::{.definition #declarationch9num4} 
+::: {#def-ch9num4} 
 
-Italian village design a la Bayes
+## Italian village design a la Bayes
 
 ```{r, file = "scripts_declarations/declaration_9.4.R"}
 ```
 
 :::
 
-:::{.lemma #diagnosisch9num4}
+::: {#lem-ch9num4} 
 
-We can then simulate this design in the same way and examine the distribution of estimates we might get. 
+## We can then simulate this design in the same way and examine the distribution of estimates we might get. 
 
 ```{r}
 #| eval: false
@@ -241,7 +241,7 @@ In the Bayes approach parameter estimates and uncertainty estimates are generate
 
 For point and interval estimators, uncertainty is often expressed as a standard error estimate or confidence interval. Many approaches to standard error estimation are available. Indeed, just like point estimators for inquiries, we have point estimators for standard errors. You might choose classical standard errors or cluster-robust standard errors; you might bootstrap your standard errors or use the jackknife. Similarly, many approaches to confidence interval construction are available. Most often, confidence intervals are built from variance estimates under an appeal to sampling theory. Alternatively, a confidence interval can be formed by "inverting the test," i.e. finding the range of null hypotheses we fail to reject. Whether any particular approach to uncertainty estimation is appropriate in a context will depend on the full set of design parameters and we encourage you to diagnose your uncertainty estimates as well.
 
-Here is the output of the answer strategy from Declaration @def-declarationch9num1, applied to the realized data set. We see the sample mean estimate of 15, the standard error estimate of 6, and the confidence interval from -10 to 40. These numbers communicate that our answer is 15 -- but also that we *know* that number is shaky. We're uncertain because the tool we used to answer the inquiry is high variance: it could bounce around a lot depending on which three people we happened to sample. 
+Here is the output of the answer strategy from Declaration @def-ch9num1, applied to the realized data set. We see the sample mean estimate of 15, the standard error estimate of 6, and the confidence interval from -10 to 40. These numbers communicate that our answer is 15 -- but also that we *know* that number is shaky. We're uncertain because the tool we used to answer the inquiry is high variance: it could bounce around a lot depending on which three people we happened to sample. 
 
 ```{r}
 #| eval: false
@@ -274,18 +274,18 @@ What does characterize our uncertainty about a significance test? The Type I and
 
 Figure @fig-ch9num4 describes the Type II error rate over a range of non-null models. If the true population mean is around 25 or lower, we fail to reject the null 75% of the time or more. With this comically small sample size, even if the true mean were 75, we would still fail to reject 20% of the time. We are rightly uncertain about this test -- it may have a low enough Type I error rate (set as $\alpha = 0.05$), but the Type II errors are way too big. 
 
-:::{.definition #declarationch9num5} 
+::: {#def-ch9num5} 
 
-Italian village declaration, varying the true mean age parameter
+## Italian village declaration, varying the true mean age parameter
 
 ```{r, file = "scripts_declarations/declaration_9.5.R"}
 ```
 
 :::
 
-:::{.lemma #diagnosisch9num5}
+::: {#lem-ch9num5} 
 
-Diagnosing the Italian village design over many values of the true mean age parameter
+## Diagnosing the Italian village design over many values of the true mean age parameter
 
 ```{r, eval=FALSE}
 diagnosis_9.5 <- diagnose_designs(declaration_9.5)
@@ -399,9 +399,9 @@ Bootstrapped standard errors
 
 
 
-:::{.lemma #diagnosisch9numbootstrap}
+::: {#lem-ch9numbootstrap} 
 
-Bootstrap diagnosis
+## Bootstrap diagnosis
 
 The bootstrapped estimates are gotten by summarizing over multiple runs of the design:
 
@@ -444,11 +444,11 @@ This idea can be summarized as "analyze as you randomize," a dictum attributed t
 
 ### Illustration of estimates using the AAYR principle 
 
-Declaration @def-declarationch9num6 illustrates this idea. We declare the theoretical half of the design as `MI` then consider the intersection of two data strategies with two answer strategies. `D1` has constant probabilities of assignment and `D2` has differential probabilities of assignment. `A1` is the plug-in estimator and `A2` is the IPW estimator with the inverse probability weights generated by the `D2` randomization protocol. 
+Declaration @def-ch9num6 illustrates this idea. We declare the theoretical half of the design as `MI` then consider the intersection of two data strategies with two answer strategies. `D1` has constant probabilities of assignment and `D2` has differential probabilities of assignment. `A1` is the plug-in estimator and `A2` is the IPW estimator with the inverse probability weights generated by the `D2` randomization protocol. 
 
-:::{.definition #declarationch9num6}
+::: {#def-ch9num6} 
 
-Restoring parallelism design
+## Restoring parallelism design
 
 ```{r, file = "scripts_declarations/declaration_9.6.R"}
 ```
@@ -456,9 +456,9 @@ Restoring parallelism design
 :::
 
 
-:::{.lemma #diagnosisch9num6}
+::: {#lem-ch9num6} 
 
-Restoring parallelism diagnosis
+## Restoring parallelism diagnosis
 
 ```{r}
 #| eval: false
@@ -525,9 +525,9 @@ Randomization inference under the sharp null
 
 :::
 
-:::{.lemma #diagnosisch9num3}
+::: {#lem-ch9num3} 
 
-Randomization inference "diagnosis"
+## Randomization inference "diagnosis"
 
 We diagnose the null design with respect to the `p.value` diagnosand: what fraction of simulations under the null model exceed the observed estimate? We find that the `p.value` is 0.13, so the estimate is not deemed statistically significant. 
 

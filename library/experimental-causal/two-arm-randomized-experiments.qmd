@@ -36,9 +36,9 @@ The DAG corresponding to a two-arm randomized trial is very simple. An outcome $
 
 ![Directed acyclic graph of a two-arm randomized experiment](/figures/figure-18-1){#fig-ch18num1}
 
-:::{.definition #declarationch18num1} 
+::: {#def-ch18num1} 
 
-Canonical two arm trial design
+## Canonical two arm trial design
 
 ```{r, file = "scripts_declarations/declaration_18.1.R"}
 ```
@@ -47,9 +47,9 @@ Canonical two arm trial design
 
 
 
-:::{.lemma #diagnosisch18num1}
+::: {#lem-ch18num1} 
 
-Two arm trial diagnosis
+## Two arm trial diagnosis
 
 Diagnosing this two arm trial design, we see that as expected, we encountered no bias, but high variance. In the model, we set the ATE at 0.2 standard units, but the true standard deviation of the estimator (the true standard error) is nearly the same value, at 0.19 standard units. We have low statistical power, at 16\%. Two approaches to increasing the precision of the estimate include increasing the sample size and including prognostic pre-treatment covariates in the answer strategy. We explore both of these approaches in the next section.
 
@@ -81,20 +81,20 @@ The purpose of adjusting for covariates in an experimental study is to increase 
 
 One way to think about how much the inclusion of covariates will help precision is to summarize their predictive power in a statistic like $R^2$. The $R^2$ value from a regression of the outcome on the covariates alone (i.e., without the treatment indicator) gives an understanding of how jointly predictive the covariates are. If $R^2$ is close to zero, including the covariates will make almost no difference for precision. If $R^2$ is close to one, we can achieve dramatic increases in precision and statistical power.
 
-Declaration @def-declarationch18num2 draws a summary covariate `X` and unobserved heterogeneity `U` from a multivariate normal distribution with a specified covariance between the two variables. By redesigning over the values of that correlation, we can learn how covariate adjustment affects precision depending on the level of $R^2$. The answer strategy uses the estimator proposed in @lin2013agnostic for reasons explained in the next section. 
+Declaration @def-ch18num2 draws a summary covariate `X` and unobserved heterogeneity `U` from a multivariate normal distribution with a specified covariance between the two variables. By redesigning over the values of that correlation, we can learn how covariate adjustment affects precision depending on the level of $R^2$. The answer strategy uses the estimator proposed in @lin2013agnostic for reasons explained in the next section. 
 
-:::{.definition #declarationch18num2} 
+::: {#def-ch18num2} 
 
-Two arm trial with covariate adjustment
+## Two arm trial with covariate adjustment
 
 ```{r, file = "scripts_declarations/declaration_18.2.R"}
 ```
 
 :::
 
-:::{.lemma #diagnosisch18num2}
+::: {#lem-ch18num2} 
 
-Two arm trial diagnosis
+## Two arm trial diagnosis
 
 ```{r, eval=FALSE}
 diagnosis_18.2 <- 
@@ -115,20 +115,20 @@ Figure @fig-ch18num2 plots sample size on the horizontal axis and diagnosand est
 
 @lin2013agnostic unpacks the circumstances under which this precision loss occurs and offers an alternative estimator that is guaranteed to be at least as precise as the unadjusted estimator. The trouble occurs when the correlation of covariates with the outcome is quite different in the treatment condition from in the control condition and when designs are strongly imbalanced in the sense of having large proportions of treated or untreated units. We refer the reader to this excellent paper for details and the connection between covariate adjustment in randomized experiments and covariate adjustment in random sampling designs. In sum, the Lin estimator deals with the problem by performing covariate adjustment in each arm of the experiment separately, which is equivalent to the inclusion of a full set of treatment-by-covariate interactions. In a clever bit of regression magic, Lin shows how first pre-processing the data by de-meaning the covariates renders the coefficient on the treatment regressor an estimate of the overall ATE. The `lm_lin` estimator in the `estimatr` package implements this pre-processing in one step.
 
-Declaration @def-declarationch18num3 will help us to explore the precision of three estimators under a variety of circumstances. We want to understand the performance of the difference-in-means, OLS, and Lin estimators depending on how different the correlation between `X` and the outcome is by treatment arm, and depending on the fraction of units assigned to treatment.
+Declaration @def-ch18num3 will help us to explore the precision of three estimators under a variety of circumstances. We want to understand the performance of the difference-in-means, OLS, and Lin estimators depending on how different the correlation between `X` and the outcome is by treatment arm, and depending on the fraction of units assigned to treatment.
 
-:::{.definition #declarationch18num3} 
+::: {#def-ch18num3} 
 
-Lin estimator design
+## Lin estimator design
 
 ```{r, file = "scripts_declarations/declaration_18.3.R"}
 ```
 
 :::
 
-:::{.lemma #diagnosisch18num3}
+::: {#lem-ch18num3} 
 
-Lin estimator diagnosis
+## Lin estimator diagnosis
 
 ```{r, eval=FALSE}
 diagnosis_18.3 <- 

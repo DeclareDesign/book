@@ -222,11 +222,11 @@ The two designs cost the same but differ on the empirical side. Which strategy s
 
 * *A*: The answer strategy takes the difference-in-means between the treated and untreated units. Thus the answer strategy uses a function similar to the inquiry itself.
 
-When we put these all together we have a design, Declaration @def-declarationch2num1.
+When we put these all together we have a design, Declaration @def-ch2num1.
 
-:::{.definition #declarationch2num1} 
+::: {#def-ch2num1} 
 
-Two-arm trial design
+## Two-arm trial design
 
 ```{r, file = "scripts_declarations/declaration_2.1.R"}
 ```
@@ -259,11 +259,11 @@ program_diagnosands  <-
 
 The alternative design that differs on the empirical side in three ways. First fewer subjects are sampled. Second, information about the subjects' background information (their "history") is used to implement a block randomization that conditions assignment on history. Third the subjects' history is taken into account in the analysis. This choice is an instance of adjusting the answer strategy in light of a change to the data strategy. 
 
-In Declaration @def-declarationch2num2, we can leave the model and inquiry intact and but we have to work on the data and answer strategies.
+In Declaration @def-ch2num2, we can leave the model and inquiry intact and but we have to work on the data and answer strategies.
 
-:::{.definition #declarationch2num2} 
+::: {#def-ch2num2} 
 
-A design that exploits background information
+## A design that exploits background information
 
 ```{r, file = "scripts_declarations/declaration_2.2.R"}
 ```
@@ -288,9 +288,9 @@ declaration_2.2 |>
 
 The results are shown in the next figure.
 
-:::{.lemma #diagnosisch2num1} 
+::: {#lem-ch2num1} 
 
-Diagnosis of `declaration_2.1` and `declaration_2.2`
+## Diagnosis of `declaration_2.1` and `declaration_2.2`
 
 ![How success depends on choice of *D* and *A* given different possibilities for *M*](/figures/figure-2-2){#fig-ch2num2}
 

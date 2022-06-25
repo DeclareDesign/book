@@ -674,9 +674,9 @@ In `DeclareDesign`, we call these two steps `.method` and `.summary` (these argu
 
 We break down each part of a standard answer strategy declaration using the example of a linear regression of the effect of a variable `Z` on an outcome `Y` in Declaration \@ref(def:declaration-13-1}. The first argument in our `declare_estimator` step defines the method we will use, here `lm_robust` which is our function in the `estimatr` package for running linear regressions with robust standard errors. The second is the main argument for `lm_robust`, the formula for the regression specification, in this case Y on Z with no controls. 
 
-:::{.definition #declarationch13num1}
+::: {#def-ch13num1} 
 
-Linear regression design
+## Linear regression design
 
 ```{r, file = "scripts_declarations/declaration_13.1.R"}
 ```
@@ -812,11 +812,11 @@ Often you may want to construct a test as part of your answer strategy that does
 
 ## Declaration {#declaration-code}
 
-To construct a research *design* object that we can operate on --- diagnose it, redesign it, draw data from it, etc. --- we add research design elements together with the `+` operator. In Declaration @def-declarationch13num2, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.
+To construct a research *design* object that we can operate on --- diagnose it, redesign it, draw data from it, etc. --- we add research design elements together with the `+` operator. In Declaration @def-ch13num2, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.
 
-:::{.definition #declarationch13num2} 
+::: {#def-ch13num2} 
 
-Declaration of two-arm randomized experiment
+## Declaration of two-arm randomized experiment
 
 ```{r, file = "scripts_declarations/declaration_13.2.R"}
 ```
@@ -853,9 +853,9 @@ model +
 
 Once a design is declared in code, diagnosing it is usually the easy part. `diagnose_design` handles all the details and bookkeeping for you. In this section, we outline how to conduct a diagnosis using our default tools for standard diagnoses and also how you might operate directly on the simulations for more complicated analyses.
 
-:::{.lemma #diagnosisch10num6}
+::: {#lem-ch10num6} 
 
-Diagnosis of two-arm randomized experiment
+## Diagnosis of two-arm randomized experiment
 
 Here we use `diagnose_design` to diagnose the design. By default, we conduct 500 simulations and characterize simulation error with 100 bootstraps of the diagnosands. `reshape_diagnosis` prepares the output for nice printing.
 
@@ -931,7 +931,7 @@ simulations_df |>
 
 Plotting simulations using `ggplot2` is often a great way to gain a deeper sense of the properties of the design.
 
-The answer strategy for Declaration @def-declarationch13num1 includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using `geom_histogram`, then faceting by estimator using `facet_wrap`. We often want to overlay the true value of the estimand on these plots, which we do here with `geom_vline`. Notice that in order to do, we had to create a `summary_df` that includes the value of the estimand. The resulting plot shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.
+The answer strategy for Declaration @def-ch13num1 includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using `geom_histogram`, then faceting by estimator using `facet_wrap`. We often want to overlay the true value of the estimand on these plots, which we do here with `geom_vline`. Notice that in order to do, we had to create a `summary_df` that includes the value of the estimand. The resulting plot shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.
 
 ```{r samplingdistincode}
 #| eval: false

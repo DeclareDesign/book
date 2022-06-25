@@ -42,20 +42,20 @@ The declaration of conjoint experiments is complex, so we provide a series of he
 
 We begin by establishing the number of subjects and the number of tasks they will accomplish. We then establish the attributes and their levels (this design assumes complete random assignment of all attributes with equal probabilities). Finally, we describe a utility function that governs subject preferences. This function can be simple, as we have it here, or it can be complex, building in differences in preferences by subject type or other details.
 
-In Declaration @def-declarationch17num5, we imagine a forced-choice candidate choice conjoint in which the attributes are gender, party, and region. We sample 500 subjects and ask them to complete three tasks each. 
+In Declaration @def-ch17num5, we imagine a forced-choice candidate choice conjoint in which the attributes are gender, party, and region. We sample 500 subjects and ask them to complete three tasks each. 
 
-:::{.definition #declarationch17num5} 
+::: {#def-ch17num5} 
 
-Conjoint experiment design
+## Conjoint experiment design
 
 ```{r, file = "scripts_declarations/declaration_17.5.R"}
 ```
 
 :::
 
-:::{.lemma #diagnosisch17num4}
+::: {#lem-ch17num4} 
 
-Diagnosis of the conjoint experiment design
+## Diagnosis of the conjoint experiment design
 
 ```{r}
 #| eval: false

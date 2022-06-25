@@ -60,9 +60,9 @@ Moving to the answer strategy, a plug-in estimator of the LATE is the difference
 
 With the four elements of the design in hand, we declare the model in code, invoking each of the five assumptions in doing so:
 
-:::{.definition #declarationch16num4}
+::: {#def-ch16num4} 
 
-Instrumental variables design
+## Instrumental variables design
 
 ```{r, file = "scripts_declarations/declaration_16.4.R"}
 ```

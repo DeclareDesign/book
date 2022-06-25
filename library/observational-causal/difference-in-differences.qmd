@@ -18,11 +18,11 @@ The difference-in-differences design relies on a strong assumption in $M$: the p
 
 The design has been famously used for analyses of two periods (before and after) and two groups (treated and untreated) such as a policy change in one state compared to another before and after the policy change. Today, difference-in-differences is most often used in many-period many-group settings with observational panel data. Here, the logic of the two-period two-group design is extended through analogy. Parallel trends between treated and control groups are assumed *on average* across treated groups and periods. Unfortunately, the analogy holds only under limited circumstances, a fact only recently discovered. 
 
-Declaration @def-declarationch16num3 describes a 20-period, 20-unit design in which eventually-treated units become treated at different times, a common setting in empirical social science often referred to as the staggered adoption design. The treatment effect of interest might be a state-level policy adopted in 20 states at some point within a 20-year period, so we draw on comparisons before and after policy adoption within states and comparisons across states that have and have not yet adopted treatment. We use the `did_multiplegt_tidy` function (available in the `rdddr` companion package) to prepare the output from the `DIDmultiplegt` package that implements the estimation procedure.
+Declaration @def-ch16num3 describes a 20-period, 20-unit design in which eventually-treated units become treated at different times, a common setting in empirical social science often referred to as the staggered adoption design. The treatment effect of interest might be a state-level policy adopted in 20 states at some point within a 20-year period, so we draw on comparisons before and after policy adoption within states and comparisons across states that have and have not yet adopted treatment. We use the `did_multiplegt_tidy` function (available in the `rdddr` companion package) to prepare the output from the `DIDmultiplegt` package that implements the estimation procedure.
 
-:::{.definition #declarationch16num3}
+::: {#def-ch16num3} 
 
-Difference-in-differences design 
+## Difference-in-differences design 
 
 ```{r, file = "scripts_declarations/declaration_16.3.R"}
 ```
@@ -35,9 +35,9 @@ The difference-in-difference design typically targets the average treatment effe
 
 So many answer strategies have been proposed in recent years to address bias in the difference-in-differences design that we cannot summarize them in this short entry. Instead, we illustrate how to assess the properties of two particular estimators under a range of conditions. First, we define the standard two-way fixed effects estimator with fixed effects by time and unit. The two-way fixed effects fits the empirical goal of difference-in-differences: the time fixed effects net out time-varying unit-invariant variables such as seasonality and time trends. The unit fixed effects net out unit-varying variables that are time-invariant like race or age-at-birth of individuals and long-term histories of violence of territories. However, the two-way fixed effects estimator relies on comparisons between units that are treated and units that are *not yet* treated. When treatment effects differ across units depending on when they are treated (as they do in the design here), then those comparisons will be biased: part of the treatment effect will be subtracted out of the estimate. Our second estimator, proposed by @chaisemartin, addresses this problem when estimating the ATT among switchers.
 
-:::{.lemma #diagnosisch16num3}
+::: {#lem-ch16num3} 
 
-Difference-in-Differences diagnosis 
+## Difference-in-Differences diagnosis 
 
 ```{r, eval=FALSE}
 diagnosis_16.3 <- diagnose_design(declaration_16.3)
@@ -49,9 +49,9 @@ Figure @fig-ch16num5 shows that the two-way fixed effects estimator is biased fo
 
 :::
 
-:::{.lemma #diagnosisch16num4}
+::: {#lem-ch16num4} 
 
-Redesigning over alternative models of treatment effect heterogeneity
+## Redesigning over alternative models of treatment effect heterogeneity
 
 The issues with the two-way fixed effects estimator emerge when treatment effects differ for units that are treated later versus earlier. Following Principle @exm-designagnostically: Design agnostically, we declare a model with homogeneous treatment effects, as well as two kinds of time-varying heterogeneous treatment effects: one in which effects are lower for units treated later and one in which effects are higher for units treated later. 
 

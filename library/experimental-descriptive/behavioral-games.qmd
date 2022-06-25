@@ -16,7 +16,7 @@ Behavioral games are often used to study difficult-to-measure characteristics of
 
 The approach holds enormous value. But, as highlighted by @green2012statistical, it also introduces many subtle design choices. Many of these can be revealed through declaration and diagnosis. 
 
-We illustrate using the "trust" game in which we specify three common inquiries and use a standard design in Declaration @def-declarationch17num6. The design is successful at generating unbiased estimates of the first inquiry but runs into problems with the other two.   
+We illustrate using the "trust" game in which we specify three common inquiries and use a standard design in Declaration @def-ch17num6. The design is successful at generating unbiased estimates of the first inquiry but runs into problems with the other two.   
 
 The trust game has been implemented hundreds of times to understand levels and correlates of social trust. Following the meta-analysis given in @johnson2011trust we consider a game in which one player (Player 1, the "trustor") can invest some share of $1. Whatever is invested is then doubled. A second player (Player 2, "the trustee") can then decide what share of the doubled amount to keep for themself and what share to return to the trustor.  
 
@@ -73,9 +73,9 @@ The predictions of this model are then used to define the inquiry and predict ou
 
 The inquiries for this design are the expected share offered to different types of trustees, the expected returns, averaged over possible offers, and the expected action by a trustee when the full amount is invested. The data strategy involves assigning players to pairs and orderings. The first half is assigned to the trustor role and matched with the second group that are assigned the trustee role. For the answer strategy, we simply measure average behavior across subjects. As a wrinkle, we include the possibility that the experimenter confronts the returners with random offers rather than the ones actually made by their partners. This aspect of the design is controlled by an argument called `deceive` and turns out to be important for inference.  
 
-:::{.definition #declarationch17num6} 
+::: {#def-ch17num6} 
 
-Trust game design
+## Trust game design
 
 ```{r, file = "scripts_declarations/declaration_17.6_b.R"}
 ```
@@ -103,9 +103,9 @@ We have a row for each game, we have the (unobserved) $a_i, a_j$ parameters as w
 
 Diagnosis @lem:diagnosis-17-5 illustrates the properties of the trust game design.
 
-:::{.lemma #diagnosisch17num5}
+::: {#lem-ch17num5} 
 
-Trust game diagnosis
+## Trust game diagnosis
 
 ```{r}
 #| eval: false

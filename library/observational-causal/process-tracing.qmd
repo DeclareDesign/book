@@ -69,20 +69,20 @@ We see here that $M$ provides a hoop test since we are certain that $X$ does not
 
 We think it useful to fold these quantities into a design declaration so that research consumers can access the data strategies and answer strategies in the same way as they would for any other problem.
 
-Declaration @def-declarationch16num1 provides a flexible process tracing design. You can use this design with a different causal model and substituting in different causal queries and process tracing strategies. Given a background causal model, the design first draws a "causal type"---that is a case together with all its causal relations. The value of the estimand (EoC) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query---like those in the Table @tbl-ptprobative---but given different possible observed values for all nodes. No data strategy is provided explicitly as this is tied up here in the estimation, that is, the estimation step describes what data will be used.
+Declaration @def-ch16num1 provides a flexible process tracing design. You can use this design with a different causal model and substituting in different causal queries and process tracing strategies. Given a background causal model, the design first draws a "causal type"---that is a case together with all its causal relations. The value of the estimand (EoC) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query---like those in the Table @tbl-ptprobative---but given different possible observed values for all nodes. No data strategy is provided explicitly as this is tied up here in the estimation, that is, the estimation step describes what data will be used.
 
-:::{.definition #declarationch16num1} 
+::: {#def-ch16num1} 
 
-Process tracing design declaration
+## Process tracing design declaration
 
 ```{r, file = "scripts_declarations/declaration_16.1b.R", eval = FALSE}
 ```
 
 :::
 
-:::{.lemma #diagnosisch16num1}
+::: {#lem-ch16num1} 
 
-Process tracing diagnosis
+## Process tracing diagnosis
 
 Given such a model, a case in which $X = Y = 1$ (for instance), and limited resources, we now want to know whether we would be better gathering data on $M$ or on $W$ or both.  
 

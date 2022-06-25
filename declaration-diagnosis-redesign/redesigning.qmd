@@ -19,18 +19,18 @@ A redesign over a data strategy choice can be summarized with a "power curve." W
 
 We start with a minimal design declaration: we draw samples of size $N$ and measure a single binary outcome $Y$, then conduct a test against the null hypothesis that the true proportion of successes is equal to 0.5. 
 
-:::{.definition #declarationch11num1} 
+::: {#def-ch11num1} 
 
-A baseline declaration intended to be redesigned over $N$.
+## A baseline declaration intended to be redesigned over $N$.
 
 ```{r, file = "scripts_declarations/declaration_11.1.R"}
 ```
 
 :::
 
-:::{.lemma #diagnosisch11num1}
+::: {#lem-ch11num1} 
 
-Diagnosing over a redesign
+## Diagnosing over a redesign
 
 To construct a power curve, we redesign our baseline declaration over values of $N$ that vary from 100 to 1000.
 
@@ -62,11 +62,11 @@ We illustrate this idea with an analysis of the minimum detectable effect (MDE) 
 
 MDEs can be a useful heuristic for thinking about the multiplicity of possibilities in the model. If the minimum detectable effect of a study is enormous -- a one standard deviation effect, say -- then we don't have to think much harder about our beliefs about the true effect size. Whatever our priors over the true effect size are, they are probably smaller than 1.0 SDs, so we can immediately conclude that the design is too small.
 
-Declaration @def-declarationch11num2 contains uncertainty over the true effect size. This uncertainty is encoded in the `runif(n = 1, min = 0, max = 0.5)` command, which corresponds to our uncertainty over the ATE. It could be as small as 0.0 SDs or as large as 0.5 SDs, and we are equally uncertain about all the values in between. We redesign over three values of $N$: 100, 500, and 1000, then simulate each design. Each run of simulation features a different true ATE somewhere between 0.0 and 0.5. 
+Declaration @def-ch11num2 contains uncertainty over the true effect size. This uncertainty is encoded in the `runif(n = 1, min = 0, max = 0.5)` command, which corresponds to our uncertainty over the ATE. It could be as small as 0.0 SDs or as large as 0.5 SDs, and we are equally uncertain about all the values in between. We redesign over three values of $N$: 100, 500, and 1000, then simulate each design. Each run of simulation features a different true ATE somewhere between 0.0 and 0.5. 
 
-:::{.definition #declarationch11num2} 
+::: {#def-ch11num2} 
 
-Uncertainty over effect size design
+## Uncertainty over effect size design
 
 ```{r, file = "scripts_declarations/declaration_11.2.R"}
 ```
@@ -74,9 +74,9 @@ Uncertainty over effect size design
 :::
 
 
-:::{.lemma #diagnosisch11num2}
+::: {#lem-ch11num2} 
 
-Redesigning under uncertainty
+## Redesigning under uncertainty
 
 ```{r}
 #| eval: false
@@ -113,9 +113,9 @@ where $L$ is a loss function, increasing in the difference between $a^{d}$ and $
 
 We can explore this optimization with bare-bones declaration of a two-arm trial that depends on two separate data strategy parameters, `N` and `prob`:
 
-:::{.definition #declarationch11num3} 
+::: {#def-ch11num3} 
 
-Bare-bones two-arm trial
+## Bare-bones two-arm trial
 
 ```{r, file = "scripts_declarations/declaration_11.3.R"}
 ```
@@ -123,9 +123,9 @@ Bare-bones two-arm trial
 :::
 
 
-:::{.lemma #diagnosisch11num3}
+::: {#lem-ch11num3} 
 
-Redesigning over two parameters
+## Redesigning over two parameters
 
 We redesign, varying those two parameters over reasonable ranges: 100 to 1000 subjects, with probabilities of assignment from 0.1 to 0.5. The redesign function smartly generates designs with all combinations of the two parameters. We want to consider the consequences of these data strategy choices for two diagnosands: cost and a very common loss function: mean squared error.  
 
@@ -164,11 +164,11 @@ A key tradeoff in the choice of answer strategy is the bias-variance tradeoff. S
 
 A common heuristic for trading off bias and variance is the mean squared error (MSE) diagnosand. Mean squared error is equal to the square of bias plus variance, which is to say MSE weighs bias and variance equally. Typically, researchers choose among alternative answer strategies by minimizing MSE. If in your scientific context, bias is more important than variance, you might choose a an answer strategy that accepts slightly more variance in exchange for a decrease in bias.
 
-To illustrate the bias-variance tradeoff, Declaration @def-declarationch11num4 describes a setting in which the goal is to estimate the conditional expectation of some outcome variable Y with respect to a covariate X. The true conditional expectation function (produced by the custom `dip` function) is not smooth, but we estimate it with smooth polynomial functions of increasing order.
+To illustrate the bias-variance tradeoff, Declaration @def-ch11num4 describes a setting in which the goal is to estimate the conditional expectation of some outcome variable Y with respect to a covariate X. The true conditional expectation function (produced by the custom `dip` function) is not smooth, but we estimate it with smooth polynomial functions of increasing order.
 
-:::{.definition #declarationch11num4} 
+::: {#def-ch11num4} 
 
-Conditional expectation function design
+## Conditional expectation function design
 
 ```{r, file = "scripts_declarations/declaration_11.4.R"}
 ```
@@ -180,9 +180,9 @@ Figure @fig-ch11num4 shows one draw of this design -- the predictions of the CEF
 ![Estimating a CEF with polynomials of increasing order](/figures/figure-11-4){#fig-ch11num4}
 
 
-:::{.lemma #diagnosisch11num4}
+::: {#lem-ch11num4} 
 
-Conditional expectation function diagnosis
+## Conditional expectation function diagnosis
 
 Increasing the order of the polynomial decreases bias, but this decrease comes at the cost of variance. Figure @fig-ch11num4 shows how, when the order increases, bias goes down while variance goes up. Mean squared error is one way to trade these two diagnosands off one another. Here, MSE is minimized with a polynomial of order 3. If we were to care much more about bias than variance, perhaps we would choose a polynomial of even higher order.
 
@@ -204,9 +204,9 @@ diagnosis_11.4 <- get_rdddr_file_local("diagnosis_11.4")
 
 A perennial debate among social scientists is whether to use a binary choice model like logit or probit when the outcome is binary, or if the workhorse OLS estimator is preferable. Unsurprisingly, who is right in this debate depends on other features of the research design. For example, in an observational descriptive study in which the inquiry is a prediction for the probability of success among a particular group of units, explicitly accounting for the binary nature the outcome variable is important; OLS can generate predictions that lie outside the theoretically permissible zero to one range. However, in an experimental causal study in which the inquiry is the average treatment effect, it is not possible for a comparison of treatment and control group means (as estimated by OLS) to generate a nonsense treatment effect estimate in the sense of being outside the theoretically permissible -100 to +100 percentage point range. By contrast, binary choice models like logit or probit can theoretically impossible average treatment effect estimates, once average marginal effect estimates are calculated. This problem is demonstrated in the following declaration, diagnosis, and redesign:
 
-:::{.definition #declarationch11num5} 
+::: {#def-ch11num5} 
 
-Choosing logit, probit, or OLS
+## Choosing logit, probit, or OLS
 
 ```{r, file = "scripts_declarations/declaration_11.5.R"}
 ```
@@ -214,9 +214,9 @@ Choosing logit, probit, or OLS
 :::
 
 
-:::{.lemma #diagnosisch11num5}
+::: {#lem-ch11num5} 
 
-Redesigning alternative estimators over sample sizes
+## Redesigning alternative estimators over sample sizes
 
 ```{r}
 #| eval: false
