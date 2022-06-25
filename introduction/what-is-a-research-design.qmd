@@ -21,7 +21,7 @@ Figure @fig-midaplot shows how these four elements of a design relate to one ano
 
 <!-- align center -->
 
-![The *MIDA* framework. An arrow between two points means that the point at the end of an arrow depends in some way on the one at the start of the arrow. For instance 'the answer you'll get' depends on the dataset you'll get and the answer strategy you specify.](/figures/figure-2-1){#fig:midaplot,fig-align="center"}
+![The *MIDA* framework. An arrow between two points means that the point at the end of an arrow depends in some way on the one at the start of the arrow. For instance 'the answer you'll get' depends on the dataset you'll get and the answer strategy you specify.](/figures/figure-2-1){#fig-midaplot}
 
 ### Model
 
