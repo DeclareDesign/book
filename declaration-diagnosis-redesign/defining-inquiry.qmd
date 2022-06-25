@@ -80,7 +80,7 @@ With the units, treatments, and outcomes specified, the last element of the inqu
 
 However, not all inquiries are of this form. For example, the line of best fit is defined as the covariance of X and Y divided by the variance of X. This inquiry is a complex summary of all the units in the model. 
 
-The inquiry that the regression discontinuity design shoots at is also non-decomposable. In the RDD model (see Section \@ref(regression-discontinuity-designs)), we imagine units with $Y_i(1)$, $Y_i(0)$. Each $i$ also has a value on a "running variable", $X_i$, and units receive treatment if and only if $X_i>0$. In this case the "effect at the point of discontinuity" might be written:
+The inquiry that the regression discontinuity design shoots at is also non-decomposable. In the RDD model (see Section @regression-discontinuity-designs), we imagine units with $Y_i(1)$, $Y_i(0)$. Each $i$ also has a value on a "running variable", $X_i$, and units receive treatment if and only if $X_i>0$. In this case the "effect at the point of discontinuity" might be written:
 
 $$E_{i|X_i = 0}(Y_i(Z_i=1) - Y_i(Z_i=0))$$
 
@@ -151,7 +151,7 @@ A second, and closely related, approach is to define inferences for a finite *sa
 
 A third approach is to think in terms of  "superpopulations", in which we imagine that any particular population is just a draw from an infinite superpopulation. In this case, we can conceive of the randomness in the design as being fundamental---every unit is a random draw from the superpopulation.
 
-Implicitly if you set up a simulation and draw data using some probability density function you are drawing from a superpopulation. But you get to specify the type of target of inference when you specify the inquiry, as in Declaration \@ref(def:declaration-7-1).
+Implicitly if you set up a simulation and draw data using some probability density function you are drawing from a superpopulation. But you get to specify the type of target of inference when you specify the inquiry, as in Declaration @def:declaration-7-1.
 
 :::{.definition #declaration-7-1} 
 

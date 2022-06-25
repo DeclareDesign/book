@@ -15,7 +15,7 @@ Structural estimation is used when researchers have in mind a model for how proc
 
 We illustrate this design with a bargaining game, drawing on an example used in @wilke2020field. We imagine a customer $i$ makes payments from some endowment to a taxi driver. Bargaining proceeds as one player makes an offer that is accepted or rejected; if rejected the other player makes a counteroffer. The game continues for $n$ rounds with zero payoffs if no deal is agreed. Our main interest is the share of the endowment retained by the customer. 
 
-In Declaration \@ref(def:declaration-19-2), we imagine two types of customers, strategic ($\theta_i = 0$) and nonstrategic ($\theta_i = 1$). If a customer is strategic, the equilibrium offer made by the first mover is the one predicted by the solution given in @rubinstein1982perfect. If however, the player is nonstrategic then they always (successfully) insist on invoking a payment norm that lets them retaining a fixed share of their endowment, $\tilde{\pi}$. We let $\alpha$ denote the probability that a player is nonstrategic. A player's payoff then is given by:
+In Declaration @def:declaration-19-2, we imagine two types of customers, strategic ($\theta_i = 0$) and nonstrategic ($\theta_i = 1$). If a customer is strategic, the equilibrium offer made by the first mover is the one predicted by the solution given in @rubinstein1982perfect. If however, the player is nonstrategic then they always (successfully) insist on invoking a payment norm that lets them retaining a fixed share of their endowment, $\tilde{\pi}$. We let $\alpha$ denote the probability that a player is nonstrategic. A player's payoff then is given by:
 
 $$\pi_i =  (1-\theta_i)(z_i\hat{\pi} + (1-z_i)(1-\pi)) + \theta_i\tilde{\pi}$$
 
@@ -74,7 +74,7 @@ As always, diagnosis can be used to fine-tune designs. In figure @fig-figure-19-
 
 The basic structure used here can be used for a wide range of structural models. The first step is to write down the theory well enough to specify the implied likelihood function. Doing so might require adding noise to the model so that the data that are seen in practice can be seen in theory. The next step is to estimate the model parameters that have the greatest likelihood of having producing the observed data. (The same fundamental approach can be used with estimation via Bayesian methods or methods of moments.) 
 
-The payoffs from structural estimation can be great: we can operationalize our theoretical models to make specific real-world predictions by disciplining them with real-world information. The risks are large too. Because the inferences are necessarily model dependent, model misspecification can lead to faulty conclusions. When doing structural estimation, apply Principle \@ref(exm:designagnostically): Design agnostically liberally. 
+The payoffs from structural estimation can be great: we can operationalize our theoretical models to make specific real-world predictions by disciplining them with real-world information. The risks are large too. Because the inferences are necessarily model dependent, model misspecification can lead to faulty conclusions. When doing structural estimation, apply Principle @exm-designagnostically: Design agnostically liberally. 
 
 :::
 

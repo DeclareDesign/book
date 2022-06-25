@@ -16,7 +16,7 @@ Behavioral games are often used to study difficult-to-measure characteristics of
 
 The approach holds enormous value. But, as highlighted by @green2012statistical, it also introduces many subtle design choices. Many of these can be revealed through declaration and diagnosis. 
 
-We illustrate using the "trust" game in which we specify three common inquiries and use a standard design in Declaration \@ref(def:declaration-17-6). The design is successful at generating unbiased estimates of the first inquiry but runs into problems with the other two.   
+We illustrate using the "trust" game in which we specify three common inquiries and use a standard design in Declaration @def:declaration-17-6. The design is successful at generating unbiased estimates of the first inquiry but runs into problems with the other two.   
 
 The trust game has been implemented hundreds of times to understand levels and correlates of social trust. Following the meta-analysis given in @johnson2011trust we consider a game in which one player (Player 1, the "trustor") can invest some share of $1. Whatever is invested is then doubled. A second player (Player 2, "the trustee") can then decide what share of the doubled amount to keep for themself and what share to return to the trustor.  
 
@@ -101,7 +101,7 @@ declaration_17.6 |>
 
 We have a row for each game, we have the (unobserved) $a_i, a_j$ parameters as well as actions by both players in the data. 
 
-Diagnosis \@ref(lem:diagnosis-17-5) illustrates the properties of the trust game design.
+Diagnosis @lem:diagnosis-17-5 illustrates the properties of the trust game design.
 
 :::{.lemma #diagnosis-17-5}
 

@@ -8,6 +8,6 @@ source("scripts/before_chapter_script.R")
 ```
 
 
-We list "design early"  among our research design principles (Principle \@ref(exm:designearly)) to emphasize the gains from early planning. Research projects are very long journeys: going from the kernel of an idea to a published paper typically takes multiple years. Once the data strategy has been implemented, you're stuck with it, so mindful planning beforehand is important. "Measure twice, cut once." 
+We list "design early"  among our research design principles (Principle @exm-designearly) to emphasize the gains from early planning. Research projects are very long journeys: going from the kernel of an idea to a published paper typically takes multiple years. Once the data strategy has been implemented, you're stuck with it, so mindful planning beforehand is important. "Measure twice, cut once." 
 
 The planning process changes designs. We work out designs that meet ethical as well as scientific standards, accommodate the needs of research partners, and operate within financial and logistical constraints. When we are insufficiently sure of key inputs to design declarations, we can run pilots, but we need to be careful about how we incorporate what we learn from them. Finally, when we write up a declaration or a PAP with a declaration, this can be a useful moment to get feedback from our peers to improve the design. We discuss each of these steps in this chapter.

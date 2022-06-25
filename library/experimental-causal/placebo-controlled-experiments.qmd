@@ -19,7 +19,7 @@ In the placebo-controlled design, we attempt to deliver a real treatment to the 
 
 Employing a placebo control can seem like an odd design choice -- you go to all the effort of contacting a unit but at the very moment you get in touch, you deliver a placebo message instead of the treatment message. It turns out that despite this apparent waste, the placebo-controlled design can often lead to more precise estimates than the standard encouragement design. Whether it does or not depends in large part on the underlying compliance rate.
 
-Declaration \@ref(def:declaration-18-9) actually includes two separate designs. Here we'll directly compare the standard encouragement design to the placebo-controlled design. They have identical models and inquiries, so we'll just declare those once, before declaring the specifics of the empirical strategies for each design.
+Declaration @def:declaration-18-9 actually includes two separate designs. Here we'll directly compare the standard encouragement design to the placebo-controlled design. They have identical models and inquiries, so we'll just declare those once, before declaring the specifics of the empirical strategies for each design.
 
 :::{.definition #declaration-18-9} 
 

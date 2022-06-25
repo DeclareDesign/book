@@ -19,7 +19,7 @@ One way around this is to normalize the scale of both the latent variable and th
 
 A second challenge is deciding which measurements to combine into the index. We clearly only want to create indices using measurements of the same latent variable, but it can hard to be sure which latent variable, exactly, is being measured. Just relying on whether the measurements are positively correlated or not is not sufficient, because measurements can be correlated even if they are not measurements of the same underlying variable. Ultimately we have to rely on theory to make these decisions, as uncomfortable as that may make us.
 
-In Declaration \@ref(def:declaration-15-6), our inquiry is the average level of the latent variable among units whose binary covariate `X` is equal to one.
+In Declaration @def:declaration-15-6, our inquiry is the average level of the latent variable among units whose binary covariate `X` is equal to one.
 
 In the declaration below `Y_star` has a normal distribution but it is not centered on zero. The measured variables `Y_1`, `Y_2`, `Y_3` are also normally distributed but each has its own scale; they are all related to `Y_star`, though some more strongly than others. Many procedures for combining these measured variables into an index exist. Here we'll consider a few of the common approaches: 
 

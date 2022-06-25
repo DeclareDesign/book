@@ -39,7 +39,7 @@ Figure @fig-daglist represents the list experimental design. The no liars assump
 
 ![Directed acyclic graph for the list experiment.](/figures/figure-17-1){#fig:figure-17-1}
 
-Declaration \@ref(def:declaration-17-3) describes a list experimental design. The model includes subjects' true attitude (`Y_star`) and whether or not their direct question answers are contaminated by sensitivity bias (`S`). These two variables combine to determine how subjects will respond when asked directly about support for the policy. The potential outcomes model combines three types of information to determine how subjects will respond to the list experiment: their responses to the three control items (`control_count`), their true attitude (`Y_star`), and whether they are assigned to see the treatment or the control list (`Z`). Our definition of the potential outcomes embeds the no liars and no design effects assumptions. 
+Declaration @def:declaration-17-3 describes a list experimental design. The model includes subjects' true attitude (`Y_star`) and whether or not their direct question answers are contaminated by sensitivity bias (`S`). These two variables combine to determine how subjects will respond when asked directly about support for the policy. The potential outcomes model combines three types of information to determine how subjects will respond to the list experiment: their responses to the three control items (`control_count`), their true attitude (`Y_star`), and whether they are assigned to see the treatment or the control list (`Z`). Our definition of the potential outcomes embeds the no liars and no design effects assumptions. 
 
 The inquiry is the prevalence rate of the sensitive item. In the data strategy, we randomly assign 50\% of our 500 subjects to treatment and the remainder to control. In the survey, we ask subjects the list experiment question (`Y_list`). Our answer strategy estimates the prevalence rate by calculating the difference-in-means in the list outcome between treatment and control.
 
@@ -83,7 +83,7 @@ We see in the diagnosis that the list experiment generates unbiased estimates of
 
 :::
 
-The diagnosis above shows that the list experiment (under its assumptions) is unbiased but is high variance. In the presence of sensitivity bias, direct questions are biased, but are much lower variance. The choice between these two technologies therefore amounts to a bias-variance tradeoff (see @blair2018list for more on this point). Declaration \@ref(def:declaration-17-3) wraps up both approaches in one design so we can compare them.
+The diagnosis above shows that the list experiment (under its assumptions) is unbiased but is high variance. In the presence of sensitivity bias, direct questions are biased, but are much lower variance. The choice between these two technologies therefore amounts to a bias-variance tradeoff (see @blair2018list for more on this point). Declaration @def:declaration-17-3 wraps up both approaches in one design so we can compare them.
 
 :::{.definition #declaration-17-4} 
 

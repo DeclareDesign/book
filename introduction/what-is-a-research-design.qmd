@@ -145,7 +145,7 @@ The answer strategy is more than the choice of an estimator. It includes the ful
 
 *D* and *A* impose a discipline on each other in the same way as we saw with *M* and *I*. Just like the model needs to provide the events that are summarized by the inquiry, the data strategy needs to provide the data that are summarized by the answer strategy. Declaring each of these parts in detail reveals the dependencies across the design elements.
 
-*A* and *I* also enjoy a tight connection stemming from the more general parallelism between (*M*, *I*) and (*D*, *A*). We elaborate the principle of parallel inquiries and answer strategies in Section \@ref(how-to-choose-an-answer-strategy).
+*A* and *I* also enjoy a tight connection stemming from the more general parallelism between (*M*, *I*) and (*D*, *A*). We elaborate the principle of parallel inquiries and answer strategies in Section @how-to-choose-an-answer-strategy.
 
 Figure @fig-midaplot shows how the same answer strategy *A* is applied both to the realized data $d^*$ and also to the simulated data $d$. We know that in practice, however, the *A* applied to the real data differs somewhat from the *A* applied to the data we plan for via simulation. Designs sometimes drift in response to data, but too much drift and the inferences we draw can become misleading. The *MIDA* framework encourages researchers to think through what the real data will actually look like, and adjust *A* accordingly *before* data strategies are implemented.
 
@@ -170,7 +170,7 @@ With the core elements of a design described, we are now ready to lay out the pr
 
 Declaring a design entails figuring out which parts of your design belong in *M*, *I*, *D*, and *A*. The declaration process can be a challenge because mapping our ideas and excitement about a project into *MIDA* is not always straightforward, but it is rewarding. When we can express a research design in terms of these four components, we are newly able to think about its properties. 
 
-Designs can be declared in words, but declarations often become much more specific when carried out in code. You can declare a design in any statistical programming language: Stata, R, Python, Julia, SPSS, SAS, Mathematica, or many others. Design declaration is even possible -- though somewhat awkward -- in Excel. We wrote the companion software, DeclareDesign, in R because of the availability of other useful tools in R and because it is free, open-source, and high-quality. We have designed the book so that you can read it even if you do not use R, but you will have to translate the code into your own language of choice. On our Web site, we have [pointers](https://declaredesign.org/pap) for how you might declare designs in Stata, Python, and Excel. In addition, we link to a ["Design wizard"](https://eos.wzb.eu/ipi/DDWizard/) that lets you declare and diagnose variations of standard designs via a point-and-click web interface. Chapter \@ref(getting-started) provides an introduction to DeclareDesign in R.
+Designs can be declared in words, but declarations often become much more specific when carried out in code. You can declare a design in any statistical programming language: Stata, R, Python, Julia, SPSS, SAS, Mathematica, or many others. Design declaration is even possible -- though somewhat awkward -- in Excel. We wrote the companion software, DeclareDesign, in R because of the availability of other useful tools in R and because it is free, open-source, and high-quality. We have designed the book so that you can read it even if you do not use R, but you will have to translate the code into your own language of choice. On our Web site, we have [pointers](https://declaredesign.org/pap) for how you might declare designs in Stata, Python, and Excel. In addition, we link to a ["Design wizard"](https://eos.wzb.eu/ipi/DDWizard/) that lets you declare and diagnose variations of standard designs via a point-and-click web interface. Chapter @getting-started provides an introduction to DeclareDesign in R.
 
 ### Diagnosis {#what-is-diagnosis}
 
@@ -182,7 +182,7 @@ Design diagnosis relies on two new concepts: diagnostic statistics and diagnosan
 
 A "diagnostic statistic" is a summary statistic generated from a single "run" of a design. For example, the statistic $e$ (error) refers to the difference between the estimate and the estimand. The statistic $s$ (significance) refers to whether the estimate was deemed statistically significant at the 0.05 level (for instance). 
 
-A "diagnosand" is a summary of the distribution of a diagnostic statistic across many simulations of the design. The bias diagnosand is defined as the average value of the $e$ statistic and the power diagnosand is defined as the average value of the $s$ statistic. Other diagnosands include quantities like root-mean-squared-error (RMSE), Type I and Type II error rates, how likely is it that subjects were harmed, and average cost. We describe these diagnosands in much more detail in Chapter \@ref(diagnosis).
+A "diagnosand" is a summary of the distribution of a diagnostic statistic across many simulations of the design. The bias diagnosand is defined as the average value of the $e$ statistic and the power diagnosand is defined as the average value of the $s$ statistic. Other diagnosands include quantities like root-mean-squared-error (RMSE), Type I and Type II error rates, how likely is it that subjects were harmed, and average cost. We describe these diagnosands in much more detail in Chapter @diagnosis.
 
 One especially important diagnosand is the "success rate," which is the average value of the "success" diagnostic statistic. As the researcher, you get to decide what would make your study a success. What matters most in your research scenario? Is it statistical significance? If so, optimize your design with respect to power. Is what matters most whether the answer has the correct sign or not? Then diagnose how frequently your answer strategy yields an answer with the same sign as your inquiry. Diagnosis involves articulating what would make your study a success and then figuring out, through simulation, how often you obtain that success. Success is often a multidimensional aggregation of diagnosands, such as the joint achievement of high statistical power, manageable costs, and low ethical harms.
 
@@ -222,7 +222,7 @@ The two designs cost the same but differ on the empirical side. Which strategy s
 
 * *A*: The answer strategy takes the difference-in-means between the treated and untreated units. Thus the answer strategy uses a function similar to the inquiry itself.
 
-When we put these all together we have a design, Declaration \@ref(def:declaration-2-1).
+When we put these all together we have a design, Declaration @def:declaration-2-1.
 
 :::{.definition #declaration-2-1} 
 
@@ -256,7 +256,7 @@ program_diagnosands  <-
 
 The alternative design that differs on the empirical side in three ways. First fewer subjects are sampled. Second, information about the subjects' background information (their "history") is used to implement a block randomization that conditions assignment on history. Third the subjects' history is taken into account in the analysis. This choice is an instance of adjusting the answer strategy in light of a change to the data strategy. 
 
-In Declaration \@ref(def:declaration-2-2), we can leave the model and inquiry intact and but we have to work on the data and answer strategies.
+In Declaration @def:declaration-2-2, we can leave the model and inquiry intact and but we have to work on the data and answer strategies.
 
 :::{.definition #declaration-2-2} 
 
@@ -303,7 +303,7 @@ The overall result of this declaration, diagnosis, and redesign process is that 
 
 ### Three principles
 
-We see from this example the gains from entertaining a diverse model set rather than presupposing we already know *M*. We also see an example of design parts tailored to each other, most importantly the adjustment of answer strategies in light of data strategies. And we see that design choices are informed by a clear specification of a success criterion. In the next chapter we develop these three features as broader principles, referring to them Principle \@ref(exm:designholistically): Design holistically, Principle \@ref(exm:designagnostically): Design agnostically, and Principle \@ref(exm:designforpurpose): Design for purpose.
+We see from this example the gains from entertaining a diverse model set rather than presupposing we already know *M*. We also see an example of design parts tailored to each other, most importantly the adjustment of answer strategies in light of data strategies. And we see that design choices are informed by a clear specification of a success criterion. In the next chapter we develop these three features as broader principles, referring to them Principle @exm-designholistically: Design holistically, Principle @exm-designagnostically: Design agnostically, and Principle @exm-designforpurpose: Design for purpose.
 
 
 ## Putting designs to use
@@ -326,4 +326,4 @@ A happy realization phase concludes with the publication of results. But the res
 
 ### Three more principles 
 
-This discussion motivates three more principles: Principle \@ref(exm:designearly): Design early to reap the benefits of clarity; Principle \@ref(exm:designoften): Design often so that you can correct course; and Principle \@ref(exm:designtoshare): Design to share so that you maximize transparency and contribute maximally to knowledge creation. 
+This discussion motivates three more principles: Principle @exm-designearly: Design early to reap the benefits of clarity; Principle @exm-designoften: Design often so that you can correct course; and Principle @exm-designtoshare: Design to share so that you maximize transparency and contribute maximally to knowledge creation. 

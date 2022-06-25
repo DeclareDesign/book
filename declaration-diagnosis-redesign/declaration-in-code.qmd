@@ -167,7 +167,7 @@ M2 <-
 
 #### Building in correlations within clusters
 
-A second important form of correlation is correlation within clusters, described by the intra-cluster correlation coefficient (ICC). When ICC is low, the within-cluster differences are similar across clusters. When it is high, clusters are more homogeneous within themselves and more heterogeneous across themselves. For more on clustered designs for surveys and for experiments, see Section \@ref(cluster-random-sampling) and Section \@ref(cluster-randomized-experiments).
+A second important form of correlation is correlation within clusters, described by the intra-cluster correlation coefficient (ICC). When ICC is low, the within-cluster differences are similar across clusters. When it is high, clusters are more homogeneous within themselves and more heterogeneous across themselves. For more on clustered designs for surveys and for experiments, see Section @cluster-random-sampling and Section @cluster-randomized-experiments.
 
 We can introduce ICC using the `draw_normal_icc` function:
 
@@ -250,7 +250,7 @@ M1 <-
   )
 ```
 
-`M2` is more worrisome. `U` now affects `X` as well, by affecting the probability of `X` equaling one. See Section \@ref(selection-on-observables) for designs that face this sort of problem.
+`M2` is more worrisome. `U` now affects `X` as well, by affecting the probability of `X` equaling one. See Section @selection-on-observables for designs that face this sort of problem.
 
 ```{r}
 #| results: hide
@@ -264,7 +264,7 @@ M2 <-
   )
 ```
 
-A further question for `U` is how much it should vary. This question is tougher to answer. `U` is an important source of variation in outcomes, so it needs to be calibrated in a way that the simulated data look like the data you expect to generate or encounter in the world. So our best advice here is to follow Principle \@ref(exm:designagnostically): Design agnostically to figure out which ones seem reasonable.
+A further question for `U` is how much it should vary. This question is tougher to answer. `U` is an important source of variation in outcomes, so it needs to be calibrated in a way that the simulated data look like the data you expect to generate or encounter in the world. So our best advice here is to follow Principle @exm-designagnostically: Design agnostically to figure out which ones seem reasonable.
 
 ### Potential outcomes
 
@@ -332,7 +332,7 @@ kable(
 )
 ```
 
-Or to describe multiple treatment factors (see Section \@ref(factorial-experiments) on factorial experiments):
+Or to describe multiple treatment factors (see Section @factorial-experiments on factorial experiments):
 
 ```{r modelposdraw3, results = "hide"}
 M <- 
@@ -351,7 +351,7 @@ kable(booktabs = TRUE, align = "c", M() |> head(5), digits = 2, caption = "One d
 
 #### Effect sizes
 
-We often want to consider a range of plausible effect sizes, for example when estimating the minimum detectable effect of a design. A strategy we commonly use is to sample the treatment effect in the model declaration itself, and then draw the potential outcomes using that single number. When we diagnose many times, then we will get many different treatment effects (here, `tau`), which we can then summarize in a diagnosis. Section \@ref(working-directly-with-the-simulations-data-frame) describes how to create a plot of the power across values of `tau`. 
+We often want to consider a range of plausible effect sizes, for example when estimating the minimum detectable effect of a design. A strategy we commonly use is to sample the treatment effect in the model declaration itself, and then draw the potential outcomes using that single number. When we diagnose many times, then we will get many different treatment effects (here, `tau`), which we can then summarize in a diagnosis. Section @working-directly-with-the-simulations-data-frame describes how to create a plot of the power across values of `tau`. 
 
 ```{r}
 M <-
@@ -363,7 +363,7 @@ M <-
   )
 ```
 
-Where do our expectations about effect sizes, and the minimal plausible effect size, come from? We may conduct meta-analysis of past studies when there are more than one sufficiently relevant estimates of the same effect, or a systematic review or literature review when they are less comparable but we may want to find a range (see Section \@ref(meta-analysis) for a discussion of meta-analysis). We may be tempted to conduct a pilot study to estimate the effect size. We need to be careful when doing so what to infer and how much to update from small pilot studies, as we discuss in Section \@ref(piloting), but we can often shrink our uncertainty about them. In the absence of pilot studies or past studies to draw on, we need to make educated guesses and understand under what true effect sizes our design will perform well and when it will not following Principle \@ref(exm:designholistically): Design holistically.
+Where do our expectations about effect sizes, and the minimal plausible effect size, come from? We may conduct meta-analysis of past studies when there are more than one sufficiently relevant estimates of the same effect, or a systematic review or literature review when they are less comparable but we may want to find a range (see Section @meta-analysis for a discussion of meta-analysis). We may be tempted to conduct a pilot study to estimate the effect size. We need to be careful when doing so what to infer and how much to update from small pilot studies, as we discuss in Section @piloting, but we can often shrink our uncertainty about them. In the absence of pilot studies or past studies to draw on, we need to make educated guesses and understand under what true effect sizes our design will perform well and when it will not following Principle @exm-designholistically: Design holistically.
 
 #### Effect heterogeneity
 
@@ -383,7 +383,7 @@ M <-
 
 #### Correlation between potential outcomes
 
-Treated and untreated potential outcomes are typically highly correlated. When treatment effects are exactly homogeneous, the correlation is equal to 1.  Rarely are potential outcomes *negatively* correlated, but it can occur. The sign and magnitude of the correlation especially affects the standard errors of estimates for causal effects (for more discussion of the correlation of potential outcomes in experiments and also standard error estimators, see Section \@ref(analytic-design-diagnosis)). 
+Treated and untreated potential outcomes are typically highly correlated. When treatment effects are exactly homogeneous, the correlation is equal to 1.  Rarely are potential outcomes *negatively* correlated, but it can occur. The sign and magnitude of the correlation especially affects the standard errors of estimates for causal effects (for more discussion of the correlation of potential outcomes in experiments and also standard error estimators, see Section @analytic-design-diagnosis). 
 
 We described some complexities of generating binary variables above. They transfer over to the generation of correlated potential outcomes in special ways. In the declarations below, `M1` generates uncorrelated potential outcomes, because the draws from `rbinom` are independent of one another. In `M2`, we still use `rbinom`, but with a transformation of the normally-distributed variable into a probability via `pnorm`. This allows the potential outcomes to be correlated because they are both influence by the same latent variable. Finally, in `M3`, we generate highly correlated potential outcomes because we peel off the layer of randomness introduced by `rbinom`.
 
@@ -460,7 +460,7 @@ I <- declare_inquiry(CATE = mean(Y_Z_1[X == 1] - Y_Z_0[X == 1]))
 
 ### Inquiries with continuous potential outcomes
 
-"Non-decomposable" inquiries are not as simple as an average over the units in the model. A common example arises with continuous potential outcomes. The regression discontinuity design described in Section \@ref(regression-discontinuity-designs) has an inquiry that is defined by two continuous functions of the running variable. The control function is a polynomial function representing the potential outcome under control and the treatment function is a different polynomial representing treated potential outcomes. The inquiry is the difference in the two functions evaluated at the cut-off point on the running variable. We declare it as follows:
+"Non-decomposable" inquiries are not as simple as an average over the units in the model. A common example arises with continuous potential outcomes. The regression discontinuity design described in Section @regression-discontinuity-designs has an inquiry that is defined by two continuous functions of the running variable. The control function is a polynomial function representing the potential outcome under control and the treatment function is a different polynomial representing treated potential outcomes. The inquiry is the difference in the two functions evaluated at the cut-off point on the running variable. We declare it as follows:
 
 ```{r}
 #| eval: false
@@ -490,7 +490,7 @@ I <- declare_inquiry(
 )
 ```
 
-In the multilevel regression and poststratification (MRP) design in Section \@ref(multi-level-regression-and-poststratification), we want to know what the average opinion is in each state.
+In the multilevel regression and poststratification (MRP) design in Section @multi-level-regression-and-poststratification, we want to know what the average opinion is in each state.
 
 We declare an inquiry at the county level below. We rely on `group_by` and `summarize` from `dplyr` to write a function `MRP_inquiry` that uses a pipeline to group the data into counties and take the average of individual values. Now, our design targets an inquiry for each state.
 
@@ -514,7 +514,7 @@ MRP_inquiry <-
 I <- declare_inquiry(handler = MRP_inquiry)
 ```
 
-We discuss further in \@ref(answer-strategy-code) how to link inquiries to answer strategies, including the case of multiple inquiries.
+We discuss further in @answer-strategy-code how to link inquiries to answer strategies, including the case of multiple inquiries.
 
 ## Data strategy {#data-strategy-code}
 
@@ -812,7 +812,7 @@ Often you may want to construct a test as part of your answer strategy that does
 
 ## Declaration {#declaration-code}
 
-To construct a research *design* object that we can operate on --- diagnose it, redesign it, draw data from it, etc. --- we add research design elements together with the `+` operator. In Declaration \@ref(def:declaration-13-2), we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.
+To construct a research *design* object that we can operate on --- diagnose it, redesign it, draw data from it, etc. --- we add research design elements together with the `+` operator. In Declaration @def:declaration-13-2, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.
 
 :::{.definition #declaration-13-2} 
 
@@ -931,7 +931,7 @@ simulations_df |>
 
 Plotting simulations using `ggplot2` is often a great way to gain a deeper sense of the properties of the design.
 
-The answer strategy for Declaration \@ref(def:declaration-13-1) includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using `geom_histogram`, then faceting by estimator using `facet_wrap`. We often want to overlay the true value of the estimand on these plots, which we do here with `geom_vline`. Notice that in order to do, we had to create a `summary_df` that includes the value of the estimand. The resulting plot shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.
+The answer strategy for Declaration @def:declaration-13-1 includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using `geom_histogram`, then faceting by estimator using `facet_wrap`. We often want to overlay the true value of the estimand on these plots, which we do here with `geom_vline`. Notice that in order to do, we had to create a `summary_df` that includes the value of the estimand. The resulting plot shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.
 
 ```{r samplingdistincode}
 #| eval: false
