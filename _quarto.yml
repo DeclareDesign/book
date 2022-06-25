@@ -5,7 +5,10 @@ project:
 book:
   title: "Research Design"
   subtitle: "Declaration, Diagnosis, Redesign"
-  author: "Graeme Blair, Alexander Coppock, and Macartan Humphreys"
+  author: 
+    - Graeme Blair
+    - Alexander Coppock
+    - Macartan Humphreys
   chapters:
     - index.qmd
     - part: "Introduction"
@@ -198,7 +201,6 @@ format:
     theme: cosmo
     number-offset: -1
     default-image-extension: svg
-    cover-image: figures/figure_2.1.svg
     code-link: true
   # pdf:
   #   documentclass: book
