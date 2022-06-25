@@ -194,7 +194,11 @@ knitr:
     comment: "#>" 
     R.options:
       knitr.graphics.auto_pdf: true
-      
+
+language:
+  crossref-def-title: "Declaration"
+  crossref-lem-title: "Diagnosis"
+  crossref-exm-title: "Principle"
   
 format:
   html:
