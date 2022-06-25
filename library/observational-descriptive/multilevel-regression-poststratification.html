@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Multi-level regression and poststratification</title>
 <style>
@@ -595,57 +595,57 @@ div.csl-indent {
 <div id="declaration-15-4" class="definition">
 <p>Multilevel regression and poststratification design</p>
 <div class="cell" data-file="scripts_declarations/declaration_15.4.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lme4/lme4/">lme4</a></span><span class="op">)</span>
-<span class="co">#&gt; Loading required package: Matrix</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'Matrix'</span>
-<span class="co">#&gt; The following objects are masked from 'package:tidyr':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     expand, pack, unpack</span>
-
-<span class="va">states</span> <span class="op">&lt;-</span> 
-  <span class="fu">as_tibble</span><span class="op">(</span><span class="va">state.x77</span><span class="op">)</span> |&gt;
-  <span class="fu">transmute</span><span class="op">(</span>
-    state <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">state.x77</span><span class="op">)</span>,
-    prop_of_US <span class="op">=</span> <span class="va">Population</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Population</span><span class="op">)</span>,
-    <span class="co"># results in exactly 2,000 due to rounding</span>
-    state_n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">prop_of_US</span> <span class="op">*</span> <span class="fl">1998.6</span><span class="op">)</span>, 
-    prob_HS <span class="op">=</span> <span class="va">`HS Grad`</span> <span class="op">/</span> <span class="fl">100</span>,
-    state_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>, sd <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,
-    state_mean <span class="op">=</span> <span class="va">prob_HS</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">0.2</span> <span class="op">+</span> <span class="va">state_shock</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">prob_HS</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="va">state_shock</span><span class="op">)</span>
-  <span class="op">)</span>
-
-<span class="va">declaration_15.4</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    data <span class="op">=</span> <span class="va">states</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">50</span>, <span class="va">states</span><span class="op">$</span><span class="va">state_n</span><span class="op">)</span>, <span class="op">]</span>,
-    HS <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="va">prob_HS</span><span class="op">)</span>,
-    PS_weight <span class="op">=</span>
-      <span class="fu">case_when</span><span class="op">(</span><span class="va">HS</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">~</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">prob_HS</span><span class="op">)</span>,
-                <span class="va">HS</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">~</span> <span class="va">prob_HS</span><span class="op">)</span>,
-    individual_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">N</span>, sd <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,
-    policy_support <span class="op">=</span> 
-      <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">0.2</span> <span class="op">*</span> <span class="va">HS</span> <span class="op">+</span> <span class="va">individual_shock</span> <span class="op">+</span> <span class="va">state_shock</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    handler <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span>
-      <span class="va">states</span> |&gt; <span class="fu">transmute</span><span class="op">(</span>
-        <span class="va">state</span>, 
-        inquiry <span class="op">=</span> <span class="st">"mean_policy_support"</span>, 
-        estimand <span class="op">=</span> <span class="va">state_mean</span>
-      <span class="op">)</span>
-    <span class="op">}</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span>
-    <span class="va">model_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/glmer.html">glmer</a></span><span class="op">(</span>
-      formula <span class="op">=</span> <span class="va">policy_support</span> <span class="op">~</span> <span class="va">HS</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">state</span><span class="op">)</span>,
-      data <span class="op">=</span> <span class="va">data</span>,
-      family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/family.html">binomial</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"logit"</span><span class="op">)</span>
-    <span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/pkg/rdddr/man/post_stratification_helper.html">post_stratification_helper</a></span><span class="op">(</span><span class="va">model_fit</span>, data <span class="op">=</span> <span class="va">data</span>, group <span class="op">=</span> <span class="va">state</span>, weights <span class="op">=</span> <span class="va">PS_weight</span><span class="op">)</span>
-  <span class="op">}</span><span class="op">)</span>,
-  label <span class="op">=</span> <span class="st">"Partial pooling"</span>,
-  inquiry <span class="op">=</span> <span class="st">"mean_policy_support"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lme4/lme4/">lme4</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: Matrix</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'Matrix'</span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:tidyr':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     expand, pack, unpack</span></span>
+<span></span>
+<span><span class="va">states</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">as_tibble</span><span class="op">(</span><span class="va">state.x77</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">transmute</span><span class="op">(</span></span>
+<span>    state <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">state.x77</span><span class="op">)</span>,</span>
+<span>    prop_of_US <span class="op">=</span> <span class="va">Population</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Population</span><span class="op">)</span>,</span>
+<span>    <span class="co"># results in exactly 2,000 due to rounding</span></span>
+<span>    state_n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">prop_of_US</span> <span class="op">*</span> <span class="fl">1998.6</span><span class="op">)</span>, </span>
+<span>    prob_HS <span class="op">=</span> <span class="va">`HS Grad`</span> <span class="op">/</span> <span class="fl">100</span>,</span>
+<span>    state_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>, sd <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span>    state_mean <span class="op">=</span> <span class="va">prob_HS</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">0.2</span> <span class="op">+</span> <span class="va">state_shock</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">prob_HS</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="va">state_shock</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">declaration_15.4</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    data <span class="op">=</span> <span class="va">states</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">50</span>, <span class="va">states</span><span class="op">$</span><span class="va">state_n</span><span class="op">)</span>, <span class="op">]</span>,</span>
+<span>    HS <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="va">prob_HS</span><span class="op">)</span>,</span>
+<span>    PS_weight <span class="op">=</span></span>
+<span>      <span class="fu">case_when</span><span class="op">(</span><span class="va">HS</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">~</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">prob_HS</span><span class="op">)</span>,</span>
+<span>                <span class="va">HS</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">~</span> <span class="va">prob_HS</span><span class="op">)</span>,</span>
+<span>    individual_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">N</span>, sd <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span>    policy_support <span class="op">=</span> </span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">0.2</span> <span class="op">*</span> <span class="va">HS</span> <span class="op">+</span> <span class="va">individual_shock</span> <span class="op">+</span> <span class="va">state_shock</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    handler <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="va">states</span> <span class="op">|&gt;</span> <span class="fu">transmute</span><span class="op">(</span></span>
+<span>        <span class="va">state</span>, </span>
+<span>        inquiry <span class="op">=</span> <span class="st">"mean_policy_support"</span>, </span>
+<span>        estimand <span class="op">=</span> <span class="va">state_mean</span></span>
+<span>      <span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span>handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">model_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/glmer.html">glmer</a></span><span class="op">(</span></span>
+<span>      formula <span class="op">=</span> <span class="va">policy_support</span> <span class="op">~</span> <span class="va">HS</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">state</span><span class="op">)</span>,</span>
+<span>      data <span class="op">=</span> <span class="va">data</span>,</span>
+<span>      family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/family.html">binomial</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"logit"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/rdddr/man/post_stratification_helper.html">post_stratification_helper</a></span><span class="op">(</span><span class="va">model_fit</span>, data <span class="op">=</span> <span class="va">data</span>, group <span class="op">=</span> <span class="va">state</span>, weights <span class="op">=</span> <span class="va">PS_weight</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span>,</span>
+<span>  label <span class="op">=</span> <span class="st">"Partial pooling"</span>,</span>
+<span>  inquiry <span class="op">=</span> <span class="st">"mean_policy_support"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Figure @ref(fig:figure-15-4) shows one draw from this design, plotting the MRP estimates against the true level of opinion.</p>
@@ -663,34 +663,34 @@ div.csl-indent {
 <div id="declaration-15-5" class="definition">
 <p>Redesign over answer strategies</p>
 <div class="cell" data-file="scripts_declarations/declaration_15.5.R">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_15.5</span> <span class="op">&lt;-</span> 
-  <span class="va">declaration_15.4</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span>
-      <span class="va">model_fit</span> <span class="op">&lt;-</span> <span class="fu">lm_robust</span><span class="op">(</span>
-        formula <span class="op">=</span> <span class="va">policy_support</span> <span class="op">~</span> <span class="va">HS</span> <span class="op">+</span> <span class="va">state</span>,
-        data <span class="op">=</span> <span class="va">data</span>
-      <span class="op">)</span>
-      <span class="fu"><a href="https://rdrr.io/pkg/rdddr/man/post_stratification_helper.html">post_stratification_helper</a></span><span class="op">(</span><span class="va">model_fit</span>, data <span class="op">=</span> <span class="va">data</span>, group <span class="op">=</span> <span class="va">state</span>, weights <span class="op">=</span> <span class="va">PS_weight</span><span class="op">)</span>
-    <span class="op">}</span><span class="op">)</span>,
-    label <span class="op">=</span> <span class="st">"No pooling"</span>,
-    inquiry <span class="op">=</span> <span class="st">"mean_policy_support"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span>
-      <span class="va">model_fit</span> <span class="op">&lt;-</span> <span class="fu">lm_robust</span><span class="op">(</span>
-        formula <span class="op">=</span> <span class="va">policy_support</span> <span class="op">~</span> <span class="va">HS</span>,
-        data <span class="op">=</span> <span class="va">data</span>
-      <span class="op">)</span>
-      <span class="fu"><a href="https://rdrr.io/pkg/rdddr/man/post_stratification_helper.html">post_stratification_helper</a></span><span class="op">(</span><span class="va">model_fit</span>, data <span class="op">=</span> <span class="va">data</span>, group <span class="op">=</span> <span class="va">state</span>, weights <span class="op">=</span> <span class="va">PS_weight</span><span class="op">)</span>
-    <span class="op">}</span><span class="op">)</span>,
-    label <span class="op">=</span> <span class="st">"Full pooling"</span>,
-    inquiry <span class="op">=</span> <span class="st">"mean_policy_support"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_15.5</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">declaration_15.4</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="va">model_fit</span> <span class="op">&lt;-</span> <span class="fu">lm_robust</span><span class="op">(</span></span>
+<span>        formula <span class="op">=</span> <span class="va">policy_support</span> <span class="op">~</span> <span class="va">HS</span> <span class="op">+</span> <span class="va">state</span>,</span>
+<span>        data <span class="op">=</span> <span class="va">data</span></span>
+<span>      <span class="op">)</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/rdddr/man/post_stratification_helper.html">post_stratification_helper</a></span><span class="op">(</span><span class="va">model_fit</span>, data <span class="op">=</span> <span class="va">data</span>, group <span class="op">=</span> <span class="va">state</span>, weights <span class="op">=</span> <span class="va">PS_weight</span><span class="op">)</span></span>
+<span>    <span class="op">}</span><span class="op">)</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"No pooling"</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"mean_policy_support"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="va">model_fit</span> <span class="op">&lt;-</span> <span class="fu">lm_robust</span><span class="op">(</span></span>
+<span>        formula <span class="op">=</span> <span class="va">policy_support</span> <span class="op">~</span> <span class="va">HS</span>,</span>
+<span>        data <span class="op">=</span> <span class="va">data</span></span>
+<span>      <span class="op">)</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/rdddr/man/post_stratification_helper.html">post_stratification_helper</a></span><span class="op">(</span><span class="va">model_fit</span>, data <span class="op">=</span> <span class="va">data</span>, group <span class="op">=</span> <span class="va">state</span>, weights <span class="op">=</span> <span class="va">PS_weight</span><span class="op">)</span></span>
+<span>    <span class="op">}</span><span class="op">)</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Full pooling"</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"mean_policy_support"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-15-4" class="lemma">
 <p>Diagnosing over answer strategies</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_15.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_15.5</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_15.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_15.5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Figure @ref(fig:figure-15-5) compares the three estimators. The first column of facets shows one draw of the estimates against the estimands. The main thing to notice here is that the full pooling estimate is more or less a flat line – regardless of the estimand, the estimates are just above 50%. Relative to partial pooling, the no pooling estimates are further spread around the 45 degree line, with small states bouncing around the most.</p>
 <p>On the right side of the figure, we see the bias, RMSE, and standard deviation diagnosands for each inquiry under all three answer strategies. Under no pooling, bias is very low, but the RMSE and standard deviation for small states is very high. Under full pooling, the standard deviation is very low, but bias is very positive for states with low support and very negative for states with high support. The resulting RMSE has a funny “V” shape – we only do well for states that happen to have opinion that is very close to the national average.</p>

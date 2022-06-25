@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Encouragement designs</title>
 <style>
@@ -652,59 +652,59 @@ div.csl-indent {
 <div id="declaration-18-8" class="definition">
 <p>Encouragement design</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.8.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_18.8</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="fl">100</span>,
-    type <span class="op">=</span> 
-      <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Always-Taker"</span>, <span class="st">"Never-Taker"</span>, <span class="st">"Complier"</span>, <span class="st">"Defier"</span><span class="op">)</span>,
-          <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.2</span>, <span class="fl">0.6</span>, <span class="fl">0.0</span><span class="op">)</span><span class="op">*</span><span class="va">N</span><span class="op">)</span>,
-    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    <span class="co"># potential outcomes of Y with respect to D</span>
-    <span class="fu">potential_outcomes</span><span class="op">(</span>
-      <span class="va">Y</span> <span class="op">~</span> <span class="fu">case_when</span><span class="op">(</span>
-        <span class="va">type</span> <span class="op">==</span> <span class="st">"Always-Taker"</span> <span class="op">~</span> <span class="op">-</span><span class="fl">0.25</span> <span class="op">-</span> <span class="fl">0.50</span> <span class="op">*</span> <span class="va">D</span> <span class="op">+</span> <span class="va">U</span>,
-        <span class="va">type</span> <span class="op">==</span> <span class="st">"Never-Taker"</span> <span class="op">~</span> <span class="fl">0.75</span> <span class="op">-</span> <span class="fl">0.25</span> <span class="op">*</span> <span class="va">D</span> <span class="op">+</span> <span class="va">U</span>,
-        <span class="va">type</span> <span class="op">==</span> <span class="st">"Complier"</span> <span class="op">~</span> <span class="fl">0.25</span> <span class="op">+</span> <span class="fl">0.50</span> <span class="op">*</span> <span class="va">D</span> <span class="op">+</span> <span class="va">U</span>,
-        <span class="va">type</span> <span class="op">==</span> <span class="st">"Defier"</span> <span class="op">~</span> <span class="op">-</span><span class="fl">0.25</span> <span class="op">-</span> <span class="fl">0.50</span> <span class="op">*</span> <span class="va">D</span> <span class="op">+</span> <span class="va">U</span>
-      <span class="op">)</span>,
-      conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>D <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-    <span class="op">)</span>,
-    <span class="co"># potential outcomes of D with respect to Z</span>
-    <span class="fu">potential_outcomes</span><span class="op">(</span>
-      <span class="va">D</span> <span class="op">~</span> <span class="fu">case_when</span><span class="op">(</span>
-        <span class="va">Z</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="va">type</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Always-Taker"</span>, <span class="st">"Complier"</span><span class="op">)</span> <span class="op">~</span> <span class="fl">1</span>,
-        <span class="va">Z</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="va">type</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Never-Taker"</span>, <span class="st">"Defier"</span><span class="op">)</span> <span class="op">~</span> <span class="fl">0</span>,
-        <span class="va">Z</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="va">type</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Never-Taker"</span>, <span class="st">"Complier"</span><span class="op">)</span> <span class="op">~</span> <span class="fl">0</span>,
-        <span class="va">Z</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="va">type</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Always-Taker"</span>, <span class="st">"Defier"</span><span class="op">)</span> <span class="op">~</span> <span class="fl">1</span>
-      <span class="op">)</span>,
-      conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-    <span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_D_1</span> <span class="op">-</span> <span class="va">Y_D_0</span><span class="op">)</span>,
-    CACE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_D_1</span><span class="op">[</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Complier"</span><span class="op">]</span> <span class="op">-</span> <span class="va">Y_D_0</span><span class="op">[</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Complier"</span><span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">conduct_ra</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>D <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">D</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span>,
-                      Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">D</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    <span class="va">Y</span> <span class="op">~</span> <span class="va">D</span> <span class="op">|</span> <span class="va">Z</span>,
-    .method <span class="op">=</span> <span class="va">iv_robust</span>,
-    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATE"</span>, <span class="st">"CACE"</span><span class="op">)</span>,
-    label <span class="op">=</span> <span class="st">"Two stage least squares"</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    <span class="va">Y</span> <span class="op">~</span> <span class="va">D</span>,
-    .method <span class="op">=</span> <span class="va">lm_robust</span>,
-    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATE"</span>, <span class="st">"CACE"</span><span class="op">)</span>,
-    label <span class="op">=</span> <span class="st">"As treated"</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    <span class="va">Y</span> <span class="op">~</span> <span class="va">D</span>,
-    .method <span class="op">=</span> <span class="va">lm_robust</span>,
-    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATE"</span>, <span class="st">"CACE"</span><span class="op">)</span>,
-    subset <span class="op">=</span> <span class="va">D</span> <span class="op">==</span> <span class="va">Z</span>,
-    label <span class="op">=</span> <span class="st">"Per protocol"</span>
-  <span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_18.8</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>    type <span class="op">=</span> </span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Always-Taker"</span>, <span class="st">"Never-Taker"</span>, <span class="st">"Complier"</span>, <span class="st">"Defier"</span><span class="op">)</span>,</span>
+<span>          <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.2</span>, <span class="fl">0.6</span>, <span class="fl">0.0</span><span class="op">)</span><span class="op">*</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    <span class="co"># potential outcomes of Y with respect to D</span></span>
+<span>    <span class="fu">potential_outcomes</span><span class="op">(</span></span>
+<span>      <span class="va">Y</span> <span class="op">~</span> <span class="fu">case_when</span><span class="op">(</span></span>
+<span>        <span class="va">type</span> <span class="op">==</span> <span class="st">"Always-Taker"</span> <span class="op">~</span> <span class="op">-</span><span class="fl">0.25</span> <span class="op">-</span> <span class="fl">0.50</span> <span class="op">*</span> <span class="va">D</span> <span class="op">+</span> <span class="va">U</span>,</span>
+<span>        <span class="va">type</span> <span class="op">==</span> <span class="st">"Never-Taker"</span> <span class="op">~</span> <span class="fl">0.75</span> <span class="op">-</span> <span class="fl">0.25</span> <span class="op">*</span> <span class="va">D</span> <span class="op">+</span> <span class="va">U</span>,</span>
+<span>        <span class="va">type</span> <span class="op">==</span> <span class="st">"Complier"</span> <span class="op">~</span> <span class="fl">0.25</span> <span class="op">+</span> <span class="fl">0.50</span> <span class="op">*</span> <span class="va">D</span> <span class="op">+</span> <span class="va">U</span>,</span>
+<span>        <span class="va">type</span> <span class="op">==</span> <span class="st">"Defier"</span> <span class="op">~</span> <span class="op">-</span><span class="fl">0.25</span> <span class="op">-</span> <span class="fl">0.50</span> <span class="op">*</span> <span class="va">D</span> <span class="op">+</span> <span class="va">U</span></span>
+<span>      <span class="op">)</span>,</span>
+<span>      conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>D <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    <span class="co"># potential outcomes of D with respect to Z</span></span>
+<span>    <span class="fu">potential_outcomes</span><span class="op">(</span></span>
+<span>      <span class="va">D</span> <span class="op">~</span> <span class="fu">case_when</span><span class="op">(</span></span>
+<span>        <span class="va">Z</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="va">type</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Always-Taker"</span>, <span class="st">"Complier"</span><span class="op">)</span> <span class="op">~</span> <span class="fl">1</span>,</span>
+<span>        <span class="va">Z</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="va">type</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Never-Taker"</span>, <span class="st">"Defier"</span><span class="op">)</span> <span class="op">~</span> <span class="fl">0</span>,</span>
+<span>        <span class="va">Z</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="va">type</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Never-Taker"</span>, <span class="st">"Complier"</span><span class="op">)</span> <span class="op">~</span> <span class="fl">0</span>,</span>
+<span>        <span class="va">Z</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="va">type</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Always-Taker"</span>, <span class="st">"Defier"</span><span class="op">)</span> <span class="op">~</span> <span class="fl">1</span></span>
+<span>      <span class="op">)</span>,</span>
+<span>      conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_D_1</span> <span class="op">-</span> <span class="va">Y_D_0</span><span class="op">)</span>,</span>
+<span>    CACE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_D_1</span><span class="op">[</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Complier"</span><span class="op">]</span> <span class="op">-</span> <span class="va">Y_D_0</span><span class="op">[</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Complier"</span><span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">conduct_ra</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>D <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">D</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span>,</span>
+<span>                      Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">D</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">Y</span> <span class="op">~</span> <span class="va">D</span> <span class="op">|</span> <span class="va">Z</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">iv_robust</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATE"</span>, <span class="st">"CACE"</span><span class="op">)</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Two stage least squares"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">Y</span> <span class="op">~</span> <span class="va">D</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">lm_robust</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATE"</span>, <span class="st">"CACE"</span><span class="op">)</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"As treated"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">Y</span> <span class="op">~</span> <span class="va">D</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">lm_robust</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATE"</span>, <span class="st">"CACE"</span><span class="op">)</span>,</span>
+<span>    subset <span class="op">=</span> <span class="va">D</span> <span class="op">==</span> <span class="va">Z</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Per protocol"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Figure @ref(fig:figure-18-9) represents the encouragement design as a DAG. No arrows lead into <span class="math inline">\(Z\)</span>, because the treatment was randomly assigned. The compliance type <span class="math inline">\(C\)</span>, the assignment <span class="math inline">\(Z\)</span>, and unobserved heterogeneity <span class="math inline">\(U\)</span> conspire to set the level of <span class="math inline">\(D\)</span>. The outcome <span class="math inline">\(Y\)</span> is affected by the treatment <span class="math inline">\(D\)</span> of course, but also by compliance type <span class="math inline">\(C\)</span> and unobserved heterogeneity <span class="math inline">\(U\)</span>. The required exclusion restriction that <span class="math inline">\(Z\)</span> only affect <span class="math inline">\(Y\)</span> through <span class="math inline">\(D\)</span> is represented by the <em>lack</em> of an arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span>. The deficiencies of the as-treated and per-protocol analysis strategies can be learned from the DAG as well. <span class="math inline">\(D\)</span> is a collider, so conditioning on it would open up back-door paths between <span class="math inline">\(Z\)</span>, <span class="math inline">\(C\)</span>, and <span class="math inline">\(U\)</span>, leading to bias of unknown direction and magnitude.</p>
@@ -722,7 +722,7 @@ div.csl-indent {
 <p>The design diagnosis shows the sampling distribution of the three answer strategies and compares it to two potential inquiries: the complier average causal effect and the average treatment effect. Our preferred method, two-stage least squares, is <em>biased</em> for the ATE. Because we can’t learn about the effects of treatment among never-takers or always-takers, any estimate of the true ATE will be necessarily be prone to bias, except in the happy circumstance that never-takers and always-takers happen to be just like compliers in terms of their potential outcomes.</p>
 <p>Two-stage least squares does a much better job of estimating the complier average causal effect. Even though the sampling distribution is wider than those for the per-protocol and as-treated analysis, it is at least centered on a well-defined inquiry. By contrast, the other two answer strategies are biased for either target.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_18.9</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_18.8</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.9</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_18.8</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">

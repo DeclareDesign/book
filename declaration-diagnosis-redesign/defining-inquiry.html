@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - 8&nbsp; Defining the inquiry</title>
 <style>
@@ -872,25 +872,25 @@ div.csl-indent {
 <div id="declaration-7-1" class="definition">
 <p>Super-population, population, and finite sample design</p>
 <div class="cell" data-file="scripts_declarations/declaration_7.1.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_7.1</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="fl">20</span>, 
-    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    Y <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="va">U</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    superpopulation_mean <span class="op">=</span> <span class="fl">1</span>,
-    population_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_sampling</span><span class="op">(</span>
-    S <span class="op">=</span> <span class="fu">complete_rs</span><span class="op">(</span><span class="va">N</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>sample_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_7.1</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="fl">20</span>, </span>
+<span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    Y <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="va">U</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    superpopulation_mean <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>    population_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_sampling</span><span class="op">(</span></span>
+<span>    S <span class="op">=</span> <span class="fu">complete_rs</span><span class="op">(</span><span class="va">N</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>sample_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Here is one draw on the estimands:</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu">draw_estimands</span><span class="op">(</span><span class="va">declaration_7.1</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">draw_estimands</span><span class="op">(</span><span class="va">declaration_7.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">

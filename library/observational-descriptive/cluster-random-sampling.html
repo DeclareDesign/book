@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Cluster random sampling</title>
 <style>
@@ -591,85 +591,85 @@ div.csl-indent {
 <p>How does clustering change the research design relative to the individual-level design? First, we need to elaborate the model <span class="math inline">\(M\)</span> to make the clustering hierarchy explicit. In the declaration below, we imagine our research site is two states in Nigeria. Localities are nested within states and individuals are nested within localities. Second, we want to respect this hierarchy when thinking about the distribution of outcomes. Individuals living in the same locality are likely to share political viewpoints, either through the explicit transmission of political views or because of common exposure to political influence. The “intra-cluster correlation” or ICC is an extremely important statistic for the design of cluster-sampled studies. It describes what fraction of the total variation in the outcome can be attributed to the across-cluster differences in average outcomes.</p>
 <p>In the declaration below, the latent outcome <code>Y_star</code> describes subject’s latent political preferences. This latent outcome is a function of locality differences and individual differences. The variances of these two shocks (difference parameters) are determined by the <code>ICC</code> parameter. If ICC were equal to 1, the variance across localities would be equal to 1, and all individuals within a locality would have exactly the same political preferences. If ICC were equal to zero, then the variation in preferences would be entirely at the individual level.</p>
 <div class="cell" data-file="scripts_declarations/declaration_15.3a.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">ICC</span> <span class="op">&lt;-</span> <span class="fl">0.4</span>
-
-<span class="va">two_nigerian_states</span> <span class="op">&lt;-</span>
-  <span class="fu">fabricate</span><span class="op">(</span>
-    state <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">2</span>, 
-                      state_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"taraba"</span>, <span class="st">"kwara"</span><span class="op">)</span>,
-                      state_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.2</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">)</span>,
-    locality <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>
-      N <span class="op">=</span> <span class="fl">500</span>,
-      locality_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, <span class="va">state_mean</span>, <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">ICC</span><span class="op">)</span><span class="op">)</span>
-    <span class="op">)</span>,
-    individual <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>
-      N <span class="op">=</span> <span class="fl">100</span>,
-      individual_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">ICC</span><span class="op">)</span><span class="op">)</span>,
-      Y_star <span class="op">=</span> <span class="va">locality_shock</span> <span class="op">+</span> <span class="va">individual_shock</span>
-    <span class="op">)</span>
-  <span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ICC</span> <span class="op">&lt;-</span> <span class="fl">0.4</span></span>
+<span></span>
+<span><span class="va">two_nigerian_states</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">fabricate</span><span class="op">(</span></span>
+<span>    state <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">2</span>, </span>
+<span>                      state_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"taraba"</span>, <span class="st">"kwara"</span><span class="op">)</span>,</span>
+<span>                      state_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.2</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    locality <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>      N <span class="op">=</span> <span class="fl">500</span>,</span>
+<span>      locality_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, <span class="va">state_mean</span>, <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">ICC</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    individual <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>      N <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>      individual_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">ICC</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>      Y_star <span class="op">=</span> <span class="va">locality_shock</span> <span class="op">+</span> <span class="va">individual_shock</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Many different cluster sampling designs are possible, but a standard choice is a two-stage design in which first, some but not all clusters are sampled, and second, some but not all units within a cluster are sampled. The sampling at either stage may be stratified by covariates at the appropriate level. The first stage can be stratified by cluster-level covariates and the second stage can be stratified by individual-level covariates in order to improve precision. In this declaration, we form cluster-level strata by state.</p>
 <p>The two stage random-sampling design raises an important tradeoff: Should we invest in sampling more clusters or in more individuals per cluster? Typically, adding the marginal cluster is more expensive than adding the marginal individual. We formalize the tradeoff with a “budget function” that returns the largest individual level inclusion probability that is budget-compatible with a given cluster sampling probability:</p>
 <div class="cell" data-file="scripts_declarations/declaration_15.3b.R">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">budget_function</span> <span class="op">&lt;-</span> 
-  <span class="kw">function</span><span class="op">(</span><span class="va">cluster_prob</span><span class="op">)</span><span class="op">{</span>
-    <span class="va">budget</span> <span class="op">=</span> <span class="fl">20000</span>
-    <span class="va">cluster_cost</span> <span class="op">=</span> <span class="fl">20</span>
-    <span class="va">individual_cost</span> <span class="op">=</span> <span class="fl">2</span>
-    <span class="va">n_clusters</span> <span class="op">=</span> <span class="fl">1000</span>
-    <span class="va">n_individuals_per_cluster</span> <span class="op">=</span> <span class="fl">100</span>
-    
-    <span class="va">total_cluster_cost</span> <span class="op">&lt;-</span>
-      <span class="va">cluster_prob</span> <span class="op">*</span> <span class="va">n_clusters</span> <span class="op">*</span> <span class="va">cluster_cost</span>
-    
-    <span class="va">remaining_funds</span> <span class="op">&lt;-</span> <span class="va">budget</span> <span class="op">-</span> <span class="va">total_cluster_cost</span>
-    
-    <span class="va">sampleable_individuals</span> <span class="op">&lt;-</span> 
-      <span class="va">cluster_prob</span> <span class="op">*</span> <span class="va">n_clusters</span> <span class="op">*</span> <span class="va">n_individuals_per_cluster</span>
-    
-    <span class="va">individual_prob</span> <span class="op">=</span> 
-      <span class="op">(</span><span class="va">remaining_funds</span><span class="op">/</span><span class="va">individual_cost</span><span class="op">)</span><span class="op">/</span><span class="va">sampleable_individuals</span>
-    
-    <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">pmin</a></span><span class="op">(</span><span class="va">individual_prob</span>, <span class="fl">1</span><span class="op">)</span>
-  <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">budget_function</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="kw">function</span><span class="op">(</span><span class="va">cluster_prob</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">budget</span> <span class="op">=</span> <span class="fl">20000</span></span>
+<span>    <span class="va">cluster_cost</span> <span class="op">=</span> <span class="fl">20</span></span>
+<span>    <span class="va">individual_cost</span> <span class="op">=</span> <span class="fl">2</span></span>
+<span>    <span class="va">n_clusters</span> <span class="op">=</span> <span class="fl">1000</span></span>
+<span>    <span class="va">n_individuals_per_cluster</span> <span class="op">=</span> <span class="fl">100</span></span>
+<span>    </span>
+<span>    <span class="va">total_cluster_cost</span> <span class="op">&lt;-</span></span>
+<span>      <span class="va">cluster_prob</span> <span class="op">*</span> <span class="va">n_clusters</span> <span class="op">*</span> <span class="va">cluster_cost</span></span>
+<span>    </span>
+<span>    <span class="va">remaining_funds</span> <span class="op">&lt;-</span> <span class="va">budget</span> <span class="op">-</span> <span class="va">total_cluster_cost</span></span>
+<span>    </span>
+<span>    <span class="va">sampleable_individuals</span> <span class="op">&lt;-</span> </span>
+<span>      <span class="va">cluster_prob</span> <span class="op">*</span> <span class="va">n_clusters</span> <span class="op">*</span> <span class="va">n_individuals_per_cluster</span></span>
+<span>    </span>
+<span>    <span class="va">individual_prob</span> <span class="op">=</span> </span>
+<span>      <span class="op">(</span><span class="va">remaining_funds</span><span class="op">/</span><span class="va">individual_cost</span><span class="op">)</span><span class="op">/</span><span class="va">sampleable_individuals</span></span>
+<span>    </span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">pmin</a></span><span class="op">(</span><span class="va">individual_prob</span>, <span class="fl">1</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We use the output of this function to determine the probability of an individual being sampled, conditional on their cluster being sampled.</p>
 <p>Lastly, the answer strategy must also respects the data strategy by clustering standard errors at the highest level at which units are sampled, which in this case is the locality.</p>
 <div id="declaration-15-3" class="definition">
 <p>Cluster random sampling design</p>
 <div class="cell" data-file="scripts_declarations/declaration_15.3c.R">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_15.3</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>data <span class="op">=</span> <span class="va">two_nigerian_states</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">Y_star</span>, <span class="fl">7</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>Y_bar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_sampling</span><span class="op">(</span>
-    S_cluster <span class="op">=</span> <span class="fu">strata_and_cluster_rs</span><span class="op">(</span>
-      strata <span class="op">=</span> <span class="va">state</span>,
-      clusters <span class="op">=</span> <span class="va">locality</span>,
-      prob <span class="op">=</span> <span class="va">cluster_prob</span>
-    <span class="op">)</span>,
-    filter <span class="op">=</span> <span class="va">S_cluster</span> <span class="op">==</span> <span class="fl">1</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_sampling</span><span class="op">(</span>
-    S_individual <span class="op">=</span> 
-      <span class="fu">strata_rs</span><span class="op">(</span>strata <span class="op">=</span> <span class="va">locality</span>, 
-                prob <span class="op">=</span> <span class="fu">budget_function</span><span class="op">(</span><span class="va">cluster_prob</span><span class="op">)</span><span class="op">)</span>,
-    filter <span class="op">=</span> <span class="va">S_individual</span> <span class="op">==</span> <span class="fl">1</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">1</span>,
-                    clusters <span class="op">=</span> <span class="va">locality</span>,
-                    se_type <span class="op">=</span> <span class="st">"stata"</span>,
-                    inquiry <span class="op">=</span> <span class="st">"Y_bar"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_15.3</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>data <span class="op">=</span> <span class="va">two_nigerian_states</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">Y_star</span>, <span class="fl">7</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>Y_bar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_sampling</span><span class="op">(</span></span>
+<span>    S_cluster <span class="op">=</span> <span class="fu">strata_and_cluster_rs</span><span class="op">(</span></span>
+<span>      strata <span class="op">=</span> <span class="va">state</span>,</span>
+<span>      clusters <span class="op">=</span> <span class="va">locality</span>,</span>
+<span>      prob <span class="op">=</span> <span class="va">cluster_prob</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    filter <span class="op">=</span> <span class="va">S_cluster</span> <span class="op">==</span> <span class="fl">1</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_sampling</span><span class="op">(</span></span>
+<span>    S_individual <span class="op">=</span> </span>
+<span>      <span class="fu">strata_rs</span><span class="op">(</span>strata <span class="op">=</span> <span class="va">locality</span>, </span>
+<span>                prob <span class="op">=</span> <span class="fu">budget_function</span><span class="op">(</span><span class="va">cluster_prob</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    filter <span class="op">=</span> <span class="va">S_individual</span> <span class="op">==</span> <span class="fl">1</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">1</span>,</span>
+<span>                    clusters <span class="op">=</span> <span class="va">locality</span>,</span>
+<span>                    se_type <span class="op">=</span> <span class="st">"stata"</span>,</span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"Y_bar"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>We redesign Declaration @ref(def:declaration-15-3) over various levels of the cluster-level probability of sampling, which in turn sets the probability of sampling at the individual level. Figure @ref(fig:figure-15-3) shows that for a good while, adding additional clusters yields precision gains. At some point, however, the cost to sample size within cluster is too large, and we start seeing precision loss around a probability of 0.75 of a cluster being sampled. The precise combination of design parameters that minimize the standard deviation of the sampling distribution will depend on nearly every aspect of the design declaration, but the most important are the total budget, the relative costs of clusters and individuals, and the ICC. When the ICC is zero, we should invest in few clusters and many individuals. When the ICC is one, we should invest in many clusters and few individuals.</p>
 <div id="diagnosis-15-3" class="lemma">
 <p>Cluster random sampling diagnosis</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu">redesign</span><span class="op">(</span><span class="va">declaration_15.3</span>, 
-                    cluster_prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.9</span>, <span class="fl">0.1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">diagnosis_15.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">designs</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu">redesign</span><span class="op">(</span><span class="va">declaration_15.3</span>, </span>
+<span>                    cluster_prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.9</span>, <span class="fl">0.1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">diagnosis_15.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">designs</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 

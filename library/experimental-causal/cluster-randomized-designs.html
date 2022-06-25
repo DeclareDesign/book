@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Cluster-randomized experiments</title>
 <style>
@@ -594,42 +594,42 @@ div.csl-indent {
 <div id="declaration-18-5" class="definition">
 <p>Blocked and clustered randomized trial</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.5.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">ICC</span> <span class="op">&lt;-</span> <span class="fl">0.9</span>
-
-<span class="va">declaration_18.5</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    cluster <span class="op">=</span>
-      <span class="fu">add_level</span><span class="op">(</span>
-        N <span class="op">=</span> <span class="fl">10</span>,
-        cluster_size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">50</span>, <span class="fl">10</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span>,
-        cluster_shock <span class="op">=</span>
-          <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">cluster_size</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">ICC</span><span class="op">)</span>,
-        cluster_tau <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">ICC</span><span class="op">)</span><span class="op">)</span>
-      <span class="op">)</span>,
-    individual <span class="op">=</span>
-      <span class="fu">add_level</span><span class="op">(</span>
-        N <span class="op">=</span> <span class="va">cluster_size</span>,
-        individual_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">ICC</span><span class="op">)</span><span class="op">)</span>,
-        individual_tau <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">ICC</span><span class="op">)</span><span class="op">)</span>,
-        Y_Z_0 <span class="op">=</span> <span class="va">cluster_shock</span> <span class="op">+</span> <span class="va">individual_shock</span>,
-        Y_Z_1 <span class="op">=</span> <span class="va">Y_Z_0</span> <span class="op">+</span> <span class="va">cluster_tau</span> <span class="op">+</span> <span class="va">individual_tau</span>
-      <span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">block_and_cluster_ra</span><span class="op">(</span>clusters <span class="op">=</span> <span class="va">cluster</span>, blocks <span class="op">=</span> <span class="va">cluster_size</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>,
-                    clusters <span class="op">=</span> <span class="va">cluster</span>,
-                    inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ICC</span> <span class="op">&lt;-</span> <span class="fl">0.9</span></span>
+<span></span>
+<span><span class="va">declaration_18.5</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    cluster <span class="op">=</span></span>
+<span>      <span class="fu">add_level</span><span class="op">(</span></span>
+<span>        N <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>        cluster_size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">50</span>, <span class="fl">10</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span>,</span>
+<span>        cluster_shock <span class="op">=</span></span>
+<span>          <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">cluster_size</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">ICC</span><span class="op">)</span>,</span>
+<span>        cluster_tau <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">ICC</span><span class="op">)</span><span class="op">)</span></span>
+<span>      <span class="op">)</span>,</span>
+<span>    individual <span class="op">=</span></span>
+<span>      <span class="fu">add_level</span><span class="op">(</span></span>
+<span>        N <span class="op">=</span> <span class="va">cluster_size</span>,</span>
+<span>        individual_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">ICC</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>        individual_tau <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">ICC</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>        Y_Z_0 <span class="op">=</span> <span class="va">cluster_shock</span> <span class="op">+</span> <span class="va">individual_shock</span>,</span>
+<span>        Y_Z_1 <span class="op">=</span> <span class="va">Y_Z_0</span> <span class="op">+</span> <span class="va">cluster_tau</span> <span class="op">+</span> <span class="va">individual_tau</span></span>
+<span>      <span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">block_and_cluster_ra</span><span class="op">(</span>clusters <span class="op">=</span> <span class="va">cluster</span>, blocks <span class="op">=</span> <span class="va">cluster_size</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>,</span>
+<span>                    clusters <span class="op">=</span> <span class="va">cluster</span>,</span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-18-5" class="lemma">
 <p>Redesigning over values of ICC</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_18.5</span> <span class="op">&lt;-</span>
-  <span class="va">declaration_18.5</span> |&gt;
-  <span class="fu">redesign</span><span class="op">(</span>ICC <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.9</span>, by <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span><span class="op">)</span> |&gt; 
-  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.5</span> <span class="op">&lt;-</span></span>
+<span>  <span class="va">declaration_18.5</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>ICC <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.9</span>, by <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Figure @ref(fig:figure-18-5) shows the sampling distribution of the difference-in-means estimator under cluster random assignment at three levels of intra-cluster correlation ranging from 0.1 to 0.9.</p>
 <p>The top row of panels plots the treatment effect on the vertical axis and the untreated potential outcome on the horizontal axis. Clusters of units are circled. At low levels of ICC, the circles all overlap, because the differences across clusters are smaller than the differences within cluster. At high levels of ICC, the differences across clusters are more pronounced than differences within cluster. The bottom row of panels shows that the sampling distribution of the difference-in-means estimator spreads out as the ICC increases. At low levels of ICC, the standard error is small; at high levels the standard error is high.</p>

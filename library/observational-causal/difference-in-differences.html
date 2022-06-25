@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Difference-in-differences</title>
 <style>
@@ -594,59 +594,59 @@ div.csl-indent {
 <div id="declaration-16-3" class="definition">
 <p>Difference-in-differences design</p>
 <div class="cell" data-file="scripts_declarations/declaration_16.3.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">DIDmultiplegt</span><span class="op">)</span>
-
-<span class="va">N_units</span> <span class="op">&lt;-</span> <span class="fl">20</span>
-<span class="va">N_time_periods</span> <span class="op">&lt;-</span> <span class="fl">20</span>
-
-<span class="va">declaration_16.3</span> <span class="op">&lt;-</span> 
-  <span class="fu">declare_model</span><span class="op">(</span>
-  units <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="va">N_units</span>, 
-    U_unit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>, 
-    D_unit <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">U_unit</span> <span class="op">&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">U_unit</span><span class="op">)</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>,
-    D_time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="va">N_time_periods</span>, <span class="va">N</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-  <span class="op">)</span>,
-  periods <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="va">N_time_periods</span>,
-    U_time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    nest <span class="op">=</span> <span class="cn">FALSE</span>
-  <span class="op">)</span>,
-  unit_period <span class="op">=</span> <span class="fu">cross_levels</span><span class="op">(</span>
-    by <span class="op">=</span> <span class="fu">join_using</span><span class="op">(</span><span class="va">units</span>, <span class="va">periods</span><span class="op">)</span>, 
-    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">U</span> <span class="op">+</span> <span class="va">U_unit</span> <span class="op">+</span> <span class="va">U_time</span> <span class="op">+</span> 
-                         <span class="va">D</span> <span class="op">*</span> <span class="op">(</span><span class="fl">0.2</span> <span class="op">-</span> <span class="fl">1</span> <span class="op">*</span> <span class="op">(</span><span class="va">D_time</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">periods</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, 
-                       conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>D <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,
-    D <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">D_unit</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">periods</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="va">D_time</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>,
-    D_lag <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/rdddr/man/lag_by_group.html">lag_by_group</a></span><span class="op">(</span><span class="va">D</span>, groups <span class="op">=</span> <span class="va">units</span>, n <span class="op">=</span> <span class="fl">1</span>, order_by <span class="op">=</span> <span class="va">periods</span><span class="op">)</span>
-  <span class="op">)</span>
-<span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    ATT <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_D_1</span> <span class="op">-</span> <span class="va">Y_D_0</span><span class="op">)</span>, 
-    subset <span class="op">=</span> <span class="va">D</span> <span class="op">==</span> <span class="fl">1</span>
-  <span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    ATT_switchers <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_D_1</span> <span class="op">-</span> <span class="va">Y_D_0</span><span class="op">)</span>, 
-    subset <span class="op">=</span> <span class="va">D</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="va">D_lag</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">D_lag</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">D</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    <span class="va">Y</span> <span class="op">~</span> <span class="va">D</span>, fixed_effects <span class="op">=</span> <span class="op">~</span> <span class="va">units</span> <span class="op">+</span> <span class="va">periods</span>,
-    .method <span class="op">=</span> <span class="va">lm_robust</span>,
-    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATT"</span>, <span class="st">"ATT_switchers"</span><span class="op">)</span>,
-    label <span class="op">=</span> <span class="st">"twoway-fe"</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    Y <span class="op">=</span> <span class="st">"Y"</span>, 
-    G <span class="op">=</span> <span class="st">"units"</span>, 
-    T <span class="op">=</span> <span class="st">"periods"</span>, 
-    D <span class="op">=</span> <span class="st">"D"</span>,
-    handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="va">did_multiplegt_tidy</span><span class="op">)</span>,
-    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATT"</span>, <span class="st">"ATT_switchers"</span><span class="op">)</span>,
-    label <span class="op">=</span> <span class="st">"chaisemartin"</span>
-  <span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">DIDmultiplegt</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">N_units</span> <span class="op">&lt;-</span> <span class="fl">20</span></span>
+<span><span class="va">N_time_periods</span> <span class="op">&lt;-</span> <span class="fl">20</span></span>
+<span></span>
+<span><span class="va">declaration_16.3</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>  units <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="va">N_units</span>, </span>
+<span>    U_unit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>, </span>
+<span>    D_unit <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">U_unit</span> <span class="op">&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">U_unit</span><span class="op">)</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>,</span>
+<span>    D_time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="va">N_time_periods</span>, <span class="va">N</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  periods <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="va">N_time_periods</span>,</span>
+<span>    U_time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    nest <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  unit_period <span class="op">=</span> <span class="fu">cross_levels</span><span class="op">(</span></span>
+<span>    by <span class="op">=</span> <span class="fu">join_using</span><span class="op">(</span><span class="va">units</span>, <span class="va">periods</span><span class="op">)</span>, </span>
+<span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">U</span> <span class="op">+</span> <span class="va">U_unit</span> <span class="op">+</span> <span class="va">U_time</span> <span class="op">+</span> </span>
+<span>                         <span class="va">D</span> <span class="op">*</span> <span class="op">(</span><span class="fl">0.2</span> <span class="op">-</span> <span class="fl">1</span> <span class="op">*</span> <span class="op">(</span><span class="va">D_time</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">periods</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>                       conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>D <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    D <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">D_unit</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">periods</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="va">D_time</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>,</span>
+<span>    D_lag <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/rdddr/man/lag_by_group.html">lag_by_group</a></span><span class="op">(</span><span class="va">D</span>, groups <span class="op">=</span> <span class="va">units</span>, n <span class="op">=</span> <span class="fl">1</span>, order_by <span class="op">=</span> <span class="va">periods</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    ATT <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_D_1</span> <span class="op">-</span> <span class="va">Y_D_0</span><span class="op">)</span>, </span>
+<span>    subset <span class="op">=</span> <span class="va">D</span> <span class="op">==</span> <span class="fl">1</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    ATT_switchers <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_D_1</span> <span class="op">-</span> <span class="va">Y_D_0</span><span class="op">)</span>, </span>
+<span>    subset <span class="op">=</span> <span class="va">D</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="va">D_lag</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">D_lag</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">D</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">Y</span> <span class="op">~</span> <span class="va">D</span>, fixed_effects <span class="op">=</span> <span class="op">~</span> <span class="va">units</span> <span class="op">+</span> <span class="va">periods</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">lm_robust</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATT"</span>, <span class="st">"ATT_switchers"</span><span class="op">)</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"twoway-fe"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    Y <span class="op">=</span> <span class="st">"Y"</span>, </span>
+<span>    G <span class="op">=</span> <span class="st">"units"</span>, </span>
+<span>    T <span class="op">=</span> <span class="st">"periods"</span>, </span>
+<span>    D <span class="op">=</span> <span class="st">"D"</span>,</span>
+<span>    handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="va">did_multiplegt_tidy</span><span class="op">)</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATT"</span>, <span class="st">"ATT_switchers"</span><span class="op">)</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"chaisemartin"</span></span>
+<span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>We define hierarchical data with time periods nested within groups, such that each of the 20 units have 20 time periods from 1 to 20. We assign units to be treated at some point in the period (<code>D_unit</code>), and confound treatment assignment with unobservable unit-specific features <code>U_unit</code>. (If there were no confounding, we would not need the parallel pretrends assumption.) In addition, the timing of treatment is randomly assigned (<code>D_time</code>). The assignment <code>D</code> then is jointly determined by whether the unit is treated and whether the current period is after the assigned <code>D_time</code>. We allow for unit-specific variation <code>U_unit</code> and time-specific variation <code>U_time</code> that affects the outcome as well as unit-period characteristics <code>U</code>. Potential outcomes are a function of these unit-, time-, and unit-time-specific characteristics, and a treatment effect that varies according to when units are treated (more on the importance of this treatment effect heterogeneity below).</p>
@@ -655,7 +655,7 @@ div.csl-indent {
 <div id="diagnosis-16-3" class="lemma">
 <p>Difference-in-Differences diagnosis</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_16.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_16.3</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_16.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_16.3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">

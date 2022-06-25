@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Conjoint experiments</title>
 <style>
@@ -610,88 +610,88 @@ div.csl-indent {
 <div id="declaration-17-5" class="definition">
 <p>Conjoint experiment design</p>
 <div class="cell" data-file="scripts_declarations/declaration_17.5.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">cjoint</span><span class="op">)</span>
-<span class="co">#&gt; Loading required package: sandwich</span>
-<span class="co">#&gt; Loading required package: lmtest</span>
-<span class="co">#&gt; Loading required package: zoo</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'zoo'</span>
-<span class="co">#&gt; The following objects are masked from 'package:base':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     as.Date, as.Date.numeric</span>
-<span class="co">#&gt; Loading required package: survey</span>
-<span class="co">#&gt; Loading required package: grid</span>
-<span class="co">#&gt; Loading required package: Matrix</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'Matrix'</span>
-<span class="co">#&gt; The following objects are masked from 'package:tidyr':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     expand, pack, unpack</span>
-<span class="co">#&gt; Loading required package: survival</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'survey'</span>
-<span class="co">#&gt; The following object is masked from 'package:dagitty':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     neighbours</span>
-<span class="co">#&gt; The following object is masked from 'package:graphics':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     dotchart</span>
-<span class="co">#&gt; cjoint: AMCE Estimator for Conjoint Experiments</span>
-<span class="co">#&gt; Version: 2.1.0</span>
-<span class="co">#&gt; Authors: Soubhik Barari, Elissa Berwick, Jens Hainmueller, Daniel Hopkins, Sean Liu, Anton Strezhnev, Teppei Yamamoto</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'cjoint'</span>
-<span class="co">#&gt; The following object is masked from 'package:tibble':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     view</span>
-
-<span class="co"># Design features</span>
-<span class="va">N_subjects</span> <span class="op">&lt;-</span> <span class="fl">500</span>
-<span class="va">N_tasks</span> <span class="op">&lt;-</span> <span class="fl">3</span>
-
-<span class="co"># Attributes and levels</span>
-<span class="va">levels_list</span> <span class="op">=</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
-    gender <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Man"</span>, <span class="st">"Woman"</span><span class="op">)</span>,
-    party <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Left"</span>, <span class="st">"Right"</span><span class="op">)</span>,
-    region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"North"</span>, <span class="st">"South"</span>, <span class="st">"East"</span>, <span class="st">"West"</span><span class="op">)</span>
-  <span class="op">)</span>
-
-<span class="co"># Conjectured utility function</span>
-<span class="va">conjoint_utility</span> <span class="op">&lt;-</span>
-  <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">{</span>
-    <span class="va">data</span> |&gt;
-      <span class="fu">mutate</span><span class="op">(</span>U <span class="op">=</span> <span class="fl">0.25</span><span class="op">*</span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"Woman"</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"North"</span>, <span class="st">"East"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-               <span class="fl">0.5</span><span class="op">*</span><span class="op">(</span><span class="va">party</span> <span class="op">==</span> <span class="st">"Right"</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"North"</span>, <span class="st">"South"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="va">uij</span><span class="op">)</span>
-  <span class="op">}</span>
-
-<span class="va">declaration_17.5</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    subject <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N_subjects</span><span class="op">)</span>,
-    task <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N_tasks</span>, task <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="va">N_tasks</span><span class="op">)</span>,
-    profile <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>
-      N <span class="op">=</span> <span class="fl">2</span>,
-      profile <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span>,
-      uij <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
-    <span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>handler <span class="op">=</span> <span class="va">conjoint_inquiries</span>,
-                  levels_list <span class="op">=</span> <span class="va">levels_list</span>,
-                  utility_fn <span class="op">=</span> <span class="va">conjoint_utility</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>handler <span class="op">=</span> <span class="va">conjoint_assignment</span>,
-                     levels_list <span class="op">=</span> <span class="va">levels_list</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>handler <span class="op">=</span> <span class="va">conjoint_measurement</span>,
-                      utility_fn <span class="op">=</span> <span class="va">conjoint_utility</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">choice</span> <span class="op">~</span> <span class="va">gender</span> <span class="op">+</span> <span class="va">party</span> <span class="op">+</span> <span class="va">region</span>,
-                    respondent.id <span class="op">=</span> <span class="st">"subject"</span>,
-                    .method <span class="op">=</span> <span class="va">amce</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">cjoint</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: sandwich</span></span>
+<span><span class="co">#&gt; Loading required package: lmtest</span></span>
+<span><span class="co">#&gt; Loading required package: zoo</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'zoo'</span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     as.Date, as.Date.numeric</span></span>
+<span><span class="co">#&gt; Loading required package: survey</span></span>
+<span><span class="co">#&gt; Loading required package: grid</span></span>
+<span><span class="co">#&gt; Loading required package: Matrix</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'Matrix'</span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:tidyr':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     expand, pack, unpack</span></span>
+<span><span class="co">#&gt; Loading required package: survival</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'survey'</span></span>
+<span><span class="co">#&gt; The following object is masked from 'package:dagitty':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     neighbours</span></span>
+<span><span class="co">#&gt; The following object is masked from 'package:graphics':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     dotchart</span></span>
+<span><span class="co">#&gt; cjoint: AMCE Estimator for Conjoint Experiments</span></span>
+<span><span class="co">#&gt; Version: 2.1.0</span></span>
+<span><span class="co">#&gt; Authors: Soubhik Barari, Elissa Berwick, Jens Hainmueller, Daniel Hopkins, Sean Liu, Anton Strezhnev, Teppei Yamamoto</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'cjoint'</span></span>
+<span><span class="co">#&gt; The following object is masked from 'package:tibble':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     view</span></span>
+<span></span>
+<span><span class="co"># Design features</span></span>
+<span><span class="va">N_subjects</span> <span class="op">&lt;-</span> <span class="fl">500</span></span>
+<span><span class="va">N_tasks</span> <span class="op">&lt;-</span> <span class="fl">3</span></span>
+<span></span>
+<span><span class="co"># Attributes and levels</span></span>
+<span><span class="va">levels_list</span> <span class="op">=</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>    gender <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Man"</span>, <span class="st">"Woman"</span><span class="op">)</span>,</span>
+<span>    party <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Left"</span>, <span class="st">"Right"</span><span class="op">)</span>,</span>
+<span>    region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"North"</span>, <span class="st">"South"</span>, <span class="st">"East"</span>, <span class="st">"West"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Conjectured utility function</span></span>
+<span><span class="va">conjoint_utility</span> <span class="op">&lt;-</span></span>
+<span>  <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">data</span> <span class="op">|&gt;</span></span>
+<span>      <span class="fu">mutate</span><span class="op">(</span>U <span class="op">=</span> <span class="fl">0.25</span><span class="op">*</span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"Woman"</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"North"</span>, <span class="st">"East"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>               <span class="fl">0.5</span><span class="op">*</span><span class="op">(</span><span class="va">party</span> <span class="op">==</span> <span class="st">"Right"</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"North"</span>, <span class="st">"South"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="va">uij</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span></span>
+<span><span class="va">declaration_17.5</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    subject <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N_subjects</span><span class="op">)</span>,</span>
+<span>    task <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N_tasks</span>, task <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="va">N_tasks</span><span class="op">)</span>,</span>
+<span>    profile <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>      N <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>      profile <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span>,</span>
+<span>      uij <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>handler <span class="op">=</span> <span class="va">conjoint_inquiries</span>,</span>
+<span>                  levels_list <span class="op">=</span> <span class="va">levels_list</span>,</span>
+<span>                  utility_fn <span class="op">=</span> <span class="va">conjoint_utility</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>handler <span class="op">=</span> <span class="va">conjoint_assignment</span>,</span>
+<span>                     levels_list <span class="op">=</span> <span class="va">levels_list</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>handler <span class="op">=</span> <span class="va">conjoint_measurement</span>,</span>
+<span>                      utility_fn <span class="op">=</span> <span class="va">conjoint_utility</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">choice</span> <span class="op">~</span> <span class="va">gender</span> <span class="op">+</span> <span class="va">party</span> <span class="op">+</span> <span class="va">region</span>,</span>
+<span>                    respondent.id <span class="op">=</span> <span class="st">"subject"</span>,</span>
+<span>                    .method <span class="op">=</span> <span class="va">amce</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-17-4" class="lemma">
 <p>Diagnosis of the conjoint experiment design</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_17.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_17.4</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_17.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_17.4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Figure @ref(fig:figure-17-3) shows the sampling distribution of the five AMCE estimators. All five are unbiased, but with only 500 subjects evaluating three pairs of candidates, the power for the smaller AMCEs is less than ideal.</p>
 <div class="cell">

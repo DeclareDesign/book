@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Stepped-wedge experiments</title>
 <style>
@@ -603,38 +603,38 @@ div.csl-indent {
 <div id="declaration-18-10" class="definition">
 <p>Stepped-wedge design</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.10.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">effect_size</span> <span class="op">&lt;-</span> <span class="fl">0.35</span>
-
-<span class="va">declaration_18.10</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    units <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>
-      N <span class="op">=</span> <span class="fl">100</span>, 
-      U_unit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>
-    <span class="op">)</span>,
-    periods <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>
-      N <span class="op">=</span> <span class="fl">3</span>,
-      time <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">periods</span><span class="op">)</span>,
-      U_time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-      nest <span class="op">=</span> <span class="cn">FALSE</span>
-    <span class="op">)</span>,
-    unit_period <span class="op">=</span> <span class="fu">cross_levels</span><span class="op">(</span>
-      by <span class="op">=</span> <span class="fu">join_using</span><span class="op">(</span><span class="va">units</span>, <span class="va">periods</span><span class="op">)</span>,
-      U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-      <span class="fu">potential_outcomes</span><span class="op">(</span>
-        <span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">U_unit</span> <span class="op">+</span> <span class="va">U_time</span> <span class="op">+</span> <span class="va">time</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span> <span class="op">+</span> <span class="va">effect_size</span> <span class="op">*</span> <span class="va">Z</span>
-      <span class="op">)</span>
-    <span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>
-    wave <span class="op">=</span> <span class="fu">cluster_ra</span><span class="op">(</span>clusters <span class="op">=</span> <span class="va">units</span>, conditions <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">periods</span><span class="op">)</span><span class="op">)</span>,
-    Z <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">time</span> <span class="op">&gt;=</span> <span class="va">wave</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span>, subset <span class="op">=</span> <span class="va">time</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">time</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, fixed_effects <span class="op">=</span> <span class="op">~</span> <span class="va">periods</span> <span class="op">+</span> <span class="va">units</span>, 
-                    clusters <span class="op">=</span> <span class="va">units</span>, 
-                    subset <span class="op">=</span> <span class="va">time</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">time</span><span class="op">)</span>,
-                    inquiry <span class="op">=</span> <span class="st">"ATE"</span>, label <span class="op">=</span> <span class="st">"TWFE"</span><span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">effect_size</span> <span class="op">&lt;-</span> <span class="fl">0.35</span></span>
+<span></span>
+<span><span class="va">declaration_18.10</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    units <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>      N <span class="op">=</span> <span class="fl">100</span>, </span>
+<span>      U_unit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    periods <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>      N <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>      time <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">periods</span><span class="op">)</span>,</span>
+<span>      U_time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>      nest <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    unit_period <span class="op">=</span> <span class="fu">cross_levels</span><span class="op">(</span></span>
+<span>      by <span class="op">=</span> <span class="fu">join_using</span><span class="op">(</span><span class="va">units</span>, <span class="va">periods</span><span class="op">)</span>,</span>
+<span>      U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>      <span class="fu">potential_outcomes</span><span class="op">(</span></span>
+<span>        <span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">U_unit</span> <span class="op">+</span> <span class="va">U_time</span> <span class="op">+</span> <span class="va">time</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span> <span class="op">+</span> <span class="va">effect_size</span> <span class="op">*</span> <span class="va">Z</span></span>
+<span>      <span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span></span>
+<span>    wave <span class="op">=</span> <span class="fu">cluster_ra</span><span class="op">(</span>clusters <span class="op">=</span> <span class="va">units</span>, conditions <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">periods</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    Z <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">time</span> <span class="op">&gt;=</span> <span class="va">wave</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span>, subset <span class="op">=</span> <span class="va">time</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">time</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, fixed_effects <span class="op">=</span> <span class="op">~</span> <span class="va">periods</span> <span class="op">+</span> <span class="va">units</span>, </span>
+<span>                    clusters <span class="op">=</span> <span class="va">units</span>, </span>
+<span>                    subset <span class="op">=</span> <span class="va">time</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">time</span><span class="op">)</span>,</span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"ATE"</span>, label <span class="op">=</span> <span class="st">"TWFE"</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <section id="when-to-use-a-stepped-wedge-experiment" class="level2"><h2 class="anchored" data-anchor-id="when-to-use-a-stepped-wedge-experiment">When to use a stepped wedge experiment</h2>
@@ -673,39 +673,39 @@ div.csl-indent {
 <div id="declaration-18-11" class="definition">
 <p>Comparison single-period two arm trial design</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.11.R">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_18.11</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="va">n_units</span>, 
-    U_unit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    effect_size <span class="op">=</span> <span class="va">effect_size</span>,
-    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">U_unit</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span> <span class="op">+</span> <span class="va">effect_size</span> <span class="op">*</span> <span class="va">Z</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, m <span class="op">=</span> <span class="va">n_units</span> <span class="op">/</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span>, label <span class="op">=</span> <span class="st">"DIM"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_18.11</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="va">n_units</span>, </span>
+<span>    U_unit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    effect_size <span class="op">=</span> <span class="va">effect_size</span>,</span>
+<span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">U_unit</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span> <span class="op">+</span> <span class="va">effect_size</span> <span class="op">*</span> <span class="va">Z</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, m <span class="op">=</span> <span class="va">n_units</span> <span class="op">/</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span>, label <span class="op">=</span> <span class="st">"DIM"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-18-11" class="lemma">
 <p>Diagnosis of stepped-wedge design compared to two single-period two arm trial designs</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">design_stepped_wedge</span> <span class="op">&lt;-</span> 
-  <span class="va">declaration_18.11</span> |&gt; 
-  <span class="fu">redesign</span><span class="op">(</span>n_units <span class="op">=</span> <span class="fl">100</span>, effect_size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">0.75</span>, by <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span>
-
-<span class="va">design_single_period_100</span> <span class="op">&lt;-</span> 
-  <span class="va">declaration_18.11</span> |&gt; 
-  <span class="fu">redesign</span><span class="op">(</span>n_units <span class="op">=</span> <span class="fl">100</span>, effect_size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">0.75</span>, by <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span>
-  
-<span class="va">design_single_period_200</span> <span class="op">&lt;-</span>
-  <span class="va">declaration_18.11</span> |&gt; 
-  <span class="fu">redesign</span><span class="op">(</span>n_units <span class="op">=</span> <span class="fl">200</span>, effect_size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">0.75</span>, by <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span>
-
-<span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">design_stepped_wedge</span>, <span class="va">design_single_period_100</span>, <span class="va">design_single_period_200</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/attr.html">attr</a></span><span class="op">(</span><span class="va">designs</span>, <span class="st">"names"</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"design_"</span>, <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">designs</span><span class="op">)</span><span class="op">)</span>
-
-<span class="va">diagnosis_18.11</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">designs</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">design_stepped_wedge</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">declaration_18.11</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>n_units <span class="op">=</span> <span class="fl">100</span>, effect_size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">0.75</span>, by <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">design_single_period_100</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">declaration_18.11</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>n_units <span class="op">=</span> <span class="fl">100</span>, effect_size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">0.75</span>, by <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="va">design_single_period_200</span> <span class="op">&lt;-</span></span>
+<span>  <span class="va">declaration_18.11</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>n_units <span class="op">=</span> <span class="fl">200</span>, effect_size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">0.75</span>, by <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">design_stepped_wedge</span>, <span class="va">design_single_period_100</span>, <span class="va">design_single_period_200</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/attr.html">attr</a></span><span class="op">(</span><span class="va">designs</span>, <span class="st">"names"</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"design_"</span>, <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">designs</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">diagnosis_18.11</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">designs</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We plot power curves for the three comparison designs in Figure @ref(fig:figure-18-13). The top line (blue dashed) is the 200-unit study, which is preferred in terms of power, and by a considerable margin. That design involves the same amount of measurement and treatment as the stepped-wedge so may be the same cost. However, if only 100 units are available for study, then the relevant comparison is between the stepped-wedge and the 100-unit two arm study. Here, the stepped-wedge design is preferable in terms of power and may satisfy ethical requirements to eventually treat all subjects.</p>
 <div class="cell">

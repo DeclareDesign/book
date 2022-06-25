@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - 11&nbsp; Redesigning</title>
 <style>
@@ -611,26 +611,26 @@ div.csl-indent {
 <div id="declaration-11-1" class="definition">
 <p>A baseline declaration intended to be redesigned over <span class="math inline">\(N\)</span>.</p>
 <div class="cell" data-file="scripts_declarations/declaration_11.1.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span>
-
-<span class="va">declaration_11.1</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.55</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_test</span><span class="op">(</span>handler <span class="op">=</span>
-                 <span class="fu">label_estimator</span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span>
-                   <span class="va">test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/prop.test.html">prop.test</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">Y</span><span class="op">)</span>, p <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>
-                   <span class="fu">tidy</span><span class="op">(</span><span class="va">test</span><span class="op">)</span>
-                 <span class="op">}</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
+<span></span>
+<span><span class="va">declaration_11.1</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.55</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_test</span><span class="op">(</span>handler <span class="op">=</span></span>
+<span>                 <span class="fu">label_estimator</span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>                   <span class="va">test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/prop.test.html">prop.test</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">Y</span><span class="op">)</span>, p <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span>
+<span>                   <span class="fu">tidy</span><span class="op">(</span><span class="va">test</span><span class="op">)</span></span>
+<span>                 <span class="op">}</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-11-1" class="lemma">
 <p>Diagnosing over a redesign</p>
 <p>To construct a power curve, we redesign our baseline declaration over values of <span class="math inline">\(N\)</span> that vary from 100 to 1000.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_11.1</span> <span class="op">&lt;-</span> 
-  <span class="va">declaration_11.1</span> |&gt;
-  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">1000</span>, <span class="fl">100</span><span class="op">)</span><span class="op">)</span> |&gt;
-  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.1</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">declaration_11.1</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">1000</span>, <span class="fl">100</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 
@@ -655,24 +655,24 @@ div.csl-indent {
 <div id="declaration-11-2" class="definition">
 <p>Uncertainty over effect size design</p>
 <div class="cell" data-file="scripts_declarations/declaration_11.2.R">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span>
-<span class="va">declaration_11.2</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-                <span class="co"># this runif(n = 1, min = 0, max = 0.5) generates 1 random ATE between 0 and 0.5</span>
-                <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
+<span><span class="va">declaration_11.2</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>                <span class="co"># this runif(n = 1, min = 0, max = 0.5) generates 1 random ATE between 0 and 0.5</span></span>
+<span>                <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-11-2" class="lemma">
 <p>Redesigning under uncertainty</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_11.2</span> <span class="op">&lt;-</span>
-  <span class="va">declaration_11.2</span> |&gt;
-  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">500</span>, <span class="fl">1000</span><span class="op">)</span><span class="op">)</span> |&gt;
-  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.2</span> <span class="op">&lt;-</span></span>
+<span>  <span class="va">declaration_11.2</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">500</span>, <span class="fl">1000</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Figure @ref(fig:figure-11-2) summarizes the simulations by smoothing over effect sizes: the loess curves describes the fraction of simulations that are significant at each effect size.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The MDEs for each sample size can be read off the plot by examining the intersection of each curve with the dotted line at 80% statistical power. At <code>N = 1000</code>, the MDE is approximately 0.175 SDs. At <code>N = 500</code>, the MDE is larger, at approximately 0.225 SDs. If the design only includes 100 units, the MDE is some value higher than 0.5 SDs. We could of course expand the range of effect sizes considered in the diagnosis, but if effect sizes above 0.5 SDs are theoretically unlikely, we don’t even need to – we’ll need a design larger that 100 units in any case.</p>
 <p>This diagnosis and redesign shows how our decisions about the data strategy depend on beliefs in the model. If we think the true effect size is likely to be 0.225 SDs, then a design with 500 subjects is a reasonable choice, but if it is smaller than that, we’ll want a larger study. Small differences in effect size have large consequences for design. Researchers who arrive at a plot like Figure @ref(fig:figure-11-2) through redesign should be inspired to sharpen up their prior beliefs about the true effect size, either through literature review, meta-analysis of past studies, or through piloting (see Section @ref(piloting)).</p>
@@ -701,30 +701,30 @@ div.csl-indent {
 <div id="declaration-11-3" class="definition">
 <p>Bare-bones two-arm trial</p>
 <div class="cell" data-file="scripts_declarations/declaration_11.3.R">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span>
-
-<span class="va">declaration_11.3</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-                <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">0.2</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, prob <span class="op">=</span> <span class="va">prob</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
+<span></span>
+<span><span class="va">declaration_11.3</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>                <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">0.2</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, prob <span class="op">=</span> <span class="va">prob</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-11-3" class="lemma">
 <p>Redesigning over two parameters</p>
 <p>We redesign, varying those two parameters over reasonable ranges: 100 to 1000 subjects, with probabilities of assignment from 0.1 to 0.5. The redesign function smartly generates designs with all combinations of the two parameters. We want to consider the consequences of these data strategy choices for two diagnosands: cost and a very common loss function: mean squared error.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosands</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_diagnosands</span><span class="op">(</span>cost <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">N</span> <span class="op">*</span> <span class="fl">2</span> <span class="op">+</span> <span class="va">prob</span> <span class="op">*</span> <span class="va">N</span> <span class="op">*</span> <span class="fl">20</span><span class="op">)</span>,
-                      rmse <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span> <span class="op">^</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-
-<span class="va">diagnosis_11.3</span> <span class="op">&lt;-</span>
-  <span class="va">declaration_11.3</span> |&gt;
-  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">1000</span>, <span class="fl">25</span><span class="op">)</span>,
-           prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">)</span> |&gt;
-  <span class="fu">diagnose_designs</span><span class="op">(</span>diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosands</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_diagnosands</span><span class="op">(</span>cost <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">N</span> <span class="op">*</span> <span class="fl">2</span> <span class="op">+</span> <span class="va">prob</span> <span class="op">*</span> <span class="va">N</span> <span class="op">*</span> <span class="fl">20</span><span class="op">)</span>,</span>
+<span>                      rmse <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span> <span class="op">^</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">diagnosis_11.3</span> <span class="op">&lt;-</span></span>
+<span>  <span class="va">declaration_11.3</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">1000</span>, <span class="fl">25</span><span class="op">)</span>,</span>
+<span>           prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">diagnose_designs</span><span class="op">(</span>diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 
@@ -749,31 +749,31 @@ div.csl-indent {
 <div id="declaration-11-4" class="definition">
 <p>Conditional expectation function design</p>
 <div class="cell" data-file="scripts_declarations/declaration_11.4.R">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://purrr.tidyverse.org">purrr</a></span><span class="op">)</span>
-
-<span class="va">dip</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">(</span><span class="va">x</span> <span class="op">&lt;=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">*</span> <span class="va">x</span> <span class="op">+</span> <span class="op">(</span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="va">x</span> <span class="op">-</span> <span class="fl">2</span><span class="op">)</span> <span class="op">^</span> <span class="fl">2</span> <span class="op">+</span> <span class="fl">0.2</span>
-<span class="va">x_range</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">3</span>, length.out <span class="op">=</span> <span class="fl">50</span><span class="op">)</span>
-<span class="va">polynomial_degrees</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>
-
-<span class="va">declaration_11.4</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="fl">100</span>,
-    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">0</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    X <span class="op">=</span> <span class="va">x_range</span>, inquiry <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">"X_"</span>, <span class="va">X</span><span class="op">)</span>, estimand <span class="op">=</span> <span class="fu">dip</span><span class="op">(</span><span class="va">X</span><span class="op">)</span>,
-    data <span class="op">=</span> <span class="cn">NULL</span>, handler <span class="op">=</span> <span class="va">tibble</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">dip</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">0</span>, <span class="fl">.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>handler <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">polynomial_degrees</span>, <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/poly.html">poly</a></span><span class="op">(</span><span class="va">X</span>, <span class="va">.</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">data</span><span class="op">)</span><span class="op">)</span> |&gt; 
-      <span class="fu"><a href="https://purrr.tidyverse.org/reference/set_names.html">set_names</a></span><span class="op">(</span>nm <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">"A"</span>, <span class="va">polynomial_degrees</span><span class="op">)</span><span class="op">)</span> |&gt; 
-      <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_dfc</a></span><span class="op">(</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">.</span>, newdata <span class="op">=</span> <span class="fu">tibble</span><span class="op">(</span>X <span class="op">=</span> <span class="va">x_range</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> |&gt; 
-      <span class="fu">bind_cols</span><span class="op">(</span><span class="fu">tibble</span><span class="op">(</span>X <span class="op">=</span> <span class="va">x_range</span><span class="op">)</span><span class="op">)</span> |&gt; 
-      <span class="fu">mutate</span><span class="op">(</span>inquiry <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">"X_"</span>, <span class="va">X</span><span class="op">)</span><span class="op">)</span> |&gt; 
-      <span class="fu">pivot_longer</span><span class="op">(</span>cols <span class="op">=</span> <span class="fu">starts_with</span><span class="op">(</span><span class="st">"A"</span><span class="op">)</span>,
-                   names_to <span class="op">=</span> <span class="st">"estimator"</span>,
-                   values_to <span class="op">=</span> <span class="st">"estimate"</span><span class="op">)</span>
-  <span class="op">}</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://purrr.tidyverse.org">purrr</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">dip</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">(</span><span class="va">x</span> <span class="op">&lt;=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">*</span> <span class="va">x</span> <span class="op">+</span> <span class="op">(</span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="va">x</span> <span class="op">-</span> <span class="fl">2</span><span class="op">)</span> <span class="op">^</span> <span class="fl">2</span> <span class="op">+</span> <span class="fl">0.2</span></span>
+<span><span class="va">x_range</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">3</span>, length.out <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span>
+<span><span class="va">polynomial_degrees</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span></span>
+<span></span>
+<span><span class="va">declaration_11.4</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">0</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    X <span class="op">=</span> <span class="va">x_range</span>, inquiry <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">"X_"</span>, <span class="va">X</span><span class="op">)</span>, estimand <span class="op">=</span> <span class="fu">dip</span><span class="op">(</span><span class="va">X</span><span class="op">)</span>,</span>
+<span>    data <span class="op">=</span> <span class="cn">NULL</span>, handler <span class="op">=</span> <span class="va">tibble</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">dip</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">0</span>, <span class="fl">.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span>handler <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">polynomial_degrees</span>, <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/poly.html">poly</a></span><span class="op">(</span><span class="va">X</span>, <span class="va">.</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">data</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>      <span class="fu"><a href="https://rlang.r-lib.org/reference/set_names.html">set_names</a></span><span class="op">(</span>nm <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">"A"</span>, <span class="va">polynomial_degrees</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>      <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_dfc</a></span><span class="op">(</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">.</span>, newdata <span class="op">=</span> <span class="fu">tibble</span><span class="op">(</span>X <span class="op">=</span> <span class="va">x_range</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>      <span class="fu">bind_cols</span><span class="op">(</span><span class="fu">tibble</span><span class="op">(</span>X <span class="op">=</span> <span class="va">x_range</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>      <span class="fu">mutate</span><span class="op">(</span>inquiry <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">"X_"</span>, <span class="va">X</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>      <span class="fu">pivot_longer</span><span class="op">(</span>cols <span class="op">=</span> <span class="fu">starts_with</span><span class="op">(</span><span class="st">"A"</span><span class="op">)</span>,</span>
+<span>                   names_to <span class="op">=</span> <span class="st">"estimator"</span>,</span>
+<span>                   values_to <span class="op">=</span> <span class="st">"estimate"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Figure @ref(fig:figure-11-4) shows one draw of this design – the predictions of the CEF made by nine regressions of increasing flexibility. A polynomial of order 1 is just a straight line, a polynomial of order 2 is a quadratic, order 3 is a cubic etc. <span class="citation" data-cites="aronow2019foundations">Aronow and Miller (<a href="../references.html#ref-aronow2019foundations" role="doc-biblioref">2019</a>)</span> show (Theorem 4.3.3) that even nonlinear CEFs can be approximated to up to an arbitrary level of precision by increasing the order of the polynomial regression used to estimate it, given enough data. The figure provides some intuition for why. As the order of the polynomial increases, the line becomes more flexible and can accommodate unexpected twists and turns in the CEF.</p>
@@ -790,7 +790,7 @@ div.csl-indent {
 <p>Conditional expectation function diagnosis</p>
 <p>Increasing the order of the polynomial decreases bias, but this decrease comes at the cost of variance. Figure @ref(fig:figure-11-4) shows how, when the order increases, bias goes down while variance goes up. Mean squared error is one way to trade these two diagnosands off one another. Here, MSE is minimized with a polynomial of order 3. If we were to care much more about bias than variance, perhaps we would choose a polynomial of even higher order.</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_11.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">diagnosis_11.4</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">diagnosis_11.4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 
@@ -811,52 +811,52 @@ div.csl-indent {
 <div id="declaration-11-5" class="definition">
 <p>Choosing logit, probit, or OLS</p>
 <div class="cell" data-file="scripts_declarations/declaration_11.5.R">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/leeper/margins">margins</a></span><span class="op">)</span>
-
-<span class="va">tidy_margins</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu">tidy</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/margins/man/margins.html">margins</a></span><span class="op">(</span><span class="va">x</span>, data <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">data</span><span class="op">)</span>, conf.int <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="op">}</span>
-
-<span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">10</span>
-
-<span class="va">declaration_11.5</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>,
-                U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-                <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.2</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="fl">0.6</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>,
-                    inquiry <span class="op">=</span> <span class="st">"ATE"</span>,
-                    term <span class="op">=</span> <span class="st">"Z"</span>,
-                    label <span class="op">=</span> <span class="st">"OLS"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    <span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>,
-    .method <span class="op">=</span> <span class="va">glm</span>,
-    family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/family.html">binomial</a></span><span class="op">(</span><span class="st">"logit"</span><span class="op">)</span>,
-    .summary <span class="op">=</span> <span class="va">tidy_margins</span>,
-    inquiry <span class="op">=</span> <span class="st">"ATE"</span>,
-    term <span class="op">=</span> <span class="st">"Z"</span>,
-    label <span class="op">=</span> <span class="st">"logit"</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    <span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>,
-    .method <span class="op">=</span> <span class="va">glm</span>,
-    family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/family.html">binomial</a></span><span class="op">(</span><span class="st">"probit"</span><span class="op">)</span>,
-    .summary <span class="op">=</span> <span class="va">tidy_margins</span>,
-    inquiry <span class="op">=</span> <span class="st">"ATE"</span>,
-    term <span class="op">=</span> <span class="st">"Z"</span>,
-    label <span class="op">=</span> <span class="st">"probit"</span>
-  <span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/leeper/margins">margins</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">tidy_margins</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">tidy</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/margins/man/margins.html">margins</a></span><span class="op">(</span><span class="va">x</span>, data <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">data</span><span class="op">)</span>, conf.int <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">10</span></span>
+<span></span>
+<span><span class="va">declaration_11.5</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>,</span>
+<span>                U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>                <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.2</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="fl">0.6</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>,</span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"ATE"</span>,</span>
+<span>                    term <span class="op">=</span> <span class="st">"Z"</span>,</span>
+<span>                    label <span class="op">=</span> <span class="st">"OLS"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">glm</span>,</span>
+<span>    family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/family.html">binomial</a></span><span class="op">(</span><span class="st">"logit"</span><span class="op">)</span>,</span>
+<span>    .summary <span class="op">=</span> <span class="va">tidy_margins</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"ATE"</span>,</span>
+<span>    term <span class="op">=</span> <span class="st">"Z"</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"logit"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">glm</span>,</span>
+<span>    family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/family.html">binomial</a></span><span class="op">(</span><span class="st">"probit"</span><span class="op">)</span>,</span>
+<span>    .summary <span class="op">=</span> <span class="va">tidy_margins</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"ATE"</span>,</span>
+<span>    term <span class="op">=</span> <span class="st">"Z"</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"probit"</span></span>
+<span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-11-5" class="lemma">
 <p>Redesigning alternative estimators over sample sizes</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_11.5</span> <span class="op">&lt;-</span>
-  <span class="va">declaration_11.5</span> |&gt;
-  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span>, by <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span> |&gt;
-  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.5</span> <span class="op">&lt;-</span></span>
+<span>  <span class="va">declaration_11.5</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span>, by <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Figure @ref(fig:figure-11-6) displays the distribution of average treatment effect estimates from this design, over three answer strategies (OLS, logit, and probit) and 10 sample sizes. As sample size increases, the differences across these three approaches vanishes. Eventually, all three sampling distributions center on the ATE. However, at small sample sizes, the three approaches do differ in an important respect. The estimates from OLS are always constrained to the theoretical minimum and maximum average treatment effects of -100 percentage points to 100 percentage points, whereas logit and probit sometimes generate estimates outside this theoretical range.</p>
 <p>This example underlines how the choice among estimators depends so deeply on the inquiry. When the inquiry is a predicted probability, OLS has a bad property of sometimes generating predictions outside the zero-one range. When the inquiry is an average treatment effect, the linear model works just fine, but the nonlinear binary choice models can get tripped up when calculating average marginal effects.</p>

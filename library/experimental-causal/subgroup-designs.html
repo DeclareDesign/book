@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Subgroup designs</title>
 <style>
@@ -596,34 +596,34 @@ div.csl-indent {
 <div id="declaration-18-6" class="definition">
 <p>Subgroup design declaration</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.6.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">343</span><span class="op">)</span>
-<span class="va">fixed_pop</span> <span class="op">&lt;-</span>
-  <span class="fu">fabricate</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">10000</span>,
-            X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, <span class="fl">0.2</span><span class="op">)</span>,
-            <span class="fu">potential_outcomes</span><span class="op">(</span>
-              <span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>,
-                         prob <span class="op">=</span> <span class="fl">0.7</span> <span class="op">+</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">Z</span>  <span class="op">-</span> <span class="fl">0.4</span> <span class="op">*</span> <span class="va">X</span> <span class="op">-</span> <span class="fl">0.2</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">*</span> <span class="va">X</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">)</span>
-
-<span class="va">total_n</span> <span class="op">&lt;-</span> <span class="fl">1000</span>
-<span class="va">n_x1</span> <span class="op">&lt;-</span> <span class="fl">500</span>
-<span class="co"># Note: n_x2 = total_n - n_x1</span>
-
-<span class="va">declaration_18.6</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>data <span class="op">=</span> <span class="va">fixed_pop</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    CATE_X1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span><span class="op">)</span>,
-    CATE_X0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span><span class="op">)</span>,
-    diff_in_CATEs <span class="op">=</span> <span class="va">CATE_X1</span> <span class="op">-</span> <span class="va">CATE_X0</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_sampling</span><span class="op">(</span>
-    S <span class="op">=</span> <span class="fu">strata_rs</span><span class="op">(</span>strata <span class="op">=</span> <span class="va">X</span>, strata_n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">total_n</span> <span class="op">-</span> <span class="va">n_x1</span>, <span class="va">n_x1</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">block_ra</span><span class="op">(</span>blocks <span class="op">=</span> <span class="va">X</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">X</span> <span class="op">+</span> <span class="va">Z</span> <span class="op">*</span> <span class="va">X</span>, 
-                    term <span class="op">=</span> <span class="st">"Z:X"</span>, 
-                    inquiry <span class="op">=</span> <span class="st">"diff_in_CATEs"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">343</span><span class="op">)</span></span>
+<span><span class="va">fixed_pop</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">fabricate</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">10000</span>,</span>
+<span>            X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, <span class="fl">0.2</span><span class="op">)</span>,</span>
+<span>            <span class="fu">potential_outcomes</span><span class="op">(</span></span>
+<span>              <span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>,</span>
+<span>                         prob <span class="op">=</span> <span class="fl">0.7</span> <span class="op">+</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">Z</span>  <span class="op">-</span> <span class="fl">0.4</span> <span class="op">*</span> <span class="va">X</span> <span class="op">-</span> <span class="fl">0.2</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">*</span> <span class="va">X</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">total_n</span> <span class="op">&lt;-</span> <span class="fl">1000</span></span>
+<span><span class="va">n_x1</span> <span class="op">&lt;-</span> <span class="fl">500</span></span>
+<span><span class="co"># Note: n_x2 = total_n - n_x1</span></span>
+<span></span>
+<span><span class="va">declaration_18.6</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>data <span class="op">=</span> <span class="va">fixed_pop</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    CATE_X1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>    CATE_X0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>    diff_in_CATEs <span class="op">=</span> <span class="va">CATE_X1</span> <span class="op">-</span> <span class="va">CATE_X0</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_sampling</span><span class="op">(</span></span>
+<span>    S <span class="op">=</span> <span class="fu">strata_rs</span><span class="op">(</span>strata <span class="op">=</span> <span class="va">X</span>, strata_n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">total_n</span> <span class="op">-</span> <span class="va">n_x1</span>, <span class="va">n_x1</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">block_ra</span><span class="op">(</span>blocks <span class="op">=</span> <span class="va">X</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">X</span> <span class="op">+</span> <span class="va">Z</span> <span class="op">*</span> <span class="va">X</span>, </span>
+<span>                    term <span class="op">=</span> <span class="st">"Z:X"</span>, </span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"diff_in_CATEs"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-18-6" class="lemma">
@@ -631,10 +631,10 @@ div.csl-indent {
 <p>To show the benefits of stratified sampling for experiments, we redesign over many values of under- and over-sampling units with <code>X = 1</code>, holding the total sample size fixed at <code>1000</code>. The top panel of Figure @ref(fig:figure-18-6) shows the distribution of difference-in-CATE estimates at each size of the <code>X = 1</code> group. When very small or very large fractions of the total sample have <code>X = 1</code>, the variance of the estimator is much larger than when the two groups the same size.</p>
 <p>The bottom panel of the figure shows how three diagnosands change over the oversampling design parameter. Bias is never a problem – even small subgroups will generate unbiased difference-in-CATE estimates. As suggested by the top panel, the standard error is minimized in the middle and is largest at the extremes. Likewise, statistical power is maximized in the middle, but drops off surprisingly quickly as we move away from evenly-balanced recruitment.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_18.6</span> <span class="op">&lt;-</span> 
-  <span class="va">declaration_18.6</span> |&gt; 
-  <span class="fu">redesign</span><span class="op">(</span>n_x1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">980</span>, by <span class="op">=</span> <span class="fl">96</span><span class="op">)</span><span class="op">)</span> |&gt; 
-  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.6</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">declaration_18.6</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>n_x1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">980</span>, by <span class="op">=</span> <span class="fl">96</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Factorial experiments</title>
 <style>
@@ -605,59 +605,59 @@ div.csl-indent {
 <div id="declaration-18-7" class="definition">
 <p>Two-by-two factorial design</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.7.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">CATE_Z1_Z2_0</span> <span class="op">&lt;-</span> <span class="fl">0.2</span>
-<span class="va">CATE_Z2_Z1_0</span> <span class="op">&lt;-</span> <span class="fl">0.1</span>
-<span class="va">interaction</span> <span class="op">&lt;-</span> <span class="fl">0.1</span>
-<span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">1000</span>
-
-<span class="va">declaration_18.7</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="va">N</span>,
-    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">CATE_Z1_Z2_0</span> <span class="op">*</span> <span class="va">Z1</span> <span class="op">+</span>
-                         <span class="va">CATE_Z2_Z1_0</span> <span class="op">*</span> <span class="va">Z2</span> <span class="op">+</span>
-                         <span class="va">interaction</span> <span class="op">*</span> <span class="va">Z1</span> <span class="op">*</span> <span class="va">Z2</span> <span class="op">+</span> <span class="va">U</span>,
-                       conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Z1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-                                         Z2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    CATE_Z1_Z2_0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z1_1_Z2_0</span> <span class="op">-</span> <span class="va">Y_Z1_0_Z2_0</span><span class="op">)</span>,
-    CATE_Z1_Z2_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z1_1_Z2_1</span> <span class="op">-</span> <span class="va">Y_Z1_0_Z2_1</span><span class="op">)</span>,
-    ATE_Z1 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="va">CATE_Z1_Z2_0</span> <span class="op">+</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="va">CATE_Z1_Z2_1</span>,
-    
-    CATE_Z2_Z1_0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z1_0_Z2_1</span> <span class="op">-</span> <span class="va">Y_Z1_0_Z2_0</span><span class="op">)</span>,
-    CATE_Z2_Z1_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z1_1_Z2_1</span> <span class="op">-</span> <span class="va">Y_Z1_1_Z2_0</span><span class="op">)</span>,
-    ATE_Z2 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="va">CATE_Z2_Z1_0</span> <span class="op">+</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="va">CATE_Z2_Z1_1</span>,
-    
-    diff_in_CATEs_Z1 <span class="op">=</span> <span class="va">CATE_Z1_Z2_1</span> <span class="op">-</span> <span class="va">CATE_Z1_Z2_0</span>,
-    <span class="co">#equivalently</span>
-    diff_in_CATEs_Z2 <span class="op">=</span> <span class="va">CATE_Z2_Z1_1</span> <span class="op">-</span> <span class="va">CATE_Z2_Z1_0</span>
-  <span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_assignment</span><span class="op">(</span>Z1 <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-                     Z2 <span class="op">=</span> <span class="fu">block_ra</span><span class="op">(</span><span class="va">Z1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z1</span> <span class="op">+</span> <span class="va">Z2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z1</span>, subset <span class="op">=</span> <span class="op">(</span><span class="va">Z2</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span>, 
-                    inquiry <span class="op">=</span> <span class="st">"CATE_Z1_Z2_0"</span>, label <span class="op">=</span> <span class="st">"1"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z1</span>, subset <span class="op">=</span> <span class="op">(</span><span class="va">Z2</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span>, 
-                    inquiry <span class="op">=</span> <span class="st">"CATE_Z1_Z2_1"</span>, label <span class="op">=</span> <span class="st">'2'</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z2</span>, subset <span class="op">=</span> <span class="op">(</span><span class="va">Z1</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span>, 
-                    inquiry <span class="op">=</span> <span class="st">"CATE_Z2_Z1_0"</span>, label <span class="op">=</span> <span class="st">"3"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z2</span>, subset <span class="op">=</span> <span class="op">(</span><span class="va">Z1</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span>,
-                    inquiry <span class="op">=</span> <span class="st">"CATE_Z2_Z1_1"</span>, label <span class="op">=</span> <span class="st">"4"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z1</span> <span class="op">+</span> <span class="va">Z2</span>, term <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Z1"</span>, <span class="st">"Z2"</span><span class="op">)</span>, 
-                    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATE_Z1"</span>, <span class="st">"ATE_Z2"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"5"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z1</span> <span class="op">+</span> <span class="va">Z2</span> <span class="op">+</span> <span class="va">Z1</span><span class="op">*</span><span class="va">Z2</span>, term <span class="op">=</span> <span class="st">"Z1:Z2"</span>, 
-                    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"diff_in_CATEs_Z1"</span>, <span class="st">"diff_in_CATEs_Z2"</span><span class="op">)</span>, 
-                    label <span class="op">=</span> <span class="st">"6"</span><span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">CATE_Z1_Z2_0</span> <span class="op">&lt;-</span> <span class="fl">0.2</span></span>
+<span><span class="va">CATE_Z2_Z1_0</span> <span class="op">&lt;-</span> <span class="fl">0.1</span></span>
+<span><span class="va">interaction</span> <span class="op">&lt;-</span> <span class="fl">0.1</span></span>
+<span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">1000</span></span>
+<span></span>
+<span><span class="va">declaration_18.7</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="va">N</span>,</span>
+<span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">CATE_Z1_Z2_0</span> <span class="op">*</span> <span class="va">Z1</span> <span class="op">+</span></span>
+<span>                         <span class="va">CATE_Z2_Z1_0</span> <span class="op">*</span> <span class="va">Z2</span> <span class="op">+</span></span>
+<span>                         <span class="va">interaction</span> <span class="op">*</span> <span class="va">Z1</span> <span class="op">*</span> <span class="va">Z2</span> <span class="op">+</span> <span class="va">U</span>,</span>
+<span>                       conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Z1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,</span>
+<span>                                         Z2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    CATE_Z1_Z2_0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z1_1_Z2_0</span> <span class="op">-</span> <span class="va">Y_Z1_0_Z2_0</span><span class="op">)</span>,</span>
+<span>    CATE_Z1_Z2_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z1_1_Z2_1</span> <span class="op">-</span> <span class="va">Y_Z1_0_Z2_1</span><span class="op">)</span>,</span>
+<span>    ATE_Z1 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="va">CATE_Z1_Z2_0</span> <span class="op">+</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="va">CATE_Z1_Z2_1</span>,</span>
+<span>    </span>
+<span>    CATE_Z2_Z1_0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z1_0_Z2_1</span> <span class="op">-</span> <span class="va">Y_Z1_0_Z2_0</span><span class="op">)</span>,</span>
+<span>    CATE_Z2_Z1_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z1_1_Z2_1</span> <span class="op">-</span> <span class="va">Y_Z1_1_Z2_0</span><span class="op">)</span>,</span>
+<span>    ATE_Z2 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="va">CATE_Z2_Z1_0</span> <span class="op">+</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="va">CATE_Z2_Z1_1</span>,</span>
+<span>    </span>
+<span>    diff_in_CATEs_Z1 <span class="op">=</span> <span class="va">CATE_Z1_Z2_1</span> <span class="op">-</span> <span class="va">CATE_Z1_Z2_0</span>,</span>
+<span>    <span class="co">#equivalently</span></span>
+<span>    diff_in_CATEs_Z2 <span class="op">=</span> <span class="va">CATE_Z2_Z1_1</span> <span class="op">-</span> <span class="va">CATE_Z2_Z1_0</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z1 <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>                     Z2 <span class="op">=</span> <span class="fu">block_ra</span><span class="op">(</span><span class="va">Z1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z1</span> <span class="op">+</span> <span class="va">Z2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z1</span>, subset <span class="op">=</span> <span class="op">(</span><span class="va">Z2</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span>, </span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"CATE_Z1_Z2_0"</span>, label <span class="op">=</span> <span class="st">"1"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z1</span>, subset <span class="op">=</span> <span class="op">(</span><span class="va">Z2</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span>, </span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"CATE_Z1_Z2_1"</span>, label <span class="op">=</span> <span class="st">'2'</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z2</span>, subset <span class="op">=</span> <span class="op">(</span><span class="va">Z1</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span>, </span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"CATE_Z2_Z1_0"</span>, label <span class="op">=</span> <span class="st">"3"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z2</span>, subset <span class="op">=</span> <span class="op">(</span><span class="va">Z1</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span>,</span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"CATE_Z2_Z1_1"</span>, label <span class="op">=</span> <span class="st">"4"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z1</span> <span class="op">+</span> <span class="va">Z2</span>, term <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Z1"</span>, <span class="st">"Z2"</span><span class="op">)</span>, </span>
+<span>                    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATE_Z1"</span>, <span class="st">"ATE_Z2"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"5"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z1</span> <span class="op">+</span> <span class="va">Z2</span> <span class="op">+</span> <span class="va">Z1</span><span class="op">*</span><span class="va">Z2</span>, term <span class="op">=</span> <span class="st">"Z1:Z2"</span>, </span>
+<span>                    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"diff_in_CATEs_Z1"</span>, <span class="st">"diff_in_CATEs_Z2"</span><span class="op">)</span>, </span>
+<span>                    label <span class="op">=</span> <span class="st">"6"</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-18-7" class="lemma">
 <p>Two-by-two factorial diagnosis</p>
 <p>We now redesign this factorial over many sample sizes, considering the statistical power for each of the inquiries. Figure @ref(fig:figure-18-7) shows that depending on the inquiry, the statistical power of this design can vary dramatically. The average treatment effect of <code>Z1</code> is relatively large at 0.25 standard units, so power is above the 80% threshold at all the sample sizes we consider. The ATE of <code>Z2</code> is smaller, at 0.15 standard units, so power is lower, but not dramatically so. Both ATEs use all <span class="math inline">\(N\)</span> data points, so power is manageable for the average effects. The conditional average effects generally fare worse, mainly because each is estimated on only half the sample. The power for the 0.1 standard unit difference-in-CATEs is abysmal at all sample sizes considered here. This diagnosis underlines Principle @ref(exm:designholistically): Design holistically. The power of a factorial design is not just one number – we have to calculate power for each inquiry separately, as they can differ dramatically.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_18.7</span> <span class="op">&lt;-</span>
-  <span class="va">declaration_18.7</span> |&gt; 
-  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">500</span>, <span class="fl">3000</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span> |&gt; 
-  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.7</span> <span class="op">&lt;-</span></span>
+<span>  <span class="va">declaration_18.7</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">500</span>, <span class="fl">3000</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -675,14 +675,14 @@ div.csl-indent {
 <div id="diagnosis-18-8" class="lemma">
 <p>Redesign over models</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_18.8</span> <span class="op">&lt;-</span> 
-  <span class="va">declaration_18.7</span> |&gt; 
-  <span class="fu">redesign</span><span class="op">(</span>
-    CATE_Z1_Z2_0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0.5</span>, <span class="fl">0.05</span><span class="op">)</span>,
-    CATE_Z2_Z1_0 <span class="op">=</span> <span class="fl">0.2</span>,
-    interaction <span class="op">=</span> <span class="fl">0</span>
-  <span class="op">)</span> |&gt; 
-  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.8</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">declaration_18.7</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">redesign</span><span class="op">(</span></span>
+<span>    CATE_Z1_Z2_0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0.5</span>, <span class="fl">0.05</span><span class="op">)</span>,</span>
+<span>    CATE_Z2_Z1_0 <span class="op">=</span> <span class="fl">0.2</span>,</span>
+<span>    interaction <span class="op">=</span> <span class="fl">0</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Figure @ref(fig:figure-18-8) shows that the error rate when we consider the statistical significance of the interaction term is nominal. Only 5% of the time do we falsely reject the null that the difference-in-CATEs is zero, which is what we expect when we adopt an <span class="math inline">\(\alpha = 0.05\)</span> threshold. But when we claim “treatment effect heterogeneity!” when one CATE is significant but not the other, we make egregious errors. When the true (constant) average effect of <code>Z1</code> approaches 0.2, we falsely conclude that the treatment has heterogeneous effects nearly 50% of the time!</p>
 <div class="cell">

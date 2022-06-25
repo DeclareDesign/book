@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Structural estimation</title>
 <style>
@@ -602,66 +602,66 @@ div.csl-indent {
 <p>Structural estimation declaration</p>
 <p>With the likelihood function defined, we can declare a design with an estimation step that uses the <code>bbmle</code> package</p>
 <div class="cell" data-file="scripts_declarations/declaration_19.2.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/bbolker/bbmle">bbmle</a></span><span class="op">)</span>
-<span class="co">#&gt; Loading required package: stats4</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'bbmle'</span>
-<span class="co">#&gt; The following object is masked from 'package:dplyr':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     slice</span>
-
-<span class="co"># Equilibrium offers for a game of length n</span>
-<span class="va">offer</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>, <span class="va">d</span><span class="op">)</span><span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="va">n</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">t</span><span class="op">)</span> <span class="op">(</span><span class="op">(</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">^</span><span class="va">t</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">d</span><span class="op">^</span><span class="op">{</span><span class="va">t</span><span class="op">-</span><span class="fl">1</span><span class="op">}</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-<span class="op">}</span>
-
-<span class="co"># Likelihood function</span>
-<span class="va">likelihood</span>  <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">{</span>
-  <span class="kw">function</span><span class="op">(</span><span class="va">k</span>, <span class="va">d</span>, <span class="va">a</span><span class="op">)</span> <span class="op">{</span>
-    <span class="va">m</span> <span class="op">&lt;-</span> <span class="va">Z</span> <span class="op">*</span> <span class="fu">offer</span><span class="op">(</span><span class="va">n</span>, <span class="va">d</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">Z</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="fu">offer</span><span class="op">(</span><span class="va">n</span>, <span class="va">d</span><span class="op">)</span><span class="op">)</span>
-    <span class="va">R</span> <span class="op">&lt;-</span> <span class="va">a</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html">dbeta</a></span><span class="op">(</span><span class="va">y</span>, <span class="va">k</span> <span class="op">*</span> <span class="fl">.75</span>, <span class="va">k</span> <span class="op">*</span> <span class="fl">.25</span><span class="op">)</span> <span class="op">+</span> 
-      <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html">dbeta</a></span><span class="op">(</span><span class="va">y</span>, <span class="va">k</span> <span class="op">*</span> <span class="va">m</span>, <span class="va">k</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">m</span><span class="op">)</span><span class="op">)</span>
-    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">R</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">}</span>
-<span class="op">}</span>
-
-<span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">2</span>        <span class="co"># Number of rounds bargaining (design choice)</span>
-<span class="va">delta</span> <span class="op">&lt;-</span> <span class="fl">0.8</span>  <span class="co"># True discount factor (unknown)</span>
-<span class="va">kappa</span> <span class="op">&lt;-</span> <span class="fl">2</span>    <span class="co"># Parameter to govern error in offers (unknown)</span>
-<span class="va">alpha</span> <span class="op">&lt;-</span> <span class="fl">0.5</span>  <span class="co"># Share of behavioral types in the population (unknown)</span>
-
-<span class="va">declaration_19.2</span> <span class="op">&lt;-</span> 
-  <span class="fu">declare_model</span><span class="op">(</span>
-    <span class="co"># Define the population: indicator for behavioral type (norm = 1)</span>
-    N <span class="op">=</span> <span class="fl">200</span>, 
-    type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, <span class="va">alpha</span><span class="op">)</span>,
-    n <span class="op">=</span> <span class="va">n</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>kappa <span class="op">=</span> <span class="va">kappa</span>,     
-                  delta <span class="op">=</span> <span class="va">delta</span>,     
-                  alpha <span class="op">=</span> <span class="va">alpha</span><span class="op">)</span> <span class="op">+</span>   
-  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>
-    <span class="co"># Equilibrium payoff</span>
-    pi <span class="op">=</span> <span class="va">type</span> <span class="op">*</span> <span class="fl">.75</span> <span class="op">+</span> 
-      <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">type</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="va">Z</span> <span class="op">*</span> <span class="fu">offer</span><span class="op">(</span><span class="va">n</span>, <span class="va">delta</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">Z</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span><span class="fu">offer</span><span class="op">(</span><span class="va">n</span>, <span class="va">delta</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, 
-    <span class="co"># Actual payoff (stochastic)</span>
-    y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html">rbeta</a></span><span class="op">(</span><span class="va">N</span>, <span class="va">pi</span> <span class="op">*</span> <span class="va">kappa</span>, <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">pi</span><span class="op">)</span> <span class="op">*</span> <span class="va">kappa</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
-  <span class="co"># Estimation via maximum likelihood</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>.method <span class="op">=</span> <span class="va">mle2</span>,
-                    minuslogl <span class="op">=</span> <span class="fu">likelihood</span><span class="op">(</span><span class="va">n</span><span class="op">)</span>,
-                    start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>k <span class="op">=</span> <span class="fl">2</span>, d <span class="op">=</span> <span class="fl">0.50</span>, a <span class="op">=</span> <span class="fl">0.50</span><span class="op">)</span>,
-                    lower <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>k <span class="op">=</span> <span class="fl">0.10</span>, d <span class="op">=</span> <span class="fl">0.01</span>, a <span class="op">=</span> <span class="fl">0.01</span><span class="op">)</span>,
-                    upper <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>k <span class="op">=</span> <span class="fl">100</span>, d <span class="op">=</span> <span class="fl">0.99</span>, a <span class="op">=</span> <span class="fl">0.99</span><span class="op">)</span>,
-                    method <span class="op">=</span> <span class="st">"L-BFGS-B"</span>,
-                    term <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"k"</span>, <span class="st">"d"</span>, <span class="st">"a"</span><span class="op">)</span>,
-                    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"kappa"</span>,<span class="st">"delta"</span>, <span class="st">"alpha"</span><span class="op">)</span>, 
-                    label <span class="op">=</span> <span class="st">"Structural model"</span><span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/bbolker/bbmle">bbmle</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: stats4</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'bbmle'</span></span>
+<span><span class="co">#&gt; The following object is masked from 'package:dplyr':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     slice</span></span>
+<span></span>
+<span><span class="co"># Equilibrium offers for a game of length n</span></span>
+<span><span class="va">offer</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>, <span class="va">d</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="va">n</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">t</span><span class="op">)</span> <span class="op">(</span><span class="op">(</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">^</span><span class="va">t</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">d</span><span class="op">^</span><span class="op">{</span><span class="va">t</span><span class="op">-</span><span class="fl">1</span><span class="op">}</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># Likelihood function</span></span>
+<span><span class="va">likelihood</span>  <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="kw">function</span><span class="op">(</span><span class="va">k</span>, <span class="va">d</span>, <span class="va">a</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">m</span> <span class="op">&lt;-</span> <span class="va">Z</span> <span class="op">*</span> <span class="fu">offer</span><span class="op">(</span><span class="va">n</span>, <span class="va">d</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">Z</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="fu">offer</span><span class="op">(</span><span class="va">n</span>, <span class="va">d</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="va">R</span> <span class="op">&lt;-</span> <span class="va">a</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html">dbeta</a></span><span class="op">(</span><span class="va">y</span>, <span class="va">k</span> <span class="op">*</span> <span class="fl">.75</span>, <span class="va">k</span> <span class="op">*</span> <span class="fl">.25</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>      <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html">dbeta</a></span><span class="op">(</span><span class="va">y</span>, <span class="va">k</span> <span class="op">*</span> <span class="va">m</span>, <span class="va">k</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">m</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">R</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">2</span>        <span class="co"># Number of rounds bargaining (design choice)</span></span>
+<span><span class="va">delta</span> <span class="op">&lt;-</span> <span class="fl">0.8</span>  <span class="co"># True discount factor (unknown)</span></span>
+<span><span class="va">kappa</span> <span class="op">&lt;-</span> <span class="fl">2</span>    <span class="co"># Parameter to govern error in offers (unknown)</span></span>
+<span><span class="va">alpha</span> <span class="op">&lt;-</span> <span class="fl">0.5</span>  <span class="co"># Share of behavioral types in the population (unknown)</span></span>
+<span></span>
+<span><span class="va">declaration_19.2</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    <span class="co"># Define the population: indicator for behavioral type (norm = 1)</span></span>
+<span>    N <span class="op">=</span> <span class="fl">200</span>, </span>
+<span>    type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, <span class="va">alpha</span><span class="op">)</span>,</span>
+<span>    n <span class="op">=</span> <span class="va">n</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>kappa <span class="op">=</span> <span class="va">kappa</span>,     </span>
+<span>                  delta <span class="op">=</span> <span class="va">delta</span>,     </span>
+<span>                  alpha <span class="op">=</span> <span class="va">alpha</span><span class="op">)</span> <span class="op">+</span>   </span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span></span>
+<span>    <span class="co"># Equilibrium payoff</span></span>
+<span>    pi <span class="op">=</span> <span class="va">type</span> <span class="op">*</span> <span class="fl">.75</span> <span class="op">+</span> </span>
+<span>      <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">type</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="va">Z</span> <span class="op">*</span> <span class="fu">offer</span><span class="op">(</span><span class="va">n</span>, <span class="va">delta</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">Z</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span><span class="fu">offer</span><span class="op">(</span><span class="va">n</span>, <span class="va">delta</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>    <span class="co"># Actual payoff (stochastic)</span></span>
+<span>    y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html">rbeta</a></span><span class="op">(</span><span class="va">N</span>, <span class="va">pi</span> <span class="op">*</span> <span class="va">kappa</span>, <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">pi</span><span class="op">)</span> <span class="op">*</span> <span class="va">kappa</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="co"># Estimation via maximum likelihood</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span>.method <span class="op">=</span> <span class="va">mle2</span>,</span>
+<span>                    minuslogl <span class="op">=</span> <span class="fu">likelihood</span><span class="op">(</span><span class="va">n</span><span class="op">)</span>,</span>
+<span>                    start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>k <span class="op">=</span> <span class="fl">2</span>, d <span class="op">=</span> <span class="fl">0.50</span>, a <span class="op">=</span> <span class="fl">0.50</span><span class="op">)</span>,</span>
+<span>                    lower <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>k <span class="op">=</span> <span class="fl">0.10</span>, d <span class="op">=</span> <span class="fl">0.01</span>, a <span class="op">=</span> <span class="fl">0.01</span><span class="op">)</span>,</span>
+<span>                    upper <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>k <span class="op">=</span> <span class="fl">100</span>, d <span class="op">=</span> <span class="fl">0.99</span>, a <span class="op">=</span> <span class="fl">0.99</span><span class="op">)</span>,</span>
+<span>                    method <span class="op">=</span> <span class="st">"L-BFGS-B"</span>,</span>
+<span>                    term <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"k"</span>, <span class="st">"d"</span>, <span class="st">"a"</span><span class="op">)</span>,</span>
+<span>                    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"kappa"</span>,<span class="st">"delta"</span>, <span class="st">"alpha"</span><span class="op">)</span>, </span>
+<span>                    label <span class="op">=</span> <span class="st">"Structural model"</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-19-2" class="lemma">
 <p>Structural estimation diagnosis</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_19.2</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_19.2</span><span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_19.2</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_19.2</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 

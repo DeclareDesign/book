@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Randomized saturation experiments</title>
 <style>
@@ -599,54 +599,54 @@ div.csl-indent {
 <div id="declaration-18-12" class="definition">
 <p>Randomized saturation design</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.12.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_18.12</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    group <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">50</span>, group_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span>,
-    individual <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>
-      N <span class="op">=</span> <span class="fl">20</span>,
-      individual_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-      <span class="fu">potential_outcomes</span><span class="op">(</span>
-        <span class="va">Y</span> <span class="op">~</span> <span class="fl">0.2</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="op">(</span><span class="va">S</span> <span class="op">==</span> <span class="st">"low"</span><span class="op">)</span> <span class="op">+</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="op">(</span><span class="va">S</span> <span class="op">==</span> <span class="st">"high"</span><span class="op">)</span> <span class="op">+</span>
-          <span class="va">group_shock</span> <span class="op">+</span> <span class="va">individual_shock</span>,
-        conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-                          S <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"low"</span>, <span class="st">"high"</span><span class="op">)</span><span class="op">)</span>
-      <span class="op">)</span>
-    <span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    CATE_S_Z_0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_0_S_high</span> <span class="op">-</span> <span class="va">Y_Z_0_S_low</span><span class="op">)</span>,
-    CATE_Z_S_low <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1_S_low</span> <span class="op">-</span> <span class="va">Y_Z_0_S_low</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>
-    S <span class="op">=</span> <span class="fu">cluster_ra</span><span class="op">(</span>clusters <span class="op">=</span> <span class="va">group</span>, 
-                   conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"low"</span>, <span class="st">"high"</span><span class="op">)</span><span class="op">)</span>,
-    Z <span class="op">=</span> <span class="fu">block_ra</span><span class="op">(</span>blocks <span class="op">=</span> <span class="va">group</span>, 
-                 prob_unit <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">S</span> <span class="op">==</span> <span class="st">"low"</span>, <span class="fl">0.25</span>, <span class="fl">0.75</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">S</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    <span class="va">Y</span> <span class="op">~</span> <span class="va">S</span>,
-    .method <span class="op">=</span> <span class="va">difference_in_means</span>,
-    subset <span class="op">=</span> <span class="va">Z</span> <span class="op">==</span> <span class="fl">0</span>,
-    term <span class="op">=</span> <span class="st">"Shigh"</span>,
-    clusters <span class="op">=</span> <span class="va">group</span>,
-    inquiry <span class="op">=</span> <span class="st">"CATE_S_Z_0"</span>,
-    label <span class="op">=</span> <span class="st">"Effect of high saturation among untreated"</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    <span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>,
-    .method <span class="op">=</span> <span class="va">difference_in_means</span>,
-    subset <span class="op">=</span> <span class="va">S</span> <span class="op">==</span> <span class="st">"low"</span>,
-    blocks <span class="op">=</span> <span class="va">group</span>,
-    inquiry <span class="op">=</span> <span class="st">"CATE_Z_S_low"</span>,
-    label <span class="op">=</span> <span class="st">"Effect of treatment at low saturation"</span>
-  <span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_18.12</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    group <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">50</span>, group_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    individual <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>      N <span class="op">=</span> <span class="fl">20</span>,</span>
+<span>      individual_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>      <span class="fu">potential_outcomes</span><span class="op">(</span></span>
+<span>        <span class="va">Y</span> <span class="op">~</span> <span class="fl">0.2</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="op">(</span><span class="va">S</span> <span class="op">==</span> <span class="st">"low"</span><span class="op">)</span> <span class="op">+</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="op">(</span><span class="va">S</span> <span class="op">==</span> <span class="st">"high"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>          <span class="va">group_shock</span> <span class="op">+</span> <span class="va">individual_shock</span>,</span>
+<span>        conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,</span>
+<span>                          S <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"low"</span>, <span class="st">"high"</span><span class="op">)</span><span class="op">)</span></span>
+<span>      <span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    CATE_S_Z_0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_0_S_high</span> <span class="op">-</span> <span class="va">Y_Z_0_S_low</span><span class="op">)</span>,</span>
+<span>    CATE_Z_S_low <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1_S_low</span> <span class="op">-</span> <span class="va">Y_Z_0_S_low</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span></span>
+<span>    S <span class="op">=</span> <span class="fu">cluster_ra</span><span class="op">(</span>clusters <span class="op">=</span> <span class="va">group</span>, </span>
+<span>                   conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"low"</span>, <span class="st">"high"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    Z <span class="op">=</span> <span class="fu">block_ra</span><span class="op">(</span>blocks <span class="op">=</span> <span class="va">group</span>, </span>
+<span>                 prob_unit <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">S</span> <span class="op">==</span> <span class="st">"low"</span>, <span class="fl">0.25</span>, <span class="fl">0.75</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">S</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">Y</span> <span class="op">~</span> <span class="va">S</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">difference_in_means</span>,</span>
+<span>    subset <span class="op">=</span> <span class="va">Z</span> <span class="op">==</span> <span class="fl">0</span>,</span>
+<span>    term <span class="op">=</span> <span class="st">"Shigh"</span>,</span>
+<span>    clusters <span class="op">=</span> <span class="va">group</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"CATE_S_Z_0"</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Effect of high saturation among untreated"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">difference_in_means</span>,</span>
+<span>    subset <span class="op">=</span> <span class="va">S</span> <span class="op">==</span> <span class="st">"low"</span>,</span>
+<span>    blocks <span class="op">=</span> <span class="va">group</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"CATE_Z_S_low"</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Effect of treatment at low saturation"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-18-12" class="lemma">
 <p>Randomized saturation diagnosis</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_18.12</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_18.12</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.12</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_18.12</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The diagnosis plot in Figure @ref(fig:figure-18-14) shows the sampling distribution of the two estimators with the value of the relevant inquiry overlaid. Both estimators are unbiased for their targets, but the thing to notice from this plot is that the estimator of the saturation inquiry is far more variable than the estimator of the direct treatment inquiry. Saturation is by its nature a group-level treatment, so must be assigned at a group level. The clustered nature of the assignment to saturation level brings extra uncertainty. When designing randomized saturation experiments, researchers should be aware that we typically have much better precision for individually-randomized treatments than cluster-randomized treatments, and should plan accordingly.</p>
 <div class="cell">

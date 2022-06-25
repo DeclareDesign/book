@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Reanalysis</title>
 <style>
@@ -574,34 +574,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this section, we illustrate the flaw in assessing reanalyses based on changing significance of results alone. We demonstrate how to assess the properties of reanalysis plans, comparing the properties of original answer strategies to proposed reanalysis answer strategies.</p>
 <p>The design we consider is an observational study with a binary treatment <span class="math inline">\(Z\)</span> that may or may not be confounded by a covariate <span class="math inline">\(X\)</span>. Suppose that the original researcher had in mind a model in which <span class="math inline">\(Z\)</span> is not confounded by <span class="math inline">\(X\)</span>:</p>
 <div class="cell" data-file="scripts_declarations/declaration_23.1a.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># X is not a confounder and is measured pretreatment</span>
-<span class="va">model_1</span> <span class="op">&lt;-</span> 
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="fl">100</span>,
-    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Logistic.html">plogis</a></span><span class="op">(</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>,
-    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="fl">0.25</span> <span class="op">*</span> <span class="va">X</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span>,
-    Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span>
-  <span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># X is not a confounder and is measured pretreatment</span></span>
+<span><span class="va">model_1</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Logistic.html">plogis</a></span><span class="op">(</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="fl">0.25</span> <span class="op">*</span> <span class="va">X</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span>,</span>
+<span>    Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The reanalyst has in mind a different model. In this second model, <span class="math inline">\(X\)</span> confounds the relationship between <span class="math inline">\(Z\)</span> and <span class="math inline">\(Y\)</span>:</p>
 <div class="cell" data-file="scripts_declarations/declaration_23.1b.R">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># X is a confounder and is measured pretreatment</span>
-<span class="va">model_2</span> <span class="op">&lt;-</span> 
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="fl">100</span>,
-    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Logistic.html">plogis</a></span><span class="op">(</span><span class="fl">0.5</span> <span class="op">+</span> <span class="va">X</span><span class="op">)</span><span class="op">)</span>,
-    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="fl">0.25</span> <span class="op">*</span> <span class="va">X</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span>,
-    Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span>
-  <span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># X is a confounder and is measured pretreatment</span></span>
+<span><span class="va">model_2</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Logistic.html">plogis</a></span><span class="op">(</span><span class="fl">0.5</span> <span class="op">+</span> <span class="va">X</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="fl">0.25</span> <span class="op">*</span> <span class="va">X</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span>,</span>
+<span>    Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The original answer strategy <code>A</code> is a regression of the outcome <span class="math inline">\(Y\)</span> on the treatment <span class="math inline">\(Z\)</span>. The reanalyst collects the covariate <span class="math inline">\(X\)</span> and proposes to control for it in a linear regression; call that strategy <code>A_prime</code>.</p>
 <div class="cell" data-file="scripts_declarations/declaration_23.1c.R">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">A</span> <span class="op">&lt;-</span> <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, .method <span class="op">=</span> <span class="va">lm_robust</span>, label <span class="op">=</span> <span class="st">"A"</span><span class="op">)</span>
-<span class="va">A_prime</span> <span class="op">&lt;-</span> <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">X</span>, .method <span class="op">=</span> <span class="va">lm_robust</span>, label <span class="op">=</span> <span class="st">"A_prime"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">A</span> <span class="op">&lt;-</span> <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, .method <span class="op">=</span> <span class="va">lm_robust</span>, label <span class="op">=</span> <span class="st">"A"</span><span class="op">)</span></span>
+<span><span class="va">A_prime</span> <span class="op">&lt;-</span> <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">X</span>, .method <span class="op">=</span> <span class="va">lm_robust</span>, label <span class="op">=</span> <span class="st">"A_prime"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

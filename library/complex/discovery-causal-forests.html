@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Discovery using causal forests</title>
 <style>
@@ -601,56 +601,56 @@ div.csl-indent {
 <div id="declaration-19-1" class="definition">
 <p>Random forests design</p>
 <div class="cell" data-file="scripts_declarations/declaration_19.1.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/grf-labs/grf">grf</a></span><span class="op">)</span>
-
-<span class="va">covariate_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"X."</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span>
-
-<span class="va">f_Y</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">z</span>, <span class="va">X.1</span>, <span class="va">X.2</span>, <span class="va">X.3</span>, <span class="va">X.4</span>, <span class="va">u</span><span class="op">)</span> 
-  <span class="va">z</span> <span class="op">*</span> <span class="va">X.1</span> <span class="op">+</span> <span class="va">z</span> <span class="op">*</span> <span class="va">X.2</span> <span class="op">^</span> <span class="fl">2</span> <span class="op">+</span> <span class="va">z</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">X.3</span><span class="op">)</span> <span class="op">+</span> <span class="va">z</span> <span class="op">*</span> <span class="va">X.3</span> <span class="op">*</span> <span class="va">X.4</span> <span class="op">+</span> <span class="va">u</span>
-
-<span class="va">get_best_predictor</span> <span class="op">&lt;-</span>
-  <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="fu">select</span><span class="op">(</span><span class="va">data</span>, estimate <span class="op">=</span> <span class="va">var_imp</span><span class="op">)</span> |&gt; <span class="fu">slice</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-
-<span class="va">declaration_19.1</span> <span class="op">&lt;-</span> 
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="fl">1000</span>,  
-    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span> <span class="op">*</span> <span class="va">N</span><span class="op">)</span>, <span class="va">N</span><span class="op">)</span>,
-    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    Z <span class="op">=</span> <span class="fu">simple_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_model</span><span class="op">(</span>
-    Y_Z_1 <span class="op">=</span> <span class="fu">f_Y</span><span class="op">(</span><span class="fl">1</span>, <span class="va">X.1</span>, <span class="va">X.2</span>, <span class="va">X.3</span>, <span class="va">X.4</span>, <span class="va">U</span><span class="op">)</span>,
-    Y_Z_0 <span class="op">=</span> <span class="fu">f_Y</span><span class="op">(</span><span class="fl">0</span>, <span class="va">X.1</span>, <span class="va">X.2</span>, <span class="va">X.3</span>, <span class="va">X.4</span>, <span class="va">U</span><span class="op">)</span>,
-    tau <span class="op">=</span> <span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_inquiry</span><span class="op">(</span>handler <span class="op">=</span> <span class="va">best_predictor</span>, 
-                  covariate_names <span class="op">=</span> <span class="va">covariate_names</span>,
-                  label <span class="op">=</span> <span class="st">"best"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>
-    handler <span class="op">=</span> <span class="va">causal_forest_handler</span>, 
-    covariate_names <span class="op">=</span> <span class="va">covariate_names</span>,
-    share_train <span class="op">=</span> <span class="fl">0.5</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>
-    handler <span class="op">=</span> <span class="va">fabricate</span>, 
-    low_test  <span class="op">=</span> <span class="op">(</span><span class="va">test</span> <span class="op">&amp;</span> <span class="op">(</span><span class="va">pred</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">pred</span><span class="op">[</span><span class="va">test</span><span class="op">]</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,
-    low_all <span class="op">=</span> <span class="va">pred</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">pred</span>, <span class="fl">0.2</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    ate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">tau</span><span class="op">)</span>,
-    worst_effects_all <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">tau</span><span class="op">[</span><span class="va">tau</span> <span class="op">&lt;=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">tau</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">]</span><span class="op">)</span>,
-    worst_effects_test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">tau</span><span class="op">[</span><span class="va">test</span> <span class="op">&amp;</span> <span class="va">tau</span> <span class="op">&lt;=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">tau</span><span class="op">[</span><span class="va">test</span><span class="op">]</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">]</span><span class="op">)</span>,
-    weak_effects_all <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">tau</span><span class="op">[</span><span class="va">low_all</span><span class="op">]</span><span class="op">)</span>,
-    weak_effects_test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">tau</span><span class="op">[</span><span class="va">low_test</span><span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ate"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, subset <span class="op">=</span> <span class="va">low_test</span>, 
-                    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"weak_effects_test"</span>, <span class="st">"worst_effects_test"</span><span class="op">)</span>, 
-                    label <span class="op">=</span> <span class="st">"lm_weak_test"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, subset <span class="op">=</span> <span class="va">low_all</span>, 
-                    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"weak_effects_all"</span>, <span class="st">"worst_effects_all"</span><span class="op">)</span>, 
-                    label <span class="op">=</span> <span class="st">"lm_weak_all"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="va">get_best_predictor</span><span class="op">)</span>,
-                    inquiry <span class="op">=</span> <span class="st">"best_predictor"</span>, label <span class="op">=</span> <span class="st">"cf"</span><span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/grf-labs/grf">grf</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">covariate_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"X."</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">f_Y</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">z</span>, <span class="va">X.1</span>, <span class="va">X.2</span>, <span class="va">X.3</span>, <span class="va">X.4</span>, <span class="va">u</span><span class="op">)</span> </span>
+<span>  <span class="va">z</span> <span class="op">*</span> <span class="va">X.1</span> <span class="op">+</span> <span class="va">z</span> <span class="op">*</span> <span class="va">X.2</span> <span class="op">^</span> <span class="fl">2</span> <span class="op">+</span> <span class="va">z</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">X.3</span><span class="op">)</span> <span class="op">+</span> <span class="va">z</span> <span class="op">*</span> <span class="va">X.3</span> <span class="op">*</span> <span class="va">X.4</span> <span class="op">+</span> <span class="va">u</span></span>
+<span></span>
+<span><span class="va">get_best_predictor</span> <span class="op">&lt;-</span></span>
+<span>  <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="fu">select</span><span class="op">(</span><span class="va">data</span>, estimate <span class="op">=</span> <span class="va">var_imp</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">slice</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">declaration_19.1</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="fl">1000</span>,  </span>
+<span>    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span> <span class="op">*</span> <span class="va">N</span><span class="op">)</span>, <span class="va">N</span><span class="op">)</span>,</span>
+<span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    Z <span class="op">=</span> <span class="fu">simple_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    Y_Z_1 <span class="op">=</span> <span class="fu">f_Y</span><span class="op">(</span><span class="fl">1</span>, <span class="va">X.1</span>, <span class="va">X.2</span>, <span class="va">X.3</span>, <span class="va">X.4</span>, <span class="va">U</span><span class="op">)</span>,</span>
+<span>    Y_Z_0 <span class="op">=</span> <span class="fu">f_Y</span><span class="op">(</span><span class="fl">0</span>, <span class="va">X.1</span>, <span class="va">X.2</span>, <span class="va">X.3</span>, <span class="va">X.4</span>, <span class="va">U</span><span class="op">)</span>,</span>
+<span>    tau <span class="op">=</span> <span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>handler <span class="op">=</span> <span class="va">best_predictor</span>, </span>
+<span>                  covariate_names <span class="op">=</span> <span class="va">covariate_names</span>,</span>
+<span>                  label <span class="op">=</span> <span class="st">"best"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span></span>
+<span>    handler <span class="op">=</span> <span class="va">causal_forest_handler</span>, </span>
+<span>    covariate_names <span class="op">=</span> <span class="va">covariate_names</span>,</span>
+<span>    share_train <span class="op">=</span> <span class="fl">0.5</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span></span>
+<span>    handler <span class="op">=</span> <span class="va">fabricate</span>, </span>
+<span>    low_test  <span class="op">=</span> <span class="op">(</span><span class="va">test</span> <span class="op">&amp;</span> <span class="op">(</span><span class="va">pred</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">pred</span><span class="op">[</span><span class="va">test</span><span class="op">]</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    low_all <span class="op">=</span> <span class="va">pred</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">pred</span>, <span class="fl">0.2</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    ate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">tau</span><span class="op">)</span>,</span>
+<span>    worst_effects_all <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">tau</span><span class="op">[</span><span class="va">tau</span> <span class="op">&lt;=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">tau</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>    worst_effects_test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">tau</span><span class="op">[</span><span class="va">test</span> <span class="op">&amp;</span> <span class="va">tau</span> <span class="op">&lt;=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">tau</span><span class="op">[</span><span class="va">test</span><span class="op">]</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>    weak_effects_all <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">tau</span><span class="op">[</span><span class="va">low_all</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>    weak_effects_test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">tau</span><span class="op">[</span><span class="va">low_test</span><span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ate"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, subset <span class="op">=</span> <span class="va">low_test</span>, </span>
+<span>                    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"weak_effects_test"</span>, <span class="st">"worst_effects_test"</span><span class="op">)</span>, </span>
+<span>                    label <span class="op">=</span> <span class="st">"lm_weak_test"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, subset <span class="op">=</span> <span class="va">low_all</span>, </span>
+<span>                    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"weak_effects_all"</span>, <span class="st">"worst_effects_all"</span><span class="op">)</span>, </span>
+<span>                    label <span class="op">=</span> <span class="st">"lm_weak_all"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span>handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="va">get_best_predictor</span><span class="op">)</span>,</span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"best_predictor"</span>, label <span class="op">=</span> <span class="st">"cf"</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Before turning to diagnosis we can get a feel for the performance of the causal forest estimator by comparing the predicted effects for each unit generated by the estimator, with the actual unit level treatment effects generated by <em>M</em>, as shown in Figure @ref(fig:figure-19-1).</p>
@@ -678,26 +678,26 @@ div.csl-indent {
 <p>Causal forests diagnosis</p>
 <p>For the diagnosis we need to take account of the fact that the answers to one of the inquiries (“Which X accounts for the most variation in effects?”) should be treated as categorical. For this reason, we report the modal estimate and estimand, rather than relying on the average estimate and average estimand. We calculate the probability that we get the correct answer, rather than relying on bias. We illustrate the diagnosis in Figure @ref(fig:figure-19-3).</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">most_common</span> <span class="op">&lt;-</span> 
-  <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
-    <span class="va">ux</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
-    <span class="va">ux</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.min.html">which.max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tabulate.html">tabulate</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/match.html">match</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">ux</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">]</span>
-  <span class="op">}</span>
-
-<span class="va">discovery_diagnosands</span>  <span class="op">&lt;-</span> 
-  <span class="fu">declare_diagnosands</span><span class="op">(</span>
-    correct <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span> <span class="op">==</span> <span class="va">estimand</span><span class="op">)</span>,
-    bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span>,
-    rmse <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span>,
-    mean_estimate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span><span class="op">)</span>,
-    modal_estimate <span class="op">=</span> <span class="fu">most_common</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">estimate</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>,
-    mean_estimand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimand</span><span class="op">)</span>,
-    modal_estimand <span class="op">=</span> <span class="fu">most_common</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">estimand</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">)</span>
-
-<span class="va">diagnosis_19.1</span> <span class="op">&lt;-</span> 
-  <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_19.1</span>, 
-                  diagnosands <span class="op">=</span> <span class="va">discovery_diagnosands</span><span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">most_common</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">ux</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span>    <span class="va">ux</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.min.html">which.max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tabulate.html">tabulate</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/match.html">match</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">ux</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span>
+<span>  <span class="op">}</span></span>
+<span></span>
+<span><span class="va">discovery_diagnosands</span>  <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">declare_diagnosands</span><span class="op">(</span></span>
+<span>    correct <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span> <span class="op">==</span> <span class="va">estimand</span><span class="op">)</span>,</span>
+<span>    bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span>,</span>
+<span>    rmse <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    mean_estimate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span><span class="op">)</span>,</span>
+<span>    modal_estimate <span class="op">=</span> <span class="fu">most_common</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">estimate</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    mean_estimand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimand</span><span class="op">)</span>,</span>
+<span>    modal_estimand <span class="op">=</span> <span class="fu">most_common</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">estimand</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">diagnosis_19.1</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_19.1</span>, </span>
+<span>                  diagnosands <span class="op">=</span> <span class="va">discovery_diagnosands</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">

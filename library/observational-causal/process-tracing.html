@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Process tracing</title>
 <style>
@@ -596,20 +596,20 @@ div.csl-indent {
 <p>Using the language popularized by <span class="citation" data-cites="VanEvera1997">Van Evera (<a href="../../references.html#ref-VanEvera1997" role="doc-biblioref">1997</a>)</span>, <span class="math inline">\(M\)</span> provides a “hoop” test: if you look for data on <span class="math inline">\(M\)</span> and find that <span class="math inline">\(M=0\)</span> when <span class="math inline">\(X=1\)</span> and <span class="math inline">\(Y=1\)</span> then you infer that <span class="math inline">\(X\)</span> did not cause <span class="math inline">\(Y\)</span>. If on the other hand you examine <span class="math inline">\(W\)</span> and find that <span class="math inline">\(W=1\)</span> then you have a “smoking gun” test: You infer that <span class="math inline">\(X\)</span> did indeed cause <span class="math inline">\(Y\)</span>. However, if you find both <span class="math inline">\(M=0\)</span> and <span class="math inline">\(W=1\)</span>, then you know your model is wrong.</p>
 <p>The model can be described using the <code>CausalQueries</code> package thus:</p>
 <div class="cell" data-file="scripts_declarations/declaration_16.1a.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">CausalQueries</span><span class="op">)</span>
-<span class="co">#&gt; Loading required package: Rcpp</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'CausalQueries'</span>
-<span class="co">#&gt; The following object is masked from 'package:ggdag':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     simulate_data</span>
-
-<span class="va">causal_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/make_model.html">make_model</a></span><span class="op">(</span><span class="st">"X -&gt; M -&gt; Y &lt;- W -&gt; M"</span><span class="op">)</span> |&gt;
-  <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/set_restrictions.html">set_restrictions</a></span><span class="op">(</span><span class="st">"(M[X=1] &lt; M[X=0]) | (M[X=1, W=1] == M[X=0, W=1])"</span><span class="op">)</span> |&gt;
-  <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/set_restrictions.html">set_restrictions</a></span><span class="op">(</span><span class="st">"(Y[M=1] &lt; Y[M=0]) | (Y[M=1, W=1] == Y[M=0, W=1])"</span><span class="op">)</span>
-
-<span class="va">strategies</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X-Y"</span>, <span class="st">"X-Y-M"</span>, <span class="st">"X-Y-W"</span>,  <span class="st">"X-Y-W-M"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">CausalQueries</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: Rcpp</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'CausalQueries'</span></span>
+<span><span class="co">#&gt; The following object is masked from 'package:ggdag':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     simulate_data</span></span>
+<span></span>
+<span><span class="va">causal_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/make_model.html">make_model</a></span><span class="op">(</span><span class="st">"X -&gt; M -&gt; Y &lt;- W -&gt; M"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/set_restrictions.html">set_restrictions</a></span><span class="op">(</span><span class="st">"(M[X=1] &lt; M[X=0]) | (M[X=1, W=1] == M[X=0, W=1])"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/set_restrictions.html">set_restrictions</a></span><span class="op">(</span><span class="st">"(Y[M=1] &lt; Y[M=0]) | (Y[M=1, W=1] == Y[M=0, W=1])"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">strategies</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X-Y"</span>, <span class="st">"X-Y-M"</span>, <span class="st">"X-Y-W"</span>,  <span class="st">"X-Y-W-M"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The DAG of the causal model is shown in figure @ref(fig:figure-16-1).</p>
 <div class="cell">
@@ -672,22 +672,22 @@ div.csl-indent {
 <div id="declaration-16-1" class="definition">
 <p>Process tracing design declaration</p>
 <div class="cell" data-file="scripts_declarations/declaration_16.1b.R">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_16.1</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/draw_causal_type.html">draw_causal_type</a></span><span class="op">(</span><span class="va">causal_model</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    CoE <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/query_distribution.html">query_distribution</a></span><span class="op">(</span>
-      <span class="va">causal_model</span>, 
-      query <span class="op">=</span> <span class="st">"Y[X=1] - Y[X=0]"</span>, 
-      parameters <span class="op">=</span> <span class="va">causal_type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>
-    handler <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
-      <span class="va">causal_model</span> |&gt;
-      <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/make_data.html">make_data</a></span><span class="op">(</span>parameters <span class="op">=</span> <span class="va">data</span><span class="op">$</span><span class="va">causal_type</span><span class="op">)</span><span class="op">)</span>  <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="va">process_tracing_estimator</span><span class="op">)</span>, 
-    causal_model <span class="op">=</span> <span class="va">causal_model</span>,
-    query <span class="op">=</span> <span class="st">"Y[X=1] - Y[X=0]"</span>,
-    strategies <span class="op">=</span> <span class="va">strategies</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_16.1</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/draw_causal_type.html">draw_causal_type</a></span><span class="op">(</span><span class="va">causal_model</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    CoE <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/query_distribution.html">query_distribution</a></span><span class="op">(</span></span>
+<span>      <span class="va">causal_model</span>, </span>
+<span>      query <span class="op">=</span> <span class="st">"Y[X=1] - Y[X=0]"</span>, </span>
+<span>      parameters <span class="op">=</span> <span class="va">causal_type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span></span>
+<span>    handler <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
+<span>      <span class="va">causal_model</span> <span class="op">|&gt;</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/make_data.html">make_data</a></span><span class="op">(</span>parameters <span class="op">=</span> <span class="va">data</span><span class="op">$</span><span class="va">causal_type</span><span class="op">)</span><span class="op">)</span>  <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="va">process_tracing_estimator</span><span class="op">)</span>, </span>
+<span>    causal_model <span class="op">=</span> <span class="va">causal_model</span>,</span>
+<span>    query <span class="op">=</span> <span class="st">"Y[X=1] - Y[X=0]"</span>,</span>
+<span>    strategies <span class="op">=</span> <span class="va">strategies</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-16-1" class="lemma">

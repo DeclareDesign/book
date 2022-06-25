@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - 13&nbsp; Design example</title>
 <style>
@@ -605,64 +605,64 @@ div.csl-indent {
 <p>Gulzar and Khan (2021) design</p>
 <p>With <code>declare_model</code>, we describe a hierarchical structure with 660 villages, each of which is home to many citizens who are eligible to run for elected office. Each citizen harbors three potential outcomes. <code>Y_Z_neutral</code> is the citizen’s latent probability of standing for election if treated with a neutral appeal, <code>Y_Z_personal</code> is the probability if treated with an appeal that emphasizes the personal returns to office, and <code>Y_Z_social</code> is the probability if treated with an appeal that underlines the benefits to the community. Our simplified model assumes a constant treatment effect of about 3 percentage points for the personal appeal and 4 percentage points for the social appeal.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="cell" data-file="scripts_declarations/declaration_12.1a.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">model_12.1</span> <span class="op">&lt;-</span> 
-  <span class="fu">declare_model</span><span class="op">(</span>
-    villages <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">660</span>, U_village <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span><span class="op">)</span>,
-    citizens <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>
-      N <span class="op">=</span> <span class="fl">100</span>,
-      U_citizen <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-      <span class="fu">potential_outcomes</span><span class="op">(</span>
-        <span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span>
-          <span class="va">U_citizen</span> <span class="op">+</span> <span class="va">U_village</span> <span class="op">+</span>
-            <span class="fl">0.10</span> <span class="op">*</span> <span class="op">(</span><span class="va">Z</span> <span class="op">==</span> <span class="st">"personal"</span><span class="op">)</span> <span class="op">+</span>
-            <span class="fl">0.15</span> <span class="op">*</span> <span class="op">(</span><span class="va">Z</span> <span class="op">==</span> <span class="st">"social"</span><span class="op">)</span><span class="op">)</span>,
-        conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"neutral"</span>, <span class="st">"personal"</span>, <span class="st">"social"</span><span class="op">)</span><span class="op">)</span>
-      <span class="op">)</span>
-    <span class="op">)</span>
-  <span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model_12.1</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    villages <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">660</span>, U_village <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    citizens <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>      N <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>      U_citizen <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>      <span class="fu">potential_outcomes</span><span class="op">(</span></span>
+<span>        <span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span></span>
+<span>          <span class="va">U_citizen</span> <span class="op">+</span> <span class="va">U_village</span> <span class="op">+</span></span>
+<span>            <span class="fl">0.10</span> <span class="op">*</span> <span class="op">(</span><span class="va">Z</span> <span class="op">==</span> <span class="st">"personal"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>            <span class="fl">0.15</span> <span class="op">*</span> <span class="op">(</span><span class="va">Z</span> <span class="op">==</span> <span class="st">"social"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>        conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"neutral"</span>, <span class="st">"personal"</span>, <span class="st">"social"</span><span class="op">)</span><span class="op">)</span></span>
+<span>      <span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We have two inquiries, representing the average treatment effects in the population for the personal and social appeals compared to the neutral appeal, defined as the average differences in potential outcomes:</p>
 <div class="cell" data-file="scripts_declarations/declaration_12.1b.R">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">inquiry_12.1</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    ATE_personal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_personal</span> <span class="op">-</span> <span class="va">Y_Z_neutral</span><span class="op">)</span>,
-    ATE_social <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_social</span> <span class="op">-</span> <span class="va">Y_Z_neutral</span><span class="op">)</span>
-  <span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">inquiry_12.1</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    ATE_personal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_personal</span> <span class="op">-</span> <span class="va">Y_Z_neutral</span><span class="op">)</span>,</span>
+<span>    ATE_social <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_social</span> <span class="op">-</span> <span class="va">Y_Z_neutral</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The data strategy consists of four steps: sampling of villages, sampling of citizens, treatment assignment, and outcome measurement. In sampling, we sample 192 villages and 48 of the eligible citizens from each village. In assignment, we cluster assign 25% of the villages to the neutral condition, 37.5% to the personal appeal, and 37.5% to the social appeal. The measurement step maps the “revealed,” but still latent, probability of running to the observed binary choice to run or not.</p>
 <div class="cell" data-file="scripts_declarations/declaration_12.1c.R">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">n_villages</span> <span class="op">&lt;-</span> <span class="fl">192</span>
-<span class="va">citizens_per_village</span> <span class="op">&lt;-</span> <span class="fl">48</span>
-
-<span class="va">data_strategy_12.1</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_sampling</span><span class="op">(</span>
-    S_village <span class="op">=</span> <span class="fu">cluster_rs</span><span class="op">(</span>clusters <span class="op">=</span> <span class="va">villages</span>, n <span class="op">=</span> <span class="va">n_villages</span><span class="op">)</span>,
-    filter <span class="op">=</span> <span class="va">S_village</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_sampling</span><span class="op">(</span>
-    S_citizen <span class="op">=</span> <span class="fu">strata_rs</span><span class="op">(</span>strata <span class="op">=</span> <span class="va">villages</span>, n <span class="op">=</span> <span class="va">citizens_per_village</span><span class="op">)</span>,
-    filter <span class="op">=</span> <span class="va">S_citizen</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>
-    Z <span class="op">=</span> <span class="fu">cluster_ra</span><span class="op">(</span>
-      clusters <span class="op">=</span> <span class="va">villages</span>, 
-      conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"neutral"</span>, <span class="st">"personal"</span>, <span class="st">"social"</span><span class="op">)</span>,
-      prob_each <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.250</span>, <span class="fl">0.375</span>, <span class="fl">0.375</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_measurement</span><span class="op">(</span>
-    Y_latent <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span>,
-    Y_observed <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="va">Y_latent</span><span class="op">)</span>
-  <span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">n_villages</span> <span class="op">&lt;-</span> <span class="fl">192</span></span>
+<span><span class="va">citizens_per_village</span> <span class="op">&lt;-</span> <span class="fl">48</span></span>
+<span></span>
+<span><span class="va">data_strategy_12.1</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_sampling</span><span class="op">(</span></span>
+<span>    S_village <span class="op">=</span> <span class="fu">cluster_rs</span><span class="op">(</span>clusters <span class="op">=</span> <span class="va">villages</span>, n <span class="op">=</span> <span class="va">n_villages</span><span class="op">)</span>,</span>
+<span>    filter <span class="op">=</span> <span class="va">S_village</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_sampling</span><span class="op">(</span></span>
+<span>    S_citizen <span class="op">=</span> <span class="fu">strata_rs</span><span class="op">(</span>strata <span class="op">=</span> <span class="va">villages</span>, n <span class="op">=</span> <span class="va">citizens_per_village</span><span class="op">)</span>,</span>
+<span>    filter <span class="op">=</span> <span class="va">S_citizen</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span></span>
+<span>    Z <span class="op">=</span> <span class="fu">cluster_ra</span><span class="op">(</span></span>
+<span>      clusters <span class="op">=</span> <span class="va">villages</span>, </span>
+<span>      conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"neutral"</span>, <span class="st">"personal"</span>, <span class="st">"social"</span><span class="op">)</span>,</span>
+<span>      prob_each <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.250</span>, <span class="fl">0.375</span>, <span class="fl">0.375</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span></span>
+<span>    Y_latent <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span>,</span>
+<span>    Y_observed <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="va">Y_latent</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The answer strategy consists of an ordinary least squares regression (as implemented by <code>lm_robust</code>) of the outcome on the treatments. The standard errors are clustered at the village level in order to account for the clustering in the assignment procedure. The regression will return three coefficients: an intercept and two treatment effect estimates. We ensure that the estimators are mapped to the relevant inquiries by explicitly linking them.</p>
 <div class="cell" data-file="scripts_declarations/declaration_12.1d.R">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">answer_strategy_12.1</span> <span class="op">&lt;-</span> 
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y_observed</span> <span class="op">~</span> <span class="va">Z</span>, term <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Zpersonal"</span>, <span class="st">"Zsocial"</span><span class="op">)</span>, 
-                    clusters <span class="op">=</span> <span class="va">villages</span>, 
-                    .method <span class="op">=</span> <span class="va">lm_robust</span>,
-                    se_type <span class="op">=</span> <span class="st">"stata"</span>,
-                    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATE_personal"</span>, <span class="st">"ATE_social"</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">answer_strategy_12.1</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y_observed</span> <span class="op">~</span> <span class="va">Z</span>, term <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Zpersonal"</span>, <span class="st">"Zsocial"</span><span class="op">)</span>, </span>
+<span>                    clusters <span class="op">=</span> <span class="va">villages</span>, </span>
+<span>                    .method <span class="op">=</span> <span class="va">lm_robust</span>,</span>
+<span>                    se_type <span class="op">=</span> <span class="st">"stata"</span>,</span>
+<span>                    inquiry <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ATE_personal"</span>, <span class="st">"ATE_social"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>When we concatenate all four elements with the <code>+</code> operator, we get a design:</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_12.1</span> <span class="op">&lt;-</span> <span class="va">model_12.1</span> <span class="op">+</span> <span class="va">inquiry_12.1</span> <span class="op">+</span> <span class="va">data_strategy_12.1</span> <span class="op">+</span> <span class="va">answer_strategy_12.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_12.1</span> <span class="op">&lt;-</span> <span class="va">model_12.1</span> <span class="op">+</span> <span class="va">inquiry_12.1</span> <span class="op">+</span> <span class="va">data_strategy_12.1</span> <span class="op">+</span> <span class="va">answer_strategy_12.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><span class="math inline">\(~\)</span></p>
 </div>
@@ -670,19 +670,19 @@ div.csl-indent {
 <span class="header-section-number">13.3</span> Diagnosis</h2>
 <p>To diagnose the design, we first define a set of diagnosands: bias, statistical power, the root mean-squared error, and total cost. The total cost calculation is in an arbitrary unit and reflects an assumption that sampling an additional village incurs a cost that is ten times larger than the cost of sampling an additional subject within a village.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosands</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_diagnosands</span><span class="op">(</span>
-    bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span>,
-    rmse <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span> <span class="op">^</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span>,
-    power <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">p.value</span> <span class="op">&lt;=</span> <span class="fl">0.05</span><span class="op">)</span>,
-    cost <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fl">10</span> <span class="op">*</span> <span class="va">n_villages</span> <span class="op">+</span> <span class="fl">1</span> <span class="op">*</span> <span class="va">n_villages</span> <span class="op">*</span> <span class="va">citizens_per_village</span><span class="op">)</span>
-  <span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosands</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_diagnosands</span><span class="op">(</span></span>
+<span>    bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span>,</span>
+<span>    rmse <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span> <span class="op">^</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    power <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">p.value</span> <span class="op">&lt;=</span> <span class="fl">0.05</span><span class="op">)</span>,</span>
+<span>    cost <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fl">10</span> <span class="op">*</span> <span class="va">n_villages</span> <span class="op">+</span> <span class="fl">1</span> <span class="op">*</span> <span class="va">n_villages</span> <span class="op">*</span> <span class="va">citizens_per_village</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We then diagnose the design by simulating the design over and over, then calculating the diagnosands based on simulations data.</p>
 <div id="diagnosis-12-1" class="lemma">
 <p>Diagnosis of Gulzar and Khan (2022)</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_12.1</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_12.1</span>, diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_12.1</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_12.1</span>, diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 
@@ -726,11 +726,11 @@ div.csl-indent {
 <div id="diagnosis-12-2" class="lemma">
 <p>Diagnosis of redesigned Gulzar and Khan (2022)</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_12.2</span> <span class="op">&lt;-</span>
-  <span class="va">declaration_12.1</span> |&gt;
-  <span class="fu">redesign</span><span class="op">(</span>n_villages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">192</span>, <span class="fl">500</span><span class="op">)</span>,
-           citizens_per_village <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">25</span>, <span class="fl">50</span>, <span class="fl">75</span>, <span class="fl">100</span><span class="op">)</span><span class="op">)</span> |&gt;
-  <span class="fu">diagnose_designs</span><span class="op">(</span>diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_12.2</span> <span class="op">&lt;-</span></span>
+<span>  <span class="va">declaration_12.1</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>n_villages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">192</span>, <span class="fl">500</span><span class="op">)</span>,</span>
+<span>           citizens_per_village <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">25</span>, <span class="fl">50</span>, <span class="fl">75</span>, <span class="fl">100</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">diagnose_designs</span><span class="op">(</span>diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In Figure @ref(fig:figure-12-1), we illustrate the results of our redesign exercise across all four diagnosands. The number of citizens per village is plotted on the horizontal axis and the value of the diagnosand is shown on the vertical axis. The plot is faceted by diagnosand and each line represents a different possible number of villages. We focus here on the social treatment only.</p>
 <div class="cell">

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Regression discontinuity designs</title>
 <style>
@@ -617,33 +617,33 @@ div.csl-indent {
 <div id="declaration-16-5" class="definition">
 <p>Regression discontinuity design</p>
 <div class="cell" data-file="scripts_declarations/declaration_16.5.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdrobust</span><span class="op">)</span>
-
-<span class="va">cutoff</span> <span class="op">&lt;-</span> <span class="fl">0.5</span>
-<span class="va">control</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/poly.html">poly</a></span><span class="op">(</span><span class="va">X</span>, <span class="fl">4</span>, raw <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html">%*%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">.7</span>, <span class="op">-</span><span class="fl">.8</span>, <span class="fl">.5</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">}</span>
-<span class="va">treatment</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/poly.html">poly</a></span><span class="op">(</span><span class="va">X</span>, <span class="fl">4</span>, raw <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html">%*%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="op">-</span><span class="fl">1.5</span>, <span class="fl">.5</span>, <span class="fl">.8</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">.15</span><span class="op">}</span>
-
-<span class="va">declaration_16.5</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="fl">500</span>,
-    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">0</span>, <span class="fl">0.1</span><span class="op">)</span>,
-    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span> <span class="op">+</span> <span class="va">U</span> <span class="op">-</span> <span class="va">cutoff</span>,
-    D <span class="op">=</span> <span class="fl">1</span> <span class="op">*</span> <span class="op">(</span><span class="va">X</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,
-    Y_D_0 <span class="op">=</span> <span class="fu">control</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">+</span> <span class="va">U</span>,
-    Y_D_1 <span class="op">=</span> <span class="fu">treatment</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">+</span> <span class="va">U</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>LATE <span class="op">=</span> <span class="fu">treatment</span><span class="op">(</span><span class="fl">0.5</span><span class="op">)</span> <span class="op">-</span> <span class="fu">control</span><span class="op">(</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">D</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    <span class="va">Y</span>, <span class="va">X</span>, c <span class="op">=</span> <span class="fl">0</span>, 
-    term <span class="op">=</span> <span class="st">"Bias-Corrected"</span>,
-    .method <span class="op">=</span> <span class="va">rdrobust_helper</span>,
-    inquiry <span class="op">=</span> <span class="st">"LATE"</span>,
-    label <span class="op">=</span> <span class="st">"optimal"</span>
-  <span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdrobust</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">cutoff</span> <span class="op">&lt;-</span> <span class="fl">0.5</span></span>
+<span><span class="va">control</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/poly.html">poly</a></span><span class="op">(</span><span class="va">X</span>, <span class="fl">4</span>, raw <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html">%*%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">.7</span>, <span class="op">-</span><span class="fl">.8</span>, <span class="fl">.5</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">}</span></span>
+<span><span class="va">treatment</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/poly.html">poly</a></span><span class="op">(</span><span class="va">X</span>, <span class="fl">4</span>, raw <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html">%*%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="op">-</span><span class="fl">1.5</span>, <span class="fl">.5</span>, <span class="fl">.8</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">.15</span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">declaration_16.5</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="fl">500</span>,</span>
+<span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">0</span>, <span class="fl">0.1</span><span class="op">)</span>,</span>
+<span>    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span> <span class="op">+</span> <span class="va">U</span> <span class="op">-</span> <span class="va">cutoff</span>,</span>
+<span>    D <span class="op">=</span> <span class="fl">1</span> <span class="op">*</span> <span class="op">(</span><span class="va">X</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
+<span>    Y_D_0 <span class="op">=</span> <span class="fu">control</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">+</span> <span class="va">U</span>,</span>
+<span>    Y_D_1 <span class="op">=</span> <span class="fu">treatment</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">+</span> <span class="va">U</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>LATE <span class="op">=</span> <span class="fu">treatment</span><span class="op">(</span><span class="fl">0.5</span><span class="op">)</span> <span class="op">-</span> <span class="fu">control</span><span class="op">(</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">D</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">Y</span>, <span class="va">X</span>, c <span class="op">=</span> <span class="fl">0</span>, </span>
+<span>    term <span class="op">=</span> <span class="st">"Bias-Corrected"</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">rdrobust_helper</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"LATE"</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"optimal"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Regression discontinuity answer strategies approximate the treated and untreated conditional expectation functions to the left and right of the cutoff. The choice of answer strategy involves two key choices: the bandwidth of data around the threshold that is used for estimation, and the model used to fit that data. We declare the local polynomial regression discontinuity estimator with the robust bias-corrected inference procedures described in <span class="citation" data-cites="calonico2014robust">Calonico, Cattaneo, and Titiunik (<a href="../../references.html#ref-calonico2014robust" role="doc-biblioref">2014</a>)</span>, which fits a nonparametric model to the data and chooses an optimal bandwidth that minimizes bias. This robust estimator is now widely used in practice, because it navigates the bias-variance tradeoff in selecting bandwidths and statistical model specifications in a data-driven manner. The procedure also obviates the need for researchers to select these parameters themselves.</p>
@@ -651,15 +651,15 @@ div.csl-indent {
 <div id="declaration-16-6" class="definition">
 <p>Regression discontinuity designs with varying bandwidths</p>
 <div class="cell" data-file="scripts_declarations/declaration_16.6.R">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_16.6</span> <span class="op">&lt;-</span>
-  <span class="va">declaration_16.5</span> <span class="op">+</span> 
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    <span class="va">Y</span> <span class="op">~</span> <span class="va">X</span> <span class="op">*</span> <span class="va">D</span>, 
-    subset <span class="op">=</span> <span class="va">X</span> <span class="op">&gt;</span> <span class="op">-</span><span class="fl">1</span><span class="op">*</span><span class="va">bandwidth</span> <span class="op">&amp;</span> <span class="va">X</span> <span class="op">&lt;</span> <span class="va">bandwidth</span>,
-    .method <span class="op">=</span> <span class="va">lm_robust</span>, 
-    inquiry <span class="op">=</span> <span class="st">"LATE"</span>,
-    label <span class="op">=</span> <span class="st">"linear"</span>
-  <span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_16.6</span> <span class="op">&lt;-</span></span>
+<span>  <span class="va">declaration_16.5</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">Y</span> <span class="op">~</span> <span class="va">X</span> <span class="op">*</span> <span class="va">D</span>, </span>
+<span>    subset <span class="op">=</span> <span class="va">X</span> <span class="op">&gt;</span> <span class="op">-</span><span class="fl">1</span><span class="op">*</span><span class="va">bandwidth</span> <span class="op">&amp;</span> <span class="va">X</span> <span class="op">&lt;</span> <span class="va">bandwidth</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">lm_robust</span>, </span>
+<span>    inquiry <span class="op">=</span> <span class="st">"LATE"</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"linear"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-16-5" class="lemma">

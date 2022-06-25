@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Behavioral games</title>
 <style>
@@ -624,64 +624,64 @@ div.csl-indent {
 </div>
 <p>The predictions of this model are then used to define the inquiry and predict outcomes in the model declaration. The model part of the design includes information on underlying preferences. For this we make use of a set of functions that characterize stipulated beliefs about behavior.</p>
 <div class="cell" data-file="scripts_declarations/declaration_17.6_a.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">invested</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a_1</span>, <span class="va">a_2</span><span class="op">)</span> <span class="op">{</span>
-  <span class="va">u_a</span> <span class="op">=</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_1</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_1</span><span class="op">)</span> <span class="op">+</span> <span class="va">a_1</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="va">a_1</span><span class="op">)</span>  <span class="co"># give a1</span>
-  <span class="va">u_b</span> <span class="op">=</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_1</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="va">a_2</span><span class="op">)</span> <span class="op">+</span> <span class="va">a_1</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_2</span><span class="op">)</span><span class="op">)</span> <span class="co"># give 1</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">u_a</span> <span class="op">&gt;</span> <span class="va">u_b</span>, <span class="va">a_1</span>, <span class="fl">1</span><span class="op">)</span>
-<span class="op">}</span>
-
-<span class="va">average_invested</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a_1</span><span class="op">)</span> 
-  <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">.01</span><span class="op">)</span>,  <span class="va">invested</span>, a_1 <span class="op">=</span> <span class="va">a_1</span><span class="op">)</span><span class="op">)</span>
-
-<span class="va">returned</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x1</span>, <span class="va">a_2</span> <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">3</span><span class="op">)</span> 
-  <span class="op">(</span><span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="va">a_2</span> <span class="op">*</span> <span class="va">x1</span> <span class="op">-</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_2</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">x1</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="va">x1</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> 
-  <span class="op">(</span><span class="va">x1</span>  <span class="op">&gt;</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_2</span><span class="op">)</span> <span class="op">/</span> <span class="op">(</span><span class="fl">1</span> <span class="op">+</span> <span class="va">a_2</span><span class="op">)</span><span class="op">)</span>
-
-<span class="va">average_returned</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a_2</span><span class="op">)</span> 
-  <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">1</span>, <span class="fl">.01</span><span class="op">)</span>, <span class="va">returned</span>, a_2 <span class="op">=</span> <span class="va">a_2</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">invested</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a_1</span>, <span class="va">a_2</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">u_a</span> <span class="op">=</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_1</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_1</span><span class="op">)</span> <span class="op">+</span> <span class="va">a_1</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="va">a_1</span><span class="op">)</span>  <span class="co"># give a1</span></span>
+<span>  <span class="va">u_b</span> <span class="op">=</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_1</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="va">a_2</span><span class="op">)</span> <span class="op">+</span> <span class="va">a_1</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_2</span><span class="op">)</span><span class="op">)</span> <span class="co"># give 1</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">u_a</span> <span class="op">&gt;</span> <span class="va">u_b</span>, <span class="va">a_1</span>, <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">average_invested</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a_1</span><span class="op">)</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">.01</span><span class="op">)</span>,  <span class="va">invested</span>, a_1 <span class="op">=</span> <span class="va">a_1</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">returned</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x1</span>, <span class="va">a_2</span> <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">3</span><span class="op">)</span> </span>
+<span>  <span class="op">(</span><span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="va">a_2</span> <span class="op">*</span> <span class="va">x1</span> <span class="op">-</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_2</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">x1</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="va">x1</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> </span>
+<span>  <span class="op">(</span><span class="va">x1</span>  <span class="op">&gt;</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_2</span><span class="op">)</span> <span class="op">/</span> <span class="op">(</span><span class="fl">1</span> <span class="op">+</span> <span class="va">a_2</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">average_returned</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a_2</span><span class="op">)</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">1</span>, <span class="fl">.01</span><span class="op">)</span>, <span class="va">returned</span>, a_2 <span class="op">=</span> <span class="va">a_2</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The inquiries for this design are the expected share offered to different types of trustees, the expected returns, averaged over possible offers, and the expected action by a trustee when the full amount is invested. The data strategy involves assigning players to pairs and orderings. The first half is assigned to the trustor role and matched with the second group that are assigned the trustee role. For the answer strategy, we simply measure average behavior across subjects. As a wrinkle, we include the possibility that the experimenter confronts the returners with random offers rather than the ones actually made by their partners. This aspect of the design is controlled by an argument called <code>deceive</code> and turns out to be important for inference.</p>
 <div id="declaration-17-6" class="definition">
 <p>Trust game design</p>
 <div class="cell" data-file="scripts_declarations/declaration_17.6_b.R">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R">
-<span class="va">rho</span>     <span class="op">&lt;-</span> <span class="fl">0.8</span>
-<span class="va">n_pairs</span> <span class="op">&lt;-</span> <span class="fl">200</span>
-<span class="va">deceive</span> <span class="op">&lt;-</span> <span class="cn">FALSE</span>
-
-<span class="va">declaration_17.6</span> <span class="op">&lt;-</span>
-  
-  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> <span class="va">n_pairs</span>,
-                a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  
-  <span class="fu">declare_inquiries</span><span class="op">(</span>
-    trusting <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">average_invested</span><span class="op">)</span><span class="op">)</span>,
-    trustworthy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">average_returned</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-
-  <span class="fu">declare_assignment</span><span class="op">(</span>pair <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, num_arms <span class="op">=</span> <span class="va">n_pairs</span><span class="op">)</span>,
-                     role <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="fu">block_ra</span><span class="op">(</span>blocks <span class="op">=</span> <span class="va">pair</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_step</span><span class="op">(</span>
-    id_cols <span class="op">=</span> <span class="va">pair</span>,
-    names_from <span class="op">=</span> <span class="va">role</span>,
-    values_from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">ID</span>, <span class="va">a</span><span class="op">)</span>,
-    handler <span class="op">=</span> <span class="va">pivot_wider</span><span class="op">)</span> <span class="op">+</span>
-  
-  <span class="fu">declare_measurement</span><span class="op">(</span>invested <span class="op">=</span> <span class="fu">invested</span><span class="op">(</span><span class="va">a_1</span>, <span class="va">a_2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    <span class="va">invested</span> <span class="op">~</span> <span class="fl">1</span>,
-    .method <span class="op">=</span> <span class="va">lm_robust</span>,
-    inquiry <span class="op">=</span> <span class="st">"trusting"</span>,
-    label <span class="op">=</span> <span class="st">"trusting"</span><span class="op">)</span> <span class="op">+</span>
-
-  <span class="fu">declare_measurement</span><span class="op">(</span>invested <span class="op">=</span> <span class="va">deceive</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">deceive</span><span class="op">)</span><span class="op">*</span><span class="va">invested</span>,
-                      returned <span class="op">=</span> <span class="fu">returned</span><span class="op">(</span><span class="va">invested</span>, <span class="va">a_2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  
-  <span class="fu">declare_estimator</span><span class="op">(</span>
-    <span class="va">returned</span> <span class="op">~</span> <span class="fl">1</span>,
-    .method <span class="op">=</span> <span class="va">lm_robust</span>,
-    inquiry <span class="op">=</span> <span class="st">"trustworthy"</span>,
-    label <span class="op">=</span> <span class="st">"trustworthy"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span></span>
+<span><span class="va">rho</span>     <span class="op">&lt;-</span> <span class="fl">0.8</span></span>
+<span><span class="va">n_pairs</span> <span class="op">&lt;-</span> <span class="fl">200</span></span>
+<span><span class="va">deceive</span> <span class="op">&lt;-</span> <span class="cn">FALSE</span></span>
+<span></span>
+<span><span class="va">declaration_17.6</span> <span class="op">&lt;-</span></span>
+<span>  </span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> <span class="va">n_pairs</span>,</span>
+<span>                a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  </span>
+<span>  <span class="fu">declare_inquiries</span><span class="op">(</span></span>
+<span>    trusting <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">average_invested</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    trustworthy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">average_returned</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>pair <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, num_arms <span class="op">=</span> <span class="va">n_pairs</span><span class="op">)</span>,</span>
+<span>                     role <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="fu">block_ra</span><span class="op">(</span>blocks <span class="op">=</span> <span class="va">pair</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_step</span><span class="op">(</span></span>
+<span>    id_cols <span class="op">=</span> <span class="va">pair</span>,</span>
+<span>    names_from <span class="op">=</span> <span class="va">role</span>,</span>
+<span>    values_from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">ID</span>, <span class="va">a</span><span class="op">)</span>,</span>
+<span>    handler <span class="op">=</span> <span class="va">pivot_wider</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  </span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>invested <span class="op">=</span> <span class="fu">invested</span><span class="op">(</span><span class="va">a_1</span>, <span class="va">a_2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  </span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">invested</span> <span class="op">~</span> <span class="fl">1</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">lm_robust</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"trusting"</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"trusting"</span><span class="op">)</span> <span class="op">+</span></span>
+<span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>invested <span class="op">=</span> <span class="va">deceive</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">deceive</span><span class="op">)</span><span class="op">*</span><span class="va">invested</span>,</span>
+<span>                      returned <span class="op">=</span> <span class="fu">returned</span><span class="op">(</span><span class="va">invested</span>, <span class="va">a_2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  </span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">returned</span> <span class="op">~</span> <span class="fl">1</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">lm_robust</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"trustworthy"</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"trustworthy"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>A few features are worth highlighting. First, the inquiries are defined using a set of hypothetical responses under the model using a specified response function. However the inquiry is robust to the model in the sense that it remains well defined even if you stipulate very different behaviors. Second, the declaration involves a step where we shift from a “long” data frame with a row per subject to a “wide” data frame with a row per game. Third, the design orders steps so that an estimation stage is implemented before a measurement stage; this is a little unusual but it is done in this way to allow the researchers to analyze Player 1 investment decisions before (possibly) replacing them with fabricated decisions.</p>
@@ -764,10 +764,10 @@ div.csl-indent {
 <div id="diagnosis-17-5" class="lemma">
 <p>Trust game diagnosis</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_17.5</span> <span class="op">&lt;-</span> 
-  <span class="va">declaration_17.6</span> |&gt;
-  <span class="fu">redesign</span><span class="op">(</span>deceive <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> |&gt;
-  <span class="fu">diagnose_design</span><span class="op">(</span><span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_17.5</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">declaration_17.6</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>deceive <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 

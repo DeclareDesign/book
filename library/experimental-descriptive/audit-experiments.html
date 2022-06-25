@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - Audit experiments</title>
 <style>
@@ -629,27 +629,27 @@ div.csl-indent {
 <div id="declaration-17-1" class="definition">
 <p>Audit experiment design</p>
 <div class="cell" data-file="scripts_declarations/declaration_17.1.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_17.1</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="fl">500</span>,
-    type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>
-      size <span class="op">=</span> <span class="va">N</span>, 
-      replace <span class="op">=</span> <span class="cn">TRUE</span>,
-      x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Always-responder"</span>,
-            <span class="st">"Anti-Latino discriminator"</span>,
-            <span class="st">"Never-responder"</span><span class="op">)</span>,
-      prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.30</span>, <span class="fl">0.05</span>, <span class="fl">0.65</span><span class="op">)</span>
-    <span class="op">)</span>,
-    <span class="co"># Behavioral assumptions represented here:</span>
-    Y_Z_white <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Never-Responder"</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-    Y_Z_latino <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Always-Responder"</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    anti_latino_discrimination <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Anti-Latino discriminator"</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"latino"</span>, <span class="st">"white"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"anti_latino_discrimination"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_17.1</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="fl">500</span>,</span>
+<span>    type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span></span>
+<span>      size <span class="op">=</span> <span class="va">N</span>, </span>
+<span>      replace <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>      x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Always-responder"</span>,</span>
+<span>            <span class="st">"Anti-Latino discriminator"</span>,</span>
+<span>            <span class="st">"Never-responder"</span><span class="op">)</span>,</span>
+<span>      prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.30</span>, <span class="fl">0.05</span>, <span class="fl">0.65</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    <span class="co"># Behavioral assumptions represented here:</span></span>
+<span>    Y_Z_white <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Never-Responder"</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,</span>
+<span>    Y_Z_latino <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Always-Responder"</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    anti_latino_discrimination <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Anti-Latino discriminator"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"latino"</span>, <span class="st">"white"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"anti_latino_discrimination"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <section id="intervening-to-decrease-discrimination" class="level2"><h2 class="anchored" data-anchor-id="intervening-to-decrease-discrimination">Intervening to decrease discrimination</h2>
@@ -658,48 +658,48 @@ div.csl-indent {
 <div id="declaration-17-2" class="definition">
 <p>Audit experiment intervention study design</p>
 <div class="cell" data-file="scripts_declarations/declaration_17.2.R">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_17.2</span> <span class="op">&lt;-</span>
-  <span class="co"># This part of the design is about causal inference</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="fl">5000</span>,
-    type_D_0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>
-      size <span class="op">=</span> <span class="va">N</span>,
-      replace <span class="op">=</span> <span class="cn">TRUE</span>,
-      x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Always-Responder"</span>,
-            <span class="st">"Anti-Latino Discriminator"</span>,
-            <span class="st">"Never-Responder"</span><span class="op">)</span>,
-      prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.30</span>, <span class="fl">0.05</span>, <span class="fl">0.65</span><span class="op">)</span>
-    <span class="op">)</span>,
-    type_tau_i <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, <span class="fl">0.5</span><span class="op">)</span>,
-    type_D_1 <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span>
-      <span class="va">type_D_0</span> <span class="op">==</span> <span class="st">"Anti-Latino Discriminator"</span> <span class="op">&amp;</span>
-        <span class="va">type_tau_i</span> <span class="op">==</span> <span class="fl">1</span>,
-      <span class="st">"Always-Responder"</span>,
-      <span class="va">type_D_0</span>
-    <span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>
-    ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">type_D_1</span> <span class="op">==</span> <span class="st">"Anti-Latino Discriminator"</span><span class="op">)</span> <span class="op">-</span>
-                 <span class="op">(</span><span class="va">type_D_0</span> <span class="op">==</span> <span class="st">"Anti-Latino Discriminator"</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>D <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>type <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">type</span> <span class="op">~</span> <span class="va">D</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="co"># This part is about descriptive inference in each condition!</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    Y_Z_white <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Never-Responder"</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-    Y_Z_latino <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Always-Responder"</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>
-    Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"latino"</span>, <span class="st">"white"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">*</span> <span class="va">D</span>, term <span class="op">=</span> <span class="st">"Zwhite:D"</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_17.2</span> <span class="op">&lt;-</span></span>
+<span>  <span class="co"># This part of the design is about causal inference</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="fl">5000</span>,</span>
+<span>    type_D_0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span></span>
+<span>      size <span class="op">=</span> <span class="va">N</span>,</span>
+<span>      replace <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>      x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Always-Responder"</span>,</span>
+<span>            <span class="st">"Anti-Latino Discriminator"</span>,</span>
+<span>            <span class="st">"Never-Responder"</span><span class="op">)</span>,</span>
+<span>      prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.30</span>, <span class="fl">0.05</span>, <span class="fl">0.65</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    type_tau_i <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span>    type_D_1 <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span></span>
+<span>      <span class="va">type_D_0</span> <span class="op">==</span> <span class="st">"Anti-Latino Discriminator"</span> <span class="op">&amp;</span></span>
+<span>        <span class="va">type_tau_i</span> <span class="op">==</span> <span class="fl">1</span>,</span>
+<span>      <span class="st">"Always-Responder"</span>,</span>
+<span>      <span class="va">type_D_0</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">type_D_1</span> <span class="op">==</span> <span class="st">"Anti-Latino Discriminator"</span><span class="op">)</span> <span class="op">-</span></span>
+<span>                 <span class="op">(</span><span class="va">type_D_0</span> <span class="op">==</span> <span class="st">"Anti-Latino Discriminator"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>D <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>type <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">type</span> <span class="op">~</span> <span class="va">D</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="co"># This part is about descriptive inference in each condition!</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    Y_Z_white <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Never-Responder"</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,</span>
+<span>    Y_Z_latino <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"Always-Responder"</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span></span>
+<span>    Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"latino"</span>, <span class="st">"white"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">*</span> <span class="va">D</span>, term <span class="op">=</span> <span class="st">"Zwhite:D"</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-17-1" class="lemma">
 <p>Audit experiment intervention study diagnosis</p>
 <p>Even at 5,000 subjects, the power to detect the effect of the intervention is quite poor, at approximately 15%. This low power stems from the small treatment effect (reducing discrimination by 50% from 5.0% to 2.5%) and from the noisy measurement strategy.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_17.1</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_17.2</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_17.1</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_17.2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 

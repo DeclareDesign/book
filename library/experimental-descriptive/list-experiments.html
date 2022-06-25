@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.613">
+<meta name="generator" content="quarto-0.9.619">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - List experiments</title>
 <style>
@@ -640,28 +640,28 @@ div.csl-indent {
 <div id="declaration-17-3" class="definition">
 <p>List experiment design</p>
 <div class="cell" data-file="scripts_declarations/declaration_17.3.R">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_17.3</span> <span class="op">&lt;-</span>
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="fl">500</span>,
-    control_count <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">3</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,
-    Y_star <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span>,
-    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y_list</span> <span class="op">~</span> <span class="va">Y_star</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">control_count</span><span class="op">)</span> 
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>prevalence_rate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_star</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y_list <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y_list</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y_list</span> <span class="op">~</span> <span class="va">Z</span>, .method <span class="op">=</span> <span class="va">difference_in_means</span>, 
-                    inquiry <span class="op">=</span> <span class="st">"prevalence_rate"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_17.3</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="fl">500</span>,</span>
+<span>    control_count <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">3</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span>    Y_star <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span>,</span>
+<span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y_list</span> <span class="op">~</span> <span class="va">Y_star</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">control_count</span><span class="op">)</span> </span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>prevalence_rate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_star</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y_list <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y_list</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y_list</span> <span class="op">~</span> <span class="va">Z</span>, .method <span class="op">=</span> <span class="va">difference_in_means</span>, </span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"prevalence_rate"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-17-2" class="lemma">
 <p>List experiment diagnosis</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosands</span> <span class="op">&lt;-</span> <span class="fu">declare_diagnosands</span><span class="op">(</span>
-  bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span>,
-  mean_CI_width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">conf.high</span> <span class="op">-</span> <span class="va">conf.low</span><span class="op">)</span>
-<span class="op">)</span>
-<span class="va">diagnosis_17.2</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_17.3</span>, diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosands</span> <span class="op">&lt;-</span> <span class="fu">declare_diagnosands</span><span class="op">(</span></span>
+<span>  bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span>,</span>
+<span>  mean_CI_width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">conf.high</span> <span class="op">-</span> <span class="va">conf.low</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">diagnosis_17.2</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_17.3</span>, diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 
@@ -688,33 +688,33 @@ div.csl-indent {
 <div id="declaration-17-4" class="definition">
 <p>Comparing list experiments with direct questions</p>
 <div class="cell" data-file="scripts_declarations/declaration_17.4.R">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">declaration_17.4</span> <span class="op">&lt;-</span> 
-  <span class="fu">declare_model</span><span class="op">(</span>
-    N <span class="op">=</span> <span class="va">N</span>,
-    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-    control_count <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">3</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,
-    Y_star <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span>,
-    W <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span><span class="va">Y_star</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">~</span> <span class="fl">0L</span>,
-                  <span class="va">Y_star</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="va">proportion_hiding</span><span class="op">)</span><span class="op">)</span>,
-    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y_list</span> <span class="op">~</span> <span class="va">Y_star</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">control_count</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_inquiry</span><span class="op">(</span>prevalence_rate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_star</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_measurement</span><span class="op">(</span>Y_list <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y_list</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span>,
-                      Y_direct <span class="op">=</span> <span class="va">Y_star</span> <span class="op">-</span> <span class="va">W</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y_list</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"prevalence_rate"</span>, label <span class="op">=</span> <span class="st">"list"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y_direct</span> <span class="op">~</span> <span class="fl">1</span>, inquiry <span class="op">=</span> <span class="st">"prevalence_rate"</span>, label <span class="op">=</span> <span class="st">"direct"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_17.4</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="va">N</span>,</span>
+<span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>    control_count <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">3</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span>    Y_star <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span>,</span>
+<span>    W <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span><span class="va">Y_star</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">~</span> <span class="fl">0L</span>,</span>
+<span>                  <span class="va">Y_star</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="va">proportion_hiding</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y_list</span> <span class="op">~</span> <span class="va">Y_star</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">control_count</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>prevalence_rate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_star</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y_list <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y_list</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span>,</span>
+<span>                      Y_direct <span class="op">=</span> <span class="va">Y_star</span> <span class="op">-</span> <span class="va">W</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y_list</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"prevalence_rate"</span>, label <span class="op">=</span> <span class="st">"list"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y_direct</span> <span class="op">~</span> <span class="fl">1</span>, inquiry <span class="op">=</span> <span class="st">"prevalence_rate"</span>, label <span class="op">=</span> <span class="st">"direct"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="diagnosis-17-3" class="lemma">
 <p>Comparison of list experiment and direct questions diagnosis</p>
 <p>Diagnosing this design, we see that at low levels of sensitivity and low sample sizes, the direct question is preferred on RMSE grounds. This is because though the direct question is biased for the prevalence rate in the presence of any sensitivity bias (positive <code>proportion_hiding</code>), it is much more precise than the list experiment. When we have a large sample size, then we begin to prefer the list experiment for its low bias. At high levels of sensitivity, we prefer the list experiment on RMSE grounds despite its inefficiency, because bias will be so large.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">diagnosis_17.3</span> <span class="op">&lt;-</span> 
-  <span class="va">declaration_17.4</span> |&gt; 
-  <span class="fu">redesign</span><span class="op">(</span>proportion_hiding <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">0.3</span>, by <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>, 
-           N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">500</span>, to <span class="op">=</span> <span class="fl">2500</span>, by <span class="op">=</span> <span class="fl">500</span><span class="op">)</span><span class="op">)</span> |&gt; 
-  <span class="fu">diagnose_design</span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_17.3</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">declaration_17.4</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>proportion_hiding <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">0.3</span>, by <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>, </span>
+<span>           N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">500</span>, to <span class="op">=</span> <span class="fl">2500</span>, by <span class="op">=</span> <span class="fl">500</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell">
