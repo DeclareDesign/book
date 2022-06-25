@@ -15,9 +15,9 @@ In a block-randomized experimental design, homogeneous sets of units are grouped
 
 Blocks can be formed in many ways. The can be constructed based on the levels of a single discrete covariate. We might be able to do better by blocking on the intersection of the levels of two discrete covariates. We could coarsen a continuous variable in order to create strata. We could even create matched quartets of units, partitioning the sample into sets of four units that are as similar as possible on many covariates. In any of these cases, we then randomize units *within* blocks to treatment. All of these procedures fall under the rubric of block random assignment. Methodologists have crafted many algorithms for creating blocks, each with their own tradeoffs in terms of computational speed and efficiency guarantees. 
 
-In declaration @def-declarationch18dec4, we block our assignment on a binary covariate `X`. We assign different fractions of each block to treatment to illustrate the notion that probabilities of assignment need not be constant across blocks, and if they aren't, we need to weight units by the inverse of the probability of assignment to the condition that they are in. In the answer strategy, we adjust for blocks using the @lin2013agnostic regression adjustment estimator including IPW weights. 
+In declaration @def-declarationch18num4, we block our assignment on a binary covariate `X`. We assign different fractions of each block to treatment to illustrate the notion that probabilities of assignment need not be constant across blocks, and if they aren't, we need to weight units by the inverse of the probability of assignment to the condition that they are in. In the answer strategy, we adjust for blocks using the @lin2013agnostic regression adjustment estimator including IPW weights. 
 
-:::{.definition #declarationch18dec4} 
+:::{.definition #declarationch18num4} 
 
 Block randomized two arm trial design
 
@@ -30,13 +30,13 @@ Block randomized two arm trial design
 
 Why does blocking increase the precision with which we estimate the ATE? One piece of intuition is that blocking rules out "bad" random assignments that exhibit imbalance on the blocking variable. If $N$ = 12 and $m$ = 6, complete random assignment allows `choose(12, 6) = 924` possible permutations. If we form two blocks of six units and conduct block random assignment, then there are `choose(6, 3) * choose(6, 3) = 400` remaining possible assignments. The assignments that are ruled are those in which too many or too few units in a block are assigned to treatment, because blocking requires that exactly $m_B$ units be treated in each block $B$. When potential outcomes are correlated with the blocking variable, those "extreme" assignments produce estimates that are in the tails of the sampling distribution associated with complete random assignment.^[One mistake sometimes made by new experimenters is to conduct *simple* random assignment within each block -- none of the gains from blocking described here apply if simple random assignment is conducted in each block, because that procedure produces the identical randomization distribution as a simple random assignment procedure without any blocking (provided that the probability of assignment is the same in each block).]
 
-:::{.lemma #diagnosisch18diag4}
+:::{.lemma #diagnosisch18num4}
 
 Diagnosis comparing block random assignment and complete random assignment
 
-This intuition behind blocking is illustrated in Figure @fig-ch18fig4, which shows the sampling distribution of the difference-in-means estimator under *complete* random assignment. The histogram is shaded according to whether the particular random assignment is permissible under a procedure that blocks on the binary covariate $X$. The sampling distribution of the estimator among the set of assignments that are permissible under blocking is more tightly distributed around the true average treatment effect than the estimates associated with assignments that are not perfectly balanced. Here we can see the value of a blocking procedure -- it *it rules out by design* those assignments that are not perfectly balanced. 
+This intuition behind blocking is illustrated in Figure @fig-ch18num4, which shows the sampling distribution of the difference-in-means estimator under *complete* random assignment. The histogram is shaded according to whether the particular random assignment is permissible under a procedure that blocks on the binary covariate $X$. The sampling distribution of the estimator among the set of assignments that are permissible under blocking is more tightly distributed around the true average treatment effect than the estimates associated with assignments that are not perfectly balanced. Here we can see the value of a blocking procedure -- it *it rules out by design* those assignments that are not perfectly balanced. 
 
-![Sampling distribution under complete random assignment, by covariate balance](/figures/figure-18-4){#fig-ch18fig4}
+![Sampling distribution under complete random assignment, by covariate balance](/figures/figure-18-4){#fig-ch18num4}
 
 :::
  

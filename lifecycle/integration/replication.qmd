@@ -41,7 +41,7 @@ The last metric, equivalence testing, has the nice property that as the sample s
 
 The upshot of this exercise is that, curiously, when original studies are weak (in that they generate imprecise estimates), it becomes *harder* to conclusively affirm that they did not replicate. This set of incentives is somewhat perverse: designers of original studies benefit from a lack of precision if it means they can't "fail to replicate."
 
-![Rates of 'failure to replicate' according to four diagnosands. Original study N = 1000; True original SATE: 0.2; True replication SATE: 0.15.](/figures/figure-23-2){#fig-ch23fig2}
+![Rates of 'failure to replicate' according to four diagnosands. Original study N = 1000; True original SATE: 0.2; True replication SATE: 0.15.](/figures/figure-23-2){#fig-ch23num2}
 
 
 <!-- 

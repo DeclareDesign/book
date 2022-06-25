@@ -32,7 +32,7 @@ We use the output of this function to determine the probability of an individual
 
 Lastly, the answer strategy must also respects the data strategy by clustering standard errors at the highest level at which units are sampled, which in this case is the locality.
 
-:::{.definition #declarationch15dec3} 
+:::{.definition #declarationch15num3} 
 
 Cluster random sampling design
 
@@ -41,9 +41,9 @@ Cluster random sampling design
 
 :::
 
-We redesign Declaration @def-declarationch15dec3 over various levels of the cluster-level probability of sampling, which in turn sets the probability of sampling at the individual level. Figure @fig-ch15fig3 shows that for a good while, adding additional clusters yields precision gains. At some point, however, the cost to sample size within cluster is too large, and we start seeing precision loss around a probability of 0.75 of a cluster being sampled. The precise combination of design parameters that minimize the standard deviation of the sampling distribution will depend on nearly every aspect of the design declaration, but the most important are the total budget, the relative costs of clusters and individuals, and the ICC. When the ICC is zero, we should invest in few clusters and many individuals. When the ICC is one, we should invest in many clusters and few individuals.
+We redesign Declaration @def-declarationch15num3 over various levels of the cluster-level probability of sampling, which in turn sets the probability of sampling at the individual level. Figure @fig-ch15num3 shows that for a good while, adding additional clusters yields precision gains. At some point, however, the cost to sample size within cluster is too large, and we start seeing precision loss around a probability of 0.75 of a cluster being sampled. The precise combination of design parameters that minimize the standard deviation of the sampling distribution will depend on nearly every aspect of the design declaration, but the most important are the total budget, the relative costs of clusters and individuals, and the ICC. When the ICC is zero, we should invest in few clusters and many individuals. When the ICC is one, we should invest in many clusters and few individuals.
 
-:::{.lemma #diagnosisch15diag3} 
+:::{.lemma #diagnosisch15num3} 
 
 Cluster random sampling diagnosis
 
@@ -60,7 +60,7 @@ diagnosis_15.3 <- diagnose_design(designs)
 diagnosis_15.3 <- get_rdddr_file_local("diagnosis_15.3")
 ```
 
-![Trading off the number of clusters and the number of individuals per cluster](/figures/figure-15-3){#fig-ch15fig3}
+![Trading off the number of clusters and the number of individuals per cluster](/figures/figure-15-3){#fig-ch15num3}
 
 :::
 

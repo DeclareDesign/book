@@ -34,9 +34,9 @@ The estimated standard error can be used as an input for two other statistical p
 
 The DAG corresponding to a two-arm randomized trial is very simple. An outcome $Y$ is affected by unknown factors $U$ and a treatment $Z$. The measurement procedure $Q$ affects $Y$ in the sense that it measures a latent $Y$ and records the measurement in a dataset. No arrows lead into $Z$ because it is randomly assigned. No arrow leads from $Z$ to $Q$, because we assume no excludability violations wherein the treatment changes how units are measured. This simple DAG confirms that the average causal effect of $Z$ on $Y$ is nonparametrically identified because no back-door paths lead from $Z$ to $Y$.
 
-![Directed acyclic graph of a two-arm randomized experiment](/figures/figure-18-1){#fig-ch18fig1}
+![Directed acyclic graph of a two-arm randomized experiment](/figures/figure-18-1){#fig-ch18num1}
 
-:::{.definition #declarationch18dec1} 
+:::{.definition #declarationch18num1} 
 
 Canonical two arm trial design
 
@@ -47,7 +47,7 @@ Canonical two arm trial design
 
 
 
-:::{.lemma #diagnosisch18diag1}
+:::{.lemma #diagnosisch18num1}
 
 Two arm trial diagnosis
 
@@ -81,9 +81,9 @@ The purpose of adjusting for covariates in an experimental study is to increase 
 
 One way to think about how much the inclusion of covariates will help precision is to summarize their predictive power in a statistic like $R^2$. The $R^2$ value from a regression of the outcome on the covariates alone (i.e., without the treatment indicator) gives an understanding of how jointly predictive the covariates are. If $R^2$ is close to zero, including the covariates will make almost no difference for precision. If $R^2$ is close to one, we can achieve dramatic increases in precision and statistical power.
 
-Declaration @def-declarationch18dec2 draws a summary covariate `X` and unobserved heterogeneity `U` from a multivariate normal distribution with a specified covariance between the two variables. By redesigning over the values of that correlation, we can learn how covariate adjustment affects precision depending on the level of $R^2$. The answer strategy uses the estimator proposed in @lin2013agnostic for reasons explained in the next section. 
+Declaration @def-declarationch18num2 draws a summary covariate `X` and unobserved heterogeneity `U` from a multivariate normal distribution with a specified covariance between the two variables. By redesigning over the values of that correlation, we can learn how covariate adjustment affects precision depending on the level of $R^2$. The answer strategy uses the estimator proposed in @lin2013agnostic for reasons explained in the next section. 
 
-:::{.definition #declarationch18dec2} 
+:::{.definition #declarationch18num2} 
 
 Two arm trial with covariate adjustment
 
@@ -92,7 +92,7 @@ Two arm trial with covariate adjustment
 
 :::
 
-:::{.lemma #diagnosisch18diag2}
+:::{.lemma #diagnosisch18num2}
 
 Two arm trial diagnosis
 
@@ -105,9 +105,9 @@ diagnosis_18.2 <-
 
 :::
 
-Figure @fig-ch18fig2 plots sample size on the horizontal axis and diagnosand estimates on the vertical axis. In the left hand panel, we see that, as usual, statistical power increases with sample size. Different values of $R^2$ are distinguished by colored lines. Higher values of $R^2$ lead to higher statistical power. The gains can be dramatic. The no-adjustment benchmark is represented by the $R^2 = 0$ line. We achieve approximately the same statistical power as a 1,000 unit experiment with no adjustment when we the pre-treatment covariates yield an $R^2$ of 0.8 and we have just 200 units. The right panel tells a similar story, though it emphasizes that the marginal benefits of covariate adjustment get smaller as the sample size gets bigger. In any real experimental scenario, designers should take care to generate informed guesses about the probable $R^2$ of the covariates and then explore the tradeoffs between pre-treatment data collection and additional sample size.
+Figure @fig-ch18num2 plots sample size on the horizontal axis and diagnosand estimates on the vertical axis. In the left hand panel, we see that, as usual, statistical power increases with sample size. Different values of $R^2$ are distinguished by colored lines. Higher values of $R^2$ lead to higher statistical power. The gains can be dramatic. The no-adjustment benchmark is represented by the $R^2 = 0$ line. We achieve approximately the same statistical power as a 1,000 unit experiment with no adjustment when we the pre-treatment covariates yield an $R^2$ of 0.8 and we have just 200 units. The right panel tells a similar story, though it emphasizes that the marginal benefits of covariate adjustment get smaller as the sample size gets bigger. In any real experimental scenario, designers should take care to generate informed guesses about the probable $R^2$ of the covariates and then explore the tradeoffs between pre-treatment data collection and additional sample size.
 
-![Power and precision increases from covariate adjustment](/figures/figure-18-2){#fig-ch18fig2}
+![Power and precision increases from covariate adjustment](/figures/figure-18-2){#fig-ch18num2}
 
 ## Can controlling for covariates hurt precision?
 
@@ -115,9 +115,9 @@ Figure @fig-ch18fig2 plots sample size on the horizontal axis and diagnosand est
 
 @lin2013agnostic unpacks the circumstances under which this precision loss occurs and offers an alternative estimator that is guaranteed to be at least as precise as the unadjusted estimator. The trouble occurs when the correlation of covariates with the outcome is quite different in the treatment condition from in the control condition and when designs are strongly imbalanced in the sense of having large proportions of treated or untreated units. We refer the reader to this excellent paper for details and the connection between covariate adjustment in randomized experiments and covariate adjustment in random sampling designs. In sum, the Lin estimator deals with the problem by performing covariate adjustment in each arm of the experiment separately, which is equivalent to the inclusion of a full set of treatment-by-covariate interactions. In a clever bit of regression magic, Lin shows how first pre-processing the data by de-meaning the covariates renders the coefficient on the treatment regressor an estimate of the overall ATE. The `lm_lin` estimator in the `estimatr` package implements this pre-processing in one step.
 
-Declaration @def-declarationch18dec3 will help us to explore the precision of three estimators under a variety of circumstances. We want to understand the performance of the difference-in-means, OLS, and Lin estimators depending on how different the correlation between `X` and the outcome is by treatment arm, and depending on the fraction of units assigned to treatment.
+Declaration @def-declarationch18num3 will help us to explore the precision of three estimators under a variety of circumstances. We want to understand the performance of the difference-in-means, OLS, and Lin estimators depending on how different the correlation between `X` and the outcome is by treatment arm, and depending on the fraction of units assigned to treatment.
 
-:::{.definition #declarationch18dec3} 
+:::{.definition #declarationch18num3} 
 
 Lin estimator design
 
@@ -126,7 +126,7 @@ Lin estimator design
 
 :::
 
-:::{.lemma #diagnosisch18diag3}
+:::{.lemma #diagnosisch18num3}
 
 Lin estimator diagnosis
 
@@ -139,13 +139,13 @@ diagnosis_18.3 <-
   diagnose_designs()
 ```
 
-Figure @fig-ch18fig3 considers a range of designs under three possible models. The three models are described by the top row of facets. In all cases, the slope of the treated potential outcomes with respect to $X$ is set to 1. All the way to the left, the slope with respect to the control potential outcomes is set to -1, and all the way to the right, is set to +1. The bottom row of facets shows the performance of three estimators along a range of treatment assignment probabilities.
+Figure @fig-ch18num3 considers a range of designs under three possible models. The three models are described by the top row of facets. In all cases, the slope of the treated potential outcomes with respect to $X$ is set to 1. All the way to the left, the slope with respect to the control potential outcomes is set to -1, and all the way to the right, is set to +1. The bottom row of facets shows the performance of three estimators along a range of treatment assignment probabilities.
 
 When the control slope is -1, we can see Freedman's precision critique. The standard error of the OLS is *larger* than difference-in-means for many designs, though they coincide when the fraction treated is 50%. This problem persists in some form until the slope of the control potential outcome with respect to $X$ gets close enough to the slope of the treated potential outcomes with respect to $X$.
 
 All along this range, however, the Lin estimator dominates OLS and difference-in-means. Regardless of the fraction assigned to treatment and the model of potential outcomes, the Lin estimator achieves equal or better precision than either difference-in-means or OLS.
 
-![Comparing the Lin estimator to OLS and difference-in-means, varying fraction assigned to treatment and correlation of potential outcomes with the covariate.](/figures/figure-18-3){#fig-ch18fig3}
+![Comparing the Lin estimator to OLS and difference-in-means, varying fraction assigned to treatment and correlation of potential outcomes with the covariate.](/figures/figure-18-3){#fig-ch18num3}
 
 :::
 

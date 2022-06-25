@@ -19,9 +19,9 @@ The largest choice in the data strategy for a meta-analysis is the set of study 
 
 The answer strategies for meta-analysis often amount to a weighted average of the individual study estimates. We take a weighted average instead of a simple average because we want to give different studies different amounts of pull in the overall estimate. In particular, we want to give studies that are more precise more weight and studies that are less precise less weight. In fixed-effects estimation, for example, study weights are proportional to the inverse of the estimated variance from the study. In random-effects estimation, by contrast, the weights are proportional to the inverse of the estimated variance from the study, plus an estimate of the between-study variance in effects. With this adjustment, the study weights are less extreme in random effects relative to fixed effects [for more see @borenstein2021introduction, ch. 13]. Fixed-effects meta-analysis may be appropriate in settings in which we have a strong theoretical reason to think the site-level inquiries are all equal to the PATE, but typically, we think effects vary from site-to-site, so random effects is usually the meta-analytic answer strategy of choice.
 
-In Declaration @def-declarationch19dec3, we declare a meta-analytic research design for 100 studies with a true PATE ($\mu$) of 0.2. We represent the standard deviation of the study-level ATEs with $\tau$, which we vary between 0 and 1. When $\tau>0$  the true effects vary across contexts. The studies each have different measurement precision, with standard errors between 0.025 and 0.6. The inquiries are $\mu$ and $\tau^2$. In the answer strategy, we use both fixed and random effects meta-analysis. 
+In Declaration @def-declarationch19num3, we declare a meta-analytic research design for 100 studies with a true PATE ($\mu$) of 0.2. We represent the standard deviation of the study-level ATEs with $\tau$, which we vary between 0 and 1. When $\tau>0$  the true effects vary across contexts. The studies each have different measurement precision, with standard errors between 0.025 and 0.6. The inquiries are $\mu$ and $\tau^2$. In the answer strategy, we use both fixed and random effects meta-analysis. 
 
-:::{.definition #declarationch19dec3}
+:::{.definition #declarationch19num3}
 
 Meta-analysis design
 
@@ -31,11 +31,11 @@ Meta-analysis design
 :::
 
 
-:::{.lemma #diagnosisch19diag3}
+:::{.lemma #diagnosisch19num3}
 
 Meta-analysis diagnosis
 
-Figure @fig-ch19fig5 explores the bias and coverage of the two estimators under each model both for the mean effects inquiry $\mu$ and for the variance of effects inquiry $\tau^2$. We find that the random effects estimator, across both models of how effects are realized, performs best. Whether the variance of site-level ATEs is 1 or 0, random effects estimates both inquiries without bias and coverage is nominal. By contrast, the fixed effect estimator has two problems. When $\tau^2$ is 1, the estimator gets the variance in estimates wrong, because it *assumes* it is zero. Second, the estimator is extremely overconfident, generating confidence intervals that are drastically too small, as reflected in the poor coverage. This overconfidence stems from the fixed-effect assumption that the only reason study-to-study estimates differ is due to estimation noise, not true differences across sites.
+Figure @fig-ch19num5 explores the bias and coverage of the two estimators under each model both for the mean effects inquiry $\mu$ and for the variance of effects inquiry $\tau^2$. We find that the random effects estimator, across both models of how effects are realized, performs best. Whether the variance of site-level ATEs is 1 or 0, random effects estimates both inquiries without bias and coverage is nominal. By contrast, the fixed effect estimator has two problems. When $\tau^2$ is 1, the estimator gets the variance in estimates wrong, because it *assumes* it is zero. Second, the estimator is extremely overconfident, generating confidence intervals that are drastically too small, as reflected in the poor coverage. This overconfidence stems from the fixed-effect assumption that the only reason study-to-study estimates differ is due to estimation noise, not true differences across sites.
 
 ```{r}
 #| eval: false
@@ -47,7 +47,7 @@ diagnosis_19.3 <- diagnose_design(declaration_19.3)
 diagnosis_19.3 <- get_rdddr_file_local("diagnosis_19.3")
 ```
 
-![Coverage and bias of the fixed and random effects under two settings, effect homogeneity and effect heterogeneity.](/figures/figure-19-5){#fig-ch19fig5}
+![Coverage and bias of the fixed and random effects under two settings, effect homogeneity and effect heterogeneity.](/figures/figure-19-5){#fig-ch19num5}
 
 :::
 

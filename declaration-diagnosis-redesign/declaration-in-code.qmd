@@ -83,7 +83,7 @@ M <-
   )
 ```
 
-You can use any of the enormous number of data simulation functions available in R for this purpose. Here we gather six functions we tend to use in our own declarations, but they are by no means exhaustive. Each function has arguments that govern exactly how the data are created; we chose arbitrary values here to show how they work. Figure @fig-ch13fig1 shows what these six look like for a 1,000 unit model.
+You can use any of the enormous number of data simulation functions available in R for this purpose. Here we gather six functions we tend to use in our own declarations, but they are by no means exhaustive. Each function has arguments that govern exactly how the data are created; we chose arbitrary values here to show how they work. Figure @fig-ch13num1 shows what these six look like for a 1,000 unit model.
 
 ```{r}
 M <-
@@ -98,7 +98,7 @@ M <-
   ) 
 ```
 
-![Six kinds of characteristics of units](/figures/figure-13-1){#fig-ch13fig1}
+![Six kinds of characteristics of units](/figures/figure-13-1){#fig-ch13num1}
 
 Binary variables are very important in the socials science, but they can be particularly tricky to make, so we'll spend a little more time on them. In a common way of thinking, binary variables are translations from a latent, continuous variable into an observed binary outcomes.
 
@@ -674,7 +674,7 @@ In `DeclareDesign`, we call these two steps `.method` and `.summary` (these argu
 
 We break down each part of a standard answer strategy declaration using the example of a linear regression of the effect of a variable `Z` on an outcome `Y` in Declaration \@ref(def:declaration-13-1}. The first argument in our `declare_estimator` step defines the method we will use, here `lm_robust` which is our function in the `estimatr` package for running linear regressions with robust standard errors. The second is the main argument for `lm_robust`, the formula for the regression specification, in this case Y on Z with no controls. 
 
-:::{.definition #declarationch13dec1}
+:::{.definition #declarationch13num1}
 
 Linear regression design
 
@@ -812,9 +812,9 @@ Often you may want to construct a test as part of your answer strategy that does
 
 ## Declaration {#declaration-code}
 
-To construct a research *design* object that we can operate on --- diagnose it, redesign it, draw data from it, etc. --- we add research design elements together with the `+` operator. In Declaration @def-declarationch13dec2, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.
+To construct a research *design* object that we can operate on --- diagnose it, redesign it, draw data from it, etc. --- we add research design elements together with the `+` operator. In Declaration @def-declarationch13num2, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.
 
-:::{.definition #declarationch13dec2} 
+:::{.definition #declarationch13num2} 
 
 Declaration of two-arm randomized experiment
 
@@ -853,7 +853,7 @@ model +
 
 Once a design is declared in code, diagnosing it is usually the easy part. `diagnose_design` handles all the details and bookkeeping for you. In this section, we outline how to conduct a diagnosis using our default tools for standard diagnoses and also how you might operate directly on the simulations for more complicated analyses.
 
-:::{.lemma #diagnosisch10diag6}
+:::{.lemma #diagnosisch10num6}
 
 Diagnosis of two-arm randomized experiment
 
@@ -931,7 +931,7 @@ simulations_df |>
 
 Plotting simulations using `ggplot2` is often a great way to gain a deeper sense of the properties of the design.
 
-The answer strategy for Declaration @def-declarationch13dec1 includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using `geom_histogram`, then faceting by estimator using `facet_wrap`. We often want to overlay the true value of the estimand on these plots, which we do here with `geom_vline`. Notice that in order to do, we had to create a `summary_df` that includes the value of the estimand. The resulting plot shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.
+The answer strategy for Declaration @def-declarationch13num1 includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using `geom_histogram`, then faceting by estimator using `facet_wrap`. We often want to overlay the true value of the estimand on these plots, which we do here with `geom_vline`. Notice that in order to do, we had to create a `summary_df` that includes the value of the estimand. The resulting plot shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.
 
 ```{r samplingdistincode}
 #| eval: false
@@ -956,7 +956,7 @@ ggplot(simulations_df) +
   theme_minimal()
 ```
 
-![Example visualization of a diagnosis](/figures/figure-13-2){#fig-ch13fig2}
+![Example visualization of a diagnosis](/figures/figure-13-2){#fig-ch13num2}
 
 Diagnosing over model uncertainty is a crucial part of diagnosis. We want to understand when our design performs well and when it does not. A classical example of this in wide practice is the power curve. In a power curve, we display the power of a design (the probability of achieving statistical significance) along different possible effect sizes. In this setting, plotting the simulations directly with an indicator for whether that simulation's estimate is statistically significant is the easiest way to learn about the properties of the design.
 
@@ -991,7 +991,7 @@ ggplot(simulations_df) +
   theme_minimal()
 ```
 
-![Example visualization of a diagnosis](/figures/figure-13-3){#fig-ch13fig3}
+![Example visualization of a diagnosis](/figures/figure-13-3){#fig-ch13num3}
 
 ## Redesign {#redesign-code}
 

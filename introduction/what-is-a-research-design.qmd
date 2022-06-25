@@ -176,13 +176,13 @@ Designs can be declared in words, but declarations often become much more specif
 
 Once you've declared your design, you can diagnose it. Design diagnosis is the process of simulating a research design in order to understand the range of ways the study could turn out. Each run of the design comes out differently because different units are sampled, or the randomization allocated different units to treatment, or outcomes were measured with different error. We let computers do the simulations for us because imagining the full set of possibilities is -- to put it mildly -- cognitively demanding. 
 
-Diagnosis is the process of assessing the properties of designs, and represents an opportunity to write down what would make the study a success. For a long time, researchers have classified studies as successful or not based on statistical significance (@chopra2022null). If significant, the study "worked"; if not, it is a failed "null." Accordingly, statistical power (the probability of a statistically significant result) has been the most front-of-mind design property when researchers plan studies. As we learn more about the pathologies of relying on statistical significance, we learn that features beyond power are more important. For example, the "credibility revolution" throughout the social sciences has trained a laser-like focus on the biases that may result from omitted or "lurking" variables.
+Diagnosis is the process of assessing the properties of designs, and represents an opportunity to write down what would make the study a success. For a long time, researchers have classified studies as successful or not based on statistical significance [@chopra2022null]. If significant, the study "worked"; if not, it is a failed "null." Accordingly, statistical power (the probability of a statistically significant result) has been the most front-of-mind design property when researchers plan studies. As we learn more about the pathologies of relying on statistical significance, we learn that features beyond power are more important. For example, the "credibility revolution" throughout the social sciences has trained a laser-like focus on the biases that may result from omitted or "lurking" variables.
 
 Design diagnosis relies on two new concepts: diagnostic statistics and diagnosands. 
 
 A "diagnostic statistic" is a summary statistic generated from a single "run" of a design. For example, the statistic $e$ (error) refers to the difference between the estimate and the estimand. The statistic $s$ (significance) refers to whether the estimate was deemed statistically significant at the 0.05 level (for instance). 
 
-A "diagnosand" is a summary of the distribution of a diagnostic statistic across many simulations of the design. The bias diagnosand is defined as the average value of the $e$ statistic and the power diagnosand is defined as the average value of the $s$ statistic. Other diagnosands include quantities like root-mean-squared-error (RMSE), Type I and Type II error rates, how likely is it that subjects were harmed, and average cost. We describe these diagnosands in much more detail in Chapter @diagnosis.
+A "diagnosand" is a summary of the distribution of a diagnostic statistic across many simulations of the design. The bias diagnosand is defined as the average value of the $e$ statistic and the power diagnosand is defined as the average value of the $s$ statistic. Other diagnosands include quantities like root-mean-squared-error (RMSE), Type I and Type II error rates, how likely is it that subjects were harmed, and average cost. We describe these diagnosands in much more detail in Chapter @sec-diagnosing-designs.
 
 One especially important diagnosand is the "success rate," which is the average value of the "success" diagnostic statistic. As the researcher, you get to decide what would make your study a success. What matters most in your research scenario? Is it statistical significance? If so, optimize your design with respect to power. Is what matters most whether the answer has the correct sign or not? Then diagnose how frequently your answer strategy yields an answer with the same sign as your inquiry. Diagnosis involves articulating what would make your study a success and then figuring out, through simulation, how often you obtain that success. Success is often a multidimensional aggregation of diagnosands, such as the joint achievement of high statistical power, manageable costs, and low ethical harms.
 
@@ -222,9 +222,9 @@ The two designs cost the same but differ on the empirical side. Which strategy s
 
 * *A*: The answer strategy takes the difference-in-means between the treated and untreated units. Thus the answer strategy uses a function similar to the inquiry itself.
 
-When we put these all together we have a design, Declaration @def-declarationch2dec1.
+When we put these all together we have a design, Declaration @def-declarationch2num1.
 
-:::{.definition #declarationch2dec1} 
+:::{.definition #declarationch2num1} 
 
 Two-arm trial design
 
@@ -256,9 +256,9 @@ program_diagnosands  <-
 
 The alternative design that differs on the empirical side in three ways. First fewer subjects are sampled. Second, information about the subjects' background information (their "history") is used to implement a block randomization that conditions assignment on history. Third the subjects' history is taken into account in the analysis. This choice is an instance of adjusting the answer strategy in light of a change to the data strategy. 
 
-In Declaration @def-declarationch2dec2, we can leave the model and inquiry intact and but we have to work on the data and answer strategies.
+In Declaration @def-declarationch2num2, we can leave the model and inquiry intact and but we have to work on the data and answer strategies.
 
-:::{.definition #declarationch2dec2} 
+:::{.definition #declarationch2num2} 
 
 A design that exploits background information
 
@@ -285,11 +285,11 @@ declaration_2.2 |>
 
 The results are shown in the next figure.
 
-:::{.lemma #diagnosisch2diag1} 
+:::{.lemma #diagnosisch2num1} 
 
 Diagnosis of `declaration_2.1` and `declaration_2.2`
 
-![How success depends on choice of *D* and *A* given different possibilities for *M*](/figures/figure-2-2){#fig-ch2fig2}
+![How success depends on choice of *D* and *A* given different possibilities for *M*](/figures/figure-2-2){#fig-ch2num2}
 
 :::
 

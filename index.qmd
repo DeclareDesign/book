@@ -2,6 +2,8 @@
 sidebar: true
 ---
 
+Forthcoming, *Princeton University Press*.
+
 ::: {.content-hidden}
 
 # Welcome {.unnumbered}

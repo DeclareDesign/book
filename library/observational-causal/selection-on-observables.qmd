@@ -17,9 +17,9 @@ Sometimes, however, we know enough about selection in order to condition on the 
 
 The quality of causal inferences we draw comes down to whether our claims about selection into treatment are correct. If we've missed a cause (missed a back door path), then our inferences will be prone to bias. It is the nature of the selection-on-observables design that we can't know if our claims about the processes that cause selection are correct or not; the design amounts to a leap of faith in the theoretical model. 
 
-The problems don't end there. We risk bias if we fail to adjust for $X$ under some models --- but we will also risk bias if we *do* adjust for $X$ under other models. In Figure @fig-ch16fig3 we illustrate four of the possible roles for an observable variable $X$: as a confounder of the relationship between $D$ and $Y$; as a collider, which is affected by both $D$ and $Y$; as a mediator of the relationship between $D$ and $Y$; and as a predictor of $Y$ with no connection to $D$. We set aside in these DAGs the possible roles of an unobservable variable $U$ that would introduce additional problems of confounding.
+The problems don't end there. We risk bias if we fail to adjust for $X$ under some models --- but we will also risk bias if we *do* adjust for $X$ under other models. In Figure @fig-ch16num3 we illustrate four of the possible roles for an observable variable $X$: as a confounder of the relationship between $D$ and $Y$; as a collider, which is affected by both $D$ and $Y$; as a mediator of the relationship between $D$ and $Y$; and as a predictor of $Y$ with no connection to $D$. We set aside in these DAGs the possible roles of an unobservable variable $U$ that would introduce additional problems of confounding.
 
-![Four roles for an observable variable X.](/figures/figure-16-3){#fig-ch16fig3}
+![Four roles for an observable variable X.](/figures/figure-16-3){#fig-ch16num3}
 
 If $X$ is a confounder, failing to adjust for it in studying the relationship between the treatment $D$ and outcome $Y$ will lead to confounding bias. We often think of fourth DAG as the alternative to this, where $X$ is a predictor of $Y$ but has no link to $D$. In this circumstance, we still want to adjust for $X$ to seek efficiency improvements by soaking up additional variation in $Y$, but failing to do so will not introduce bias. If the true model is definitely represented by either the first or fourth DAG, we should clearly choose to adjust for $X$. In the first case, we should adjust to close the back-door path and in the fourth case, we will do no worse in terms of bias and may in fact increase precision.
 
@@ -27,9 +27,9 @@ However, the middle two DAGs present problems if we *do* adjust for $X$. In the 
 
 In a selection-on-observables design, we must get many features of the model correct, not only about the factors that affect $D$. We must be sure of all the arrows into $X$, $D$, and $Y$ and the order of the causal arrows. In some cases, in natural experiments where selection processes are not randomized by researchers but are nevertheless known, these assumptions can be sustained. In others, we will be making heroic assumptions.
 
-Declaration @def-declarationch16dec2 explores these considerations, with a model defining the relationship between a causal factor of interest $D$ and outcome $Y$ and an observable confounder $X$, the average treatment effect as the inquiry, a simple measurement strategy, and two estimators with and without adjustment for $X$. We use exact matching as our adjustment strategy.
+Declaration @def-declarationch16num2 explores these considerations, with a model defining the relationship between a causal factor of interest $D$ and outcome $Y$ and an observable confounder $X$, the average treatment effect as the inquiry, a simple measurement strategy, and two estimators with and without adjustment for $X$. We use exact matching as our adjustment strategy.
 
-:::{.definition #declarationch16dec2} 
+:::{.definition #declarationch16num2} 
 
 Matching design declaration
 
@@ -42,13 +42,13 @@ We declare beliefs about the selection process and how $D$, $Y$, and $X$ are rel
 
 In our model, $U$ is not a confounder, because it affects $Y$ but not $D$; this is a strong excludability assumption on which our causal inferences depend. The assumption is strong because ruling out all unobservable confounders is typically impossible. Most causal factors in nature are affected by many variables, only some of which we can imagine and measure. The first estimator, with adjustment, uses the weights from the exact matching estimator. The matching procedure adjusts for differences in the probability of selection into treatment according to $X$. The second, unadjusted, estimator does not control for $X$ so suffers from unobserved confounding, because we do not adjust for $X$ which predicts both treatment and the outcome. 
 
-:::{.lemma #diagnosisch16diag2}
+:::{.lemma #diagnosisch16num2}
 
 Matching design diagnosis
 
-In Figure @fig-ch16fig4, we see that the raw, unmatched estimate is quite biased (about 20% of the average estimate) and that the matched estimate is unbiased. If we fail to adjust for the observable features of the selection process, we have biased answers. But if we do control in this case, we obtain unbiased answers. However, as highlighted earlier, these results depend on the plausibility of our model, which in this case involves observed confounding of the relationship between $D$ and $Y$ by $X$. If there was *unobservable* confounding from $U$, or if $X$ was a collider or mediator, there would be bias even if we control for $X$.
+In Figure @fig-ch16num4, we see that the raw, unmatched estimate is quite biased (about 20% of the average estimate) and that the matched estimate is unbiased. If we fail to adjust for the observable features of the selection process, we have biased answers. But if we do control in this case, we obtain unbiased answers. However, as highlighted earlier, these results depend on the plausibility of our model, which in this case involves observed confounding of the relationship between $D$ and $Y$ by $X$. If there was *unobservable* confounding from $U$, or if $X$ was a collider or mediator, there would be bias even if we control for $X$.
 
-![Sampling distribution of two estimators.](/figures/figure-16-4){#fig-ch16fig4}
+![Sampling distribution of two estimators.](/figures/figure-16-4){#fig-ch16num4}
 
 :::
 
