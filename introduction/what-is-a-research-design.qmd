@@ -19,7 +19,7 @@ We think of *MIDA* as having two sides. *M* and *I* form the theoretical half, c
 
 Figure \@ref(fig:midaplot) shows how these four elements of a design relate to one another, how they relate to real world quantities, and how they relate to simulated quantities. We will unpack this figure in the remainder of this chapter, highlighting two especially important parallelisms, first between the upper and lower halves representing actual processes and simulated processes and second between the left (*M*, *I*) and right (*D*, *A*) halves representing these theoretical and empirical sides of research designs.
 
-![test](figure21)
+![test](/figures/figure21)
 
 <!-- align center -->
 
