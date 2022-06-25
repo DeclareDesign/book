@@ -11,6 +11,7 @@ book:
     - Macartan Humphreys
   chapters:
     - index.qmd
+    - acknowledgements.qmd
     - part: "Introduction"
       chapters: 
         - introduction/index.qmd

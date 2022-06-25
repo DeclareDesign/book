@@ -71,19 +71,18 @@ The deeper reason than regret for designing early is that the declaration, diagn
 
 ::: {#exm-designoften}
 
-Design often
+## Design often
 
 Designing early does not mean being inflexible. In practice, unforeseen circumstances may change the set of feasible data and answer strategies. Implementation failures due to nonresponse, noncompliance, spillovers, inability to link datasets, funding contractions, or logistical errors are common ways the set of feasible designs might contract. The set of feasible designs might expand if new data sources are discovered, additional funding is secured, or if you learn about a new piece of software. Whether the set expands or contracts, we benefit from declaring, diagnosing, and redesigning given the new realities. 
 
 In Part IV on the research design lifecycle, we push this principle to the limit, encouraging you to keep on designing even after research is completed, arguing that *ex post* design can help you assess the robustness of your claims and help decide how to respond to criticism of your work.  
+
 :::
-
-
 
 
 ::: {#exm-designtoshare}
 
-Design to share
+## Design to share
 
 The *MIDA* framework and the declaration, diagnosis, and redesign algorithm can improve the quality of your research designs. They can also help you communicate your work, justify your decisions, and contribute to the scientific enterprise. Formalizing design declaration makes this sharing easier. By coding up a design as an object that can be run, diagnosed, and redesigned, you help other researchers see, understand, and question the logic of your research. 
 
