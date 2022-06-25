@@ -602,12 +602,12 @@ div.csl-indent {
 \end{align}\]</span></p>
 <p>The estimated standard error can be used as an input for two other statistical procedures: null hypothesis significance testing via a <span class="math inline">\(t\)</span>-test and the construction of a 95% confidence interval.</p>
 <p>The DAG corresponding to a two-arm randomized trial is very simple. An outcome <span class="math inline">\(Y\)</span> is affected by unknown factors <span class="math inline">\(U\)</span> and a treatment <span class="math inline">\(Z\)</span>. The measurement procedure <span class="math inline">\(Q\)</span> affects <span class="math inline">\(Y\)</span> in the sense that it measures a latent <span class="math inline">\(Y\)</span> and records the measurement in a dataset. No arrows lead into <span class="math inline">\(Z\)</span> because it is randomly assigned. No arrow leads from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Q\)</span>, because we assume no excludability violations wherein the treatment changes how units are measured. This simple DAG confirms that the average causal effect of <span class="math inline">\(Z\)</span> on <span class="math inline">\(Y\)</span> is nonparametrically identified because no back-door paths lead from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span>.</p>
-<div id="fig:figure-18-1" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-ch18fig1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../../figures/figure-18-1.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Directed acyclic graph of a two-arm randomized experiment</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure -1.1: Directed acyclic graph of a two-arm randomized experiment</figcaption><p></p>
 </figure>
 </div>
-<div id="declaration-18-1" class="definition">
+<div id="declarationch18dec1" class="definition">
 <p>Canonical two arm trial design</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.1.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_18.1</span> <span class="op">&lt;-</span></span>
@@ -620,7 +620,7 @@ div.csl-indent {
 <span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosis-18-1" class="lemma">
+<div id="diagnosisch18diag1" class="lemma">
 <p>Two arm trial diagnosis</p>
 <p>Diagnosing this two arm trial design, we see that as expected, we encountered no bias, but high variance. In the model, we set the ATE at 0.2 standard units, but the true standard deviation of the estimator (the true standard error) is nearly the same value, at 0.19 standard units. We have low statistical power, at 16%. Two approaches to increasing the precision of the estimate include increasing the sample size and including prognostic pre-treatment covariates in the answer strategy. We explore both of these approaches in the next section.</p>
 <div class="cell">
@@ -656,8 +656,8 @@ div.csl-indent {
 <p>When treatments are randomized, whether we adjust for pre-treatment covariates makes little difference for bias. By contrast, when treatments are not randomized, we often do need on adjust for covariates in order to account for the confounding introduced by “omitted variables” (see <span class="citation" data-cites="selection-on-observables">(<a href="../../references.html#ref-selection-on-observables" role="doc-biblioref"><strong>selection-on-observables?</strong></a>)</span>).</p>
 <p>The purpose of adjusting for covariates in an experimental study is to increase precision. The more predictive the covariates are of the outcome, the more they help the precision of the estimates.</p>
 <p>One way to think about how much the inclusion of covariates will help precision is to summarize their predictive power in a statistic like <span class="math inline">\(R^2\)</span>. The <span class="math inline">\(R^2\)</span> value from a regression of the outcome on the covariates alone (i.e., without the treatment indicator) gives an understanding of how jointly predictive the covariates are. If <span class="math inline">\(R^2\)</span> is close to zero, including the covariates will make almost no difference for precision. If <span class="math inline">\(R^2\)</span> is close to one, we can achieve dramatic increases in precision and statistical power.</p>
-<p>Declaration <span class="citation" data-cites="def:declaration-18-2">(<a href="../../references.html#ref-def:declaration-18-2" role="doc-biblioref"><strong>def:declaration-18-2?</strong></a>)</span> draws a summary covariate <code>X</code> and unobserved heterogeneity <code>U</code> from a multivariate normal distribution with a specified covariance between the two variables. By redesigning over the values of that correlation, we can learn how covariate adjustment affects precision depending on the level of <span class="math inline">\(R^2\)</span>. The answer strategy uses the estimator proposed in <span class="citation" data-cites="lin2013agnostic">Lin (<a href="../../references.html#ref-lin2013agnostic" role="doc-biblioref">2013</a>)</span> for reasons explained in the next section.</p>
-<div id="declaration-18-2" class="definition">
+<p>Declaration <span class="quarto-unresolved-ref">?def-declarationch18dec2</span> draws a summary covariate <code>X</code> and unobserved heterogeneity <code>U</code> from a multivariate normal distribution with a specified covariance between the two variables. By redesigning over the values of that correlation, we can learn how covariate adjustment affects precision depending on the level of <span class="math inline">\(R^2\)</span>. The answer strategy uses the estimator proposed in <span class="citation" data-cites="lin2013agnostic">Lin (<a href="../../references.html#ref-lin2013agnostic" role="doc-biblioref">2013</a>)</span> for reasons explained in the next section.</p>
+<div id="declarationch18dec2" class="definition">
 <p>Two arm trial with covariate adjustment</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.2.R">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
@@ -679,7 +679,7 @@ div.csl-indent {
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosis-18-2" class="lemma">
+<div id="diagnosisch18diag2" class="lemma">
 <p>Two arm trial diagnosis</p>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.2</span> <span class="op">&lt;-</span> </span>
@@ -688,17 +688,17 @@ div.csl-indent {
 <span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>Figure <span class="quarto-unresolved-ref">?fig-figure-18-2</span> plots sample size on the horizontal axis and diagnosand estimates on the vertical axis. In the left hand panel, we see that, as usual, statistical power increases with sample size. Different values of <span class="math inline">\(R^2\)</span> are distinguished by colored lines. Higher values of <span class="math inline">\(R^2\)</span> lead to higher statistical power. The gains can be dramatic. The no-adjustment benchmark is represented by the <span class="math inline">\(R^2 = 0\)</span> line. We achieve approximately the same statistical power as a 1,000 unit experiment with no adjustment when we the pre-treatment covariates yield an <span class="math inline">\(R^2\)</span> of 0.8 and we have just 200 units. The right panel tells a similar story, though it emphasizes that the marginal benefits of covariate adjustment get smaller as the sample size gets bigger. In any real experimental scenario, designers should take care to generate informed guesses about the probable <span class="math inline">\(R^2\)</span> of the covariates and then explore the tradeoffs between pre-treatment data collection and additional sample size.</p>
-<div id="fig:figure-18-2" class="quarto-figure quarto-figure-center anchored">
+<p>Figure <a href="#fig-ch18fig2">Figure&nbsp;<span>-1.2</span></a> plots sample size on the horizontal axis and diagnosand estimates on the vertical axis. In the left hand panel, we see that, as usual, statistical power increases with sample size. Different values of <span class="math inline">\(R^2\)</span> are distinguished by colored lines. Higher values of <span class="math inline">\(R^2\)</span> lead to higher statistical power. The gains can be dramatic. The no-adjustment benchmark is represented by the <span class="math inline">\(R^2 = 0\)</span> line. We achieve approximately the same statistical power as a 1,000 unit experiment with no adjustment when we the pre-treatment covariates yield an <span class="math inline">\(R^2\)</span> of 0.8 and we have just 200 units. The right panel tells a similar story, though it emphasizes that the marginal benefits of covariate adjustment get smaller as the sample size gets bigger. In any real experimental scenario, designers should take care to generate informed guesses about the probable <span class="math inline">\(R^2\)</span> of the covariates and then explore the tradeoffs between pre-treatment data collection and additional sample size.</p>
+<div id="fig-ch18fig2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../../figures/figure-18-2.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Power and precision increases from covariate adjustment</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure -1.2: Power and precision increases from covariate adjustment</figcaption><p></p>
 </figure>
 </div>
 </section><section id="can-controlling-for-covariates-hurt-precision" class="level2"><h2 class="anchored" data-anchor-id="can-controlling-for-covariates-hurt-precision">Can controlling for covariates hurt precision?</h2>
 <p><span class="citation" data-cites="freedman2008regression">Freedman (<a href="../../references.html#ref-freedman2008regression" role="doc-biblioref">2008</a>)</span> critiques the practice of using OLS regression to adjust experimental data. While the difference-in-means estimator is unbiased for the average treatment effect, the covariate-adjusted OLS estimator exhibits a small sample bias (sometimes called “Freedman bias”) that diminishes quickly as sample sizes increase. More worrying is the critique that covariate adjustment can even hurt precision.</p>
 <p><span class="citation" data-cites="lin2013agnostic">Lin (<a href="../../references.html#ref-lin2013agnostic" role="doc-biblioref">2013</a>)</span> unpacks the circumstances under which this precision loss occurs and offers an alternative estimator that is guaranteed to be at least as precise as the unadjusted estimator. The trouble occurs when the correlation of covariates with the outcome is quite different in the treatment condition from in the control condition and when designs are strongly imbalanced in the sense of having large proportions of treated or untreated units. We refer the reader to this excellent paper for details and the connection between covariate adjustment in randomized experiments and covariate adjustment in random sampling designs. In sum, the Lin estimator deals with the problem by performing covariate adjustment in each arm of the experiment separately, which is equivalent to the inclusion of a full set of treatment-by-covariate interactions. In a clever bit of regression magic, Lin shows how first pre-processing the data by de-meaning the covariates renders the coefficient on the treatment regressor an estimate of the overall ATE. The <code>lm_lin</code> estimator in the <code>estimatr</code> package implements this pre-processing in one step.</p>
-<p>Declaration <span class="citation" data-cites="def:declaration-18-3">(<a href="../../references.html#ref-def:declaration-18-3" role="doc-biblioref"><strong>def:declaration-18-3?</strong></a>)</span> will help us to explore the precision of three estimators under a variety of circumstances. We want to understand the performance of the difference-in-means, OLS, and Lin estimators depending on how different the correlation between <code>X</code> and the outcome is by treatment arm, and depending on the fraction of units assigned to treatment.</p>
-<div id="declaration-18-3" class="definition">
+<p>Declaration <span class="quarto-unresolved-ref">?def-declarationch18dec3</span> will help us to explore the precision of three estimators under a variety of circumstances. We want to understand the performance of the difference-in-means, OLS, and Lin estimators depending on how different the correlation between <code>X</code> and the outcome is by treatment arm, and depending on the fraction of units assigned to treatment.</p>
+<div id="declarationch18dec3" class="definition">
 <p>Lin estimator design</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.3.R">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">prob</span> <span class="op">=</span> <span class="fl">0.5</span></span>
@@ -719,7 +719,7 @@ div.csl-indent {
 <span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, covariates <span class="op">=</span> <span class="op">~</span><span class="va">X</span>, .method <span class="op">=</span> <span class="va">lm_lin</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span>, label <span class="op">=</span> <span class="st">"Lin"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosis-18-3" class="lemma">
+<div id="diagnosisch18diag3" class="lemma">
 <p>Lin estimator diagnosis</p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.3</span> <span class="op">&lt;-</span> </span>
@@ -729,12 +729,12 @@ div.csl-indent {
 <span>    prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.9</span>, <span class="fl">0.1</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Figure <span class="quarto-unresolved-ref">?fig-figure-18-3</span> considers a range of designs under three possible models. The three models are described by the top row of facets. In all cases, the slope of the treated potential outcomes with respect to <span class="math inline">\(X\)</span> is set to 1. All the way to the left, the slope with respect to the control potential outcomes is set to -1, and all the way to the right, is set to +1. The bottom row of facets shows the performance of three estimators along a range of treatment assignment probabilities.</p>
+<p>Figure <a href="#fig-ch18fig3">Figure&nbsp;<span>-1.3</span></a> considers a range of designs under three possible models. The three models are described by the top row of facets. In all cases, the slope of the treated potential outcomes with respect to <span class="math inline">\(X\)</span> is set to 1. All the way to the left, the slope with respect to the control potential outcomes is set to -1, and all the way to the right, is set to +1. The bottom row of facets shows the performance of three estimators along a range of treatment assignment probabilities.</p>
 <p>When the control slope is -1, we can see Freedman’s precision critique. The standard error of the OLS is <em>larger</em> than difference-in-means for many designs, though they coincide when the fraction treated is 50%. This problem persists in some form until the slope of the control potential outcome with respect to <span class="math inline">\(X\)</span> gets close enough to the slope of the treated potential outcomes with respect to <span class="math inline">\(X\)</span>.</p>
 <p>All along this range, however, the Lin estimator dominates OLS and difference-in-means. Regardless of the fraction assigned to treatment and the model of potential outcomes, the Lin estimator achieves equal or better precision than either difference-in-means or OLS.</p>
-<div id="fig:figure-18-3" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-ch18fig3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../../figures/figure-18-3.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Comparing the Lin estimator to OLS and difference-in-means, varying fraction assigned to treatment and correlation of potential outcomes with the covariate.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure -1.3: Comparing the Lin estimator to OLS and difference-in-means, varying fraction assigned to treatment and correlation of potential outcomes with the covariate.</figcaption><p></p>
 </figure>
 </div>
 </div>

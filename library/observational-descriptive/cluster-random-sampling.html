@@ -636,7 +636,7 @@ div.csl-indent {
 </div>
 <p>We use the output of this function to determine the probability of an individual being sampled, conditional on their cluster being sampled.</p>
 <p>Lastly, the answer strategy must also respects the data strategy by clustering standard errors at the highest level at which units are sampled, which in this case is the locality.</p>
-<div id="declaration-15-3" class="definition">
+<div id="declarationch15dec3" class="definition">
 <p>Cluster random sampling design</p>
 <div class="cell" data-file="scripts_declarations/declaration_15.3c.R">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_15.3</span> <span class="op">&lt;-</span></span>
@@ -663,8 +663,8 @@ div.csl-indent {
 <span>                    inquiry <span class="op">=</span> <span class="st">"Y_bar"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>We redesign Declaration <span class="citation" data-cites="def:declaration-15-3">(<a href="../../references.html#ref-def:declaration-15-3" role="doc-biblioref"><strong>def:declaration-15-3?</strong></a>)</span> over various levels of the cluster-level probability of sampling, which in turn sets the probability of sampling at the individual level. Figure <span class="quarto-unresolved-ref">?fig-figure-15-3</span> shows that for a good while, adding additional clusters yields precision gains. At some point, however, the cost to sample size within cluster is too large, and we start seeing precision loss around a probability of 0.75 of a cluster being sampled. The precise combination of design parameters that minimize the standard deviation of the sampling distribution will depend on nearly every aspect of the design declaration, but the most important are the total budget, the relative costs of clusters and individuals, and the ICC. When the ICC is zero, we should invest in few clusters and many individuals. When the ICC is one, we should invest in many clusters and few individuals.</p>
-<div id="diagnosis-15-3" class="lemma">
+<p>We redesign Declaration <span class="quarto-unresolved-ref">?def-declarationch15dec3</span> over various levels of the cluster-level probability of sampling, which in turn sets the probability of sampling at the individual level. Figure <a href="#fig-ch15fig3">Figure&nbsp;<span>-1.1</span></a> shows that for a good while, adding additional clusters yields precision gains. At some point, however, the cost to sample size within cluster is too large, and we start seeing precision loss around a probability of 0.75 of a cluster being sampled. The precise combination of design parameters that minimize the standard deviation of the sampling distribution will depend on nearly every aspect of the design declaration, but the most important are the total budget, the relative costs of clusters and individuals, and the ICC. When the ICC is zero, we should invest in few clusters and many individuals. When the ICC is one, we should invest in many clusters and few individuals.</p>
+<div id="diagnosisch15diag3" class="lemma">
 <p>Cluster random sampling diagnosis</p>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu">redesign</span><span class="op">(</span><span class="va">declaration_15.3</span>, </span>
@@ -674,9 +674,9 @@ div.csl-indent {
 <div class="cell">
 
 </div>
-<div id="fig:figure-15-3" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-ch15fig3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../../figures/figure-15-3.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Trading off the number of clusters and the number of individuals per cluster</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure -1.1: Trading off the number of clusters and the number of individuals per cluster</figcaption><p></p>
 </figure>
 </div>
 </div>
