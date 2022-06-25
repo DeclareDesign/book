@@ -19,9 +19,13 @@ We think of *MIDA* as having two sides. *M* and *I* form the theoretical half, c
 
 Figure \@ref(fig:midaplot) shows how these four elements of a design relate to one another, how they relate to real world quantities, and how they relate to simulated quantities. We will unpack this figure in the remainder of this chapter, highlighting two especially important parallelisms, first between the upper and lower halves representing actual processes and simulated processes and second between the left (*M*, *I*) and right (*D*, *A*) halves representing these theoretical and empirical sides of research designs.
 
+![test](figure21)
+
 <!-- align center -->
 
-![The *MIDA* framework. An arrow between two points means that the point at the end of an arrow depends in some way on the one at the start of the arrow. For instance 'the answer you'll get' depends on the dataset you'll get and the answer strategy you specify.](/figures/figure_2.1){#fig:midaplot}{fig-align="center"}
+![The *MIDA* framework. An arrow between two points means that the point at the end of an arrow depends in some way on the one at the start of the arrow. For instance 'the answer you'll get' depends on the dataset you'll get and the answer strategy you specify.](/figures/figure_2.1)
+
+<!-- {#fig:midaplot,fig-align="center"} -->
 
 ### Model
 
