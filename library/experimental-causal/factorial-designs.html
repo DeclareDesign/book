@@ -602,7 +602,7 @@ div.csl-indent {
 <p>The reason we distinguish between the ATE of <code>Z1</code> versus the CATEs of <code>Z1</code> depending on the level of <code>Z2</code> is that the two factors may “interact.” When factors interact, the effects of <code>Z1</code> are heterogeneous in the sense that they differ depending on the level of <code>Z2</code>. We often care about the difference-in-CATEs inquiry when we think the effects of one treatment will depend on the level of another treatment.</p>
 <p>However, if we are not so interested in the difference-in-CATEs, then factorial experiments have another good justification – we can learn about the ATEs of each treatment for half price, in the sense that we apply treatments to the same subject pool using the same measurement strategy. Conjoint experiments are a kind of factorial design (discussed in Section <span class="citation" data-cites="conjoint-experiments">(<a href="../../references.html#ref-conjoint-experiments" role="doc-biblioref"><strong>conjoint-experiments?</strong></a>)</span>) that often target average treatments effects that average over the levels of the other factors.</p>
 <p>Here we declare a factorial design with two treatments and a normally distributed outcome variable. We imagine that the CATE of <code>Z1</code> given <code>Z2 = 0</code> is 0.2 standard units, the CATE of <code>Z2</code> given <code>Z1 = 0</code> is equal to 0.1, and the interaction of the two treatments is 0.1.</p>
-<div id="declarationch18dec7" class="definition">
+<div id="declarationch18num7" class="definition">
 <p>Two-by-two factorial design</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.7.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">CATE_Z1_Z2_0</span> <span class="op">&lt;-</span> <span class="fl">0.2</span></span>
@@ -650,16 +650,16 @@ div.csl-indent {
 <span>                    label <span class="op">=</span> <span class="st">"6"</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosisch18diag7" class="lemma">
+<div id="diagnosisch18num7" class="lemma">
 <p>Two-by-two factorial diagnosis</p>
-<p>We now redesign this factorial over many sample sizes, considering the statistical power for each of the inquiries. Figure <a href="#fig-ch18fig7">Figure&nbsp;<span>-1.1</span></a> shows that depending on the inquiry, the statistical power of this design can vary dramatically. The average treatment effect of <code>Z1</code> is relatively large at 0.25 standard units, so power is above the 80% threshold at all the sample sizes we consider. The ATE of <code>Z2</code> is smaller, at 0.15 standard units, so power is lower, but not dramatically so. Both ATEs use all <span class="math inline">\(N\)</span> data points, so power is manageable for the average effects. The conditional average effects generally fare worse, mainly because each is estimated on only half the sample. The power for the 0.1 standard unit difference-in-CATEs is abysmal at all sample sizes considered here. This diagnosis underlines Principle <span class="quarto-unresolved-ref">?exm-designholistically</span>: Design holistically. The power of a factorial design is not just one number – we have to calculate power for each inquiry separately, as they can differ dramatically.</p>
+<p>We now redesign this factorial over many sample sizes, considering the statistical power for each of the inquiries. Figure <a href="#fig-ch18num7">Figure&nbsp;<span>-1.1</span></a> shows that depending on the inquiry, the statistical power of this design can vary dramatically. The average treatment effect of <code>Z1</code> is relatively large at 0.25 standard units, so power is above the 80% threshold at all the sample sizes we consider. The ATE of <code>Z2</code> is smaller, at 0.15 standard units, so power is lower, but not dramatically so. Both ATEs use all <span class="math inline">\(N\)</span> data points, so power is manageable for the average effects. The conditional average effects generally fare worse, mainly because each is estimated on only half the sample. The power for the 0.1 standard unit difference-in-CATEs is abysmal at all sample sizes considered here. This diagnosis underlines Principle <span class="quarto-unresolved-ref">?exm-designholistically</span>: Design holistically. The power of a factorial design is not just one number – we have to calculate power for each inquiry separately, as they can differ dramatically.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.7</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">declaration_18.7</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">500</span>, <span class="fl">3000</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch18fig7" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-ch18num7" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../../figures/figure-18-7.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure -1.1: Power curves for factorial inquires</figcaption><p></p>
 </figure>
@@ -668,7 +668,7 @@ div.csl-indent {
 <section id="avoiding-misleading-inferences" class="level2"><h2 class="anchored" data-anchor-id="avoiding-misleading-inferences">Avoiding misleading inferences</h2>
 <p>The very poor power for the difference-in-CATEs sometimes leads researchers to rely on a different answer strategy for considering whether the effects of <code>Z1</code> depend on the level of <code>Z2</code>. Sometimes, researchers will consider the statistical significance of each of <code>Z1</code>’s CATEs separately, then conclude the CATEs are “different” if the effect is significant for one CATE but not the other. This is a bad practice and we’ll show why.</p>
 <p>Here we diagnose over the true values of the <code>Z1</code> ATE, setting the true interaction term to zero. Our diagnostic question will be, how frequently do we conclude the two CATEs are different, using two different strategies. The first is the usual approach, i.e., we consider the statistical significance of the interaction term. The second considers whether one, but not the other, of the two CATE estimates is significant.</p>
-<div id="diagnosisch18diag8" class="lemma">
+<div id="diagnosisch18num8" class="lemma">
 <p>Redesign over models</p>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.8</span> <span class="op">&lt;-</span> </span>
@@ -680,8 +680,8 @@ div.csl-indent {
 <span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Figure <a href="#fig-ch18fig8">Figure&nbsp;<span>-1.2</span></a> shows that the error rate when we consider the statistical significance of the interaction term is nominal. Only 5% of the time do we falsely reject the null that the difference-in-CATEs is zero, which is what we expect when we adopt an <span class="math inline">\(\alpha = 0.05\)</span> threshold. But when we claim “treatment effect heterogeneity!” when one CATE is significant but not the other, we make egregious errors. When the true (constant) average effect of <code>Z1</code> approaches 0.2, we falsely conclude that the treatment has heterogeneous effects nearly 50% of the time!</p>
-<div id="fig-ch18fig8" class="quarto-figure quarto-figure-center anchored">
+<p>Figure <a href="#fig-ch18num8">Figure&nbsp;<span>-1.2</span></a> shows that the error rate when we consider the statistical significance of the interaction term is nominal. Only 5% of the time do we falsely reject the null that the difference-in-CATEs is zero, which is what we expect when we adopt an <span class="math inline">\(\alpha = 0.05\)</span> threshold. But when we claim “treatment effect heterogeneity!” when one CATE is significant but not the other, we make egregious errors. When the true (constant) average effect of <code>Z1</code> approaches 0.2, we falsely conclude that the treatment has heterogeneous effects nearly 50% of the time!</p>
+<div id="fig-ch18num8" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../../figures/figure-18-8.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure -1.2: Comparing the significance of CATE estimates generates misleading inferences.</figcaption><p></p>
 </figure>

@@ -626,14 +626,14 @@ div.csl-indent {
 </ul>
 <p>Under these two extra assumptions, the list experimental estimate of the prevalence of opposition to granting Muslim immigrants citizenship is 21.9%.</p>
 <p>Figure <span class="quarto-unresolved-ref">?fig-daglist</span> represents the list experimental design. The no liars assumption is represented by the lack of an edge from sensitivity bias <span class="math inline">\(S\)</span> to the list experiment outcome <span class="math inline">\(Y^L\)</span>. The no design effects assumption is not represented on the DAG.</p>
-<div id="fig-ch17fig1" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-ch17num1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../../figures/figure-17-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure -1.1: Directed acyclic graph for the list experiment.</figcaption><p></p>
 </figure>
 </div>
-<p>Declaration <span class="quarto-unresolved-ref">?def-declarationch17dec3</span> describes a list experimental design. The model includes subjects’ true attitude (<code>Y_star</code>) and whether or not their direct question answers are contaminated by sensitivity bias (<code>S</code>). These two variables combine to determine how subjects will respond when asked directly about support for the policy. The potential outcomes model combines three types of information to determine how subjects will respond to the list experiment: their responses to the three control items (<code>control_count</code>), their true attitude (<code>Y_star</code>), and whether they are assigned to see the treatment or the control list (<code>Z</code>). Our definition of the potential outcomes embeds the no liars and no design effects assumptions.</p>
+<p>Declaration <span class="quarto-unresolved-ref">?def-declarationch17num3</span> describes a list experimental design. The model includes subjects’ true attitude (<code>Y_star</code>) and whether or not their direct question answers are contaminated by sensitivity bias (<code>S</code>). These two variables combine to determine how subjects will respond when asked directly about support for the policy. The potential outcomes model combines three types of information to determine how subjects will respond to the list experiment: their responses to the three control items (<code>control_count</code>), their true attitude (<code>Y_star</code>), and whether they are assigned to see the treatment or the control list (<code>Z</code>). Our definition of the potential outcomes embeds the no liars and no design effects assumptions.</p>
 <p>The inquiry is the prevalence rate of the sensitive item. In the data strategy, we randomly assign 50% of our 500 subjects to treatment and the remainder to control. In the survey, we ask subjects the list experiment question (<code>Y_list</code>). Our answer strategy estimates the prevalence rate by calculating the difference-in-means in the list outcome between treatment and control.</p>
-<div id="declarationch17dec3" class="definition">
+<div id="declarationch17num3" class="definition">
 <p>List experiment design</p>
 <div class="cell" data-file="scripts_declarations/declaration_17.3.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_17.3</span> <span class="op">&lt;-</span></span>
@@ -650,7 +650,7 @@ div.csl-indent {
 <span>                    inquiry <span class="op">=</span> <span class="st">"prevalence_rate"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosisch17diag2" class="lemma">
+<div id="diagnosisch17num2" class="lemma">
 <p>List experiment diagnosis</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosands</span> <span class="op">&lt;-</span> <span class="fu">declare_diagnosands</span><span class="op">(</span></span>
@@ -680,8 +680,8 @@ div.csl-indent {
 </div>
 <p>We see in the diagnosis that the list experiment generates unbiased estimates of the prevalence rate, but it is extremely imprecise: the average width of the confidence interval is enormous at 33 percentage points. If the estimate from a list experiment using this design is 25%, this would imply a confidence interval ranging from about 9% to 41% holding the sensitive item, ranging from rare to common and thus providing only a limited amount of information about the prevalence rate.</p>
 </div>
-<p>The diagnosis above shows that the list experiment (under its assumptions) is unbiased but is high variance. In the presence of sensitivity bias, direct questions are biased, but are much lower variance. The choice between these two technologies therefore amounts to a bias-variance tradeoff (see <span class="citation" data-cites="blair2018list">Blair, Coppock, and Moor (<a href="../../references.html#ref-blair2018list" role="doc-biblioref">2020</a>)</span> for more on this point). Declaration <span class="quarto-unresolved-ref">?def-declarationch17dec3</span> wraps up both approaches in one design so we can compare them.</p>
-<div id="declarationch17dec4" class="definition">
+<p>The diagnosis above shows that the list experiment (under its assumptions) is unbiased but is high variance. In the presence of sensitivity bias, direct questions are biased, but are much lower variance. The choice between these two technologies therefore amounts to a bias-variance tradeoff (see <span class="citation" data-cites="blair2018list">Blair, Coppock, and Moor (<a href="../../references.html#ref-blair2018list" role="doc-biblioref">2020</a>)</span> for more on this point). Declaration <span class="quarto-unresolved-ref">?def-declarationch17num3</span> wraps up both approaches in one design so we can compare them.</p>
+<div id="declarationch17num4" class="definition">
 <p>Comparing list experiments with direct questions</p>
 <div class="cell" data-file="scripts_declarations/declaration_17.4.R">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_17.4</span> <span class="op">&lt;-</span> </span>
@@ -702,7 +702,7 @@ div.csl-indent {
 <span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y_direct</span> <span class="op">~</span> <span class="fl">1</span>, inquiry <span class="op">=</span> <span class="st">"prevalence_rate"</span>, label <span class="op">=</span> <span class="st">"direct"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="diagnosisch17diag3" class="lemma">
+<div id="diagnosisch17num3" class="lemma">
 <p>Comparison of list experiment and direct questions diagnosis</p>
 <p>Diagnosing this design, we see that at low levels of sensitivity and low sample sizes, the direct question is preferred on RMSE grounds. This is because though the direct question is biased for the prevalence rate in the presence of any sensitivity bias (positive <code>proportion_hiding</code>), it is much more precise than the list experiment. When we have a large sample size, then we begin to prefer the list experiment for its low bias. At high levels of sensitivity, we prefer the list experiment on RMSE grounds despite its inefficiency, because bias will be so large.</p>
 <div class="cell">
@@ -713,7 +713,7 @@ div.csl-indent {
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="fig-ch17fig2" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-ch17num2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../../figures/figure-17-2.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure -1.2: Redesign to illustrate tradeoffs in RMSE between list experiment and direct question</figcaption><p></p>
 </figure>
