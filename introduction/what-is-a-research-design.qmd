@@ -233,9 +233,10 @@ When we put these all together we have a design, @def-ch2num1.
 
 :::
 
-The design is now ready to be used, diagnosed, developed. We can generate simulated data directly from the design using `draw_data(design_1)`. We show a snapshot of such simulated data below.
+The design is now ready to be used, diagnosed, developed. We can generate simulated data directly from the design using `draw_data(design_1)`. We show a snapshot of such simulated data below in @tbl-ch2n1.
 
 ```{r}
+#| label: tbl-ch2n1
 #| tbl-cap: "Simulated data from two-arm trial design"
 #| echo: false
 
