@@ -617,8 +617,8 @@ div.csl-indent {
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure -1.1: Directed acyclic graph of a two-arm randomized experiment</figcaption><p></p>
 </figure>
 </div>
-<div id="def-ch18num1" class="theorem definition">
-<p><span class="theorem-title"><strong>Declaration -1.1 (Canonical two arm trial design) </strong></span></p>
+<div id="def-ch18num1" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration -1.1 </strong></span>Canonical two arm trial design</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.1.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_18.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>,</span>
@@ -666,8 +666,8 @@ div.csl-indent {
 <p>The purpose of adjusting for covariates in an experimental study is to increase precision. The more predictive the covariates are of the outcome, the more they help the precision of the estimates.</p>
 <p>One way to think about how much the inclusion of covariates will help precision is to summarize their predictive power in a statistic like <span class="math inline">\(R^2\)</span>. The <span class="math inline">\(R^2\)</span> value from a regression of the outcome on the covariates alone (i.e., without the treatment indicator) gives an understanding of how jointly predictive the covariates are. If <span class="math inline">\(R^2\)</span> is close to zero, including the covariates will make almost no difference for precision. If <span class="math inline">\(R^2\)</span> is close to one, we can achieve dramatic increases in precision and statistical power.</p>
 <p><a href="#def-ch18num2">Declaration&nbsp;<span>-1.2</span></a> draws a summary covariate <code>X</code> and unobserved heterogeneity <code>U</code> from a multivariate normal distribution with a specified covariance between the two variables. By redesigning over the values of that correlation, we can learn how covariate adjustment affects precision depending on the level of <span class="math inline">\(R^2\)</span>. The answer strategy uses the estimator proposed in <span class="citation" data-cites="lin2013agnostic">Lin (<a href="../../references.html#ref-lin2013agnostic" role="doc-biblioref">2013</a>)</span> for reasons explained in the next section.</p>
-<div id="def-ch18num2" class="theorem definition">
-<p><span class="theorem-title"><strong>Declaration -1.2 (Two arm trial with covariate adjustment) </strong></span></p>
+<div id="def-ch18num2" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration -1.2 </strong></span>Two arm trial with covariate adjustment</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.2.R">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
 <span><span class="va">r_sq</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
@@ -707,8 +707,8 @@ div.csl-indent {
 <p><span class="citation" data-cites="freedman2008regression">Freedman (<a href="../../references.html#ref-freedman2008regression" role="doc-biblioref">2008</a>)</span> critiques the practice of using OLS regression to adjust experimental data. While the difference-in-means estimator is unbiased for the average treatment effect, the covariate-adjusted OLS estimator exhibits a small sample bias (sometimes called “Freedman bias”) that diminishes quickly as sample sizes increase. More worrying is the critique that covariate adjustment can even hurt precision.</p>
 <p><span class="citation" data-cites="lin2013agnostic">Lin (<a href="../../references.html#ref-lin2013agnostic" role="doc-biblioref">2013</a>)</span> unpacks the circumstances under which this precision loss occurs and offers an alternative estimator that is guaranteed to be at least as precise as the unadjusted estimator. The trouble occurs when the correlation of covariates with the outcome is quite different in the treatment condition from in the control condition and when designs are strongly imbalanced in the sense of having large proportions of treated or untreated units. We refer the reader to this excellent paper for details and the connection between covariate adjustment in randomized experiments and covariate adjustment in random sampling designs. In sum, the Lin estimator deals with the problem by performing covariate adjustment in each arm of the experiment separately, which is equivalent to the inclusion of a full set of treatment-by-covariate interactions. In a clever bit of regression magic, Lin shows how first pre-processing the data by de-meaning the covariates renders the coefficient on the treatment regressor an estimate of the overall ATE. The <code>lm_lin</code> estimator in the <code>estimatr</code> package implements this pre-processing in one step.</p>
 <p><a href="#def-ch18num3">Declaration&nbsp;<span>-1.3</span></a> will help us to explore the precision of three estimators under a variety of circumstances. We want to understand the performance of the difference-in-means, OLS, and Lin estimators depending on how different the correlation between <code>X</code> and the outcome is by treatment arm, and depending on the fraction of units assigned to treatment.</p>
-<div id="def-ch18num3" class="theorem definition">
-<p><span class="theorem-title"><strong>Declaration -1.3 (Lin estimator design) </strong></span></p>
+<div id="def-ch18num3" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration -1.3 </strong></span>Lin estimator design</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.3.R">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">prob</span> <span class="op">=</span> <span class="fl">0.5</span></span>
 <span><span class="va">control_slope</span> <span class="op">=</span> <span class="op">-</span><span class="fl">1</span></span>

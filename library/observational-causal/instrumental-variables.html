@@ -653,8 +653,8 @@ div.csl-indent {
 <p>Many of the five assumptions are represented in the DAG in <a href="#fig-ch16num7">Figure&nbsp;<span>-1.1</span></a>. The exogeneity of the instrument is represented by the exclusion of a causal effect of <span class="math inline">\(U\)</span> on <span class="math inline">\(Z\)</span>. The omission of an arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span> directly invokes the exclusion restriction. Non-interference is typically not directly represented in DAGs. Monotonicity and the non zero effect of the instrument on the treatment is represented by the causal arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(D\)</span>.</p>
 <p>Moving to the answer strategy, a plug-in estimator of the LATE is the difference-in-means of the outcome according to the instrument divided by the difference-in-means of the treatment according to the instrument. Equivalently, we can use two-stage least squares, which will yield the identical answer as the ratio of the difference-in-means estimates when no covariates are included in the regression.</p>
 <p>With the four elements of the design in hand, we declare the model in code, invoking each of the five assumptions in doing so:</p>
-<div id="def-ch16num4" class="theorem definition">
-<p><span class="theorem-title"><strong>Declaration -1.1 (Instrumental variables design) </strong></span></p>
+<div id="def-ch16num4" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration -1.1 </strong></span>Instrumental variables design</p>
 <div class="cell" data-file="scripts_declarations/declaration_16.4.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_16.4</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>

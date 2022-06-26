@@ -1238,9 +1238,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="header-section-number">13.4.1</span> Statistical modeling functions</h3>
 <p>In <code>DeclareDesign</code>, we call these two steps <code>.method</code> and <code>.summary</code> (these arguments are preceded by <code>.</code>’s to avoid argument conflicts). The <code>.method</code> argument in <code>declare_estimator</code> can take almost any modelling function in <code>R</code> (e.g., <code>lm</code> for linear regression) and <code>.summary</code> consists of a summary function that calculates statistics from the fit such as <code>tidy</code> or <code>glance</code>. You can write your own model or model summary. When your answer strategy does not fit this two-step structure, you can (as with all <code>declare_</code> functions) write your own handler.</p>
 <p>We break down each part of a standard answer strategy declaration using the example of a linear regression of the effect of a variable <code>Z</code> on an outcome <code>Y</code> in Declaration @ref(def:declaration-13-1}. The first argument in our <code>declare_estimator</code> step defines the method we will use, here <code>lm_robust</code> which is our function in the <code>estimatr</code> package for running linear regressions with robust standard errors. The second is the main argument for <code>lm_robust</code>, the formula for the regression specification, in this case Y on Z with no controls.</p>
-<div id="def-ch13num1" class="theorem definition">
+<div id="def-ch13num1" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration 13.1 </strong></span>Linear regression design</p>
 <div class="cell" data-file="scripts_declarations/declaration_13.1.R">
-<span class="theorem-title"><strong>Declaration 13.1 (Linear regression design) </strong></span>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_13.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>                U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
@@ -1399,8 +1399,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section></section><section id="declaration-code" class="level2" data-number="13.5"><h2 data-number="13.5" class="anchored" data-anchor-id="declaration-code">
 <span class="header-section-number">13.5</span> Declaration</h2>
 <p>To construct a research <em>design</em> object that we can operate on — diagnose it, redesign it, draw data from it, etc. — we add research design elements together with the <code>+</code> operator. In <a href="#def-ch13num2">Declaration&nbsp;<span>13.2</span></a>, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.</p>
-<div id="def-ch13num2" class="theorem definition">
-<p><span class="theorem-title"><strong>Declaration 13.2 (Declaration of two-arm randomized experiment) </strong></span></p>
+<div id="def-ch13num2" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration 13.2 </strong></span>Declaration of two-arm randomized experiment</p>
 <div class="cell" data-file="scripts_declarations/declaration_13.2.R">
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">1000</span>,</span>

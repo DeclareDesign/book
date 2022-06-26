@@ -640,8 +640,8 @@ div.csl-indent {
 </figure>
 </div>
 <p>To declare the full design, shown in <a href="#def-ch18num13">Declaration&nbsp;<span>-1.1</span></a>, we first need to obtain the adjacency matrix of precincts in Fairfax. Second, we obtain a permutation matrix of possible random assignments, from which probabilities of assignment to each condition can be calculated. The <code>declare_model</code> call builds in a dependence of potential outcomes on the length of each precinct’s perimeter to reflect the idea that outcomes are correlated with geography in some way. The <code>declare_inquiry</code> call describes the three inquiries in terms of potential outcomes. The <code>declare_assignment</code> call first conducts a random assignment according to the procedure describes by <code>declare_ra</code> earlier in the code, then obtains the exposures that the assignment generates. Finally, all the relevant information is fed into the Aronow and Samii estimation functions via <code>estimator_AS</code> (the <code>get_exposure_AS</code> and <code>estimator_AS</code> helper functions are available in the <code>rdddr</code> package).</p>
-<div id="def-ch18num13" class="theorem definition">
-<p><span class="theorem-title"><strong>Declaration -1.1 (Experiments over spatial networks design) </strong></span></p>
+<div id="def-ch18num13" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration -1.1 </strong></span>Experiments over spatial networks design</p>
 <div class="cell" data-file="scripts_declarations/declaration_18.13.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/r-spatial/spdep/">spdep</a></span><span class="op">)</span></span>
