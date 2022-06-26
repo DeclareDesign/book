@@ -1,4 +1,4 @@
-# Choosing an answer strategy
+# Choosing an answer strategy {#sec-ch9}
 
 ```{r}
 #| echo: false
@@ -348,7 +348,7 @@ Extreme value bounds and variations on the idea can be applied when experiments 
 Bounding approaches are built around about researcher uncertainty over models, however it's important to remember that the bounds are themselves estimates that could have come out differently depending on the realization of the data. By this logic, we can attach standard errors and confidence intervals to the bounds [see @coppock2017double for an example]. 
 
 
-## How to choose an answer strategy
+## How to choose an answer strategy {#sec-ch9s3}
 
 Now that we have discussed all four research design elements in detail, we describe how to choose an answer strategy.
 

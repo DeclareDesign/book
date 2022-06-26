@@ -1,4 +1,4 @@
-# Instrumental variables  {.unnumbered}
+# Instrumental variables {#sec-ch15s4}
 
 ```{r}
 #| echo: false

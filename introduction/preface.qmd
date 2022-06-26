@@ -1,4 +1,4 @@
-# Introduction
+# Preface
 
 \pagestyle{main}
 
@@ -32,7 +32,7 @@ The last section of the book describes how our framework can help at different s
 
 ## How to work this book
 
-We will often describe research designs not just in words, but in computer code. If you want to work through the code and exercises, fantastic. This path requires investment in `R`, the `tidyverse`, and the `DeclareDesign` software package. Chapter @getting-started helps get you started. We think working through the code is very rewarding, but we understand that there is a learning curve. You could, of course, tackle the declaration, diagnosis, and redesign processes using any computer language you like,^[On our Web site, we provide [examples in `R`, Python, Stata, and Excel](https://declaredesign.org/pap/).] but it is easier in `DeclareDesign` because the software guides you to articulate each of the four design elements.
+We will often describe research designs not just in words, but in computer code. If you want to work through the code and exercises, fantastic. This path requires investment in `R`, the `tidyverse`, and the `DeclareDesign` software package. @sec-ch4 helps get you started. We think working through the code is very rewarding, but we understand that there is a learning curve. You could, of course, tackle the declaration, diagnosis, and redesign processes using any computer language you like,^[On our Web site, we provide [examples in `R`, Python, Stata, and Excel](https://declaredesign.org/pap.html).] but it is easier in `DeclareDesign` because the software guides you to articulate each of the four design elements.
 
 If you want nothing to do with the code, you can skip it and just focus on the text. We have written the book so that understanding of the code is not required in order to understand research design concepts.  
 

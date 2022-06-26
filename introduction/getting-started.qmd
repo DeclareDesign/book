@@ -10,7 +10,7 @@ source("scripts/before_chapter_script.R")
 
 This chapter serves as quick start guide for the code used throughout this book, and in particular the DeclareDesign package for the R programming language. DeclareDesign is a software implementation of every step of the declare-diagnose-redesign process. While you can declare, diagnose, and redesign using nearly any programming language, DeclareDesign is structured to make it easy to mix-and-match design elements while handling the tedious simulation bookkeeping behind the scenes. 
 
-First, we provide instructions for getting started in R and RStudio. We then introduce the code structure for the three steps of the research planning process: declaration, diagnose, and redesign. After this introduction, readers should be able to *use* the code, but perhaps not write it themselves yet. We devote a longer section (Chapter @designingcode) to getting started *writing* the code.
+First, we provide instructions for getting started in R and RStudio. We then introduce the code structure for the three steps of the research planning process: declaration, diagnose, and redesign. After this introduction, readers should be able to *use* the code, but perhaps not write it themselves yet. We devote a longer section to getting started *writing* the code (Chapter @sec-ch13).
 
 ## Installing R 
 
@@ -53,6 +53,8 @@ Each element created by a `declare_*` function, perhaps surprisingly, is itself 
 
 ```{r}
 #| eval: false
+#| warning: false
+#| message: false
 
 participants <- data.frame(ID = 1:100)
 
@@ -77,7 +79,7 @@ bind_cols(assignment_1, assignment_2, assignment_3) |>
   kable(booktabs = TRUE, align = "c", caption = "Three random assignments from the same random assignment step.", digits = 3)
 ```
 
-Every step in a research design can be declared using one of the `declare_*` functions. Table @tbl-declarationfunctions collects these according to the four elements of a research design. In Chapter @designingcode, we detail how to build each kind of step.
+Every step in a research design can be declared using one of the `declare_*` functions. Table @tbl-declarationfunctions collects these according to the four elements of a research design. In @sec-ch13, we detail how to build each kind of step.
 
 | Design component | Function                       | Description                                   |
 | ---------------- | ------------------------------ | --------------------------------------------- |

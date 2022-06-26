@@ -15,7 +15,7 @@ book:
     - authors.qmd
     - part: "Introduction"
       chapters: 
-        - introduction/index.qmd
+        - introduction/preface.qmd
         - introduction/what-is-a-research-design.qmd
         - introduction/research-design-principles.qmd
         - introduction/getting-started.qmd
@@ -100,7 +100,7 @@ book:
           href: "acknowledgements.html"
         - section: "Introduction"
           contents:
-            - introduction/index.qmd
+            - introduction/preface.qmd
             - introduction/what-is-a-research-design.qmd
             - introduction/research-design-principles.qmd
             - introduction/getting-started.qmd

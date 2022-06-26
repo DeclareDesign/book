@@ -1,4 +1,4 @@
-# Selection-on-observables {.unnumbered}
+# Selection-on-observables {#sec-ch15s2}
 
 ```{r}
 #| echo: false
