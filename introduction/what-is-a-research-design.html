@@ -802,12 +802,13 @@ div.csl-indent {
 <span><span class="va">declaration_2.1</span> <span class="op">&lt;-</span> <span class="va">model</span> <span class="op">+</span> <span class="va">inquiry</span> <span class="op">+</span> <span class="va">data_strategy</span> <span class="op">+</span> <span class="va">answer_strategy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>The design is now ready to be used, diagnosed, developed. We can generate simulated data directly from the design using <code>draw_data(design_1)</code>. We show a snapshot of such simulated data below.</p>
+<p>The design is now ready to be used, diagnosed, developed. We can generate simulated data directly from the design using <code>draw_data(design_1)</code>. We show a snapshot of such simulated data below in <a href="#tbl-ch2n1">Table&nbsp;<span>2.1</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-ch2n1" class="anchored">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Simulated data from two-arm trial design</caption>
+<caption>Table 2.1:  Simulated data from two-arm trial design </caption>
  <thead><tr>
 <th style="text-align:left;"> ID </th>
    <th style="text-align:right;"> history </th>
@@ -874,6 +875,7 @@ div.csl-indent {
   </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <p>To evaluate the design, we need to specify our criteria for what counts as a good design. We could assess the design in terms of its statistical power, whether estimation is unbiased and so on. For now though we will focus on a specific design characteristic, its “success rate.” Here we call our study a “success” if we choose to scale-up the training across the force <em>and</em> its true effect is at least 0.2 (meaning it is in fact effective). If the true effect is below 0.2 or we if decide not to implement, we’ll deem the study “not a success.” Our decision to implement the program or not is based on the empirical results for the experiment. If we obtain a statistically significant estimate that is greater than 0.3 (the empirical threshold we agreed to with the Sheriff), we implement and we don’t otherwise.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> The reason we choose a higher standard of evidence, 0.3, than the effectiveness is that the training is costly so we want to be sure we have enough evidence it works.</p>
