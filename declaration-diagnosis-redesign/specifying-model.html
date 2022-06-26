@@ -115,7 +115,7 @@ div.csl-indent {
     <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -238,22 +238,22 @@ div.csl-indent {
     <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link">Process tracing</a>
+  <a href="../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Process tracing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link">Selection-on-observables</a>
+  <a href="../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Selection-on-observables</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link">Difference-in-differences</a>
+  <a href="../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Difference-in-differences</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link">Instrumental variables</a>
+  <a href="../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Instrumental variables</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -558,7 +558,7 @@ div.csl-indent {
 
 </header><p>Models are theoretical abstractions we use to make sense of the world and organize our understanding of it. They play many critical roles in research design. First and foremost, models describe the units, conditions, and outcomes that define inquiries. Without well-specified models, we cannot pose well-specified inquiries. Second, models provide a framework to evaluate the sampling, assignment, and measurement procedures that form the data strategy. Models encode our beliefs about the kinds of information that might result when we conduct empirical observations. Third, they guide the selection of answer strategies: what variables should we condition on, what variables should we <strong>not</strong> condition on, how flexible or rigid should our estimation procedure be? Whenever we rely on assumptions in the model—for example, normality of errors, conditional independencies, or latent scores—we are betting that the real causal model <span class="math inline">\(m^*\)</span> has these properties.</p>
 <p>We need to imagine models in order to declare and diagnose research designs. This need often generates discomfort among students and researchers who are new to thinking about research design this way. In order to compute the root mean squared error, bias, or statistical power of a design, we need to write down <strong>more than we know for sure</strong> in the model. We have to describe joint distributions of covariates, treatments, and outcomes, which entails making guesses about the very means, covariances, and effect sizes (among many other things) that the empirical research design is supposed to measure. “What do you mean, write down the potential outcomes—that’s what I’m trying to learn about!”</p>
-<p>The discomfort arises because we do not know the true causal model of the world—what we referred to as <span class="math inline">\(m^*\)</span> in <span class="quarto-unresolved-ref">?fig-worldandtheory</span>. We are uncertain about which of the many plausible models of the world we entertain is the correct one. In fact we can be fairly certain that none of them is really correct.</p>
+<p>The discomfort arises because we do not know the true causal model of the world—what we referred to as <span class="math inline">\(m^*\)</span> in <a href="declaring-designs.html#fig-ch2num1">Figure&nbsp;<span>6.1</span></a> We are uncertain about which of the many plausible models of the world we entertain is the correct one. In fact we can be fairly certain that none of them is really correct.</p>
 <p>The good news is that they do not have to be correct. The <em>M</em> in <em>MIDA</em> refers to these possible models, which we call “reference models.” <em>M</em> is a set of reference models. Their role is to provide a stipulation of how the world works, which allows us to answer some questions about our research design. <em>If</em> the reference model were true, what <em>then</em> would the value of the inquiry be? Would the estimator generate unbiased estimates? How many units would we need to achieve an RMSE of 0.5? Critically, whether a design is good or bad depends on the reference model. A data and analysis strategy might fare very well under one model of the world but poorly under another. Thus to get to the point where we can assess a design we need to make the family of reference models explicit. Our hope is that when we apply <em>A</em> and <em>I</em> to the real event generating processes we will have a similar relation between the answer we seek and the answers we get as we have between conjectured estimands and simulated estimates. Beyond that we don’t have to actually believe any of them models in <em>M</em>.</p>
 <section id="elements-of-models" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="elements-of-models">
 <span class="header-section-number">6.1</span> Elements of models</h2>
@@ -615,17 +615,17 @@ Y_i(1) &amp;= -0.25 - 0.05 \times U_i
 <p>Any particular causal model will be a complex web of exogenous and endogenous variables woven together via a set of functional relationships. Despite the heterogeneity across models, we can describe the roles variables play in a research design with reference to the roles they play in structural causal models. There are seven roles:</p>
 <ol type="1">
 <li>
-<strong>Outcomes</strong>: Variables whose level or responses we want to understand, generally referred to as <span class="math inline">\(Y\)</span>, as in <span class="quarto-unresolved-ref">?fig-vartypes</span>. Variously described as “dependent variables,” “endogenous variables,” “left-hand side variables,” or “response variables.”</li>
+<strong>Outcomes</strong>: Variables whose level or responses we want to understand, generally referred to as <span class="math inline">\(Y\)</span>, as in <a href="#fig-ch6num2">Figure&nbsp;<span>6.2</span></a>. Variously described as “dependent variables,” “endogenous variables,” “left-hand side variables,” or “response variables.”</li>
 <li>
 <strong>Treatments</strong>: Variables that affect outcomes. We will most often use <span class="math inline">\(D\)</span> to refer to the main causal variable of interest in a particular study. Sometimes labeled as “independent variables,” or “right-hand side variables.”</li>
 <li>
-<strong>Moderators</strong>: Variables that condition the effects of treatment variables on outcomes: depending on the level of a moderator, treatments might have higher or lower effects on outcomes. Nonparametric structural causal models (like those represented in DAGs) do not encode whether a variable is a moderator or not. See for example <span class="math inline">\(X2\)</span> in <span class="quarto-unresolved-ref">?fig-vartypes</span>. The figure indicates that <span class="math inline">\(X2\)</span> is a cause of <span class="math inline">\(Y\)</span> but does not explicitly indicate whether it moderates the effect of <span class="math inline">\(D\)</span> on <span class="math inline">\(Y\)</span>.</li>
+<strong>Moderators</strong>: Variables that condition the effects of treatment variables on outcomes: depending on the level of a moderator, treatments might have higher or lower effects on outcomes. Nonparametric structural causal models (like those represented in DAGs) do not encode whether a variable is a moderator or not. See for example <span class="math inline">\(X2\)</span> in <a href="#fig-ch6num2">Figure&nbsp;<span>6.2</span></a>. The figure indicates that <span class="math inline">\(X2\)</span> is a cause of <span class="math inline">\(Y\)</span> but does not explicitly indicate whether it moderates the effect of <span class="math inline">\(D\)</span> on <span class="math inline">\(Y\)</span>.</li>
 <li>
 <strong>Mediators</strong>: Variables “along the path” from treatment variables to outcomes. <span class="math inline">\(M\)</span> is an example of a mediator in this figure. Mediators are often studied to assess “how” or “why” <span class="math inline">\(D\)</span> causes <span class="math inline">\(Y\)</span>.</li>
 <li>
 <strong>Confounders</strong>: Variables that introduce a non-causal dependence between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. In the figure, <span class="math inline">\(X1\)</span> is a confounder because it causes both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> and could introduce a dependence between them even if <span class="math inline">\(D\)</span> did not cause <span class="math inline">\(Y\)</span>.</li>
 <li>
-<strong>Instruments</strong>: An instrumental variable is an exogenous variable that affects a treatment variable which itself causes an an outcome variable. We give a much more detailed treatment of these variables in Section <span class="citation" data-cites="instrumental-variables">(<a href="../references.html#ref-instrumental-variables" role="doc-biblioref"><strong>instrumental-variables?</strong></a>)</span>. We reserve the letter <span class="math inline">\(Z\)</span> for instruments. Random assignments are instruments in the sense that the assignment is the instrument and the actual treatment received is the treatment variable.</li>
+<strong>Instruments</strong>: An instrumental variable is an exogenous variable that affects a treatment variable which itself causes an an outcome variable. We give a much more detailed treatment of these variables in <span class="quarto-unresolved-ref">?sec-ch13s4</span>. We reserve the letter <span class="math inline">\(Z\)</span> for instruments. Random assignments are instruments in the sense that the assignment is the instrument and the actual treatment received is the treatment variable.</li>
 <li>
 <strong>Colliders</strong>: Colliders are variables that are caused by two other variables. Colliders can be important because conditioning on a collider introduces a non-causal relationship between all parents of the collider. The intuition is that if learn that a child is tall then learn that one parent is small makes you more likely to believe that the other parent is tall. In <span class="quarto-unresolved-ref">?fig-vartypes</span>, <span class="math inline">\(K\)</span> is a collider that can create a non-causal dependence between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> (via <span class="math inline">\(U\)</span>) if conditioned upon.</li>
 </ol>

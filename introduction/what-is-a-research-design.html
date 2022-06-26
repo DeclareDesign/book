@@ -104,7 +104,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../introduction/research-design-principles.html" rel="next">
-<link href="../introduction/index.html" rel="prev">
+<link href="../introduction/preface.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -179,7 +179,7 @@ div.csl-indent {
     <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -302,22 +302,22 @@ div.csl-indent {
     <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link">Process tracing</a>
+  <a href="../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Process tracing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link">Selection-on-observables</a>
+  <a href="../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Selection-on-observables</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link">Difference-in-differences</a>
+  <a href="../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Difference-in-differences</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link">Instrumental variables</a>
+  <a href="../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Instrumental variables</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -726,7 +726,7 @@ div.csl-indent {
 <p>Answer strategies are functions that take in data and return answers. For some research designs, this is a literal function like the R function <code>lm_robust</code> that implements an ordinary least squares (OLS) regression with robust standard errors. For some research designs, the function is embodied by the researchers themselves when they read documents and summarize their meanings in a case study.</p>
 <p>The answer strategy is more than the choice of an estimator. It includes the full set of procedures that begins with cleaning the dataset and ends with answers in words, tables, and graphs. These activities include data cleaning, data transformation, estimation, plotting, and interpretation. Not only do we define our choice of OLS as the estimator, we also specify that we will focus attention on a particular coefficient estimate, assess uncertainty using a 95% confidence interval, and construct a coefficient plot to visualize the inference. The answer strategy also includes all of the if-then procedures that researchers implicitly or explicitly follow depending on initial results and features of the data. For example, in a stepwise regression procedure, the answer strategy is not the final regression specification that results from iterative model selection, but that whole procedure.</p>
 <p><em>D</em> and <em>A</em> impose a discipline on each other in the same way as we saw with <em>M</em> and <em>I</em>. Just like the model needs to provide the events that are summarized by the inquiry, the data strategy needs to provide the data that are summarized by the answer strategy. Declaring each of these parts in detail reveals the dependencies across the design elements.</p>
-<p><em>A</em> and <em>I</em> also enjoy a tight connection stemming from the more general parallelism between (<em>M</em>, <em>I</em>) and (<em>D</em>, <em>A</em>). We elaborate the principle of parallel inquiries and answer strategies in Section <span class="citation" data-cites="how-to-choose-an-answer-strategy">(<a href="../references.html#ref-how-to-choose-an-answer-strategy" role="doc-biblioref"><strong>how-to-choose-an-answer-strategy?</strong></a>)</span>.</p>
+<p><em>A</em> and <em>I</em> also enjoy a tight connection stemming from the more general parallelism between (<em>M</em>, <em>I</em>) and (<em>D</em>, <em>A</em>). We elaborate the principle of parallel inquiries and answer strategies in <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html#sec-ch9s3"><span>Section&nbsp;9.3</span></a>.</p>
 <p><a href="#fig-midaplot">Figure&nbsp;<span>2.1</span></a> shows how the same answer strategy <em>A</em> is applied both to the realized data <span class="math inline">\(d^*\)</span> and also to the simulated data <span class="math inline">\(d\)</span>. We know that in practice, however, the <em>A</em> applied to the real data differs somewhat from the <em>A</em> applied to the data we plan for via simulation. Designs sometimes drift in response to data, but too much drift and the inferences we draw can become misleading. The <em>MIDA</em> framework encourages researchers to think through what the real data will actually look like, and adjust <em>A</em> accordingly <em>before</em> data strategies are implemented.</p>
 <div class="ddbox">
 <div class="ddbox-title">
@@ -751,7 +751,7 @@ div.csl-indent {
 <p>Diagnosis is the process of assessing the properties of designs, and represents an opportunity to write down what would make the study a success. For a long time, researchers have classified studies as successful or not based on statistical significance <span class="citation" data-cites="chopra2022null">(<a href="../references.html#ref-chopra2022null" role="doc-biblioref">Chopra et al. 2022</a>)</span>. If significant, the study “worked”; if not, it is a failed “null.” Accordingly, statistical power (the probability of a statistically significant result) has been the most front-of-mind design property when researchers plan studies. As we learn more about the pathologies of relying on statistical significance, we learn that features beyond power are more important. For example, the “credibility revolution” throughout the social sciences has trained a laser-like focus on the biases that may result from omitted or “lurking” variables.</p>
 <p>Design diagnosis relies on two new concepts: diagnostic statistics and diagnosands.</p>
 <p>A “diagnostic statistic” is a summary statistic generated from a single “run” of a design. For example, the statistic <span class="math inline">\(e\)</span> (error) refers to the difference between the estimate and the estimand. The statistic <span class="math inline">\(s\)</span> (significance) refers to whether the estimate was deemed statistically significant at the 0.05 level (for instance).</p>
-<p>A “diagnosand” is a summary of the distribution of a diagnostic statistic across many simulations of the design. The bias diagnosand is defined as the average value of the <span class="math inline">\(e\)</span> statistic and the power diagnosand is defined as the average value of the <span class="math inline">\(s\)</span> statistic. Other diagnosands include quantities like root-mean-squared-error (RMSE), Type I and Type II error rates, how likely is it that subjects were harmed, and average cost. We describe these diagnosands in much more detail in Chapter <span class="quarto-unresolved-ref">?sec-diagnosing-designs</span>.</p>
+<p>A “diagnosand” is a summary of the distribution of a diagnostic statistic across many simulations of the design. The bias diagnosand is defined as the average value of the <span class="math inline">\(e\)</span> statistic and the power diagnosand is defined as the average value of the <span class="math inline">\(s\)</span> statistic. Other diagnosands include quantities like root-mean-squared-error (RMSE), Type I and Type II error rates, how likely is it that subjects were harmed, and average cost. We describe these diagnosands in much more detail in <span class="quarto-unresolved-ref">?sec-ch11</span>.</p>
 <p>One especially important diagnosand is the “success rate,” which is the average value of the “success” diagnostic statistic. As the researcher, you get to decide what would make your study a success. What matters most in your research scenario? Is it statistical significance? If so, optimize your design with respect to power. Is what matters most whether the answer has the correct sign or not? Then diagnose how frequently your answer strategy yields an answer with the same sign as your inquiry. Diagnosis involves articulating what would make your study a success and then figuring out, through simulation, how often you obtain that success. Success is often a multidimensional aggregation of diagnosands, such as the joint achievement of high statistical power, manageable costs, and low ethical harms.</p>
 <p>We diagnose studies over the range of possibilities in the model, since we want to learn the value of diagnosands under many possible scenarios. A clear example of this is the power diagnosand over many possible conjectures about the true effect size. For each effect size that we entertain in the model, we can calculate statistical power. The minimum detectable effect size is a summary of this power curve, usually defined as the smallest effect size at which the design reaches 80% statistical power. This idea, however, extends well beyond power. Whatever the set of important diagnosands, we want to ensure that our design performs well across all model possibilities.</p>
 <p>Computer simulation is not the only way to do design diagnosis. Designs can be declared in writing or mathematical notation and then diagnosed using analytic formulas. Enormous theoretical progress in the study of research design has been made with this approach. Methodologists across the social sciences have described diagnosands such as bias, power, and root-mean-squared-error for large classes of designs. Not only can this work provide closed-form mathematical expressions for many diagnosands, it can also yield insights about the pitfalls to watch out for when constructing similar designs. That said, pen-and-paper diagnosis is challenging for many social science research designs, first because many designs as actually implemented have idiosyncratic features that are hard to incorporate and second because the analytic formulas for many diagnosands have not yet been worked out by statisticians. For this reason, when we do diagnosis in this book we will usually depend on simulation.</p>
@@ -1040,8 +1040,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../introduction/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="../introduction/preface.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

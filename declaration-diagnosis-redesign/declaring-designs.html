@@ -178,7 +178,7 @@ div.csl-indent {
     <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -301,22 +301,22 @@ div.csl-indent {
     <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link">Process tracing</a>
+  <a href="../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Process tracing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link">Selection-on-observables</a>
+  <a href="../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Selection-on-observables</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link">Difference-in-differences</a>
+  <a href="../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Difference-in-differences</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link">Instrumental variables</a>
+  <a href="../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Instrumental variables</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -580,7 +580,7 @@ div.csl-indent {
    
   <ul>
 <li>
-<a href="#designingcode" id="toc-designingcode" class="nav-link active" data-scroll-target="#designingcode"> <span class="header-section-number">6</span> Designing in code</a>
+<a href="#ch5" id="toc-ch5" class="nav-link active" data-scroll-target="#ch5"> <span class="header-section-number">6</span> Designing in code</a>
   <ul class="collapse">
 <li><a href="#definition-of-research-designs" id="toc-definition-of-research-designs" class="nav-link" data-scroll-target="#definition-of-research-designs"> <span class="header-section-number">6.1</span> Definition of research designs</a></li>
   <li><a href="#declaration-in-code" id="toc-declaration-in-code" class="nav-link" data-scroll-target="#declaration-in-code"> <span class="header-section-number">6.2</span> Declaration in code</a></li>
@@ -604,7 +604,7 @@ div.csl-indent {
   </div>
   
 
-</header><section id="designingcode" class="level1" data-number="6"><h1 data-number="6">
+</header><section id="ch5" class="level1" data-number="6"><h1 data-number="6">
 <span class="header-section-number">6</span> Designing in code</h1>
 <p>In Chapter 2, we gave a high-level overview of our framework for describing research designs in terms of their models, inquiries, data strategies, and answer strategies, our process for diagnosing their properties, and a general purpose approach for improving them to better fit research goals. Now in this chapter, we place our approach on a firmer formal footing. We employ elements from Pearl’s <span class="citation" data-cites="pearl2009causality">(<a href="../references.html#ref-pearl2009causality" role="doc-biblioref">2009</a>)</span> approach to causal modeling, which provides a syntax for mapping design inputs to design outputs. We also use the potential outcomes framework as presented, for example, in <span class="citation" data-cites="Imbens2015">Imbens and Rubin (<a href="../references.html#ref-Imbens2015" role="doc-biblioref">2015</a>)</span>, which many social scientists use to clarify their inferential targets.</p>
 <p>Describing a research design in the <em>MIDA</em> framework allows us to see the fundamental symmetries across the theoretical (M and I) and empirical (D and A) halves of a research design. A recurring theme of our book is that research designs tend to be stronger when the relationship of M to I is mirrored by the relationship of D to A; the aim of this chapter is to make this somewhat abstract claim more concrete.</p>
@@ -693,14 +693,14 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>The full set of causal relationships between <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em>, with respect to <span class="math inline">\(m\)</span> and <span class="math inline">\(m^*\)</span>, <span class="math inline">\(a_m\)</span> and <span class="math inline">\(a_{m^*}\)</span>, <span class="math inline">\(d\)</span> and <span class="math inline">\(d^*\)</span>, and <span class="math inline">\(a_d\)</span> and <span class="math inline">\(a_{d^*}\)</span> can be seen in the schematic representation of a research design given in <span class="quarto-unresolved-ref">?fig-worldandtheory</span>. The figure illustrates how a research design involves a correspondence between <span class="math inline">\(I(m) = a_m\)</span> and <span class="math inline">\(A(d) = a_d\)</span>. The theoretical half of a research design produces an answer to the inquiry <em>in theory</em>. The empirical half of a research design produces an <em>empirical estimate</em> of the answer to the inquiry. Neither answer is necessarily close to the truth <span class="math inline">\(a_{m^*}\)</span>, of course. And, as shown in the figure, the truth is not directly accessible either to us in theory or in empirics. Our gamble in empirical research, however, is that our theoretical models are close enough to the truth; that the truth is like the set of models we imagine. If the models in <span class="math inline">\(M\)</span> do not contain <span class="math inline">\(m^*\)</span> or are too different from it, then even seemingly strong research designs could yield incorrect answers.</p>
+<p>The full set of causal relationships between <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em>, with respect to <span class="math inline">\(m\)</span> and <span class="math inline">\(m^*\)</span>, <span class="math inline">\(a_m\)</span> and <span class="math inline">\(a_{m^*}\)</span>, <span class="math inline">\(d\)</span> and <span class="math inline">\(d^*\)</span>, and <span class="math inline">\(a_d\)</span> and <span class="math inline">\(a_{d^*}\)</span> can be seen in the schematic representation of a research design given in <a href="#fig-ch2num1">Figure&nbsp;<span>6.1</span></a> The figure illustrates how a research design involves a correspondence between <span class="math inline">\(I(m) = a_m\)</span> and <span class="math inline">\(A(d) = a_d\)</span>. The theoretical half of a research design produces an answer to the inquiry <em>in theory</em>. The empirical half of a research design produces an <em>empirical estimate</em> of the answer to the inquiry. Neither answer is necessarily close to the truth <span class="math inline">\(a_{m^*}\)</span>, of course. And, as shown in the figure, the truth is not directly accessible either to us in theory or in empirics. Our gamble in empirical research, however, is that our theoretical models are close enough to the truth; that the truth is like the set of models we imagine. If the models in <span class="math inline">\(M\)</span> do not contain <span class="math inline">\(m^*\)</span> or are too different from it, then even seemingly strong research designs could yield incorrect answers.</p>
 <div id="fig-ch2num1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-2-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.1: The <em>MIDA</em> framework</figcaption><p></p>
 </figure>
 </div>
-<p><span class="quarto-unresolved-ref">?fig-worldandtheory</span> reveals a striking analogy between the <em>M</em>, <em>I</em> relationship and the <em>D</em>, <em>A</em> relationship. The answer we aim for (the estimand) is obtained by applying <em>I</em> to a draw from <em>M</em>. The answer we have access to (the estimate) is obtained by applying <em>A</em> to a draw from <em>D</em>. Our hope, usually, is that these two answers are quite similar. In some cases, this parallelism suggests that the function <em>A</em> should be “like” the function <em>I</em>. For instance, if we are interested in the mean of a population and we have access to a random sample, the data available to us from <em>D</em> is like the ideal data we would have if we could observe the nodes and edges in <em>M</em> directly.</p>
-<p>Finally, in <span class="quarto-unresolved-ref">?fig-worldandtheory</span> no arrows go into <em>M</em>, <em>I</em>, <em>D</em>, or <em>A</em>, since they are not caused by any of the other nodes. We could have included a node for the research designer, who deliberately sets the details of <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em>, but we omit it for clarity.</p>
+<p><a href="#fig-ch2num1">Figure&nbsp;<span>6.1</span></a> reveals a striking analogy between the <em>M</em>, <em>I</em> relationship and the <em>D</em>, <em>A</em> relationship. The answer we aim for (the estimand) is obtained by applying <em>I</em> to a draw from <em>M</em>. The answer we have access to (the estimate) is obtained by applying <em>A</em> to a draw from <em>D</em>. Our hope, usually, is that these two answers are quite similar. In some cases, this parallelism suggests that the function <em>A</em> should be “like” the function <em>I</em>. For instance, if we are interested in the mean of a population and we have access to a random sample, the data available to us from <em>D</em> is like the ideal data we would have if we could observe the nodes and edges in <em>M</em> directly.</p>
+<p>Finally, in <a href="#fig-ch2num1">Figure&nbsp;<span>6.1</span></a> no arrows go into <em>M</em>, <em>I</em>, <em>D</em>, or <em>A</em>, since they are not caused by any of the other nodes. We could have included a node for the research designer, who deliberately sets the details of <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em>, but we omit it for clarity.</p>
 </section><section id="declaration-in-code" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="declaration-in-code">
 <span class="header-section-number">6.2</span> Declaration in code</h2>
 <p>Table <span class="quarto-unresolved-ref">?tbl-midarealizations</span> illustrates these different quantities through <code>DeclareDesign</code>. We stipulate a model, <span class="math inline">\(M\)</span>, in which <span class="math inline">\(Y\)</span> depends on <span class="math inline">\(X\)</span>. We define a inquiry, <span class="math inline">\(I\)</span>: what is the average value of <span class="math inline">\(Y\)</span> when <span class="math inline">\(X=1\)</span>? We calculate what the value of our inquiry (the estimand) would be under one of our simulated models, <span class="math inline">\(I(m)\)</span>. We also imagine we could describe how the world in fact is, <span class="math inline">\(m^*\)</span>, and calculate what the right answer would be in that case, <span class="math inline">\(a_{m^*}\)</span>. We then apply the data strategy <span class="math inline">\(D\)</span> to produce realized data <span class="math inline">\(d^*\)</span> and use an answer strategy <span class="math inline">\(A\)</span> and use it to calculate the answer <span class="math inline">\(a_d^*\)</span> we would get given <span class="math inline">\(d^*\)</span>.</p>

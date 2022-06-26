@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-0.9.622">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design - Instrumental variables</title>
+<title>Research Design - 19&nbsp; Instrumental variables</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -137,7 +137,7 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Instrumental variables</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Instrumental variables</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -176,7 +176,7 @@ div.csl-indent {
     <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../introduction/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="../../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -299,22 +299,22 @@ div.csl-indent {
     <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link">Process tracing</a>
+  <a href="../../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Process tracing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link">Selection-on-observables</a>
+  <a href="../../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Selection-on-observables</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link">Difference-in-differences</a>
+  <a href="../../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Difference-in-differences</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link active">Instrumental variables</a>
+  <a href="../../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Instrumental variables</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -577,12 +577,12 @@ div.csl-indent {
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#design-examples" id="toc-design-examples" class="nav-link active" data-scroll-target="#design-examples">Design examples</a></li>
+<li><a href="#design-examples" id="toc-design-examples" class="nav-link active" data-scroll-target="#design-examples"> <span class="header-section-number">19.1</span> Design examples</a></li>
   </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">Instrumental variables</h1>
+<h1 class="title"><span id="sec-ch15s4" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Instrumental variables</span></span></h1>
 </div>
 
 
@@ -600,10 +600,10 @@ div.csl-indent {
 <p>When we cannot credibly assert that we have controlled for all confounding variables as in a selection-on-observables design (see Section <span class="citation" data-cites="selection-on-observables">(<a href="../../references.html#ref-selection-on-observables" role="doc-biblioref"><strong>selection-on-observables?</strong></a>)</span>) and when we do not think the parallel trends assumption is likely to hold in a difference-in-differences design (see Section <span class="citation" data-cites="difference-in-differences">(<a href="../../references.html#ref-difference-in-differences" role="doc-biblioref"><strong>difference-in-differences?</strong></a>)</span>), we might have to give up on our goal of drawing causal inferences.</p>
 <p>But occasionally, the world yields an opportunity to sidestep unobserved confounding by generating as-if random variation in a variable that itself affects the treatment variable but does not directly affect the outcome. We call the variable that is as-if randomly assigned by the world an “instrument.”</p>
 <p>Instruments are special. They are variables that are randomly assigned by nature, the government, or other individuals or groups. Usually, genuine random assignments have to be crafted by researchers as part of a deliberate data strategy. Experimenters go to great lengths to randomly expose some units but not others to treatments. When the world provides bona fide random variation in an instrumental variable, it’s a rare and valuable opportunity. By virtue of as-if random assignment, we can learn about the average causal effects of the instrument itself without any further consternation. Conditional on geography and season, weather conditions are as-if randomly assigned, so we can learn about the average effects of rainfall on many outcomes, like crop yields, voter turnout, and attendance at sporting events. Conditional on gender and birth year, draft numbers are randomly assigned by the government, so we can learn about the average effects of being drafted on educational attainment, future earnings, or public policy preferences.</p>
-<p>We illustrate the logic of instrumental variables with the DAG shown in <a href="#fig-ch16num7">Figure&nbsp;<span>-1.1</span></a>. An instrument <span class="math inline">\(Z\)</span> affects an endogenous treatment <span class="math inline">\(D\)</span> which subsequently affects an outcome <span class="math inline">\(Y\)</span>. Many other common causes, summarized in terms of unknown heterogeneity <span class="math inline">\(U\)</span>, affect both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. It is because of this unmeasured confounding that we cannot learn about the effect of <span class="math inline">\(D\)</span> on <span class="math inline">\(Y\)</span> directly using standard tools.</p>
+<p>We illustrate the logic of instrumental variables with the DAG shown in <a href="#fig-ch16num7">Figure&nbsp;<span>19.1</span></a>. An instrument <span class="math inline">\(Z\)</span> affects an endogenous treatment <span class="math inline">\(D\)</span> which subsequently affects an outcome <span class="math inline">\(Y\)</span>. Many other common causes, summarized in terms of unknown heterogeneity <span class="math inline">\(U\)</span>, affect both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. It is because of this unmeasured confounding that we cannot learn about the effect of <span class="math inline">\(D\)</span> on <span class="math inline">\(Y\)</span> directly using standard tools.</p>
 <div id="fig-ch16num7" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../../figures/figure-16-7.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure -1.1: Directed acyclic graph of an instrumental variables design.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.1: Directed acyclic graph of an instrumental variables design.</figcaption><p></p>
 </figure>
 </div>
 <p>We can naturally imagine an inquiry that represents the effect of the instrument (<span class="math inline">\(Z\)</span>) on an outcome of interest such as the effect of the draft number on future earnings. In the terminology of instrumental variables, this inquiry is called the “reduced form” or the “intention-to-treat” (ITT) effect. If it’s really true that the instrument is randomly assigned by the world, estimation of the reduced form effect is straightforward: we estimate the causal effect of <span class="math inline">\(Z\)</span> on <span class="math inline">\(Y\)</span> using, for example, a difference-in-means estimator. Sometimes, we are also interested in the “first-stage” effect of the instrument on the treatment variable. Similarly, we can target this inquiry by studying the causal effect of <span class="math inline">\(Z\)</span> on <span class="math inline">\(D\)</span>, for example using the difference-in-means estimator again.</p>
@@ -650,11 +650,11 @@ div.csl-indent {
 <li><p>Non-zero effect of the instrument on the treatment. If the instrument does not affect the treatment, then it is useless for learning about the effects of the treatment on the outcome, simply because it generates no compliers. If there are no compliers, the LATE itself is undefined.</p></li>
 </ol>
 <p>If all five of these assumptions are met, it can be shown that the inquiry <span class="math inline">\(\mathrm{LATE} = \frac{\mathrm{ATE}_{ \mathrm{Z\rightarrow Y} }}{\mathrm{ATE}_{Z\rightarrow D}} = \frac{\mathrm{Reduced~Form}}{\mathrm{First~Stage}}\)</span>. It is the quotient of the ATE of the instrument on the outcome divided by the ATE of the instrument on the treatment. This expression underlines the importance of the fifth assumption: if the instrument doesn’t affect the treatment, the first stage is equal to zero and the ratio is undefined.</p>
-<p>Many of the five assumptions are represented in the DAG in <a href="#fig-ch16num7">Figure&nbsp;<span>-1.1</span></a>. The exogeneity of the instrument is represented by the exclusion of a causal effect of <span class="math inline">\(U\)</span> on <span class="math inline">\(Z\)</span>. The omission of an arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span> directly invokes the exclusion restriction. Non-interference is typically not directly represented in DAGs. Monotonicity and the non zero effect of the instrument on the treatment is represented by the causal arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(D\)</span>.</p>
+<p>Many of the five assumptions are represented in the DAG in <a href="#fig-ch16num7">Figure&nbsp;<span>19.1</span></a>. The exogeneity of the instrument is represented by the exclusion of a causal effect of <span class="math inline">\(U\)</span> on <span class="math inline">\(Z\)</span>. The omission of an arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span> directly invokes the exclusion restriction. Non-interference is typically not directly represented in DAGs. Monotonicity and the non zero effect of the instrument on the treatment is represented by the causal arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(D\)</span>.</p>
 <p>Moving to the answer strategy, a plug-in estimator of the LATE is the difference-in-means of the outcome according to the instrument divided by the difference-in-means of the treatment according to the instrument. Equivalently, we can use two-stage least squares, which will yield the identical answer as the ratio of the difference-in-means estimates when no covariates are included in the regression.</p>
 <p>With the four elements of the design in hand, we declare the model in code, invoking each of the five assumptions in doing so:</p>
 <div id="def-ch16num4" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration -1.1 </strong></span>Instrumental variables design</p>
+<p><span class="theorem-title"><strong>Declaration 19.1 </strong></span>Instrumental variables design</p>
 <div class="cell" data-file="scripts_declarations/declaration_16.4.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_16.4</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -675,7 +675,8 @@ div.csl-indent {
 </div>
 <p>The exclusion restriction is invoked in omitting a causal direct effect of <span class="math inline">\(Z\)</span> in the <span class="math inline">\(Y\)</span> potential outcomes. We invoke the monotonicity and non-zero effect of <span class="math inline">\(Z\)</span> on <span class="math inline">\(D\)</span> in the <span class="math inline">\(D\)</span> potential outcomes, which have an effect of <span class="math inline">\(Z\)</span> of 1. We invoke the non-interference assumption by excluding effects of the instrument values from other units in the definition of the <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> potential outcomes. And we invoke the ignorability of <span class="math inline">\(Z\)</span> by randomly assigning it in the assignment step.</p>
 <p>How can you use this declaration? Many instrumental variables designs involve historical data, such that most remaining design choices are in the answer strategy. Declaring and diagnosing the design can yield insights about how to construct standard errors and confidence intervals and the implications of analysis procedures in which data-dependent tests are run before fitting instrumental variables models — and only fit if the tests pass. But other instrumental variables papers involve prospective data collection, in which an instrument is identified and outcome data (and possibly instrument and treatment data) are collected anew. In such settings, the design diagnosis and redesign tools are just as useful as in any prospective research design: to help select sampling and measurement procedures from the sample size to the number of outcomes to be collected. The key in this case is to build in the features of the instrument, the potential outcomes of treatment receipt, and the potential outcomes of the ultimate outcome of interest and to explore violations of the five assumptions in the model.</p>
-<section id="design-examples" class="level2"><h2 class="anchored" data-anchor-id="design-examples">Design examples</h2>
+<section id="design-examples" class="level2" data-number="19.1"><h2 data-number="19.1" class="anchored" data-anchor-id="design-examples">
+<span class="header-section-number">19.1</span> Design examples</h2>
 <ul>
 <li><p><span class="citation" data-cites="nellis_siddiqui_2018">Nellis and Siddiqui (<a href="../../references.html#ref-nellis_siddiqui_2018" role="doc-biblioref">2018</a>)</span> instrument for the share of secular legislators with the as-if randomly assigned victory of secularist candidates in close elections. The authors use this instrument to study the causal effect of secular legislators on religious violence in Pakistan.</p></li>
 <li><p><span class="citation" data-cites="Stokes2016">Stokes (<a href="../../references.html#ref-Stokes2016" role="doc-biblioref">2016</a>)</span> studies the causal effects of wind turbines on voting for incumbents, instrumenting for the presence or absence of wind turbines with plausibly exogeneous differences in wind speeds across localities.</p></li>
@@ -773,7 +774,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../../library/observational-causal/difference-in-differences.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Difference-in-differences</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Difference-in-differences</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
