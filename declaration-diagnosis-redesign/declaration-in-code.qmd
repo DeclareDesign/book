@@ -674,9 +674,9 @@ In `DeclareDesign`, we call these two steps `.method` and `.summary` (these argu
 
 We break down each part of a standard answer strategy declaration using the example of a linear regression of the effect of a variable `Z` on an outcome `Y` in Declaration \@ref(def:declaration-13-1}. The first argument in our `declare_estimator` step defines the method we will use, here `lm_robust` which is our function in the `estimatr` package for running linear regressions with robust standard errors. The second is the main argument for `lm_robust`, the formula for the regression specification, in this case Y on Z with no controls. 
 
-::: {#def-ch13num1} 
+::: {#def-ch13num1 .declaration} 
 
-## Linear regression design
+Linear regression design
 
 ```{r, file = "scripts_declarations/declaration_13.1.R"}
 ```
@@ -814,9 +814,9 @@ Often you may want to construct a test as part of your answer strategy that does
 
 To construct a research *design* object that we can operate on --- diagnose it, redesign it, draw data from it, etc. --- we add research design elements together with the `+` operator. In @def-ch13num2, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.
 
-::: {#def-ch13num2} 
+::: {#def-ch13num2 .declaration} 
 
-## Declaration of two-arm randomized experiment
+Declaration of two-arm randomized experiment
 
 ```{r, file = "scripts_declarations/declaration_13.2.R"}
 ```

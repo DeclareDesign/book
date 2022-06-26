@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a design in which a researcher tries to address concerns about confounding by conditioning on other observable variables. In the design the researcher has to specify how the other variable creates a risk of confounding and how exactly they will take account of these variables to minimize bias.   
-::::
+:::
 
 When we want to learn about causal effects, but treatments are allocated by the world and not by the researcher, we are sometimes stuck. It is possible that a comparison of treated units to control units will generate biased inferences because of selection -- the problem that certain types of units "select" into treatment and others into control. If the average potential outcomes of the groups that come to be treated or untreated are not equal, then a comparison of the realized outcomes of the two groups will yield biased causal inferences.
 
@@ -29,9 +29,9 @@ In a selection-on-observables design, we must get many features of the model cor
 
 @def-ch16num2 explores these considerations, with a model defining the relationship between a causal factor of interest $D$ and outcome $Y$ and an observable confounder $X$, the average treatment effect as the inquiry, a simple measurement strategy, and two estimators with and without adjustment for $X$. We use exact matching as our adjustment strategy.
 
-::: {#def-ch16num2} 
+::: {#def-ch16num2 .declaration} 
 
-## Matching design declaration
+Matching design declaration
 
 ```{r, file = "scripts_declarations/declaration_16.2.R"}
 ```

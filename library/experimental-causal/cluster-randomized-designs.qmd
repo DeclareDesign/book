@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a cluster-randomized trial in which subjects are assigned to treatment and control conditions in groups. We use design diagnosis to quantify how the magnitude of the efficiency losses from clustering depend on the intra-cluster correlation.
-::::
+:::
 
 When whole groups of units are assigned to treatment conditions together, we say that the assignment procedure is clustered. A common example is an education experiment in which the treatment randomized at the classroom level. All students in a classroom are assigned to either treatment or control together; assignments do not vary within classroom. Clusters can be localities, like villages, precincts, or neighborhood. Clusters can be households if treatments are assigned at the household level. 
 
@@ -19,9 +19,9 @@ For these reasons clustered random assignment is not usually a desirable feature
 
 To demonstrate the consequences of clustering, @def-ch18num5 shows a design in which both the untreated outcome `Y_Z_0` and the treatment effect `tau_i` exhibit intra-cluster correlation. The inquiry is the average treatment effect over individuals which can be defined without reference to the clustered structure of the data. The data strategy employs clustered random assignment. We highlight two features of the clustered assignment. First, the clustered nature of the data does not itself *require* for clustered assignment. In principle, one could assign treatments at the individual level or subgroup level even if outcomes are correlated within groups. Second, surprisingly, random assignment of clusters to conditions does not guarantee unbiasedness of outcomes when clusters are of unequal size [@middleton2008bias;  @imai2009essential]. The bias stems from the possibility that potential outcomes could be correlated with cluster size. With uneven cluster sizes, the total number of units (the denominator in the mean estimation) in each group bounces around from assignment to assignment. Since the expectation of a ratio is not, in general, equal to the ratio of expectations, any dependence between cluster size and potential outcomes will cause bias. We can address this problem by blocking clusters into groups according to cluster size. If all clusters in a block are of the same size, then then overall size of the treatment group will remain stable from assignment to assignment. For this reason the design below uses clustered assignment blocked on cluster size.
 
-::: {#def-ch18num5} 
+::: {#def-ch18num5 .declaration} 
 
-## Blocked and clustered randomized trial
+Blocked and clustered randomized trial
 
 ```{r, file = "scripts_declarations/declaration_18.5.R"}
 ```

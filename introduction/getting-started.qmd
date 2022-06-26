@@ -93,9 +93,9 @@ Table: (\#tab:declarationfunctions) Declaration functions in DeclareDesign
 
 We use the `+` operator to build from elements of a design to a design. @def-ch4num1 shows the format of most declarations throughout the book. This declaration represents a two-arm randomized experiment with 100 units from which we aim to estimate the average treatment effect.
 
-::: {#def-ch4num1} 
+::: {#def-ch4num1 .declaration} 
 
-## Two-arm randomized experiment
+Two-arm randomized experiment
 
 ![Two-arm randomized experiment declaration](/figures/declaration-example){#fig:designannotated}
 

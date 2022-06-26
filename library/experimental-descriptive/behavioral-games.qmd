@@ -8,9 +8,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a trust game and explore the implications of using deception in the game setup. The diagnosis highlights how the choices in the first round of a game, which are not randomized, affect our ability to study the behaviors of the player in the second round without bias.
-::::
+:::
 
 Behavioral games are often used to study difficult-to-measure characteristics of subjects like risk attitudes, altruism, prejudice, or trust. The approach involves using labs or other mechanisms to control contexts. A high level of control brings two distinct benefits. First, it can eliminate noise: we obtain estimates under a particular well-defined set of conditions rather than estimates generated from averaging over a range of possibly unknown conditions. Second, more subtly, it can prevent various forms of confounding. For instance, outside the lab we might observe how people act when they work on tasks with an outgroup member. But we only observe the responses among those that *do* work with out group members, not among those that do not. By studying behaviors in a controlled setting we can see how people *would* react when put into particular situations.   
 
@@ -73,9 +73,9 @@ The predictions of this model are then used to define the inquiry and predict ou
 
 The inquiries for this design are the expected share offered to different types of trustees, the expected returns, averaged over possible offers, and the expected action by a trustee when the full amount is invested. The data strategy involves assigning players to pairs and orderings. The first half is assigned to the trustor role and matched with the second group that are assigned the trustee role. For the answer strategy, we simply measure average behavior across subjects. As a wrinkle, we include the possibility that the experimenter confronts the returners with random offers rather than the ones actually made by their partners. This aspect of the design is controlled by an argument called `deceive` and turns out to be important for inference.  
 
-::: {#def-ch17num6} 
+::: {#def-ch17num6 .declaration} 
 
-## Trust game design
+Trust game design
 
 ```{r, file = "scripts_declarations/declaration_17.6_b.R"}
 ```

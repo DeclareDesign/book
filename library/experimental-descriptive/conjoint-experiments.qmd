@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a forced-choice conjoint experiment design in which respondents choose one of two profiles in three sets of tasks, each with three attributes. The design highlights the complexity of defining the inquiries for conjoints, and their lower power at common sample sizes. 
-::::
+:::
 
 Conjoint survey experiments have become hugely popular in political science and beyond for describing multidimensional preferences over profiles [@Hainmueller2014]. The designs have been used to study preferences over political candidates, types of immigrants to admit, neighborhoods to live in, policies to select, and many more questions. Conjoint experiments come in two basic varieties: the single profile design and the forced-choice design. Throughout this chapter, we'll discuss these studies in the context of hypothetical candidate experiments, in which candidates are described in terms of a number of attributes each of which can take on multiple values, known as levels. In the single profile design, subjects are asked to rate one profile at a time using, for example, a 1 - 7 support scale. In a forced-choice conjoint experiment, subjects are shown two profiles at a time, then asked to make a binary choice between them. Forced choice conjoint experiments are especially useful for studying electoral behavior because they closely mirror the real-world behavior of choosing between two candidates at the ballot box. A similar logic applies to purchasing behavior when consumers have to choose one product over another. Occasionally, forced-choice conjoint experiments are applied even when no real-world analogue for the binary choice exists. For example, we rarely face a binary choice between two immigrants or between two refugees.
 
@@ -44,9 +44,9 @@ We begin by establishing the number of subjects and the number of tasks they wil
 
 In @def-ch17num5, we imagine a forced-choice candidate choice conjoint in which the attributes are gender, party, and region. We sample 500 subjects and ask them to complete three tasks each. 
 
-::: {#def-ch17num5} 
+::: {#def-ch17num5 .declaration} 
 
-## Conjoint experiment design
+Conjoint experiment design
 
 ```{r, file = "scripts_declarations/declaration_17.5.R"}
 ```

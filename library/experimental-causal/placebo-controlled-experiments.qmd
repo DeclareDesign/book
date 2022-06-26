@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We compare an encouragement design to a placebo-controlled trial in which units are selected into treatment based on whether they receive *either* treatment or a placebo treatment with a similar deployment method. At low levels of compliance, the diagnosis reveals the placebo-controlled design is preferred, but then the encouragement design is preferred as compliance increases.
-::::
+:::
 
 In common usage, the notion of a placebo is a treatment that carries with it everything about the bona fide treatment -- except the active ingredient. We're used to thinking about placebos in terms of the "placebo effect" in medical trials. Some portion of the total effect of the actual treatment is due to the mere act of *getting treated*, so the administration of placebo treatments can difference this portion off. Placebo-controlled designs abound in the social sciences too for similar purposes [see @porter2021]. Media treatments often work through a bundle of priming effects and new information; a placebo treatment might include only the prime but not the information. The main use of placebos is to difference off the many small excludability violations involved in bundled treatments the better to understand the main causal variable of interest.
 
@@ -21,9 +21,9 @@ Employing a placebo control can seem like an odd design choice -- you go to all 
 
 @def-ch18num9 actually includes two separate designs. Here we'll directly compare the standard encouragement design to the placebo-controlled design. They have identical models and inquiries, so we'll just declare those once, before declaring the specifics of the empirical strategies for each design.
 
-::: {#def-ch18num9} 
+::: {#def-ch18num9 .declaration} 
 
-## Comparing the encouragement and placebo-controlled designs
+Comparing the encouragement and placebo-controlled designs
 
 ```{r, file = "scripts_declarations/declaration_18.9a.R"}
 

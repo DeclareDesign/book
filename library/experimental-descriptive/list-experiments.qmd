@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare an list experiment design, highlighting that the inquiry is a descriptive one despite the use of an experiment. We then declare a design comparing the list experiment to direct questioning in estimating the prevalence of a sensitive item, and clarify when one survey technology is preferred to the other as a function of sensitivity bias levels and sample size.
-::::
+:::
 
 
 Sometimes, subjects might not tell the truth about certain attitudes or behaviors when asked directly. Responses may be affected by sensitivity bias, or the tendency of survey subjects to misreport their answers for fear of negative repercussions if some individual or group learns their true response [@blair2018list]. In such cases, standard survey estimates based on direct questions will be biased. One class of solutions to this problem is to obscure individual responses, providing protection from social or legal pressures. When we obscure responses systematically through an experiment, we can often still identify average quantities of interest. One such design is the list experiment (introduced in @miller1984new), which asks respondents for the count of the number of "yes" responses to a series of questions including the sensitive item, rather than for a yes or no answer on the sensitive item itself. List experiments give subjects cover by aggregating their answer to the sensitive item with responses to other questions.
@@ -43,9 +43,9 @@ Under these two extra assumptions, the list experimental estimate of the prevale
 
 The inquiry is the prevalence rate of the sensitive item. In the data strategy, we randomly assign 50\% of our 500 subjects to treatment and the remainder to control. In the survey, we ask subjects the list experiment question (`Y_list`). Our answer strategy estimates the prevalence rate by calculating the difference-in-means in the list outcome between treatment and control.
 
-::: {#def-ch17num3} 
+::: {#def-ch17num3 .declaration} 
 
-## List experiment design
+List experiment design
 
 ```{r, file = "scripts_declarations/declaration_17.3.R"}
 ```
@@ -85,9 +85,9 @@ We see in the diagnosis that the list experiment generates unbiased estimates of
 
 The diagnosis above shows that the list experiment (under its assumptions) is unbiased but is high variance. In the presence of sensitivity bias, direct questions are biased, but are much lower variance. The choice between these two technologies therefore amounts to a bias-variance tradeoff (see @blair2018list for more on this point). @def-ch17num3 wraps up both approaches in one design so we can compare them.
 
-::: {#def-ch17num4} 
+::: {#def-ch17num4 .declaration} 
 
-## Comparing list experiments with direct questions
+Comparing list experiments with direct questions
 
 ```{r, file = "scripts_declarations/declaration_17.4.R"}
 ```

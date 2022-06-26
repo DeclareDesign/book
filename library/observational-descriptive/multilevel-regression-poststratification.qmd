@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a design in which researchers reweight the responses of different units in a sample in order to better estimate a population level quantity. Reweighting depends on how much units are thought to "represent" other nonsampled units and requires making decisions about how much units of different types should be pooled together. Design performance of a partially pooled model is compared against designs that involve no pooling and full pooling. 
-::::
+:::
 
 Multi-level regression and poststratification (MRP) is a technique used primarily for "small area estimation." In the prototypical setting, we conduct a nationally-representative survey of public opinion, but our goal is to generate estimates of the average level of public opinion for many subnational units. In the United States context, these "small area" units are often the 50 states. The main problem is that in a national poll of 2,000 Americans, we might only have 4 respondents from small states like Alaska, Wyoming, or Vermont, but more than 100 from large states like California, New York, or Texas. Accordingly, it is harder to estimate opinion in small states than in large states. The key insight of an MRP design is that we can "borrow strength" across states and kinds of people in order to improve state level estimates.
 
@@ -19,9 +19,9 @@ The regression model generates estimates of the average opinion for classes of p
 
 In @def-ch15num4, we begin with a dataset of the fifty states that describes what fraction of people in each state has graduated from high school. This code block also establishes the true state means that will form our inquiry. In the model, we draw a nationally-representative sample of size 2,000, respecting the fraction of people within each state with a high school degree. The post-stratification weights are built from the that fraction as well. The binary public opinion variable `policy_support` is a function of the high school covariate, an individual-level shock, and a state-level shock. The inquiry is the mean policy support at the state level. The tricky part of this design is the two-step answer strategy. The first step is handled by the multilevel regression function `glmer`. The second step is handled by the `post_stratification_helper` function (available in the `rdddr` companion package) that obtains predictions from the model, then reweights them according to the post-stratification weights.
 
-::: {#def-ch15num4} 
+::: {#def-ch15num4 .declaration} 
 
-## Multilevel regression and poststratification design
+Multilevel regression and poststratification design
   
 ```{r, file = "scripts_declarations/declaration_15.4.R"}
 ```
@@ -36,9 +36,9 @@ In @def-ch15num4, we begin with a dataset of the fifty states that describes wha
 
 The strengths of the MRP design are best appreciated by contrasting MRP's partial pooling approach to two alternatives: no pooling and full pooling. Under no pooling, we estimate each state mean separately with a national adjustment for the individual-level high school covariate. Under full pooling, we only adjust for high school and ignore state information altogether. Here we add both estimators to the design and diagnose.
 
-::: {#def-ch15num5} 
+::: {#def-ch15num5 .declaration} 
 
-## Redesign over answer strategies
+Redesign over answer strategies
 
 ```{r, file = "scripts_declarations/declaration_15.5.R"}
 ```

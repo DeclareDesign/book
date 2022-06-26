@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a stepped-wedge design in which units are assigned a *sequence* of treatments across multiple periods. In each period, one third are treated successively. Diagnosis of this design compared to similar-cost standard two-arm trials, and suggests that a double-sized two-arm trial is preferable in terms of power but that the stepped-wedge is useful when the number of study units is limited.
-::::
+:::
 
 We often face an ethical dilemma in allocating treatments to some units but not others, since we would rather not withhold treatment from anyone. However, practical constraints often make it impossible to allocate treatments to everyone at the same time. In these circumstances, a stepped-wedge experiment, also known as a waitlist design, can help. Under a stepped-wedge design, we follow an allocation rule that randomly assigns a portion of units to treatment in each of one or more periods, and then in a final period, everyone is allocated treatment. We conduct posttreatment measurement after each period except for the last one. @fig-ch18num12 illustrates the allocation procedure. A common design is allocating one third to treatment in the first period, an additional third in the second period, and the remaining third in the final period.
 
@@ -19,9 +19,9 @@ Our model describes unit-specific effects, time-specific effects, and time trend
 
 The stepped-wedge experimental design, described in @def-ch18num10, shares much in common with the observational difference-in-differences design. We show in section @difference-in-differences, the two-way fixed effects estimator is biased for the average treatment effect on the treated in the presence of treatment effect by time interactions. However, in the stepped-wedge design, we randomize treatment, so we do not need to make a parallel trends assumption. Our diagnosis below shows no bias when estimating the average treatment effect with the two-way fixed effects estimator in the stepped-wedge design even when treatment effects vary by period. A regression with only period effects would also return unbiased answers as would a design with inverse assignment probability weights described in @Gerber2012[ch. 8], but if there are large unit differences the two-way design will be more efficient. Only including unit fixed effects, by contrast, without period effects will yield biased answers, because the probabilities of assignment vary by round.
 
-::: {#def-ch18num10} 
+::: {#def-ch18num10 .declaration} 
 
-## Stepped-wedge design
+Stepped-wedge design
 
 ```{r, file = "scripts_declarations/declaration_18.10.R"}
 ```
@@ -44,9 +44,9 @@ Table: (\#tab:steppedwedgedesigns) Design parameters in the comparison between s
 
 We declare a comparable two-arm experimental design in @def-ch18num11, with the wrinkle being that the estimand is slightly different by necessity. In the stepped-wedge design, we target the average treatment effect averaging over all periods up to the penultimate one, because there is no information about the control group from the last period. In a single period design, by its nature, we cannot average over time. We would obtain a biased answer if we targeted an out-of-sample time period. The average treatment effect we target is the current-period ATE for the period that is chosen. We cannot extrapolate beyond that if treatment effects vary over time. If we expect time heterogeneity in effects, we may *not* want to use a stepped-wedge design but instead design a new experiment that efficiently targets the conditional average treatment effects within each period. Then we could describe both the average effect and how effects vary over time.
 
-::: {#def-ch18num11} 
+::: {#def-ch18num11 .declaration} 
 
-## Comparison single-period two arm trial design
+Comparison single-period two arm trial design
 
 ```{r, file = "scripts_declarations/declaration_18.11.R"}
 ```

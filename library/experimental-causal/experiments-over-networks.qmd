@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a design for a randomized trial in which the researcher controls the assignment of direct treatment, but then assess the effects of direct treatment *and* of being indirectly treated by being geographically-proximate to a unit directly treated. The diagnosis demonstrates both can be estimated without bias if the probability of indirect treatment is estimated through simulation, but that common estimators differ greatly in efficiency.  
-::::
+:::
 
 When experimental subjects are embedded in a network, units' outcomes may depend on the treatment statuses of nearby units. In other words, treatments map spill over across the network. For example, in a geographic network, vote margin in one precinct may depend on outdoor advertisements in neighboring precincts. In a social network, information delivered to a treated subjects might be shared with friends or followers. In a temporal network, treatments in the past might affect outcomes in the future.
 
@@ -40,9 +40,9 @@ First, we load the Fairfax County, Virginia, voting precincts shapefile, removin
 
 To declare the full design, shown in @def-ch18num13, we first need to obtain the adjacency matrix of precincts in Fairfax. Second, we obtain a permutation matrix of possible random assignments, from which probabilities of assignment to each condition can be calculated. The `declare_model` call builds in a dependence of potential outcomes on the length of each precinct's perimeter to reflect the idea that outcomes are correlated with geography in some way. The `declare_inquiry` call describes the three inquiries in terms of potential outcomes. The `declare_assignment` call first conducts a random assignment according to the procedure describes by `declare_ra` earlier in the code, then obtains the exposures that the assignment generates. Finally, all the relevant information is fed into the Aronow and Samii estimation functions via `estimator_AS` (the `get_exposure_AS` and `estimator_AS` helper functions are available in the `rdddr` package).
 
-::: {#def-ch18num13} 
+::: {#def-ch18num13 .declaration} 
 
-## Experiments over spatial networks design
+Experiments over spatial networks design
 
 ```{r, file = "scripts_declarations/declaration_18.13.R"}
 ```

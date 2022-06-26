@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare and diagnose a design that is targeted at understanding the difference in treatment effects between subgroups. The design combines a sampling strategy that ensures reasonable numbers within each group of interest and a blocking assignment strategy to minimize variance.  
-::::
+:::
 
 Subgroup designs are experimental designs that have been tailored to a specific inquiry, the difference-in-CATEs. A CATE is a "conditional average treatment effect," or the average treatment effect conditional on membership in some group. A difference-in-CATEs is simply the difference between two CATEs. 
 
@@ -23,9 +23,9 @@ Since we don't randomly assign membership in subgroups, how can we optimize the 
 
 If we were to draw a sample of 1,000 at random, we would expect to yield only 200 people with `X = 1`. Here we improve upon that through stratified sampling. We deliberately sample 500 units with `X = 1` and 500 with `X = 0`, then block-random-assign the treatment within groups defined by `X`.
 
-::: {#def-ch18num6} 
+::: {#def-ch18num6 .declaration} 
 
-## Subgroup design declaration
+Subgroup design declaration
 
 ```{r, file = "scripts_declarations/declaration_18.6.R"}
 ```

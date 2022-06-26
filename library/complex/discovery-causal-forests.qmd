@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a design in which a researcher examines a large set of continuous covariates to discover (i) which covariate best explains heterogeneity in the effects of a treatment and (ii) which subjects experiences the weakest or strongest effects. The design declaration clarifies the inquiries when the goal of the study is discovery and can be used to guide design decisions regarding how best to split data into training and testing sets.  
-::::
+:::
 
 In most designs that we have discussed, researchers have a clear idea what they are looking for when they begin the research. How big is some population? What is the size of some effect? But some research involves questions that are much more open in nature. We focus here on discovery research that has two types of more open questions. The first inquiry poses an open question of the form "what matters?" (rather than the more common closed question of the form "what is the effect of this on that?"). The second inquiry poses a question about an as-yet unspecified group --- who are the people for whom effects are especially strong or weak?
 
@@ -33,9 +33,9 @@ To implement causal forests in `DeclareDesign`, we wrote a "handler" that calls 
 
 Finally, we use regression to estimate the ATE as well as the weak effects and worst effects estimands using both the identified low performing group in the test set data and the identified low performing group in the full data. We assess the performance of these against both the `weak_effects` inquiry and the `worst_effects` inquiry. 
 
-::: {#def-ch19num1} 
+::: {#def-ch19num1 .declaration} 
 
-## Random forests design
+Random forests design
 
 ```{r, file = "scripts_declarations/declaration_19.1.R"}
 ```

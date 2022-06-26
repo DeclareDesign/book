@@ -19,9 +19,9 @@ A redesign over a data strategy choice can be summarized with a "power curve." W
 
 We start with a minimal design declaration: we draw samples of size $N$ and measure a single binary outcome $Y$, then conduct a test against the null hypothesis that the true proportion of successes is equal to 0.5. 
 
-::: {#def-ch11num1} 
+::: {#def-ch11num1 .declaration} 
 
-## A baseline declaration intended to be redesigned over $N$.
+A baseline declaration intended to be redesigned over $N$.
 
 ```{r, file = "scripts_declarations/declaration_11.1.R"}
 ```
@@ -64,9 +64,9 @@ MDEs can be a useful heuristic for thinking about the multiplicity of possibilit
 
 @def-ch11num2 contains uncertainty over the true effect size. This uncertainty is encoded in the `runif(n = 1, min = 0, max = 0.5)` command, which corresponds to our uncertainty over the ATE. It could be as small as 0.0 SDs or as large as 0.5 SDs, and we are equally uncertain about all the values in between. We redesign over three values of $N$: 100, 500, and 1000, then simulate each design. Each run of simulation features a different true ATE somewhere between 0.0 and 0.5. 
 
-::: {#def-ch11num2} 
+::: {#def-ch11num2 .declaration} 
 
-## Uncertainty over effect size design
+Uncertainty over effect size design
 
 ```{r, file = "scripts_declarations/declaration_11.2.R"}
 ```
@@ -113,9 +113,9 @@ where $L$ is a loss function, increasing in the difference between $a^{d}$ and $
 
 We can explore this optimization with bare-bones declaration of a two-arm trial that depends on two separate data strategy parameters, `N` and `prob`:
 
-::: {#def-ch11num3} 
+::: {#def-ch11num3 .declaration} 
 
-## Bare-bones two-arm trial
+Bare-bones two-arm trial
 
 ```{r, file = "scripts_declarations/declaration_11.3.R"}
 ```
@@ -166,9 +166,9 @@ A common heuristic for trading off bias and variance is the mean squared error (
 
 To illustrate the bias-variance tradeoff, @def-ch11num4 describes a setting in which the goal is to estimate the conditional expectation of some outcome variable Y with respect to a covariate X. The true conditional expectation function (produced by the custom `dip` function) is not smooth, but we estimate it with smooth polynomial functions of increasing order.
 
-::: {#def-ch11num4} 
+::: {#def-ch11num4 .declaration} 
 
-## Conditional expectation function design
+Conditional expectation function design
 
 ```{r, file = "scripts_declarations/declaration_11.4.R"}
 ```
@@ -204,9 +204,9 @@ diagnosis_11.4 <- get_rdddr_file_local("diagnosis_11.4")
 
 A perennial debate among social scientists is whether to use a binary choice model like logit or probit when the outcome is binary, or if the workhorse OLS estimator is preferable. Unsurprisingly, who is right in this debate depends on other features of the research design. For example, in an observational descriptive study in which the inquiry is a prediction for the probability of success among a particular group of units, explicitly accounting for the binary nature the outcome variable is important; OLS can generate predictions that lie outside the theoretically permissible zero to one range. However, in an experimental causal study in which the inquiry is the average treatment effect, it is not possible for a comparison of treatment and control group means (as estimated by OLS) to generate a nonsense treatment effect estimate in the sense of being outside the theoretically permissible -100 to +100 percentage point range. By contrast, binary choice models like logit or probit can theoretically impossible average treatment effect estimates, once average marginal effect estimates are calculated. This problem is demonstrated in the following declaration, diagnosis, and redesign:
 
-::: {#def-ch11num5} 
+::: {#def-ch11num5 .declaration} 
 
-## Choosing logit, probit, or OLS
+Choosing logit, probit, or OLS
 
 ```{r, file = "scripts_declarations/declaration_11.5.R"}
 ```

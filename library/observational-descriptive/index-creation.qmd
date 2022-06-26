@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a design is which we take multiple measures and combine them to learn about a latent, unobservable quantity. The design diagnosis shows that it is possible to generate interpretable conditional estimates of this quantity and assess bias even though the metric of the unobservable quantity is unknown. The diagnosis highlights how subtle differences in scale construction generate different biases. 
-::::
+:::
 
 Models often specify a latent variable (`Y_star`) that we can't observe directly. The measurement procedures we use to produce observed variables (`Y_1`, `Y_2`, `Y_3`) are not perfect: observed values may be related to the latent variables but are often on different scales. A common strategy for addressing measurement error is to combine multiple measures of the same latent variable into an index. The basic intuition for this procedure is that when we combine multiple measures, the errors attending to each measure will tend to cancel one another out. When this happens, the index itself has lower measurement error than any of the constituent parts. 
 
@@ -31,9 +31,9 @@ In the declaration below `Y_star` has a normal distribution but it is not center
 
 - `Y_first_factor` extracts the first factor from a 'principal components analysis' which, intuitively, seeks to find a weighting that minimizes the distance to the measured variables. 
 
-::: {#def-ch15num6} 
+::: {#def-ch15num6 .declaration} 
 
-## Latent variable design
+Latent variable design
 
 ```{r, file = "scripts_declarations/declaration_15.6.R"}
 ```

@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare an audit experiment design in which the name of a citizen requesting service from government is randomized to be Latino-sounding or White-sounding and the government official either responds or does not. We then declare an augmented design in which a treatment to reduce discrimination is cross-randomized. The declaration highlights the behavioral assumptions that must be made to interpret the estimated treatment effect of the name as discrimination, and the diagnosis of the anti-discrimination treatment highlights how large a sample would be required for high power.
-::::
+:::
 
 Audit experiments are used to measure discrimination against one group in favor of another group. The design is used commonly to measure whether job applications that are otherwise similar but come from candidates from different genders, races, or social backgrounds receive the same rate of job interview invitations. The same approach has been applied to a very wide range of settings, including education, housing, and requests to politicians.
 
@@ -34,9 +34,9 @@ Some finer points about these behavioral assumptions. First, we assume that alwa
 
 @def-ch17num1 connects the behavioral assumptions we make about subjects to the randomized experiment we use to infer the value of a descriptive quantity. Only never-responders fail to respond to the White request while only always-responders respond to the Latino request. The inquiry is the proportion of the sample that is an anti-Latino discriminator. The data strategy involves randomly assigning the putative ethnicity of the voter making the request and recording whether it was responded to. The answer strategy is compares average response rates by randomly assigned group.
 
-::: {#def-ch17num1} 
+::: {#def-ch17num1 .declaration} 
 
-## Audit experiment design
+Audit experiment design
 
 ```{r, file = "scripts_declarations/declaration_17.1.R"}
 ```
@@ -49,9 +49,9 @@ Some finer points about these behavioral assumptions. First, we assume that alwa
 
 This two-stage design is illustrated in @def-ch17num2. The first half of the design is about causal inference: we want to learn about the effect of the intervention on discrimination. The second half of the design is about descriptive inference -- **within each treatment arm**. We incorporate both stages of the design in the answer strategy, in which the coefficient on the interaction of the intervention indicator with the audit indicator is our estimator of the effect on discrimination.
 
-::: {#def-ch17num2} 
+::: {#def-ch17num2 .declaration} 
 
-## Audit experiment intervention study design
+Audit experiment intervention study design
 
 ```{r, file = "scripts_declarations/declaration_17.2.R"}
 ```

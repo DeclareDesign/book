@@ -110,9 +110,9 @@ Table: (\#tab:midarealizations) Elements of research design in code.
 
 As described in the getting started guide in [Chapter 4](@\ref(getting-started)), we concatenate the design steps into a full design declaration using the `+` operator:
 
-::: {#def-ch5num1} 
+::: {#def-ch5num1 .declaration} 
 
-## Example declaration
+Example declaration
 
 ```{r, file = "scripts_declarations/declaration_5.1.R"}
 ```

@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare an encouragement design in which units are assigned to be encouraged to take up a treatment and the average treatment effect is measured among those who comply with the encouragement. The declaration highlights the many changes to the design that are needed to consider noncompliance and what inquiries can be estimated with the design.
-::::
+:::
 
 In many experimental settings, we cannot require units we *assign* to take treatment to actually *take* treatment. Nor can we require units assigned to the control group not to take treatment. Instead, we have to content ourselves with "encouraging" units assigned to the treatment group to take treatment and "encouraging" units assigned to the control group not to.
 
@@ -74,9 +74,9 @@ Two alternative answer strategies are biased and should be avoided. An "as-treat
 
 @def-ch18num9 elaborates the model to include the four compliance types, setting the share of defiers to zero to match the assumption of monotonicity. It imagines that the potential outcomes of the outcomes $Y$ with respect to the treatment $D$ are different for each compliance type, reflecting the idea that compliance type could be correlated with potential outcomes. The declaration also links compliance type to the potential outcomes of the treatment $D$ with respect to the randomized encouragement $Z$. We then move on to declaring two inquiries (the CACE and the ATE) and three answer strategies (two-stage least squares, as-treated analysis, and per-protocol analysis).
 
-::: {#def-ch18num8} 
+::: {#def-ch18num8 .declaration} 
 
-## Encouragement design
+Encouragement design
 
 ```{r, file = "scripts_declarations/declaration_18.8.R"}
 ```

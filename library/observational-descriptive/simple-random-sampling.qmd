@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a design in which a researcher takes a simple random sample of a population and uses a survey instrument to measure a latent quantity. The inquiry is the population average of the measured quantity. We show how to declare this design and an approach to incorporate concerns about non random non response in the design.
-::::
+:::
 
 Descriptive inquiries like the population mean of one variable or the population correlation between two variables are defined with respect to a specific group of units -- the population about which we want to draw inferences.
 
@@ -31,9 +31,9 @@ Our answer strategy is the sample mean estimator: $\widehat{\overline{Y}} = \fra
 
 We incorporate these design features into @def-ch15num1. The `portola` object is a fixed population of 2100 units with a latent ideology `Y_star`. The declaration of the measurement strategy comes before the declaration of the inquiry, showing how the inquiry is data strategy dependent.  
 
-::: {#def-ch15num1} 
+::: {#def-ch15num1 .declaration} 
 
-## Simple random sampling design
+Simple random sampling design
 
 ```{r file = "scripts_declarations/declaration_15.1.R"}
 ```
@@ -88,9 +88,9 @@ Avoiding -- or dynamically responding to -- missingness in the data strategy is 
 
 @def-ch15num2 builds in a dependence between the latent outcome $Y*$ and the probability of responding to the survey. That probability also responds to researcher effort. The diagnosis shows how effort translates into higher response rates and lower bias:
 
-::: {#def-ch15num2} 
+::: {#def-ch15num2 .declaration} 
 
-## Survey nonresponse design
+Survey nonresponse design
   
 ```{r, file = "scripts_declarations/declaration_15.2.R"}
 ```

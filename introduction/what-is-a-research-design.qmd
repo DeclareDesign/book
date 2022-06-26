@@ -224,9 +224,9 @@ The two designs cost the same but differ on the empirical side. Which strategy s
 
 When we put these all together we have a design, @def-ch2num1.
 
-::: {#def-ch2num1} 
+::: {#def-ch2num1 .declaration} 
 
-## Two-arm trial design
+Two-arm trial design
 
 ```{r, file = "scripts_declarations/declaration_2.1.R"}
 ```
@@ -240,7 +240,7 @@ The design is now ready to be used, diagnosed, developed. We can generate simula
 #| tbl-cap: "Simulated data from two-arm trial design"
 #| echo: false
 
-draw_data(declaration_2.1) |>  head() |>  kable(digits = 2, booktabs = TRUE) |> kableExtra::kable_styling()
+draw_data(declaration_2.1) |>  head() |>  kable(digits = 2, booktabs = TRUE) |> kable_styling()
 ```
 
 To evaluate the design, we need to specify our criteria for what counts as a good design. We could assess the design in terms of its statistical power, whether estimation is unbiased and so on. For now though we will focus on a specific design characteristic, its "success rate." Here we call our study a "success" if we choose to scale-up the training across the force *and* its true effect is at least 0.2 (meaning it is in fact effective). If the true effect is below 0.2 or we if decide not to implement, we'll deem the study "not a success." Our decision to implement the program or not is based on the empirical results for the experiment. If we obtain a statistically significant estimate that is greater than 0.3 (the empirical threshold we agreed to with the Sheriff), we implement and we don't otherwise.^[We could define more complex diagnosands that, for example, give correct decisions to implement a positive weight and incorrect decisions a negative weight. The diagnosands you choose should reflect what you care about most in any given design setting.] The reason we choose a higher standard of evidence, 0.3, than the effectiveness is that the training is costly so we want to be sure we have enough evidence it works.
@@ -262,9 +262,9 @@ The alternative design that differs on the empirical side in three ways. First f
 
 In @def-ch2num2, we can leave the model and inquiry intact and but we have to work on the data and answer strategies.
 
-::: {#def-ch2num2} 
+::: {#def-ch2num2 .declaration} 
 
-## A design that exploits background information
+A design that exploits background information
 
 ```{r, file = "scripts_declarations/declaration_2.2.R"}
 ```

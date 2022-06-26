@@ -8,9 +8,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a design in which a researcher takes a clustered random sample of a population and uses the design to ask whether they should invest in sampling more clusters or in more individuals per cluster. The design includes a budget constraint that affects how many can be sampled within clusters as a function of the number of clusters sampled.
-::::
+:::
 
 Researchers often cannot randomly sample at the individual level because it may, among other reasons, be too costly or logistically impractical. Instead, they may choose to sample clusters at random first, then randomly sample units within clusters. Clusters might be schools, localities, or households.
 
@@ -32,9 +32,9 @@ We use the output of this function to determine the probability of an individual
 
 Lastly, the answer strategy must also respects the data strategy by clustering standard errors at the highest level at which units are sampled, which in this case is the locality.
 
-::: {#def-ch15num3} 
+::: {#def-ch15num3 .declaration} 
 
-## Cluster random sampling design
+Cluster random sampling design
 
 ```{r, file = "scripts_declarations/declaration_15.3c.R"}
 ```

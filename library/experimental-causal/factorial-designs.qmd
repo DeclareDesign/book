@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare and diagnose a simple factorial design in which two different treatments are crossed. The design allows for unbiased estimation of a number of estimands including conditional effects and interaction effects. We highlight the difficulty of achieving statistical power for interaction terms and the risks of treating a difference between a significant conditional effect and a non-significant effect as itself significant. 
-::::
+:::
 
 In factorial experiments, researchers randomly assign the level of not just one treatment, but multiple treatments. The prototypical factorial design is a "two-by-two" factorial design in which factor 1 has two levels and so does factor 2. Similarly, a "three-by-three" factorial design has two factors, each of which has three levels. We can entertain any number of factors with any number of levels. For example, a "two-by-three-by-two" factorial design has three factors, two of which have two levels and one of which has three levels. Conjoint experiments are highly factorial, often including six or more factors with two or more levels each (see Section @conjoint-experiments).
 
@@ -29,9 +29,9 @@ However, if we are not so interested in the difference-in-CATEs, then factorial 
 
 Here we declare a factorial design with two treatments and a normally distributed outcome variable. We imagine that the CATE of `Z1` given `Z2 = 0` is 0.2 standard units, the CATE of `Z2` given `Z1 = 0` is equal to 0.1, and the interaction of the two treatments is 0.1.
 
-::: {#def-ch18num7} 
+::: {#def-ch18num7 .declaration} 
 
-## Two-by-two factorial design
+Two-by-two factorial design
 
 ```{r, file = "scripts_declarations/declaration_18.7.R"}
 ```

@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a qualitative design in which researchers seek to learn about the effect of a cause on a single unit. The diagnosis helps evaluate the gains from different within-case data gathering strategies.
-::::
+:::
 
 In qualitative research we are often interested in learning about the causal effect for a single unit. For example, for a country unit that underwent sanctions (an "event"), we want to know the causal effect of the sanctions on government behavior. To do so, we need to know what would have happened if the event did not happen, the *counter*factual outcome that did not occur as opposed to the factual outcome that did. Due to the fundamental problem of causal inference, we cannot observe what would have happened if that counterfactual case had happened. We have to guess---or infer---what would have happened. Social scientists have developed a large array of tools for guessing missing counterfactual outcomes --- what would have happened in the counterfactual case, if the event had not happened.^[We are also interested in the opposite case sometimes: we have a unit that did not experience an event, and we want to know the causal effect of *not* having it. In this case, we need to guess what would have happened if the event did happen. The same tools apply in reverse.]
 
@@ -71,9 +71,9 @@ We think it useful to fold these quantities into a design declaration so that re
 
 @def-ch16num1 provides a flexible process tracing design. You can use this design with a different causal model and substituting in different causal queries and process tracing strategies. Given a background causal model, the design first draws a "causal type"---that is a case together with all its causal relations. The value of the estimand (EoC) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query---like those in the Table @tbl-ptprobative---but given different possible observed values for all nodes. No data strategy is provided explicitly as this is tied up here in the estimation, that is, the estimation step describes what data will be used.
 
-::: {#def-ch16num1} 
+::: {#def-ch16num1 .declaration} 
 
-## Process tracing design declaration
+Process tracing design declaration
 
 ```{r, file = "scripts_declarations/declaration_16.1b.R", eval = FALSE}
 ```

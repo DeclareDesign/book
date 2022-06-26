@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a design in which a researcher addresses confounding concerns by using an instrumental variable. Under the right conditions, the approach can generate unbiased estimates for treatment effects for units whose treatment status is sensitive to the instrument. 
-::::
+:::
 
 When we cannot credibly assert that we have controlled for all confounding variables as in a selection-on-observables design (see Section @selection-on-observables) and when we do not think the parallel trends assumption is likely to hold in a difference-in-differences design (see Section @difference-in-differences), we might have to give up on our goal of drawing causal inferences. 
 
@@ -60,9 +60,9 @@ Moving to the answer strategy, a plug-in estimator of the LATE is the difference
 
 With the four elements of the design in hand, we declare the model in code, invoking each of the five assumptions in doing so:
 
-::: {#def-ch16num4} 
+::: {#def-ch16num4 .declaration} 
 
-## Instrumental variables design
+Instrumental variables design
 
 ```{r, file = "scripts_declarations/declaration_16.4.R"}
 ```

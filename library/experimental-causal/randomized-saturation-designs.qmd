@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a multilevel design in which we randomize first the "saturation" or probability of assignment with clusters and then randomly assign within the clusters based on that saturation probability. The diagnosis highlights that the efficiency for estimating the causal effect of the saturation level is low, because assignment is clustered, and higher for estimating the individual treatment effect within clusters of a given saturation.
-::::
+:::
 
 
 We study most treatments at an isolated, atomized, individualistic level. We define potential outcomes with respect to a unit's own treatment status, ignoring the treatment status of all other units in the study. Accordingly, our inquiries tend to be averages of individual-level causal effects and our data strategies tend to assign treatments at the individual level as well. All of the experimental designs we have considered to this point have been of this flavor.
@@ -30,9 +30,9 @@ The design employs a two-stage data strategy. First, pre-defined clusters of uni
 
 We can learn about the effects of the dosage of indirect treatment by comparing units with the same individual treatment status across the levels of dosage. For example, we could compare untreated units across the 25\% and 75\% saturation clusters. We can also learn about the direct effects of treatment at either saturation level, e.g., the effect of treatment when saturation is low. We use difference-in-means estimators of both inquiries, subsetted and clustered appropriately.
 
-::: {#def-ch18num12} 
+::: {#def-ch18num12 .declaration} 
 
-## Randomized saturation design
+Randomized saturation design
 
 ```{r, file = "scripts_declarations/declaration_18.12.R"}
 ```

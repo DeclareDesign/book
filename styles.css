@@ -1,0 +1,20 @@
+.ddbox {
+  padding: 1em 1.5em 0.5em 1.5em;
+  background: #72B4F3A0;
+    border: 0px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  margin-top: 5px;
+}
+
+.ddbox-title {
+  font-weight: 800;
+  font-size: 25px;
+}
+
+.declaration {
+  border-top: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+  margin:  1.5rem -0.5rem 1rem -0.5rem;
+  padding: 1.5rem    0    1rem      1rem;
+}

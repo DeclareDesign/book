@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a block-randomized trial in which subjects are assigned to treatment and control conditions within groups. We use design diagnosis to assess the reductions in variance in estimation that can be achieved from block randomization.        
-::::
+:::
 
 In a block-randomized experimental design, homogeneous sets of units are grouped together into blocks on the basis of covariates. The ideal blocking would group together units with identical potential outcomes, but since we don't have access to any outcome information at the moment of treatment assignment, let alone the full set of potential outcomes, we have to make do grouping together units on the basis of covariates we hope are strongly correlated with potential outcomes. The stronger the correlation between blocking variable and the potential outcomes, the more effective the blocking in terms of increasing precision.
 
@@ -17,9 +17,9 @@ Blocks can be formed in many ways. The can be constructed based on the levels of
 
 In @def-ch18num4, we block our assignment on a binary covariate `X`. We assign different fractions of each block to treatment to illustrate the notion that probabilities of assignment need not be constant across blocks, and if they aren't, we need to weight units by the inverse of the probability of assignment to the condition that they are in. In the answer strategy, we adjust for blocks using the @lin2013agnostic regression adjustment estimator including IPW weights. 
 
-::: {#def-ch18num4} 
+::: {#def-ch18num4 .declaration} 
 
-## Block randomized two arm trial design
+Block randomized two arm trial design
 
 ```{r, file = "scripts_declarations/declaration_18.4.R"}
 ```

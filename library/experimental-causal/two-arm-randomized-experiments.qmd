@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a canonical two-arm trial, motivate key diagnosands for assessing the quality of the design, use diagnosis and redesign to explore the properties of two-arm trials, and discuss key risks to inference.  This entry includes code for a "designer" which lets you quickly design and redesign two-arm trials.   
-::::
+:::
 
 All two-arm randomized trials have in common that subjects are randomly assigned to one of two conditions. Canonically, the two conditions include one treatment condition and one control condition. Some two-arm trials eschew the pure control condition in favor of a placebo control condition, or even a second treatment condition. The uniting feature of all these designs is that the model includes two and only two potential outcomes for each unit and that the data strategy randomly assigns which of these potential outcomes will be revealed by each unit.
 
@@ -36,9 +36,9 @@ The DAG corresponding to a two-arm randomized trial is very simple. An outcome $
 
 ![Directed acyclic graph of a two-arm randomized experiment](/figures/figure-18-1){#fig-ch18num1}
 
-::: {#def-ch18num1} 
+::: {#def-ch18num1 .declaration} 
 
-## Canonical two arm trial design
+Canonical two arm trial design
 
 ```{r, file = "scripts_declarations/declaration_18.1.R"}
 ```
@@ -83,9 +83,9 @@ One way to think about how much the inclusion of covariates will help precision 
 
 @def-ch18num2 draws a summary covariate `X` and unobserved heterogeneity `U` from a multivariate normal distribution with a specified covariance between the two variables. By redesigning over the values of that correlation, we can learn how covariate adjustment affects precision depending on the level of $R^2$. The answer strategy uses the estimator proposed in @lin2013agnostic for reasons explained in the next section. 
 
-::: {#def-ch18num2} 
+::: {#def-ch18num2 .declaration} 
 
-## Two arm trial with covariate adjustment
+Two arm trial with covariate adjustment
 
 ```{r, file = "scripts_declarations/declaration_18.2.R"}
 ```
@@ -117,9 +117,9 @@ diagnosis_18.2 <-
 
 @def-ch18num3 will help us to explore the precision of three estimators under a variety of circumstances. We want to understand the performance of the difference-in-means, OLS, and Lin estimators depending on how different the correlation between `X` and the outcome is by treatment arm, and depending on the fraction of units assigned to treatment.
 
-::: {#def-ch18num3} 
+::: {#def-ch18num3 .declaration} 
 
-## Lin estimator design
+Lin estimator design
 
 ```{r, file = "scripts_declarations/declaration_18.3.R"}
 ```

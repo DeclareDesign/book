@@ -8,9 +8,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a differences-in-differences design in which the effect of a treatment is assessed by comparing changes over time for a unit that gets treated to changes over time in the same period for a unit the does not get treated. The declaration and diagnosis helps clarify when effect heterogeneity threatens causal inferences drawn from this design.
-::::
+:::
 
 The difference-in-differences design compares the pre-to-post-treatment difference in treated units to that of untreated units. We use the over-time change in the untreated units to account for the changes over time in the treated units that are not due to the treatment. Suppose outcomes were rising over time for all units but we only looked at the pre-to-post difference in the treatment group. We might falsely infer the treatment increased outcomes. The logic of the difference-in-differences design is that we can subtract off the trends affecting all units in order to adjust our causal effect estimates.
 
@@ -20,9 +20,9 @@ The design has been famously used for analyses of two periods (before and after)
 
 @def-ch16num3 describes a 20-period, 20-unit design in which eventually-treated units become treated at different times, a common setting in empirical social science often referred to as the staggered adoption design. The treatment effect of interest might be a state-level policy adopted in 20 states at some point within a 20-year period, so we draw on comparisons before and after policy adoption within states and comparisons across states that have and have not yet adopted treatment. We use the `did_multiplegt_tidy` function (available in the `rdddr` companion package) to prepare the output from the `DIDmultiplegt` package that implements the estimation procedure.
 
-::: {#def-ch16num3} 
+::: {#def-ch16num3 .declaration} 
 
-## Difference-in-differences design 
+Difference-in-differences design 
 
 ```{r, file = "scripts_declarations/declaration_16.3.R"}
 ```

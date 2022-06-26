@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a design for a coordinated research project in which multiple research teams combine data gathering and analysis strategies to address a common inquiry. Diagnosis clarifies the benefits and risks of coordination versus tailoring of treatments to contexts.    
-::::
+:::
 
 Nearly all social science is produced atomistically: individual scientists identify a question and a research strategy for answering it, apply the research strategy, and try to publish the results of that one study. Increasingly, scholars have come to realize that, though the standard research process may promote discovery, it is not optimized for the accumulation of general insights. One reason is that scientists are opportunistic in the contexts and units they study. If inquiry values are idiosyncratic to the contexts and units that scientists choose to study, then our studies will not generalize. 
 
@@ -29,9 +29,9 @@ We specify two inquiries. The first is for the coordinated treatment, with a foc
 
 Estimation proceeds in two steps: first we calculate site-level effects, just as we do for a meta-analysis, then we meta-analyze those site-level effects. We use here a random effects model, reflecting our expectation that true site effects differ [see Section @meta-analysis for a discussion of alternative answer strategies for meta analysis]. 
 
-::: {#def-ch19num4} 
+::: {#def-ch19num4 .declaration} 
 
-## Multi-site studies with and without coordination
+Multi-site studies with and without coordination
 
 ```{r, file = "scripts_declarations/declaration_19.4.R"}
 ```

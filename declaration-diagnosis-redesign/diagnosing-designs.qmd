@@ -178,9 +178,9 @@ kable(
 
 For this reason, we advocate for explicit description of all four research design components. Explicit design declaration can *also* occur in any programming language, but DeclareDesign is purpose-built for this task. We begin with the explicit declaration of the same two-arm trial as above. We have 100 subjects with a constant response to treatment of 0.2 units. Our inquiry is the average difference between the treated and untreated potential outcomes---the ATE. We assign treatment using complete random assignment and estimate treatment effects using difference-in-means. 
 
-::: {#def-ch10num1} 
+::: {#def-ch10num1 .declaration} 
 
-## Example of declaration using DeclareDesign
+Example of declaration using DeclareDesign
 
 ```{r, file = "scripts_declarations/declaration_10.1.R"}
 ```

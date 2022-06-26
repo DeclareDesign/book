@@ -7,9 +7,9 @@
 source("scripts/before_chapter_script.R")
 ```
 
-:::: {.ddbox}
+::: {.ddbox}
 We declare a design in which a researcher wants to use experimental data to estimate the parameters of a game theoretic model. The premise of the approach is that, to the extent that the model is correct, in-sample parameter estimation allows the researcher to make interesting external inferences to effects in other settings. The risk is that bad models will produce bad inferences. 
-::::
+:::
 
 Structural estimation is used when researchers have in mind a model for how processes work and their goal is to estimate the parameters of that model. If only they knew the parameters of the model, they could draw inferences about levels of unobserved variables, treatment effects, or other quantities. They might even extrapolate to estimate counterfactual quantities, such as the effects of interventions that have not been implemented [@reiss2007structural]. 
 
@@ -33,9 +33,9 @@ The answer strategy is implemented using maximum likelihood to identify which pa
 
 The heart of the estimation strategy is the specification of likelihood function. The likelihood function reports the probability of the data given particular stipulated values of the parameters. This value is different depending on $n$ so in fact we write down a function that writes a function given $n$. The likelihood function reflects the theoretical model described above, which means that in this declaration, the same event generating process is used in *M* and in the construction of the likelihood function in *A*. An optimistic assumption.
 
-::: {#def-ch19num2} 
+::: {#def-ch19num2 .declaration} 
 
-## Structural estimation declaration
+Structural estimation declaration
 
 With the likelihood function defined, we can declare a design with an estimation step that uses the `bbmle` package   
 
