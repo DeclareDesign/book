@@ -1,4 +1,4 @@
-# Getting started {#ch4}
+# Getting started {#sec-ch4}
 
 ```{r}
 #| echo: false
