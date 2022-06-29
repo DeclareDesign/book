@@ -1,5 +1,4 @@
-
-
+# Research Design Lifecycle
 
 ```{r}
 #| echo: false
@@ -7,13 +6,6 @@
 #| purl:  false
 source("scripts/before_chapter_script.R")
 ```
-
-
-# Research Design Lifecycle
-
-<!-- A research design starts from an idea, a kernel of a project. People arrive at their good ideas from every direction through idiosyncratic processes. Some people are inspired by their reading of academic literature, others are sparked by a conversation with colleagues and still others have their research questions thrust upon them by exigent circumstances. Ideas come from primary observation of social processes, reading secondary accounts by other authors, and our own past thoughts and lived experiences. An talent for research design can help you intuit which ideas seem promising, but it doesn't help directly with the process of ideation itself -- that has to come from scientific curiosity or need. -->
-
-<!-- The goal of brainstorming is to build a complete design from this kernel, regardless of where in the four elements *M*, *I*, *D*, or *A* the idea starts out. Sometimes a "theory-first" approach to developing a research project is unhelpfully contrasted with a "methods-first" approach. Better might be to describe the "theory-first" approach as starting with *M* or *I* and an "opportunity-first" approach as starting with *D* or *A*. We should seek to provide credible answers to important questions, and often progress in providing credible answers will start with new data and answer strategies. That said, unimportant questions aren't worth the research investment, no matter the credibility of the answers -- worse still are unreliable answers to the biggest questions in social science. -->
 
 A research design begins with a spark of inspiration or opportunity, develops through a planning phase, comes to fruition in the stages of realization, and adds to knowledge and influences decisions as it is integrated into collective scientific understanding. At each step in the research design lifecycle, your specification of *M*, *I*, *D*, and *A* shapes your choices and how others will learn from your work.
 
