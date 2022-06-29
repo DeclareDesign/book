@@ -346,7 +346,7 @@ M <-
 M()
 ```
 ```{r, echo = FALSE}
-kable(booktabs = TRUE, align = "c", M() |> head(5), digits = 2, caption = "One draw of four potential outcomes")
+kable(booktabs = TRUE, align = "c", M() |> head(5), digits = 2, caption = "One draw of four potential outcomes") |>  kable_styling() 
 ```
 
 #### Effect sizes

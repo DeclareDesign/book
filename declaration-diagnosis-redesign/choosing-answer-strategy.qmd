@@ -167,7 +167,7 @@ run_design(declaration_9.2)
 ```{r italianagetestrun, echo=FALSE}
 run_design(declaration_9.2) |> 
   select(estimator, estimate, p.value) |> 
-  kable(booktabs = TRUE, align = "c", digits = 2, caption = "Estimates from the test of the mean age equalling 20 from Italian villages example")
+  kable(booktabs = TRUE, align = "c", digits = 2, caption = "Estimates from the test of the mean age equalling 20 from Italian villages example") |> kable_styling()
 ```
 
 Next, we diagnose the modified design, by running the design many times. @fig-ch9num2 shows how frequently we reject the null that the average age is 20. When estimate is close to 20, we rarely reject the null, but when the estimate is far from 20, we are more like to reject. Again, this diagnosis comes from a design with a weak data strategy of sampling only three citizens at time. We need to see estimates breaking 60 before the testing answer strategy reliably rejects this (false) null hypothesis.
@@ -415,7 +415,7 @@ diagnosis_9.5 <-
 
 ```{r, echo=FALSE}
 get_rdddr_file_local("diagnosis_9.5") |>
-  knitr::kable(digits = 3, caption = "Bootstrapped standard error estimate")
+  knitr::kable(digits = 3, caption = "Bootstrapped standard error estimate") |> kable_styling()
 ```
 
 :::
@@ -431,7 +431,7 @@ get_estimates(design = declaration_9.5, data = clingingsmith_etal)
 ```{r, echo = FALSE}
 get_estimates(design = declaration_9.5, data = clingingsmith_etal) |> 
   select(estimate, std.error) |> 
-  kable(digits = 3, caption = "Analytic standard error estimate")
+  kable(digits = 3, caption = "Analytic standard error estimate") |> kable_styling()
 ```
 
 ### Analyze as you randomize

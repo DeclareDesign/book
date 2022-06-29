@@ -245,7 +245,7 @@ run_design(declaration_10.1)
 simulation_10.1 |> 
   filter(sim_ID == 1) |>
   select(estimand, estimate, std.error, df, p.value, conf.low, conf.high) |>
-  kable(booktabs = TRUE, align = "c", digits = 3, caption = "One simulation draw")
+  kable(booktabs = TRUE, align = "c", digits = 3, caption = "One simulation draw") |> kable_styling()
 ```
 
 @fig-ch10num3 shows the information we might obtain from a single run of the simulation. The filled point is the estimate $a_{d_k}$. The open triangle is the estimand $a_{m_k}$. The bell-shaped curve is our normal-approximation based estimate of the sampling distribution. The standard deviation of this estimated distribution is our estimated standard error, which expresses our uncertainty. The confidence interval around the estimate is another expression of our uncertainty: We're not sure where $a_{d_k}$ is, but if things are going according to plan, confidence intervals constructed this way will bracket $a_{m_k}$ 95\% of the time.
@@ -423,7 +423,7 @@ diagnosis_10.5 |>
     `Both supported` = mean(ATE1 <= 0.05 & ATE2 <= 0.05),
     `Neither supported` = mean(ATE1 > 0.05 & ATE2 > 0.05)
   ) |>
-  kable(booktabs = TRUE, align = "c", caption = "Design diagnosis under two alternative theories")
+  kable(booktabs = TRUE, align = "c", caption = "Design diagnosis under two alternative theories") |> kable_styling()
 ```
 
 The diagnosis shows that the study is responsive to the truth. When theory 1 is correct, the design is more likely to yield empirical evidence in favor of it; the reverse holds when theory 2 is correct. That said, the major concern facing this adversarial collaboration is that the study is too small to resolve the dispute. About two-thirds of the time---regardless of who is right!---neither theory receives support. This problem can be ameliorated either by elaborating more tests of each theoretical perspective or by increasing the size of the study.
