@@ -1,4 +1,4 @@
-# Discovery using causal forests {.unnumbered}
+# Discovery using causal forests 
 
 ```{r}
 #| echo: false

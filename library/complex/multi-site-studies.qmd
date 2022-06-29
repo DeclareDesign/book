@@ -1,4 +1,4 @@
-# Multi-site studies {.unnumbered}
+# Multi-site studies 
 
 ```{r}
 #| echo: false

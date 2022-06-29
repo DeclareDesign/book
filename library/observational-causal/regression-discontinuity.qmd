@@ -1,4 +1,4 @@
-# Regression discontinuity designs {.unnumbered}
+# Regression discontinuity designs 
 
 ```{r}
 #| echo: false

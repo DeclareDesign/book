@@ -1,4 +1,4 @@
-# Funding {.unnumbered}
+# Funding 
 
 
 ```{r}

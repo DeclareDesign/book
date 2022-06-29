@@ -1,4 +1,4 @@
-# Encouragement designs  {.unnumbered}
+# Encouragement designs  
 
 ```{r}
 #| echo: false

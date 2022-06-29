@@ -1,4 +1,4 @@
-# Preanalysis Plan  {.unnumbered}
+# Preanalysis Plan  
 
 
 ```{r}

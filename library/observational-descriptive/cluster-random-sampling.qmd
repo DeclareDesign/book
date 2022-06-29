@@ -1,4 +1,4 @@
-# Cluster random sampling {.unnumbered}
+# Cluster random sampling 
 
 
 ```{r}

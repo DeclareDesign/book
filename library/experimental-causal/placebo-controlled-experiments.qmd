@@ -1,4 +1,4 @@
-# Placebo-controlled experiments  {.unnumbered}
+# Placebo-controlled experiments  
 
 ```{r}
 #| echo: false

@@ -1,4 +1,4 @@
-# Behavioral games {.unnumbered}
+# Behavioral games 
 
 
 ```{r}

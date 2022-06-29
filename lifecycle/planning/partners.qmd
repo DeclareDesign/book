@@ -1,4 +1,4 @@
-# Partners {.unnumbered}
+# Partners 
 
 
 ```{r}

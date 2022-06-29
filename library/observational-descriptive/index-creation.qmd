@@ -1,4 +1,4 @@
-# Index creation {.unnumbered}
+# Index creation 
 
 ```{r}
 #| echo: false

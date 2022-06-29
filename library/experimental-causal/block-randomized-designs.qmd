@@ -1,4 +1,4 @@
-# Block-randomized experiments {.unnumbered}
+# Block-randomized experiments 
 
 ```{r}
 #| echo: false

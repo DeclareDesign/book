@@ -1,4 +1,4 @@
-# Subgroup designs  {.unnumbered}
+# Subgroup designs  
 
 ```{r}
 #| echo: false

@@ -1,4 +1,4 @@
-# Populated preanalysis plan  {.unnumbered}
+# Populated preanalysis plan  
 
 
 ```{r}

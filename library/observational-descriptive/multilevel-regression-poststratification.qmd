@@ -1,4 +1,4 @@
-# Multi-level regression and poststratification {.unnumbered}
+# Multi-level regression and poststratification 
 
 ```{r}
 #| echo: false

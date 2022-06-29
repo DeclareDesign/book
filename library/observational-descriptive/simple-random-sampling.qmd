@@ -1,4 +1,4 @@
-# Simple random sampling {.unnumbered}
+# Simple random sampling 
 
 ```{r}
 #| echo: false

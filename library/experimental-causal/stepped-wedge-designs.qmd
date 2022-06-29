@@ -1,4 +1,4 @@
-# Stepped-wedge experiments {.unnumbered}
+# Stepped-wedge experiments 
 
 ```{r}
 #| echo: false

@@ -1,4 +1,4 @@
-# Randomized saturation experiments  {.unnumbered}
+# Randomized saturation experiments  
 
 ```{r}
 #| echo: false
