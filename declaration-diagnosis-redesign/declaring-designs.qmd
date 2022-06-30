@@ -49,7 +49,7 @@ Table @tbl-elementsofresearchdesign provides a concise description of each eleme
 | $a_{d} = A(d)$      | a simulated answer, an estimate              | a hypothetical estimate                |
 | $a_{d^*} = A(d^*)$  | the empirical answer, the estimate           | the observed estimate                  |
 
-Table: (\#tab:elementsofresearchdesign) Elements of research design.
+: Elements of research design. {#tbl-elementsofresearchdesign} 
 
 The full set of causal relationships between *M*, *I*, *D*, and *A*, with respect to $m$ and $m^*$, $a_m$ and $a_{m^*}$, $d$ and $d^*$, and $a_d$ and $a_{d^*}$ can be seen in the schematic representation of a research design given in @fig-ch2num1 The figure illustrates how a research design involves a correspondence between $I(m) = a_m$ and $A(d) = a_d$. The theoretical half of a research design produces an answer to the inquiry *in theory*. The empirical half of a research design produces an *empirical estimate* of the answer to the inquiry. Neither answer is necessarily close to the truth $a_{m^*}$, of course. And, as shown in the figure, the truth is not directly accessible either to us in theory or in empirics. Our gamble in empirical research, however, is that our theoretical models are close enough to the truth; that the truth is like the set of models we imagine. If the models in $M$ do not contain $m^*$ or are too different from it, then even seemingly strong research designs could yield incorrect answers.
 
@@ -106,7 +106,7 @@ For each of these steps we show DeclareDesign code in the first column. In the s
 | ```                                        |                                                                    |
 +--------------------------------------------+--------------------------------------------------------------------+
 
-Table: (\#tab:midarealizations) Elements of research design in code.
+: Elements of research design in code. {#tbl-midarealizations} 
 
 As described in the getting started guide in [Chapter 4](@\ref(getting-started)), we concatenate the design steps into a full design declaration using the `+` operator:
 

@@ -299,19 +299,21 @@ M()
 
 By default, `potential_outcomes` imagines you are making two potential outcomes with respect to a treatment variable `Z` that can take on two values, 0 and 1.
 
-```{r modelposdraw, echo = FALSE}
+```{r, echo = FALSE}
+#| caption: "One draw of two potential outcomes"
+#| label: tbl-modelposdraw
 kable(
   booktabs = TRUE,
   align = "c",
   M() |> head(5),
-  digits = 2,
-  caption = "One draw of two potential outcomes"
+  digits = 2
 )
 ```
 
 But we can use `potential_outcomes` to describe multiple treatment conditions:
 
-```{r modelposdraw2, results = "hide"}
+```{r}
+#| results: hide
 M <- 
   declare_model(
     N = 100, 
@@ -322,19 +324,22 @@ M <-
   )
 M()
 ```
-```{r, echo = FALSE}
+```{r}
+#| echo: false
+#| caption: "One draw of three potential outcomes"
+#| label: tbl-modelposdraw2
 kable(
   booktabs = TRUE,
   align = "c",
   M() |> head(5),
-  digits = 2,
-  caption = "One draw of three potential outcomes"
+  digits = 2
 )
 ```
 
 Or to describe multiple treatment factors (see Section @factorial-experiments on factorial experiments):
 
-```{r modelposdraw3, results = "hide"}
+```{r}
+#| results: hide
 M <- 
   declare_model(
     N = 100, 
@@ -345,8 +350,12 @@ M <-
   )
 M()
 ```
-```{r, echo = FALSE}
-kable(booktabs = TRUE, align = "c", M() |> head(5), digits = 2, caption = "One draw of four potential outcomes") |>  kable_styling() 
+```{r}
+#| echo: false
+#| label: tbl-modelposdraw3
+#| caption: "One draw of four potential outcomes"
+
+kable(booktabs = TRUE, align = "c", M() |> head(5), digits = 2) |>  kable_styling() 
 ```
 
 #### Effect sizes

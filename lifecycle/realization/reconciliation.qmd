@@ -26,14 +26,14 @@ We provide illustrations for both of these below:
 | Gender effect  | X                       |       X       |                 |
 | Age effect     |                         |               |        X        |
 
-Table: (\#tab:reconciliation1) Illustration of an *Inquiry  reconciliation* table.
+: Illustration of an inquiry reconciliation table. {#tbl-reconciliation1} 
 
 
-| Inquiry       | Following *A* from the PAP| Following *A* from the paper    | Notes               |
-| --------------|:------------------------- :|:-------------------------------:|------------------- |
+| Inquiry       | Following *A* from the PAP | Following *A* from the paper     | Notes                                                                                         |
+| --------------|:------------------------- :|:--------------------------------:|---------------------------------------------------------------------------------------------- |
 | Gender effect | estimate = 0.6, s.e = 0.31 | estimate = 0.6, s.e = 0.25       |  Difference due to change in control variables  [provide cross references to tables and code] |
 
-Table: (\#tab:reconciliation2) Illustration of an  *Answer strategy reconciliation* table.
+: Illustration of an answer strategy reconciliation table. {#tbl-reconciliation2} 
 
 
 ## Example
@@ -55,5 +55,5 @@ This small Inquiry reconciliation table describes the heterogeneous effects anal
 | Age                  |                         |               | X                                             |
 | Education            |                         |               | X                                             |
 
-Table: (\#tab:reconciliation) *Inquiry reconciliation* table  from  Bonilla and Tillery (2020) analysis with their preanalysis plan.
+: Inquiry reconciliation table from  Bonilla and Tillery (2020) analysis with their preanalysis plan. {#tbl-reconciliation} 
 

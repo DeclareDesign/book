@@ -24,7 +24,7 @@ In the model, our main challenge is to define how far apart (in social, geograph
 | Indirect only       | $Y_i(\mathrm{direct} = 0, \mathrm{indirect} = 1)$ |
 | Direct and indirect | $Y_i(\mathrm{direct} = 1, \mathrm{indirect} = 1)$ |
 
-Table: (\#tab:networksconditions) Example treatment conditions for an experiment over a network
+: Example treatment conditions for an experiment over a network. {#tbl-networksconditions} 
 
 With potential outcomes defined, we can define inquiries. With four potential outcomes, there are six pairwise contrasts that we could contemplate. For example, the direct effect in the absence of indirect treatment is defined as $\E[Y_i(\mathrm{direct} = 1, \mathrm{indirect} = 0) - Y_i(\mathrm{direct} = 0, \mathrm{indirect} = 0)]$ and the direct effect in the presence of indirect treatment is $\E[Y_i(\mathrm{direct} = 1, \mathrm{indirect} = 1) - Y_i(\mathrm{direct} = 0, \mathrm{indirect} = 1)]$. We could similarly define indirect effects as $\E[Y_i(\mathrm{direct} = 0, \mathrm{indirect} = 1) - Y_i(\mathrm{direct} = 0, \mathrm{indirect} = 0)]$ or $\E[Y_i(\mathrm{direct} = 1, \mathrm{indirect} = 1) - Y_i(\mathrm{direct} = 1, \mathrm{indirect} = 0)]$. We may be interested in how direct and indirect treatments interact, which would require taking the difference between the two direct effect inquiries or taking the difference between the two indirect effect inquiries. Which inquiry is most appropriate will depend on the theoretical setting.
 

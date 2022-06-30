@@ -85,7 +85,7 @@ Table @tbl-samplingtypes collects all of these kinds of random sampling together
 |                             | ```                                                                                                                            | 
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
-Table: (\#tab:samplingtypes) Kinds of random sampling
+: {#tbl-samplingtypes} Kinds of random sampling
 
 Complete random sampling addresses this problem. Under complete random sampling, exactly $n$ of $N$ units are sampled. Each unit still has an inclusion probability of $p = n/N$, but in contrast to simple random sampling, we are guaranteed that the final sample will be of size $n$.^[To convince yourself of the difference between simple and complete random sampling, run `table(simple_rs(N = 100, prob = 0.5))` a few times and compare the results with `table(complete_rs(N = 100, n = 50))`] Complete random sampling represents an improvement over simple random sampling because it rules out samples in which more or fewer than $N*p$ units are sampled. One circumstance in which we might nevertheless go with simple random sampling is when the size of the population is not known in advance, sampling choices may have to be made "on the fly."
 
@@ -216,7 +216,7 @@ The analogy between sampling and assignment runs so deep because, in a sense, as
 |                                                 | ```                                                                                                                                                    |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Table: (\#tab:assignmenttypes) Kinds of random assignment
+: {#tbl-assignmenttypes} Kinds of random assignment
 
 @fig-ch8num4 visualizes nine kinds of random assignment, arranged according to whether the assignment procedure is simple, complete, or blocked and according to whether the assignment procedure is carried out at the individual, cluster, or saturation level. In the top left facet, we have simple (or Bernoulli) random assignment, in which all units have a 50% probability of treatment, but the total number of treated units can bounce around from assignment to assignment. In the top center, this problem is fixed: under complete random assignment, exactly $m$ of $N$ units are assigned to treatment and the $N - m$ are assigned to control. While complete random assignment fixes the number of units treated at exactly $m$, the number of units that are treated within any particular group of units (defined by a pre-treatment covariate) could vary. Under block random assignment, we conduct complete random assignment within each block separately, so we directly control the number treated within each block. Moving from simple to complete random assignment tends to decrease sampling variability a bit, by ruling out highly unbalanced allocations. Moving from complete to blocked can help more, so long as the blocking variable is correlated with the outcome. Blocking rules out assignments in which too many or too few units in a particular subgroup are treated. 
 
@@ -254,7 +254,7 @@ Thus far we have considered assignment strategies that allocate subjects to just
 |                                                 | ```                                                                                        |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------+
 
-Table: (\#tab:multiarmassignmenttypes) Examples of multi-arm random assignment
+: {#tbl-multiarmassignmenttypes} Examples of multi-arm random assignment
 
 @fig-multiarmquilt shows blocked versions of a three-arm trial, a factorial trial, and a four-arm trial.
 

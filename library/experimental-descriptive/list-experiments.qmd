@@ -23,7 +23,7 @@ For example, @creightonjamal2015 study preferences for religious discrimination 
 | Large corporations polluting the environment.                                                     | Large corporations polluting the environment.               |
 |                                                                                                   | Granting citizenship to a legal immigrant who is Muslim.    |
 
-Table: (\#tab:listquestions) @creightonjamal2015 list experiment conditions
+: List experiment conditions in @creightonjamal2015 {#tbl-listquestions} 
 
 The treatment group averaged 2.123 items while the control group averaged 1.904 items, for a difference-in-means estimate of 0.219. Under the usual assumptions of randomized experiments, the difference-in-means is an unbiased estimator for the average treatment effect of *being asked* to respond to the treated list versus the control list. But our (descriptive) inquiry is the proportion of people who would grant citizenship to a legal immigrant who is Muslim.
 

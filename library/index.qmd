@@ -13,5 +13,5 @@ We've organized the library by inquiry and by data strategy. Inquiries can be de
 | **Inquiry: Descriptive** | Sample survey or case study                        | List experiment or participant observation |
 | **Inquiry: Causal**      | Regression discontinuity design or process tracing | Randomized controlled trial                |
 
-Table: (\#tab:designtypes) Research design types with examples
+: Research design types with examples. {#tbl-designtypes} 
 

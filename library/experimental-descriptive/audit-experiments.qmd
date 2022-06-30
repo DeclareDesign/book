@@ -26,7 +26,7 @@ Consider @WHITE_NATHAN_FALLER_2015, which seeks to measure discrimination agains
 | Anti-Latino discriminator  | 1                           | 0                            |
 | Never-responder            | 0                           | 0                            |
 
-Table: (\#tab:audittypes) Audit experiment response types 
+: Audit experiment response types {#tbl-audittypes} 
 
 Our descriptive inquiry is the fraction of the sample that discriminates: $\E[\textrm{Type}_i = \textrm{Anti}~\textrm{Latino}~\textrm{discriminator}]$. Under the behavioral assumptions about these three types enumerated in Table @tbl-audittypes (whether these types would respond depending on the ethnicity of the sender), $\E[\textrm{Type}_i = \textrm{Anti}~\textrm{Latino}~\textrm{discriminator}] = \E[Y_i(Z_i = \textrm{White}) - Y_i(Z_i = \textrm{Latino})]$. Because this is the expected difference between two potential outcomes, we can use a randomized experiment that randomizes ethnicity to measure this descriptive quantity. In the data strategy, we randomly sample from the $Y_i(Z_i = \textrm{White})$'s and from the $Y_i(Z_i = \textrm{Latino})$'s, then in the answer strategy, we take a difference-in-means, generating an estimate of the fraction of the sample that discriminates.
 

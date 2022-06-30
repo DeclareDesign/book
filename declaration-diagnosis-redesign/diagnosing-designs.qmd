@@ -83,7 +83,7 @@ As described above, a diagnostic statistic is any summary function of $a_m$ and 
 | Cost                                                    | $\mathrm{cost}$                                                              |
 | Proportion of subjects harmed                           | $\Pr(\mathrm{harm}) \equiv \frac{1}{n} \sum_i \mathrm{harm_i}$
 
-Table: (\#tab:diagnosticstatistics) Examples of diagnostic statistics.
+: Examples of diagnostic statistics. {#tbl-diagnosticstatistics} 
 
 | Diagnosand                             | Description                                                                                                                         | Definition                                                            |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
@@ -111,7 +111,7 @@ Table: (\#tab:diagnosticstatistics) Examples of diagnostic statistics.
 | Robustness                             | Joint probability of rejecting the null hypothesis across multiple tests                                                            |                                                                       |
 | Maximum proportion of subjects harmed  |                                                                                                                                     | $\max{\Pr(\mathrm{harm})}$                                            |
 
-Table: (\#tab:diagnosands) Examples of iagnosands.
+: Examples of iagnosands. {#tbl-diagnosands} 
 
 
 

@@ -32,7 +32,7 @@ Compliers are units that take treatment if assigned to treatment and do not take
 | Defier          | 1              | 0              |
 | Always-taker    | 1              | 1              |
 
-Table: (\#tab:compliancetypes2) Compliance types
+: Compliance types {#tbl-compliancetypes2} 
 
 The last compliance type to describe are defiers. These strange birds refuse treatment when assigned to treatment, but find a way to obtain treatment when assigned to control. Whether or not "defiers" exist turns out to be a consequential assumption that must be made in the model. We have good reason to believe that defiers are rare -- assignment to treatment almost always has a positive average effect on treatment take-up.
 

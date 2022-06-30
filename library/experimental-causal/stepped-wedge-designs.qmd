@@ -40,7 +40,7 @@ We compare the stepped-wedge design to a two-arm randomized experiment with vary
 | Two-arm v1    | 100      | 50         | 100             |
 | Two-arm v2    | 200      | 100        | 200             |
 
-Table: (\#tab:steppedwedgedesigns) Design parameters in the comparison between stepped-wedge and two-arm experimental designs.
+: Design parameters in the comparison between stepped-wedge and two-arm experimental designs. {#tbl-steppedwedgedesigns} 
 
 We declare a comparable two-arm experimental design in @def-ch18num11, with the wrinkle being that the estimand is slightly different by necessity. In the stepped-wedge design, we target the average treatment effect averaging over all periods up to the penultimate one, because there is no information about the control group from the last period. In a single period design, by its nature, we cannot average over time. We would obtain a biased answer if we targeted an out-of-sample time period. The average treatment effect we target is the current-period ATE for the period that is chosen. We cannot extrapolate beyond that if treatment effects vary over time. If we expect time heterogeneity in effects, we may *not* want to use a stepped-wedge design but instead design a new experiment that efficiently targets the conditional average treatment effects within each period. Then we could describe both the average effect and how effects vary over time.
 

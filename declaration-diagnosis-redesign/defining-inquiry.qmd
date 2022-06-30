@@ -59,7 +59,7 @@ In Table @tbl-descriptiveinquiries, we enumerate several common types of descrip
 | The best linear predictor of Y given X                     | Units in the population                          | Unmanipulated                  | Y        | `cov(Y, X) / var(X)`                                              | 
 | Conditional expectation function of Y given X              | Units in the population                          | Unmanipulated                  | Y        | `cef(Y, X)`                                                       | 
  
-Table: (\#tab:descriptiveinquiries) Examples of descriptive inquiries and their three elements: units, treatment conditions, and outcomes.
+: Examples of descriptive inquiries and their three elements: units, treatment conditions, and outcomes. {#tbl-descriptiveinquiries} 
 
 Causal inquiries involve a comparison of at least two possible treatment conditions. For example, an inquiry might be the causal effect of $X$ on $Y$ for a single unit. In order to infer that causal effect, we would need to know the value of $Y$ in two worlds: one world in which $X$ is set to 1 and one in which $X$ is set to 0. Table @tbl-causalinquiries (middle panel) enumerates some common causal estimands. These estimands vary in the units they refer to. For instance, some are questions about samples (SATEs) and others about populations (PATEs). Inquiries can also be defined for units of a particular covariate class (CATEs). Finally, they may be summaries of more than one potential outcome. For instance, the interaction effect is defined here at the individual level as the effect of one treatment on the effect of another treatment. 
 
@@ -70,7 +70,7 @@ Causal inquiries involve a comparison of at least two possible treatment conditi
 | Complier average causal effect (CACE)                      | Complier units                                   | D = 0, D = 1                   | Y        | `mean(Y_D_1[D_Z_1 > D_Z_0] - Y_D_0[D_Z_1 > D_Z_0])`               | 
 | Causal interactions of $D_1$ and $D_2$                     | Units in the population                          | D1 = 1, D1 = 0, D2 = 1, D2 = 0 | Y        | `mean((Y_D1_1_D2_1 - Y_D1_0_D2_1) - (Y_D1_1_D2_0 - Y_D1_0_D2_0))` | 
  
-Table: (\#tab:causalinquiries) Examples of causal inquiries and their three elements: units, treatment conditions, and outcomes.
+: Examples of causal inquiries and their three elements: units, treatment conditions, and outcomes. {#tbl-causalinquiries} 
 
 Generations of students have been told to excise words that connote causality from their empirical writing. "Affects" becomes "is associated with" and "impacts" becomes "moves with." Being careful about causal language is of course very important (it's really true that correlation does not imply causation!). But this change in language is not usually accompanied by a change in inquiry. Many times we are faced with drawing causal inferences from less than ideal data---but the deficiencies of the data strategy should not lead us too far away from our inferential targets. If the inquiry is a causal inquiry, then the move from "causes" to "is correlated with" might be a useful rhetorical tactic, but it doesn't move us closer to providing an answer to the inquiry.
 
@@ -96,13 +96,13 @@ The inquiries we have introduced thus far depend on variables in the model, but 
 
 The first type depends on realizations of the data $d$: inquiries about units within a sample depend on which units enter the sample; inquiries about treated units depend on which are treated. For example, the average treatment effect on the treated (ATT) is a data-dependent inquiry in the sense that it is the average effect of treatment among the particular set of units that happened to be randomly assigned to treatment. The value of that *particular* ATT doesn't change depending on the data strategy, of course, but *which* ATT we end up estimating depends on the realization of the data strategy. Table @tbl-datadependentinquiry describes three data dependent inquiries
 
-| Inquiry                                         | Units           | Treatment conditions   | Outcomes | Code                                                  |
+| Inquiry                                         | Units           | Treatment conditions   | Outcomes | Code                                  |
 | ----------------------------------------------- | --------------- | ---------------------- | -------- | ------------------------------------- |
 | Average treatment effect in a sample (SATE)     | Sampled units   | D = 0, D = 1           | Y        | `mean(Y_D_1[S == 1] - Y_D_0[S == 1])` | 
 | Average treatment effect on the treated (ATT)   | Treated units   | D = 0, D = 1           | Y        | `mean(Y_D_1[D == 1] - Y_D_0[D == 1])` | 
 | Average treatment effect on the untreated (ATU) | Untreated units | D = 0, D = 1           | Y        | `mean(Y_D_1[D == 0] - Y_D_0[D == 0])` | 
 
-Table: (\#tab:datadependentinquiry) Examples of data-dependent inquiries and their three elements: units, treatment conditions, and outcomes.
+: Examples of data-dependent inquiries and their three elements: units, treatment conditions, and outcomes. {#tbl-datadependentinquiry} 
 
 ### Causal attribution inquiries
 
@@ -118,7 +118,7 @@ While it is increasingly common to explicitly formalize causal effect inquiries,
 | Probability *D* sufficient for $Y$                         | Units for whom D = 0 and Y = 0                   | D = 1                          | Y        | `mean(Y_D_1[D == 0 & Y == 0] == 1)`                               | 
 | Complier probability *D* necessary for $Y$                 | Units for whom D = 1 and Y = 1 who are compliers | D = 0, Z = 1, Z = 0            | Y        | `mean(Y_D_0[D == 1 & Y == 1 & D_Z_1 == 1 & D_Z_0 == 0] == 0)`     |
 
-Table: (\#tab:causalattributioninquiries) Examples of causal attribution inquiries and their three elements: units, treatment conditions, and outcomes.
+: Examples of causal attribution inquiries and their three elements: units, treatment conditions, and outcomes. {#tbl-causalattributioninquiries} 
 
 ### Complex counterfactual inquiries
 

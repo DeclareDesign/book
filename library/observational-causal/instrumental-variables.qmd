@@ -34,7 +34,7 @@ We can define the compliance types of units in terms of the combinations of valu
 | Defier        | 1                | 0                |
 | Always-taker  | 1                | 1                |
 
-Table: (\#tab:compliancetypes) Compliance types
+: Compliance types {#tbl-compliancetypes} 
 
 Never-takers are those who never take the treatment, no matter what the value of the instrument. Compliers take the value of the treatment they are assigned by the instrument. Defiers do exactly the opposite. When the instrument assigns them to take the treatment, defiers refuse it, but if it assigns them not to, they do take treatment. Like their name suggests, always-takers take the treatment regardless of the value of the instrument.
 
