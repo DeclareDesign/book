@@ -578,7 +578,7 @@ div.csl-indent {
 <p>Owing to the natural appeal of design-based inference, we start off with randomized designs before proceeding to non-randomized designs. Randomized sampling designs typically begin with a list of all units in a population, then choose a subset to sample using a random process. These random processes can be simple (every unit has an equal probability of inclusion) or complex (first we select regions at random, then villages at random within selected regions, then households within selected villages, then individuals within selected households).</p>
 <p>Table <span class="quarto-unresolved-ref">?tbl-samplingtypes</span> collects all of these kinds of random sampling together and offers an example of functions in the <code>randomizr</code> package you can use to conduct these kinds of sampling. The most basic form is simple random sampling. Under simple random sampling, all units in the population have the same probability <span class="math inline">\(p\)</span> of being included in the sample. It is sometimes called coin flip random sampling because it is as though for each unit, we flip a weighted coin that has probability <span class="math inline">\(p\)</span> of landing heads-up. While quite straightforward, a drawback of simple random sampling is that we can’t be sure of the number of sampled units in advance. On average, we’ll sample <span class="math inline">\(N*p\)</span> units, sometimes slightly more units will be sampled and sometimes fewer.</p>
 <table class="table">
-<caption>(#tab:samplingtypes) Kinds of random sampling</caption>
+<caption>{#tbl-samplingtypes} Kinds of random sampling</caption>
 <colgroup>
 <col style="width: 18%">
 <col style="width: 81%">
@@ -695,7 +695,7 @@ strata_ra(strata = villages)</code></pre>
 <p>The analogy between sampling and assignment runs deep. All of the sampling designs discussed in the previous section have directly equivalent assignment designs. Simple random sampling is analogous to Bernoulli random assignment, stratified random sampling is analogous to blocked random assignment and so on. Many of the same design tradeoffs hold as well: just like cluster sampling generates higher variance estimates than individual sampling, clustered assignment generates higher variance estimates than individual assignment. While we usually think of randomized assignment designs only, non-randomized designs in which the researcher applies treatments also occur. For example, researchers sometimes treat a convenience sample, then search out a different convenience sample to serve as a control group. Within-subject designs in which subjects are measured, then treated, then measured again are a second example of a non-randomized application of treatment.</p>
 <p>The analogy between sampling and assignment runs so deep because, in a sense, assignment <strong>is</strong> sampling. Instead of sampling units in or out of the study, we sample from alternative possible worlds. The treatment group represents a sample from the alternative world in which all units are treated and the control group represents a sample from the alternative world in which all units are untreated.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> We can re-encounter the fundamental problem of causal inference through this lens – if a unit is sampled from one possible world, it can’t be sampled from any other possible world. Table <span class="quarto-unresolved-ref">?tbl-assignmenttypes</span> collects together common forms of random assignment.</p>
 <table class="table">
-<caption>(#tab:assignmenttypes) Kinds of random assignment</caption>
+<caption>{#tbl-assignmenttypes} Kinds of random assignment</caption>
 <colgroup>
 <col style="width: 24%">
 <col style="width: 75%">
@@ -763,7 +763,7 @@ block_ra(blocks = villages, prob_unit = saturation)</code></pre>
 <span class="header-section-number">8.1.2.2</span> Multi-arm and factorial trials</h4>
 <p>Thus far we have considered assignment strategies that allocate subjects to just two conditions: either treatment or control. All generalize quite nicely to multi-arm trials. Trials that have three, four, or many more arms can of course be simple, complete, blocked, clustered, or feature variable saturation, but we show the complete random assignment versions of multi-arm and factorial assignment here.</p>
 <table class="table">
-<caption>(#tab:multiarmassignmenttypes) Examples of multi-arm random assignment</caption>
+<caption>{#tbl-multiarmassignmenttypes} Examples of multi-arm random assignment</caption>
 <colgroup>
 <col style="width: 34%">
 <col style="width: 65%">

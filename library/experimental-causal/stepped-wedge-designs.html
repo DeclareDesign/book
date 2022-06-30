@@ -651,8 +651,9 @@ div.csl-indent {
 <span class="header-section-number">38.1</span> When to use a stepped wedge experiment</h2>
 <p>Compared to the equivalent two-arm randomized experiment, a stepped-wedge experiment involves the same number of units, but more treatment (all versus half) and more measurement (all units are measured at least twice). The decision of whether to adopt the stepped-wedge design, then, rides on budget, the relative costs of measurement and treatment, ethical and logistical constraints such as the imperative to treat all units, and beliefs about effect sizes and outcome variances.</p>
 <p>We compare the stepped-wedge design to a two-arm randomized experiment with varying sample sizes to assess these tradeoffs. First we compare designs with the same number of units, which would be the relevant comparison if the number of units is fixed. The second comparison is a two-arm experiment with double the number of units, which would be the right comparison if the number of units can be increased at some cost. We summarize each design in terms of the number of study units, the number that are treated, and the number of unit measurements taken.</p>
+<div id="tbl-steppedwedgedesigns" class="anchored">
 <table class="table">
-<caption>(#tab:steppedwedgedesigns) Design parameters in the comparison between stepped-wedge and two-arm experimental designs.</caption>
+<caption>Table 38.1: Design parameters in the comparison between stepped-wedge and two-arm experimental designs.</caption>
 <thead><tr class="header">
 <th>Design</th>
 <th>N</th>
@@ -680,6 +681,7 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
+</div>
 <p>We declare a comparable two-arm experimental design in <a href="#def-ch18num11">Declaration&nbsp;<span>38.2</span></a>, with the wrinkle being that the estimand is slightly different by necessity. In the stepped-wedge design, we target the average treatment effect averaging over all periods up to the penultimate one, because there is no information about the control group from the last period. In a single period design, by its nature, we cannot average over time. We would obtain a biased answer if we targeted an out-of-sample time period. The average treatment effect we target is the current-period ATE for the period that is chosen. We cannot extrapolate beyond that if treatment effects vary over time. If we expect time heterogeneity in effects, we may <em>not</em> want to use a stepped-wedge design but instead design a new experiment that efficiently targets the conditional average treatment effects within each period. Then we could describe both the average effect and how effects vary over time.</p>
 <div id="def-ch18num11" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 38.2 </strong></span>Comparison single-period two arm trial design</p>

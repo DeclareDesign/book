@@ -619,7 +619,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html">bind_cols</a></span><span class="op">(</span><span class="va">assignment_1</span>, <span class="va">assignment_2</span>, <span class="va">assignment_3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+<div id="tbl-multiple-assignments" class="cell tbl-parent quarto-layout-panel anchored" data-caption="Three random assignments from the same random assignment step.">
+<div class="panel-caption table-caption">
+<p><strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <pre><code>#&gt; New names:
 #&gt; • `ID` -&gt; `ID...1`
 #&gt; • `Z` -&gt; `Z...2`
@@ -627,11 +632,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 #&gt; • `Z` -&gt; `Z...4`
 #&gt; • `ID` -&gt; `ID...5`
 #&gt; • `Z` -&gt; `Z...6`</code></pre>
-<div class="cell-output-display">
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Three random assignments from the same random assignment step.</caption>
- <thead><tr>
+<thead><tr>
 <th style="text-align:center;"> ID 1 </th>
    <th style="text-align:center;"> Z 1 </th>
    <th style="text-align:center;"> ID 2 </th>
@@ -684,9 +691,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 </div>
 </div>
-<p>Every step in a research design can be declared using one of the <code>declare_*</code> functions. Table <span class="quarto-unresolved-ref">?tbl-declarationfunctions</span> collects these according to the four elements of a research design. In <a href="../declaration-diagnosis-redesign/declaration-in-code.html"><span>Chapter&nbsp;13</span></a>, we detail how to build each kind of step.</p>
+</div>
+<p>Every step in a research design can be declared using one of the <code>declare_*</code> functions. Table <a href="#tbl-declarationfunctions">Table&nbsp;<span>4.1</span></a> collects these according to the four elements of a research design. In <a href="../declaration-diagnosis-redesign/declaration-in-code.html"><span>Chapter&nbsp;13</span></a>, we detail how to build each kind of step.</p>
+<div id="tbl-declarationfunctions" class="anchored">
 <table class="table">
-<caption>(#tab:declarationfunctions) Declaration functions in DeclareDesign</caption>
+<caption>Table 4.1: Declaration functions in DeclareDesign</caption>
 <colgroup>
 <col style="width: 17%">
 <col style="width: 32%">
@@ -735,6 +744,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
+</div>
 <p>We use the <code>+</code> operator to build from elements of a design to a design. <a href="#def-ch4num1">Declaration&nbsp;<span>4.1</span></a> shows the format of most declarations throughout the book. This declaration represents a two-arm randomized experiment with 100 units from which we aim to estimate the average treatment effect.</p>
 <div id="def-ch4num1" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 4.1 </strong></span>Two-arm randomized experiment</p>
