@@ -53,8 +53,6 @@ Each element created by a `declare_*` function, perhaps surprisingly, is itself 
 
 ```{r}
 #| eval: false
-#| warning: false
-#| message: false
 
 participants <- data.frame(ID = 1:100)
 
@@ -64,7 +62,11 @@ assignment_3 <- simple_random_assignment(participants)
 
 bind_cols(assignment_1, assignment_2, assignment_3)
 ```
-```{r multipleassignments, echo = FALSE}
+```{r, echo = FALSE}
+#| echo: false
+#| label: tbl-multiple-assignments
+#| caption: "Three random assignments from the same random assignment step."
+
 participants <- data.frame(ID = 1:100)
 
 set.seed(7)
@@ -76,7 +78,7 @@ assignment_3 <- simple_random_assignment(participants)
 bind_cols(assignment_1, assignment_2, assignment_3) |> 
   set_names(paste(rep(c("ID", "Z"), 3), rep(1:3, each = 2), sep = " ")) |> 
   head(5) |> 
-  kable(booktabs = TRUE, align = "c", caption = "Three random assignments from the same random assignment step.", digits = 3) |> kable_styling()
+  kable(booktabs = TRUE, align = "c", digits = 3) |> kable_styling()
 ```
 
 Every step in a research design can be declared using one of the `declare_*` functions. Table @tbl-declarationfunctions collects these according to the four elements of a research design. In @sec-ch13, we detail how to build each kind of step.
