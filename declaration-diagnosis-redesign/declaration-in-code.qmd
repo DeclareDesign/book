@@ -1,4 +1,4 @@
-# Designing in code {#designingcode}
+# Designing in code {#sec-ch13}
 
 ```{r}
 #| echo: false
