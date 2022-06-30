@@ -65,7 +65,7 @@ bind_cols(assignment_1, assignment_2, assignment_3)
 ```{r, echo = FALSE}
 #| echo: false
 #| label: tbl-multiple-assignments
-#| caption: "Three random assignments from the same random assignment step."
+#| tbl-cap: "Three random assignments from the same random assignment step."
 
 participants <- data.frame(ID = 1:100)
 

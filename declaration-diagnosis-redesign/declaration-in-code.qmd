@@ -300,8 +300,9 @@ M()
 By default, `potential_outcomes` imagines you are making two potential outcomes with respect to a treatment variable `Z` that can take on two values, 0 and 1.
 
 ```{r, echo = FALSE}
-#| caption: "One draw of two potential outcomes"
+#| tbl-cap: "One draw of two potential outcomes"
 #| label: tbl-modelposdraw
+#| echo: false
 kable(
   booktabs = TRUE,
   align = "c",
@@ -326,7 +327,7 @@ M()
 ```
 ```{r}
 #| echo: false
-#| caption: "One draw of three potential outcomes"
+#| tbl-cap: "One draw of three potential outcomes"
 #| label: tbl-modelposdraw2
 kable(
   booktabs = TRUE,
@@ -353,7 +354,7 @@ M()
 ```{r}
 #| echo: false
 #| label: tbl-modelposdraw3
-#| caption: "One draw of four potential outcomes"
+#| tbl-cap: "One draw of four potential outcomes"
 
 kable(booktabs = TRUE, align = "c", M() |> head(5), digits = 2) |>  kable_styling() 
 ```

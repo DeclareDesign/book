@@ -34,7 +34,7 @@ jobs:
       - name: Render book to all formats
         # Add any command line argument needed
         run: |
-          quarto render
+          quarto render --to html
           
       - name: Deploy 🚀
         # only deploy when push to main
