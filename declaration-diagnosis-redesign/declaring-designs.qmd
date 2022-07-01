@@ -1,4 +1,4 @@
-# Declaring designs
+# Declaring designs  {#ch5}
 
 ```{r}
 #| echo: false
@@ -7,10 +7,6 @@
 source("scripts/before_chapter_script.R")
 source("scripts/vayr.R")
 ```
-
-
-# Designing in code {#ch5}
-
 
 In Chapter 2, we gave a high-level overview of our framework for describing research designs in terms of their models, inquiries, data strategies, and answer strategies, our process for diagnosing their properties, and a general purpose approach for improving them to better fit research goals. Now in this chapter, we place our approach on a firmer formal footing. We employ elements from Pearl's [-@pearl2009causality] approach to causal modeling, which provides a syntax for mapping design inputs to design outputs. We also use the potential outcomes framework as presented, for example, in @Imbens2015, which many social scientists use to clarify their inferential targets. 
 
