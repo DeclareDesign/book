@@ -59,11 +59,14 @@ diagnosis_19.2 <- diagnose_design(declaration_19.2)
 diagnosis_19.2 <- get_rdddr_file_local("diagnosis_19.2")
 ```
 
-```{r structuraldiagnosisa, echo = FALSE}
+```{r}
+#| label: tbl-structuraldiagnosisa
+#| tbl-cap: "Estimation of structural parameters from behavior in a bargaining game"
+#| echo: false
 diagnosis_19.2 |> 
   reshape_diagnosis() |>
   select(Inquiry, 'Mean Estimand', Bias, RMSE) |>
-  kable(caption = "Estimation of structural parameters from behavior in a bargaining game", digits = 3) |> kable_styling() 
+  kable(digits = 3) |> kable_styling() 
 ```
 
 Turning to diagnosis we see first that we do a good job in recovering parameter values. All three parameters are estimated precisely. From these, we can calculate estimates of causal quantities such as the first mover advantage and assess the extent to which this depends on features such as the length of the game. 

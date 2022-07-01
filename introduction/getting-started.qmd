@@ -118,11 +118,13 @@ Diagnosis is the process of simulating the design many times and calculating sum
 
 ```{r}
 #| eval: false
-
 diagnose_design(declaration_4.1, sims = 100)
 ```
 
-```{r diagnosis-4-1, echo = FALSE}
+```{r}
+#| tbl-cap: "Design diagnosis."
+#| echo: false
+#| label:  tbl-diagnosis4s1
 diagnosis_4.1 <- get_rdddr_file_local("diagnosis_4.1")
 
 diagnosis_4.1 |>
@@ -131,9 +133,9 @@ diagnosis_4.1 |>
   kable(
     booktabs = TRUE,
     align = "c",
-    digits = 3,
-    caption = "Design diagnosis."
-  )
+    digits = 3
+  ) |> 
+  kable_styling()
 ```
 
 :::

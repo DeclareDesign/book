@@ -308,7 +308,8 @@ kable(
   align = "c",
   M() |> head(5),
   digits = 2
-)
+) |>
+ kable_styling()
 ```
 
 But we can use `potential_outcomes` to describe multiple treatment conditions:
@@ -334,7 +335,8 @@ kable(
   align = "c",
   M() |> head(5),
   digits = 2
-)
+) |>
+  kable_styling()
 ```
 
 Or to describe multiple treatment factors (see Section @factorial-experiments on factorial experiments):
@@ -699,14 +701,17 @@ $~$
 draw_estimates(declaration_13.1)
 ```
 
-```{r linregest, echo = FALSE}
+```{r}
+#| tbl-cap: "The estimate from one draw of the linear regression design"
+#| label: tbl-linregest
+#| echo: false
 kable(
   booktabs = TRUE,
   align = "c",
   draw_estimates(declaration_13.1) |> head(5),
-  digits = 2,
-  caption = "The estimate from one draw of the linear regression design"
-)
+  digits = 2
+) |>
+ kable_styling()
 ```
 
 ### Tidying statistical modelling function output
@@ -730,6 +735,9 @@ declaration_13.1 |>
 ```
 
 ```{r, echo = FALSE}
+#| tbl-cap: "The model fit statistics from one draw of the linear regression design"
+#| echo: false
+#| label: tbl-modelfitstats
 
 dat <- 
   declaration_13.1 |> 
@@ -741,10 +749,9 @@ kable(
   dat,
   booktabs = TRUE,
   align = "c",
-  digits = 2,
-  caption = "The model fit statistics from one draw of the linear regression design"
-)
-
+  digits = 2
+) |>
+  kable_styling()
 ```
 
 When neither `tidy` nor `glance` works well for your answer strategy, you can write your own summary function. Below, we build up a tidy function for the `lm` model from scratch. (One is already built-in to the `broom` package, but we do so here to illustrate how you can write your own for a function that does not already have one.) Before you start to write your own summary function, check whether one exists on the [Broom Web site](https://broom.tidymodels.org/articles/available-methods.html).
@@ -885,14 +892,15 @@ diagnosis_13.1 <- get_rdddr_file_local("diagnosis_13.1")
 
 ```{r} 
 #| echo: false
+#| tbl-cap: "Design diagnosis of two-arm randomized experiment"
+#| label: tbl-diagnosis13s1
 
 diagnosis_13.1 |>
   reshape_diagnosis() |>
   kable(
     booktabs = TRUE,
     align = "c",
-    digits = 2,
-    caption = "Design diagnosis of two-arm randomized experiment"
+    digits = 2
   )
 ```
 
@@ -904,13 +912,16 @@ We can "tidy" the results of the diagnosis for easier printing and plotting of t
 tidy(diagnosis_13.1)
 ```
 ```{r, echo = FALSE} 
+#| echo: false
+#| tbl-cap: "Tidied diagnosis of two-arm randomized experiment"
+#| label: tbl-diagnosis131tidy
 tidy(diagnosis_13.1) |>
   kable(
     booktabs = TRUE,
     digits = 2,
-    align = "c",
-    caption = "Tidied diagnosis of two-arm randomized experiment"
-  )
+    align = "c"
+  ) |> 
+  kable_styling()
 ```
 
 :::

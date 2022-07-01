@@ -170,8 +170,13 @@ Here is one draw on the estimands:
 draw_estimands(declaration_7.1)
 ```
 
-```{r estimands, echo = FALSE}
-draw_estimands(declaration_7.1) %>% knitr::kable(caption = "Super-population, population, and finite sample inquiries.", digits = 2) |> kable_styling()
+```{r}
+#| echo: false
+#| label: tbl-estimands
+#| tbl-cap: "Super-population, population, and finite sample inquiries."
+draw_estimands(declaration_7.1) |>
+  knitr::kable(digits = 2) |> 
+  kable_styling()
 ```
 
 Which of these to choose? Researchers sometimes prefer superpopulation inquiries because they describe general processes on substantive grounds, seeing understanding general processes as the primary goal of social scientific interest. Some are skeptical however about speculating about  general, unobservable,  processes, preferring to make statements about cases that actually exist in the world.  They prefer to select populations of substantive importance. Others seeking to avoid engaging in generalization inferences prefer to focus on sample quantities. In some cases the statistics are more suited for finite populations: for instance randomization inference is based on the  randomized induced by assignment and not from sampling populations from superpopulations or  samples from populations.^[For some purposes the statistics are easier for the superpopulation quantities: for instance the Neyman variance estimate is exact in this case but conservative in the finite population case (for instance @aronow_green_lee_2014).] Critics worry that keeping the focus on the sample means having inquiries that are determined by the realizations of your data strategy rather than having data strategies developed to answer prespecified inquiries.

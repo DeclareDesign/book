@@ -62,19 +62,22 @@ diagnosis_15.1 <- diagnose_design(declaration_15.1, diagnosands = diagnosands)
 diagnosis_15.1 <- get_rdddr_file_local("diagnosis_15.1")
 ```
 
-```{r diagnosis-15-1, echo = FALSE}
+```{r}
+#| label: tbl-diagnosis15s1
+#| echo: false
+#| tbl-cap: "Complete random sampling design diagnosis."
 diagnosis_15.1 |>
   reshape_diagnosis() |>
   select(Bias, RMSE) |>
   kable(
     booktabs = TRUE,
     align = "c",
-    digits = 3,
-    caption = "Complete random sampling design diagnosis"
-  )
+    digits = 3
+  ) |>
+  kable_styling()
 ```
 
-The diagnosis in table @tbl-diagnosis-15-1 indicates that under complete random sampling, the sample mean estimator of the population mean is unbiased and that the root mean squared error is manageable at `r round(diagnosis_15.1$diagnosands_df$rmse,2)`.
+The diagnosis in table @tbl-diagnosis15s1 indicates that under complete random sampling, the sample mean estimator of the population mean is unbiased and that the root mean squared error is manageable at `r round(diagnosis_15.1$diagnosands_df$rmse,2)`.
 
 :::
 

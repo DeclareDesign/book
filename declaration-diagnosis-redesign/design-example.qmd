@@ -87,14 +87,16 @@ diagnosis_12.1 <- diagnose_design(declaration_12.1, diagnosands = diagnosands)
 diagnosis_12.1 <- get_rdddr_file_local("diagnosis_12.1")
 ```
 
-```{r simpledesigndiagnosis, echo = FALSE}
+```{r}
+#| tbl-cap: "Diagnosis of the simplified Gulzar and Khan design."
+#| label: tbl-simpledesigndiagnosis
+#| echo: false
 get_diagnosands(diagnosis_12.1) |>
   select(inquiry, term, bias, rmse, power) |>
   kable(
     booktabs = TRUE,
     align = "c",
-    digits = 3,
-    caption = "Diagnosis of the simplified Gulzar and Khan design."
+    digits = 3
   )
 ```
 

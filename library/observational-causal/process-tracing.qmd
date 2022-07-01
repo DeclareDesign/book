@@ -40,7 +40,10 @@ We now have all we need to assess what inferences we might make given different 
 
 Table @tbl-ptprobative shows three types of quantities: beliefs upon observing $X=1, Y=1$, conditional inferences upon observing additional data on $M$ or $W$, and the conditional probability of seeing different outcomes for $M$ or $W$. 
 
-```{r ptprobative, echo = FALSE}
+```{r}
+#| label: tbl-ptprobative
+#| echo: false
+#| tbl-cap: "Beliefs about the probability $X$ caused $Y$ upon observing $X=1, Y=1$,  updated inferences upon observing additional data on $M$  or $W$, and  the conditional probability of seeing different outcomes for $M$ or $W$ given observation of $X=1, Y=1$."
 query_model(
     causal_model,
     query = list('Prob(CoE=1|X = 1, Y=1)' = "Y[X=1] > Y[X=0]",
@@ -61,8 +64,8 @@ query_model(
   select(Query, Value = mean) |> 
   kable(booktabs = TRUE, 
         align = c("l","c"), 
-        caption = "Beliefs about the probability $X$ caused $Y$ upon observing $X=1, Y=1$,  updated inferences upon observing additional data on $M$  or $W$, and  the conditional probability of seeing different outcomes for $M$ or $W$ given observation of $X=1, Y=1$.", 
-        digits = 2) 
+        digits = 2) |>
+  kable_styling()
 ```
 
 We see here that $M$ provides a hoop test since we are certain that $X$ does not cause $Y$ when $M=0$, but we are uncertain when $M=1$. (Moreover, we already expect to see $M=1$ given what we have seen for $X$ and $Y$). $W$ provides a smoking gun test since we are certain that $X$ causes $Y$ when $M=1$ but uncertain otherwise. Since we have access to both conditional inferences and the probability of seeing different types of data, we have enough data in Table @tbl-ptprobative to calculate how different strategies will perform. 

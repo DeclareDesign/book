@@ -75,15 +75,17 @@ diagnosis_17.1 <- diagnose_design(declaration_17.2)
 diagnosis_17.1 <- get_rdddr_file_local("diagnosis_17.1")
 ```
 
-```{r, echo = FALSE}
+```{r}
+#| label: tbl-auditdiagnosis
+#| echo: false
+#| tbl-cap: "Audit experiment power analysis"
 diagnosis_17.1 |> 
   get_diagnosands() |>
   select(power, `se(power)`, n_sims) |> 
   kable(
   booktabs = TRUE,
   digits = 2,
-  align = "c",
-  caption = "Audit experiment power analysis"
+  align = "c"
   )
 ```
 

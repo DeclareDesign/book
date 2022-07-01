@@ -72,11 +72,14 @@ diagnosis_17.2 <- diagnose_design(declaration_17.3, diagnosands = diagnosands)
 diagnosis_17.2 <- get_rdddr_file_local("diagnosis_17.2")
 ```
 
-```{r diagnosislist, echo = FALSE}
+```{r}
+#| label: tbl-diagnosislist
+#| echo: false
+#| tbl-cap: "Diagnosis of a list experiment."
 diagnosis_17.2 |> 
   get_diagnosands() |> 
   transmute(Bias = bias, `Mean CI width` = mean_CI_width) |> 
-  kable(booktabs = TRUE, align = "c", digits = 3, caption = "Diagnosis of a list experiment.") |> kable_styling()
+  kable(booktabs = TRUE, align = "c", digits = 3) |> kable_styling()
 ```
 
 We see in the diagnosis that the list experiment generates unbiased estimates of the prevalence rate, but it is extremely imprecise: the average width of the confidence interval is enormous at 33 percentage points. If the estimate from a list experiment using this design is 25%, this would imply a confidence interval ranging from about 9% to 41% holding the sensitive item, ranging from rare to common and thus providing only a limited amount of information about the prevalence rate.

@@ -57,7 +57,10 @@ Diagnosing this two arm trial design, we see that as expected, we encountered no
 diagnosis_18.1 <- diagnose_design(declaration_18.1)
 ```
 
-```{r, echo=FALSE}
+```{r}
+#| tbl-cap: "Bias, power, and true standard error for a two-arm randomized trial"
+#| echo: false
+#| label: tbl-diagnosis181
 diagnosis_18.1 <- get_rdddr_file_local("diagnosis_18.1")
 
 diagnosis_18.1 |>
@@ -66,8 +69,7 @@ diagnosis_18.1 |>
   kable(
     booktabs = TRUE,
     align = "c",
-    digits = 3,
-    caption = "Bias, power, and true standard error for a two-arm randomized trial"
+    digits = 3
   )
 ```
 
