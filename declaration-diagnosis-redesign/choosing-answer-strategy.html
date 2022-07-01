@@ -731,9 +731,10 @@ div.csl-indent {
 </div>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-italianagetestrun" class="anchored">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Estimates from the test of the mean age equalling 20 from Italian villages example</caption>
+<caption>Table 9.1:  Estimates from the test of the mean age equalling 20 from Italian villages example. </caption>
  <thead><tr>
 <th style="text-align:center;"> estimator </th>
    <th style="text-align:center;"> estimate </th>
@@ -752,6 +753,7 @@ div.csl-indent {
   </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <p>Next, we diagnose the modified design, by running the design many times. <a href="#fig-ch9num2">Figure&nbsp;<span>9.2</span></a> shows how frequently we reject the null that the average age is 20. When estimate is close to 20, we rarely reject the null, but when the estimate is far from 20, we are more like to reject. Again, this diagnosis comes from a design with a weak data strategy of sampling only three citizens at time. We need to see estimates breaking 60 before the testing answer strategy reliably rejects this (false) null hypothesis.</p>
@@ -821,9 +823,10 @@ div.csl-indent {
 </div>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-italianuncertainty" class="anchored">
 
-<table>
-<caption>One draw of the answer strategy</caption>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>Table 9.2:  One draw of the answer strategy. </caption>
  <thead><tr>
 <th style="text-align:center;"> estimate </th>
    <th style="text-align:center;"> std.error </th>
@@ -841,6 +844,7 @@ div.csl-indent {
    <td style="text-align:center;"> 39.84 </td>
   </tr></tbody>
 </table>
+</div>
 </div>
 </div>
 <p>For tests, uncertainty is expressed by describing the properties of a procedure in terms of error rates. A test is an answer strategy that returns a binary answer to a binary estimand. The result of a test is an error if the empirical answer <span class="math inline">\(a_d\)</span> does not equal the truth <span class="math inline">\(a_{m^*}\)</span>. Conventionally, a Type 1 error occurs when <span class="math inline">\(a_d = 1\)</span> but <span class="math inline">\(a_{m^*} = 0\)</span> and a Type 2 error occurs when <span class="math inline">\(a_d = 0\)</span> but <span class="math inline">\(a_{m^*} = 1\)</span>. A perfect test (i.e., a test about about which we are fully certain) has Type 1 error rate of 0% and a Type 2 error rate of 0% as well. A test about which we are less certain might return <span class="math inline">\(a_d = 1\)</span> 40% of the time when <span class="math inline">\(a_{m^*} = 0\)</span> (a Type I error rate of 40%) and might return <span class="math inline">\(a_d = 1\)</span> 90% of the time when <span class="math inline">\(a_{m^*} = 1\)</span> (a Type II error rate of 10%).</p>
@@ -877,9 +881,10 @@ div.csl-indent {
 </div>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-evbiv" class="anchored">
 
-<table>
-<caption>Extreme value bounds estimate</caption>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>Table 9.3:  Extreme value bounds estimate </caption>
  <thead><tr>
 <th style="text-align:center;"> Lower bound </th>
    <th style="text-align:center;"> Upper bound </th>
@@ -891,6 +896,7 @@ div.csl-indent {
 </table>
 </div>
 </div>
+</div>
 <p>This procedure generates enormously wide bounds – we already knew before we started that the average age had to be somewhere between 0.45 and 107.15 years. But consider if we had data on 90 of the 100 citizens and among those 90, the average is 44. Now when we generate the bounds, they are still wide but not ridiculously so – the bounds put the average age somewhere between 40 and 50.</p>
 <div class="cell">
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lower_bound</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fl">90</span> <span class="op">*</span> <span class="fl">44</span> <span class="op">+</span> <span class="fl">10</span> <span class="op">*</span> <span class="fl">0</span><span class="op">)</span><span class="op">/</span><span class="fl">100</span></span>
@@ -899,9 +905,10 @@ div.csl-indent {
 </div>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-evbiv2" class="anchored">
 
-<table>
-<caption>The extreme value bounds are tighter with more data</caption>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>Table 9.4:  The extreme value bounds are tighter with more data </caption>
  <thead><tr>
 <th style="text-align:center;"> Lower bound </th>
    <th style="text-align:center;"> Upper bound </th>
@@ -911,6 +918,7 @@ div.csl-indent {
    <td style="text-align:center;"> 50.6 </td>
   </tr></tbody>
 </table>
+</div>
 </div>
 </div>
 <p>Extreme value bounds and variations on the idea can be applied when experiments encounter missingness or when we want to estimate effects among subgroups that only reveal themselves in some but not all treatment conditions <span class="citation" data-cites="aronow2019note">Coppock (<a href="../references.html#ref-coppock_2019b" role="doc-biblioref">2019</a>)</span>. The extreme value bound approach can also be used in qualitative settings in which we can impute some but not all of the missing potential outcomes using qualitative information; the bounds reflect our uncertainty about those missing values <span class="citation" data-cites="coppock_kaur_2021">(<a href="../references.html#ref-coppock_kaur_2021" role="doc-biblioref">Coppock and Kaur 2022</a>)</span>.</p>
@@ -961,9 +969,10 @@ div.csl-indent {
 </div>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-bootstrappedse" class="anchored">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Bootstrapped standard error estimate</caption>
+<caption>Table 9.5:  Bootstrapped standard error estimate </caption>
  <thead><tr>
 <th style="text-align:right;"> se </th>
   </tr></thead>
@@ -974,15 +983,17 @@ div.csl-indent {
 </div>
 </div>
 </div>
+</div>
 <p>We can compare the standard error estimates using the standard deviation of the bootstrapped estimates to the standard error provided by the difference in means estimator implemented on the original data to see that they are quite close:</p>
 <div class="cell">
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">get_estimates</span><span class="op">(</span>design <span class="op">=</span> <span class="va">declaration_9.5</span>, data <span class="op">=</span> <span class="va">clingingsmith_etal</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-clingingsmithetal" class="anchored">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Analytic standard error estimate</caption>
+<caption>Table 9.6:  Analytic standard error estimate </caption>
  <thead><tr>
 <th style="text-align:right;"> estimate </th>
    <th style="text-align:right;"> std.error </th>
@@ -992,6 +1003,7 @@ div.csl-indent {
    <td style="text-align:right;"> 0.163 </td>
   </tr></tbody>
 </table>
+</div>
 </div>
 </div>
 </section><section id="analyze-as-you-randomize" class="level3" data-number="9.3.4"><h3 data-number="9.3.4" class="anchored" data-anchor-id="analyze-as-you-randomize">
@@ -1073,9 +1085,10 @@ div.csl-indent {
 </div>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-foosresults" class="anchored">
 
-<table>
-<caption>Results from @Foos2021</caption>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>Table 9.7:  Results from @Foos2021 </caption>
  <thead><tr>
 <th style="text-align:center;"> term </th>
    <th style="text-align:center;"> estimate </th>
@@ -1085,6 +1098,7 @@ div.csl-indent {
    <td style="text-align:center;"> 0.028 </td>
   </tr></tbody>
 </table>
+</div>
 </div>
 </div>
 <p>Here we declare the null model (indicated by <code>potential_outcomes(Y ~ 0 * Z + marked_register_2014)</code>) and add it to the data and answer strategies:</p>
@@ -1131,9 +1145,10 @@ div.csl-indent {
 </div>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-ridiagnosands" class="anchored">
 
-<table>
-<caption>Randomization inference 'diagnosis' to obtain a p-value</caption>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>Table 9.8:  Randomization inference ‘diagnosis’ to obtain a p-value </caption>
  <thead><tr>
 <th style="text-align:center;"> design </th>
    <th style="text-align:center;"> diagnosand </th>
@@ -1145,6 +1160,7 @@ div.csl-indent {
    <td style="text-align:center;"> 0.13 </td>
   </tr></tbody>
 </table>
+</div>
 </div>
 </div>
 <p>Some naive procedures for generating <span class="math inline">\(p\)</span>-values might ignore or otherwise fail to incorporate the important design information (in this example, the blocking and clustering procedures). Randomization inference naturally incorporates this design information by holding the data and answer strategies fixed, while swapping in a null model. Simulating the resulting design yields a sampling distribution under the null, which can then be compared to the observed estimate.</p>

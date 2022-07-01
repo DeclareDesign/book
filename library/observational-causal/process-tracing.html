@@ -131,7 +131,8 @@ div.csl-indent {
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+}</script><script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
@@ -623,12 +624,13 @@ div.csl-indent {
 </div>
 <p>This model definition describes the DAG but also specifies a set of restrictions on causal relations. By default, flat priors are then placed over all other possible causal relations, though of course other prior beliefs could also be specified.</p>
 <p>We now have all we need to assess what inferences we might make given different sorts of observations on <span class="math inline">\(W\)</span> and <span class="math inline">\(M\)</span>.</p>
-<p>Table <span class="quarto-unresolved-ref">?tbl-ptprobative</span> shows three types of quantities: beliefs upon observing <span class="math inline">\(X=1, Y=1\)</span>, conditional inferences upon observing additional data on <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span>, and the conditional probability of seeing different outcomes for <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span>.</p>
+<p>Table <a href="#tbl-ptprobative">Table&nbsp;<span>20.1</span></a> shows three types of quantities: beliefs upon observing <span class="math inline">\(X=1, Y=1\)</span>, conditional inferences upon observing additional data on <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span>, and the conditional probability of seeing different outcomes for <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-ptprobative" class="anchored">
 
-<table>
-<caption>Beliefs about the probability $X$ caused $Y$ upon observing $X=1, Y=1$,  updated inferences upon observing additional data on $M$  or $W$, and  the conditional probability of seeing different outcomes for $M$ or $W$ given observation of $X=1, Y=1$.</caption>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>Table 20.1:  Beliefs about the probability X caused Y upon observing X=1, Y=1, updated inferences upon observing additional data on M or W, and the conditional probability of seeing different outcomes for M or W given observation of X=1, Y=1. </caption>
  <thead><tr>
 <th style="text-align:left;"> Query </th>
    <th style="text-align:center;"> Value </th>
@@ -666,9 +668,10 @@ div.csl-indent {
 </table>
 </div>
 </div>
-<p>We see here that <span class="math inline">\(M\)</span> provides a hoop test since we are certain that <span class="math inline">\(X\)</span> does not cause <span class="math inline">\(Y\)</span> when <span class="math inline">\(M=0\)</span>, but we are uncertain when <span class="math inline">\(M=1\)</span>. (Moreover, we already expect to see <span class="math inline">\(M=1\)</span> given what we have seen for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>). <span class="math inline">\(W\)</span> provides a smoking gun test since we are certain that <span class="math inline">\(X\)</span> causes <span class="math inline">\(Y\)</span> when <span class="math inline">\(M=1\)</span> but uncertain otherwise. Since we have access to both conditional inferences and the probability of seeing different types of data, we have enough data in Table <span class="quarto-unresolved-ref">?tbl-ptprobative</span> to calculate how different strategies will perform.</p>
+</div>
+<p>We see here that <span class="math inline">\(M\)</span> provides a hoop test since we are certain that <span class="math inline">\(X\)</span> does not cause <span class="math inline">\(Y\)</span> when <span class="math inline">\(M=0\)</span>, but we are uncertain when <span class="math inline">\(M=1\)</span>. (Moreover, we already expect to see <span class="math inline">\(M=1\)</span> given what we have seen for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>). <span class="math inline">\(W\)</span> provides a smoking gun test since we are certain that <span class="math inline">\(X\)</span> causes <span class="math inline">\(Y\)</span> when <span class="math inline">\(M=1\)</span> but uncertain otherwise. Since we have access to both conditional inferences and the probability of seeing different types of data, we have enough data in Table <a href="#tbl-ptprobative">Table&nbsp;<span>20.1</span></a> to calculate how different strategies will perform.</p>
 <p>We think it useful to fold these quantities into a design declaration so that research consumers can access the data strategies and answer strategies in the same way as they would for any other problem.</p>
-<p><a href="#def-ch16num1">Declaration&nbsp;<span>20.1</span></a> provides a flexible process tracing design. You can use this design with a different causal model and substituting in different causal queries and process tracing strategies. Given a background causal model, the design first draws a “causal type”—that is a case together with all its causal relations. The value of the estimand (EoC) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query—like those in the Table <span class="quarto-unresolved-ref">?tbl-ptprobative</span>—but given different possible observed values for all nodes. No data strategy is provided explicitly as this is tied up here in the estimation, that is, the estimation step describes what data will be used.</p>
+<p><a href="#def-ch16num1">Declaration&nbsp;<span>20.1</span></a> provides a flexible process tracing design. You can use this design with a different causal model and substituting in different causal queries and process tracing strategies. Given a background causal model, the design first draws a “causal type”—that is a case together with all its causal relations. The value of the estimand (EoC) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query—like those in the Table <a href="#tbl-ptprobative">Table&nbsp;<span>20.1</span></a>—but given different possible observed values for all nodes. No data strategy is provided explicitly as this is tied up here in the estimation, that is, the estimation step describes what data will be used.</p>
 <div id="def-ch16num1" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 20.1 </strong></span>Process tracing design declaration</p>
 <div class="cell" data-file="scripts_declarations/declaration_16.1b.R">

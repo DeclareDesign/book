@@ -833,7 +833,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div id="tbl-modelposdraw" class="anchored">
 
-<table>
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>Table 13.1:  One draw of two potential outcomes </caption>
  <thead><tr>
 <th style="text-align:center;"> ID </th>
@@ -887,7 +887,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div id="tbl-modelposdraw2" class="anchored">
 
-<table>
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>Table 13.2:  One draw of three potential outcomes </caption>
  <thead><tr>
 <th style="text-align:center;"> ID </th>
@@ -1266,9 +1266,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-linregest" class="anchored">
 
-<table>
-<caption>The estimate from one draw of the linear regression design</caption>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>Table 13.4:  The estimate from one draw of the linear regression design </caption>
  <thead><tr>
 <th style="text-align:center;"> term </th>
    <th style="text-align:center;"> estimator </th>
@@ -1298,6 +1299,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 </div>
 </div>
+</div>
 </section><section id="tidying-statistical-modelling-function-output" class="level3" data-number="13.4.2"><h3 data-number="13.4.2" class="anchored" data-anchor-id="tidying-statistical-modelling-function-output">
 <span class="header-section-number">13.4.2</span> Tidying statistical modelling function output</h3>
 <p>Let’s unpack the <code>.summary</code> argument. In this case we sent the <code>tidy</code> function from the <code>broom</code> package (the default). Understanding what <code>tidy</code> does opens a window into the way we match estimates and estimands. The tidy function takes many model fit objects and returns a data frame in which rows represent estimates and columns represent statistics about that estimate. The columns typically include the estimate itself (<code>estimate</code>), an estimated standard error (<code>std.error</code>), a test statistic of some kind reported by the model function such as a <em>t</em>-statistic or <em>Z</em>-statistic (<code>statistic</code>), a p-value based on the test statistic (<code>p.value</code>), a confidence interval (<code>conf.low</code>, <code>conf.high</code>), and the degrees of freedom of the test statistic if relevant (<code>df</code>).</p>
@@ -1315,9 +1317,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-modelfitstats" class="anchored">
 
-<table>
-<caption>The model fit statistics from one draw of the linear regression design</caption>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>Table 13.5:  The model fit statistics from one draw of the linear regression design </caption>
  <thead><tr>
 <th style="text-align:center;"> r.squared </th>
    <th style="text-align:center;"> adj.r.squared </th>
@@ -1337,6 +1340,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    <td style="text-align:center;"> HC2 </td>
   </tr></tbody>
 </table>
+</div>
 </div>
 </div>
 <p>When neither <code>tidy</code> nor <code>glance</code> works well for your answer strategy, you can write your own summary function. Below, we build up a tidy function for the <code>lm</code> model from scratch. (One is already built-in to the <code>broom</code> package, but we do so here to illustrate how you can write your own for a function that does not already have one.) Before you start to write your own summary function, check whether one exists on the <a href="https://broom.tidymodels.org/articles/available-methods.html">Broom Web site</a>.</p>
@@ -1481,9 +1485,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-diagnosis13s1" class="anchored">
 
 <table>
-<caption>Design diagnosis of two-arm randomized experiment</caption>
+<caption>Table 13.6:  Design diagnosis of two-arm randomized experiment </caption>
  <thead><tr>
 <th style="text-align:center;"> Design </th>
    <th style="text-align:center;"> Inquiry </th>
@@ -1564,15 +1569,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 </div>
 </div>
+</div>
 <p>We can “tidy” the results of the diagnosis for easier printing and plotting of the results. Here, each row is an estimate of a diagnosand and then uncertainty statistics such as the standard error and 95% confidence interval around the diagnosand estimate.</p>
 <div class="cell">
 <div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tidy</span><span class="op">(</span><span class="va">diagnosis_13.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-diagnosis131tidy" class="anchored">
 
-<table>
-<caption>Tidied diagnosis of two-arm randomized experiment</caption>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>Table 13.7:  Tidied diagnosis of two-arm randomized experiment </caption>
  <thead><tr>
 <th style="text-align:center;"> design </th>
    <th style="text-align:center;"> inquiry </th>
@@ -1756,6 +1763,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
