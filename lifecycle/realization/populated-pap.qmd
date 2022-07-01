@@ -18,4 +18,4 @@ We recommended in Section @preanalysis-plan that authors include mock analyses i
 
 In Section @planning, we declared the design for @bonilla_tillery_2020 following their preanalysis plan. In doing so, we declared an answer strategy in code. In our populated PAP, we can run that same answer strategy code, but swap out the simulated data for the real data collected during the study. 
 
-![Example populated PAP](/figures/example-populated-pap){#fig:populatedpapcontactsheet}
+![Example populated PAP](/figures/example-populated-pap){#fig-populatedpapcontactsheet}

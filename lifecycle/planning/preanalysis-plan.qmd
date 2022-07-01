@@ -28,5 +28,5 @@ We provide an example preanalysis plan in the appendix for @bonilla_tillery_2020
 
 We show in section @populated-preanalysis-plan how to "populate" this PAP once the data have been realized and collected.
 
-![Example preanalysis plan](/figures/example-preanalysis-plan){#fig:papcontactsheet}
+![Example preanalysis plan](/figures/example-preanalysis-plan){#fig-papcontactsheet}
 
