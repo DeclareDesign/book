@@ -46,7 +46,7 @@ Two main diagnosands for the simple random sampling design are bias and root mea
 
 ::: {#lem-ch15num1} 
 
-## Simple random sampling diagnosis
+Simple random sampling diagnosis
 
 ```{r}
 #| eval: false
@@ -102,7 +102,7 @@ Survey nonresponse design
 
 ::: {#lem-ch15num2} 
 
-## Survey nonresponse diagnosis
+Survey nonresponse diagnosis
 
 ```{r}
 #| eval: false

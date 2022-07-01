@@ -16,7 +16,7 @@ One frequent divergence between partner and researcher goals is that partner org
 
 ::: {#lem-ch21num1} 
 
-## Learning versus doing diagnosis
+Learning versus doing diagnosis
 
 Research design diagnosis can help navigate the learning versus doing tradeoff. One instance of the tradeoff is that the proportion of units that receive a treatment represents the rate of "doing," but this rate also affects the amount of learning. In the extreme, if all units are treated, we can't measure the effect of the treatment. The tradeoff here is represented in @fig-ch21num2, which shows the study's power versus the proportion treated (top facet) and the partner's utility (bottom facet). The researchers have a power cutoff at the standard 80% threshold. The partner also has a strict cutoff: they need to treat at least 2/3 of the sample to fulfill a donor requirement. 
 

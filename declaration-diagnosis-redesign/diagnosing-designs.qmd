@@ -144,7 +144,7 @@ Loops like this one can be implemented in any language and they remain a good to
 
 ::: {#lem-ch10num1} 
 
-## By-hand diagnosis example
+By-hand diagnosis example
 
 ```{r}
 #| eval: false
@@ -192,7 +192,7 @@ Example of declaration using DeclareDesign
 
 ::: {#lem-ch10num2} 
 
-## Diagnosis in DeclareDesign
+Diagnosis in DeclareDesign
 
 We can now diagnose the declared design. For comparison with the loop, we calculate just one diagnosand: statistical power. Both approaches return approximately the same answer. Any difference between the two can be attributed to simulation error, which is why DeclareDesign by default returns a bootstrapped standard error for each diagnosand estimate. If we were to increase the number of simulations for both approaches dramatically (100,000 simulations would be plenty), the differences would vanish.
 
@@ -274,7 +274,7 @@ This line of code does it all in one. We simulate the design (500 times by defau
 
 ::: {#lem-ch10num2} 
 
-## Design diagnosis in one step
+Design diagnosis in one step
 
 ```{r, eval=FALSE}
 diagnosis_10.3 <-
@@ -373,7 +373,7 @@ Declaration including model uncertainty
 
 ::: {#lem-ch10num4} 
 
-## Diagnosis under model uncertainty
+Diagnosis under model uncertainty
 
 ```{r, echo = FALSE, purl = FALSE}
 diagnosis_10.4 <- get_rdddr_file_local("diagnosis_10.4")
@@ -402,7 +402,7 @@ Declaration of competing models
 
 ::: {#lem-ch10num5} 
 
-## Diagnosis of competing models
+Diagnosis of competing models
 
 To diagnose these alternative models, we count up how frequently each perspective receives support. If we define support by statistical significance (other metrics are of course possible), then your model is supported if the effect of treatment on $Y1$ is significant but the effect on $Y2$ is not significant. If the reverse pattern is obtained, your rival can claim victory. Two kinds of split decisions are possible: neither estimate is significant, or both are. By simulation, we can estimate the rates of these four possibilities, both under your beliefs and those of your theoretical adversary.
 

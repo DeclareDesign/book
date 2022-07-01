@@ -107,7 +107,7 @@ Diagnosis @lem:diagnosis-17-5 illustrates the properties of the trust game desig
 
 ::: {#lem-ch17num5} 
 
-## Trust game diagnosis
+Trust game diagnosis
 
 ```{r}
 #| eval: false

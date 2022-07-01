@@ -33,7 +33,7 @@ Meta-analysis design
 
 ::: {#lem-ch19num3} 
 
-## Meta-analysis diagnosis
+Meta-analysis diagnosis
 
 @fig-ch19num5 explores the bias and coverage of the two estimators under each model both for the mean effects inquiry $\mu$ and for the variance of effects inquiry $\tau^2$. We find that the random effects estimator, across both models of how effects are realized, performs best. Whether the variance of site-level ATEs is 1 or 0, random effects estimates both inquiries without bias and coverage is nominal. By contrast, the fixed effect estimator has two problems. When $\tau^2$ is 1, the estimator gets the variance in estimates wrong, because it *assumes* it is zero. Second, the estimator is extremely overconfident, generating confidence intervals that are drastically too small, as reflected in the poor coverage. This overconfidence stems from the fixed-effect assumption that the only reason study-to-study estimates differ is due to estimation noise, not true differences across sites.
 

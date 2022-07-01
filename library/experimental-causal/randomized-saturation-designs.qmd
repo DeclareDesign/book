@@ -42,7 +42,7 @@ Randomized saturation design
 
 ::: {#lem-ch18num12} 
 
-## Randomized saturation diagnosis
+Randomized saturation diagnosis
 
 ```{r}
 #| eval: false

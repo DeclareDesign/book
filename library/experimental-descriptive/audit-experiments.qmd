@@ -61,7 +61,7 @@ Audit experiment intervention study design
 
 ::: {#lem-ch17num1} 
 
-## Audit experiment intervention study diagnosis
+Audit experiment intervention study diagnosis
 
 Even at 5,000 subjects, the power to detect the effect of the intervention is quite poor, at approximately 15%. This low power stems from the small treatment effect (reducing discrimination by 50% from 5.0% to 2.5%) and from the noisy measurement strategy. 
 

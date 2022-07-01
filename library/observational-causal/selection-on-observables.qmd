@@ -44,7 +44,7 @@ In our model, $U$ is not a confounder, because it affects $Y$ but not $D$; this 
 
 ::: {#lem-ch16num2} 
 
-## Matching design diagnosis
+Matching design diagnosis
 
 In @fig-ch16num4, we see that the raw, unmatched estimate is quite biased (about 20% of the average estimate) and that the matched estimate is unbiased. If we fail to adjust for the observable features of the selection process, we have biased answers. But if we do control in this case, we obtain unbiased answers. However, as highlighted earlier, these results depend on the plausibility of our model, which in this case involves observed confounding of the relationship between $D$ and $Y$ by $X$. If there was *unobservable* confounding from $U$, or if $X$ was a collider or mediator, there would be bias even if we control for $X$.
 

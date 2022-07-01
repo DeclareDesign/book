@@ -291,7 +291,7 @@ The results are shown in the next figure.
 
 ::: {#lem-ch2num1} 
 
-## Diagnosis of `declaration_2.1` and `declaration_2.2`
+Diagnosis of `declaration_2.1` and `declaration_2.2`
 
 ![How success depends on choice of *D* and *A* given different possibilities for *M*](/figures/figure-2-2){#fig-ch2num2}
 

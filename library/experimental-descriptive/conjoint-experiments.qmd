@@ -55,7 +55,7 @@ Conjoint experiment design
 
 ::: {#lem-ch17num4} 
 
-## Diagnosis of the conjoint experiment design
+Diagnosis of the conjoint experiment design
 
 ```{r}
 #| eval: false

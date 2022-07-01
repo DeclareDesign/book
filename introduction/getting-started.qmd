@@ -114,7 +114,7 @@ Diagnosis is the process of simulating the design many times and calculating sum
 
 ::: {#lem-ch4num1} 
 
-## Example design diagnosis
+Example design diagnosis
 
 ```{r}
 #| eval: false

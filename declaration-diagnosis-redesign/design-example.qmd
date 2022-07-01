@@ -75,7 +75,7 @@ We then diagnose the design by simulating the design over and over, then calcula
 
 ::: {#lem-ch12num1} 
 
-## Diagnosis of Gulzar and Khan (2022)
+Diagnosis of Gulzar and Khan (2022)
 
 ```{r}
 #| eval: false
@@ -110,7 +110,7 @@ Two of the most important design decisions in this study are the number of sampl
 
 ::: {#lem-ch12num2} 
 
-## Diagnosis of redesigned Gulzar and Khan (2022)
+Diagnosis of redesigned Gulzar and Khan (2022)
 
 ```{r}
 #| eval: false

@@ -32,7 +32,7 @@ Why does blocking increase the precision with which we estimate the ATE? One pie
 
 ::: {#lem-ch18num4} 
 
-## Diagnosis comparing block random assignment and complete random assignment
+Diagnosis comparing block random assignment and complete random assignment
 
 This intuition behind blocking is illustrated in @fig-ch18num4, which shows the sampling distribution of the difference-in-means estimator under *complete* random assignment. The histogram is shaded according to whether the particular random assignment is permissible under a procedure that blocks on the binary covariate $X$. The sampling distribution of the estimator among the set of assignments that are permissible under blocking is more tightly distributed around the true average treatment effect than the estimates associated with assignments that are not perfectly balanced. Here we can see the value of a blocking procedure -- it *it rules out by design* those assignments that are not perfectly balanced. 
 

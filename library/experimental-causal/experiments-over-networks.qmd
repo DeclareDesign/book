@@ -56,7 +56,7 @@ The maps in @fig-ch18num16 show how this procedure generates differential probab
 
 ::: {#lem-ch18num13} 
 
-## Experiments over spatial networks diagnosis
+Experiments over spatial networks diagnosis
 
 @fig-ch18num17 compares the performance of the Hajek and Horvitz-Thompson estimators. Both are approximately unbiased for their targets, but the Horvitz-Thompson estimator exhibits much higher variance, suggesting that in many design settings, researchers will want to opt for the Hajek estimator. 
 

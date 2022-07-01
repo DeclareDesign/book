@@ -117,7 +117,7 @@ We now diagnose the design by simulating this design repeatedly, plotting the sa
 
 ::: {#lem-ch9num1} 
 
-## Italian village design diagnosis
+Italian village design diagnosis
 
 ```{r}
 #| eval: false
@@ -177,7 +177,7 @@ Next, we diagnose the modified design, by running the design many times. @fig-ch
 
 ::: {#lem-ch9num2} 
 
-## Italian village diagnosis, continued
+Italian village diagnosis, continued
 
 ```{r}
 #| eval: false
@@ -217,7 +217,7 @@ Italian village design a la Bayes
 
 ::: {#lem-ch9num4} 
 
-## We can then simulate this design in the same way and examine the distribution of estimates we might get. 
+We can then simulate this design in the same way and examine the distribution of estimates we might get. 
 
 ```{r}
 #| eval: false
@@ -291,7 +291,7 @@ Italian village declaration, varying the true mean age parameter
 
 ::: {#lem-ch9num5} 
 
-## Diagnosing the Italian village design over many values of the true mean age parameter
+Diagnosing the Italian village design over many values of the true mean age parameter
 
 ```{r, eval=FALSE}
 diagnosis_9.5 <- diagnose_designs(declaration_9.5)
@@ -412,7 +412,7 @@ Bootstrapped standard errors
 
 ::: {#lem-ch9numbootstrap} 
 
-## Bootstrap diagnosis
+Bootstrap diagnosis
 
 The bootstrapped estimates are gotten by summarizing over multiple runs of the design:
 
@@ -475,7 +475,7 @@ Restoring parallelism design
 
 ::: {#lem-ch9num6} 
 
-## Restoring parallelism diagnosis
+Restoring parallelism diagnosis
 
 ```{r}
 #| eval: false
@@ -547,7 +547,7 @@ Randomization inference under the sharp null
 
 ::: {#lem-ch9num3} 
 
-## Randomization inference "diagnosis"
+Randomization inference "diagnosis"
 
 We diagnose the null design with respect to the `p.value` diagnosand: what fraction of simulations under the null model exceed the observed estimate? We find that the `p.value` is 0.13, so the estimate is not deemed statistically significant. 
 

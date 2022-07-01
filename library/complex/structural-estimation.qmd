@@ -47,7 +47,7 @@ With the likelihood function defined, we can declare a design with an estimation
 
 ::: {#lem-ch19num2} 
 
-## Structural estimation diagnosis
+Structural estimation diagnosis
 
 ```{r}
 #| eval: false

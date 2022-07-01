@@ -31,7 +31,7 @@ Blocked and clustered randomized trial
 
 ::: {#lem-ch18num5} 
 
-## Redesigning over values of ICC
+Redesigning over values of ICC
 
 ```{r}
 #| eval: false

@@ -45,7 +45,7 @@ We redesign @def-ch15num3 over various levels of the cluster-level probability o
 
 ::: {#lem-ch15num3} 
 
-## Cluster random sampling diagnosis
+Cluster random sampling diagnosis
 
 ```{r}
 #| eval: false

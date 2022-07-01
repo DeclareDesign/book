@@ -46,7 +46,7 @@ In @fig-ch15num6 we show that the correlation between all the indices and the un
 
 ::: {#lem-ch15num5} 
 
-## Latent variables diagnosis over alternative answer strategies
+Latent variables diagnosis over alternative answer strategies
 
 ```{r}
 #| eval: false

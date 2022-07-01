@@ -55,7 +55,7 @@ Comparison single-period two arm trial design
 
 ::: {#lem-ch18num11} 
 
-## Diagnosis of stepped-wedge design compared to two single-period two arm trial designs
+Diagnosis of stepped-wedge design compared to two single-period two arm trial designs
 
 ```{r}
 #| eval: false

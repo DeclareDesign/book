@@ -85,7 +85,7 @@ Process tracing design declaration
 
 ::: {#lem-ch16num1} 
 
-## Process tracing diagnosis
+Process tracing diagnosis
 
 Given such a model, a case in which $X = Y = 1$ (for instance), and limited resources, we now want to know whether we would be better gathering data on $M$ or on $W$ or both.  
 

@@ -54,7 +54,7 @@ To see how the design is choosing the best predictor, we illustrate the adjusted
 
 ::: {#lem-ch19num1} 
 
-## Causal forests diagnosis
+Causal forests diagnosis
 
 For the diagnosis we need to take account of the fact that the answers to one of the inquiries ("Which X accounts for the most variation in effects?") should be treated as categorical. For this reason, we report the modal estimate and estimand, rather than relying on the average estimate and average estimand. We calculate the probability that we get the correct answer, rather than relying on bias. We illustrate the diagnosis in @fig-ch19num3.
 

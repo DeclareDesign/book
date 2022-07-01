@@ -37,7 +37,7 @@ So many answer strategies have been proposed in recent years to address bias in 
 
 ::: {#lem-ch16num3} 
 
-## Difference-in-Differences diagnosis 
+Difference-in-Differences diagnosis 
 
 ```{r, eval=FALSE}
 diagnosis_16.3 <- diagnose_design(declaration_16.3)
@@ -51,7 +51,7 @@ diagnosis_16.3 <- diagnose_design(declaration_16.3)
 
 ::: {#lem-ch16num4} 
 
-## Redesigning over alternative models of treatment effect heterogeneity
+Redesigning over alternative models of treatment effect heterogeneity
 
 The issues with the two-way fixed effects estimator emerge when treatment effects differ for units that are treated later versus earlier. Following @exm-designagnostically: Design agnostically, we declare a model with homogeneous treatment effects, as well as two kinds of time-varying heterogeneous treatment effects: one in which effects are lower for units treated later and one in which effects are higher for units treated later. 
 

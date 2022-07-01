@@ -872,7 +872,7 @@ Once a design is declared in code, diagnosing it is usually the easy part. `diag
 
 ::: {#lem-ch10num6} 
 
-## Diagnosis of two-arm randomized experiment
+Diagnosis of two-arm randomized experiment
 
 Here we use `diagnose_design` to diagnose the design. By default, we conduct 500 simulations and characterize simulation error with 100 bootstraps of the diagnosands. `reshape_diagnosis` prepares the output for nice printing.
 

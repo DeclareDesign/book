@@ -59,7 +59,7 @@ Regression discontinuity designs with varying bandwidths
 
 ::: {#lem-ch16num5} 
 
-## Regression discontinuity diagnosis across varying bandwidths
+Regression discontinuity diagnosis across varying bandwidths
 
 ```{r}
 #| eval: false

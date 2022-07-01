@@ -30,7 +30,7 @@ A baseline declaration intended to be redesigned over $N$.
 
 ::: {#lem-ch11num1} 
 
-## Diagnosing over a redesign
+Diagnosing over a redesign
 
 To construct a power curve, we redesign our baseline declaration over values of $N$ that vary from 100 to 1000.
 
@@ -76,7 +76,7 @@ Uncertainty over effect size design
 
 ::: {#lem-ch11num2} 
 
-## Redesigning under uncertainty
+Redesigning under uncertainty
 
 ```{r}
 #| eval: false
@@ -125,7 +125,7 @@ Bare-bones two-arm trial
 
 ::: {#lem-ch11num3} 
 
-## Redesigning over two parameters
+Redesigning over two parameters
 
 We redesign, varying those two parameters over reasonable ranges: 100 to 1000 subjects, with probabilities of assignment from 0.1 to 0.5. The redesign function smartly generates designs with all combinations of the two parameters. We want to consider the consequences of these data strategy choices for two diagnosands: cost and a very common loss function: mean squared error.  
 
@@ -182,7 +182,7 @@ Conditional expectation function design
 
 ::: {#lem-ch11num4} 
 
-## Conditional expectation function diagnosis
+Conditional expectation function diagnosis
 
 Increasing the order of the polynomial decreases bias, but this decrease comes at the cost of variance. @fig-ch11num4 shows how, when the order increases, bias goes down while variance goes up. Mean squared error is one way to trade these two diagnosands off one another. Here, MSE is minimized with a polynomial of order 3. If we were to care much more about bias than variance, perhaps we would choose a polynomial of even higher order.
 
@@ -216,7 +216,7 @@ Choosing logit, probit, or OLS
 
 ::: {#lem-ch11num5} 
 
-## Redesigning alternative estimators over sample sizes
+Redesigning alternative estimators over sample sizes
 
 ```{r}
 #| eval: false

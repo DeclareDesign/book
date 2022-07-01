@@ -89,7 +89,7 @@ Encouragement design
 
 ::: {#lem-ch18num9} 
 
-## Diagnosis of encouragement design
+Diagnosis of encouragement design
 
 The design diagnosis shows the sampling distribution of the three answer strategies and compares it to two potential inquiries: the complier average causal effect and the average treatment effect. Our preferred method, two-stage least squares, is *biased* for the ATE. Because we can't learn about the effects of treatment among never-takers or always-takers, any estimate of the true ATE will be necessarily be prone to bias, except in the happy circumstance that never-takers and always-takers happen to be just like compliers in terms of their potential outcomes.
 

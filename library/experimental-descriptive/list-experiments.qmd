@@ -56,7 +56,7 @@ List experiment design
 
 ::: {#lem-ch17num2} 
 
-## List experiment diagnosis
+List experiment diagnosis
 
 ```{r}
 #| eval: false
@@ -99,7 +99,7 @@ Comparing list experiments with direct questions
 
 ::: {#lem-ch17num3} 
 
-## Comparison of list experiment and direct questions diagnosis
+Comparison of list experiment and direct questions diagnosis
 
 Diagnosing this design, we see that at low levels of sensitivity and low sample sizes, the direct question is preferred on RMSE grounds. This is because though the direct question is biased for the prevalence rate in the presence of any sensitivity bias (positive `proportion_hiding`), it is much more precise than the list experiment. When we have a large sample size, then we begin to prefer the list experiment for its low bias. At high levels of sensitivity, we prefer the list experiment on RMSE grounds despite its inefficiency, because bias will be so large. 
 

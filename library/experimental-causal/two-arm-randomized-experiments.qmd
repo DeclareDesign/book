@@ -49,7 +49,7 @@ Canonical two arm trial design
 
 ::: {#lem-ch18num1} 
 
-## Two arm trial diagnosis
+Two arm trial diagnosis
 
 Diagnosing this two arm trial design, we see that as expected, we encountered no bias, but high variance. In the model, we set the ATE at 0.2 standard units, but the true standard deviation of the estimator (the true standard error) is nearly the same value, at 0.19 standard units. We have low statistical power, at 16\%. Two approaches to increasing the precision of the estimate include increasing the sample size and including prognostic pre-treatment covariates in the answer strategy. We explore both of these approaches in the next section.
 
@@ -96,7 +96,7 @@ Two arm trial with covariate adjustment
 
 ::: {#lem-ch18num2} 
 
-## Two arm trial diagnosis
+Two arm trial diagnosis
 
 ```{r, eval=FALSE}
 diagnosis_18.2 <- 
@@ -130,7 +130,7 @@ Lin estimator design
 
 ::: {#lem-ch18num3} 
 
-## Lin estimator diagnosis
+Lin estimator diagnosis
 
 ```{r, eval=FALSE}
 diagnosis_18.3 <- 

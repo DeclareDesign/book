@@ -47,7 +47,7 @@ Redesign over answer strategies
 
 ::: {#lem-ch15num4} 
 
-## Diagnosing over answer strategies
+Diagnosing over answer strategies
 
 ```{r}
 #| eval: false
