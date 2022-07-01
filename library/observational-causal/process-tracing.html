@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.629">
+<meta name="generator" content="quarto-0.9.634">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - 20&nbsp; Process tracing</title>
 <style>
@@ -608,12 +608,6 @@ div.csl-indent {
 <div class="cell" data-file="scripts_declarations/declaration_16.1a.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdddr</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">CausalQueries</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Loading required package: Rcpp</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Attaching package: 'CausalQueries'</span></span>
-<span><span class="co">#&gt; The following object is masked from 'package:ggdag':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     simulate_data</span></span>
 <span></span>
 <span><span class="va">causal_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/make_model.html">make_model</a></span><span class="op">(</span><span class="st">"X -&gt; M -&gt; Y &lt;- W -&gt; M"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/set_restrictions.html">set_restrictions</a></span><span class="op">(</span><span class="st">"(M[X=1] &lt; M[X=0]) | (M[X=1, W=1] == M[X=0, W=1])"</span><span class="op">)</span> <span class="op">|&gt;</span></span>

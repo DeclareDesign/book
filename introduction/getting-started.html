@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.629">
+<meta name="generator" content="quarto-0.9.634">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - 4&nbsp; Getting started</title>
 <style>
@@ -582,7 +582,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
 
 </header><p>This chapter serves as quick start guide for the code used throughout this book, and in particular the DeclareDesign package for the R programming language. DeclareDesign is a software implementation of every step of the declare-diagnose-redesign process. While you can declare, diagnose, and redesign using nearly any programming language, DeclareDesign is structured to make it easy to mix-and-match design elements while handling the tedious simulation bookkeeping behind the scenes.</p>
-<p>First, we provide instructions for getting started in R and RStudio. We then introduce the code structure for the three steps of the research planning process: declaration, diagnose, and redesign. After this introduction, readers should be able to <em>use</em> the code, but perhaps not write it themselves yet. We devote a longer section to getting started <em>writing</em> the code (Chapter <a href="../declaration-diagnosis-redesign/declaration-in-code.html"><span>Chapter&nbsp;13</span></a>).</p>
+<p>First, we provide instructions for getting started in R and RStudio. We then introduce the code structure for the three steps of the research planning process: declaration, diagnose, and redesign. After this introduction, readers should be able to <em>use</em> the code, but perhaps not write it themselves yet. We devote a longer section to getting started <em>writing</em> the code (<a href="../declaration-diagnosis-redesign/declaration-in-code.html"><span>Chapter&nbsp;13</span></a>).</p>
 <section id="installing-r" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="installing-r">
 <span class="header-section-number">4.1</span> Installing R</h2>
 <p>You can download R for free from <a href="https://cran.r-project.org">CRAN</a>. We also recommend the free program <a href="https://rstudio.com/products/rstudio/download">RStudio</a>, which provides a friendly interface to R. Both R and RStudio are available on Windows, Mac, and Linux.</p>
@@ -620,13 +620,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html">bind_cols</a></span><span class="op">(</span><span class="va">assignment_1</span>, <span class="va">assignment_2</span>, <span class="va">assignment_3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<pre><code>#&gt; New names:
-#&gt; • `ID` -&gt; `ID...1`
-#&gt; • `Z` -&gt; `Z...2`
-#&gt; • `ID` -&gt; `ID...3`
-#&gt; • `Z` -&gt; `Z...4`
-#&gt; • `ID` -&gt; `ID...5`
-#&gt; • `Z` -&gt; `Z...6`</code></pre>
 <div class="cell-output-display">
 <div id="tbl-multiple-assignments" class="anchored">
 
@@ -755,7 +748,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="lem-ch4num1" class="theorem lemma">
 <div class="cell">
 <span class="theorem-title"><strong>Diagnosis 4.1 (Example design diagnosis) </strong></span>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://declaredesign.org/r/declaredesign/reference/diagnose_design.html">diagnose_design</a></span><span class="op">(</span><span class="va">declaration_4.1</span>, sims <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://declaredesign.org/r/declaredesign/reference/diagnose_design.html">diagnose_design</a></span><span class="op">(</span><span class="va">declaration_4.1</span>, sims <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -788,17 +781,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="header-section-number">4.4</span> Redesign</h2>
 <p>We redesign to learn how the diagnosands change as design features change. We can do this using the <code>redesign</code> function over a range of sample sizes, which produces a list of designs.</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://declaredesign.org/r/declaredesign/reference/redesign.html">redesign</a></span><span class="op">(</span><span class="va">declaration_4.1</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">200</span>, <span class="fl">300</span>, <span class="fl">400</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://declaredesign.org/r/declaredesign/reference/redesign.html">redesign</a></span><span class="op">(</span><span class="va">declaration_4.1</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">200</span>, <span class="fl">300</span>, <span class="fl">400</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Our simulation and diagnosis tools can operate directly on this list of designs:</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://declaredesign.org/r/declaredesign/reference/diagnose_design.html">diagnose_design</a></span><span class="op">(</span><span class="va">designs</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://declaredesign.org/r/declaredesign/reference/diagnose_design.html">diagnose_design</a></span><span class="op">(</span><span class="va">designs</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="library-of-designs" class="level2" data-number="4.5"><h2 data-number="4.5" class="anchored" data-anchor-id="library-of-designs">
 <span class="header-section-number">4.5</span> Library of designs</h2>
 <p>In our <code>DesignLibrary</code> package, we have created a set of common designs as designers (functions that create designs from just a few parameters), so you can get started quickly.</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://declaredesign.org/r/designlibrary/">DesignLibrary</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://declaredesign.org/r/designlibrary/">DesignLibrary</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">block_cluster_design</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu"><a href="https://declaredesign.org/r/designlibrary/reference/block_cluster_two_arm_designer.html">block_cluster_two_arm_designer</a></span><span class="op">(</span>N <span class="op">=</span> <span class="fl">1000</span>, N_blocks <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
