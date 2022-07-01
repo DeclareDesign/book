@@ -1,14 +1,5 @@
 # Preface
 
-\pagestyle{main}
-
-```{r}
-#| echo: false
-#| include: false
-#| purl:  false
-source("scripts/before_chapter_script.R")
-```
-
 This book introduces a new way of thinking about research designs in the social sciences. Our hope is that this approach will make it easier to develop and to share strong research designs.
 
 At the heart of our approach is the *MIDA* framework, in which a research design is characterized by four elements: a model, an inquiry, a data strategy, and an answer strategy. We have to understand each of the four on their own and also how they interrelate. The design encodes your beliefs about the world, it describes your questions, and it lays out how you go about answering those questions, both in terms of what data you collect and how you analyze it. In strong designs, choices made in the model and inquiry are reflected in the data and answer strategies, and vice-versa.
