@@ -250,7 +250,7 @@ run_design(declaration_10.1)
 ```{r}
 #| label: tbl-onesimulationdraw
 #| echo: false
-#| tbl-cap: "One simulation draw
+#| tbl-cap: "One simulation draw"
 simulation_10.1 |> 
   filter(sim_ID == 1) |>
   select(estimand, estimate, std.error, df, p.value, conf.low, conf.high) |>
