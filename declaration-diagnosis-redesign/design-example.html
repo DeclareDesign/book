@@ -690,8 +690,8 @@ div.csl-indent {
 </div>
 <p>We then diagnose the design by simulating the design over and over, then calculating the diagnosands based on simulations data.</p>
 <div id="lem-ch12num1" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 12.1 </strong></span>Diagnosis of Gulzar and Khan (2022)</p>
 <div class="cell">
-<span class="theorem-title"><strong>Diagnosis 12.1 (Diagnosis of Gulzar and Khan (2022)) </strong></span>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_12.1</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_12.1</span>, diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -736,8 +736,8 @@ div.csl-indent {
 <span class="header-section-number">12.4</span> Redesign</h2>
 <p>Two of the most important design decisions in this study are the number of sampled villages and the number of sampled citizens per village. Due to the large fixed costs of traveling to each village, an additional sampled village is more expensive than an additional sampled citizen. In order to best allocate constrained study resources, we need understand the gains from changes to the data strategy along each margin. Here, we redesign the study across possible combinations of numbers of villages and citizens per village.</p>
 <div id="lem-ch12num2" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 12.2 </strong></span>Diagnosis of redesigned Gulzar and Khan (2022)</p>
 <div class="cell">
-<span class="theorem-title"><strong>Diagnosis 12.2 (Diagnosis of redesigned Gulzar and Khan (2022)) </strong></span>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_12.2</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">declaration_12.1</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">redesign</span><span class="op">(</span>n_villages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">192</span>, <span class="fl">500</span><span class="op">)</span>,</span>

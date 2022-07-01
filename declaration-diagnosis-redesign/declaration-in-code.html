@@ -1472,7 +1472,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="header-section-number">13.6</span> Diagnosis</h2>
 <p>Once a design is declared in code, diagnosing it is usually the easy part. <code>diagnose_design</code> handles all the details and bookkeeping for you. In this section, we outline how to conduct a diagnosis using our default tools for standard diagnoses and also how you might operate directly on the simulations for more complicated analyses.</p>
 <div id="lem-ch10num6" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 13.1 (Diagnosis of two-arm randomized experiment) </strong></span>Here we use <code>diagnose_design</code> to diagnose the design. By default, we conduct 500 simulations and characterize simulation error with 100 bootstraps of the diagnosands. <code>reshape_diagnosis</code> prepares the output for nice printing.</p>
+<p><span class="theorem-title"><strong>Diagnosis 13.1 </strong></span>Diagnosis of two-arm randomized experiment</p>
+<p>Here we use <code>diagnose_design</code> to diagnose the design. By default, we conduct 500 simulations and characterize simulation error with 100 bootstraps of the diagnosands. <code>reshape_diagnosis</code> prepares the output for nice printing.</p>
 <div class="cell">
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_13.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_13.2</span>,</span>

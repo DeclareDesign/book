@@ -634,7 +634,8 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch11num1" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 10.1 (Diagnosing over a redesign) </strong></span>To construct a power curve, we redesign our baseline declaration over values of <span class="math inline">\(N\)</span> that vary from 100 to 1000.</p>
+<p><span class="theorem-title"><strong>Diagnosis 10.1 </strong></span>Diagnosing over a redesign</p>
+<p>To construct a power curve, we redesign our baseline declaration over values of <span class="math inline">\(N\)</span> that vary from 100 to 1000.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.1</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">declaration_11.1</span> <span class="op">|&gt;</span></span>
@@ -672,8 +673,8 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch11num2" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 10.2 </strong></span>Redesigning under uncertainty</p>
 <div class="cell">
-<span class="theorem-title"><strong>Diagnosis 10.2 (Redesigning under uncertainty) </strong></span>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.2</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">declaration_11.2</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">500</span>, <span class="fl">1000</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -714,7 +715,8 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch11num3" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 10.3 (Redesigning over two parameters) </strong></span>We redesign, varying those two parameters over reasonable ranges: 100 to 1000 subjects, with probabilities of assignment from 0.1 to 0.5. The redesign function smartly generates designs with all combinations of the two parameters. We want to consider the consequences of these data strategy choices for two diagnosands: cost and a very common loss function: mean squared error.</p>
+<p><span class="theorem-title"><strong>Diagnosis 10.3 </strong></span>Redesigning over two parameters</p>
+<p>We redesign, varying those two parameters over reasonable ranges: 100 to 1000 subjects, with probabilities of assignment from 0.1 to 0.5. The redesign function smartly generates designs with all combinations of the two parameters. We want to consider the consequences of these data strategy choices for two diagnosands: cost and a very common loss function: mean squared error.</p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosands</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_diagnosands</span><span class="op">(</span>cost <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">N</span> <span class="op">*</span> <span class="fl">2</span> <span class="op">+</span> <span class="va">prob</span> <span class="op">*</span> <span class="va">N</span> <span class="op">*</span> <span class="fl">20</span><span class="op">)</span>,</span>
@@ -779,7 +781,8 @@ div.csl-indent {
 </figure>
 </div>
 <div id="lem-ch11num4" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 10.4 (Conditional expectation function diagnosis) </strong></span>Increasing the order of the polynomial decreases bias, but this decrease comes at the cost of variance. <a href="#fig-ch11num4">Figure&nbsp;<span>10.4</span></a> shows how, when the order increases, bias goes down while variance goes up. Mean squared error is one way to trade these two diagnosands off one another. Here, MSE is minimized with a polynomial of order 3. If we were to care much more about bias than variance, perhaps we would choose a polynomial of even higher order.</p>
+<p><span class="theorem-title"><strong>Diagnosis 10.4 </strong></span>Conditional expectation function diagnosis</p>
+<p>Increasing the order of the polynomial decreases bias, but this decrease comes at the cost of variance. <a href="#fig-ch11num4">Figure&nbsp;<span>10.4</span></a> shows how, when the order increases, bias goes down while variance goes up. Mean squared error is one way to trade these two diagnosands off one another. Here, MSE is minimized with a polynomial of order 3. If we were to care much more about bias than variance, perhaps we would choose a polynomial of even higher order.</p>
 <div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">diagnosis_11.4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -838,8 +841,8 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch11num5" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 10.5 </strong></span>Redesigning alternative estimators over sample sizes</p>
 <div class="cell">
-<span class="theorem-title"><strong>Diagnosis 10.5 (Redesigning alternative estimators over sample sizes) </strong></span>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.5</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">declaration_11.5</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span>, by <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>

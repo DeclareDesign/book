@@ -638,8 +638,8 @@ div.csl-indent {
 </div>
 <p>Two main diagnosands for the simple random sampling design are bias and root mean-squared error. We want to know if we get the right answer on average and we want to know, on average, how far off from the truth we are.</p>
 <div id="lem-ch15num1" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 15.1 </strong></span>Simple random sampling diagnosis</p>
 <div class="cell">
-<span class="theorem-title"><strong>Diagnosis 15.1 (Simple random sampling diagnosis) </strong></span>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosands</span> <span class="op">&lt;-</span> <span class="fu">declare_diagnosands</span><span class="op">(</span></span>
 <span>  bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span>,</span>
 <span>  rmse <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span> <span class="op">^</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
@@ -700,8 +700,8 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch15num2" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 15.2 </strong></span>Survey nonresponse diagnosis</p>
 <div class="cell">
-<span class="theorem-title"><strong>Diagnosis 15.2 (Survey nonresponse diagnosis) </strong></span>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_15.2</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">declaration_15.2</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">redesign</span><span class="op">(</span>effort <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5</span>, by <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>

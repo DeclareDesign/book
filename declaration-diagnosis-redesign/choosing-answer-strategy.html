@@ -693,8 +693,8 @@ div.csl-indent {
 </div>
 <p>We now diagnose the design by simulating this design repeatedly, plotting the sampling distribution along with the true population mean age, and calculating the bias.</p>
 <div id="lem-ch9num1" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 9.1 </strong></span>Italian village design diagnosis</p>
 <div class="cell">
-<span class="theorem-title"><strong>Diagnosis 9.1 (Italian village design diagnosis) </strong></span>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.1</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_9.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -758,8 +758,8 @@ div.csl-indent {
 </div>
 <p>Next, we diagnose the modified design, by running the design many times. <a href="#fig-ch9num2">Figure&nbsp;<span>9.2</span></a> shows how frequently we reject the null that the average age is 20. When estimate is close to 20, we rarely reject the null, but when the estimate is far from 20, we are more like to reject. Again, this diagnosis comes from a design with a weak data strategy of sampling only three citizens at time. We need to see estimates breaking 60 before the testing answer strategy reliably rejects this (false) null hypothesis.</p>
 <div id="lem-ch9num2" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 9.2 </strong></span>Italian village diagnosis, continued</p>
 <div class="cell">
-<span class="theorem-title"><strong>Diagnosis 9.2 (Italian village diagnosis, continued) </strong></span>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.2</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_9.2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -795,8 +795,8 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch9num4" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 9.3 </strong></span>We can then simulate this design in the same way and examine the distribution of estimates we might get.</p>
 <div class="cell">
-<span class="theorem-title"><strong>Diagnosis 9.3 (We can then simulate this design in the same way and examine the distribution of estimates we might get.) </strong></span>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_9.4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What we see in <a href="#fig-ch9num3">Figure&nbsp;<span>9.3</span></a> is that using the same (poor) data strategy as before, a Bayesian answer strategy gets us a somewhat tighter distribution on our answer, but exhibits greater bias: the average estimate is higher than the estimand. We might accept higher bias for lower variance if overall, the root-mean-squared error is lower for the Bayesian approach. See Section <span class="citation" data-cites="exploring-design-tradeoffs">(<a href="../references.html#ref-exploring-design-tradeoffs" role="doc-biblioref"><strong>exploring-design-tradeoffs?</strong></a>)</span> for a further discussion of RMSE. The main difference between the Bayesian and classical approaches is the handling of prior beliefs, which carry a lot of weight in the Bayesian estimation but no weight in the classical approach.</p>
@@ -861,8 +861,8 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch9num5" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 9.4 </strong></span>Diagnosing the Italian village design over many values of the true mean age parameter</p>
 <div class="cell">
-<span class="theorem-title"><strong>Diagnosis 9.4 (Diagnosing the Italian village design over many values of the true mean age parameter) </strong></span>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.5</span> <span class="op">&lt;-</span> <span class="fu">diagnose_designs</span><span class="op">(</span><span class="va">declaration_9.5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch9num4" class="quarto-figure quarto-figure-center anchored">
@@ -960,7 +960,8 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch9numbootstrap" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 9.5 (Bootstrap diagnosis) </strong></span>The bootstrapped estimates are gotten by summarizing over multiple runs of the design:</p>
+<p><span class="theorem-title"><strong>Diagnosis 9.5 </strong></span>Bootstrap diagnosis</p>
+<p>The bootstrapped estimates are gotten by summarizing over multiple runs of the design:</p>
 <div class="cell">
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.5</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">declaration_9.5</span> <span class="op">|&gt;</span> </span>
@@ -1053,8 +1054,8 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch9num6" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 9.6 </strong></span>Restoring parallelism diagnosis</p>
 <div class="cell">
-<span class="theorem-title"><strong>Diagnosis 9.6 (Restoring parallelism diagnosis) </strong></span>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.6</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_9.6</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We diagnose the bias of all four design. <a href="#fig-ch9num5">Figure&nbsp;<span>9.5</span></a> shows that when the answer strategy and the data strategy match (<code>D1 + A1</code> and <code>D2 + A2</code>), we have no bias. When they do not match (<code>D1 + A2</code> and <code>D2 + A1</code>), we do. In this case, seeking parallelism in the choice of answer strategy improves the design. Of course, an alternative answer strategy we might call <code>A3</code> that implements the weights corresponding to whatever the data strategy says they should be unbiased under both <code>D1</code> and <code>D2</code>.</p>
@@ -1123,7 +1124,7 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch9num3" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 9.7 (Randomization inference “diagnosis”) </strong></span></p>
+<p><span class="theorem-title"><strong>Diagnosis 9.7 </strong></span>Randomization inference “diagnosis”</p>
 <p>We diagnose the null design with respect to the <code>p.value</code> diagnosand: what fraction of simulations under the null model exceed the observed estimate? We find that the <code>p.value</code> is 0.13, so the estimate is not deemed statistically significant.</p>
 </div>
 <div class="cell">

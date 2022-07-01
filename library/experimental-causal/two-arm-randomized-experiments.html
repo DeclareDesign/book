@@ -635,7 +635,8 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch18num1" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 31.1 (Two arm trial diagnosis) </strong></span>Diagnosing this two arm trial design, we see that as expected, we encountered no bias, but high variance. In the model, we set the ATE at 0.2 standard units, but the true standard deviation of the estimator (the true standard error) is nearly the same value, at 0.19 standard units. We have low statistical power, at 16%. Two approaches to increasing the precision of the estimate include increasing the sample size and including prognostic pre-treatment covariates in the answer strategy. We explore both of these approaches in the next section.</p>
+<p><span class="theorem-title"><strong>Diagnosis 31.1 </strong></span>Two arm trial diagnosis</p>
+<p>Diagnosing this two arm trial design, we see that as expected, we encountered no bias, but high variance. In the model, we set the ATE at 0.2 standard units, but the true standard deviation of the estimator (the true standard error) is nearly the same value, at 0.19 standard units. We have low statistical power, at 16%. Two approaches to increasing the precision of the estimate include increasing the sample size and including prognostic pre-treatment covariates in the answer strategy. We explore both of these approaches in the next section.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.1</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_18.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -696,7 +697,7 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch18num2" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 31.2 (Two arm trial diagnosis) </strong></span></p>
+<p><span class="theorem-title"><strong>Diagnosis 31.2 </strong></span>Two arm trial diagnosis</p>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.2</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">declaration_18.2</span> <span class="op">|&gt;</span> </span>
@@ -737,8 +738,8 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch18num3" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 31.3 </strong></span>Lin estimator diagnosis</p>
 <div class="cell">
-<span class="theorem-title"><strong>Diagnosis 31.3 (Lin estimator diagnosis) </strong></span>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.3</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">diagnosis_18.3</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">redesign</span><span class="op">(</span></span>
