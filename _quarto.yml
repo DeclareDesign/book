@@ -197,6 +197,8 @@ bibliography: references.bib
 knitr:
   opts_chunk: 
     collapse: true
+    warning: false
+    message: false
     comment: "#>" 
     R.options:
       knitr.graphics.auto_pdf: true
