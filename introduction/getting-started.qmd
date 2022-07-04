@@ -90,7 +90,7 @@ head(assignment_3, 5) |>
   kable_styling()
 ```
 
-Every step in a research design can be declared using one of the `declare_*` functions. Table @tbl-declarationfunctions collects these according to the four elements of a research design. In @sec-ch13, we detail how to build each kind of step.
+Every step in a research design can be declared using one of the `declare_*` functions. @tbl-declarationfunctions collects these according to the four elements of a research design. In @sec-ch13, we detail how to build each kind of step.
 
 | Design component | Function                       | Description                                   |
 | ---------------- | ------------------------------ | --------------------------------------------- |

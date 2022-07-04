@@ -28,7 +28,7 @@ A **data** strategy *D* generates data $d$. Data $d$ arises under model *M* with
 
 Finally, the **answer** strategy *A* generates answers using data. When applied to realized data, the answer strategy returns the empirical answer: $A(d^*) = a_{d^*}$. When applied to simulated data, it returns a simulated answer: $A(d) = a_{d}$.
 
-Table @tbl-elementsofresearchdesign provides a concise description of each element of a research design and relates them to some common terms. We flag here that the term estimand has a slightly different meaning in our framework than elsewhere. We say that an estimand $a_m$ is the value of an inquiry $I$, whereas in some traditions "estimand" can refer to the inquiry $I$ or to an intermediate parameter that happens to be targeted by an estimator.
+@tbl-elementsofresearchdesign provides a concise description of each element of a research design and relates them to some common terms. We flag here that the term estimand has a slightly different meaning in our framework than elsewhere. We say that an estimand $a_m$ is the value of an inquiry $I$, whereas in some traditions "estimand" can refer to the inquiry $I$ or to an intermediate parameter that happens to be targeted by an estimator.
 
 | Notation            | Description                                  | Related terms                          | 
 | ------------------- | -------------------------------------------- | -------------------------------------- | 
@@ -57,7 +57,7 @@ Finally, in @fig-ch2num1 no arrows go into *M*, *I*, *D*, or *A*, since they are
 
 ## Declaration in code
 
-Table @tbl-midarealizations illustrates these different quantities through `DeclareDesign`. We stipulate a model, $M$, in which $Y$ depends on $X$. We define a inquiry, $I$: what is the average value of $Y$ when $X=1$? We calculate what the value of our inquiry (the estimand) would be under one of our simulated models, $I(m)$. We also imagine we could describe how the world in fact is, $m^*$, and calculate what the right answer would be in that case, $a_{m^*}$. We then apply the data strategy $D$ to produce realized data $d^*$ and use an answer strategy $A$ and use it to calculate the answer $a_d^*$ we would get given $d^*$. 
+@tbl-midarealizations illustrates these different quantities through `DeclareDesign`. We stipulate a model, $M$, in which $Y$ depends on $X$. We define a inquiry, $I$: what is the average value of $Y$ when $X=1$? We calculate what the value of our inquiry (the estimand) would be under one of our simulated models, $I(m)$. We also imagine we could describe how the world in fact is, $m^*$, and calculate what the right answer would be in that case, $a_{m^*}$. We then apply the data strategy $D$ to produce realized data $d^*$ and use an answer strategy $A$ and use it to calculate the answer $a_d^*$ we would get given $d^*$. 
 
 For each of these steps we show DeclareDesign code in the first column. In the second column, we show the simulated $m$, $m^*$, and $d^*$ datasets, along with the values of $a_m$, $a_{m^*}$, and $a_{d^*}$ for one run of the simulation.
 

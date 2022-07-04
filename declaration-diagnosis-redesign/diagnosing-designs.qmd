@@ -69,7 +69,7 @@ Robust standard errors are "heteroskedasticity-robust," which means that that th
 
 ## Types of diagnosands
 
-As described above, a diagnostic statistic is any summary function of $a_m$ and $a_d$, and a diagnosand is any summary of the distribution of diagnostic statistics. As a result, there are a great many diagnosands researchers may consider. In Table @tbl-diagnosticstatistics, we introduce a nonexhaustive set of diagnostic statistics, and in Table @tbl-diagnosands a nonexhaustive set of diagnosands.
+As described above, a diagnostic statistic is any summary function of $a_m$ and $a_d$, and a diagnosand is any summary of the distribution of diagnostic statistics. As a result, there are a great many diagnosands researchers may consider. In @tbl-diagnosticstatistics, we introduce a nonexhaustive set of diagnostic statistics, and in @tbl-diagnosands a nonexhaustive set of diagnosands.
 
 | Diagnostic statistic                                    | Definition                                                                   |
 |---------------------------------------------------------|------------------------------------------------------------------------------|

@@ -38,7 +38,7 @@ This model definition describes the DAG but also specifies a set of restrictions
 
 We now have all we need to assess what inferences we might make given different sorts of observations on $W$ and $M$. 
 
-Table @tbl-ptprobative shows three types of quantities: beliefs upon observing $X=1, Y=1$, conditional inferences upon observing additional data on $M$ or $W$, and the conditional probability of seeing different outcomes for $M$ or $W$. 
+@tbl-ptprobative shows three types of quantities: beliefs upon observing $X=1, Y=1$, conditional inferences upon observing additional data on $M$ or $W$, and the conditional probability of seeing different outcomes for $M$ or $W$. 
 
 ```{r}
 #| label: tbl-ptprobative
@@ -68,11 +68,11 @@ query_model(
   kable_styling()
 ```
 
-We see here that $M$ provides a hoop test since we are certain that $X$ does not cause $Y$ when $M=0$, but we are uncertain when $M=1$. (Moreover, we already expect to see $M=1$ given what we have seen for $X$ and $Y$). $W$ provides a smoking gun test since we are certain that $X$ causes $Y$ when $M=1$ but uncertain otherwise. Since we have access to both conditional inferences and the probability of seeing different types of data, we have enough data in Table @tbl-ptprobative to calculate how different strategies will perform. 
+We see here that $M$ provides a hoop test since we are certain that $X$ does not cause $Y$ when $M=0$, but we are uncertain when $M=1$. (Moreover, we already expect to see $M=1$ given what we have seen for $X$ and $Y$). $W$ provides a smoking gun test since we are certain that $X$ causes $Y$ when $M=1$ but uncertain otherwise. Since we have access to both conditional inferences and the probability of seeing different types of data, we have enough data in @tbl-ptprobative to calculate how different strategies will perform. 
 
 We think it useful to fold these quantities into a design declaration so that research consumers can access the data strategies and answer strategies in the same way as they would for any other problem.
 
-@def-ch16num1 provides a flexible process tracing design. You can use this design with a different causal model and substituting in different causal queries and process tracing strategies. Given a background causal model, the design first draws a "causal type"---that is a case together with all its causal relations. The value of the estimand (EoC) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query---like those in the Table @tbl-ptprobative---but given different possible observed values for all nodes. No data strategy is provided explicitly as this is tied up here in the estimation, that is, the estimation step describes what data will be used.
+@def-ch16num1 provides a flexible process tracing design. You can use this design with a different causal model and substituting in different causal queries and process tracing strategies. Given a background causal model, the design first draws a "causal type"---that is a case together with all its causal relations. The value of the estimand (EoC) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query---like those in the @tbl-ptprobative---but given different possible observed values for all nodes. No data strategy is provided explicitly as this is tied up here in the estimation, that is, the estimation step describes what data will be used.
 
 ::: {#def-ch16num1 .declaration} 
 

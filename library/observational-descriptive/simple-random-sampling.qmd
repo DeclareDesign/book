@@ -77,7 +77,7 @@ diagnosis_15.1 |>
   kable_styling()
 ```
 
-The diagnosis in table @tbl-diagnosis15s1 indicates that under complete random sampling, the sample mean estimator of the population mean is unbiased and that the root mean squared error is manageable at `r round(diagnosis_15.1$diagnosands_df$rmse,2)`.
+The diagnosis in @tbl-diagnosis15s1 indicates that under complete random sampling, the sample mean estimator of the population mean is unbiased and that the root mean squared error is manageable at `r round(diagnosis_15.1$diagnosands_df$rmse,2)`.
 
 :::
 
