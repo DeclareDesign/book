@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.636">
+<meta name="generator" content="quarto-0.9.640">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - 40&nbsp; Experiments over networks</title>
 <style>
@@ -603,7 +603,7 @@ div.csl-indent {
 </div>
 <p>When experimental subjects are embedded in a network, units’ outcomes may depend on the treatment statuses of nearby units. In other words, treatments map spill over across the network. For example, in a geographic network, vote margin in one precinct may depend on outdoor advertisements in neighboring precincts. In a social network, information delivered to a treated subjects might be shared with friends or followers. In a temporal network, treatments in the past might affect outcomes in the future.</p>
 <p>This chapter describes the special challenges associated with experiments over networks. In the previous chapter, we discussed randomized saturation designs, which are appropriate when we can describe a hierarchy of units embedded in clusters, within which spillovers can occur but across which spillovers cannot occur. In other words, the randomized saturation design is appropriate when the network is composed of many disconnected network components (the clusters). But most networks are not disconnected. Instead, all or almost all units are typically connected in a vast web. This chapter describes how we need to modify the model, inquiry, data strategy, and answer strategy to learn from experiments over networks.</p>
-<p>In the model, our main challenge is to define how far apart (in social, geographic, or temporal space) units have to be in order for unit <span class="math inline">\(i\)</span>’s potential outcomes not to depend on unit <span class="math inline">\(j\)</span>. We might say units within 5km matter but units further away do not. We might say that units within two friendship links matter but more distal connections do not. We might allow the treatment statuses of three, two, or one periods ago to impact present outcomes differently from one another. For example, we might stipulate that each unit has only four potential outcomes that depend on whether a unit is directly treated or indirectly treated by virtue of being adjacent to a directly treated unit as in Table <a href="#tbl-networksconditions">Table&nbsp;<span>40.1</span></a>.</p>
+<p>In the model, our main challenge is to define how far apart (in social, geographic, or temporal space) units have to be in order for unit <span class="math inline">\(i\)</span>’s potential outcomes not to depend on unit <span class="math inline">\(j\)</span>. We might say units within 5km matter but units further away do not. We might say that units within two friendship links matter but more distal connections do not. We might allow the treatment statuses of three, two, or one periods ago to impact present outcomes differently from one another. For example, we might stipulate that each unit has only four potential outcomes that depend on whether a unit is directly treated or indirectly treated by virtue of being adjacent to a directly treated unit as in <a href="#tbl-networksconditions">Table&nbsp;<span>40.1</span></a>.</p>
 <div id="tbl-networksconditions" class="anchored">
 <table class="table">
 <caption>Table 40.1: Example treatment conditions for an experiment over a network.</caption>
