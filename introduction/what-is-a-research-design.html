@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.640">
+<meta name="generator" content="quarto-0.9.644">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - 2&nbsp; What is a research design?</title>
 <style>
@@ -138,9 +138,7 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span>
-</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -617,9 +615,7 @@ div.csl-indent {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span>
-</h1>
+<h1 class="title"><span id="sec-ch2" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></span></h1>
 </div>
 
 
@@ -751,7 +747,7 @@ div.csl-indent {
 <p>Diagnosis is the process of assessing the properties of designs, and represents an opportunity to write down what would make the study a success. For a long time, researchers have classified studies as successful or not based on statistical significance <span class="citation" data-cites="chopra2022null">(<a href="../references.html#ref-chopra2022null" role="doc-biblioref">Chopra et al. 2022</a>)</span>. If significant, the study “worked”; if not, it is a failed “null.” Accordingly, statistical power (the probability of a statistically significant result) has been the most front-of-mind design property when researchers plan studies. As we learn more about the pathologies of relying on statistical significance, we learn that features beyond power are more important. For example, the “credibility revolution” throughout the social sciences has trained a laser-like focus on the biases that may result from omitted or “lurking” variables.</p>
 <p>Design diagnosis relies on two new concepts: diagnostic statistics and diagnosands.</p>
 <p>A “diagnostic statistic” is a summary statistic generated from a single “run” of a design. For example, the statistic <span class="math inline">\(e\)</span> (error) refers to the difference between the estimate and the estimand. The statistic <span class="math inline">\(s\)</span> (significance) refers to whether the estimate was deemed statistically significant at the 0.05 level (for instance).</p>
-<p>A “diagnosand” is a summary of the distribution of a diagnostic statistic across many simulations of the design. The bias diagnosand is defined as the average value of the <span class="math inline">\(e\)</span> statistic and the power diagnosand is defined as the average value of the <span class="math inline">\(s\)</span> statistic. Other diagnosands include quantities like root-mean-squared-error (RMSE), Type I and Type II error rates, how likely is it that subjects were harmed, and average cost. We describe these diagnosands in much more detail in <span class="quarto-unresolved-ref">?sec-ch11</span>.</p>
+<p>A “diagnosand” is a summary of the distribution of a diagnostic statistic across many simulations of the design. The bias diagnosand is defined as the average value of the <span class="math inline">\(e\)</span> statistic and the power diagnosand is defined as the average value of the <span class="math inline">\(s\)</span> statistic. Other diagnosands include quantities like root-mean-squared-error (RMSE), Type I and Type II error rates, how likely is it that subjects were harmed, and average cost. We describe these diagnosands in much more detail in <a href="../declaration-diagnosis-redesign/redesigning.html"><span>Chapter&nbsp;10</span></a>.</p>
 <p>One especially important diagnosand is the “success rate,” which is the average value of the “success” diagnostic statistic. As the researcher, you get to decide what would make your study a success. What matters most in your research scenario? Is it statistical significance? If so, optimize your design with respect to power. Is what matters most whether the answer has the correct sign or not? Then diagnose how frequently your answer strategy yields an answer with the same sign as your inquiry. Diagnosis involves articulating what would make your study a success and then figuring out, through simulation, how often you obtain that success. Success is often a multidimensional aggregation of diagnosands, such as the joint achievement of high statistical power, manageable costs, and low ethical harms.</p>
 <p>We diagnose studies over the range of possibilities in the model, since we want to learn the value of diagnosands under many possible scenarios. A clear example of this is the power diagnosand over many possible conjectures about the true effect size. For each effect size that we entertain in the model, we can calculate statistical power. The minimum detectable effect size is a summary of this power curve, usually defined as the smallest effect size at which the design reaches 80% statistical power. This idea, however, extends well beyond power. Whatever the set of important diagnosands, we want to ensure that our design performs well across all model possibilities.</p>
 <p>Computer simulation is not the only way to do design diagnosis. Designs can be declared in writing or mathematical notation and then diagnosed using analytic formulas. Enormous theoretical progress in the study of research design has been made with this approach. Methodologists across the social sciences have described diagnosands such as bias, power, and root-mean-squared-error for large classes of designs. Not only can this work provide closed-form mathematical expressions for many diagnosands, it can also yield insights about the pitfalls to watch out for when constructing similar designs. That said, pen-and-paper diagnosis is challenging for many social science research designs, first because many designs as actually implemented have idiosyncratic features that are hard to incorporate and second because the analytic formulas for many diagnosands have not yet been worked out by statisticians. For this reason, when we do diagnosis in this book we will usually depend on simulation.</p>

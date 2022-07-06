@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.640">
+<meta name="generator" content="quarto-0.9.644">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - 35&nbsp; Factorial experiments</title>
 <style>
@@ -137,9 +137,7 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Factorial experiments</span>
-</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Factorial experiments</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -585,9 +583,7 @@ div.csl-indent {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">
-<span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Factorial experiments</span>
-</h1>
+<h1 class="title"><span id="sec-" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Factorial experiments</span></span></h1>
 </div>
 
 
@@ -602,7 +598,7 @@ div.csl-indent {
 </header><div class="ddbox">
 <p>We declare and diagnose a simple factorial design in which two different treatments are crossed. The design allows for unbiased estimation of a number of estimands including conditional effects and interaction effects. We highlight the difficulty of achieving statistical power for interaction terms and the risks of treating a difference between a significant conditional effect and a non-significant effect as itself significant.</p>
 </div>
-<p>In factorial experiments, researchers randomly assign the level of not just one treatment, but multiple treatments. The prototypical factorial design is a “two-by-two” factorial design in which factor 1 has two levels and so does factor 2. Similarly, a “three-by-three” factorial design has two factors, each of which has three levels. We can entertain any number of factors with any number of levels. For example, a “two-by-three-by-two” factorial design has three factors, two of which have two levels and one of which has three levels. Conjoint experiments are highly factorial, often including six or more factors with two or more levels each (see Section <span class="citation" data-cites="conjoint-experiments">(<a href="../../references.html#ref-conjoint-experiments" role="doc-biblioref"><strong>conjoint-experiments?</strong></a>)</span>).</p>
+<p>In factorial experiments, researchers randomly assign the level of not just one treatment, but multiple treatments. The prototypical factorial design is a “two-by-two” factorial design in which factor 1 has two levels and so does factor 2. Similarly, a “three-by-three” factorial design has two factors, each of which has three levels. We can entertain any number of factors with any number of levels. For example, a “two-by-three-by-two” factorial design has three factors, two of which have two levels and one of which has three levels. Conjoint experiments are highly factorial, often including six or more factors with two or more levels each (see <a href="../experimental-descriptive/conjoint-experiments.html"><span>Chapter&nbsp;28</span></a>).</p>
 <p>Factorial designs can help researchers answer many inquiries, so it is crucial to design factorials with a particular set in mind. Let’s consider the two-by-two case, which is complicated enough. Let’s call the first factor <code>Z1</code> and the second factor <code>Z2</code>, each of which can take on the values of zero or one. Considering only average effects, this design can support seven separate inquiries:</p>
 <ol type="1">
 <li>the average treatment effect (ATE) of <code>Z1</code>,</li>
@@ -614,7 +610,7 @@ div.csl-indent {
 <li>The difference-in-CATEs: the difference between inquiry (4) and inquiry (3), which is numerically equivalent to the difference between inquiry (6) and inquiry (5)</li>
 </ol>
 <p>The reason we distinguish between the ATE of <code>Z1</code> versus the CATEs of <code>Z1</code> depending on the level of <code>Z2</code> is that the two factors may “interact.” When factors interact, the effects of <code>Z1</code> are heterogeneous in the sense that they differ depending on the level of <code>Z2</code>. We often care about the difference-in-CATEs inquiry when we think the effects of one treatment will depend on the level of another treatment.</p>
-<p>However, if we are not so interested in the difference-in-CATEs, then factorial experiments have another good justification – we can learn about the ATEs of each treatment for half price, in the sense that we apply treatments to the same subject pool using the same measurement strategy. Conjoint experiments are a kind of factorial design (discussed in Section <span class="citation" data-cites="conjoint-experiments">(<a href="../../references.html#ref-conjoint-experiments" role="doc-biblioref"><strong>conjoint-experiments?</strong></a>)</span>) that often target average treatments effects that average over the levels of the other factors.</p>
+<p>However, if we are not so interested in the difference-in-CATEs, then factorial experiments have another good justification – we can learn about the ATEs of each treatment for half price, in the sense that we apply treatments to the same subject pool using the same measurement strategy. Conjoint experiments are a kind of factorial design (discussed in <a href="../experimental-descriptive/conjoint-experiments.html"><span>Chapter&nbsp;28</span></a>) that often target average treatments effects that average over the levels of the other factors.</p>
 <p>Here we declare a factorial design with two treatments and a normally distributed outcome variable. We imagine that the CATE of <code>Z1</code> given <code>Z2 = 0</code> is 0.2 standard units, the CATE of <code>Z2</code> given <code>Z1 = 0</code> is equal to 0.1, and the interaction of the two treatments is 0.1.</p>
 <div id="def-ch18num7" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 35.1 </strong></span>Two-by-two factorial design</p>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.640">
+<meta name="generator" content="quarto-0.9.644">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design - 45&nbsp; Multi-site studies</title>
 <style>
@@ -609,7 +609,7 @@ div.csl-indent {
 <p><a href="#def-ch19num4">Declaration&nbsp;<span>45.1</span></a> describes a multi-site study with five sites. A conceptual challenge with multi-site studies is that in practice a single design has to take account of various differences across sites, such as differences in sample sizes, assignment probabilities, or expectations. The design below shows how these multisite features can be introduced in a simple way as part of a single “meta-design.” The design allows for variation across sites, implements analysis separately using data from different sites, and then combines findings for an overall conclusion. Note that the inquiries here are defined by creating site level inquiries and the averaging over these. Implicitly each <em>site</em> is weighted equally in the inquiry. Written like this you can see a clear similarity between <em>I</em> and <em>A</em>. One could alternatively use different weighting schemes if you wanted each unit in the sample to to have equal weight or if you wanted each each unit in the population to have equal weight—and of course, adjust <em>A</em> accordingly.</p>
 <p>We imagine two possible treatments that might be implemented in each site. One, with treatment effect <code>tau_1</code> (possibly different in each site), is the treatment that researchers are meant to coordinate on. The second, with treatment effect <code>tau_2</code> is the treatment that researchers could implement if they were not coordinating. We imagine that if there is not strong coordination then researchers they select which version of the treatment to implement (here, we imagine they implement the treatment they think will yield larger effects).</p>
 <p>We specify two inquiries. The first is for the coordinated treatment, with a focus on the average effect across studies. The second is less easy to describe: it is the average effect, again across cases, of whatever treatment was implemented in those cases. Though unusual, this inquiry is still well defined.</p>
-<p>Estimation proceeds in two steps: first we calculate site-level effects, just as we do for a meta-analysis, then we meta-analyze those site-level effects. We use here a random effects model, reflecting our expectation that true site effects differ <span class="citation" data-cites="meta-analysis">(see Section <a href="../../references.html#ref-meta-analysis" role="doc-biblioref"><strong>meta-analysis?</strong></a> for a discussion of alternative answer strategies for meta analysis)</span>.</p>
+<p>Estimation proceeds in two steps: first we calculate site-level effects, just as we do for a meta-analysis, then we meta-analyze those site-level effects. We use here a random effects model, reflecting our expectation that true site effects differ <a href="meta-analysis.html">see&nbsp;<span>44</span></a>.</p>
 <div id="def-ch19num4" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 45.1 </strong></span>Multi-site studies with and without coordination</p>
 <div class="cell" data-file="scripts_declarations/declaration_19.4.R">
