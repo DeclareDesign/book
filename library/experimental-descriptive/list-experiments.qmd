@@ -35,7 +35,7 @@ For the difference-in-means to be an unbiased estimator for that inquiry, we inv
 
 Under these two extra assumptions, the list experimental estimate of the prevalence of opposition to granting Muslim immigrants citizenship is 21.9%.
 
-@fig-daglist represents the list experimental design. The no liars assumption is represented by the lack of an edge from sensitivity bias $S$ to the list experiment outcome $Y^L$. The no design effects assumption is not represented on the DAG. 
+@fig-ch17num1 represents the list experimental design. The no liars assumption is represented by the lack of an edge from sensitivity bias $S$ to the list experiment outcome $Y^L$. The no design effects assumption is not represented on the DAG. 
 
 ![Directed acyclic graph for the list experiment.](/figures/figure-17-1){#fig-ch17num1}
 

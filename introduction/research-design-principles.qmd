@@ -1,4 +1,4 @@
-# Research design principles
+# Research design principles {#sec-ch3}
 
 ```{r}
 #| echo: false

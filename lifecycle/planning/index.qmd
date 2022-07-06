@@ -1,4 +1,4 @@
-# Planning
+# Planning {#sec-ch21}
 
 ```{r}
 #| echo: false

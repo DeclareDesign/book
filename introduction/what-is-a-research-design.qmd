@@ -1,4 +1,4 @@
-# What is a research design?
+# What is a research design? {#sec-ch2}
 
 ```{r}
 #| echo: false

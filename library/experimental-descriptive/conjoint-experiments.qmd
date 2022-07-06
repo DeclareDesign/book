@@ -1,4 +1,4 @@
-# Conjoint experiments  
+# Conjoint experiments {#sec-ch17s3}
 
 ```{r}
 #| echo: false

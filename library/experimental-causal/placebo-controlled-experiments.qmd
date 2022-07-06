@@ -1,4 +1,4 @@
-# Placebo-controlled experiments  
+# Placebo-controlled experiments {#sec-ch18s7}
 
 ```{r}
 #| echo: false

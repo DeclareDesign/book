@@ -1,4 +1,4 @@
-## Instrumental variables {#sec-ch15s4}
+## Instrumental variables {#sec-ch16s4}
 
 ```{r}
 #| echo: false
@@ -11,7 +11,7 @@ source("scripts/before_chapter_script.R")
 We declare a design in which a researcher addresses confounding concerns by using an instrumental variable. Under the right conditions, the approach can generate unbiased estimates for treatment effects for units whose treatment status is sensitive to the instrument. 
 :::
 
-When we cannot credibly assert that we have controlled for all confounding variables as in a selection-on-observables design (see Section @selection-on-observables) and when we do not think the parallel trends assumption is likely to hold in a difference-in-differences design (see Section @difference-in-differences), we might have to give up on our goal of drawing causal inferences. 
+When we cannot credibly assert that we have controlled for all confounding variables as in a selection-on-observables design (see Section @sec-ch16s2) and when we do not think the parallel trends assumption is likely to hold in a difference-in-differences design (see @sec-ch16s3), we might have to give up on our goal of drawing causal inferences. 
 
 But occasionally, the world yields an opportunity to sidestep unobserved confounding by generating as-if random variation in a variable that itself affects the treatment variable but does not directly affect the outcome. We call the variable that is as-if randomly assigned by the world an "instrument." 
 

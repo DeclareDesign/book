@@ -1,4 +1,4 @@
-# Regression discontinuity designs 
+# Regression discontinuity designs {#sec-ch16s5}
 
 ```{r}
 #| echo: false

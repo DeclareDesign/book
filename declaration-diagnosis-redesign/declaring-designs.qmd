@@ -1,4 +1,4 @@
-# Declaring designs  {#ch5}
+# Declaring designs  {#sec-ch5}
 
 ```{r}
 #| echo: false

@@ -1,4 +1,4 @@
-# Cluster-randomized experiments 
+# Cluster-randomized experiments {#sec-ch18s3}
 
 ```{r}
 #| echo: false

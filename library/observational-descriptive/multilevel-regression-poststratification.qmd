@@ -1,4 +1,4 @@
-# Multi-level regression and poststratification 
+# Multi-level regression and poststratification {#sec-ch15s3}
 
 ```{r}
 #| echo: false

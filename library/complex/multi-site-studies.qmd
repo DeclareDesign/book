@@ -27,7 +27,7 @@ We imagine two possible treatments that might be implemented in each site. One, 
 
 We specify two inquiries. The first is for the coordinated treatment, with a focus on the average effect across studies. The second is less easy to describe: it is the average effect, again across cases, of whatever treatment was implemented in those cases.  Though unusual, this inquiry is still well defined.  
 
-Estimation proceeds in two steps: first we calculate site-level effects, just as we do for a meta-analysis, then we meta-analyze those site-level effects. We use here a random effects model, reflecting our expectation that true site effects differ [see Section @meta-analysis for a discussion of alternative answer strategies for meta analysis]. 
+Estimation proceeds in two steps: first we calculate site-level effects, just as we do for a meta-analysis, then we meta-analyze those site-level effects. We use here a random effects model, reflecting our expectation that true site effects differ [see @sec-ch19s3 for a discussion of alternative answer strategies for meta analysis]. 
 
 ::: {#def-ch19num4 .declaration} 
 

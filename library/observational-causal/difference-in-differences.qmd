@@ -1,4 +1,4 @@
-# Difference-in-differences  {#sec-ch15s3}
+# Difference-in-differences {#sec-ch16s3}
 
 
 ```{r}

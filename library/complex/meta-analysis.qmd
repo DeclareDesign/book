@@ -1,4 +1,4 @@
-# Meta-analysis 
+# Meta-analysis {#sec-ch19s3}
 
 ```{r}
 #| echo: false

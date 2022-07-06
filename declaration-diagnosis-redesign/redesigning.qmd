@@ -1,4 +1,4 @@
-# Redesigning
+# Redesigning {#sec-ch11}
 
 ```{r}
 #| echo: false
@@ -90,7 +90,7 @@ diagnosis_11.2 <-
 
 @fig-ch11num2 summarizes the simulations by smoothing over effect sizes: the loess curves describes the fraction of simulations that are significant at each effect size.^[DeclareDesign tip: this procedure is more computationally efficient than an alternative, which would be to conduct simulations of each design at specific effect sizes across the plausible range.] The MDEs for each sample size can be read off the plot by examining the intersection of each curve with the dotted line at 80\% statistical power. At `N = 1000`, the MDE is approximately 0.175 SDs. At `N = 500`, the MDE is larger, at approximately 0.225 SDs. If the design only includes 100 units, the MDE is some value higher than 0.5 SDs. We could of course expand the range of effect sizes considered in the diagnosis, but if effect sizes above 0.5 SDs are theoretically unlikely, we don't even need to -- we'll need a design larger that 100 units in any case. 
 
-This diagnosis and redesign shows how our decisions about the data strategy depend on beliefs in the model. If we think the true effect size is likely to be 0.225 SDs, then a design with 500 subjects is a reasonable choice, but if it is smaller than that, we'll want a larger study. Small differences in effect size have large consequences for design. Researchers who arrive at a plot like @fig-ch11num2 through redesign should be inspired to sharpen up their prior beliefs about the true effect size, either through literature review, meta-analysis of past studies, or through piloting (see Section @piloting).
+This diagnosis and redesign shows how our decisions about the data strategy depend on beliefs in the model. If we think the true effect size is likely to be 0.225 SDs, then a design with 500 subjects is a reasonable choice, but if it is smaller than that, we'll want a larger study. Small differences in effect size have large consequences for design. Researchers who arrive at a plot like @fig-ch11num2 through redesign should be inspired to sharpen up their prior beliefs about the true effect size, either through literature review, meta-analysis of past studies, or through piloting (see Section @sec-ch21s4).
 
 ![Redesigning an experiment over model uncertainty about the true effect size](/figures/figure-11-2){#fig-ch11num2}
 
@@ -148,7 +148,7 @@ diagnosis_11.3 <-
 diagnosis_11.3 <- get_rdddr_file_local("diagnosis_11.3")
 ```
 
-The diagnosis is represented in @fig-ch11num3. The top panel shows the cost of empirical designs, at three probabilities of assignment over many sample sizes. The bottom panel shows the RMSE of each design. According to this diagnosis, the best combination that can be achieved for less than \$5,000 is `N = 600` with `prob = 0.3`. This conclusion is in mild tension with common the design advice that under many circumstances, balanced designs are preferable (see Section @analytic-design-diagnosis in the design library for an in-depth discussion of this point). Here, untreated subjects are so much less expensive than treated subjects, we want to tilt the design towards having a larger control group. How far to tilt depends on model beliefs as well as the cost structure of the study.
+The diagnosis is represented in @fig-ch11num3. The top panel shows the cost of empirical designs, at three probabilities of assignment over many sample sizes. The bottom panel shows the RMSE of each design. According to this diagnosis, the best combination that can be achieved for less than \$5,000 is `N = 600` with `prob = 0.3`. This conclusion is in mild tension with common the design advice that under many circumstances, balanced designs are preferable (see Section @sec-ch10s3ss1 in the design library for an in-depth discussion of this point). Here, untreated subjects are so much less expensive than treated subjects, we want to tilt the design towards having a larger control group. How far to tilt depends on model beliefs as well as the cost structure of the study.
 
 ![Redesigning an experiment with respect to RMSE and subject to a budget constraint](/figures/figure-11-3){#fig-ch11num3}
 
@@ -200,7 +200,7 @@ diagnosis_11.4 <- get_rdddr_file_local("diagnosis_11.4")
 
 :::
 
-### Redesigning over estimators: Logit, Probit, or OLS?
+### Redesigning over estimators: Logit, Probit, or OLS? {#sec-ch10s3ss1}
 
 A perennial debate among social scientists is whether to use a binary choice model like logit or probit when the outcome is binary, or if the workhorse OLS estimator is preferable. Unsurprisingly, who is right in this debate depends on other features of the research design. For example, in an observational descriptive study in which the inquiry is a prediction for the probability of success among a particular group of units, explicitly accounting for the binary nature the outcome variable is important; OLS can generate predictions that lie outside the theoretically permissible zero to one range. However, in an experimental causal study in which the inquiry is the average treatment effect, it is not possible for a comparison of treatment and control group means (as estimated by OLS) to generate a nonsense treatment effect estimate in the sense of being outside the theoretically permissible -100 to +100 percentage point range. By contrast, binary choice models like logit or probit can theoretically impossible average treatment effect estimates, once average marginal effect estimates are calculated. This problem is demonstrated in the following declaration, diagnosis, and redesign:
 

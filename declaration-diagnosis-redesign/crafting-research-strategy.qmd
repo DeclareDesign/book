@@ -1,4 +1,4 @@
-# Crafting a data strategy
+# Crafting a data strategy {#sec-ch8}
 
 ```{r}
 #| echo: false
@@ -85,7 +85,7 @@ Owing to the natural appeal of design-based inference, we start off with randomi
 |                             | ```                                                                                                                            | 
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
-: {#tbl-samplingtypes} Kinds of random sampling
+: Kinds of random sampling {#tbl-samplingtypes} 
 
 Complete random sampling addresses this problem. Under complete random sampling, exactly $n$ of $N$ units are sampled. Each unit still has an inclusion probability of $p = n/N$, but in contrast to simple random sampling, we are guaranteed that the final sample will be of size $n$.^[To convince yourself of the difference between simple and complete random sampling, run `table(simple_rs(N = 100, prob = 0.5))` a few times and compare the results with `table(complete_rs(N = 100, n = 50))`] Complete random sampling represents an improvement over simple random sampling because it rules out samples in which more or fewer than $N*p$ units are sampled. One circumstance in which we might nevertheless go with simple random sampling is when the size of the population is not known in advance, sampling choices may have to be made "on the fly."
 
@@ -164,7 +164,7 @@ Finally, @levy2008case clarifies the logic behind "most likely" and "least likel
 
 The choice of sampling strategy depends on features of the model and the inquiry, and different sampling strategies can be compared in terms of power and RMSE in design diagnosis. The model defines the population of units we want to make inferences about, and the sampling frame of the sampling strategy should match that as much as possible. The model also points us to important subgroups that we may wish to stratify on, depending on the variability within those subgroups. Whether we select convenience, random, or purposive sampling depends on our budget and logistical constraints as well as the efficiency (power or RMSE) of the design. If there is little bias from convenience sampling, we will often want to select it for cost reasons. If we cannot obtain a convenience sample that has the right composition, we may choose a purposive method that ensures we do. The choice between simple and stratified sampling comes down to the inquiry and to a diagnosis of the RMSE. When the inquiry involves a comparison of subgroups, we will often select stratified sampling. In either, a diagnosis of alternative designs in terms of power or RMSE will guide selection.
 
-### Treatment assignment 
+### Treatment assignment {#sec-ch8s1ss2}
 
 In many studies, researchers intervene in the world to **set** the level of the causal variable of interest. The procedures used to assign units to treatment are tightly analogous to the procedures explored in the previous section on sampling. Like sampling, assignment procedures fall into two classes, randomized and non-randomized. 
 
@@ -216,7 +216,7 @@ The analogy between sampling and assignment runs so deep because, in a sense, as
 |                                                 | ```                                                                                                                                                    |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-: {#tbl-assignmenttypes} Kinds of random assignment
+: Kinds of random assignment {#tbl-assignmenttypes} 
 
 @fig-ch8num4 visualizes nine kinds of random assignment, arranged according to whether the assignment procedure is simple, complete, or blocked and according to whether the assignment procedure is carried out at the individual, cluster, or saturation level. In the top left facet, we have simple (or Bernoulli) random assignment, in which all units have a 50% probability of treatment, but the total number of treated units can bounce around from assignment to assignment. In the top center, this problem is fixed: under complete random assignment, exactly $m$ of $N$ units are assigned to treatment and the $N - m$ are assigned to control. While complete random assignment fixes the number of units treated at exactly $m$, the number of units that are treated within any particular group of units (defined by a pre-treatment covariate) could vary. Under block random assignment, we conduct complete random assignment within each block separately, so we directly control the number treated within each block. Moving from simple to complete random assignment tends to decrease sampling variability a bit, by ruling out highly unbalanced allocations. Moving from complete to blocked can help more, so long as the blocking variable is correlated with the outcome. Blocking rules out assignments in which too many or too few units in a particular subgroup are treated. 
 
@@ -256,7 +256,7 @@ Thus far we have considered assignment strategies that allocate subjects to just
 
 : {#tbl-multiarmassignmenttypes} Examples of multi-arm random assignment
 
-@fig-multiarmquilt shows blocked versions of a three-arm trial, a factorial trial, and a four-arm trial.
+@fig-ch8num5 shows blocked versions of a three-arm trial, a factorial trial, and a four-arm trial.
 
 In the three-arm trial on the left, subjects can be assigned to a control condition or one of two treatments. This design enables three comparisons: a comparison of each treatment to the control condition, but also a comparison of the two treatment conditions to each other. In the four-arm trial on the right, subjects can be assigned to a control condition or one of three treatments. This design supports six comparisons: each of the treatments to control, and all three of the pairwise comparisons across treatments.
 
@@ -347,7 +347,7 @@ Below, we adapt @fig-ch8num1 presented in the chapter's introduction to introduc
 
 Noncompliance occurs when the assignment variable $Z$ imperfectly manipulates the treatment variable $D$. When noncompliance is not a problem, $D_i = Z_i$, but in design that encounter noncompliance $D_i \neq Z_i$. One-sided noncompliance occurs when some treated units fail to be treated (and receive the control condition instead). Two-sided noncompliance occurs when some units assigned to treatment do not take treatment and some units assigned to control do take treatment. Noncompliance hampers experimental studies but also affects observational designs for causal inference in which nature or a non-random administrative process affects treatment such as a threshold cut-off, but only imperfectly.
 
-In the presence of noncompliance, a change in inquiry is sometimes unavoidable. The average difference between those assigned to treatment and those assigned to control no longer targets the average treatment effect, but instead only the effect of *assignment* to treatment. We instead call this inquiry the intent-to-treat effect, and we can estimate it well by comparing the groups as assigned. An alternative inquiry is the complier average treatment effect, which is "local" to the subset of units that comply with treatment (take it when offered). See Section @encouragement-designs for a discussion of noncompliance in randomized experiments and Section @instrumental-variables for related discussion of "noncompliance" in observational studies. 
+In the presence of noncompliance, a change in inquiry is sometimes unavoidable. The average difference between those assigned to treatment and those assigned to control no longer targets the average treatment effect, but instead only the effect of *assignment* to treatment. We instead call this inquiry the intent-to-treat effect, and we can estimate it well by comparing the groups as assigned. An alternative inquiry is the complier average treatment effect, which is "local" to the subset of units that comply with treatment (take it when offered). See Section @encouragement-designs for a discussion of noncompliance in randomized experiments and Section @sec-ch16s4 for related discussion of "noncompliance" in observational studies. 
 
 ### Attrition
 

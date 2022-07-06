@@ -1,4 +1,4 @@
-# Preface
+# Preface {#sec-ch1}
 
 This book introduces a new way of thinking about research designs in the social sciences. Our hope is that this approach will make it easier to develop and to share strong research designs.
 

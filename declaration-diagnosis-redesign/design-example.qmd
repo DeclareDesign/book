@@ -1,4 +1,4 @@
-# Design example
+# Design example {#sec-ch12}
 
 ```{r}
 #| echo: false
@@ -27,7 +27,7 @@ The answer strategy is an ordinary least squares regression of outcome variable 
 
 Gulzar and Khan (2021) design
 
-With `declare_model`, we describe a hierarchical structure with 660 villages, each of which is home to many citizens who are eligible to run for elected office. Each citizen harbors three potential outcomes. `Y_Z_neutral` is the citizen's latent probability of standing for election if treated with a neutral appeal, `Y_Z_personal` is the probability if treated with an appeal that emphasizes the personal returns to office, and `Y_Z_social` is the probability if treated with an appeal that underlines the benefits to the community. Our simplified model assumes a constant treatment effect of about 3 percentage points for the personal appeal and 4 percentage points for the social appeal.^[Readers may wonder where 3 and 4 percentage points are declared in the code. We use the `pnorm` function to define a latent variable representing the potential to run for office. The measured our binary outcome `Y_observed` springs from this latent outcome `Y_latent`. The effect sizes of 0.10 and 0.15 in the latent outcome translate in this setting to 3 and 4 percentage point effects on a binary scale. See Section @unit-characteristics for further discussion.]
+With `declare_model`, we describe a hierarchical structure with 660 villages, each of which is home to many citizens who are eligible to run for elected office. Each citizen harbors three potential outcomes. `Y_Z_neutral` is the citizen's latent probability of standing for election if treated with a neutral appeal, `Y_Z_personal` is the probability if treated with an appeal that emphasizes the personal returns to office, and `Y_Z_social` is the probability if treated with an appeal that underlines the benefits to the community. Our simplified model assumes a constant treatment effect of about 3 percentage points for the personal appeal and 4 percentage points for the social appeal.^[Readers may wonder where 3 and 4 percentage points are declared in the code. We use the `pnorm` function to define a latent variable representing the potential to run for office. The measured our binary outcome `Y_observed` springs from this latent outcome `Y_latent`. The effect sizes of 0.10 and 0.15 in the latent outcome translate in this setting to 3 and 4 percentage point effects on a binary scale. See Section @sec-ch13s1ss2 for further discussion.]
 
 ```{r, file = "scripts_declarations/declaration_12.1a.R"}
 ```

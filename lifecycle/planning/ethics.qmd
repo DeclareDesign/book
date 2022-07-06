@@ -31,7 +31,7 @@ Ethical diagnosands can be directly incorporated into the declare-diagnose-redes
 
 When the design is diagnosed, we can characterize the ethical status of possible realizations of the design as well as the ethical status of the *distribution* of these realizations. Is the probability of harm minimal "enough"? Is the degree of informed consent sufficient? Given that these characteristics vary across designs and across realizations of the same design, writing down concretely both the measure of the ethical status and the ethical threshold can help structure thinking. These diagnoses and the considerations that inspire them can be shared in funding proposals, preanalysis plans, or other report. Articulating them in a design may help clarify whether proper account was taken of risks ex ante, or, more usefully, remind researchers to be sure to take account of them.
 
-## Illustration: Estimating expected costs and expected learning
+## Illustration: Estimating expected costs and expected learning {#sec-ch21s1ss1}
 
 We illustrate how researchers can weigh the tradeoffs between the value of research and its ethical costs with a hypothetical audit study of discrimination in government hiring. We imagine that three characteristics of applicants to a municipal government job are randomized and whether the applicant receives a callback is recorded. The three candidate characteristics are race (Black or White), area or residence (urban or suburban), or high school attended (East or West).
 

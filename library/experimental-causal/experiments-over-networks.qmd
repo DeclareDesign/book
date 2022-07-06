@@ -34,7 +34,7 @@ We need to adjust our answer strategy to compensate for the differential probabi
 
 To illustrate these ideas, we declare a hypothetical experimental design to estimate the effects of lawn signs [modeled after @green2016lawnsigns]. The units are the lowest level at which we can observe vote margin, the voting precinct. In our model, we define four potential outcomes. Precincts can be both directly and indirectly treated, only directly treated, only indirectly treated, or neither. Indirect treatment occurs when a neighboring precinct is treated. This model could support many possible inquiries, but here we will focus on three: the direct effect of treatment when the precinct is not indirectly treated, the effect of indirect treatment when the precinct is not directly treated, and the total effect of direct and indirect treatment versus pure control. The data strategy will involve randomly assigning some units to direct treatment, which will in turn cause other units to be indirectly treated. We will need to learn via simulation the probabilities of assignments to conditions that this procedure produces. We'll make use of two answer strategies: the Horvitz-Thompson and Hajek estimators proposed by @aronow2017estimating, along with their associated variance estimators, as implemented in the `interference` package.
 
-First, we load the Fairfax County, Virginia, voting precincts shapefile, removing one singleton voting precinct, and we plot the precincts in @fig-ch18num15.
+First, we load the Fairfax County, Virginia, voting precincts shapefile, removing one singleton voting precinct, and we plot the precincts in @fig-ch18num5.
 
 ![Voting Precincts in Fairfax County, Virginia](/figures/figure-18-5){#fig-ch18num5}
 
