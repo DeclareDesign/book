@@ -238,7 +238,7 @@ Bayesian approaches are also used by qualitative researchers drawing case level 
 In the Bayes approach parameter estimates and uncertainty estimates are generated simultaneously. One could imagine introducing uncertainty arising also from uncertainty about the prior or uncertainty about the model but in practice this is rarely done and in principle can be done by respecifying the prior and the model.
 
 
-### Interval estimation
+### Interval estimation {#sec-ch9s2ss4}
 
 #### Answer
 

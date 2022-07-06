@@ -1,4 +1,4 @@
-# Factorial experiments {#sec-}
+# Factorial experiments {#sec-ch18s5}
 
 ```{r}
 #| echo: false

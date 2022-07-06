@@ -81,7 +81,7 @@ The diagnosis in @tbl-diagnosis15s1 indicates that under complete random samplin
 
 :::
 
-## What can go wrong
+## What can go wrong {#sec-ch15s1ss1}
 
 The most serious threat to descriptive inference in a randomized sampling design is nonresponse. Missingness due to nonresponse can lead to bias if missingness is correlated with outcomes. Sometimes this bias is referred to as "selection bias" in the sense that some units select out of responding when sampled.
 
