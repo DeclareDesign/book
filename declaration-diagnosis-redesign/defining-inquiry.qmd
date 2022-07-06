@@ -80,7 +80,7 @@ With the units, treatments, and outcomes specified, the last element of the inqu
 
 However, not all inquiries are of this form. For example, the line of best fit is defined as the covariance of X and Y divided by the variance of X. This inquiry is a complex summary of all the units in the model. 
 
-The inquiry that the regression discontinuity design shoots at is also non-decomposable. In the RDD model (see Section @sec-ch16s5), we imagine units with $Y_i(1)$, $Y_i(0)$. Each $i$ also has a value on a "running variable", $X_i$, and units receive treatment if and only if $X_i>0$. In this case the "effect at the point of discontinuity" might be written:
+The inquiry that the regression discontinuity design shoots at is also non-decomposable. In the RDD model (see @sec-ch16s5), we imagine units with $Y_i(1)$, $Y_i(0)$. Each $i$ also has a value on a "running variable", $X_i$, and units receive treatment if and only if $X_i>0$. In this case the "effect at the point of discontinuity" might be written:
 
 $$E_{i|X_i = 0}(Y_i(Z_i=1) - Y_i(Z_i=0))$$
 

@@ -103,7 +103,7 @@ declaration_17.6 |>
 
 We have a row for each game, we have the (unobserved) $a_i, a_j$ parameters as well as actions by both players in the data. 
 
-Diagnosis @lem-ch17num5 illustrates the properties of the trust game design.
+@lem-ch17num5 illustrates the properties of the trust game design.
 
 ::: {#lem-ch17num5} 
 
