@@ -317,7 +317,7 @@ diagnosis_10.3 |>
 
 :::
 
-### Simulation error {#sec-ch11s3ss3}
+### Simulation error {#sec-ch10s3ss3}
 
 We use Monte Carlo simulation to estimate diagnosands. We only get estimates---not the exact value---of diagnosands under a particular model because of simulation error. Simulation error declines as we conduct more simulations. When we conduct many thousands of simulations, we're relatively certain of the value of the diagnosand under the model. If we conduct just tens of simulations, we are much more uncertain. 
 
@@ -448,12 +448,4 @@ The diagnosis shows that the study is responsive to the truth. When theory 1 is 
 ## Summary
 
 Diagnosis is the process of estimating the properties of research designs under uncertain beliefs about the world. We simulate under many alternative designs because we want to choose designs that are strong under a large range of model possibilities. Each run of a simulate generates a diagnostic statistic. We learn about the distribution of the diagnostic statistic by running the simulation repeatedly. Diagnosands are summaries of the distribution of diagnostic statistics. Which diagnosands are most important will vary from study to study, and depend on the relative weight you place on one diagnosand versus another. Analytic design diagnosis is possible and can be quite powerful---we nevertheless recommend full simulation of research designs in order to learn about a range of diagnosands.
-
-<!-- ## Further reading {-} -->
-
-<!-- - @Gelman2014b on Type M and Type S errors -->
-<!-- - @herron2016careful on case selection and sampling bias -->
-<!-- - @Baumgartner2019 and @rohlfing2018power on diagnosands in qualitative research -->
-<!-- - @Rubin1984 on diagnosands in Bayesian research -->
-<!-- - @gelman2020regression Chapter 5 describes fake data simulation, Chapter 7 describes how to use fake data simulation to check model fitting procedures, and Chapter 16 describes simulations of whole designs in much the same way as we describe design diagnosis. -->
 

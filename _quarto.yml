@@ -26,8 +26,8 @@ book:
         - declaration-diagnosis-redesign/defining-inquiry.qmd
         - declaration-diagnosis-redesign/crafting-research-strategy.qmd
         - declaration-diagnosis-redesign/choosing-answer-strategy.qmd
-        - declaration-diagnosis-redesign/redesigning.qmd
         - declaration-diagnosis-redesign/diagnosing-designs.qmd
+        - declaration-diagnosis-redesign/redesigning.qmd
         - declaration-diagnosis-redesign/design-example.qmd
         - declaration-diagnosis-redesign/declaration-in-code.qmd
     - part: library/index.qmd

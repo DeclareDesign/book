@@ -393,7 +393,7 @@ We could do the same thing for other functions, such as quantiles of the distrib
 
 ### Illustration of estimates of uncertainty using the plug-in principle 
 
-The plug-in principle can be used also for generating estimates of uncertainty. For instance if we are interested in understanding the variance of the sampling distribution of estimates that we get from our procedure, we can use the bootstrap. With the bootstrap, we "plug-in" the sample for the population data, then repeatedly *re*sample from our existing data. We can then approximate the true sampling distribution by calculating estimates on each resampled dataset, from which we can estimate the variance. (We use this nonparametric bootstrapping approach when generating estimates of uncertainty of diagnosands, see @sec-ch11s3ss3).
+The plug-in principle can be used also for generating estimates of uncertainty. For instance if we are interested in understanding the variance of the sampling distribution of estimates that we get from our procedure, we can use the bootstrap. With the bootstrap, we "plug-in" the sample for the population data, then repeatedly *re*sample from our existing data. We can then approximate the true sampling distribution by calculating estimates on each resampled dataset, from which we can estimate the variance. (We use this nonparametric bootstrapping approach when generating estimates of uncertainty of diagnosands, see @sec-ch10s3ss3).
 
 As an illustration of the logic of the approach using `DeclareDesign`, we compare usual the standard error estimate that accompanies a difference-in-means estimate with a bootstrapped standard error.
 
