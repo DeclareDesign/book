@@ -580,7 +580,7 @@ div.csl-indent {
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#what-can-go-wrong" id="toc-what-can-go-wrong" class="nav-link active" data-scroll-target="#what-can-go-wrong"> <span class="header-section-number">15.1</span> What can go wrong</a></li>
+<li><a href="#sec-ch15s1ss1" id="toc-sec-ch15s1ss1" class="nav-link active" data-scroll-target="#sec-ch15s1ss1"> <span class="header-section-number">15.1</span> What can go wrong</a></li>
   <li><a href="#design-examples" id="toc-design-examples" class="nav-link" data-scroll-target="#design-examples"> <span class="header-section-number">15.2</span> Design Examples</a></li>
   </ul></nav>
     </div>
@@ -675,7 +675,7 @@ div.csl-indent {
 </div>
 <p>The diagnosis in <a href="#tbl-diagnosis15s1">Table&nbsp;<span>15.1</span></a> indicates that under complete random sampling, the sample mean estimator of the population mean is unbiased and that the root mean squared error is manageable at 0.11.</p>
 </div>
-<section id="what-can-go-wrong" class="level2" data-number="15.1"><h2 data-number="15.1" class="anchored" data-anchor-id="what-can-go-wrong">
+<section id="sec-ch15s1ss1" class="level2" data-number="15.1"><h2 data-number="15.1" class="anchored" data-anchor-id="sec-ch15s1ss1">
 <span class="header-section-number">15.1</span> What can go wrong</h2>
 <p>The most serious threat to descriptive inference in a randomized sampling design is nonresponse. Missingness due to nonresponse can lead to bias if missingness is correlated with outcomes. Sometimes this bias is referred to as “selection bias” in the sense that some units select out of responding when sampled.</p>
 <p>Depending on what information is available about the missing units, various answer strategy fix-ups are available to analysts. For example, if we have demographic or other covariate information about the missing units, we can search for similar-seeming units in the observed data, then impute their missing outcomes. This approach depends on the strong assumption that units with the same covariate profile have the same average outcome, regardless of whether they go missing. The imputation process is often done on the basis of a regression model; multiple imputation methods attempt to incorporate the additional uncertainty that accompanies the modeling technique. Answer strategies that employ inverse probability weights adjust for non response by upweighting types of units we have too few of (relative to a population target) and downweighting units we have too many of.</p>

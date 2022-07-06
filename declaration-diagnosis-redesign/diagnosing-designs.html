@@ -585,7 +585,7 @@ div.csl-indent {
   <li><a href="#diagnosands" id="toc-diagnosands" class="nav-link" data-scroll-target="#diagnosands"> <span class="header-section-number">10.1.2</span> Diagnosands</a></li>
   </ul>
 </li>
-  <li><a href="#types-of-diagnosands" id="toc-types-of-diagnosands" class="nav-link" data-scroll-target="#types-of-diagnosands"> <span class="header-section-number">10.2</span> Types of diagnosands</a></li>
+  <li><a href="#sec-ch10s2" id="toc-sec-ch10s2" class="nav-link" data-scroll-target="#sec-ch10s2"> <span class="header-section-number">10.2</span> Types of diagnosands</a></li>
   <li>
 <a href="#estimation-of-diagnosands" id="toc-estimation-of-diagnosands" class="nav-link" data-scroll-target="#estimation-of-diagnosands"> <span class="header-section-number">10.3</span> Estimation of diagnosands</a>
   <ul class="collapse">
@@ -644,7 +644,7 @@ div.csl-indent {
 </section><section id="diagnosands" class="level3" data-number="10.1.2"><h3 data-number="10.1.2" class="anchored" data-anchor-id="diagnosands">
 <span class="header-section-number">10.1.2</span> Diagnosands</h3>
 <p>A diagnosand is a summary of the distribution of <span class="math inline">\(\Phi\)</span>, written <span class="math inline">\(f(\Phi)\)</span>. For example, the expectation function <span class="math inline">\(\E[\Phi]\)</span> reports the expectation (the mean) of <span class="math inline">\(\Phi\)</span>.</p>
-<p>Let’s back up a moment to work through two concrete examples of common diagnosands: bias and power (see <span class="quarto-unresolved-ref">?sec-ch10s2</span> for a more exhaustive list).</p>
+<p>Let’s back up a moment to work through two concrete examples of common diagnosands: bias and power (see <a href="#sec-ch10s2"><span>Section&nbsp;10.2</span></a> for a more exhaustive list).</p>
 <p>Consider the diagnosand “bias” in the context of a two-arm randomized trial where the inquiry is the average treatment effect, the data strategy entails complete random assignment, and the answer strategy is the difference-in-means. Bias is the average difference between the estimand and the estimate. Under a single realization <span class="math inline">\(m_k\)</span> of the model <em>M</em>, the value of the ATE will be a particular number, which we call <span class="math inline">\(a_{m_k}\)</span>. We simulate a random assignment and measurement of observed outcomes, then apply the difference-in-means estimator. The diagnostic statistic is the error <span class="math inline">\(a_{d_k} - a_{m_k}\)</span>; this error is a random variable because each <span class="math inline">\(m_k\)</span> differs slightly. The bias diagnosand is the expectation of this random variable is <span class="math inline">\(\E[a_{d_k} - a_{m_k}]\)</span>, where the expectation is taken over the randomization distribution implied by <em>M</em> and <em>D</em> (or distinct regions of the randomization distribution).</p>
 <p>Now consider the diagnosand “power.” Like bias, statistical power is an expectation, this time of the “significant” diagnostic statistic <span class="math inline">\(\mathbf{I}(p(a_{d_k}) \leq 0.05)\)</span>. Power describes how frequently the answer strategy will return a statistically significant result. Some textbooks define statistical power as one minus the Type II error rate, where a Type II error is the failure to reject the null hypothesis, given that the null hypothesis is false. This definition is accurate, but hard to understand. The phrase “given that the null hypothesis is false” refers to model possibilities (<span class="math inline">\(a_{m_k}\)</span>’s) in which the null hypothesis does not hold. Our definition of power is instead, “the probability of getting a statistically significant result, conditional on a set of beliefs about the model.”</p>
 <p>Uncertainty statistics like standard errors can be thought of as empirical estimates of diagnosands describing the quality of your design under some set of models.</p>
@@ -660,7 +660,7 @@ div.csl-indent {
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.2: Why robust standard errors are preferred to classical standard errors</figcaption><p></p>
 </figure>
 </div>
-</section></section><section id="types-of-diagnosands" class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" data-anchor-id="types-of-diagnosands">
+</section></section><section id="sec-ch10s2" class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" data-anchor-id="sec-ch10s2">
 <span class="header-section-number">10.2</span> Types of diagnosands</h2>
 <p>As described above, a diagnostic statistic is any summary function of <span class="math inline">\(a_m\)</span> and <span class="math inline">\(a_d\)</span>, and a diagnosand is any summary of the distribution of diagnostic statistics. As a result, there are a great many diagnosands researchers may consider. In <a href="#tbl-diagnosticstatistics">Table&nbsp;<span>10.1</span></a>, we introduce a nonexhaustive set of diagnostic statistics, and in <a href="#tbl-diagnosands">Table&nbsp;<span>10.2</span></a> a nonexhaustive set of diagnosands.</p>
 <div id="tbl-diagnosticstatistics" class="anchored">
