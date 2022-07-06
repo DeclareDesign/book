@@ -213,12 +213,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
+  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
+  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -1024,7 +1024,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section><section id="correlation-between-potential-outcomes" class="level4" data-number="13.1.3.3"><h4 data-number="13.1.3.3" class="anchored" data-anchor-id="correlation-between-potential-outcomes">
 <span class="header-section-number">13.1.3.3</span> Correlation between potential outcomes</h4>
-<p>Treated and untreated potential outcomes are typically highly correlated. When treatment effects are exactly homogeneous, the correlation is equal to 1. Rarely are potential outcomes <em>negatively</em> correlated, but it can occur. The sign and magnitude of the correlation especially affects the standard errors of estimates for causal effects (for more discussion of the correlation of potential outcomes in experiments and also standard error estimators, see Section <a href="redesigning.html#sec-ch10s3ss1"><span>Section&nbsp;10.3.1</span></a>).</p>
+<p>Treated and untreated potential outcomes are typically highly correlated. When treatment effects are exactly homogeneous, the correlation is equal to 1. Rarely are potential outcomes <em>negatively</em> correlated, but it can occur. The sign and magnitude of the correlation especially affects the standard errors of estimates for causal effects (for more discussion of the correlation of potential outcomes in experiments and also standard error estimators, see Section <a href="redesigning.html#sec-ch10s3ss1"><span>Section&nbsp;11.3.1</span></a>).</p>
 <p>We described some complexities of generating binary variables above. They transfer over to the generation of correlated potential outcomes in special ways. In the declarations below, <code>M1</code> generates uncorrelated potential outcomes, because the draws from <code>rbinom</code> are independent of one another. In <code>M2</code>, we still use <code>rbinom</code>, but with a transformation of the normally-distributed variable into a probability via <code>pnorm</code>. This allows the potential outcomes to be correlated because they are both influence by the same latent variable. Finally, in <code>M3</code>, we generate highly correlated potential outcomes because we peel off the layer of randomness introduced by <code>rbinom</code>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span> </span>
