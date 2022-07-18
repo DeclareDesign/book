@@ -23,6 +23,7 @@ jobs:
         
       - name: Install packages
         uses: r-lib/actions/setup-r-dependencies@v2
+        cache-version: 2
         
       - name: Prep Dropbox files
         run: |
