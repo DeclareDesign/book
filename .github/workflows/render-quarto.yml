@@ -23,23 +23,17 @@ jobs:
         
       - name: Install remotes
         run: |
-           install.packages(c("pak", "pkgdepends"), dependencies = TRUE)
            pak::pkg_install("acoppock/vayr")
            pak::pkg_install("DeclareDesign/dddag")
-           pak::pkg_install("ebenmichael/augsynth")
            pak::pkg_install("cran/randnet")
            pak::pkg_install("szonszein/interference")
-           pak::pkg_install("cran/DRDID")
-           pak::pkg_install("bcallaway11/did")
            pak::pkg_install("DeclareDesign/rdddr")
-           pak::pkg_install("kjhealy/gssr")
-           pak::pkg_install("macartan/CausalQueries")
         shell: Rscript {0}
         
       - name: Install packages
         uses: r-lib/actions/setup-r-dependencies@v2
         with: 
-          cache-version: 3
+          cache-version: 4
         
       - name: Prep Dropbox files
         run: |
