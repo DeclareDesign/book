@@ -23,6 +23,7 @@ jobs:
         
       - name: Install remotes
         run: |
+           install.packages("pak")
            pak::pkg_install("acoppock/vayr")
            pak::pkg_install("DeclareDesign/dddag")
            pak::pkg_install("ebenmichael/augsynth")
@@ -34,6 +35,7 @@ jobs:
            pak::pkg_install("kjhealy/gssr")
            pak::pkg_install("macartan/CausalQueries")
         shell: Rscript {0}
+        
       - name: Install packages
         uses: r-lib/actions/setup-r-dependencies@v2
         with: 
