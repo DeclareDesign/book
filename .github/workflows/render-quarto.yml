@@ -25,6 +25,15 @@ jobs:
         uses: r-lib/actions/setup-r-dependencies@v2
         with: 
           cache-version: 6
+          
+      - name: Install remotes
+        run: |
+           remotes::install_github("acoppock/vayr")
+           remotes::install_github("DeclareDesign/dddag")
+           remotes::install_github("cran/randnet")
+           remotes::install_github("szonszein/interference")
+           remotes::install_github("DeclareDesign/rdddr")
+        shell: Rscript {0}
         
       - name: Prep Dropbox files
         run: |
