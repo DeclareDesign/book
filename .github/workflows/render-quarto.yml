@@ -23,7 +23,7 @@ jobs:
         
       - name: Install remotes
         run: |
-           install.packages("pak")
+           install.packages(c("pak", "pkgdepends"), dependencies = TRUE)
            pak::pkg_install("acoppock/vayr")
            pak::pkg_install("DeclareDesign/dddag")
            pak::pkg_install("ebenmichael/augsynth")
