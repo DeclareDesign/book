@@ -214,6 +214,8 @@ format:
     number-offset: -1
     default-image-extension: svg
     code-link: true
+    self-contained: true
+    self-contained-math: true
   # pdf:
   #   documentclass: book
   #   default-image-extension: pdf
