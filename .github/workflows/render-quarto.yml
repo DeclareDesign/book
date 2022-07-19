@@ -34,6 +34,8 @@ jobs:
            remotes::install_github("szonszein/interference")
            remotes::install_github("DeclareDesign/rdddr")
         shell: Rscript {0}
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Prep Dropbox files
         run: |
