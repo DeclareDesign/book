@@ -208,6 +208,9 @@ language:
   crossref-lem-title: "Diagnosis"
   crossref-exm-title: "Principle"
   
+lightbox:
+  match: auto
+  
 format:
   html:
     theme: cosmo
