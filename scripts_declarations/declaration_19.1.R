@@ -1,4 +1,4 @@
-library(rdddr) # for helper functions
+library(rdss) # for helper functions
 library(grf)
 
 covariate_names <- paste0("X.", 1:10)

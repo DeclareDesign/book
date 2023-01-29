@@ -1,4 +1,4 @@
-library(rdddr) # for helper functions
+library(rdss) # for helper functions
 library(rstanarm)
 
 declaration_9.3 <-

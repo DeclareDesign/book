@@ -38,7 +38,7 @@ How many profiles to rate at the same time is also tricky. Our point of view is 
 
 Finally, the right number of choice tasks usually depends on the survey budget. We can always add more conjoint tasks and the only cost is the opportunity cost of asking a different question of the survey that may serve another scientific purpose. If we're worried that respondents will get bored with the task, we can always throw out profile pairs that come later in the survey. @bansak_hainmueller_hopkins_yamamoto_2019 suggest that you can ask many tasks without much loss of data quality.
 
-The declaration of conjoint experiments is complex, so we provide a series of helper functions specifically for forced-choice conjoint design in the `rdddr` companion software package.
+The declaration of conjoint experiments is complex, so we provide a series of helper functions specifically for forced-choice conjoint design in the `rdss` companion software package.
 
 We begin by establishing the number of subjects and the number of tasks they will accomplish. We then establish the attributes and their levels (this design assumes complete random assignment of all attributes with equal probabilities). Finally, we describe a utility function that governs subject preferences. This function can be simple, as we have it here, or it can be complex, building in differences in preferences by subject type or other details.
 

@@ -1,4 +1,4 @@
-library(rdddr) # for helper functions
+library(rdss) # for helper functions
 library(DIDmultiplegt)
 
 N_units <- 20

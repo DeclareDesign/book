@@ -17,7 +17,7 @@ bookwide_packages <-
     "randomizr",
     "DeclareDesign",
     "DesignLibrary",
-    "rdddr",
+    "rdss",
     
     # tidyverse packages
     "ggplot2",

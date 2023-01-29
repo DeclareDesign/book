@@ -1,4 +1,4 @@
-library(rdddr) # for helper functions
+library(rdss) # for helper functions
 library(CausalQueries)
 
 causal_model <- make_model("X -> M -> Y <- W -> M") |>

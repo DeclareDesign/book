@@ -16,10 +16,10 @@ First, we provide instructions for getting started in R and RStudio. We then int
 
 You can download R for free from [CRAN](https://cran.r-project.org). We also recommend the free program [RStudio](https://rstudio.com/products/rstudio/download), which provides a friendly interface to R. Both R and RStudio are available on Windows, Mac, and Linux.
 
-Once you have R and RStudio installed, open up RStudio and install DeclareDesign and its related packages. These include three packages that enable specific steps in the research process: `fabricatr` for simulating social science data, `randomizr` for random sampling and random assignment, and `estimatr` for design-based estimators. You can also install `rdddr`, which includes datasets and helper functions used in the book. To install them all, copy the following code into your R console:
+Once you have R and RStudio installed, open up RStudio and install DeclareDesign and its related packages. These include three packages that enable specific steps in the research process: `fabricatr` for simulating social science data, `randomizr` for random sampling and random assignment, and `estimatr` for design-based estimators. You can also install `rdss`, which includes datasets and helper functions used in the book. To install them all, copy the following code into your R console:
 
 ```{r install_package_example, eval = FALSE}
-install.packages(c("DeclareDesign", "rdddr"))
+install.packages(c("DeclareDesign", "rdss"))
 ```
 
 We also recommend that you install and get to know the `tidyverse` set of packages for data analysis, which we will use throughout:
@@ -30,12 +30,12 @@ install.packages("tidyverse")
 
 For introductions to R and the `tidyverse` we especially recommend the free resource [R for Data Science](https://r4ds.had.co.nz).
 
-All of the code in this book assumes that the `DeclareDesign` family of packages, the `tidyverse` suite, and the companion package to the book `rdddr` have been loaded. Once they have been installed on your computer, you can load them with the following code:
+All of the code in this book assumes that the `DeclareDesign` family of packages, the `tidyverse` suite, and the companion package to the book `rdss` have been loaded. Once they have been installed on your computer, you can load them with the following code:
 
 ```{r}
 library(DeclareDesign)
 library(tidyverse)
-library(rdddr)
+library(rdss)
 ```
 
 ## Declaration
