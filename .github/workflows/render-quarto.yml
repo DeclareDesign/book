@@ -26,14 +26,14 @@ jobs:
         with: 
           cache-version: 6
           
-      - name: Install remotes
-        run: |
-           remotes::install_github("acoppock/vayr", auth_token = "${{ secrets.GITHUB_TOKEN }}")
-           remotes::install_github("DeclareDesign/dddag", auth_token = "${{ secrets.GITHUB_TOKEN }}")
-           remotes::install_github("cran/randnet", auth_token = "${{ secrets.GITHUB_TOKEN }}")
-           remotes::install_github("szonszein/interference", auth_token = "${{ secrets.GITHUB_TOKEN }}")
-           remotes::install_github("DeclareDesign/rdss", auth_token = "${{ secrets.GITHUB_TOKEN }}")
-        shell: Rscript {0}
+      # - name: Install remotes
+      #   run: |
+      #      remotes::install_github("acoppock/vayr", auth_token = "${{ secrets.GITHUB_TOKEN }}")
+      #      remotes::install_github("DeclareDesign/dddag", auth_token = "${{ secrets.GITHUB_TOKEN }}")
+      #      remotes::install_github("cran/randnet", auth_token = "${{ secrets.GITHUB_TOKEN }}")
+      #      remotes::install_github("szonszein/interference", auth_token = "${{ secrets.GITHUB_TOKEN }}")
+      #      remotes::install_github("DeclareDesign/rdss", auth_token = "${{ secrets.GITHUB_TOKEN }}")
+      #   shell: Rscript {0}
         
       - name: Prep Dropbox files
         run: |
