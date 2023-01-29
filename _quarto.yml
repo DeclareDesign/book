@@ -3,8 +3,10 @@ project:
   execute-dir: project
 
 book:
-  title: "Research Design"
+  title: "Research Design in the Social Sciences"
   subtitle: "Declaration, Diagnosis, Redesign"
+  cover-image: figures/cover.avif
+  margin-header: Buy this book
   author: 
     - Graeme Blair
     - Alexander Coppock
