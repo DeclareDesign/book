@@ -218,7 +218,7 @@ format:
     number-offset: -1
     default-image-extension: svg
     code-link: true
-    include-in-header: buy-book.js
+    include-in-header: header-additions.html
     include-before-body: buy-book.html
     # self-contained: true
     # self-contained-math: true
