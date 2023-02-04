@@ -91,8 +91,7 @@ book:
     - references.qmd
 
   sidebar:
-    - title: "Research Design"
-      subtitle: "Declaration, Diagnosis, Redesign"
+    - title: "Research Design in the Social Sciences"
       style: "floating"
       collapse-level: 2
       align: left
