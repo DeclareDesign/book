@@ -55,7 +55,10 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -598,7 +601,7 @@ div.csl-indent {
 <p>Research design diagnosis can help navigate the learning versus doing tradeoff. One instance of the tradeoff is that the proportion of units that receive a treatment represents the rate of “doing,” but this rate also affects the amount of learning. In the extreme, if all units are treated, we can’t measure the effect of the treatment. The tradeoff here is represented in <a href="#fig-ch21num2">Figure&nbsp;<span>48.1</span></a>, which shows the study’s power versus the proportion treated (top facet) and the partner’s utility (bottom facet). The researchers have a power cutoff at the standard 80% threshold. The partner also has a strict cutoff: they need to treat at least 2/3 of the sample to fulfill a donor requirement.</p>
 <p>Researchers might simply ignore the proportion treated and select the design with the highest power in the absence of partners. With a partner organization, the researcher might use this graph in conversation with the partner to jointly select the design that has the highest power that has a sufficiently high proportion treated to meet the partner’s needs. This is represented in the “zone of agreement” in gray: in this region, the design has at least 80% power and at least two-thirds of the sample are treated. Deciding within this region involves a tradeoff between power (which is decreasing in the proportion treated here) and the partner’s utility (which is increasing in proportion treated). The diagnosis surfaces the zone of the agreement and clarifies the choice between designs in that region. Unfortunately, some partnerships simply will not work out if the zone of agreement is empty.</p>
 <div id="fig-ch21num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../../figures/figure-21-2.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../../figures/figure-21-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Finding the zone of agreement in a research partnership."><img src="../../figures/figure-21-2.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;48.1: Finding the zone of agreement in a research partnership.</figcaption><p></p>
 </figure>
 </div>
@@ -765,7 +768,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});</script>
 
 
 </body></html>

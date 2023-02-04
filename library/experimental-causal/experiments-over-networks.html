@@ -118,7 +118,10 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -696,7 +699,7 @@ div.csl-indent {
 <p>To illustrate these ideas, we declare a hypothetical experimental design to estimate the effects of lawn signs <span class="citation" data-cites="green2016lawnsigns">(modeled after <a href="../../references.html#ref-green2016lawnsigns" role="doc-biblioref">Green et al. 2016</a>)</span>. The units are the lowest level at which we can observe vote margin, the voting precinct. In our model, we define four potential outcomes. Precincts can be both directly and indirectly treated, only directly treated, only indirectly treated, or neither. Indirect treatment occurs when a neighboring precinct is treated. This model could support many possible inquiries, but here we will focus on three: the direct effect of treatment when the precinct is not indirectly treated, the effect of indirect treatment when the precinct is not directly treated, and the total effect of direct and indirect treatment versus pure control. The data strategy will involve randomly assigning some units to direct treatment, which will in turn cause other units to be indirectly treated. We will need to learn via simulation the probabilities of assignments to conditions that this procedure produces. We’ll make use of two answer strategies: the Horvitz-Thompson and Hajek estimators proposed by <span class="citation" data-cites="aronow2017estimating">Aronow and Samii (<a href="../../references.html#ref-aronow2017estimating" role="doc-biblioref">2017</a>)</span>, along with their associated variance estimators, as implemented in the <code>interference</code> package.</p>
 <p>First, we load the Fairfax County, Virginia, voting precincts shapefile, removing one singleton voting precinct, and we plot the precincts in <a href="#fig-ch18num5">Figure&nbsp;<span>40.1</span></a>.</p>
 <div id="fig-ch18num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../../figures/figure-18-5.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../../figures/figure-18-5.svg" class="lightbox" title="Voting Precincts in Fairfax County, Virginia" data-gallery="quarto-lightbox-gallery-1"><img src="../../figures/figure-18-5.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;40.1: Voting Precincts in Fairfax County, Virginia</figcaption><p></p>
 </figure>
 </div>
@@ -755,7 +758,7 @@ div.csl-indent {
 </div>
 <p>The maps in <a href="#fig-ch18num16">Figure&nbsp;<span>40.2</span></a> show how this procedure generates differential probabilities of assignment to each exposure condition. Units that are in denser areas of the county are more likely to be in the <code>Indirect Exposure Only</code> and <code>Direct and Indirect Exposure</code> conditions than those in less dense areas.</p>
 <div id="fig-ch18num16" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../../figures/figure-18-16.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../../figures/figure-18-16.svg" class="lightbox" title="Probabilities of assignment to each of four conditions depend on position in geographic space." data-gallery="quarto-lightbox-gallery-2"><img src="../../figures/figure-18-16.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;40.2: Probabilities of assignment to each of four conditions depend on position in geographic space.</figcaption><p></p>
 </figure>
 </div>
@@ -766,7 +769,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.13</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_18.13</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch18num17" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../../figures/figure-18-17.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../../figures/figure-18-17.svg" class="lightbox" title="Sampling distribution of the Hajek and Horvitz-Thompson estimators of direct, indirect, and direct plus indirect effects. The vertical lines refer to the true values of the inquiries." data-gallery="quarto-lightbox-gallery-3"><img src="../../figures/figure-18-17.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;40.3: Sampling distribution of the Hajek and Horvitz-Thompson estimators of direct, indirect, and direct plus indirect effects. The vertical lines refer to the true values of the inquiries.</figcaption><p></p>
 </figure>
 </div>
@@ -934,7 +937,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":true});</script>
 
 
 </body></html>

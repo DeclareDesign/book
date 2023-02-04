@@ -36,7 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -575,7 +578,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Like main studies, pilot studies can be declared and diagnosed – but importantly, the diagnosands for main and pilot studies need not be the same. Statistical power for an average treatment effect may be an essential diagnosand for the main study, but owing to their small size, power for pilot studies will typically be abysmal. Pilot studies should be diagnosed with respect to the decisions they imply for the main study.</p>
 <p><a href="#fig-ch21num3">Figure&nbsp;<span>50.1</span></a> shows the relationship between effect size and the sample size required to achieve 80% statistical power for a two-arm trial using simple random assignment. Uncertainty about the true effect size has enormous design consequences. If the effect size is 0.17, we need about 1,100 subjects to achieve 80% power. If it’s 0.1, we need 3200.</p>
 <div id="fig-ch21num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../../figures/figure-21-3.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../../figures/figure-21-3.svg" class="lightbox" title="Minimum required sample sizes and uncertainty over effect size" data-gallery="quarto-lightbox-gallery-1"><img src="../../figures/figure-21-3.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;50.1: Minimum required sample sizes and uncertainty over effect size</figcaption><p></p>
 </figure>
 </div>
@@ -585,7 +588,7 @@ ul.task-list li input[type="checkbox"] {
 <p>A pilot study can help researchers update their priors about important design parameters. If we do a small scale pilot with 100 subjects, we’ll get a noisy but unbiased estimate of the true effect size. We can update prior beliefs by taking a precision weighted average of our priors and the estimate from the pilot, where the weights are the inverse of the variance of each guess. Our posterior beliefs will be closer to the truth, and our posterior uncertainty will be smaller. If we then follow the heuristic of powering the 10th percentile of our (now posterior) beliefs about effect size, we will have come closer to correctly powering our study. <a href="#fig-ch21num4">Figure&nbsp;<span>50.2</span></a> shows how large the studies would be, depending on how the pilot study came out if we were to follow the 10th percentile decision rule. On average, the pilot leads us to design the main study with 1800 subjects, sometimes more and sometimes less.</p>
 <p>This exercise reveals that a pilot study can be quite valuable. Without a pilot study, we would chose to sample 1100 subjects, but since the true effect size is only 0.1 (not our best guess of 0.3), the experiment would be underpowered. The pilot study helps us correct our diffuse and incorrect prior beliefs. However, since the pilot is small, we don’t update our priors all the way to the truth. We still end up with a main study that is on average too small (1800), with a corresponding power of 56%. That said, a 56% chance of finding a statistically significant result is better than a 38% chance.</p>
 <div id="fig-ch21num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../../figures/figure-21-4.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../../figures/figure-21-4.svg" class="lightbox" title="Distribution of post-pilot sample size choices" data-gallery="quarto-lightbox-gallery-2"><img src="../../figures/figure-21-4.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;50.2: Distribution of post-pilot sample size choices</figcaption><p></p>
 </figure>
 </div>
@@ -737,7 +740,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":true,"closeEffect":"zoom"});</script>
 
 
 </body></html>

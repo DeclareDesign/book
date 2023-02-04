@@ -118,7 +118,10 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -745,7 +748,7 @@ div.csl-indent {
 </div>
 <p>The full set of causal relationships between <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em>, with respect to <span class="math inline">\(m\)</span> and <span class="math inline">\(m^*\)</span>, <span class="math inline">\(a_m\)</span> and <span class="math inline">\(a_{m^*}\)</span>, <span class="math inline">\(d\)</span> and <span class="math inline">\(d^*\)</span>, and <span class="math inline">\(a_d\)</span> and <span class="math inline">\(a_{d^*}\)</span> can be seen in the schematic representation of a research design given in <a href="#fig-ch2num1">Figure&nbsp;<span>5.1</span></a> The figure illustrates how a research design involves a correspondence between <span class="math inline">\(I(m) = a_m\)</span> and <span class="math inline">\(A(d) = a_d\)</span>. The theoretical half of a research design produces an answer to the inquiry <em>in theory</em>. The empirical half of a research design produces an <em>empirical estimate</em> of the answer to the inquiry. Neither answer is necessarily close to the truth <span class="math inline">\(a_{m^*}\)</span>, of course. And, as shown in the figure, the truth is not directly accessible either to us in theory or in empirics. Our gamble in empirical research, however, is that our theoretical models are close enough to the truth; that the truth is like the set of models we imagine. If the models in <span class="math inline">\(M\)</span> do not contain <span class="math inline">\(m^*\)</span> or are too different from it, then even seemingly strong research designs could yield incorrect answers.</p>
 <div id="fig-ch2num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-2-1.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../figures/figure-2-1.svg" class="lightbox" title="The MIDA framework" data-gallery="quarto-lightbox-gallery-1"><img src="../figures/figure-2-1.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;5.1: The <em>MIDA</em> framework</figcaption><p></p>
 </figure>
 </div>
@@ -758,11 +761,6 @@ div.csl-indent {
 <div id="tbl-midarealizations" class="anchored">
 <table class="table">
 <caption>Table&nbsp;5.2: Elements of research design in code.</caption>
-<colgroup>
-<col style="width: 38%">
-<col style="width: 59%">
-<col style="width: 0%">
-</colgroup>
 <thead><tr class="header">
 <th>Description</th>
 <th>Draw</th>
@@ -775,42 +773,48 @@ div.csl-indent {
   X = rbinom(N, 1, prob = pnorm(U)),
   Y = rbinom(N, 1, prob = pnorm(U + X)))
 m &lt;- M()</code></pre></td>
-<td colspan="2">
-<img src="../figures/ch6-m.svg" class="img-fluid" style="width:100.0%" alt="Draw of events from m"> | | | | | |</td>
+<td>
+<a href="../figures/ch6-m.svg" class="lightbox" title="Draw of events from m" data-gallery="quarto-lightbox-gallery-2"><img src="../figures/ch6-m.svg" class="img-fluid" style="width:100.0%" alt="Draw of events from m"></a> | | | | | |</td>
+<td></td>
 </tr>
 <tr class="even">
 <td><pre><code>I &lt;- declare_inquiry(Ybar = mean(Y[X==1]))
 a_m &lt;- I(m)</code></pre></td>
-<td colspan="2">
-<img src="../figures/ch6-am.svg" class="img-fluid" style="width:100.0%" alt="Draw of am"> | | |</td>
+<td>
+<a href="../figures/ch6-am.svg" class="lightbox" title="Draw of am" data-gallery="quarto-lightbox-gallery-3"><img src="../figures/ch6-am.svg" class="img-fluid" style="width:100.0%" alt="Draw of am"></a> | | |</td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><pre><code>mstar &lt;- fabricate(N = 1000,
   U = rnorm(N),
   X = rbinom(N, 1, prob = pnorm(U)),
   Y = rbinom(N, 1, prob = pnorm(U)))</code></pre></td>
-<td colspan="2">
-<img src="../figures/ch6-mstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of events from mstar"> | | | | |</td>
+<td>
+<a href="../figures/ch6-mstar.svg" class="lightbox" title="Draw of events from mstar" data-gallery="quarto-lightbox-gallery-4"><img src="../figures/ch6-mstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of events from mstar"></a> | | | | |</td>
+<td></td>
 </tr>
 <tr class="even">
 <td><pre><code>a_mstar &lt;- I(mstar)</code></pre></td>
-<td colspan="2">
-<img src="../figures/ch6-amstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of amstar"> | |</td>
+<td>
+<a href="../figures/ch6-amstar.svg" class="lightbox" title="Draw of amstar" data-gallery="quarto-lightbox-gallery-5"><img src="../figures/ch6-amstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of amstar"></a> | |</td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><pre><code>D &lt;- declare_sampling(
   S = simple_rs(N, prob = 0.1))
 dstar &lt;- D(mstar)</code></pre></td>
-<td colspan="2">
-<img src="../figures/ch6-dstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of dstar"> | | | |</td>
+<td>
+<a href="../figures/ch6-dstar.svg" class="lightbox" title="Draw of dstar" data-gallery="quarto-lightbox-gallery-6"><img src="../figures/ch6-dstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of dstar"></a> | | | |</td>
+<td></td>
 </tr>
 <tr class="even">
 <td><pre><code>A &lt;- declare_estimator(
  Y ~ 1, .method = lm_robust,
  subset = X == 1, inquiry = "Ybar")
 a_dstar &lt;- A(dstar)</code></pre></td>
-<td colspan="2">
-<img src="../figures/ch6-adstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of adstar"> | | | | |</td>
+<td>
+<a href="../figures/ch6-adstar.svg" class="lightbox" title="Draw of adstar" data-gallery="quarto-lightbox-gallery-7"><img src="../figures/ch6-adstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of adstar"></a> | | | | |</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -992,7 +996,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
 
 
 </body></html>

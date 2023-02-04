@@ -118,7 +118,10 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -663,13 +666,13 @@ div.csl-indent {
 <p>A major assumption required for the regression discontinuity design is that the conditional expectation functions — functions that define the expected value of the outcome at every level of the running variable — for both treatment and control potential outcomes are continuous at the cutoff.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>The regression discontinuity design is closely related to the selection-on-observables design in that exact knowledge of the assignment mechanism is needed. In <a href="#fig-ch16num8">Figure&nbsp;<span>24.1</span></a>, we illustrate the DAG for the RD design, which includes a treatment with a known assignment mechanism (that units with <span class="math inline">\(X&gt;\mathrm{cutoff}\)</span> are treated and those below are not). The running variable <span class="math inline">\(X\)</span>, is a common cause both of treatment and the outcome, and so must be adjusted for (indicated by the dashed box) in order to identify the effect of treatment on the outcome and avoid confounding bias.</p>
 <div id="fig-ch16num8" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../../figures/figure-16-8.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../../figures/figure-16-8.svg" class="lightbox" title="Directed acyclic graph for the regression discontinuity design." data-gallery="quarto-lightbox-gallery-1"><img src="../../figures/figure-16-8.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;24.1: Directed acyclic graph for the regression discontinuity design.</figcaption><p></p>
 </figure>
 </div>
 <p><a href="#fig-ch16num9">Figure&nbsp;<span>24.2</span></a> illustrates the major features of the model for the regression discontinuity using simulated data. The untreated units (blue points) are plotted to the left of the cutoff (vertical line), and the treated units (red points) are plotted to the right. The true conditional expectation functions for both the treated and untreated potential outcomes are displayed as colored lines, dashed where they are unobservable and solid where they are observable.</p>
 <div id="fig-ch16num9" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../../figures/figure-16-9.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../../figures/figure-16-9.svg" class="lightbox" title="Data from a regression discontinuity design. On the x-axis is the running variable, which defines the cut off between control (here, below 0 on the running variable) and treatment (above 0). The outcome Y is on the y-axis. We illustrate smooth potential outcomes by showing the observed data curve (solid) and the counterfactual potential outcome (dashed)." data-gallery="quarto-lightbox-gallery-2"><img src="../../figures/figure-16-9.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;24.2: Data from a regression discontinuity design. On the x-axis is the running variable, which defines the cut off between control (here, below 0 on the running variable) and treatment (above 0). The outcome Y is on the y-axis. We illustrate smooth potential outcomes by showing the observed data curve (solid) and the counterfactual potential outcome (dashed).</figcaption><p></p>
 </figure>
 </div>
@@ -732,7 +735,7 @@ div.csl-indent {
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  diagnose_designs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch16num10" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../../figures/figure-16-10.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../../figures/figure-16-10.svg" class="lightbox" title="Bias-variance tradeoff in bandwidth selection for the regression discontinuity design." data-gallery="quarto-lightbox-gallery-3"><img src="../../figures/figure-16-10.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;24.3: Bias-variance tradeoff in bandwidth selection for the regression discontinuity design.</figcaption><p></p>
 </figure>
 </div>
@@ -906,7 +909,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","loop":true,"selector":".lightbox","closeEffect":"zoom"});</script>
 
 
 </body></html>

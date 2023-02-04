@@ -118,7 +118,10 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -761,7 +764,7 @@ div.csl-indent {
 </div>
 <p><a href="#fig-ch9num1">Figure&nbsp;<span>9.1</span></a> shows that we are right on average but usually quite wrong. The average estimate lies right on top of the true value of the estimand (40), but the estimates range enormously widely, from close to zero to close to 80 in some draws. The answer strategy – the sample mean estimator – is just fine, the problem here lies in the data strategy that generates tiny samples. Substantively this does not mean that we now believe we are wrong. But it does tell us that the data is just as consistent with lots of other possibilities as it is with the estimate that we got from a single run of the design.</p>
 <div id="fig-ch9num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-9-1.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../figures/figure-9-1.svg" class="lightbox" title="Sampling distribution of the estimates from the point estimator answer strategy" data-gallery="quarto-lightbox-gallery-1"><img src="../figures/figure-9-1.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;9.1: Sampling distribution of the estimates from the point estimator answer strategy</figcaption><p></p>
 </figure>
 </div>
@@ -825,7 +828,7 @@ div.csl-indent {
 
 </div>
 <div id="fig-ch9num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-9-2.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../figures/figure-9-2.svg" class="lightbox" title="Sampling distribution of the test answer strategy" data-gallery="quarto-lightbox-gallery-2"><img src="../figures/figure-9-2.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;9.2: Sampling distribution of the test answer strategy</figcaption><p></p>
 </figure>
 </div>
@@ -860,7 +863,7 @@ div.csl-indent {
 </div>
 <p>What we see in <a href="#fig-ch9num3">Figure&nbsp;<span>9.3</span></a> is that using the same (poor) data strategy as before, a Bayesian answer strategy gets us a somewhat tighter distribution on our answer, but exhibits greater bias: the average estimate is higher than the estimand. We might accept higher bias for lower variance if overall, the root-mean-squared error is lower for the Bayesian approach. See <a href="diagnosing-designs.html#sec-ch10s4ss1"><span>Section&nbsp;10.4.1</span></a> for a further discussion of RMSE. The main difference between the Bayesian and classical approaches is the handling of prior beliefs, which carry a lot of weight in the Bayesian estimation but no weight in the classical approach.</p>
 <div id="fig-ch9num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-9-3.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../figures/figure-9-3.svg" class="lightbox" title="Sampling distribution of the Bayesian answer strategy" data-gallery="quarto-lightbox-gallery-3"><img src="../figures/figure-9-3.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;9.3: Sampling distribution of the Bayesian answer strategy</figcaption><p></p>
 </figure>
 </div>
@@ -925,7 +928,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.5</span> <span class="op">&lt;-</span> <span class="fu">diagnose_designs</span><span class="op">(</span><span class="va">declaration_9.5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch9num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-9-4.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../figures/figure-9-4.svg" class="lightbox" title="Type II error rates of the Italian village design" data-gallery="quarto-lightbox-gallery-4"><img src="../figures/figure-9-4.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;9.4: Type II error rates of the Italian village design</figcaption><p></p>
 </figure>
 </div>
@@ -1119,7 +1122,7 @@ div.csl-indent {
 </div>
 <p>We diagnose the bias of all four design. <a href="#fig-ch9num5">Figure&nbsp;<span>9.5</span></a> shows that when the answer strategy and the data strategy match (<code>D1 + A1</code> and <code>D2 + A2</code>), we have no bias. When they do not match (<code>D1 + A2</code> and <code>D2 + A1</code>), we do. In this case, seeking parallelism in the choice of answer strategy improves the design. Of course, an alternative answer strategy we might call <code>A3</code> that implements the weights corresponding to whatever the data strategy says they should be unbiased under both <code>D1</code> and <code>D2</code>.</p>
 <div id="fig-ch9num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-9-5.svg" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="../figures/figure-9-5.svg" class="lightbox" title="When data and answer strategies are mismatched, we obtain bias." data-gallery="quarto-lightbox-gallery-5"><img src="../figures/figure-9-5.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;9.5: When data and answer strategies are mismatched, we obtain bias.</figcaption><p></p>
 </figure>
 </div>
@@ -1431,7 +1434,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","selector":".lightbox","loop":true});</script>
 
 
 </body></html>
