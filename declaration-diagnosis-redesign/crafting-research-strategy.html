@@ -2,16 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.644">
+<meta name="generator" content="quarto-1.2.335">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design - 8&nbsp; Crafting a data strategy</title>
+<title>Research Design in the Social Sciences - 8&nbsp; Crafting a data strategy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -50,7 +55,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -93,445 +98,439 @@ div.csl-indent {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../authors.html" class="sidebar-item-text sidebar-link">About the authors</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
-  </div>
-</li>
+<li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">About the authors</span>
+  </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Introduction</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+      <span class="sidebar-item-text sidebar-link text-start">Acknowledgements</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Introduction</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../library/" class="sidebar-item-text sidebar-link">Research design library</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+      <div class="sidebar-item-container"> 
+            <a href="../library/" class="sidebar-item-text sidebar-link">Research design library</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../library/observational-descriptive/" class="sidebar-item-text sidebar-link">Observational : descriptive</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">
+      <div class="sidebar-item-container"> 
+            <a href="../library/observational-descriptive/" class="sidebar-item-text sidebar-link">Observational : descriptive</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-descriptive/simple-random-sampling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Simple random sampling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-descriptive/cluster-random-sampling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Cluster random sampling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-descriptive/multilevel-regression-poststratification.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Multi-level regression and poststratification</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-descriptive/index-creation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Index creation</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../library/observational-causal/" class="sidebar-item-text sidebar-link">Observational : causal</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../library/observational-causal/" class="sidebar-item-text sidebar-link">Observational : causal</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Process tracing</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Selection-on-observables</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Difference-in-differences</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Instrumental variables</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-causal/regression-discontinuity.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Regression discontinuity designs</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../library/experimental-descriptive/" class="sidebar-item-text sidebar-link">Experimental : descriptive</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../library/experimental-descriptive/" class="sidebar-item-text sidebar-link">Experimental : descriptive</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-descriptive/audit-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Audit experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-descriptive/list-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">List experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-descriptive/conjoint-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Conjoint experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-descriptive/behavioral-games.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Behavioral games</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../library/experimental-causal/" class="sidebar-item-text sidebar-link">Experimental : causal</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../library/experimental-causal/" class="sidebar-item-text sidebar-link">Experimental : causal</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/two-arm-randomized-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Two-arm randomized experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/block-randomized-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Block-randomized experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/cluster-randomized-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Cluster-randomized experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/subgroup-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Subgroup designs</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/factorial-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Factorial experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/encouragement-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Encouragement designs</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/placebo-controlled-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Placebo-controlled experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/stepped-wedge-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Stepped-wedge experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/randomized-saturation-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Randomized saturation experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/experiments-over-networks.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Experiments over networks</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../library/complex/" class="sidebar-item-text sidebar-link">Complex</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../library/complex/" class="sidebar-item-text sidebar-link">Complex</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/complex/discovery-causal-forests.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Discovery using causal forests</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/complex/structural-estimation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Structural estimation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/complex/meta-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Meta-analysis</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/complex/multi-site-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Multi-site studies</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-    </ul>
+      </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">
+      <div class="sidebar-item-container"> 
+            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../lifecycle/planning/" class="sidebar-item-text sidebar-link">Planning</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">
+      <div class="sidebar-item-container"> 
+            <a href="../lifecycle/planning/" class="sidebar-item-text sidebar-link">Planning</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/planning/ethics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Ethics</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/planning/partners.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Partners</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/planning/funding.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Funding</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/planning/piloting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Piloting</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/planning/criticism.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Criticism</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/planning/preanalysis-plan.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Preanalysis Plan</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../lifecycle/realization/" class="sidebar-item-text sidebar-link">Realization</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../lifecycle/realization/" class="sidebar-item-text sidebar-link">Realization</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/realization/pivoting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Pivoting</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/realization/populated-pap.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Populated preanalysis plan</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/realization/reconciliation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Reconciliation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/realization/writing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Writing</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../lifecycle/integration/" class="sidebar-item-text sidebar-link">Integration</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../lifecycle/integration/" class="sidebar-item-text sidebar-link">Integration</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/integration/communicating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">59</span>&nbsp; <span class="chapter-title">Communicating</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/integration/archiving.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">60</span>&nbsp; <span class="chapter-title">Archiving</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/integration/reanalysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">61</span>&nbsp; <span class="chapter-title">Reanalysis</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/integration/replication.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">62</span>&nbsp; <span class="chapter-title">Replication</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/integration/meta-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">63</span>&nbsp; <span class="chapter-title">Meta-analysis</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../epilogue.html" class="sidebar-item-text sidebar-link">Epilogue</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
-  </div>
-</li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">Epilogue</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">References</span>
+  </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p>Buy this book</p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
 <li>
-<a href="#elements-of-data-strategies" id="toc-elements-of-data-strategies" class="nav-link active" data-scroll-target="#elements-of-data-strategies"> <span class="header-section-number">8.1</span> Elements of data strategies</a>
+<a href="#elements-of-data-strategies" id="toc-elements-of-data-strategies" class="nav-link active" data-scroll-target="#elements-of-data-strategies"><span class="toc-section-number">8.1</span>  Elements of data strategies</a>
   <ul class="collapse">
-<li><a href="#sampling" id="toc-sampling" class="nav-link" data-scroll-target="#sampling"> <span class="header-section-number">8.1.1</span> Sampling</a></li>
-  <li><a href="#sec-ch8s1ss2" id="toc-sec-ch8s1ss2" class="nav-link" data-scroll-target="#sec-ch8s1ss2"> <span class="header-section-number">8.1.2</span> Treatment assignment</a></li>
-  <li><a href="#measurement" id="toc-measurement" class="nav-link" data-scroll-target="#measurement"> <span class="header-section-number">8.1.3</span> Measurement</a></li>
+<li><a href="#sampling" id="toc-sampling" class="nav-link" data-scroll-target="#sampling"><span class="toc-section-number">8.1.1</span>  Sampling</a></li>
+  <li><a href="#sec-ch8s1ss2" id="toc-sec-ch8s1ss2" class="nav-link" data-scroll-target="#sec-ch8s1ss2"><span class="toc-section-number">8.1.2</span>  Treatment assignment</a></li>
+  <li><a href="#measurement" id="toc-measurement" class="nav-link" data-scroll-target="#measurement"><span class="toc-section-number">8.1.3</span>  Measurement</a></li>
   </ul>
 </li>
   <li>
-<a href="#how-to-craft-data-strategies" id="toc-how-to-craft-data-strategies" class="nav-link" data-scroll-target="#how-to-craft-data-strategies"> <span class="header-section-number">8.2</span> How to craft data strategies</a>
+<a href="#how-to-craft-data-strategies" id="toc-how-to-craft-data-strategies" class="nav-link" data-scroll-target="#how-to-craft-data-strategies"><span class="toc-section-number">8.2</span>  How to craft data strategies</a>
   <ul class="collapse">
-<li><a href="#noncompliance" id="toc-noncompliance" class="nav-link" data-scroll-target="#noncompliance"> <span class="header-section-number">8.2.1</span> Noncompliance</a></li>
-  <li><a href="#attrition" id="toc-attrition" class="nav-link" data-scroll-target="#attrition"> <span class="header-section-number">8.2.2</span> Attrition</a></li>
-  <li><a href="#excludability" id="toc-excludability" class="nav-link" data-scroll-target="#excludability"> <span class="header-section-number">8.2.3</span> Excludability</a></li>
-  <li><a href="#interference" id="toc-interference" class="nav-link" data-scroll-target="#interference"> <span class="header-section-number">8.2.4</span> Interference</a></li>
+<li><a href="#noncompliance" id="toc-noncompliance" class="nav-link" data-scroll-target="#noncompliance"><span class="toc-section-number">8.2.1</span>  Noncompliance</a></li>
+  <li><a href="#attrition" id="toc-attrition" class="nav-link" data-scroll-target="#attrition"><span class="toc-section-number">8.2.2</span>  Attrition</a></li>
+  <li><a href="#excludability" id="toc-excludability" class="nav-link" data-scroll-target="#excludability"><span class="toc-section-number">8.2.3</span>  Excludability</a></li>
+  <li><a href="#interference" id="toc-interference" class="nav-link" data-scroll-target="#interference"><span class="toc-section-number">8.2.4</span>  Interference</a></li>
   </ul>
 </li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">8.3</span> Summary</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="toc-section-number">8.3</span>  Summary</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -544,6 +543,7 @@ div.csl-indent {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -558,7 +558,7 @@ div.csl-indent {
 <p>In <a href="#fig-ch8num1">Figure&nbsp;<span>8.1</span></a>, we illustrate the three elements of data strategies: sampling (<span class="math inline">\(S\)</span>), treatment assignment (<span class="math inline">\(Z\)</span>), and measurement (<span class="math inline">\(Q\)</span>). These nodes are highlighted by blue boxes to emphasize that they are in the control of the researcher. No arrows go into the <span class="math inline">\(S\)</span>, <span class="math inline">\(Z\)</span>, or <span class="math inline">\(Q\)</span> nodes; are <em>set</em> by the researcher. In each case, the strategy selected by the researcher affects a corresponding endogenous variable. The sampling procedure causes changes in the endogenous response (<span class="math inline">\(R\)</span>), which represents whether participants provide outcome data, for example responding to survey questions. <span class="math inline">\(R\)</span> is not under the full control the researchers: it is affected by <span class="math inline">\(S\)</span>, the sampling procedure, but also by the idiosyncratic choices of participants who have higher and lower interest and ability to respond and participate in the study (<span class="math inline">\(U\)</span>). Similarly, the endogenous variable treatment <span class="math inline">\(D\)</span> represents whether participants <em>actually</em> receive the treatment, regardless of their assignment <span class="math inline">\(Z\)</span>. <span class="math inline">\(D\)</span> is affected by the treatment assignment procedure (<span class="math inline">\(Z\)</span>) of course. But except in cases when <span class="math inline">\(Z\)</span> fully determines <span class="math inline">\(D\)</span> (no noncompliance), we are concerned that it will be affected by unobserved idiosyncratic features of individuals <span class="math inline">\(U\)</span>. The third researcher node is <span class="math inline">\(Q\)</span>, the measurement procedure. <span class="math inline">\(Q\)</span> affects <span class="math inline">\(Y\)</span>, the observed outcome, measured by the researcher. <span class="math inline">\(Y\)</span> is also affected by a latent variable <span class="math inline">\(Y^*\)</span>, which cannot be directly observed. The measurement procedure provides an imperfect measurement of that latent variable, which is (potentially) affected by treatment <span class="math inline">\(D\)</span> and unobserved heterogeneity <span class="math inline">\(U\)</span>. In the robustness section at the end of the chapter, we explore further variations in this DAG that incorporate threats to inference from noncompliance, attrition, excludability violations, and interference.</p>
 <div id="fig-ch8num1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-8-1.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 8.1: Directed acyclic graph illustrating three elements of a data strategy: sampling, assignment, and measurement.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8.1: Directed acyclic graph illustrating three elements of a data strategy: sampling, assignment, and measurement.</figcaption><p></p>
 </figure>
 </div>
 <section id="elements-of-data-strategies" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="elements-of-data-strategies">
@@ -575,7 +575,7 @@ div.csl-indent {
 <p><a href="#tbl-samplingtypes">Table&nbsp;<span>8.1</span></a> collects all of these kinds of random sampling together and offers an example of functions in the <code>randomizr</code> package you can use to conduct these kinds of sampling. The most basic form is simple random sampling. Under simple random sampling, all units in the population have the same probability <span class="math inline">\(p\)</span> of being included in the sample. It is sometimes called coin flip random sampling because it is as though for each unit, we flip a weighted coin that has probability <span class="math inline">\(p\)</span> of landing heads-up. While quite straightforward, a drawback of simple random sampling is that we can’t be sure of the number of sampled units in advance. On average, we’ll sample <span class="math inline">\(N*p\)</span> units, sometimes slightly more units will be sampled and sometimes fewer.</p>
 <div id="tbl-samplingtypes" class="anchored">
 <table class="table">
-<caption>Table 8.1: Kinds of random sampling</caption>
+<caption>Table&nbsp;8.1: Kinds of random sampling</caption>
 <colgroup>
 <col style="width: 18%">
 <col style="width: 81%">
@@ -652,7 +652,7 @@ strata_ra(strata = villages)</code></pre>
 <p>The bottom row of the figure illustrates some approaches to multistage sampling. In the bottom left panel, we conduct a simple random sample of individuals in each sampled cluster. In the bottom center, we draw a complete random sample of individuals in each sampled household. And in the bottom right, we stratify on an individual level characteristic – we always draw one individual from each row of the household. “Row” could refer to the age of the household members. This doubly-stratified multistage random sampling procedure ensures that we sample two households from each village and within those households, one older member and one younger member.</p>
 <div id="fig-ch8num2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-8-2.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 8.2: Nine kinds of random sampling. In the first row individuals are the sampling units, in the second row clusters are sampled, in the third clusters are sampled and then individuals within these clusters are sampled. In the first column units are sampled independently, in the second units are sampled to hit a target, in the third units are sampled to hit targets within strata.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8.2: Nine kinds of random sampling. In the first row individuals are the sampling units, in the second row clusters are sampled, in the third clusters are sampled and then individuals within these clusters are sampled. In the first column units are sampled independently, in the second units are sampled to hit a target, in the third units are sampled to hit targets within strata.</figcaption><p></p>
 </figure>
 </div>
 </section><section id="nonrandomized-sampling-designs" class="level4" data-number="8.1.1.2"><h4 data-number="8.1.1.2" class="anchored" data-anchor-id="nonrandomized-sampling-designs">
@@ -665,7 +665,7 @@ strata_ra(strata = villages)</code></pre>
 <p>Each of these three nonrandom sampling procedures – convenience, quota, and respondent-driven – is illustrated in <a href="#fig-ch8num3">Figure&nbsp;<span>8.3</span></a>. Imagining that village A is easier to reach, we could obtain a convenience sample by contacting everyone we can reach in village A before moving on to village B. This process doesn’t yield good coverage across villages. For that, we can turn to quota sampling scheme in which we talk to the five people who are easiest to reach in each of the four villages. Finally, if we conduct a respondent-driven sample, we select one seed unit in each village, and that person recruits their four closest friends (who may or may not reside in the same village).</p>
 <div id="fig-ch8num3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-8-3.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 8.3: Three forms of non-random sampling.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8.3: Three forms of non-random sampling.</figcaption><p></p>
 </figure>
 </div>
 </section><section id="sampling-designs-for-qualitative-research" class="level4" data-number="8.1.1.3"><h4 data-number="8.1.1.3" class="anchored" data-anchor-id="sampling-designs-for-qualitative-research">
@@ -694,7 +694,7 @@ strata_ra(strata = villages)</code></pre>
 <p>The analogy between sampling and assignment runs so deep because, in a sense, assignment <strong>is</strong> sampling. Instead of sampling units in or out of the study, we sample from alternative possible worlds. The treatment group represents a sample from the alternative world in which all units are treated and the control group represents a sample from the alternative world in which all units are untreated.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> We can re-encounter the fundamental problem of causal inference through this lens – if a unit is sampled from one possible world, it can’t be sampled from any other possible world. <a href="#tbl-assignmenttypes">Table&nbsp;<span>8.2</span></a> collects together common forms of random assignment.</p>
 <div id="tbl-assignmenttypes" class="anchored">
 <table class="table">
-<caption>Table 8.2: Kinds of random assignment</caption>
+<caption>Table&nbsp;8.2: Kinds of random assignment</caption>
 <colgroup>
 <col style="width: 24%">
 <col style="width: 75%">
@@ -756,7 +756,7 @@ block_ra(blocks = villages, prob_unit = saturation)</code></pre>
 <p>The final row of <a href="#fig-ch8num4">Figure&nbsp;<span>8.4</span></a> shows a series of designs that are analogous to the multi-stage sampling designs shown in <a href="#fig-ch8num2">Figure&nbsp;<span>8.2</span></a> – but their purpose is subtly different in spirit. Multi-stage sampling designs are employed to reduce costs – first clusters are sampled but not all units within a cluster are sampled. A saturation randomization design (sometimes called a “partial population design”, see section <span class="citation" data-cites="randomized-saturation-experiments">(<a href="../references.html#ref-randomized-saturation-experiments" role="doc-biblioref"><strong>randomized-saturation-experiments?</strong></a>)</span>) uses a similar procedure to both contain and learn about spillover effects. Some clusters are chosen for treatment, but some units <em>within</em> those clusters are not treated. Units that are untreated in treated clusters can be compared with units that are untreated in untreated clusters in order to suss out intra-cluster spillover effects <span class="citation" data-cites="betsy2012detecting">(<a href="../references.html#ref-betsy2012detecting" role="doc-biblioref">Sinclair, McConnell, and Green 2012</a>)</span>. The figure shows how the saturation design comes in simple, complete, and blocked varieties.</p>
 <div id="fig-ch8num4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-8-4.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 8.4: Nine kinds of random assignment. In the first row individuals are the units of assignment, in the second row clusters are randomly assigned, in the third clusters are randomly assigned a saturation level and then individuals within these clusters are randomly assigned. In the first column units are assigned independently, in the second units are assigned to hit a target, in the third units are assigned to hit targets within strata.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8.4: Nine kinds of random assignment. In the first row individuals are the units of assignment, in the second row clusters are randomly assigned, in the third clusters are randomly assigned a saturation level and then individuals within these clusters are randomly assigned. In the first column units are assigned independently, in the second units are assigned to hit a target, in the third units are assigned to hit targets within strata.</figcaption><p></p>
 </figure>
 </div>
 </section><section id="multi-arm-and-factorial-trials" class="level4" data-number="8.1.2.2"><h4 data-number="8.1.2.2" class="anchored" data-anchor-id="multi-arm-and-factorial-trials">
@@ -766,19 +766,17 @@ block_ra(blocks = villages, prob_unit = saturation)</code></pre>
 <caption>{#tbl-multiarmassignmenttypes} Examples of multi-arm random assignment</caption>
 <colgroup>
 <col style="width: 34%">
-<col style="width: 65%">
+<col style="width: 64%">
+<col style="width: 0%">
 </colgroup>
 <thead><tr class="header">
 <th>Design</th>
 <th>Description and randomizr R code</th>
+<th></th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>Multi-arm random assignment (complete)</td>
-<td>
-<p>Fixed numbers of units are assigned to three or more conditions</p>
-<pre><code>complete_ra(N = 100, m_each = c(40, 30, 30))</code></pre>
-</td>
+<td colspan="3">Multi-arm random assignment (complete) | Fixed numbers of units are assigned to three or more conditions | | | <code>|                                                 | complete_ra(N = 100, m_each = c(40, 30, 30))                                                 |</code> |</td>
 </tr>
 <tr class="even">
 <td>Factorial random assignment (complete)</td>
@@ -791,6 +789,7 @@ Z2 = block_ra(blocks = Z1, block_m = 25)</code></pre>
 Z1 = Z %in% c("T1", "T2")
 Z2 = Z %in% c("T1", "T3")</code></pre>
 </td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -799,7 +798,7 @@ Z2 = Z %in% c("T1", "T3")</code></pre>
 <p>The two-by-two factorial design in the center panel shares similarities with both the three-arm and the four-arm trials. Like the three-arm, it considers two treatments T1 and T2, but it also includes a fourth condition in which both treatments are applied. Factorial designs can be analyzed like a four-arm trial, but the structure of the design also enables further analyses. In particular, the factorial structure allows researchers to investigate whether the effects of one treatment depend on the level of the other treatment.</p>
 <div id="fig-ch8num5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-8-5.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 8.5: Multi-arm random assignment.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8.5: Multi-arm random assignment.</figcaption><p></p>
 </figure>
 </div>
 </section><section id="over-time-designs" class="level4" data-number="8.1.2.3"><h4 data-number="8.1.2.3" class="anchored" data-anchor-id="over-time-designs">
@@ -808,7 +807,7 @@ Z2 = Z %in% c("T1", "T3")</code></pre>
 <p>A stepped-wedge random assignment procedure involves assigning a subset of units to treatment in the first period, a subset of those who were not treated in the first in the second period, and so on. In the final period, all units are treated. In this design, once you are treated in a period you are treated in all subsequent periods. For example, once you receive information in a treatment about how to vote, you already have that information in later periods. In <a href="#fig-ch8num6">Figure&nbsp;<span>8.6</span></a>, we illustrate a three-period step-wedge design, in which one third of units are assigned in the first period, a second third are treated in the second period, and the remainder in the third and final period. In such a design, we can make two comparisons: the treatment versus control contrast in each period, and the within-units over-time contrast before and after treatment. By combining these two comparisons, we have a more efficient estimate of the average treatment effect than if we had randomly assigned one half of units to treatment and the other half to control in a single period. However, we must invoke a no carry-over assumption that in the second and third period potential outcomes are only a function of the current treatment status not whether (or not) the unit was treated earlier.</p>
 <div id="fig-ch8num6" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-8-6.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 8.6: Step-wedge random assignment.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8.6: Step-wedge random assignment.</figcaption><p></p>
 </figure>
 </div>
 <p>Crossover designs are a second common over-time random assignment procedure, in which units are first assigned one condition and then, in a second period, the opposite condition. Such a design is appropriate when units, once treated, do not retain their treatment over time. Crossover designs must also rely on an assumption of no carry-over. If this assumption is valid, the design is highly efficient: instead of having half treated and half control in a single period, all units receive treatment in one period and control in the other so we can make comparisons within each period across units with different conditions <em>and</em> for all units over time before and after treatment. Whether the crucial no carry-over assumptions holds is fundamentally not testable: it is an excludability assumption about the unobservable potential outcomes. The assumption may be bolstered by “washout period” between measurement waves, like buffer rows between crops in agricultural experiments.</p>
@@ -854,7 +853,7 @@ Z2 = Z %in% c("T1", "T3")</code></pre>
 <p>Below, we adapt <a href="#fig-ch8num1">Figure&nbsp;<span>8.1</span></a> presented in the chapter’s introduction to introduce each of these threats and discuss each threat in turn.</p>
 <div id="fig-ch8num7" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-8-7.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 8.7: Directed acyclic graph of random sampling, random assignment, and measurement with exclusion restriction violations as dotted lines.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8.7: Directed acyclic graph of random sampling, random assignment, and measurement with exclusion restriction violations as dotted lines.</figcaption><p></p>
 </figure>
 </div>
 <section id="noncompliance" class="level3" data-number="8.2.1"><h3 data-number="8.2.1" class="anchored" data-anchor-id="noncompliance">
@@ -950,15 +949,33 @@ Skocpol, Theda. 1979. <em>States and Social Revolutions: A Comparative Analysis 
 Swank, Duane. 2002. <em><span class="nocase">Global Capital, Political Institutions, and Policy Change in Developed Welfare States</span></em>. New York: Cambridge University Press.
 </div>
 </div>
-</section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
+</section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
 <ol>
-<li id="fn1" role="doc-endnote"><p>To convince yourself of the difference between simple and complete random sampling, run <code>table(simple_rs(N = 100, prob = 0.5))</code> a few times and compare the results with <code>table(complete_rs(N = 100, n = 50))</code><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>To convince yourself of the difference between complete and stratified sampling, run <code>age &lt;- rep(c("Y", "O"), 50); table(age, complete_rs(N = 100, n = 50))</code> a few times and compare the results with <code>table(age, strata_rs(strata = age))</code><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>See <span class="citation" data-cites="gerring2016selecting">Gerring and Cojocaru (<a href="../references.html#ref-gerring2016selecting" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="plumper2010case">Plümper, Troeger, and Neumayer (<a href="../references.html#ref-plumper2010case" role="doc-biblioref">2019</a>)</span> for still larger lists.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>This problem does not arise if cases are selected to be similar on background features other than <span class="math inline">\(X\)</span> <em>when <span class="math inline">\(Y\)</span> is unknown</em> — in this case the there is learning about effects from later observation of <span class="math inline">\(Y\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p>Strictly speaking, this claim only holds under a noninterference assumption; if the usual noninterference assumption is incorrect, we have to redefine potential outcomes in order to recover “stability.” Assignment strategies sample from possible worlds of stable potential outcomes that we imagine in <em>M</em><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>To convince yourself of the difference between simple and complete random sampling, run <code>table(simple_rs(N = 100, prob = 0.5))</code> a few times and compare the results with <code>table(complete_rs(N = 100, n = 50))</code><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>To convince yourself of the difference between complete and stratified sampling, run <code>age &lt;- rep(c("Y", "O"), 50); table(age, complete_rs(N = 100, n = 50))</code> a few times and compare the results with <code>table(age, strata_rs(strata = age))</code><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>See <span class="citation" data-cites="gerring2016selecting">Gerring and Cojocaru (<a href="../references.html#ref-gerring2016selecting" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="plumper2010case">Plümper, Troeger, and Neumayer (<a href="../references.html#ref-plumper2010case" role="doc-biblioref">2019</a>)</span> for still larger lists.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This problem does not arise if cases are selected to be similar on background features other than <span class="math inline">\(X\)</span> <em>when <span class="math inline">\(Y\)</span> is unknown</em> — in this case the there is learning about effects from later observation of <span class="math inline">\(Y\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Strictly speaking, this claim only holds under a noninterference assumption; if the usual noninterference assumption is incorrect, we have to redefine potential outcomes in order to recover “stability.” Assignment strategies sample from possible worlds of stable potential outcomes that we imagine in <em>M</em><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -980,7 +997,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -1008,31 +1042,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">

@@ -2,16 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.644">
+<meta name="generator" content="quarto-1.2.335">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design - 10&nbsp; Diagnosing designs</title>
+<title>Research Design in the Social Sciences - 10&nbsp; Diagnosing designs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -50,7 +55,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -63,7 +68,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -113,7 +118,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -157,452 +162,446 @@ div.csl-indent {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../authors.html" class="sidebar-item-text sidebar-link">About the authors</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
-  </div>
-</li>
+<li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">About the authors</span>
+  </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Introduction</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+      <span class="sidebar-item-text sidebar-link text-start">Acknowledgements</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Introduction</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../library/" class="sidebar-item-text sidebar-link">Research design library</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+      <div class="sidebar-item-container"> 
+            <a href="../library/" class="sidebar-item-text sidebar-link">Research design library</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../library/observational-descriptive/" class="sidebar-item-text sidebar-link">Observational : descriptive</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">
+      <div class="sidebar-item-container"> 
+            <a href="../library/observational-descriptive/" class="sidebar-item-text sidebar-link">Observational : descriptive</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-descriptive/simple-random-sampling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Simple random sampling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-descriptive/cluster-random-sampling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Cluster random sampling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-descriptive/multilevel-regression-poststratification.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Multi-level regression and poststratification</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-descriptive/index-creation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Index creation</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../library/observational-causal/" class="sidebar-item-text sidebar-link">Observational : causal</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../library/observational-causal/" class="sidebar-item-text sidebar-link">Observational : causal</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-causal/process-tracing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Process tracing</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-causal/selection-on-observables.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Selection-on-observables</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-causal/difference-in-differences.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Difference-in-differences</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-causal/instrumental-variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Instrumental variables</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/observational-causal/regression-discontinuity.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Regression discontinuity designs</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../library/experimental-descriptive/" class="sidebar-item-text sidebar-link">Experimental : descriptive</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../library/experimental-descriptive/" class="sidebar-item-text sidebar-link">Experimental : descriptive</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-descriptive/audit-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Audit experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-descriptive/list-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">List experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-descriptive/conjoint-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Conjoint experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-descriptive/behavioral-games.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Behavioral games</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../library/experimental-causal/" class="sidebar-item-text sidebar-link">Experimental : causal</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../library/experimental-causal/" class="sidebar-item-text sidebar-link">Experimental : causal</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/two-arm-randomized-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Two-arm randomized experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/block-randomized-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Block-randomized experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/cluster-randomized-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Cluster-randomized experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/subgroup-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Subgroup designs</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/factorial-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Factorial experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/encouragement-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Encouragement designs</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/placebo-controlled-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Placebo-controlled experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/stepped-wedge-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Stepped-wedge experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/randomized-saturation-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Randomized saturation experiments</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/experimental-causal/experiments-over-networks.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Experiments over networks</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../library/complex/" class="sidebar-item-text sidebar-link">Complex</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../library/complex/" class="sidebar-item-text sidebar-link">Complex</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/complex/discovery-causal-forests.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Discovery using causal forests</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/complex/structural-estimation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Structural estimation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/complex/meta-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Meta-analysis</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../library/complex/multi-site-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Multi-site studies</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-    </ul>
+      </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">
+      <div class="sidebar-item-container"> 
+            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../lifecycle/planning/" class="sidebar-item-text sidebar-link">Planning</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">
+      <div class="sidebar-item-container"> 
+            <a href="../lifecycle/planning/" class="sidebar-item-text sidebar-link">Planning</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/planning/ethics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Ethics</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/planning/partners.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Partners</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/planning/funding.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Funding</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/planning/piloting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Piloting</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/planning/criticism.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Criticism</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/planning/preanalysis-plan.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Preanalysis Plan</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../lifecycle/realization/" class="sidebar-item-text sidebar-link">Realization</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../lifecycle/realization/" class="sidebar-item-text sidebar-link">Realization</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/realization/pivoting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Pivoting</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/realization/populated-pap.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Populated preanalysis plan</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/realization/reconciliation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Reconciliation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/realization/writing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Writing</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="../lifecycle/integration/" class="sidebar-item-text sidebar-link">Integration</a>
-      <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../lifecycle/integration/" class="sidebar-item-text sidebar-link">Integration</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/integration/communicating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">59</span>&nbsp; <span class="chapter-title">Communicating</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/integration/archiving.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">60</span>&nbsp; <span class="chapter-title">Archiving</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/integration/reanalysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">61</span>&nbsp; <span class="chapter-title">Reanalysis</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/integration/replication.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">62</span>&nbsp; <span class="chapter-title">Replication</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lifecycle/integration/meta-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">63</span>&nbsp; <span class="chapter-title">Meta-analysis</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
 </li>
-    </ul>
+      </ul>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../epilogue.html" class="sidebar-item-text sidebar-link">Epilogue</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
-  </div>
-</li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">Epilogue</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">References</span>
+  </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p>Buy this book</p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
 <li>
-<a href="#elements-of-diagnoses" id="toc-elements-of-diagnoses" class="nav-link active" data-scroll-target="#elements-of-diagnoses"> <span class="header-section-number">10.1</span> Elements of diagnoses</a>
+<a href="#elements-of-diagnoses" id="toc-elements-of-diagnoses" class="nav-link active" data-scroll-target="#elements-of-diagnoses"><span class="toc-section-number">10.1</span>  Elements of diagnoses</a>
   <ul class="collapse">
-<li><a href="#diagnosand-statistics" id="toc-diagnosand-statistics" class="nav-link" data-scroll-target="#diagnosand-statistics"> <span class="header-section-number">10.1.1</span> Diagnosand statistics</a></li>
-  <li><a href="#diagnosands" id="toc-diagnosands" class="nav-link" data-scroll-target="#diagnosands"> <span class="header-section-number">10.1.2</span> Diagnosands</a></li>
+<li><a href="#diagnosand-statistics" id="toc-diagnosand-statistics" class="nav-link" data-scroll-target="#diagnosand-statistics"><span class="toc-section-number">10.1.1</span>  Diagnosand statistics</a></li>
+  <li><a href="#diagnosands" id="toc-diagnosands" class="nav-link" data-scroll-target="#diagnosands"><span class="toc-section-number">10.1.2</span>  Diagnosands</a></li>
   </ul>
 </li>
-  <li><a href="#sec-ch10s2" id="toc-sec-ch10s2" class="nav-link" data-scroll-target="#sec-ch10s2"> <span class="header-section-number">10.2</span> Types of diagnosands</a></li>
+  <li><a href="#sec-ch10s2" id="toc-sec-ch10s2" class="nav-link" data-scroll-target="#sec-ch10s2"><span class="toc-section-number">10.2</span>  Types of diagnosands</a></li>
   <li>
-<a href="#estimation-of-diagnosands" id="toc-estimation-of-diagnosands" class="nav-link" data-scroll-target="#estimation-of-diagnosands"> <span class="header-section-number">10.3</span> Estimation of diagnosands</a>
+<a href="#estimation-of-diagnosands" id="toc-estimation-of-diagnosands" class="nav-link" data-scroll-target="#estimation-of-diagnosands"><span class="toc-section-number">10.3</span>  Estimation of diagnosands</a>
   <ul class="collapse">
-<li><a href="#analytic-design-diagnosis" id="toc-analytic-design-diagnosis" class="nav-link" data-scroll-target="#analytic-design-diagnosis"> <span class="header-section-number">10.3.1</span> Analytic design diagnosis</a></li>
-  <li><a href="#design-diagnosis-by-simulation" id="toc-design-diagnosis-by-simulation" class="nav-link" data-scroll-target="#design-diagnosis-by-simulation"> <span class="header-section-number">10.3.2</span> Design diagnosis by simulation</a></li>
-  <li><a href="#sec-ch10s3ss3" id="toc-sec-ch10s3ss3" class="nav-link" data-scroll-target="#sec-ch10s3ss3"> <span class="header-section-number">10.3.3</span> Simulation error</a></li>
+<li><a href="#analytic-design-diagnosis" id="toc-analytic-design-diagnosis" class="nav-link" data-scroll-target="#analytic-design-diagnosis"><span class="toc-section-number">10.3.1</span>  Analytic design diagnosis</a></li>
+  <li><a href="#design-diagnosis-by-simulation" id="toc-design-diagnosis-by-simulation" class="nav-link" data-scroll-target="#design-diagnosis-by-simulation"><span class="toc-section-number">10.3.2</span>  Design diagnosis by simulation</a></li>
+  <li><a href="#sec-ch10s3ss3" id="toc-sec-ch10s3ss3" class="nav-link" data-scroll-target="#sec-ch10s3ss3"><span class="toc-section-number">10.3.3</span>  Simulation error</a></li>
   </ul>
 </li>
   <li>
-<a href="#how-to-diagnose-designs" id="toc-how-to-diagnose-designs" class="nav-link" data-scroll-target="#how-to-diagnose-designs"> <span class="header-section-number">10.4</span> How to diagnose designs</a>
+<a href="#how-to-diagnose-designs" id="toc-how-to-diagnose-designs" class="nav-link" data-scroll-target="#how-to-diagnose-designs"><span class="toc-section-number">10.4</span>  How to diagnose designs</a>
   <ul class="collapse">
-<li><a href="#sec-ch10s4ss1" id="toc-sec-ch10s4ss1" class="nav-link" data-scroll-target="#sec-ch10s4ss1"> <span class="header-section-number">10.4.1</span> Exploring design tradeoffs</a></li>
-  <li><a href="#sec-ch10s4ss2" id="toc-sec-ch10s4ss2" class="nav-link" data-scroll-target="#sec-ch10s4ss2"> <span class="header-section-number">10.4.2</span> Diagnosis under model uncertainty</a></li>
-  <li><a href="#adjudicating-between-competing-models" id="toc-adjudicating-between-competing-models" class="nav-link" data-scroll-target="#adjudicating-between-competing-models"> <span class="header-section-number">10.4.3</span> Adjudicating between competing models</a></li>
+<li><a href="#sec-ch10s4ss1" id="toc-sec-ch10s4ss1" class="nav-link" data-scroll-target="#sec-ch10s4ss1"><span class="toc-section-number">10.4.1</span>  Exploring design tradeoffs</a></li>
+  <li><a href="#sec-ch10s4ss2" id="toc-sec-ch10s4ss2" class="nav-link" data-scroll-target="#sec-ch10s4ss2"><span class="toc-section-number">10.4.2</span>  Diagnosis under model uncertainty</a></li>
+  <li><a href="#adjudicating-between-competing-models" id="toc-adjudicating-between-competing-models" class="nav-link" data-scroll-target="#adjudicating-between-competing-models"><span class="toc-section-number">10.4.3</span>  Adjudicating between competing models</a></li>
   </ul>
 </li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">10.5</span> Summary</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="toc-section-number">10.5</span>  Summary</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -615,6 +614,7 @@ div.csl-indent {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -628,7 +628,7 @@ div.csl-indent {
 <p>A comparison of the top row to the bottom three rows of <a href="#fig-ch10num1">Figure&nbsp;<span>10.1</span></a> shows how actual research designs differ from simulated research designs. Actual research designs are influenced by reality—we learn about the real world by conducting empirical research. We don’t learn about the real world from simulated research designs. Instead, we learn about research designs themselves. We learn how the research design would behave <em>if</em> the real world <span class="math inline">\(m^*\)</span> were like the model draw <span class="math inline">\(m_1\)</span>—or like <span class="math inline">\(m_{100}\)</span>. We can only evaluate designs under the possibilities we consider in <span class="math inline">\(M\)</span>. If the world <span class="math inline">\(m^*\)</span> is not in that set of possibilities, we won’t have evaluated the design under the most important setting, i.e., what will happen when we actually apply the design in reality. We want to follow <a href="../introduction/research-design-principles.html#exm-designagnostically">Principle&nbsp;<span>3.2</span></a> to “design agnostically” or in order words, to consider such a wide range of possibilities that some <span class="math inline">\(a_{m_k}\)</span> will be close enough to <span class="math inline">\(a_{m^*}\)</span>.</p>
 <div id="fig-ch10num1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-10-1.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.1: Simulations in the <em>MIDA</em> framework</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.1: Simulations in the <em>MIDA</em> framework</figcaption><p></p>
 </figure>
 </div>
 <p>With this definition of a diagnosis in hand, we can now sharpen our thinking on when we have a complete design declaration. A design declaration is “diagnosand-complete” when the declaration contains enough information to calculate a specific diagnosand, or statistic about the design. The “bias” diagnosand requires that all four of <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em> are specified in sufficient detail because we need to be able to compare the answer under the model (<span class="math inline">\(a_m\)</span>) to the simulated empirical answer (<span class="math inline">\(a_d\)</span>). The “statistical power” diagnosand often does not require the inquiry <span class="math inline">\(I\)</span> to be specified, since we can mechanistically conduct null hypothesis significance tests without reference to inquiries. Neither the “bias” nor “statistical power” diagnosands require any details of confidence interval construction, but without those details, the declaration is not diagnosand-complete for “coverage.”</p>
@@ -657,7 +657,7 @@ div.csl-indent {
 <p>Robust standard errors are “heteroskedasticity-robust,” which means that that the estimation does not assume that the two groups have the same error variance. <span class="citation" data-cites="samii2012equivalencies">Samii and Aronow (<a href="../references.html#ref-samii2012equivalencies" role="doc-biblioref">2012</a>)</span> show that a particular variant of robust standard errors (HC2) is exactly equal to the Neyman variance estimator described in <a href="redesigning.html#sec-ch10s3ss1"><span>Section&nbsp;11.3.1</span></a>, which is why HC2 robust standard errors are default in the <code>lm_robust</code> function. The bottom row of <a href="#fig-ch10num2">Figure&nbsp;<span>10.2</span></a> shows that the robust standard error estimator hews closely to the true value of the diagnosand in all of the design settings considered. We prefer robust SEs because they do impose extra model assumptions like homoskedasticity that are not grounded in any particular design feature.</p>
 <div id="fig-ch10num2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-10-2.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.2: Why robust standard errors are preferred to classical standard errors</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.2: Why robust standard errors are preferred to classical standard errors</figcaption><p></p>
 </figure>
 </div>
 </section></section><section id="sec-ch10s2" class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" data-anchor-id="sec-ch10s2">
@@ -665,7 +665,7 @@ div.csl-indent {
 <p>As described above, a diagnostic statistic is any summary function of <span class="math inline">\(a_m\)</span> and <span class="math inline">\(a_d\)</span>, and a diagnosand is any summary of the distribution of diagnostic statistics. As a result, there are a great many diagnosands researchers may consider. In <a href="#tbl-diagnosticstatistics">Table&nbsp;<span>10.1</span></a>, we introduce a nonexhaustive set of diagnostic statistics, and in <a href="#tbl-diagnosands">Table&nbsp;<span>10.2</span></a> a nonexhaustive set of diagnosands.</p>
 <div id="tbl-diagnosticstatistics" class="anchored">
 <table class="table">
-<caption>Table 10.1: Examples of diagnostic statistics.</caption>
+<caption>Table&nbsp;10.1: Examples of diagnostic statistics.</caption>
 <colgroup>
 <col style="width: 42%">
 <col style="width: 57%">
@@ -719,7 +719,7 @@ div.csl-indent {
 </div>
 <div id="tbl-diagnosands" class="anchored">
 <table class="table">
-<caption>Table 10.2: Examples of iagnosands.</caption>
+<caption>Table&nbsp;10.2: Examples of iagnosands.</caption>
 <colgroup>
 <col style="width: 16%">
 <col style="width: 54%">
@@ -891,7 +891,7 @@ div.csl-indent {
 <div id="tbl-forloop" class="anchored">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Table 10.3:  By-hand design diagnosis with a for-loop </caption>
+<caption>Table&nbsp;10.3:  By-hand design diagnosis with a for-loop </caption>
  <thead><tr>
 <th style="text-align:center;"> power </th>
   </tr></thead>
@@ -939,7 +939,7 @@ div.csl-indent {
 <div id="tbl-diagnsissimplydd" class="anchored">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Table 10.4:  Design diagnosis using DeclareDesign </caption>
+<caption>Table&nbsp;10.4:  Design diagnosis using DeclareDesign </caption>
  <thead><tr>
 <th style="text-align:center;"> power </th>
    <th style="text-align:center;"> se(power) </th>
@@ -975,7 +975,7 @@ div.csl-indent {
 <div id="tbl-onesimulationdraw" class="anchored">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Table 10.5:  One simulation draw </caption>
+<caption>Table&nbsp;10.5:  One simulation draw </caption>
  <thead><tr>
 <th style="text-align:center;"> estimand </th>
    <th style="text-align:center;"> estimate </th>
@@ -1001,7 +1001,7 @@ div.csl-indent {
 <p><a href="#fig-ch10num3">Figure&nbsp;<span>10.3</span></a> shows the information we might obtain from a single run of the simulation. The filled point is the estimate <span class="math inline">\(a_{d_k}\)</span>. The open triangle is the estimand <span class="math inline">\(a_{m_k}\)</span>. The bell-shaped curve is our normal-approximation based estimate of the sampling distribution. The standard deviation of this estimated distribution is our estimated standard error, which expresses our uncertainty. The confidence interval around the estimate is another expression of our uncertainty: We’re not sure where <span class="math inline">\(a_{d_k}\)</span> is, but if things are going according to plan, confidence intervals constructed this way will bracket <span class="math inline">\(a_{m_k}\)</span> 95% of the time.</p>
 <div id="fig-ch10num3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-10-3.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.3: Visualization of one draw from a design diagnosis.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.3: Visualization of one draw from a design diagnosis.</figcaption><p></p>
 </figure>
 </div>
 <p>From this single draw, we can’t yet estimate diagnosands, but we can calculate diagnostic statistics. The estimate was higher than the estimand in this draw, so the error is 0.45 - 0.20 = 0.25. Likewise, the squared error is (0.45 - 0.20)<span class="math inline">\(^2\)</span> = 0.0625. The <span class="math inline">\(p\)</span>-value is 0.01, which is well below the threshold of 0.05, so the “statistical significance” diagnostic statistic is equal to <code>TRUE</code>. The confidence interval stretches from 0.11 to 0.79, and since the value of the estimand (0.20) is between those bounds, the “covers” diagnostic statistic is equal to <code>TRUE</code> as well.</p>
@@ -1009,7 +1009,7 @@ div.csl-indent {
 <p><a href="#fig-ch10num4">Figure&nbsp;<span>10.4</span></a> visualizes 10 runs of the simulation. We can see that some of the draws produce statistically significant estimates (the shaded areas are small and the confidence intervals don’t overlap zero), but not all. We get a sense of the <em>true</em> standard error by seeing how the point estimates bounce around. We get a feel for the difference between the estimates of the standard error and true standard error. Design diagnosis is the process of learning about many ways the study might come out, not just the one way that it will.</p>
 <div id="fig-ch10num4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-10-4.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.4: Visualization of ten draws from a design diagnosis.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.4: Visualization of ten draws from a design diagnosis.</figcaption><p></p>
 </figure>
 </div>
 <p>This line of code does it all in one. We simulate the design (500 times by default) to calculate the diagnostic statistics, then we summarize them in terms of bias, the true standard error, RMSE, power, and coverage.</p>
@@ -1036,7 +1036,7 @@ div.csl-indent {
 <div id="tbl-estimateddiagnosands" class="anchored">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Table 10.6:  Diagnosand estimates with bootstrapped standard errors in parentheses </caption>
+<caption>Table&nbsp;10.6:  Diagnosand estimates with bootstrapped standard errors in parentheses </caption>
  <thead><tr>
 <th style="text-align:center;"> bias </th>
    <th style="text-align:center;"> true se </th>
@@ -1070,13 +1070,13 @@ div.csl-indent {
 <p>To illustrate, consider the following three designs as represented by three targets. The inquiry is the bullseye of the target. The data and answer strategies combine to generate a process by which arrows are shot towards the target. On the left, we have a very bad archer: even though the estimates are unbiased in the sense that they hit the bullseye “on average”, very few of the arrows are on target. In the middle, we have an excellent shot: they are both on target and low variance. On the right, we have an archer who is very consistent (low variance) but biased. The mean squared error is highest on the left and lowest in the middle.</p>
 <div id="fig-ch10num5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-10-5.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.5: Visualization of the bias and variance of three ‘estimators’ of the bullseye</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.5: Visualization of the bias and variance of three ‘estimators’ of the bullseye</figcaption><p></p>
 </figure>
 </div>
 <p>The archery metaphor is common in research design textbooks because it effectively conveys the difference between variance and bias, but it does elide an important point. It really matters <strong>which target</strong> the archer is shooting at. <a href="#fig-ch10num6">Figure&nbsp;<span>10.6</span></a> shows a bizarre double-target representing two inquiries. The empirical strategy is unbiased and precise for the left inquiry, but it is clearly biased for the right inquiry. When we are describing the properties of an answer strategy, we have to be clear about which inquiry it is associated with.</p>
 <div id="fig-ch10num6" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-10-6.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.6: The bias, variance, and RMSE of an answer strategy depend on the inquiry.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.6: The bias, variance, and RMSE of an answer strategy depend on the inquiry.</figcaption><p></p>
 </figure>
 </div>
 <p>MSE is an exactly equal weighting of variance and bias (squared). Yet many other weightings of these two diagnosands are possible, and different researchers will vary in their weightings.</p>
@@ -1112,7 +1112,7 @@ div.csl-indent {
 <p>What is “the” power of this design? Under one view, the true power of the design is the whichever value for power is associated with the effect size. But under an agnostic view, the ex ante “power” of the design is a weighted average of all these power values, weighted by the researcher’s prior beliefs over the distribution of possible effect sizes.</p>
 <div id="fig-ch10num7" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-10-7.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.7: Diagnosing an experiment over uncertainty about the true effect size</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.7: Diagnosing an experiment over uncertainty about the true effect size</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1168,7 +1168,7 @@ div.csl-indent {
 <div id="tbl-adjudicating" class="anchored">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Table 10.7:  Design diagnosis under two alternative theories </caption>
+<caption>Table&nbsp;10.7:  Design diagnosis under two alternative theories </caption>
  <thead><tr>
 <th style="text-align:center;"> design </th>
    <th style="text-align:center;"> Only theory 1 supported </th>
@@ -1228,6 +1228,24 @@ Samii, Cyrus, and Peter M. Aronow. 2012. <span>“On Equivalencies Between Desig
 </div>
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1249,7 +1267,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -1277,31 +1312,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
