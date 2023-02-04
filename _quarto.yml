@@ -4,9 +4,10 @@ project:
 
 book:
   title: "Research Design in the Social Sciences"
-  subtitle: "Declaration, Diagnosis, Redesign"
-  cover-image: figures/cover.avif
-  margin-header: Buy this book
+  subtitle: "Declaration, Diagnosis, and Redesign"
+  margin-header: >
+    <a style = 'color: black; text-decoration: none; font-size: 17px' target='_new' href='https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences'>
+    <img style='border: 1px solid darkgray; margin-bottom: 5px' width = 100px src='figures/cover.avif'><br/>Preorder book</a>
   author: 
     - Graeme Blair
     - Alexander Coppock
@@ -219,6 +220,7 @@ format:
     number-offset: -1
     default-image-extension: svg
     code-link: true
+    
     # self-contained: true
     # self-contained-math: true
   # pdf:
