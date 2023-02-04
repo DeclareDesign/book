@@ -139,7 +139,10 @@ div.csl-indent {
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><script type="text/javascript">
+}</script><style type="text/css" media="print">
+    body { visibility: hidden; display: none }
+</style>
+<script type="text/javascript">
     function createCookie(name, value, days) {
         var expires;
         if (days) {
@@ -702,7 +705,7 @@ div.csl-indent {
 <p><span class="theorem-title"><strong>Diagnosis 32.1 </strong></span>Diagnosis comparing block random assignment and complete random assignment</p>
 <p>This intuition behind blocking is illustrated in <a href="#fig-ch18num4">Figure&nbsp;<span>32.1</span></a>, which shows the sampling distribution of the difference-in-means estimator under <em>complete</em> random assignment. The histogram is shaded according to whether the particular random assignment is permissible under a procedure that blocks on the binary covariate <span class="math inline">\(X\)</span>. The sampling distribution of the estimator among the set of assignments that are permissible under blocking is more tightly distributed around the true average treatment effect than the estimates associated with assignments that are not perfectly balanced. Here we can see the value of a blocking procedure – it <em>it rules out by design</em> those assignments that are not perfectly balanced.</p>
 <div id="fig-ch18num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-18-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Sampling distribution under complete random assignment, by covariate balance"><img src="../../figures/figure-18-4.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-18-4.svg" class="lightbox" title="Sampling distribution under complete random assignment, by covariate balance" data-gallery="quarto-lightbox-gallery-1"><img src="../../figures/figure-18-4.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;32.1: Sampling distribution under complete random assignment, by covariate balance</figcaption><p></p>
 </figure>
 </div>
@@ -873,7 +876,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});</script>
 
 
 </body></html>
