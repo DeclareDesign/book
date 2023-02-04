@@ -206,11 +206,14 @@ language:
   crossref-lem-title: "Diagnosis"
   crossref-exm-title: "Principle"
   
-lightbox:
-  match: auto
+
   
 format:
   html:
+    filters:
+      - lightbox
+    lightbox:
+      match: auto
     theme: cosmo
     number-offset: -1
     default-image-extension: svg
