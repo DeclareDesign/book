@@ -636,7 +636,7 @@ div.csl-indent {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body" style="text-align: center">
-        <img width="400px" src="https://draft.declaredesign.org/figures/cover.avif" style="margin-bottom: 15px"><br>
+        <img width="400px" src="https://draft.declaredesign.org/figures/cover.jpg" style="margin-bottom: 15px"><br>
         Available for preorder from Princeton University Press
       </div>
       <div class="modal-footer">
@@ -753,7 +753,7 @@ div.csl-indent {
 </div>
 <p>The full set of causal relationships between <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em>, with respect to <span class="math inline">\(m\)</span> and <span class="math inline">\(m^*\)</span>, <span class="math inline">\(a_m\)</span> and <span class="math inline">\(a_{m^*}\)</span>, <span class="math inline">\(d\)</span> and <span class="math inline">\(d^*\)</span>, and <span class="math inline">\(a_d\)</span> and <span class="math inline">\(a_{d^*}\)</span> can be seen in the schematic representation of a research design given in <a href="#fig-ch2num1">Figure&nbsp;<span>5.1</span></a> The figure illustrates how a research design involves a correspondence between <span class="math inline">\(I(m) = a_m\)</span> and <span class="math inline">\(A(d) = a_d\)</span>. The theoretical half of a research design produces an answer to the inquiry <em>in theory</em>. The empirical half of a research design produces an <em>empirical estimate</em> of the answer to the inquiry. Neither answer is necessarily close to the truth <span class="math inline">\(a_{m^*}\)</span>, of course. And, as shown in the figure, the truth is not directly accessible either to us in theory or in empirics. Our gamble in empirical research, however, is that our theoretical models are close enough to the truth; that the truth is like the set of models we imagine. If the models in <span class="math inline">\(M\)</span> do not contain <span class="math inline">\(m^*\)</span> or are too different from it, then even seemingly strong research designs could yield incorrect answers.</p>
 <div id="fig-ch2num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-2-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The MIDA framework"><img src="../figures/figure-2-1.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../figures/figure-2-1.svg" class="lightbox" title="The MIDA framework" data-gallery="quarto-lightbox-gallery-1"><img src="../figures/figure-2-1.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;5.1: The <em>MIDA</em> framework</figcaption><p></p>
 </figure>
 </div>
@@ -779,14 +779,14 @@ div.csl-indent {
   Y = rbinom(N, 1, prob = pnorm(U + X)))
 m &lt;- M()</code></pre></td>
 <td>
-<a href="../figures/ch6-m.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Draw of events from m"><img src="../figures/ch6-m.svg" class="img-fluid" style="width:100.0%" alt="Draw of events from m"></a> | | | | | |</td>
+<a href="../figures/ch6-m.svg" class="lightbox" title="Draw of events from m" data-gallery="quarto-lightbox-gallery-2"><img src="../figures/ch6-m.svg" class="img-fluid" style="width:100.0%" alt="Draw of events from m"></a> | | | | | |</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre><code>I &lt;- declare_inquiry(Ybar = mean(Y[X==1]))
 a_m &lt;- I(m)</code></pre></td>
 <td>
-<a href="../figures/ch6-am.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Draw of am"><img src="../figures/ch6-am.svg" class="img-fluid" style="width:100.0%" alt="Draw of am"></a> | | |</td>
+<a href="../figures/ch6-am.svg" class="lightbox" title="Draw of am" data-gallery="quarto-lightbox-gallery-3"><img src="../figures/ch6-am.svg" class="img-fluid" style="width:100.0%" alt="Draw of am"></a> | | |</td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -795,13 +795,13 @@ a_m &lt;- I(m)</code></pre></td>
   X = rbinom(N, 1, prob = pnorm(U)),
   Y = rbinom(N, 1, prob = pnorm(U)))</code></pre></td>
 <td>
-<a href="../figures/ch6-mstar.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Draw of events from mstar"><img src="../figures/ch6-mstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of events from mstar"></a> | | | | |</td>
+<a href="../figures/ch6-mstar.svg" class="lightbox" title="Draw of events from mstar" data-gallery="quarto-lightbox-gallery-4"><img src="../figures/ch6-mstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of events from mstar"></a> | | | | |</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><pre><code>a_mstar &lt;- I(mstar)</code></pre></td>
 <td>
-<a href="../figures/ch6-amstar.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Draw of amstar"><img src="../figures/ch6-amstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of amstar"></a> | |</td>
+<a href="../figures/ch6-amstar.svg" class="lightbox" title="Draw of amstar" data-gallery="quarto-lightbox-gallery-5"><img src="../figures/ch6-amstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of amstar"></a> | |</td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -809,7 +809,7 @@ a_m &lt;- I(m)</code></pre></td>
   S = simple_rs(N, prob = 0.1))
 dstar &lt;- D(mstar)</code></pre></td>
 <td>
-<a href="../figures/ch6-dstar.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Draw of dstar"><img src="../figures/ch6-dstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of dstar"></a> | | | |</td>
+<a href="../figures/ch6-dstar.svg" class="lightbox" title="Draw of dstar" data-gallery="quarto-lightbox-gallery-6"><img src="../figures/ch6-dstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of dstar"></a> | | | |</td>
 <td></td>
 </tr>
 <tr class="even">
@@ -818,7 +818,7 @@ dstar &lt;- D(mstar)</code></pre></td>
  subset = X == 1, inquiry = "Ybar")
 a_dstar &lt;- A(dstar)</code></pre></td>
 <td>
-<a href="../figures/ch6-adstar.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Draw of adstar"><img src="../figures/ch6-adstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of adstar"></a> | | | | |</td>
+<a href="../figures/ch6-adstar.svg" class="lightbox" title="Draw of adstar" data-gallery="quarto-lightbox-gallery-7"><img src="../figures/ch6-adstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of adstar"></a> | | | | |</td>
 <td></td>
 </tr>
 </tbody>
@@ -1001,7 +1001,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});</script>
 
 
 </body></html>
