@@ -12,4 +12,6 @@ Forthcoming, *Princeton University Press*.
 
 :::
 
-![](figures/figure-2-1)
+![](/figures/cover.jpg){width: 250px}
+
+Preorder the printed book via [Princeton University Press](https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences) or [Amazon](https://www.amazon.com/Research-Design-Social-Sciences-Declaration/dp/0691199574/ref=sr_1_3?crid=37GHB7XNT7U9&keywords=graeme+blair&qid=1675656336&sprefix=graeme+blair%2Caps%2C188&sr=8-3).
