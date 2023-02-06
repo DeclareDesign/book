@@ -171,10 +171,10 @@ div.csl-indent {
         return "";
     }
     window.onload = () => {
-      if (getCookie('popup-shown') != 'yes') {
+      if (getCookie('popupShown') != 'yes') {
         const myModal = new bootstrap.Modal('#exampleModal');
         myModal.show();
-        createCookie('popup-shown', 'yes', 1)
+        createCookie('popupShown', 'yes', 1)
       }
     }
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -737,7 +737,7 @@ div.csl-indent {
 <span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch18num7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-18-7.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Power curves for factorial inquires"><img src="../../figures/figure-18-7.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-18-7.svg" class="lightbox" title="Power curves for factorial inquires" data-gallery="quarto-lightbox-gallery-1"><img src="../../figures/figure-18-7.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;35.1: Power curves for factorial inquires</figcaption><p></p>
 </figure>
 </div>
@@ -760,7 +760,7 @@ div.csl-indent {
 </div>
 <p><a href="#fig-ch18num8">Figure&nbsp;<span>35.2</span></a> shows that the error rate when we consider the statistical significance of the interaction term is nominal. Only 5% of the time do we falsely reject the null that the difference-in-CATEs is zero, which is what we expect when we adopt an <span class="math inline">\(\alpha = 0.05\)</span> threshold. But when we claim “treatment effect heterogeneity!” when one CATE is significant but not the other, we make egregious errors. When the true (constant) average effect of <code>Z1</code> approaches 0.2, we falsely conclude that the treatment has heterogeneous effects nearly 50% of the time!</p>
 <div id="fig-ch18num8" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-18-8.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Comparing the significance of CATE estimates generates misleading inferences."><img src="../../figures/figure-18-8.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-18-8.svg" class="lightbox" title="Comparing the significance of CATE estimates generates misleading inferences." data-gallery="quarto-lightbox-gallery-2"><img src="../../figures/figure-18-8.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;35.2: Comparing the significance of CATE estimates generates misleading inferences.</figcaption><p></p>
 </figure>
 </div>
@@ -925,7 +925,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":true,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true});</script>
 
 
 </body></html>

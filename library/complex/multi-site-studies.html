@@ -171,10 +171,10 @@ div.csl-indent {
         return "";
     }
     window.onload = () => {
-      if (getCookie('popup-shown') != 'yes') {
+      if (getCookie('popupShown') != 'yes') {
         const myModal = new bootstrap.Modal('#exampleModal');
         myModal.show();
-        createCookie('popup-shown', 'yes', 1)
+        createCookie('popupShown', 'yes', 1)
       }
     }
 </script>
@@ -934,7 +934,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":true,"openEffect":"zoom","selector":".lightbox"});</script>
+<script>var lightboxQuarto = GLightbox({"loop":true,"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","selector":".lightbox"});</script>
 
 
 </body></html>

@@ -171,10 +171,10 @@ div.csl-indent {
         return "";
     }
     window.onload = () => {
-      if (getCookie('popup-shown') != 'yes') {
+      if (getCookie('popupShown') != 'yes') {
         const myModal = new bootstrap.Modal('#exampleModal');
         myModal.show();
-        createCookie('popup-shown', 'yes', 1)
+        createCookie('popupShown', 'yes', 1)
       }
     }
 </script><script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
@@ -799,7 +799,7 @@ div.csl-indent {
 <p>Turning to diagnosis we see first that we do a good job in recovering parameter values. All three parameters are estimated precisely. From these, we can calculate estimates of causal quantities such as the first mover advantage and assess the extent to which this depends on features such as the length of the game.</p>
 <p>As always, diagnosis can be used to fine-tune designs. In <a href="#fig-ch19num4">Figure&nbsp;<span>43.1</span></a>, we compare design performance as we vary <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(n\)</span>. We see from the comparison of designs that estimates are less accurate when either longer games are used or when there are many nonstrategic players. Shorter games have an advantage here of producing a more pronounced difference in the payoffs of first and second movers. The gains from shorter games are especially pronounced in settings in which many nonstrategic players dampen the variation in payoffs. Though not shown here, it we can also use design diagnosis to show that the design fails if we set <span class="math inline">\(n\)</span> at 3 (for instance) as in this case <span class="math inline">\(\delta\)</span> is not identified (the same probability distribution is consistent with different values for <span class="math inline">\(\delta\)</span>).</p>
 <div id="fig-ch19num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-19-4.svg" class="lightbox" title="Performance of the structural estimation design depends on the number of rounds and the types of players." data-gallery="quarto-lightbox-gallery-1"><img src="../../figures/figure-19-4.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-19-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Performance of the structural estimation design depends on the number of rounds and the types of players."><img src="../../figures/figure-19-4.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;43.1: Performance of the structural estimation design depends on the number of rounds and the types of players.</figcaption><p></p>
 </figure>
 </div>
@@ -985,7 +985,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":true,"openEffect":"zoom","selector":".lightbox"});</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true,"closeEffect":"zoom"});</script>
 
 
 </body></html>

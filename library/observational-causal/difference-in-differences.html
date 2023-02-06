@@ -171,10 +171,10 @@ div.csl-indent {
         return "";
     }
     window.onload = () => {
-      if (getCookie('popup-shown') != 'yes') {
+      if (getCookie('popupShown') != 'yes') {
         const myModal = new bootstrap.Modal('#exampleModal');
         myModal.show();
-        createCookie('popup-shown', 'yes', 1)
+        createCookie('popupShown', 'yes', 1)
       }
     }
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -735,7 +735,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_16.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_16.3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch16num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-16-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Sampling distributions of two difference-in-differences estimators."><img src="../../figures/figure-16-5.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-16-5.svg" class="lightbox" title="Sampling distributions of two difference-in-differences estimators." data-gallery="quarto-lightbox-gallery-1"><img src="../../figures/figure-16-5.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;22.1: Sampling distributions of two difference-in-differences estimators.</figcaption><p></p>
 </figure>
 </div>
@@ -747,7 +747,7 @@ div.csl-indent {
 <p>The timing of treatment, nature of heterogeneous effects, and answer strategies interact to determine the properties of the design. <a href="#fig-ch16num6">Figure&nbsp;<span>22.2</span></a> shows the diagnosis under all three sets of potential outcomes, and examines both the ATT and the ATT for switchers inquiries. We consider both the two-way fixed effects estimator and the <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator.</p>
 <p>When treatment effects happen to be homogeneous (middle panel), both estimators recover unbiased estimates of both the ATT and the ATT for switchers, which of course are equal to one another because of treatment effect homogeneity. However, when treatment effects vary with the timing of treatment (left or right panels), the two-way fixed-effects estimator is biased for both inquiries. The <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator is also biased for the ATT, but remains unbiased for the ATT among switchers regardless of the pattern of treatment effect heterogeneity.</p>
 <div id="fig-ch16num6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-16-6.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes."><img src="../../figures/figure-16-6.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-16-6.svg" class="lightbox" title="Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes." data-gallery="quarto-lightbox-gallery-2"><img src="../../figures/figure-16-6.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;22.2: Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes.</figcaption><p></p>
 </figure>
 </div>
@@ -915,7 +915,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom"});</script>
 
 
 </body></html>

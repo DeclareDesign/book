@@ -171,10 +171,10 @@ div.csl-indent {
         return "";
     }
     window.onload = () => {
-      if (getCookie('popup-shown') != 'yes') {
+      if (getCookie('popupShown') != 'yes') {
         const myModal = new bootstrap.Modal('#exampleModal');
         myModal.show();
-        createCookie('popup-shown', 'yes', 1)
+        createCookie('popupShown', 'yes', 1)
       }
     }
 </script><script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
@@ -977,7 +977,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":true,"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":true,"selector":".lightbox","openEffect":"zoom"});</script>
 
 
 </body></html>

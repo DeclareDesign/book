@@ -171,10 +171,10 @@ div.csl-indent {
         return "";
     }
     window.onload = () => {
-      if (getCookie('popup-shown') != 'yes') {
+      if (getCookie('popupShown') != 'yes') {
         const myModal = new bootstrap.Modal('#exampleModal');
         myModal.show();
-        createCookie('popup-shown', 'yes', 1)
+        createCookie('popupShown', 'yes', 1)
       }
     }
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -710,7 +710,7 @@ div.csl-indent {
 
 </div>
 <div id="fig-ch19num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-19-5.svg" class="lightbox" title="Coverage and bias of the fixed and random effects under two settings, effect homogeneity and effect heterogeneity." data-gallery="quarto-lightbox-gallery-1"><img src="../../figures/figure-19-5.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-19-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Coverage and bias of the fixed and random effects under two settings, effect homogeneity and effect heterogeneity."><img src="../../figures/figure-19-5.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;44.1: Coverage and bias of the fixed and random effects under two settings, effect homogeneity and effect heterogeneity.</figcaption><p></p>
 </figure>
 </div>
@@ -890,7 +890,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true,"openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
 
 
 </body></html>

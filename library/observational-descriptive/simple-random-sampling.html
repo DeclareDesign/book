@@ -171,10 +171,10 @@ div.csl-indent {
         return "";
     }
     window.onload = () => {
-      if (getCookie('popup-shown') != 'yes') {
+      if (getCookie('popupShown') != 'yes') {
         const myModal = new bootstrap.Modal('#exampleModal');
         myModal.show();
-        createCookie('popup-shown', 'yes', 1)
+        createCookie('popupShown', 'yes', 1)
       }
     }
 </script><script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
@@ -677,7 +677,7 @@ div.csl-indent {
 <p>The data strategy <span class="math inline">\(D\)</span> has two components: a survey question <span class="math inline">\(Q\)</span> and a sampling procedure <span class="math inline">\(S\)</span>. The survey question asks subjects to place themselves on a left-right scale that varies from 1 (most liberal) to 7 (most conservative). We approximate this measurement procedure with a function that “cuts” the latent ideology into 7 separate groups. This survey question will introduce measurement error insofar as it does not distinguish among people with different latent ideologies who, because of our measurement tool, place themselves at the same place on the seven-point scale.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Our main hope for this measurement procedure is that all of the people who give themselves higher scores are indeed more conservative than those who give themselves lower scores. The sampling procedure is “complete” random sampling. We draw a sample of exactly <span class="math inline">\(n = 100\)</span>, where every member of the population has an equal probability of inclusion in the sample, <span class="math inline">\(\frac{n}{N}\)</span>.</p>
 <p>The model and data strategy are represented by the DAG in <a href="#fig-ch15num1">Figure&nbsp;<span>15.1</span></a>. The DAG shows that the observed outcome <span class="math inline">\(Y\)</span> is a function of the latent score <span class="math inline">\(Y^*\)</span> and the survey question <span class="math inline">\(Q\)</span>. The observed outcome <span class="math inline">\(Y\)</span> is only measured for sampled units, i.e., units that have <span class="math inline">\(S = 1\)</span>. This simple diagram represents important design assumptions. First, no arrow leads from <span class="math inline">\(Y^*\)</span> to <span class="math inline">\(S\)</span>. If such an arrow were present, then units with higher or lower latent ideologies would be more likely to be sampled. Second, an arrow does lead from <span class="math inline">\(Y^*\)</span> to <span class="math inline">\(Y\)</span>, indicating that we assume the measured variable does indeed respond to the latent variable. Finally, the diagram includes an explicit role for the survey question, which helps us to consider how alternative wordings of <span class="math inline">\(Q\)</span> might change the observed variable <span class="math inline">\(Y\)</span>.</p>
 <div id="fig-ch15num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-15-1.svg" class="lightbox" title="Directed acyclic graph for the simple random sampling design" data-gallery="quarto-lightbox-gallery-1"><img src="../../figures/figure-15-1.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-15-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Directed acyclic graph for the simple random sampling design"><img src="../../figures/figure-15-1.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;15.1: Directed acyclic graph for the simple random sampling design</figcaption><p></p>
 </figure>
 </div>
@@ -778,7 +778,7 @@ div.csl-indent {
 
 </div>
 <div id="fig-ch15num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-15-2.svg" class="lightbox" title="Redesigning the random sampling design over researcher effort" data-gallery="quarto-lightbox-gallery-2"><img src="../../figures/figure-15-2.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-15-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Redesigning the random sampling design over researcher effort"><img src="../../figures/figure-15-2.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;15.2: Redesigning the random sampling design over researcher effort</figcaption><p></p>
 </figure>
 </div>
@@ -950,7 +950,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"loop":true,"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom"});</script>
 
 
 </body></html>
