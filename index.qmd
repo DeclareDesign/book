@@ -1,7 +1,8 @@
 ---
-toc: false
 format: 
   html:
+    toc: false
+    fig-align: left
     page-layout: full
 ---
 
