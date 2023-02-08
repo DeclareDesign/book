@@ -645,7 +645,8 @@ div.csl-indent {
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <!--<button type="button" class="btn btn-primary">Buy book</button>-->
-        <a href="https://press.princeton.edu" target="_blank" class="btn btn-info" role="button">Preorder book</a>
+        <a href="https://www.amazon.com/Research-Design-Social-Sciences-Declaration/dp/0691199574/?&amp;_encoding=UTF8&amp;tag=declaredesign-20&amp;linkCode=ur2&amp;linkId=84be1f952d1d7aaaa5be867eade93474&amp;camp=1789&amp;creative=9325" target="_blank" class="btn btn-info" role="button">Amazon</a>
+        <a href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences" target="_blank" class="btn btn-info" role="button">Princeton University Press</a>
       </div>
     </div>
   </div>
@@ -792,7 +793,7 @@ div.csl-indent {
 </div>
 <p><a href="#fig-ch18num9">Figure&nbsp;<span>36.1</span></a> represents the encouragement design as a DAG. No arrows lead into <span class="math inline">\(Z\)</span>, because the treatment was randomly assigned. The compliance type <span class="math inline">\(C\)</span>, the assignment <span class="math inline">\(Z\)</span>, and unobserved heterogeneity <span class="math inline">\(U\)</span> conspire to set the level of <span class="math inline">\(D\)</span>. The outcome <span class="math inline">\(Y\)</span> is affected by the treatment <span class="math inline">\(D\)</span> of course, but also by compliance type <span class="math inline">\(C\)</span> and unobserved heterogeneity <span class="math inline">\(U\)</span>. The required exclusion restriction that <span class="math inline">\(Z\)</span> only affect <span class="math inline">\(Y\)</span> through <span class="math inline">\(D\)</span> is represented by the <em>lack</em> of an arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span>. The deficiencies of the as-treated and per-protocol analysis strategies can be learned from the DAG as well. <span class="math inline">\(D\)</span> is a collider, so conditioning on it would open up back-door paths between <span class="math inline">\(Z\)</span>, <span class="math inline">\(C\)</span>, and <span class="math inline">\(U\)</span>, leading to bias of unknown direction and magnitude.</p>
 <div id="fig-ch18num9" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-18-9.svg" class="lightbox" title="Directed acyclic graph of the encouragement design" data-gallery="quarto-lightbox-gallery-1"><img src="../../figures/figure-18-9.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-18-9.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Directed acyclic graph of the encouragement design"><img src="../../figures/figure-18-9.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;36.1: Directed acyclic graph of the encouragement design</figcaption><p></p>
 </figure>
 </div>
@@ -804,7 +805,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_18.9</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_18.8</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch18num10" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-18-10.svg" class="lightbox" title="Sampling distributions of the two-stage least squares, per protocol, and as-treated answer strategies." data-gallery="quarto-lightbox-gallery-2"><img src="../../figures/figure-18-10.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-18-10.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Sampling distributions of the two-stage least squares, per protocol, and as-treated answer strategies."><img src="../../figures/figure-18-10.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;36.2: Sampling distributions of the two-stage least squares, per protocol, and as-treated answer strategies.</figcaption><p></p>
 </figure>
 </div>
@@ -975,7 +976,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":true,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":true,"selector":".lightbox","openEffect":"zoom"});</script>
 
 
 </body></html>

@@ -641,7 +641,8 @@ div.csl-indent {
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <!--<button type="button" class="btn btn-primary">Buy book</button>-->
-        <a href="https://press.princeton.edu" target="_blank" class="btn btn-info" role="button">Preorder book</a>
+        <a href="https://www.amazon.com/Research-Design-Social-Sciences-Declaration/dp/0691199574/?&amp;_encoding=UTF8&amp;tag=declaredesign-20&amp;linkCode=ur2&amp;linkId=84be1f952d1d7aaaa5be867eade93474&amp;camp=1789&amp;creative=9325" target="_blank" class="btn btn-info" role="button">Amazon</a>
+        <a href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences" target="_blank" class="btn btn-info" role="button">Princeton University Press</a>
       </div>
     </div>
   </div>
@@ -669,7 +670,7 @@ div.csl-indent {
 <p>The quality of causal inferences we draw comes down to whether our claims about selection into treatment are correct. If we’ve missed a cause (missed a back door path), then our inferences will be prone to bias. It is the nature of the selection-on-observables design that we can’t know if our claims about the processes that cause selection are correct or not; the design amounts to a leap of faith in the theoretical model.</p>
 <p>The problems don’t end there. We risk bias if we fail to adjust for <span class="math inline">\(X\)</span> under some models — but we will also risk bias if we <em>do</em> adjust for <span class="math inline">\(X\)</span> under other models. In <a href="#fig-ch16num3">Figure&nbsp;<span>21.1</span></a> we illustrate four of the possible roles for an observable variable <span class="math inline">\(X\)</span>: as a confounder of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; as a collider, which is affected by both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; as a mediator of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; and as a predictor of <span class="math inline">\(Y\)</span> with no connection to <span class="math inline">\(D\)</span>. We set aside in these DAGs the possible roles of an unobservable variable <span class="math inline">\(U\)</span> that would introduce additional problems of confounding.</p>
 <div id="fig-ch16num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-16-3.svg" class="lightbox" title="Four roles for an observable variable X." data-gallery="quarto-lightbox-gallery-1"><img src="../../figures/figure-16-3.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-16-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Four roles for an observable variable X."><img src="../../figures/figure-16-3.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;21.1: Four roles for an observable variable X.</figcaption><p></p>
 </figure>
 </div>
@@ -716,7 +717,7 @@ div.csl-indent {
 <p><span class="theorem-title"><strong>Diagnosis 21.1 </strong></span>Matching design diagnosis</p>
 <p>In <a href="#fig-ch16num4">Figure&nbsp;<span>21.2</span></a>, we see that the raw, unmatched estimate is quite biased (about 20% of the average estimate) and that the matched estimate is unbiased. If we fail to adjust for the observable features of the selection process, we have biased answers. But if we do control in this case, we obtain unbiased answers. However, as highlighted earlier, these results depend on the plausibility of our model, which in this case involves observed confounding of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> by <span class="math inline">\(X\)</span>. If there was <em>unobservable</em> confounding from <span class="math inline">\(U\)</span>, or if <span class="math inline">\(X\)</span> was a collider or mediator, there would be bias even if we control for <span class="math inline">\(X\)</span>.</p>
 <div id="fig-ch16num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../../figures/figure-16-4.svg" class="lightbox" title="Sampling distribution of two estimators." data-gallery="quarto-lightbox-gallery-2"><img src="../../figures/figure-16-4.svg" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="../../figures/figure-16-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Sampling distribution of two estimators."><img src="../../figures/figure-16-4.svg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;21.2: Sampling distribution of two estimators.</figcaption><p></p>
 </figure>
 </div>
@@ -881,7 +882,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":true,"selector":".lightbox"});</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
 
 
 </body></html>
