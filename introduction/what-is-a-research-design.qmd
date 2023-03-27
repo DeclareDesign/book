@@ -11,7 +11,7 @@ At its heart, a research design is a procedure for generating answers to questio
 
 We show that the same basic language can be used to represent research designs whether they target causal or descriptive questions, whether they are focused on theory testing or inductive learning, and whether they use quantitative, qualitative, or a mix of methods. We can select a strong design by applying a simple algorithm: declare-diagnose-redesign. Once a design is declared in simple enough language that a computer can understand it, its properties can be diagnosed through simulation. We can then engage in redesign, or the exploration of a range of neighboring designs. The same language we use to talk to the computer can be used to talk to others. Reviewers, advisers, students, funders, journalists, and the public need to know four basic things to understand a design.
 
-## MIDA: The four elements of a research design
+## MIDA: The four elements of a research design \index{MIDA!Definition}
 
 Research designs share in common that they all have an inquiry *I*, a data strategy *D*, and an answer strategy *A*. Less obviously, perhaps, these three elements presuppose a model *M* of how the world works. We refer to the four together as *MIDA*. 
 
@@ -19,11 +19,13 @@ We think of *MIDA* as having two sides. *M* and *I* form the theoretical half, c
 
 @fig-midaplot shows how these four elements of a design relate to one another, how they relate to real world quantities, and how they relate to simulated quantities. We will unpack this figure in the remainder of this chapter, highlighting two especially important parallelisms, first between the upper and lower halves representing actual processes and simulated processes and second between the left (*M*, *I*) and right (*D*, *A*) halves representing these theoretical and empirical sides of research designs.
 
-<!-- align center -->
+\index{MIDA!Illustration}
 
 ![The *MIDA* framework. An arrow between two points means that the point at the end of an arrow depends in some way on the one at the start of the arrow. For instance 'the answer you'll get' depends on the dataset you'll get and the answer strategy you specify.](/figures/figure-2-1){#fig-midaplot}
 
 ### Model
+
+\index{Model!in MIDA}
 
 The set of models in *M* comprises speculations about what causes what and how. It includes guesses about how important variables are generated, how they are correlated, and the sequences of events. 
 
@@ -47,6 +49,8 @@ Summarizing, we can think of three functions of a model that characterize  *unit
 
 #### *M* as a set.
 
+\index{Model!as a set}
+
 In @fig-midaplot, we describe *M* as the "the worlds you'll consider." The reason for this is that we are uncertain about how the world works. As scientists, we are skeptical of easy assertions about what the right model is and we freely admit we don't know the true causal model of the world. When conducting empirical research into the true model, we have to think through how our design would play out under different possible models, including ones we think more likely and those we think less likely. For instance, the correlation between two variables might be large and positive, but it could just as well be zero. We might believe that, conditional on some background variables, a treatment has been as-if randomly assigned by the world---but we might be wrong about that too. In the figure we use $m^*$ to denote the true model, or the actual, unknown, event generating process. We do not have access to $m^*$, but our hope is that $m^*$ is sufficiently well-represented in *M* so that we can reasonably imagine what will happen when our design is applied in the real world. 
 
 How can we construct a sufficiently varied set of models of the world? For this we can draw on existing data from past studies or on new information gathered from pilot studies. Reducing uncertainty over the set of possible models is a core purpose of theoretical reflection, literature review, meta-analysis, and formative research. If there are important known features about your context it generally makes sense to include them in $M$.
@@ -66,6 +70,8 @@ Examples of models
 
 ### Inquiry
 
+\index{Inquiry}
+
 The inquiry is a research question stated in terms of the model. For example, the inquiry might be the average causal effect of one variable on another, the descriptive distribution of a third variable, or a prediction about the value of a variable in the future. We refer to "the" inquiry when talking about the main research question, but in practice we may seek to learn about many inquiries in a single research study. 
 
 Many people use the word "estimand" to refer to an inquiry, and we do too when casually talking about research. When we are formally describing research designs, however, we distinguish between inquiries and estimands and @fig-midaplot shows why. The inquiry *I* is the function that operates on the events generated (or conjectured to be generated) by the real world $m^*$ or a simulated world $m$. The estimand is the value of that function: $a_{m^*}$ or $a_{m}$. In other words, we use "inquiry" to refer to the question and "estimand" to refer to the answer to the question.
@@ -74,6 +80,7 @@ As with models, inquiries are also defined with respect to *units*, *conditions*
 
 @fig-midaplot shows that when *I* is applied to a model $m$, it produces an answer $a^m$. This set of relationships forces discipline on both *M* and *I*: *I* needs to be able to return an answer using information available from *M* and in turn *M* needs to provide enough information so that *I* can do its job.
 
+\index{Inquiry!Examples}
 
 :::: {.ddbox}
 ::: {.ddbox-title}
@@ -94,6 +101,8 @@ Examples of inquiries
 
 ### Data strategy
 
+\index{Data strategy}
+
 The data strategy is the full set of procedures we use to gather information from the world. The three basic elements of data strategies parallel the three features of inquiries: *units* are selected, *conditions* are assigned, and *outcomes* are measured. 
 
 All data strategies require an identification of units. Many involve sampling, gathering data on a subset of units specified by a model or by an inquiry. 
@@ -104,6 +113,8 @@ Measurement procedures are the ways in which researchers reduce the complex and 
 
 @fig-midaplot shows how the data strategy is applied to both the imagined worlds in *M* and to the real world. When *D* is applied to the real world ($m^*$), we obtain the realized dataset $d^*$. When *D* is applied to the worlds we imagine in *M*, we obtain *simulated* datasets, which may or may not be anything like the dataset $d^*$ we would really get. When our models *M* more accurately represent the real world, our simulated datasets will look more like the real data we will eventually collect. 
 
+
+\index{Data strategy!Examples}
 
 :::: {.ddbox}
 ::: {.ddbox-title}
@@ -137,6 +148,8 @@ Examples of data strategies
 
 ### Answer strategy
 
+\index{Answer strategy}
+
 The answer strategy is what we use to summarize the data produced by the data strategy. Just like the inquiry summarizes a part of the model, the answer strategy summarizes a part of the data. We can't just "let the data speak" because complex, multidimensional datasets don't speak for themselves---they need to be summarized and explained. Answer strategies are the procedures we follow to do so.
 
 Answer strategies are functions that take in data and return answers. For some research designs, this is a literal function like the R function `lm_robust` that implements an ordinary least squares (OLS) regression with robust standard errors. For some research designs, the function is embodied by the researchers themselves when they read documents and summarize their meanings in a case study. 
@@ -148,6 +161,8 @@ The answer strategy is more than the choice of an estimator. It includes the ful
 *A* and *I* also enjoy a tight connection stemming from the more general parallelism between (*M*, *I*) and (*D*, *A*). We elaborate the principle of parallel inquiries and answer strategies in @sec-ch9s3.
 
 @fig-midaplot shows how the same answer strategy *A* is applied both to the realized data $d^*$ and also to the simulated data $d$. We know that in practice, however, the *A* applied to the real data differs somewhat from the *A* applied to the data we plan for via simulation. Designs sometimes drift in response to data, but too much drift and the inferences we draw can become misleading. The *MIDA* framework encourages researchers to think through what the real data will actually look like, and adjust *A* accordingly *before* data strategies are implemented.
+
+\index{Answer strategy!Examples}
 
 :::: {.ddbox}
 ::: {.ddbox-title}
@@ -164,15 +179,21 @@ Examples of answer strategies
 
 ## Declaration, diagnosis, redesign
 
+\index{Declaration, diagnosis, redesign workflow}
+
 With the core elements of a design described, we are now ready to lay out the process of declaration, diagnosis, and redesign.
 
 ### Declaration {#what-is-declaration}
+
+\index{Design declaration} 
 
 Declaring a design entails figuring out which parts of your design belong in *M*, *I*, *D*, and *A*. The declaration process can be a challenge because mapping our ideas and excitement about a project into *MIDA* is not always straightforward, but it is rewarding. When we can express a research design in terms of these four components, we are newly able to think about its properties. 
 
 Designs can be declared in words, but declarations often become much more specific when carried out in code. You can declare a design in any statistical programming language: Stata, R, Python, Julia, SPSS, SAS, Mathematica, or many others. Design declaration is even possible -- though somewhat awkward -- in Excel. We wrote the companion software, DeclareDesign, in R because of the availability of other useful tools in R and because it is free, open-source, and high-quality. We have designed the book so that you can read it even if you do not use R, but you will have to translate the code into your own language of choice. On our Web site, we have [pointers](https://declaredesign.org/pap) for how you might declare designs in Stata, Python, and Excel. In addition, we link to a ["Design wizard"](https://eos.wzb.eu/ipi/DDWizard/) that lets you declare and diagnose variations of standard designs via a point-and-click web interface. @sec-ch4 provides an introduction to DeclareDesign in R.
 
 ### Diagnosis {#what-is-diagnosis}
+
+\index{Design diagnosis}
 
 Once you've declared your design, you can diagnose it. Design diagnosis is the process of simulating a research design in order to understand the range of ways the study could turn out. Each run of the design comes out differently because different units are sampled, or the randomization allocated different units to treatment, or outcomes were measured with different error. We let computers do the simulations for us because imagining the full set of possibilities is -- to put it mildly -- cognitively demanding. 
 
@@ -194,6 +215,8 @@ Even when using simulation, design diagnosis doesn't solve every problem and lik
 
 ### Redesign {#what-is-redesign}
 
+\index{Redesign}
+
 Once your design has been declared, and you have diagnosed it with respect to the most important diagnosands, the last step is redesign.
 
 Redesign entails fine-tuning features of the data and answer strategies to understand how they change your diagnosands. Most diagnosands depend on features of the data strategy. We can redesign the study by varying the sample size to determine how big it needs to be to achieve a target diagnosand: 90% power, say, or an RMSE of 0.02. We could also vary an aspect of the answer strategy, such as the choice of covariates used to adjust a regression model. Sometimes the changes to the data and answer strategies interact. For example, if we want to use covariates that increase the precision of the estimates in the answer strategy, we have to collect that information as a part of the data strategy. The redesign question now becomes, is it better to collect pretreatment information from all subjects or is the money better spent on increasing the total number of subjects and only measuring posttreatment?
@@ -213,6 +236,8 @@ For the experiment itself, you're deciding between two designs. In one you run a
 The two designs cost the same but differ on the empirical side. Which strategy should you use, given your goals?
 
 ### Design 1: N = 150, complete random assignment
+
+\index{Assignment!Complete random assignment}
 
 * *M*: We first define a model that stipulates a set of 18,000 units representing each sheriff's deputy and an unknown treatment effect of the training lying somewhere between 0 and 0.5. This range of possible effects implies in 60% of our the models we consider, the true effect is above our threshold for a program worth implementing, 0.2. Outcomes for each individual depend on their past infractions against citizens (their history). The importance of history is captured by the parameter `b`. We don't know how important the history variable is, so we will simulate over a plausible range for `b`. *M* here is a *set* of models as each "run" of the model will presuppose a different treatment effect for all subjects as well as distinct outcomes for all individuals. 
 
@@ -257,6 +282,8 @@ program_diagnosands  <-
 ```
 
 ### Design 2: N = 100, baseline measurement, block random assignment
+
+\index{Assignment!Block random assignment}
 
 The alternative design that differs on the empirical side in three ways. First fewer subjects are sampled. Second, information about the subjects' background information (their "history") is used to implement a block randomization that conditions assignment on history. Third the subjects' history is taken into account in the analysis. This choice is an instance of adjusting the answer strategy in light of a change to the data strategy. 
 
@@ -307,6 +334,11 @@ The overall result of this declaration, diagnosis, and redesign process is that 
 
 ### Three principles
 
+
+\index{Design holistically (Principle)}
+\index{Design agnostically (Principle)}
+\index{Design for purpose (Principle)}
+
 We see from this example the gains from entertaining a diverse model set rather than presupposing we already know *M*. We also see an example of design parts tailored to each other, most importantly the adjustment of answer strategies in light of data strategies. And we see that design choices are informed by a clear specification of a success criterion. In the next chapter we develop these three features as broader principles, referring to them @exm-designholistically: Design holistically, @exm-designagnostically: Design agnostically, and @exm-designforpurpose: Design for purpose.
 
 
@@ -327,3 +359,7 @@ A happy realization phase concludes with the publication of results. But the res
 ### Three more principles 
 
 This discussion motivates three more principles: @exm-designearly: Design early to reap the benefits of clarity; @exm-designoften: Design often so that you can correct course; and @exm-designtoshare: Design to share so that you maximize transparency and contribute maximally to knowledge creation. 
+
+\index{Design early (Principle)}
+\index{Design often (Principle)}
+\index{Design to share (Principle)}

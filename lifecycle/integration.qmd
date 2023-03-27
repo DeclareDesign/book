@@ -1,0 +1,144 @@
+# Integration
+
+```{r}
+#| echo: false
+#| include: false
+#| purl:  false
+source("scripts/before_chapter_script.R")
+```
+
+After publication, research studies leave the hands of their authors and enter the public domain.^[This section does not apply to private research, which unfortunately does not get "integrated".] 
+
+Most immediately, authors share their findings with the public through the media and with decision-makers. Design information is useful for helping journalists to emphasize design quality rather than splashy findings. Decision-makers may act on evidence from studies, and researchers who want to influence policymaking and business decisions may wish to consider diagnosands about the decisions these actors make.
+
+Researchers can prepare for the integration of their studies into scholarly debates through better archiving practices and better reporting of research designs in the published article. Future researchers may build on the results of a past study in three ways. First, they may *reanalyze* the original data. Reanalysts must be cognizant of the original data strategy *D* when working with the realized data $d$. Changes to the the answer strategy *A* must respect *D*, regardless of whether the purpose of the reanalysis is to answer the original inquiry *I* or to answer a different inquiry $I'$. Second, future researchers may *replicate* the design. Typically, replicators provide a new answer to the same *I* with new data, possibly improving elements of *D* and *A* along the way. If the inquiry of the replication is too different from the inquiry of the original study, the fidelity of the replication study may be compromised. Lastly, future researchers may *meta-analyze* study's answer with other past studies. Meta-analysis is most meaningful when all of the included studies target a similar enough inquiry and when all studies rely on credible design.
+
+All three of these activities depend on an accurate understanding of the study design. Reanalysts, replicators, and meta-analysts all need access to the study data and materials, of course. They also need to be sure of the critical design information in *M*, *I*, *D*, and *A*. Later in this section, we outline how archiving procedures that preserve study data and study design can enable new scientific purposes and describe strategies for doing each of these three particular integration tasks.
+
+
+## Communicating 
+
+The findings from studies are communicated to other scholars through academic publications. But some of the most important audiences -- policymakers, businesses, journalists, and the public at large -- do not read academic journals. These audiences learn about the study in other in other ways, through  op-eds, blog posts, and policy reports that translate research for nonspecialist audiences.  
+
+Too often, a casualty of translating the study from academic to other audiences is the design information. Emphasis gets placed on the study results, not on the reasons why the results of the study are to be believed. In sharing the research for nonspecialist audiences, we revert to saying *that* we think the findings are true and not *why* we think the findings are true. Explaining why requires explaining the research design, which in our view ought to be part of any public-facing communication about research.
+
+Looking at recent studies published in *The New York Times* Well section on health and fitness, we found that two dimensions of design quality were commonly ignored. First, experimental studies on new fitness regimens with very small samples, sometimes fewer than 10 units, are commonly highlighted. When both academic journals and reporters promote tiny studies, the likely result is that the published (and public) record contains many statistical flukes; results reflecting noise rather than new discoveries. Second, very large studies that draw observational comparisons between large samples of dieters and non-dieters with millions of observations receive outsize attention. These designs are prone to bias from confounding, but these concerns are too often not described or discussed. 
+
+How can we improve scientific communication so that we better communicate the credibility of findings? The market incentives for both journalists and authors reward striking and surprising findings, so any real solution to the problem would likely requires addressing those incentives. Short of that, we recommend that authors who wish to communicate the high quality of their designs to the media do so by providing the design information in *M*, *I*, *D*, and *A* in lay terms. Science communicators can  state the research question (*I*) and explain why applying the data and answer strategies is likely to yield a good answer to the question. The actual result is, of course, also important to communicate, but *why* it is a credible answer to the research question is just as important to share---specifically what has to be believed about *M* for the results to be on target (@exm-designtoshare: Design to share).
+
+How can we as researchers communicate about other scholars' work?  Citations can't covey the entirety of *MIDA* in one sentence, but they can give an inkling. Here's an example of how we could cite a (hypothetical) study in a way that conveys at least some design information. "<span style="color:#81AFEF">Using a randomized experiment</span>, the researchers (Authors, Year) found that <span style="color:#DC5D86">donating to a campaign causes a large increase in the number of subsequent donation requests from other candidates</span>, which is consistent with <span style="color:#E6C560">theories of party behavior that predict</span><span style="color:#8DBA4C">  intra-party cooperation."</span>. 
+
+The citation explains that the <span style="color:#81AFEF">data strategy</span> included some kind of randomized experiment (we don't know how many treatment arms or subjects, among other details), and that the <span style="color:#DC5D86">answer strategy</span> probably compared the counts of donation requests from any campaign (email requests, or phone, we don't know) among the groups of subjects that were assigned to donate to a particular campaign. The citation mentions the <span style="color:#E6C560">models</span> described in an unspecified area of the scientific literature on party politics, which all predict cooperation like the sharing of donor lists. We can reason that, if the <span style="color:#8DBA4C">inquiry</span>, "Is the population average treatment effect effect of donating to one campaign on the number of donation requests from other campaigns positive?" were put to each of these theories, they would all respond "Yes." The citation serves as a useful shorthand for the reader of what the claim of the paper is and why they should think it's credible. By contrast, a citation like "The researchers found that party members cooperate (Author, Year)." doesn't communicate any design information at all.  
+
+
+## Archiving 
+
+One of the biggest successes in the push for greater research transparency has been changing norms surrounding data sharing and analysis code after studies have been published. Many journals now require authors to post these materials at publicly-available repositories like the OSF or Dataverse. This development is undoubtedly a good thing. In older manuscripts, sometimes data or analyses are described as being "available upon request," but of course, such requests are sometimes ignored (93% were ignored in a recent attempt to request 1,792 such  datasets, @GABELICA2022). Furthermore, a century from now, study authors will no longer be with us even if they wanted to respond to such requests. Public repositories have a much better chance of preserving study information for the future, especially if they are actively maintained [@peer_orr_coppock_2021].
+
+What belongs in a replication archive? Enough documentation, data, and design detail that those who wish to reanalyze, replicate, and meta-analyze results can do so without contacting the authors.
+
+**Data.** First, the realized data $d$ itself. Sometimes this is the raw data. Sometimes it is only the "cleaned" data that is actually used by analysis scripts. Where ethically possible, we think it is preferable to post as much of the raw data as possible after removing information like IP addresses and geographic locations that could be used to identify subjects. The output of cleaning scripts -- the cleaned data -- should also be included in the replication archive. 
+
+Reanalyses often reexamine and extend studies by exploring the use of alternative outcomes, varying sets of control variables, and new ways of grouping data. As a result, replication data ideally includes all data collected by the authors even if the variables are not used in the final published results. Sometimes authors exclude these to preserve their own ability to publish on these other variables or because they are worried alternative analyses will cast doubt on their results. We hope norms will change such that study authors instead want to enable future researchers to build on their research by being expansive in what information is shared.
+
+**Analysis code.** Replication archives also include the answer strategy *A*, or the set of functions that produce results when applied to the data. We need the actual analysis code because the natural-language descriptions of *A* that are typically given in written reports are imprecise. As a small example, many articles describe their answer strategies as "ordinary least squares" but do not fully describe the set of covariates included or the particular approach to variance estimation. These choices can substantively affect the quality of the research design -- and nothing makes these choices explicit like the actual analysis code. Analysis code is needed not only for reanalysis but also replication and meta-analysis. Replication practice today involves inferring most of these details from descriptions in text. Reanalyses may directly reuse or modify analysis code and replication projects need to know the exact details of analyses to ensure they can implement the same analyses on the data they collect. Meta-analysis authors may take the estimates from the past studies directly, so understanding the exact analysis procedure conducted is important. Other times, meta-analyses reanalyze data to ensure comparability in estimation. Conducting analyses with and without covariates, with clustering when it was appropriate, or with a single statistical model when they vary across studies all require having the exact analysis code. 
+
+To the extent possible we encourage you to think of analysis code as being a data-in data-out function: a function that takes in your dataset---or a future replication dataset---implements analysis and reports a dataset containing answers: estimates and estimates of uncertainty. 
+
+**Data strategy materials.** Increasingly, replication archives include the materials needed to implement treatments and measurement strategies. Without the survey questionnaires in their original languages and formats, we cannot exactly replicate them in future studies, hindering our ability to build on and adapt them. The treatment stimuli used in the study should also be included. Data strategies are needed for reanalyses and meta-analyses too: answer strategies should respect data strategies, so understanding the details of sampling, treatment assignment, and measurement can shape reanalysts' decisions and meta-analysis authors' decisions about what studies to include and which estimates to synthesize. 
+
+To the extent possible we encourage you to describe data strategies also as data-in data-out function. Functions that take in information about a known context, and use this, together with parameters that characterize your strategy, return a dataset similar in structure to the data you generated. 
+
+**Design declaration.** While typical replication archives include the data and code, we think that future replication archives should also have a design declaration that fully describes *M*, *I*, *D*, and *A*. This declaration should be done in code and words. A diagnosis can also be included, demonstrating the properties as understood by the author and indicating the diagnosands that the author considered in judging the quality of the design. 
+
+Design details help future scholars not only assess, but replicate, reanalyze, and extend the study. Reanalysts need to understand the answer strategy to modify or extend it and the data strategy used to ensure that their new analysis respects the details of the sampling, treatment assignment, and measurement procedures. Data and analysis sharing enables reanalysts to adopt or adapt the analysis strategy, but a declaration of the data strategy would help more. The same is true of meta-analysis authors, who need to understand the designs' details to make good decisions about which studies to include and how to analyze them. Replicators who wish to exactly replicate or even just provide an answer to the same inquiry need to understand the inquiry, data strategy, and answer strategy. 
+
+@fig-filestructure below shows the file structure for an example replication. Our view on replication archives shares much in common with the [TIER protocol](https://www.projecttier.org) and the proposals in @alvarez2018. It includes raw data in a platform-independent format (.csv) and cleaned data in a language-specific format (.rds, a format for R data files). Data features like labels, attributes, and factor levels are preserved when imported by the analysis scripts. The analysis scripts are labeled by the outputs they create, such as figures and tables. A master script is included that runs the cleaning and analysis scripts in the correct order. The documents folder consists of the paper, the supplemental appendix, the pre-analysis plan, the populated analysis plan, and codebooks that describe the data. A README file explains each part of the replication archive. We also suggest that authors include a script that consists of a design declaration and diagnosis. @Bowers2011 offers one reason above and beyond research transparency to go to all this effort: good archiving is like collaborating with your future self.
+
+![File structure for archiving](/figures/file-structure){#fig-filestructure}
+
+
+## Reanalysis 
+
+A reanalysis of an existing study is a follow-up study that reuses the original realized data for some new purpose. The reanalysis is a study with a research design that can be described in terms of *M*, *I*, *D*, and *A*. Reanalyses are fundamentally constrained by the data strategy of the original study. The data strategy *D* and the resulting data are set in stone -- but reanalysts can make changes to the answer strategy *A* and sometimes also to the model *M* or inquiry *I*.
+
+We can learn from reanalyses in several ways. First, we can fix errors in the original answer strategy. Reanalyses fix simple mathematical errors, typos in data transcription, or failures to account for features of the data strategy when analyzing the data. These reanalyses show whether the original results do or do not depend on these corrections. Second, we can reassess the study in light of new information about the world learned after the original study was published. That is, sometimes *M* changes in ways that color our interpretation of past results. Perhaps we learned about new confounders or alternative causal channels that undermine the original design's credibility. When reanalyzed, demonstrating the results do (or do not) change when new model features are incorporated improves our understanding of the inquiry. Third, reanalyses may also aim to answer new questions that were not considered by the original study but for which the realized data can provide useful answers. 
+
+Lastly, many reanalyses show that original findings are not "robust" to alternative answer strategies. These are better conceptualized as claims about robustness to alternative models: one model may imply one answer strategy, and a different model, with another confounder, suggests another. If both models are plausible, a good answer strategy should be robust to both and even help distinguish between them. A reanalysis could uncover robustness to these alternative models or lack thereof. 
+
+Reanalyses are themselves research designs. Just like any design, whether a reanalysis is a strong research design depends on *possible* realizations of the data (as determined by the data strategy), not just the realized data. Because the realized data is fixed in a reanalysis, analysts are often instead tempted to judge the reanalysis based on whether it overturns or confirms the original study's results. A successful reanalysis in this way of thinking demonstrates, by showing that the original results are changed under an alternative answer strategy, that the results are not robust to other plausible models. 
+
+This way of thinking can lead to incorrect assessments of reanalyses. Instead, we should consider what answers we would obtain under the original answer strategy *A* and the reanalysis strategy *A'* under many *possible* realizations of the data. A good reanalysis strategy reveals with high probability the set of models of the world under which we can make credible claims about the inquiry. Whether or not the results change under the answer strategies *A* and *A'* tells us little about this probability because the realized data is only one draw. 
+
+### Example
+
+In this section, we illustrate the flaw in assessing reanalyses based on changing significance of results alone. We demonstrate how to assess the properties of reanalysis plans, comparing the properties of original answer strategies to proposed reanalysis answer strategies. 
+
+The design we consider is an observational study with a binary treatment $Z$ that may or may not be confounded by a covariate $X$. Suppose that the original researcher had in mind a model in which $Z$ is not confounded by $X$:
+
+```{r, file = "scripts_declarations/declaration_23.1a.R"}
+```
+
+The reanalyst has in mind a different model. In this second model, $X$ confounds the relationship between $Z$ and $Y$:
+
+```{r, file = "scripts_declarations/declaration_23.1b.R"}
+```
+
+The original answer strategy `A` is a regression of the outcome $Y$ on the treatment $Z$. The reanalyst collects the covariate $X$ and proposes to control for it in a linear regression; call that strategy `A_prime`. 
+
+```{r, file = "scripts_declarations/declaration_23.1c.R"}
+```
+
+
+## Replication 
+
+After your study is completed, it may one day be replicated. By replication we mean collecting new data to study the same inquiry. A new model, data strategy, or answer strategy may also be proposed. 
+
+So-called "exact" replications hold key features of *I*, *D*, and *A* fixed, but draw a new dataset from the data strategy and apply the same answer strategy *A* to the new data to produce a fresh answer. Replications are said to "succeed" when the new and old answer are similar and to "fail" when they are not. Dichotomizing replication attempts into successes and failures is usually not that helpful, and it would be better to simply characterize how similar the old and new answers are. Literally exact replication is impossible: at least some elements of $m^*$ have changed between the first study and the replication. Specifying how they might have changed, e.g., how outcomes vary with time, will help judge differences observed between old and new answers.
+
+Replication studies can benefit enormously from the knowledge gains produced by the original studies. For example, we learn a large amount to inform the construction of *M* and we learn the value of the inquiry from the original study. The *M* of the replication study can and should incorporate this new information. For example, if we learn from the original study that the estimand is positive, but it might be small, the replication study could respond by changing *D* to increase the sample size. Design diagnosis can help you learn about how to change the replication study's design in light of the original research.
+
+When changes to the data strategy *D* or answer strategy *A* can be made to produce more informative answers about the same inquiry *I*, exact replication may not be preferred. Holding the treatment and outcomes the same may be required to provide an answer to the same *I*, but increasing the sample size or sampling individuals rather than villages or other changes may be preferable to exact replication. Replication designs can also take advantage of new best practices in research design.
+
+So-called "conceptual" replications alter both *M* and *D*, but keep *I* and *A* as similar as possible. That is, a conceptual replication tries to ascertain whether a relationship in one context also holds in a new context. The trouble and promise of conceptual replications lie in the designer's success at holding *I* constant. Too often, a conceptual replication fails because in changing *M*, too much changes about *I*, muddying the "concept" under replication.
+
+A summary function is needed to interpret the difference between the original answer and the replication answer. This function might take the new one and throw out the old if design was poor in the first. It might be taking the average. It might be a precision-weighted average. Specifying this function ex ante may be useful to avoid the choice of summary depending on the replication results. This summary function will be reflected in *A* and in the discussion section of the replication paper. 
+
+### Example
+
+Here we have an original study design of size 1000. The original study design's true sample average treatment effect (SATE) is 0.2 because the original authors happened to study a very treatment-responsive population. We seek to replicate the original results, whatever they may be. We want to characterize the probability of concluding that we "failed" to replicate the original results. We have four alternative metrics for assessing replication failure.
+
+1. Are the original and replication estimates statistically significantly different from each other? If the difference-in-SATEs is significant, we conclude that we failed to replicate the original results, and if not, we conclude that the study replicated.
+
+2. Is the replication estimate within the original 95% confidence interval?
+
+3. Is the original estimate within the replication 95% confidence interval?
+
+4. Do we fail to affirm equivalence^[For an introduction to equivalence testing see @hartman2018equivalence] between the replication and original estimate, using a tolerance of 0.2? 
+
+@fig-ch23num2 shows that no matter how big we make the replication, we find that the rate of concluding the difference-in-SATEs is nonzero only occurs about 10% of the time. Similarly, the replication estimate is rarely outside of the original confidence interval, because it's rare to be more extreme than a wide confidence interval. The relatively high variance of the original study means that it is so uncertain, it's tough to distinguish it from any number in particular. 
+
+Turning to the third metric (is the original outside the 95% confidence interval of the replication estimate), we that we become more and more likely to conclude that the original study fails to replicate as the quality replication study goes up. At very large sample sizes, the replication confidence intervals become extremely small, so in the limit, it will always exclude the original study estimate.
+
+The last metric, equivalence testing, has the nice property that as the sample size grows, we get closer to the correct answer -- the true SATEs are indeed within 0.2 standard units of each other. However, again because the original study is so noisy, it is difficult to affirm its equivalence with anything, even when the replication study is quite large.
+
+The upshot of this exercise is that, curiously, when original studies are weak (in that they generate imprecise estimates), it becomes *harder* to conclusively affirm that they did not replicate. This set of incentives is somewhat perverse: designers of original studies benefit from a lack of precision if it means they can't "fail to replicate."
+
+![Rates of 'failure to replicate' according to four diagnosands. Original study N = 1000; True original SATE: 0.2; True replication SATE: 0.15.](/figures/figure-23-2){#fig-ch23num2}
+
+
+## Meta-analysis 
+
+One of the last stages of the lifecycle of a research design is its eventual incorporation in to our common scientific understanding of the world. Research findings are synthesized into our broader scientific understanding through systematic reviews and meta-analysis. 
+
+Research synthesis takes two basic forms. The first is meta-analysis, in which a series of estimates are analyzed together in order to better understand features of the distribution of answers obtained in the literature (see @sec-ch19s3). Studies can be averaged together in ways that are better and worse. Sometimes the answers are averaged together according to their precision. A precision-weighted average gives more weight to precise estimates and less weight to studies that are noisy. Sometimes studies are "averaged" by counting up how many of the estimates are positive and significant, how many are negative and significant, and how many are null. This is the typical approach taken in a literature review. Regardless of the averaging approach, the goal of this kind of synthesis is to learn as much as possible about a particular inquiry *I* by drawing on evidence from many studies.
+
+A second kind of synthesis is an attempt to bring together the results of many designs, each of which targets a different inquiry about a common model. This is the kind of synthesis that takes place across an entire research literature. Different scholars focus on different nodes and edges of the common model, so a synthesis needs to incorporate the diverse sources of evidence. Such synthesis strategies include for example Bayesian model averaging approaches and stacking approaches (see e.g. @yao2018using). 
+
+How can you best anticipate how your research findings will be synthesized? For the first kind of synthesis---meta-analysis---you must be cognizant of keeping a commonly understood *I* in mind. You want to select inquiries not for their novelty, but because of their commonly-understood importance. While the specifics of the model *M* might differ from study to study, the fact that the *I*s are all similar enough to be synthesized allows for a specific kind of knowledge accumulation.
+
+For the second kind of synthesis---literature-wide progress on a full causal model---even greater care is required. Specific studies cannot make up bespoke models *M* but instead must understand how the specific *M* adopted in the study is a special case of some broader *M* that is in principle agreed to by a wider research community. Perhaps in this spirit, @Samii2016 sets role of "causal empiricists" apart from the role of theorists. The nonstop, never-ending proliferation of study-specific theories is a threat to this kind of knowledge accumulation. In a telling piece, @mcphetres_2020 document that in a decade of research articles published in *Psychological Science*, 359 specific theories were named. Of these 70% were named just once and a further 12% were named just twice.
+
+Design then with a view to integration. In the ideal case the meta-analytic design will already exist and your job will be to design a new study that can demonstrably add value to the collective design.
+
+

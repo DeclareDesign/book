@@ -1,0 +1,447 @@
+# Experimental : descriptive 
+
+```{r}
+#| echo: false
+#| include: false
+#| purl:  false
+source("scripts/before_chapter_script.R")
+```
+
+We use *experiments* to target descriptive inquiries when units do not naturally reveal a characteristic that we want to measure. Instead, we must assign units into more than one condition that we can use to back out what characteristic the units hold. Each experiment we discuss is simply another kind of measurement tool (albeit often very useful ones!). Importantly, the fact that we are using an experiment does not switch our inquiry from descriptive to causal. In each entry in this chapter, we define the inquiry as a summary of unit characteristics in the population, and not as a function of potential outcomes. 
+
+We study four kinds of experiments for descriptive inference. Audit experiments estimate the fraction of units that *discriminate.* List experiments estimate the prevalence rate of holding a sensitive characteristic such as drug use or support for an insurgent group. Conjoint experiments measure (aggregations of) preferences over choices such as candidates for election. Experimental behavioral games measure trust. 
+
+We need audit experiments because we typically cannot identify whether someone discriminates naturally by measuring a single interaction with another person. We need to see how that person interacts with multiple others, some who they might discriminate against and some not, and then compare their behaviors. We also cannot ask people if they discriminate in a survey and expect useful answers: people typically do not think of themselves as discriminatory so we cannot ask them in a survey. Trust games are motivated by the same idea: people may think of themselves as more trusting than they are. The list experiment is motivated by a related concern: people may not answer sensitive questions when they think others can learn their answer and might punish them socially or physically for giving a sensitive answer. If we measured these sensitive characteristics by asking, people might misreport their answers so we use the experiment to ask in a way that provides plausible deniability (but still allows us to estimate the prevalence rate). Conjoints address the problem that it is difficult to learn about multidimensional preferences over choices by asking about a single choice. In each case, the experiment allows us to randomize people into multiple conditions that lets us back out a descriptive characteristic we could not otherwise measure.
+
+
+## Audit experiments 
+
+::: {.ddbox}
+We declare an audit experiment design in which the name of a citizen requesting service from government is randomized to be Latino-sounding or White-sounding and the government official either responds or does not. We then declare an augmented design in which a treatment to reduce discrimination is cross-randomized. The declaration highlights the behavioral assumptions that must be made to interpret the estimated treatment effect of the name as discrimination, and the diagnosis of the anti-discrimination treatment highlights how large a sample would be required for high power.
+:::
+
+Audit experiments are used to measure discrimination against one group in favor of another group. The design is used commonly to measure whether job applications that are otherwise similar but come from candidates from different genders, races, or social backgrounds receive the same rate of job interview invitations. The same approach has been applied to a very wide range of settings, including education, housing, and requests to politicians.
+
+The audit experiment design we'll explore in this chapter has data and answer strategies that are identical as the two-arm trial for causal inference described in @sec-ch18s1. The difference between an audit study and the typical randomized experiment lies in the model and inquiry. In a two-arm trial, a common (causal) inquiry is the average difference between the treated and untreated potential outcomes, the ATE. In an audit experiment, by contrast, the inquiry is descriptive: what is the fraction of the sample that discriminates?
+
+We can hear our colleagues objecting now -- the inquiry in an audit study can of course be conceived of as causal! It's the average effect of signaling membership in one social group on a resume versus signaling membership in another. We agree, of course, that this interpretation is possible and technically correct. But when we think of the inquiry as descriptive, we can better understand how the audit experiment relies on substantive assumptions about the behaviors of people who do and do not discriminate.
+
+Consider @WHITE_NATHAN_FALLER_2015, which seeks to measure discrimination against Latinos by election officials by assessing whether election officials respond to emailed requests for information from putatively Latino or White voters. We imagine three types of election officials: those who would always respond to the request (regardless of the emailer's ethnicity), those who would never respond to the request (again regardless of the emailer's ethnicity), and officials who discriminate against Latinos. Here, discriminators are defined by their behavior: they would respond to the White voter but not to the Latino voter. These three types are given in @tbl-audittypes. 
+
+
+| Type                       | $Y_i(Z_i = \textrm{White})$ | $Y_i(Z_i = \textrm{Latino})$ |
+|----------------------------|-----------------------------|------------------------------|
+| Always-responder           | 1                           | 1                            |
+| Anti-Latino discriminator  | 1                           | 0                            |
+| Never-responder            | 0                           | 0                            |
+
+: Audit experiment response types {#tbl-audittypes} 
+
+Our descriptive inquiry is the fraction of the sample that discriminates: $\E[\textrm{Type}_i = \textrm{Anti}~\textrm{Latino}~\textrm{discriminator}]$. Under the behavioral assumptions about these three types enumerated in @tbl-audittypes (whether these types would respond depending on the ethnicity of the sender), $\E[\textrm{Type}_i = \textrm{Anti}~\textrm{Latino}~\textrm{discriminator}] = \E[Y_i(Z_i = \textrm{White}) - Y_i(Z_i = \textrm{Latino})]$. Because this is the expected difference between two potential outcomes, we can use a randomized experiment that randomizes ethnicity to measure this descriptive quantity. In the data strategy, we randomly sample from the $Y_i(Z_i = \textrm{White})$'s and from the $Y_i(Z_i = \textrm{Latino})$'s, then in the answer strategy, we take a difference-in-means, generating an estimate of the fraction of the sample that discriminates.
+
+Some finer points about these behavioral assumptions. First, we assume that always-responders and never-responders do not engage in discrimination. It could be that some never-responders don't respond to Latino voters out of racial animus, but do not respond to White voters out of laziness. In this model, such officials would be not be classified as anti-Latino discriminators by assumption. Second, we assume that there are no anti-White discriminators. If there were, then the difference-in-means would not be unbiased for the fraction of anti-Latino discriminators. Instead, it would be unbiased for "net" discrimination, i.e., how much more election officials discriminate against Latinos versus how much they discriminate against Whites. Anti-Latino discrimination and net discrimination are theoretically separate inquiries. To assess whether the no anti-White discriminators assumption is appropriate in a given setting, substantive knowledge is needed. It is not an assumption that can be directly tested empirically.
+
+@def-ch17num1 connects the behavioral assumptions we make about subjects to the randomized experiment we use to infer the value of a descriptive quantity. Only never-responders fail to respond to the White request while only always-responders respond to the Latino request. The inquiry is the proportion of the sample that is an anti-Latino discriminator. The data strategy involves randomly assigning the putative ethnicity of the voter making the request and recording whether it was responded to. The answer strategy is compares average response rates by randomly assigned group.
+
+::: {#def-ch17num1 .declaration} 
+
+Audit experiment design
+
+```{r, file = "scripts_declarations/declaration_17.1.R"}
+```
+
+:::
+
+### Intervening to decrease discrimination
+
+@butler_crabtree_2017 prompt researchers to "move beyond measurement" in audit studies. Under the model assumptions in the design, audit experiments measure the level of discrimination, but of course they do not do anything to reduce them. To move beyond measurement, we intervene in the world to reduce discrimination in a treatment group but not in a control group, then measure the level of discrimination in both arms using the audit experiment technology. 
+
+This two-stage design is illustrated in @def-ch17num2. The first half of the design is about causal inference: we want to learn about the effect of the intervention on discrimination. The second half of the design is about descriptive inference -- **within each treatment arm**. We incorporate both stages of the design in the answer strategy, in which the coefficient on the interaction of the intervention indicator with the audit indicator is our estimator of the effect on discrimination.
+
+::: {#def-ch17num2 .declaration} 
+
+Audit experiment intervention study design
+
+```{r, file = "scripts_declarations/declaration_17.2.R"}
+```
+
+:::
+
+
+::: {#lem-ch17num1} 
+
+Audit experiment intervention study diagnosis
+
+Even at 5,000 subjects, the power to detect the effect of the intervention is quite poor, at approximately 15%. This low power stems from the small treatment effect (reducing discrimination by 50% from 5.0% to 2.5%) and from the noisy measurement strategy. 
+
+```{r}
+#| eval: false
+
+diagnosis_17.1 <- diagnose_design(declaration_17.2)
+```
+
+```{r, echo = FALSE, purl = FALSE}
+diagnosis_17.1 <- get_rdddr_file_local("diagnosis_17.1")
+```
+
+```{r}
+#| label: tbl-auditdiagnosis
+#| echo: false
+#| tbl-cap: "Audit experiment power analysis"
+diagnosis_17.1 |> 
+  get_diagnosands() |>
+  select(power, `se(power)`, n_sims) |> 
+  kable(
+  booktabs = TRUE,
+  digits = 2,
+  align = "c"
+  )
+```
+
+:::
+
+
+### Avoiding post-treatment bias
+
+@coppock_2019b discusses how to avoid post-treatment bias when studying how the audit treatment affects the "quality" of responses, such as the tone of an email or the enthusiasm of the hiring call-back. Interestingly, this causal effect is not defined among the discriminators, because they never send emails to Latinos, so those emails never have a tone. The tone inquiry is defined only among always-responders, but estimating this effect without bias is tricky.
+
+### Design examples
+
+- @birkelund2022gender conduct harmonized audit experiments in six countries to measure employment discrimination on the basis of gender.
+
+- @fang2019can "move beyond measurement" by randomizing a New York City government intervention designed to stop housing discrimination, which was then measured by an audit study design.
+
+
+
+## List experiments 
+
+::: {.ddbox}
+We declare an list experiment design, highlighting that the inquiry is a descriptive one despite the use of an experiment. We then declare a design comparing the list experiment to direct questioning in estimating the prevalence of a sensitive item, and clarify when one survey technology is preferred to the other as a function of sensitivity bias levels and sample size.
+:::
+
+Sometimes, subjects might not tell the truth about certain attitudes or behaviors when asked directly. Responses may be affected by sensitivity bias, or the tendency of survey subjects to misreport their answers for fear of negative repercussions if some individual or group learns their true response [@blair2018list]. In such cases, standard survey estimates based on direct questions will be biased. One class of solutions to this problem is to obscure individual responses, providing protection from social or legal pressures. When we obscure responses systematically through an experiment, we can often still identify average quantities of interest. One such design is the list experiment (introduced in @miller1984new), which asks respondents for the count of the number of "yes" responses to a series of questions including the sensitive item, rather than for a yes or no answer on the sensitive item itself. List experiments give subjects cover by aggregating their answer to the sensitive item with responses to other questions.
+
+For example, @creightonjamal2015 study preferences for religious discrimination in immigration policy among Americans. They worried that direct measures of Americans' willingness to grant citizenship to Muslims would be distorted by sensitivity bias, so they turned to a list experiment. Subjects in the control and treatment groups were asked: "Below you will read [three/four] things that sometimes people oppose or are against. After you read all [three/four], just tell us HOW MANY of them you OPPOSE. We don’t want to know which ones, just HOW MANY."
+
+| Control                                                                                           | Treatment                                                   |
+| ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| The federal government increasing assistance to the poor.                                         | The federal government increasing assistance to the poor.   |
+| Professional athletes making millions of dollars per year.                                        | Professional athletes making millions of dollars per year.  |
+| Large corporations polluting the environment.                                                     | Large corporations polluting the environment.               |
+|                                                                                                   | Granting citizenship to a legal immigrant who is Muslim.    |
+
+: List experiment conditions in @creightonjamal2015 {#tbl-listquestions} 
+
+The treatment group averaged 2.123 items while the control group averaged 1.904 items, for a difference-in-means estimate of 0.219. Under the usual assumptions of randomized experiments, the difference-in-means is an unbiased estimator for the average treatment effect of *being asked* to respond to the treated list versus the control list. But our (descriptive) inquiry is the proportion of people who would grant citizenship to a legal immigrant who is Muslim.
+
+For the difference-in-means to be an unbiased estimator for that inquiry, we invoke two additional assumptions [@Imai2011]:
+
+- **No design effects**: The count of "yes" responses to the control items is the same whether a respondent is assigned to the treatment or control group. 
+
+- **No liars**: Subjects with the sensitive trait truthfully increment their count when assigned to the treatment group. 
+
+Under these two extra assumptions, the list experimental estimate of the prevalence of opposition to granting Muslim immigrants citizenship is 21.9%.
+
+@fig-ch17num1 represents the list experimental design. The no liars assumption is represented by the lack of an edge from sensitivity bias $S$ to the list experiment outcome $Y^L$. The no design effects assumption is not represented on the DAG. 
+
+![Directed acyclic graph for the list experiment.](/figures/figure-17-1){#fig-ch17num1}
+
+@def-ch17num3 describes a list experimental design. The model includes subjects' true attitude (`Y_star`) and whether or not their direct question answers are contaminated by sensitivity bias (`S`). These two variables combine to determine how subjects will respond when asked directly about support for the policy. The potential outcomes model combines three types of information to determine how subjects will respond to the list experiment: their responses to the three control items (`control_count`), their true attitude (`Y_star`), and whether they are assigned to see the treatment or the control list (`Z`). Our definition of the potential outcomes embeds the no liars and no design effects assumptions. 
+
+The inquiry is the prevalence rate of the sensitive item. In the data strategy, we randomly assign 50\% of our 500 subjects to treatment and the remainder to control. In the survey, we ask subjects the list experiment question (`Y_list`). Our answer strategy estimates the prevalence rate by calculating the difference-in-means in the list outcome between treatment and control.
+
+::: {#def-ch17num3 .declaration} 
+
+List experiment design
+
+```{r, file = "scripts_declarations/declaration_17.3.R"}
+```
+
+:::
+
+
+
+::: {#lem-ch17num2} 
+
+List experiment diagnosis
+
+```{r}
+#| eval: false
+
+diagnosands <- declare_diagnosands(
+  bias = mean(estimate - estimand),
+  mean_CI_width = mean(conf.high - conf.low)
+)
+diagnosis_17.2 <- diagnose_design(declaration_17.3, diagnosands = diagnosands)
+```
+
+```{r, echo = FALSE, purl = FALSE}
+diagnosis_17.2 <- get_rdddr_file_local("diagnosis_17.2")
+```
+
+```{r}
+#| label: tbl-diagnosislist
+#| echo: false
+#| tbl-cap: "Diagnosis of a list experiment."
+diagnosis_17.2 |> 
+  get_diagnosands() |> 
+  transmute(Bias = bias, `Mean CI width` = mean_CI_width) |> 
+  kable(booktabs = TRUE, align = "c", digits = 3) |> kable_styling()
+```
+
+We see in the diagnosis that the list experiment generates unbiased estimates of the prevalence rate, but it is extremely imprecise: the average width of the confidence interval is enormous at 33 percentage points. If the estimate from a list experiment using this design is 25%, this would imply a confidence interval ranging from about 9% to 41% holding the sensitive item, ranging from rare to common and thus providing only a limited amount of information about the prevalence rate.
+
+:::
+
+The diagnosis above shows that the list experiment (under its assumptions) is unbiased but is high variance. In the presence of sensitivity bias, direct questions are biased, but are much lower variance. The choice between these two technologies therefore amounts to a bias-variance tradeoff (see @blair2018list for more on this point). @def-ch17num3 wraps up both approaches in one design so we can compare them.
+
+::: {#def-ch17num4 .declaration} 
+
+Comparing list experiments with direct questions
+
+```{r, file = "scripts_declarations/declaration_17.4.R"}
+```
+
+:::
+
+::: {#lem-ch17num3} 
+
+Comparison of list experiment and direct questions diagnosis
+
+Diagnosing this design, we see that at low levels of sensitivity and low sample sizes, the direct question is preferred on RMSE grounds. This is because though the direct question is biased for the prevalence rate in the presence of any sensitivity bias (positive `proportion_hiding`), it is much more precise than the list experiment. When we have a large sample size, then we begin to prefer the list experiment for its low bias. At high levels of sensitivity, we prefer the list experiment on RMSE grounds despite its inefficiency, because bias will be so large. 
+
+```{r}
+#| eval: false
+
+diagnosis_17.3 <- 
+  declaration_17.4 |> 
+  redesign(proportion_hiding = seq(from = 0, to = 0.3, by = 0.1), 
+           N = seq(from = 500, to = 2500, by = 500)) |> 
+  diagnose_design()
+```
+
+:::
+
+![Redesign to illustrate tradeoffs in RMSE between list experiment and direct question](/figures/figure-17-2){#fig-ch17num2}
+
+### Design examples
+
+- @coppock2017did compares direct question and list experimental estimates of support for Donald Trump during the 2016 election, finding no evidence for "shy" Trump supporters who misreport their support for Trump for fear of being perceived as racist or sexist by survey-takers.
+
+- @Cruz2019 uses a list experiment to estimate the rate of vote buying in the Philippines, though comparison to direct question estimates yields no evidence of sensitivity bias.
+
+
+
+## Conjoint experiments {#sec-ch17s3}
+
+::: {.ddbox}
+We declare a forced-choice conjoint experiment design in which respondents choose one of two profiles in three sets of tasks, each with three attributes. The design highlights the complexity of defining the inquiries for conjoints, and their lower power at common sample sizes. 
+:::
+
+Conjoint survey experiments have become hugely popular in political science and beyond for describing multidimensional preferences over profiles [@Hainmueller2014]. The designs have been used to study preferences over political candidates, types of immigrants to admit, neighborhoods to live in, policies to select, and many more questions. Conjoint experiments come in two basic varieties: the single profile design and the forced-choice design. Throughout this chapter, we'll discuss these studies in the context of hypothetical candidate experiments, in which candidates are described in terms of a number of attributes each of which can take on multiple values, known as levels. In the single profile design, subjects are asked to rate one profile at a time using, for example, a 1 - 7 support scale. In a forced-choice conjoint experiment, subjects are shown two profiles at a time, then asked to make a binary choice between them. Forced choice conjoint experiments are especially useful for studying electoral behavior because they closely mirror the real-world behavior of choosing between two candidates at the ballot box. A similar logic applies to purchasing behavior when consumers have to choose one product over another. Occasionally, forced-choice conjoint experiments are applied even when no real-world analogue for the binary choice exists. For example, we rarely face a binary choice between two immigrants or between two refugees.
+
+We take the unorthodox position that conjoint experiments target descriptive, rather than casual inquiries. The reason can be most easily seen in the single profile design case. For concreteness, imagine subjects are presented with one profile at a time that describes the age (young, middle-aged, old), gender (woman, man), and employment sector (public, private) of a candidate for office and are asked to rate their support for the candidate on a 1-7 Likert scale. This set of attributes and levels generates 2 * 3 * 2 = 12 possible profiles. We *could* ask subjects to rate all 12, but we typically ask them instead to rate only a random subset. If our goal were to estimate the average ratings of each of the 12 profiles, clearly we would be targeting descriptive quantities.
+
+The most common inquiry in conjoint experimentation is the Average Marginal Component Effect or AMCE, which summarizes the average difference in preference between two levels of one attribute, averaging over all of the levels of the other attributes. The AMCE for gender, for example, considers the average difference in preference for women candidates versus men candidates among young candidates who work in the private sector, among middle-aged candidates who work in the public sector, and so on for all six combinations. The overall AMCE is a weighted average of all six of these average preference differences, where the weights are given by the relative frequency of each type of candidate. Despite its name, we think of the AMCE as a descriptive quantity. We of course agree there is a sense in which the AMCE is a causal quantity, since it is the average effect on preferences of describing a hypothetical candidate as a man or a woman. But we can see this quantity as descriptive if we just imagine asking subjects about both candidates and describing the difference in their preferences. We then could aggregate these descriptive differences across profiles. The only reason we don't ask about all possible profiles is that there are far too many to get through in a typical survey, so we ask subjects about a random subset.
+
+Just like single-profile conjoints, forced-choice conjoints also target descriptive inquiries, but the inquiry is one step removed from raw preferences over profiles. Instead, we aim to describe the fraction of pairwise contests that a profile would win, averaging over all subjects in the experiment. That is, we aim to describe a profile's average win rate. We can further describe the differences in the average win rate across profiles, for example, among young candidates who work in the private sector, what is the average difference in win rates for women versus men? Just as in the single profile case, the AMCE is a weighted average of these differences, weighted by the relative frequency of each type of candidate.
+
+Here again, we *could* think of the AMCE as a causal effect, i.e., the average effect of describing a profile as a woman versus a man. But we can also imagine asking subjects to consider all 12 * 12 = 144 possible pairwise contests, then using those binary choices to fully describe subjects preferences over contests. A forced-choice conjoint asks subjects to rate just a random subset of those contests, since asking about all of them would be impractical.
+
+One final wrinkle about the AMCE inquiries, in both the single-profile and forced-choice cases: they are "data-strategy-dependent" inquiries in the sense that, AMCEs average over the distribution of the other profile attributes, and that distribution is controlled by the researcher.^[The AMCE need not be data-dependent. We could write down one distribution of profiles in the model to establish the AMCE inquiry, then randomly sample the profiles shown to respondents for a different distribution. This would be a headache, because the estimator would need to be reweighted to successfully target the AMCE inquiry. Better to bring the data strategy in line with the model in the first place.] The AMCE of gender for profiles that do not include partisanship is different from the AMCE of gender for profiles that include partisanship due to masking (discussed below). Further, and more subtly, the AMCE of gender for profiles that are 75% public sector and 25% private sector is different from the AMCE of gender for profiles that are 50% public sector and 50% private sector, because those relative frequencies are part of the very definition of the inquiry. For contrast, consider a vignette-style hypothetical candidate experiment in which all or most of the other candidate features are fixed, save gender. In that design, we estimate an ATE of gender under only one set of conditions, but in the conjoint design, the AMCE averages over ATEs under many sets of conditions. There is a great benefit of doing so: our inferences are not specific to that one set of conditions. But it also means that what conditions inferences depends crucially on researcher choices about which characteristics are chosen and the randomization scheme.
+
+The data strategy for conjoints, then, requires making these four choices, in addition to the usual measurement, sampling, and assignment concerns:
+
+1. Which attributes to include in the profiles,
+2. Which levels to include in each attribute (and in what proportion),
+3. How many profiles subjects are asked to rate at a time, and
+4. How many sets of profiles subjects are asked to rate in total.
+
+The right set of attributes is governed by the "masking/satisficing" tradeoff [@bansak_hainmueller_hopkins_yamamoto_2019]. If we don't include an important attribute (like partisanship in a candidate choice experiment), we're worried that subjects will partially infer partisanship from other attributes (like race or gender). If so, partisanship is "masked", and the estimates for the effects of race or gender will be biased by these "omitted variables." But if we include too many attributes in order to avoid masking, we may induce "satisficing" among subjects, whereby they only take in a little bit of information, enough to make a "good enough" choice among the candidates.
+
+The right set of levels to include is a tricky choice. We want to include all of the most important levels, but every additional level harms statistical precision. If an attribute has three levels, it's like we're conducting a three-arm trial, so we'll want to have enough subjects for each arm. The more levels, the lower the precision.
+
+How many profiles to rate at the same time is also tricky. Our point of view is that this choice should be guided by the real-world analogue of the survey task. If we're learning about binary choices between options in the real world, then the forced-choice, paired design makes good sense. If we're learning about preferences over many possibilities, the single profile design may be more appropriate. That said, the paired design can yield precision gains over the single profile design in the sense that subjects rate two profiles at the same time, so we effectively generate twice as many observations for perhaps less than twice as much cognitive effort.
+
+Finally, the right number of choice tasks usually depends on the survey budget. We can always add more conjoint tasks and the only cost is the opportunity cost of asking a different question of the survey that may serve another scientific purpose. If we're worried that respondents will get bored with the task, we can always throw out profile pairs that come later in the survey. @bansak_hainmueller_hopkins_yamamoto_2019 suggest that you can ask many tasks without much loss of data quality.
+
+The declaration of conjoint experiments is complex, so we provide a series of helper functions specifically for forced-choice conjoint design in the `rdss` companion software package.
+
+We begin by establishing the number of subjects and the number of tasks they will accomplish. We then establish the attributes and their levels (this design assumes complete random assignment of all attributes with equal probabilities). Finally, we describe a utility function that governs subject preferences. This function can be simple, as we have it here, or it can be complex, building in differences in preferences by subject type or other details.
+
+In @def-ch17num5, we imagine a forced-choice candidate choice conjoint in which the attributes are gender, party, and region. We sample 500 subjects and ask them to complete three tasks each. 
+
+::: {#def-ch17num5 .declaration} 
+
+Conjoint experiment design
+
+```{r, file = "scripts_declarations/declaration_17.5.R"}
+```
+
+:::
+
+::: {#lem-ch17num4} 
+
+Diagnosis of the conjoint experiment design
+
+```{r}
+#| eval: false
+
+diagnosis_17.4 <- diagnose_design(declaration_17.4)
+```
+
+@fig-ch17num3 shows the sampling distribution of the five AMCE estimators. All five are unbiased, but with only 500 subjects evaluating three pairs of candidates, the power for the smaller AMCEs is less than ideal. 
+
+![Sampling Distribution of five AMCE estimators. Statistical significance of estimates indicated by color](/figures/figure-17-3){#fig-ch17num3}
+
+:::
+
+### Design examples
+
+- @Kao2022 uses a conjoint experiment in an Iraqi city that was controlled by the Islamic State to understand residents' preferences over punishments for civilian collaborators, depending on the type of collaboration they engaged in.
+
+- @aguilar2015 conduct a candidate choice experiment to measure the difference in how voters evaluate candidates depending on whether they are identified as a man or a woman in Brazil.
+
+
+## Behavioral games 
+
+::: {.ddbox}
+We declare a trust game and explore the implications of using deception in the game setup. The diagnosis highlights how the choices in the first round of a game, which are not randomized, affect our ability to study the behaviors of the player in the second round without bias.
+:::
+
+Behavioral games are often used to study difficult-to-measure characteristics of subjects like risk attitudes, altruism, prejudice, or trust. The approach involves using labs or other mechanisms to control contexts. A high level of control brings two distinct benefits. First, it can eliminate noise: we obtain estimates under a particular well-defined set of conditions rather than estimates generated from averaging over a range of possibly unknown conditions. Second, more subtly, it can prevent various forms of confounding. For instance, outside the lab we might observe how people act when they work on tasks with an outgroup member. But we only observe the responses among those that *do* work with out group members, not among those that do not. By studying behaviors in a controlled setting we can see how people *would* react when put into particular situations.   
+
+The approach holds enormous value. But, as highlighted by @green2012statistical, it also introduces many subtle design choices. Many of these can be revealed through declaration and diagnosis. 
+
+We illustrate using the "trust" game in which we specify three common inquiries and use a standard design in @def-ch17num6. The design is successful at generating unbiased estimates of the first inquiry but runs into problems with the other two.   
+
+The trust game has been implemented hundreds of times to understand levels and correlates of social trust. Following the meta-analysis given in @johnson2011trust we consider a game in which one player (Player 1, the "trustor") can invest some share of $1. Whatever is invested is then doubled. A second player (Player 2, "the trustee") can then decide what share of the doubled amount to keep for themself and what share to return to the trustor.  
+
+As described by @johnson2011trust, "trust" is commonly measured by the share given and "trustworthiness" is measured by the share returned. With the *MIDA* framework in mind, we will be more specific and define the inquiry independent of the measurement. We define "trust" as the share that *would* be invested by a trustor when confronted with a random trustee, whereas "trustworthiness" is the average share that *would* be returned over a range of possible investments. 
+
+To motivate *M* we assume the following decision making model. We assume that each person $i$ seeks to maximize a weighted average of logged payoffs:
+
+$$u_i = (1-a_i) \log(\pi_i) + a_i \log(\pi_{-i})$$
+
+where $\pi_i, \pi_{-i}$ denotes the monetary payoffs to $i$, $-i$ and $a_i$ ("altruism") captures the weight players place on the (logged) payoffs of other players.
+
+Let $x$ denote the amount sent by the trustor from the endowment $1$.  
+
+The trustee then maximizes:
+
+$$u_2 = (1-a_2) \log((1-\lambda)2x) + a_2 \log((1-x) + \lambda 2x)$$
+
+where $\lambda$ denotes the share of $2x$ that the trustee returns. Maximizing with respect to $\lambda$ yields:
+
+$$\lambda = a_2 + (1-a_2)\frac{x-1}{2x}$$
+
+in the interior. Taking account of boundary constraints,^[$a_2 + (1-a_2)\frac{x-1}{2x}\geq 0$ requires $x  \geq \frac{1-a_2}{1+a_2}$] we have best response function:
+
+$$\lambda(x):= \max\left(0, a_2 + (1-a_2)\frac{x-1}{2x}\right)$$
+
+Interestingly, the share sent back is increasing in the amount sent because player 2 has greater incentive to compensate player 1 for their investment. If the full amount is sent then the share sent back is simply $a_2$.
+
+Given this, the trustor chooses $x$ to maximize:
+
+$$u_1 = (1-a_1) \log\left(1 - x + \lambda(x)2x\right) + a_1 \log\left(\left(1-\lambda(x)\right)2x\right)$$
+
+In the interior this reduces to:
+
+$$u_1 = (1-a_1) \log\left((1 + x)a_2\right) + a_1 \log\left((1-a_2)(1+x)\right)$$
+
+with greatest returns at $x=1$.
+
+For ranges in which no investment will be returned, utility reduces to:
+
+$$u_1 = (1-a_1) \log\left(1 - x\right) + a_1 \log\left(2x\right)$$
+
+which is maximized at: $x = a_1$.
+
+The global maximum depends on which of these yields higher utility. 
+
+@fig-ch17num4 shows the returns to the trustor from different investments given their own and the trustee's other-regarding preferences. We see that when other-regarding preferences are weak for both players, nothing is given and nothing is returned. When other regarding preferences are strong for player 1, they offer substantial amounts even when nothing is expected in return. When other-regarding preferences are sufficiently strong for player 2, player 1 invests fully in anticipation of a return. 
+
+![Illustration of a trust game](/figures/figure-17-4){#fig-ch17num4}
+
+The predictions of this model are then used to define the inquiry and predict outcomes in the model declaration. The model part of the design includes information on underlying preferences. For this we make use of a set of functions that characterize stipulated beliefs about behavior. 
+
+```{r, file = "scripts_declarations/declaration_17.6_a.R"}
+```
+
+The inquiries for this design are the expected share offered to different types of trustees, the expected returns, averaged over possible offers, and the expected action by a trustee when the full amount is invested. The data strategy involves assigning players to pairs and orderings. The first half is assigned to the trustor role and matched with the second group that are assigned the trustee role. For the answer strategy, we simply measure average behavior across subjects. As a wrinkle, we include the possibility that the experimenter confronts the returners with random offers rather than the ones actually made by their partners. This aspect of the design is controlled by an argument called `deceive` and turns out to be important for inference.  
+
+::: {#def-ch17num6 .declaration} 
+
+Trust game design
+
+```{r, file = "scripts_declarations/declaration_17.6_b.R"}
+```
+
+:::
+
+A few features are worth highlighting. First, the inquiries are defined using a set of hypothetical responses under the model using a specified response function. However the inquiry is robust to the model in the sense that it remains well defined even if you stipulate very different behaviors.  Second, the declaration involves a step where we shift from a "long" data frame with a row per subject to a "wide" data frame with a row per game. Third, the design orders steps so that an estimation stage is implemented before a measurement stage; this is a little unusual but it is done in this way to allow the researchers to analyze Player 1 investment decisions before (possibly) replacing them with fabricated decisions.
+
+Data generated by this design might look like this:
+
+```{r}
+#| tbl-cap: "Behavioral games diagnosis"
+#| label: tbl-behavioralgames
+#| echo: false
+declaration_17.6 |>
+  draw_data() |>
+  arrange(pair) |>
+  head() |>
+  kable(
+    booktabs = TRUE,
+    align = "c",
+    digits = 2
+  )
+```
+
+We have a row for each game, we have the (unobserved) $a_i, a_j$ parameters as well as actions by both players in the data. 
+
+@lem-ch17num5 illustrates the properties of the trust game design.
+
+::: {#lem-ch17num5} 
+
+Trust game diagnosis
+
+```{r}
+#| eval: false
+
+diagnosis_17.5 <- 
+  declaration_17.6 |>
+  redesign(deceive = c(TRUE, FALSE)) |>
+  diagnose_design() 
+```
+
+```{r, echo = FALSE, purl = FALSE}
+diagnosis_17.5 <- get_rdddr_file_local("diagnosis_17.5")
+```
+
+![Diagnosis of bias in the analysis of trust games with and without deception](/figures/figure-17-5){#fig-ch17num5}
+
+We see that we do well for the first inquiry whether or not deception is used. The first inquiry--*trusting*--is after all a simple measurement of choices albeit in a controlled setting. 
+But we do poorly for the second and third inquiries.  
+
+Whether we have bias in the measure of *trustworthy* depends on the use of deception, however, and so presents researchers with a serious design challenge.
+
+There are two distinct reasons for the bias when Player 2 is confronted with the investments made by Player 1. First, the stage 2 distribution of investments differs from the distribution specified in the definition of the inquiry. Although we have assigned roles randomly, the choices confronting Player 2 are not random: they reflect the particular assignments generated by Player 1's choices. These player-generated assignments are generally higher than those specified in the definition of the inquiry, resulting in higher returns than would arise from random offers. A second source of bias is self-selection in stage 2. Even if the distribution of offers confronting the trustees in the second stage were correct, we could still suffer from a problem that the trustees that are sent larger investments are sent those investments partly *because* trustors expects them to return a large share. The bias on the third inquiry --- which conditions on the full amount being sent--- suggests that this is indeed a concern in this design, though the magnitude of the bias is substantively small.
+
+These problems are, we think, very common in games that involve the analysis of decisions that depend on prior decisions. Switching out the offers solves both of these problems but at the cost of deception.  
+
+Many experimental labs have developed quite strong norms against the use of deception. Some alternatives might exist that could be functionally equivalent. One approach would be to limit the information that players have about each other. We assumed in this design that players had enough information on each other to figure out $a_{-i}$. Say instead that information on players were coarsened --- for instance so that players know only each other's gender and ethnicity. In this case we might have a small set of "types" for Player 1 and Player 2. Conditional on the type pair, the variation in offers is as-if random with respect to a Player 2's characteristics and one could assess the average response of each Player 2 type to each offer received from a Player 1 type. This approach would address the selection problem. The problem of non-random offers could be sidestepped by redefining the inquiry to be responses *conditional* on particular offers (such as the return of a 100% investment).
+
+Another approach is to in fact do a mixture of reporting and randomization and *advise* Player 2 players that with some probability (say 50%) they will be confronted with a random investment and with some probability they will see the actual investment made by Player 1. 
+
+:::
+
+### Design examples
+
+- @avdeenko_gilligan_2015 use a trust game to measure outcomes in a randomized controlled trial of the effects of local public infrastructure projects in Sudan. 
+
+- @Iyengar2015 use both dictator and trust games to measure partisan antipathy in the United States. 
+
+
+
+

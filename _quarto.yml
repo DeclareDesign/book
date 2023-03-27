@@ -8,7 +8,7 @@ book:
   margin-header: >
     <p align='center'><a style = 'color: black; text-decoration: none; font-size: 17px' target='_new' href='https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences'>
     <img style='border: 1px solid darkgray; margin-bottom: 5px' width = 100px src='/figures/cover.jpg'><br/>Preorder book</a></p>
-  author: 
+  author:
     - Graeme Blair
     - Alexander Coppock
     - Macartan Humphreys
@@ -17,7 +17,7 @@ book:
     - acknowledgements.qmd
     - authors.qmd
     - part: "Introduction"
-      chapters: 
+      chapters:
         - introduction/preface.qmd
         - introduction/what-is-a-research-design.qmd
         - introduction/research-design-principles.qmd
@@ -33,60 +33,20 @@ book:
         - declaration-diagnosis-redesign/redesigning.qmd
         - declaration-diagnosis-redesign/design-example.qmd
         - declaration-diagnosis-redesign/declaration-in-code.qmd
-    - part: library/index.qmd
-      chapters: 
-        - library/observational-descriptive/index.qmd
-        - library/observational-descriptive/simple-random-sampling.qmd
-        - library/observational-descriptive/cluster-random-sampling.qmd
-        - library/observational-descriptive/multilevel-regression-poststratification.qmd
-        - library/observational-descriptive/index-creation.qmd
-        - library/observational-causal/index.qmd
-        - library/observational-causal/process-tracing.qmd
-        - library/observational-causal/selection-on-observables.qmd
-        - library/observational-causal/difference-in-differences.qmd
-        - library/observational-causal/instrumental-variables.qmd
-        - library/observational-causal/regression-discontinuity.qmd
-        - library/experimental-descriptive/index.qmd
-        - library/experimental-descriptive/audit-experiments.qmd
-        - library/experimental-descriptive/list-experiments.qmd
-        - library/experimental-descriptive/conjoint-experiments.qmd
-        - library/experimental-descriptive/behavioral-games.qmd
-        - library/experimental-causal/index.qmd
-        - library/experimental-causal/two-arm-randomized-experiments.qmd
-        - library/experimental-causal/block-randomized-designs.qmd
-        - library/experimental-causal/cluster-randomized-designs.qmd
-        - library/experimental-causal/subgroup-designs.qmd
-        - library/experimental-causal/factorial-designs.qmd
-        - library/experimental-causal/encouragement-designs.qmd
-        - library/experimental-causal/placebo-controlled-experiments.qmd
-        - library/experimental-causal/stepped-wedge-designs.qmd
-        - library/experimental-causal/randomized-saturation-designs.qmd
-        - library/experimental-causal/experiments-over-networks.qmd
-        - library/complex/index.qmd
-        - library/complex/discovery-causal-forests.qmd
-        - library/complex/structural-estimation.qmd
-        - library/complex/meta-analysis.qmd
-        - library/complex/multi-site-studies.qmd
-    - part: lifecycle/index.qmd
-      chapters: 
-        - lifecycle/planning/index.qmd
-        - lifecycle/planning/ethics.qmd
-        - lifecycle/planning/partners.qmd
-        - lifecycle/planning/funding.qmd
-        - lifecycle/planning/piloting.qmd
-        - lifecycle/planning/criticism.qmd
-        - lifecycle/planning/preanalysis-plan.qmd
-        - lifecycle/realization/index.qmd
-        - lifecycle/realization/pivoting.qmd
-        - lifecycle/realization/populated-pap.qmd
-        - lifecycle/realization/reconciliation.qmd
-        - lifecycle/realization/writing.qmd
-        - lifecycle/integration/index.qmd
-        - lifecycle/integration/communicating.qmd
-        - lifecycle/integration/archiving.qmd
-        - lifecycle/integration/reanalysis.qmd
-        - lifecycle/integration/replication.qmd
-        - lifecycle/integration/meta-analysis.qmd
+    - part: "Library"
+      chapters:
+        - library/index.qmd
+        - library/observational-descriptive.qmd
+        - library/observational-causal.qmd
+        - library/experimental-descriptive.qmd
+        - library/experimental-causal.qmd
+        - library/complex.qmd
+    - part: "Lifecycle"
+      chapters:
+        - lifecycle/index.qmd
+        - lifecycle/planning.qmd
+        - lifecycle/realization.qmd
+        - lifecycle/integration.qmd
     - epilogue.qmd
     - references.qmd
 
@@ -118,86 +78,28 @@ book:
         - section: "Research design library"
           href: library/
           contents:
-            - section: "Observational : descriptive"
-              href: library/observational-descriptive/
-              contents:
-                - library/observational-descriptive/simple-random-sampling.qmd
-                - library/observational-descriptive/cluster-random-sampling.qmd
-                - library/observational-descriptive/multilevel-regression-poststratification.qmd
-                - library/observational-descriptive/index-creation.qmd
-            - section: "Observational : causal"
-              href: library/observational-causal/
-              contents:
-                - library/observational-causal/process-tracing.qmd
-                - library/observational-causal/selection-on-observables.qmd
-                - library/observational-causal/difference-in-differences.qmd
-                - library/observational-causal/instrumental-variables.qmd
-                - library/observational-causal/regression-discontinuity.qmd
-            - section: "Experimental : descriptive"
-              href: library/experimental-descriptive/
-              contents:
-                - library/experimental-descriptive/audit-experiments.qmd
-                - library/experimental-descriptive/list-experiments.qmd
-                - library/experimental-descriptive/conjoint-experiments.qmd
-                - library/experimental-descriptive/behavioral-games.qmd
-            - section: "Experimental : causal"
-              href: library/experimental-causal/
-              contents:
-                - library/experimental-causal/two-arm-randomized-experiments.qmd
-                - library/experimental-causal/block-randomized-designs.qmd
-                - library/experimental-causal/cluster-randomized-designs.qmd
-                - library/experimental-causal/subgroup-designs.qmd
-                - library/experimental-causal/factorial-designs.qmd
-                - library/experimental-causal/encouragement-designs.qmd
-                - library/experimental-causal/placebo-controlled-experiments.qmd
-                - library/experimental-causal/stepped-wedge-designs.qmd
-                - library/experimental-causal/randomized-saturation-designs.qmd
-                - library/experimental-causal/experiments-over-networks.qmd
-            - section: "Complex"
-              href: library/complex/
-              contents:
-              - library/complex/discovery-causal-forests.qmd
-              - library/complex/structural-estimation.qmd
-              - library/complex/meta-analysis.qmd
-              - library/complex/multi-site-studies.qmd
+            - library/observational-descriptive.qmd
+            - library/observational-causal.qmd
+            - library/experimental-descriptive.qmd
+            - library/experimental-causal.qmd
+            - library/complex.qmd
         - section: "Research design lifecycle"
           href: lifecycle/
           contents:
-          - section: "Planning"
-            href: lifecycle/planning/
-            contents:
-              - lifecycle/planning/ethics.qmd
-              - lifecycle/planning/partners.qmd
-              - lifecycle/planning/funding.qmd
-              - lifecycle/planning/piloting.qmd
-              - lifecycle/planning/criticism.qmd
-              - lifecycle/planning/preanalysis-plan.qmd
-          - section: "Realization"
-            href: lifecycle/realization/
-            contents:
-              - lifecycle/realization/pivoting.qmd
-              - lifecycle/realization/populated-pap.qmd
-              - lifecycle/realization/reconciliation.qmd
-              - lifecycle/realization/writing.qmd
-          - section: "Integration"
-            href: lifecycle/integration/
-            contents:
-              - lifecycle/integration/communicating.qmd
-              - lifecycle/integration/archiving.qmd
-              - lifecycle/integration/reanalysis.qmd
-              - lifecycle/integration/replication.qmd
-              - lifecycle/integration/meta-analysis.qmd
-        - epilogue.qmd      
+          - lifecycle/planning.qmd
+          - lifecycle/realization.qmd
+          - lifecycle/integration.qmd
+        - epilogue.qmd
         - references.qmd
 
 bibliography: references.bib
 
 knitr:
-  opts_chunk: 
+  opts_chunk:
     collapse: true
     warning: false
     message: false
-    comment: "#>" 
+    comment: "#>"
     R.options:
       knitr.graphics.auto_pdf: true
 
@@ -205,9 +107,7 @@ language:
   crossref-def-title: "Declaration"
   crossref-lem-title: "Diagnosis"
   crossref-exm-title: "Principle"
-  
 
-  
 format:
   html:
     filters:
@@ -215,7 +115,7 @@ format:
     lightbox:
       match: auto
     theme: cosmo
-    number-offset: -1
+    # number-offset: -1
     default-image-extension: svg
     code-link: true
     include-in-header: header-additions.html
