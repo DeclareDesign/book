@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Research Design in the Social Sciences - 15&nbsp; Observational : descriptive</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../library/observational-causal.html" rel="next">
+<link href="../library/" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script><style type="text/css" media="print">
+    body { visibility: hidden; display: none }
+</style>
+<script type="text/javascript">
+    function createCookie(name, value, days) {
+        var expires;
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toGMTString();
+        }
+        else {
+            expires = "";
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    
+    function getCookie(c_name) {
+        if (document.cookie.length > 0) {
+            c_start = document.cookie.indexOf(c_name + "=");
+            if (c_start != -1) {
+                c_start = c_start + c_name.length + 1;
+                c_end = document.cookie.indexOf(";", c_start);
+                if (c_end == -1) {
+                    c_end = document.cookie.length;
+                }
+                return unescape(document.cookie.substring(c_start, c_end));
+            }
+        }
+        return "";
+    }
+    window.onload = () => {
+      if (getCookie('popupShown') != 'yes') {
+        const myModal = new bootstrap.Modal('#exampleModal');
+        myModal.show();
+        createCookie('popupShown', 'yes', 1)
+      }
+    }
+</script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</head>
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">
+<span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span>
+</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Research Design in the Social Sciences</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../authors.html" class="sidebar-item-text sidebar-link">About the authors</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../library/" class="sidebar-item-text sidebar-link">Research design library</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../library/complex.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../epilogue.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+</div>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p align="center">
+<a style="color: black; text-decoration: none; font-size: 17px" target="_new" href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences"> <img style="border: 1px solid darkgray; margin-bottom: 5px" width="100px" src="../figures/cover.jpg"><br>Preorder book</a>
+</p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li>
+<a href="#simple-random-sampling" id="toc-simple-random-sampling" class="nav-link active" data-scroll-target="#simple-random-sampling"><span class="toc-section-number">15.1</span>  Simple random sampling</a>
+  <ul class="collapse">
+<li><a href="#sec-ch15s1ss1" id="toc-sec-ch15s1ss1" class="nav-link" data-scroll-target="#sec-ch15s1ss1"><span class="toc-section-number">15.1.1</span>  What can go wrong</a></li>
+  <li><a href="#design-examples" id="toc-design-examples" class="nav-link" data-scroll-target="#design-examples"><span class="toc-section-number">15.1.2</span>  Design Examples</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#sec-ch15s2" id="toc-sec-ch15s2" class="nav-link" data-scroll-target="#sec-ch15s2"><span class="toc-section-number">15.2</span>  Cluster random sampling</a>
+  <ul class="collapse">
+<li><a href="#design-examples-1" id="toc-design-examples-1" class="nav-link" data-scroll-target="#design-examples-1"><span class="toc-section-number">15.2.1</span>  Design examples</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#sec-ch15s3" id="toc-sec-ch15s3" class="nav-link" data-scroll-target="#sec-ch15s3"><span class="toc-section-number">15.3</span>  Multi-level regression and poststratification</a>
+  <ul class="collapse">
+<li><a href="#redesign-over-answer-strategies" id="toc-redesign-over-answer-strategies" class="nav-link" data-scroll-target="#redesign-over-answer-strategies"><span class="toc-section-number">15.3.1</span>  Redesign over answer strategies</a></li>
+  <li><a href="#design-examples-2" id="toc-design-examples-2" class="nav-link" data-scroll-target="#design-examples-2"><span class="toc-section-number">15.3.2</span>  Design examples</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#index-creation" id="toc-index-creation" class="nav-link" data-scroll-target="#index-creation"><span class="toc-section-number">15.4</span>  Index creation</a>
+  <ul class="collapse">
+<li><a href="#design-examples-3" id="toc-design-examples-3" class="nav-link" data-scroll-target="#design-examples-3"><span class="toc-section-number">15.4.1</span>  Design examples</a></li>
+  </ul>
+</li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body" style="text-align: center">
+        <img width="400px" src="https://draft.declaredesign.org/figures/cover.jpg" style="margin-bottom: 15px"><br>
+        Available for preorder from Princeton University Press
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!--<button type="button" class="btn btn-primary">Buy book</button>-->
+        <a href="https://www.amazon.com/Research-Design-Social-Sciences-Declaration/dp/0691199574/?&amp;_encoding=UTF8&amp;tag=declaredesign-20&amp;linkCode=ur2&amp;linkId=84be1f952d1d7aaaa5be867eade93474&amp;camp=1789&amp;creative=9325" target="_blank" class="btn btn-info" role="button">Amazon</a>
+        <a href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences" target="_blank" class="btn btn-info" role="button">Princeton University Press</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title d-none d-lg-block">
+<span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span>
+</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header><p>An observational design for descriptive inference usually has an inquiry like a population mean, covariance, or distribution as the main research goal. In an observational research design, the data strategy includes sampling and measurement components, but no treatments are allocated by the researcher. Put differently, in an observational design for descriptive inference, researchers seek to measure and summarize the world, but not to change it. This class of research designs encompasses a huge portion of research activity – most surveys fall into this class, as do large-scale data collections of economic and sociopolitical indicators, classic case studies focused on “thick description,” and many text analysis projects.</p>
+<section id="simple-random-sampling" class="level2" data-number="15.1"><h2 data-number="15.1" class="anchored" data-anchor-id="simple-random-sampling">
+<span class="header-section-number">15.1</span> Simple random sampling</h2>
+<div class="ddbox">
+<p>We declare a design in which a researcher takes a simple random sample of a population and uses a survey instrument to measure a latent quantity. The inquiry is the population average of the measured quantity. We show how to declare this design and an approach to incorporate concerns about non random non response in the design.</p>
+</div>
+<p>Descriptive inquiries like the population mean of one variable or the population correlation between two variables are defined with respect to a specific group of units – the population about which we want to draw inferences.</p>
+<p>One approach to studying a population is to conduct a census in which we record data on all <span class="math inline">\(N\)</span> units (written with an upper-case <span class="math inline">\(N\)</span> to represent the population). A census has the clear advantage of being comprehensive, but it usually comes at an overwhelming and prohibitive cost.</p>
+<p>To avoid those costs, we collect data from only <span class="math inline">\(n\)</span> units (written with a lower-case <span class="math inline">\(n\)</span>), where the sample size <span class="math inline">\(n\)</span> is smaller than the population size <span class="math inline">\(N\)</span>. When the <span class="math inline">\(n\)</span> units we sample are chosen at random, we can obtain unbiased estimates of many descriptive inquiries.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Imagine we seek to estimate the average political ideology of adult residents of the small town of Portola, California (population 2,100). Under our model <em>M</em>, the latent ideology <span class="math inline">\(Y^*\)</span> is drawn from a standard normal distribution.</p>
+<p>The data strategy <span class="math inline">\(D\)</span> has two components: a survey question <span class="math inline">\(Q\)</span> and a sampling procedure <span class="math inline">\(S\)</span>. The survey question asks subjects to place themselves on a left-right scale that varies from 1 (most liberal) to 7 (most conservative). We approximate this measurement procedure with a function that “cuts” the latent ideology into 7 separate groups. This survey question will introduce measurement error insofar as it does not distinguish among people with different latent ideologies who, because of our measurement tool, place themselves at the same place on the seven-point scale.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Our main hope for this measurement procedure is that all of the people who give themselves higher scores are indeed more conservative than those who give themselves lower scores. The sampling procedure is “complete” random sampling. We draw a sample of exactly <span class="math inline">\(n = 100\)</span>, where every member of the population has an equal probability of inclusion in the sample, <span class="math inline">\(\frac{n}{N}\)</span>.</p>
+<p>The model and data strategy are represented by the DAG in <a href="#fig-ch15num1">Figure&nbsp;<span>15.1</span></a>. The DAG shows that the observed outcome <span class="math inline">\(Y\)</span> is a function of the latent score <span class="math inline">\(Y^*\)</span> and the survey question <span class="math inline">\(Q\)</span>. The observed outcome <span class="math inline">\(Y\)</span> is only measured for sampled units, i.e., units that have <span class="math inline">\(S = 1\)</span>. This simple diagram represents important design assumptions. First, no arrow leads from <span class="math inline">\(Y^*\)</span> to <span class="math inline">\(S\)</span>. If such an arrow were present, then units with higher or lower latent ideologies would be more likely to be sampled. Second, an arrow does lead from <span class="math inline">\(Y^*\)</span> to <span class="math inline">\(Y\)</span>, indicating that we assume the measured variable does indeed respond to the latent variable. Finally, the diagram includes an explicit role for the survey question, which helps us to consider how alternative wordings of <span class="math inline">\(Q\)</span> might change the observed variable <span class="math inline">\(Y\)</span>.</p>
+<div id="fig-ch15num1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="../figures/figure-15-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Directed acyclic graph for the simple random sampling design"><img src="../figures/figure-15-1.svg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;15.1: Directed acyclic graph for the simple random sampling design</figcaption><p></p>
+</figure>
+</div>
+<p>Our inquiry <span class="math inline">\(I\)</span> is the population mean of the <em>measured</em> variable <span class="math inline">\(Y\)</span>: <span class="math inline">\(\frac{1}{N} \sum_1^N Y_i = \bar{Y}\)</span>, rather than the mean of the latent variable <span class="math inline">\(Y^*\)</span>. In this sense, our inquiry is “data-strategy dependent”, since we are interested in the average value of what we <em>would</em> measure for any member of the population were we to sample them.</p>
+<p>Our answer strategy is the sample mean estimator: <span class="math inline">\(\widehat{\overline{Y}} = \frac{1}{n} \sum_1^n Y_i\)</span>, implemented here as an ordinary least squares regression to facilitate the easy calculation of auxiliary statistics like the standard error of the estimate and the 95% confidence interval.</p>
+<p>We incorporate these design features into <a href="#def-ch15num1">Declaration&nbsp;<span>15.1</span></a>. The <code>portola</code> object is a fixed population of 2100 units with a latent ideology <code>Y_star</code>. The declaration of the measurement strategy comes before the declaration of the inquiry, showing how the inquiry is data strategy dependent.</p>
+<div id="def-ch15num1" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration 15.1 </strong></span>Simple random sampling design</p>
+<div class="cell" data-file="scripts_declarations/declaration_15.1.R">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">343</span><span class="op">)</span> <span class="co"># fix random seed to yield a fixed population of units</span></span>
+<span><span class="va">portola</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">fabricate</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="fl">2100</span>,</span>
+<span>    Y_star <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">declaration_15.1</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>data <span class="op">=</span> <span class="va">portola</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">Y_star</span>, <span class="fl">7</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>Y_bar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_sampling</span><span class="op">(</span>S <span class="op">=</span> <span class="fu">complete_rs</span><span class="op">(</span><span class="va">N</span>, n <span class="op">=</span> <span class="fl">100</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">1</span>, inquiry <span class="op">=</span> <span class="st">"Y_bar"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span class="math inline">\(~\)</span></p>
+</div>
+<p>Two main diagnosands for the simple random sampling design are bias and root mean-squared error. We want to know if we get the right answer on average and we want to know, on average, how far off from the truth we are.</p>
+<div id="lem-ch15num1" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 15.1 </strong></span>Simple random sampling diagnosis</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosands</span> <span class="op">&lt;-</span> <span class="fu">declare_diagnosands</span><span class="op">(</span></span>
+<span>  bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span>,</span>
+<span>  rmse <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span> <span class="op">^</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">diagnosis_15.1</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_15.1</span>, diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-diagnosis15s1" class="anchored">
+
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>Table&nbsp;15.1:  Complete random sampling design diagnosis. </caption>
+ <thead><tr>
+<th style="text-align:center;"> Bias </th>
+   <th style="text-align:center;"> RMSE </th>
+  </tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;"> 0.00 </td>
+   <td style="text-align:center;"> 0.11 </td>
+  </tr>
+<tr>
+<td style="text-align:center;"> (0.00) </td>
+   <td style="text-align:center;"> (0.00) </td>
+  </tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The diagnosis in <a href="#tbl-diagnosis15s1">Table&nbsp;<span>15.1</span></a> indicates that under complete random sampling, the sample mean estimator of the population mean is unbiased and that the root mean squared error is manageable at 0.11.</p>
+</div>
+<section id="sec-ch15s1ss1" class="level3" data-number="15.1.1"><h3 data-number="15.1.1" class="anchored" data-anchor-id="sec-ch15s1ss1">
+<span class="header-section-number">15.1.1</span> What can go wrong</h3>
+<p>The most serious threat to descriptive inference in a randomized sampling design is nonresponse. Missingness due to nonresponse can lead to bias if missingness is correlated with outcomes. Sometimes this bias is referred to as “selection bias” in the sense that some units select out of responding when sampled.</p>
+<p>Depending on what information is available about the missing units, various answer strategy fix-ups are available to analysts. For example, if we have demographic or other covariate information about the missing units, we can search for similar-seeming units in the observed data, then impute their missing outcomes. This approach depends on the strong assumption that units with the same covariate profile have the same average outcome, regardless of whether they go missing. The imputation process is often done on the basis of a regression model; multiple imputation methods attempt to incorporate the additional uncertainty that accompanies the modeling technique. Answer strategies that employ inverse probability weights adjust for non response by upweighting types of units we have too few of (relative to a population target) and downweighting units we have too many of.</p>
+<p>Avoiding – or dynamically responding to – missingness in the data strategy is usually preferable to the addition of modeling assumptions in the answer strategy. Avoiding missingness often means adding extra effort and expense, such as monetary incentives for participation, multiple rounds of attempted contact, and attempting contact through a variety of modes (phone, mail, email, direct message, text, in-person visit). The best way to allocate extra effort will vary from context to context, as will the payoff from doing so. Our recommendation is to reason about the plausible response rates that would result from different levels of effort, then to consider how to optimize the bias-effort tradeoff. Sometimes, achieving zero bias would be far too costly, so we would be willing to tolerate some bias because effort is too expensive.</p>
+<p><a href="#def-ch15num2">Declaration&nbsp;<span>15.2</span></a> builds in a dependence between the latent outcome <span class="math inline">\(Y*\)</span> and the probability of responding to the survey. That probability also responds to researcher effort. The diagnosis shows how effort translates into higher response rates and lower bias:</p>
+<div id="def-ch15num2" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration 15.2 </strong></span>Survey nonresponse design</p>
+<div class="cell" data-file="scripts_declarations/declaration_15.2.R">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">effort</span> <span class="op">&lt;-</span> <span class="fl">0</span> <span class="co"># baseline of no extra effort</span></span>
+<span></span>
+<span><span class="va">declaration_15.2</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>data <span class="op">=</span> <span class="va">portola</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">Y_star</span>, <span class="fl">7</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>Y_bar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_sampling</span><span class="op">(</span>S <span class="op">=</span> <span class="fu">complete_rs</span><span class="op">(</span><span class="va">N</span>, n <span class="op">=</span> <span class="fl">100</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span></span>
+<span>    R <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="va">Y_star</span> <span class="op">+</span> <span class="va">effort</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    Y <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">R</span> <span class="op">==</span> <span class="fl">1</span>, <span class="va">Y</span>, <span class="cn">NA_real_</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">1</span>, inquiry <span class="op">=</span> <span class="st">"Y_bar"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">R</span> <span class="op">~</span> <span class="fl">1</span>, label <span class="op">=</span> <span class="st">"Response Rate"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="lem-ch15num2" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 15.2 </strong></span>Survey nonresponse diagnosis</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_15.2</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">declaration_15.2</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">redesign</span><span class="op">(</span>effort <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5</span>, by <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+<div id="fig-ch15num2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="../figures/figure-15-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Redesigning the random sampling design over researcher effort"><img src="../figures/figure-15-2.svg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;15.2: Redesigning the random sampling design over researcher effort</figcaption><p></p>
+</figure>
+</div>
+</div>
+</section><section id="design-examples" class="level3" data-number="15.1.2"><h3 data-number="15.1.2" class="anchored" data-anchor-id="design-examples">
+<span class="header-section-number">15.1.2</span> Design Examples</h3>
+<ul>
+<li><p><span class="citation" data-cites="Bradley:2021us">Bradley et al. (<a href="../references.html#ref-Bradley:2021us" role="doc-biblioref">2021</a>)</span> compare “big data” convenience sample surveys (n = 75,000 and 250,000) of COVID-19 vaccine uptake to a 1,000 person simple random sampling design with an inverse probability weighting answer strategy, finding strong support for random sampling over “big data.”</p></li>
+<li><p>Simple random sampling is also used when researchers need to take manual measurements of a large number of observations. <span class="citation" data-cites="merkley_stecula_2021">Merkley and Stecula (<a href="../references.html#ref-merkley_stecula_2021" role="doc-biblioref">2021</a>)</span> hand-code a simple random sample of 3,000 newspaper articles about climate changes out of the many hundreds of thousands of articles about climate change identified by an automatic search process, allowing them to characterize their population of observations without hand-coding each one.</p></li>
+</ul></section></section><section id="sec-ch15s2" class="level2" data-number="15.2"><h2 data-number="15.2" class="anchored" data-anchor-id="sec-ch15s2">
+<span class="header-section-number">15.2</span> Cluster random sampling</h2>
+<div class="ddbox">
+<p>We declare a design in which a researcher takes a clustered random sample of a population and uses the design to ask whether they should invest in sampling more clusters or in more individuals per cluster. The design includes a budget constraint that affects how many can be sampled within clusters as a function of the number of clusters sampled.</p>
+</div>
+<p>Researchers often cannot randomly sample at the individual level because it may, among other reasons, be too costly or logistically impractical. Instead, they may choose to sample clusters at random first, then randomly sample units within clusters. Clusters might be schools, localities, or households.</p>
+<p>How does clustering change the research design relative to the individual-level design? First, we need to elaborate the model <span class="math inline">\(M\)</span> to make the clustering hierarchy explicit. In the declaration below, we imagine our research site is two states in Nigeria. Localities are nested within states and individuals are nested within localities. Second, we want to respect this hierarchy when thinking about the distribution of outcomes. Individuals living in the same locality are likely to share political viewpoints, either through the explicit transmission of political views or because of common exposure to political influence. The “intra-cluster correlation” or ICC is an extremely important statistic for the design of cluster-sampled studies. It describes what fraction of the total variation in the outcome can be attributed to the across-cluster differences in average outcomes.</p>
+<p>In the declaration below, the latent outcome <code>Y_star</code> describes subject’s latent political preferences. This latent outcome is a function of locality differences and individual differences. The variances of these two shocks (difference parameters) are determined by the <code>ICC</code> parameter. If ICC were equal to 1, the variance across localities would be equal to 1, and all individuals within a locality would have exactly the same political preferences. If ICC were equal to zero, then the variation in preferences would be entirely at the individual level.</p>
+<div class="cell" data-file="scripts_declarations/declaration_15.3a.R">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ICC</span> <span class="op">&lt;-</span> <span class="fl">0.4</span></span>
+<span></span>
+<span><span class="va">two_nigerian_states</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">fabricate</span><span class="op">(</span></span>
+<span>    state <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">2</span>, </span>
+<span>                      state_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"taraba"</span>, <span class="st">"kwara"</span><span class="op">)</span>,</span>
+<span>                      state_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.2</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    locality <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>      N <span class="op">=</span> <span class="fl">500</span>,</span>
+<span>      locality_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, <span class="va">state_mean</span>, <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">ICC</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    individual <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>      N <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>      individual_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">ICC</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>      Y_star <span class="op">=</span> <span class="va">locality_shock</span> <span class="op">+</span> <span class="va">individual_shock</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Many different cluster sampling designs are possible, but a standard choice is a two-stage design in which first, some but not all clusters are sampled, and second, some but not all units within a cluster are sampled. The sampling at either stage may be stratified by covariates at the appropriate level. The first stage can be stratified by cluster-level covariates and the second stage can be stratified by individual-level covariates in order to improve precision. In this declaration, we form cluster-level strata by state.</p>
+<p>The two stage random-sampling design raises an important tradeoff: Should we invest in sampling more clusters or in more individuals per cluster? Typically, adding the marginal cluster is more expensive than adding the marginal individual. We formalize the tradeoff with a “budget function” that returns the largest individual level inclusion probability that is budget-compatible with a given cluster sampling probability:</p>
+<div class="cell" data-file="scripts_declarations/declaration_15.3b.R">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">budget_function</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="kw">function</span><span class="op">(</span><span class="va">cluster_prob</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">budget</span> <span class="op">=</span> <span class="fl">20000</span></span>
+<span>    <span class="va">cluster_cost</span> <span class="op">=</span> <span class="fl">20</span></span>
+<span>    <span class="va">individual_cost</span> <span class="op">=</span> <span class="fl">2</span></span>
+<span>    <span class="va">n_clusters</span> <span class="op">=</span> <span class="fl">1000</span></span>
+<span>    <span class="va">n_individuals_per_cluster</span> <span class="op">=</span> <span class="fl">100</span></span>
+<span>    </span>
+<span>    <span class="va">total_cluster_cost</span> <span class="op">&lt;-</span></span>
+<span>      <span class="va">cluster_prob</span> <span class="op">*</span> <span class="va">n_clusters</span> <span class="op">*</span> <span class="va">cluster_cost</span></span>
+<span>    </span>
+<span>    <span class="va">remaining_funds</span> <span class="op">&lt;-</span> <span class="va">budget</span> <span class="op">-</span> <span class="va">total_cluster_cost</span></span>
+<span>    </span>
+<span>    <span class="va">sampleable_individuals</span> <span class="op">&lt;-</span> </span>
+<span>      <span class="va">cluster_prob</span> <span class="op">*</span> <span class="va">n_clusters</span> <span class="op">*</span> <span class="va">n_individuals_per_cluster</span></span>
+<span>    </span>
+<span>    <span class="va">individual_prob</span> <span class="op">=</span> </span>
+<span>      <span class="op">(</span><span class="va">remaining_funds</span><span class="op">/</span><span class="va">individual_cost</span><span class="op">)</span><span class="op">/</span><span class="va">sampleable_individuals</span></span>
+<span>    </span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">pmin</a></span><span class="op">(</span><span class="va">individual_prob</span>, <span class="fl">1</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We use the output of this function to determine the probability of an individual being sampled, conditional on their cluster being sampled.</p>
+<p>Lastly, the answer strategy must also respects the data strategy by clustering standard errors at the highest level at which units are sampled, which in this case is the locality.</p>
+<div id="def-ch15num3" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration 15.3 </strong></span>Cluster random sampling design</p>
+<div class="cell" data-file="scripts_declarations/declaration_15.3c.R">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_15.3</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>data <span class="op">=</span> <span class="va">two_nigerian_states</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">Y_star</span>, <span class="fl">7</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>Y_bar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_sampling</span><span class="op">(</span></span>
+<span>    S_cluster <span class="op">=</span> <span class="fu">strata_and_cluster_rs</span><span class="op">(</span></span>
+<span>      strata <span class="op">=</span> <span class="va">state</span>,</span>
+<span>      clusters <span class="op">=</span> <span class="va">locality</span>,</span>
+<span>      prob <span class="op">=</span> <span class="va">cluster_prob</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    filter <span class="op">=</span> <span class="va">S_cluster</span> <span class="op">==</span> <span class="fl">1</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_sampling</span><span class="op">(</span></span>
+<span>    S_individual <span class="op">=</span> </span>
+<span>      <span class="fu">strata_rs</span><span class="op">(</span>strata <span class="op">=</span> <span class="va">locality</span>, </span>
+<span>                prob <span class="op">=</span> <span class="fu">budget_function</span><span class="op">(</span><span class="va">cluster_prob</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    filter <span class="op">=</span> <span class="va">S_individual</span> <span class="op">==</span> <span class="fl">1</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">1</span>,</span>
+<span>                    clusters <span class="op">=</span> <span class="va">locality</span>,</span>
+<span>                    se_type <span class="op">=</span> <span class="st">"stata"</span>,</span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"Y_bar"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>We redesign <a href="#def-ch15num3">Declaration&nbsp;<span>15.3</span></a> over various levels of the cluster-level probability of sampling, which in turn sets the probability of sampling at the individual level. <a href="#fig-ch15num3">Figure&nbsp;<span>15.3</span></a> shows that for a good while, adding additional clusters yields precision gains. At some point, however, the cost to sample size within cluster is too large, and we start seeing precision loss around a probability of 0.75 of a cluster being sampled. The precise combination of design parameters that minimize the standard deviation of the sampling distribution will depend on nearly every aspect of the design declaration, but the most important are the total budget, the relative costs of clusters and individuals, and the ICC. When the ICC is zero, we should invest in few clusters and many individuals. When the ICC is one, we should invest in many clusters and few individuals.</p>
+<div id="lem-ch15num3" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 15.3 </strong></span>Cluster random sampling diagnosis</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu">redesign</span><span class="op">(</span><span class="va">declaration_15.3</span>, </span>
+<span>                    cluster_prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.9</span>, <span class="fl">0.1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">diagnosis_15.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">designs</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+<div id="fig-ch15num3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="../figures/figure-15-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Trading off the number of clusters and the number of individuals per cluster"><img src="../figures/figure-15-3.svg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;15.3: Trading off the number of clusters and the number of individuals per cluster</figcaption><p></p>
+</figure>
+</div>
+</div>
+<section id="design-examples-1" class="level3" data-number="15.2.1"><h3 data-number="15.2.1" class="anchored" data-anchor-id="design-examples-1">
+<span class="header-section-number">15.2.1</span> Design examples</h3>
+<ul>
+<li><p><span class="citation" data-cites="stokes_2005">Stokes (<a href="../references.html#ref-stokes_2005" role="doc-biblioref">2005</a>)</span> use a stratified cluster sampling design to estimate the prevalence of vote buying in Argentina. The strata were provinces, the clusters were census tracts. A simple random sample of individuals residing in selected census tracts were ultimately interviewed.</p></li>
+<li><p><span class="citation" data-cites="Paler2018">Paler, Marshall, and Atallah (<a href="../references.html#ref-Paler2018" role="doc-biblioref">2018</a>)</span> use a multistage clustered sampling design to study Lebanese citizen’s willingness to sign a petition condemning sectarian politics. The clusters were localities (villages in rural areas, neighborhoods in urban areas), which were stratified by population size. Within selected localities, simple random samples of households were drawn; within households, a single adult was drawn at random. The study also included a randomized treatment that manipulated whether petition signatures were public or private.</p></li>
+</ul></section></section><section id="sec-ch15s3" class="level2" data-number="15.3"><h2 data-number="15.3" class="anchored" data-anchor-id="sec-ch15s3">
+<span class="header-section-number">15.3</span> Multi-level regression and poststratification</h2>
+<div class="ddbox">
+<p>We declare a design in which researchers reweight the responses of different units in a sample in order to better estimate a population level quantity. Reweighting depends on how much units are thought to “represent” other nonsampled units and requires making decisions about how much units of different types should be pooled together. Design performance of a partially pooled model is compared against designs that involve no pooling and full pooling.</p>
+</div>
+<p>Multi-level regression and poststratification (MRP) is a technique used primarily for “small area estimation.” In the prototypical setting, we conduct a nationally-representative survey of public opinion, but our goal is to generate estimates of the average level of public opinion for many subnational units. In the United States context, these “small area” units are often the 50 states. The main problem is that in a national poll of 2,000 Americans, we might only have 4 respondents from small states like Alaska, Wyoming, or Vermont, but more than 100 from large states like California, New York, or Texas. Accordingly, it is harder to estimate opinion in small states than in large states. The key insight of an MRP design is that we can “borrow strength” across states and kinds of people in order to improve state level estimates.</p>
+<p>In an MRP design, the answer strategy includes two steps: a multi-level regression step and a poststratification step. The regression model generates estimates of the average opinion for classes of people within each state. The precise flavor of regression model can vary from application to application. In the simple example below, we use a generalized linear mixed effects model with an individual-level covariate and random effects by state, but regression models of substantial complexity are sometimes used to model important nuances in how opinions covary with individual and state-level characteristics (see, e.g., <span class="citation" data-cites="bisbee_2019">Bisbee (<a href="../references.html#ref-bisbee_2019" role="doc-biblioref">2019</a>)</span>).</p>
+<p>The regression model generates estimates of the average opinion for classes of people within each state. The post-stratification step reweights these estimates to <em>known</em> proportions of each class of person within each state. The knowledge of these proportions has to come from outside the survey. The US census is the usual source of these population proportions in the American context, though any reliable source of this information is suitable.</p>
+<p>In <a href="#def-ch15num4">Declaration&nbsp;<span>15.4</span></a>, we begin with a dataset of the fifty states that describes what fraction of people in each state has graduated from high school. This code block also establishes the true state means that will form our inquiry. In the model, we draw a nationally-representative sample of size 2,000, respecting the fraction of people within each state with a high school degree. The post-stratification weights are built from the that fraction as well. The binary public opinion variable <code>policy_support</code> is a function of the high school covariate, an individual-level shock, and a state-level shock. The inquiry is the mean policy support at the state level. The tricky part of this design is the two-step answer strategy. The first step is handled by the multilevel regression function <code>glmer</code>. The second step is handled by the <code>post_stratification_helper</code> function (available in the <code>rdss</code> companion package) that obtains predictions from the model, then reweights them according to the post-stratification weights.</p>
+<div id="def-ch15num4" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration 15.4 </strong></span>Multilevel regression and poststratification design</p>
+<div class="cell" data-file="scripts_declarations/declaration_15.4.R">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdss</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lme4/lme4/">lme4</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">states</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">as_tibble</span><span class="op">(</span><span class="va">state.x77</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">transmute</span><span class="op">(</span></span>
+<span>    state <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">state.x77</span><span class="op">)</span>,</span>
+<span>    prop_of_US <span class="op">=</span> <span class="va">Population</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Population</span><span class="op">)</span>,</span>
+<span>    <span class="co"># results in exactly 2,000 due to rounding</span></span>
+<span>    state_n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">prop_of_US</span> <span class="op">*</span> <span class="fl">1998.6</span><span class="op">)</span>, </span>
+<span>    prob_HS <span class="op">=</span> <span class="va">`HS Grad`</span> <span class="op">/</span> <span class="fl">100</span>,</span>
+<span>    state_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>, sd <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span>    state_mean <span class="op">=</span> <span class="va">prob_HS</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">0.2</span> <span class="op">+</span> <span class="va">state_shock</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">prob_HS</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="va">state_shock</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">declaration_15.4</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    data <span class="op">=</span> <span class="va">states</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">50</span>, <span class="va">states</span><span class="op">$</span><span class="va">state_n</span><span class="op">)</span>, <span class="op">]</span>,</span>
+<span>    HS <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="va">prob_HS</span><span class="op">)</span>,</span>
+<span>    PS_weight <span class="op">=</span></span>
+<span>      <span class="fu">case_when</span><span class="op">(</span><span class="va">HS</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">~</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">prob_HS</span><span class="op">)</span>,</span>
+<span>                <span class="va">HS</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">~</span> <span class="va">prob_HS</span><span class="op">)</span>,</span>
+<span>    individual_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">N</span>, sd <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span>    policy_support <span class="op">=</span> </span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">0.2</span> <span class="op">*</span> <span class="va">HS</span> <span class="op">+</span> <span class="va">individual_shock</span> <span class="op">+</span> <span class="va">state_shock</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<span>    handler <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="va">states</span> <span class="op">|&gt;</span> <span class="fu">transmute</span><span class="op">(</span></span>
+<span>        <span class="va">state</span>, </span>
+<span>        inquiry <span class="op">=</span> <span class="st">"mean_policy_support"</span>, </span>
+<span>        estimand <span class="op">=</span> <span class="va">state_mean</span></span>
+<span>      <span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span>handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">model_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/glmer.html">glmer</a></span><span class="op">(</span></span>
+<span>      formula <span class="op">=</span> <span class="va">policy_support</span> <span class="op">~</span> <span class="va">HS</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">state</span><span class="op">)</span>,</span>
+<span>      data <span class="op">=</span> <span class="va">data</span>,</span>
+<span>      family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/family.html">binomial</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"logit"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/rdss/man/post_stratification_helper.html">post_stratification_helper</a></span><span class="op">(</span><span class="va">model_fit</span>, data <span class="op">=</span> <span class="va">data</span>, group <span class="op">=</span> <span class="va">state</span>, weights <span class="op">=</span> <span class="va">PS_weight</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span>,</span>
+<span>  label <span class="op">=</span> <span class="st">"Partial pooling"</span>,</span>
+<span>  inquiry <span class="op">=</span> <span class="st">"mean_policy_support"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p><a href="#fig-ch15num4">Figure&nbsp;<span>15.4</span></a> shows one draw from this design, plotting the MRP estimates against the true level of opinion.</p>
+<div id="fig-ch15num4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="../figures/figure-15-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Estimates of state-level option plotted against their true levels"><img src="../figures/figure-15-4.svg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;15.4: Estimates of state-level option plotted against their true levels</figcaption><p></p>
+</figure>
+</div>
+<section id="redesign-over-answer-strategies" class="level3" data-number="15.3.1"><h3 data-number="15.3.1" class="anchored" data-anchor-id="redesign-over-answer-strategies">
+<span class="header-section-number">15.3.1</span> Redesign over answer strategies</h3>
+<p>The strengths of the MRP design are best appreciated by contrasting MRP’s partial pooling approach to two alternatives: no pooling and full pooling. Under no pooling, we estimate each state mean separately with a national adjustment for the individual-level high school covariate. Under full pooling, we only adjust for high school and ignore state information altogether. Here we add both estimators to the design and diagnose.</p>
+<div id="def-ch15num5" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration 15.5 </strong></span>Redesign over answer strategies</p>
+<div class="cell" data-file="scripts_declarations/declaration_15.5.R">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_15.5</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">declaration_15.4</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="va">model_fit</span> <span class="op">&lt;-</span> <span class="fu">lm_robust</span><span class="op">(</span></span>
+<span>        formula <span class="op">=</span> <span class="va">policy_support</span> <span class="op">~</span> <span class="va">HS</span> <span class="op">+</span> <span class="va">state</span>,</span>
+<span>        data <span class="op">=</span> <span class="va">data</span></span>
+<span>      <span class="op">)</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/rdss/man/post_stratification_helper.html">post_stratification_helper</a></span><span class="op">(</span><span class="va">model_fit</span>, data <span class="op">=</span> <span class="va">data</span>, group <span class="op">=</span> <span class="va">state</span>, weights <span class="op">=</span> <span class="va">PS_weight</span><span class="op">)</span></span>
+<span>    <span class="op">}</span><span class="op">)</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"No pooling"</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"mean_policy_support"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="va">model_fit</span> <span class="op">&lt;-</span> <span class="fu">lm_robust</span><span class="op">(</span></span>
+<span>        formula <span class="op">=</span> <span class="va">policy_support</span> <span class="op">~</span> <span class="va">HS</span>,</span>
+<span>        data <span class="op">=</span> <span class="va">data</span></span>
+<span>      <span class="op">)</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/rdss/man/post_stratification_helper.html">post_stratification_helper</a></span><span class="op">(</span><span class="va">model_fit</span>, data <span class="op">=</span> <span class="va">data</span>, group <span class="op">=</span> <span class="va">state</span>, weights <span class="op">=</span> <span class="va">PS_weight</span><span class="op">)</span></span>
+<span>    <span class="op">}</span><span class="op">)</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Full pooling"</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"mean_policy_support"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="lem-ch15num4" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 15.4 </strong></span>Diagnosing over answer strategies</p>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_15.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_15.5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><a href="#fig-ch15num5">Figure&nbsp;<span>15.5</span></a> compares the three estimators. The first column of facets shows one draw of the estimates against the estimands. The main thing to notice here is that the full pooling estimate is more or less a flat line – regardless of the estimand, the estimates are just above 50%. Relative to partial pooling, the no pooling estimates are further spread around the 45 degree line, with small states bouncing around the most.</p>
+<p>On the right side of the figure, we see the bias, RMSE, and standard deviation diagnosands for each inquiry under all three answer strategies. Under no pooling, bias is very low, but the RMSE and standard deviation for small states is very high. Under full pooling, the standard deviation is very low, but bias is very positive for states with low support and very negative for states with high support. The resulting RMSE has a funny “V” shape – we only do well for states that happen to have opinion that is very close to the national average.</p>
+<p>Partial pooling represents a Goldilocks compromise between full and no pooling. Yes, we have some positive bias for low-opinion states and negative bias for high opinion states, but variance has been brought under control. As a result, the RMSE for both small and large states is small.</p>
+<div id="fig-ch15num5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="../figures/figure-15-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Comparison of three answer strategies"><img src="../figures/figure-15-5.svg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;15.5: Comparison of three answer strategies</figcaption><p></p>
+</figure>
+</div>
+</div>
+</section><section id="design-examples-2" class="level3" data-number="15.3.2"><h3 data-number="15.3.2" class="anchored" data-anchor-id="design-examples-2">
+<span class="header-section-number">15.3.2</span> Design examples</h3>
+<ul>
+<li><p><span class="citation" data-cites="lax2009gay">Lax and Phillips (<a href="../references.html#ref-lax2009gay" role="doc-biblioref">2009</a>)</span> apply multilevel regression and poststratification to 41 national polls conducted between 1999 and 2008 to generate state-level estimates of gay rights attitudes in the US.</p></li>
+<li><p><span class="citation" data-cites="Tausanovitch:2013wp">Tausanovitch and Warshaw (<a href="../references.html#ref-Tausanovitch:2013wp" role="doc-biblioref">2013</a>)</span> apply multilevel regression and poststratification to large polls of Americans’ policy preferences to generate estimates of policy opinions at the Congressional district, state legislative district, and municipality levels.</p></li>
+</ul></section></section><section id="index-creation" class="level2" data-number="15.4"><h2 data-number="15.4" class="anchored" data-anchor-id="index-creation">
+<span class="header-section-number">15.4</span> Index creation</h2>
+<div class="ddbox">
+<p>We declare a design is which we take multiple measures and combine them to learn about a latent, unobservable quantity. The design diagnosis shows that it is possible to generate interpretable conditional estimates of this quantity and assess bias even though the metric of the unobservable quantity is unknown. The diagnosis highlights how subtle differences in scale construction generate different biases.</p>
+</div>
+<p>Models often specify a latent variable (<code>Y_star</code>) that we can’t observe directly. The measurement procedures we use to produce observed variables (<code>Y_1</code>, <code>Y_2</code>, <code>Y_3</code>) are not perfect: observed values may be related to the latent variables but are often on different scales. A common strategy for addressing measurement error is to combine multiple measures of the same latent variable into an index. The basic intuition for this procedure is that when we combine multiple measures, the errors attending to each measure will tend to cancel one another out. When this happens, the index itself has lower measurement error than any of the constituent parts.</p>
+<p>The first difficult feature of such problems is that we do not have access to the <em>scale</em> on which <code>Y_star</code> is measured and so it may seem like a hopeless exercise to try to assess whether we have got good or bad estimates of <code>Y_star</code> when we combine the measured data.</p>
+<p>One way around this is to normalize the scale of both the latent variable and the measured variable so that they have a mean of zero and a standard deviation of one. But in that case, we are guaranteed that our estimate of the mean of the normalized variable will be unbiased because we will certainly estimate a mean of 0! That may be — but as we show in the declaration below, if your model is correct this approach may still be useful for calculating other quantities (such as conditional means) that you don’t just get right by construction.</p>
+<p>A second challenge is deciding which measurements to combine into the index. We clearly only want to create indices using measurements of the same latent variable, but it can hard to be sure which latent variable, exactly, is being measured. Just relying on whether the measurements are positively correlated or not is not sufficient, because measurements can be correlated even if they are not measurements of the same underlying variable. Ultimately we have to rely on theory to make these decisions, as uncomfortable as that may make us.</p>
+<p>In <a href="#def-ch15num6">Declaration&nbsp;<span>15.6</span></a>, our inquiry is the average level of the latent variable among units whose binary covariate <code>X</code> is equal to one.</p>
+<p>In the declaration below <code>Y_star</code> has a normal distribution but it is not centered on zero. The measured variables <code>Y_1</code>, <code>Y_2</code>, <code>Y_3</code> are also normally distributed but each has its own scale; they are all related to <code>Y_star</code>, though some more strongly than others. Many procedures for combining these measured variables into an index exist. Here we’ll consider a few of the common approaches:</p>
+<ul>
+<li><p><code>Y_avg</code> is constructed by first scaling each of these measured variables, then averaging and then scaling again. This is akin to the approach used in <span class="citation" data-cites="kling2007experimental">Kling, Liebman, and Katz (<a href="../references.html#ref-kling2007experimental" role="doc-biblioref">2007</a>)</span>.</p></li>
+<li><p><code>Y_avg_adjusted</code> is the same as <code>Y_avg</code>, but we scale the measured values by the units with <code>X = 0</code>.</p></li>
+<li><p><code>Y_avg_rescaled</code> is the same as <code>Y_avg</code>, but instead of taking an equally-weighted average of the scaled components, we rescale their sum by its mean and standard deviation.</p></li>
+<li><p><code>Y_first_factor</code> extracts the first factor from a ‘principal components analysis’ which, intuitively, seeks to find a weighting that minimizes the distance to the measured variables.</p></li>
+</ul>
+<div id="def-ch15num6" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration 15.6 </strong></span>Latent variable design</p>
+<div class="cell" data-file="scripts_declarations/declaration_15.6.R">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_15.6</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span></span>
+<span>    N <span class="op">=</span> <span class="fl">500</span>,</span>
+<span>    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">1</span>, <span class="va">N</span> <span class="op">/</span> <span class="fl">2</span><span class="op">)</span>,</span>
+<span>    Y_star <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="va">X</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>Y_bar_X1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">Y_star</span><span class="op">)</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span></span>
+<span>    Y_1 <span class="op">=</span> <span class="fl">3</span> <span class="op">+</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">Y_star</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
+<span>    Y_2 <span class="op">=</span> <span class="fl">2</span> <span class="op">+</span> <span class="fl">1.0</span> <span class="op">*</span> <span class="va">Y_star</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span>
+<span>    Y_3 <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="va">Y_star</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
+<span>    Y_avg <span class="op">=</span> <span class="op">(</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">Y_1</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">Y_2</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">Y_3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="fl">3</span>,</span>
+<span>    Y_avg_adjusted <span class="op">=</span> <span class="op">(</span></span>
+<span>      <span class="co"># rescaling according to the X = 0 group</span></span>
+<span>      <span class="op">(</span><span class="va">Y_1</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_1</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Y_1</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span></span>
+<span>        <span class="op">(</span><span class="va">Y_2</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_2</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Y_2</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span></span>
+<span>        <span class="op">(</span><span class="va">Y_3</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_3</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Y_3</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">/</span> <span class="fl">3</span>,</span>
+<span>    Y_avg_rescaled <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">Y_1</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">Y_2</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">Y_3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    Y_first_factor  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/princomp.html">princomp</a></span><span class="op">(</span> <span class="op">~</span> <span class="va">Y_1</span> <span class="op">+</span> <span class="va">Y_2</span> <span class="op">+</span> <span class="va">Y_2</span>, cor <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">$</span><span class="va">scores</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">Y_avg</span>, <span class="va">Y_avg_adjusted</span>, <span class="va">Y_avg_rescaled</span>, <span class="va">Y_first_factor</span><span class="op">)</span> <span class="op">~</span> <span class="fl">1</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">lm_robust</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"Y_bar_X1"</span>,</span>
+<span>    subset <span class="op">=</span> <span class="va">X</span> <span class="op">==</span> <span class="fl">1</span>,</span>
+<span>    term <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Average"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>In <a href="#fig-ch15num6">Figure&nbsp;<span>15.6</span></a> we show that the correlation between all the indices and the underlying quantity is quite good, even though the strength of the correlations for some of the components is weak. Trickier however is being sure we have an interpretable <em>scale</em>.</p>
+<div id="fig-ch15num6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="../figures/figure-15-6.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Correlations between the latent variable, measured components, and indices."><img src="../figures/figure-15-6.svg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;15.6: Correlations between the latent variable, measured components, and indices.</figcaption><p></p>
+</figure>
+</div>
+<div id="lem-ch15num5" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 15.5 </strong></span>Latent variables diagnosis over alternative answer strategies</p>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_15.5</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_15.6</span>, make_groups <span class="op">=</span> <span class="fu">vars</span><span class="op">(</span><span class="va">outcome</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><a href="#fig-ch15num7">Figure&nbsp;<span>15.7</span></a> shows the distribution of estimates from different approaches to generating indices. A few features stand out from the distribution of estimates.</p>
+<p>The simple averaging of the normalized scales also generates estimates that are too small. Rescaling the scaled components instead of taking the average helps only a small amount. The principal component version appears to do especially poorly, but there is a simple reason for this: the method does not presuppose knowledge of the <em>direction</em> of the scale of the latent variable and can come up with index that reverse the actual scale of interest. Avoiding this requires an interpretative step after the principal components analysis is implemented (more subtly the averaging approach also has an interpretative step <em>before</em> averaging, when components are introduced with a metric that presupposes a positive correlation with the underlying quantity). Even accounting for the different sign patterns however, the estimates are too small.</p>
+<p>Scaling by units with <code>X = 1</code> does best in this case. The key insight here is that the total variation in the latent variable combines the variation within groups and between them: we want to measure outcomes on a scale benchmarked to the within group variation and so have to take out the between group variation when rescaling.</p>
+<div id="fig-ch15num7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="../figures/figure-15-7.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Distribution of estimates from different approaches to generating indices"><img src="../figures/figure-15-7.svg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;15.7: Distribution of estimates from different approaches to generating indices</figcaption><p></p>
+</figure>
+</div>
+<p>Overall we see from the diagnosis that we <em>can</em> do quite well here in recovering the conditional mean of the standardized latent variable. Though we see risks here. We declared a design under optimistic conditions in which we knew the relevant components and these were all related to the latent variable in a simple way. Even in this case we had difficulty getting the answer right.</p>
+</div>
+<section id="design-examples-3" class="level3" data-number="15.4.1"><h3 data-number="15.4.1" class="anchored" data-anchor-id="design-examples-3">
+<span class="header-section-number">15.4.1</span> Design examples</h3>
+<ul>
+<li><p><span class="citation" data-cites="Jefferson2022">Jefferson (<a href="../references.html#ref-Jefferson2022" role="doc-biblioref">2022</a>)</span> introduces the “Respectability Politics Scale,” which is a six-item additive index. Responses on 1-7 Likert scales are rescaled to the 0-1 range, then averaged.</p></li>
+<li><p><span class="citation" data-cites="broockman2016durably">Broockman and Kalla (<a href="../references.html#ref-broockman2016durably" role="doc-biblioref">2016</a>)</span> conduct a randomized experiment in which the main outcome is an index of attitudes toward transgender people, which is constructed by taking the first factor from a factor analysis of multiple survey questions.</p></li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-bisbee_2019" class="csl-entry" role="doc-biblioentry">
+Bisbee, James. 2019. <span>“BARP: Improving Mister p Using Bayesian Additive Regression Trees.”</span> <em>American Political Science Review</em> 113 (4): 1060–65.
+</div>
+<div id="ref-Bradley:2021us" class="csl-entry" role="doc-biblioentry">
+Bradley, Valerie C., Shiro Kuriwaki, Michael Isakov, Dino Sejdinovic, Xiao-Li Meng, and Seth Flaxman. 2021. <span>“Unrepresentative Big Surveys Significantly Overestimated US Vaccine Uptake.”</span> <em>Nature</em> 600 (7890): 695–700.
+</div>
+<div id="ref-broockman2016durably" class="csl-entry" role="doc-biblioentry">
+Broockman, David, and Joshua Kalla. 2016. <span>“Durably Reducing Transphobia: A Field Experiment on Door-to-Door Canvassing.”</span> <em>Science</em> 352 (6282): 220–24.
+</div>
+<div id="ref-HEDAYAT2019192" class="csl-entry" role="doc-biblioentry">
+Hedayat, A. S., Hansheng Cheng, and Jennifer Pajda-De La O. 2019. <span>“Existence of Unbiased Estimation for the Minimum, Maximum, and Median in Finite Population Sampling.”</span> <em>Statistics &amp; Probability Letters</em> 153: 192–95.
+</div>
+<div id="ref-Jefferson2022" class="csl-entry" role="doc-biblioentry">
+Jefferson, Hakeem. 2022. <span>“Respectability and the Politics of Punishment Among Black Americans.”</span> <em>Unpublished Manuscript</em>.
+</div>
+<div id="ref-kling2007experimental" class="csl-entry" role="doc-biblioentry">
+Kling, Jeffrey R, Jeffrey B Liebman, and Lawrence F Katz. 2007. <span>“Experimental Analysis of Neighborhood Effects.”</span> <em>Econometrica</em> 75 (1): 83–119.
+</div>
+<div id="ref-lax2009gay" class="csl-entry" role="doc-biblioentry">
+Lax, Jeffrey R., and Justin H. Phillips. 2009. <span>“Gay Rights in the States: Public Opinion and Policy Responsiveness.”</span> <em>American Political Science Review</em> 103 (3): 367–86.
+</div>
+<div id="ref-merkley_stecula_2021" class="csl-entry" role="doc-biblioentry">
+Merkley, Eric, and Dominik A. Stecula. 2021. <span>“Party Cues in the News: Democratic Elites, Republican Backlash, and the Dynamics of Climate Skepticism.”</span> <em>British Journal of Political Science</em> 51 (4): 1439–56.
+</div>
+<div id="ref-Paler2018" class="csl-entry" role="doc-biblioentry">
+Paler, Laura, Leslie Marshall, and Sami Atallah. 2018. <span>“The Social Costs of Public Political Participation: Evidence from a Petition Experiment in Lebanon.”</span> <em>The Journal of Politics</em> 80 (4): 1405–10.
+</div>
+<div id="ref-stokes_2005" class="csl-entry" role="doc-biblioentry">
+Stokes, Susan C. 2005. <span>“Perverse Accountability: A Formal Model of Machine Politics with Evidence from Argentina.”</span> <em>American Political Science Review</em> 99 (3): 315–25.
+</div>
+<div id="ref-Tausanovitch:2013wp" class="csl-entry" role="doc-biblioentry">
+Tausanovitch, Chris, and Christopher Warshaw. 2013. <span>“Measuring Constituent Policy Preferences in Congress, State Legislatures, and Cities.”</span> <em>The Journal of Politics</em> 75 (2): 330–42.
+</div>
+</div>
+</section></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
+<ol>
+<li id="fn1"><p>But not all. <span class="citation" data-cites="HEDAYAT2019192">Hedayat, Cheng, and Pajda-De La O (<a href="../references.html#ref-HEDAYAT2019192" role="doc-biblioref">2019</a>)</span> prove that that unbiased estimators of the population minimum, maximum, and even median do not exist for any sampling procedure except a census. The intuition behind this result is easiest to see for a maximum: unless the random sample happens to contain the unit with the highest value of the outcome, the estimate will necessarily fall below the maximum.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Why do we choose this strategy? Respondents may have trouble placing them on a finer scale, and we cannot ask them on an infinitely-fine scale.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../library/" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Research design library</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../library/observational-causal.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":true,"descPosition":"bottom","openEffect":"zoom"});</script>
+
+
+</body></html>
