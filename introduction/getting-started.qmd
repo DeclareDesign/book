@@ -8,15 +8,15 @@ source("scripts/before_chapter_script.R")
 ```
 
 
-This chapter serves as quick start guide for the code used throughout this book, and in particular the DeclareDesign package for the R programming language. DeclareDesign is a software implementation of every step of the declare-diagnose-redesign process. While you can declare, diagnose, and redesign using nearly any programming language, DeclareDesign is structured to make it easy to mix-and-match design elements while handling the tedious simulation bookkeeping behind the scenes. 
+This chapter serves as a quick start guide for the code used throughout this book, and in particular the `DeclareDesign` package for the R programming language. `DeclareDesign` is a software implementation of every step of the declare-diagnose-redesign process. While you can declare, diagnose, and redesign using nearly any programming language, `DeclareDesign` is structured to make it easy to mix and match design elements while handling the tedious simulation bookkeeping behind the scenes. 
 
-First, we provide instructions for getting started in R and RStudio. We then introduce the code structure for the three steps of the research planning process: declaration, diagnose, and redesign. After this introduction, readers should be able to *use* the code, but perhaps not write it themselves yet. We devote a longer section to getting started *writing* the code (@sec-ch13).
+First, we provide instructions for getting started in R and RStudio. We then introduce the code structure for the three steps of the research planning process: declaration, diagnosis and redesign. After this introduction, readers should be able to *use* the code, but perhaps not write it themselves yet. We devote a longer section (Chapter @sec-ch13) to getting started *writing* the code (@sec-ch13).
 
 ## Installing R 
 
 You can download R for free from [CRAN](https://cran.r-project.org). We also recommend the free program [RStudio](https://rstudio.com/products/rstudio/download), which provides a friendly interface to R. Both R and RStudio are available on Windows, Mac, and Linux.
 
-Once you have R and RStudio installed, open up RStudio and install DeclareDesign and its related packages. These include three packages that enable specific steps in the research process: `fabricatr` for simulating social science data, `randomizr` for random sampling and random assignment, and `estimatr` for design-based estimators. You can also install `rdss`, which includes datasets and helper functions used in the book. To install them all, copy the following code into your R console:
+Once you have R and RStudio installed, open up RStudio and install `DeclareDesign` and its related packages. These include three packages that enable specific steps in the research process: `fabricatr` for simulating social science data, `randomizr` for random sampling and random assignment, and `estimatr` for design-based estimators. You can also install `rdss`, which includes datasets and helper functions used in the book. To install them all, copy the following code into your R console:
 
 ```{r install_package_example, eval = FALSE}
 install.packages(c("DeclareDesign", "rdss"))
@@ -28,7 +28,7 @@ We also recommend that you install and get to know the `tidyverse` set of packag
 install.packages("tidyverse")
 ```
 
-For introductions to R and the `tidyverse` we especially recommend the free resource [R for Data Science](https://r4ds.had.co.nz).
+For introductions to R and the `tidyverse` we especially recommend the free resource [*R for Data Science*](https://r4ds.had.co.nz).
 
 All of the code in this book assumes that the `DeclareDesign` family of packages, the `tidyverse` suite, and the companion package to the book `rdss` have been loaded. Once they have been installed on your computer, you can load them with the following code:
 
@@ -49,7 +49,7 @@ simple_random_assignment <-
   declare_assignment(Z = simple_ra(N = N, prob = 0.6))
 ```
 
-Each element created by a `declare_*` function, perhaps surprisingly, is itself a *function*. The object `simple_random_assignment` is not a particular assignment --- instead, it is a function that conducts assignment when called. Each time we call `simple_random_assignment` we get a different random assignment:
+Each element created by a `declare_*` function, perhaps surprisingly, is itself a function. The object `simple_random_assignment` is not a particular assignment --- instead, it is a function that conducts assignment when called. Each time we call `simple_random_assignment` we get a different random assignment:
 
 ```{r}
 #| eval: false
@@ -76,15 +76,12 @@ set.seed(7)
 assignment_1 <- simple_random_assignment(participants)
 assignment_2 <- simple_random_assignment(participants)
 assignment_3 <- simple_random_assignment(participants)
-
 head(assignment_1, 5) |> 
   kable(booktabs = TRUE, align = "c", digits = 3) |> 
   kable_styling()
-
 head(assignment_2, 5) |> 
   kable(booktabs = TRUE, align = "c", digits = 3) |> 
   kable_styling()
-
 head(assignment_3, 5) |> 
   kable(booktabs = TRUE, align = "c", digits = 3) |> 
   kable_styling()
@@ -108,9 +105,6 @@ We use the `+` operator to build from elements of a design to a design. @def-ch4
 
 ::: {#def-ch4num1 .declaration} 
 
-Two-arm randomized experiment
-
-![Two-arm randomized experiment declaration](/figures/declaration-example){#fig-designannotated}
 
 $~$
 
@@ -124,11 +118,20 @@ Diagnosis is the process of simulating the design many times and calculating sum
 ::: {#lem-ch4num1} 
 
 Example design diagnosis
+Two-arm randomized experiment
+
+![Two-arm randomized experiment declaration](/figures/declaration-example){#fig-designannotated}
 
 ```{r}
 #| eval: false
 diagnose_design(declaration_4.1, sims = 100)
 ```
+
+
+
+:::
+
+The output of the diagnosis includes the diagnosand values (top row), such as bias of $-0.02$, and our uncertainty about the diagnosand value (bootstrapped standard error in parentheses in the bottom row). The uncertainty estimates tell us whether we have conducted enough simulations to precisely estimate the diagnosands. The fact that that the estimate of bias is $-0.02$ and the standard error is $0.03$ means that we cannot distinguish the amount of bias from no bias at all. 
 
 ```{r}
 #| tbl-cap: "Design diagnosis."
@@ -146,10 +149,6 @@ diagnosis_4.1 |>
   ) |> 
   kable_styling()
 ```
-
-:::
-
-The output of the diagnosis includes the diagnosand values (top row), such as bias of $-0.01$, and our uncertainty about the diagnosand value (bootstrapped standard error in parentheses in the bottom row). The uncertainty estimates tell us whether we have conducted enough simulations to precisely estimate the diagnosands. The fact that that the estimate of bias is $-0.01$ and the standard error is $0.02$ means that we cannot distinguish the amount of bias from no bias at all. 
 
 ## Redesign {#redesign-function}
 
@@ -171,7 +170,7 @@ diagnose_design(designs)
 
 ## Library of designs
 
-In our `DesignLibrary` package, we have created a set of common designs as designers (functions that create designs from just a few parameters), so you can get started quickly.
+In our `DesignLibrary` package, we have created a set of common designs as "designers" (functions that create designs from just a few arguments), so you can get started quickly.
 
 ```{r}
 #| eval: false
@@ -184,9 +183,9 @@ block_cluster_design <-
 
 ## Long term code usability 
 
-We have written the code examples with DeclareDesign version 1.0.0, the package version we released along with the book. We are committed to the long-term maintenance of this software, but inevitably, the evolution of the `R` ecosystem and further package development will mean that some of the printed code will break in the future. When this happens, we ask readers to refer to the book website, which we will maintain with up-to-date versions of the code and software. 
+We have written the code examples with`DeclareDesign` version 1.0.0, the package version we released along with the book. We are committed to the long-term maintenance of this software, but inevitably, the evolution of the `R` ecosystem and further package development will mean that some of the printed code will break in the future. 
 
-However, a virtue of writing out designs in code is that they are explicit: the entire design is encoded in the declarations we provide. Even if the code itself won't run, you can still use it to understand the design and to draw insights from the diagnosis.
+However, even if code eventually becomes obsolete, a virtue of writing out designs in code is that they are explicit: the entire design is encoded in the declarations we provide. Even if the code itself won't run, you can still use it to understand the design and to draw insights from the diagnosis.
 
 <!-- ## Further reading {-} -->
 
