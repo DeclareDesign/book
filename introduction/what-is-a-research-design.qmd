@@ -12,6 +12,7 @@ At its heart, a research design is a procedure for generating answers to questio
 We show that the same basic language can be used to represent research designs whether they target causal or descriptive questions, whether they are focused on theory testing or inductive learning, and whether they use quantitative, qualitative, or a mix of methods. We can select a strong design by applying a simple algorithm: declare-diagnose-redesign. Once a design is declared in simple enough language that a computer can understand it, its properties can be diagnosed through simulation. We can then engage in redesign, or the exploration of a range of neighboring designs. The same language we use to talk to the computer can be used to talk to others. Reviewers, advisers, students, funders, journalists, and the public need to know four basic things to understand a design.
 
 ## MIDA: The four elements of a research design \index{MIDA!Definition}
+
 Research designs share in common that they all have an inquiry *I*, a data strategy *D*, and an answer strategy *A*. Less obviously, perhaps, these three elements presuppose a model *M* of how the world works. We refer to the four together as *MIDA*. 
 
 We think of *MIDA* as having two sides. *M* and *I* form the theoretical half, comprising your beliefs about the world and your target of inference. *D* and *A* form the empirical half, comprising your strategies for collecting and summarizing information. The theoretical side sets the research challenges for you to overcome and the empirical side captures your responses to those challenges.^[We call *M* and *I* the theoretical half because specifying them requires conceptualizing contexts, imagining processes, and posing questions. We call *D* and *A* the empirical half because it describes the empirical strategies. We recognize of course that the theories on the *MI* side may be very thin and that strategies on the *DA* side must be theoretically motivated.] 
@@ -21,7 +22,7 @@ We think of *MIDA* as having two sides. *M* and *I* form the theoretical half, c
 
 \index{MIDA!Illustration}
 
-[The *MIDA* framework. An arrow between two points means that the point at the end of an arrow depends in some way on the one at the start of the arrow. For instance 'the answer you'll get' depends on the dataset you'll get and the answer strategy you specify.](/figures/figure-2-1){#fig-midaplot}
+![The *MIDA* framework. An arrow between two points means that the point at the end of an arrow depends in some way on the one at the start of the arrow. For instance 'the answer you'll get' depends on the dataset you'll get and the answer strategy you specify.](/figures/figure-2-1){#fig-midaplot}
 
 ### Model
 
@@ -268,7 +269,7 @@ The design is now ready to be used, diagnosed, developed. We can generate simula
 draw_data(declaration_2.1) |>  head() |>  kable(digits = 2, booktabs = TRUE) |> kable_styling() 
 ```
 
-To evaluate the design, we need to specify our criteria for what counts as a good design. We could assess the design in terms of its statistical power, whether estimation is unbiased, and so on. For now though we will focus on a specific design characteristic, its ``success rate,'' which is the probability you will deem the research a success, using the criteria defined above.^[We could define more complex diagnosands that, for example, give correct decisions to implement a positive weight and incorrect decisions to implement a negative weight. The diagnosands you choose should reflect what you care about most in any given design setting.]
+To evaluate the design, we need to specify our criteria for what counts as a good design. We could assess the design in terms of its statistical power, whether estimation is unbiased, and so on. For now though we will focus on a specific design characteristic, its "success rate," which is the probability you will deem the research a success, using the criteria defined above.^[We could define more complex diagnosands that, for example, give correct decisions to implement a positive weight and incorrect decisions to implement a negative weight. The diagnosands you choose should reflect what you care about most in any given design setting.]
 
 We specify the criteria for success in this call to `declare_diagnosands`:
 
