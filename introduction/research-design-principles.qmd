@@ -15,6 +15,7 @@ This section offers succinct discussions of each principle. We will expand on th
 ::: {.ddbox-title}
 Design principles
 :::
+
 1. [Design holistically](#exm-designholistically)
 2. [Design agnostically](#exm-designagnostically)
 3. [Design for purpose](#exm-designforpurpose)
