@@ -10,7 +10,7 @@ source("scripts/before_chapter_script.R")
 
 This chapter serves as a quick start guide for the code used throughout this book, and in particular the `DeclareDesign` package for the R programming language. `DeclareDesign` is a software implementation of every step of the declare-diagnose-redesign process. While you can declare, diagnose, and redesign using nearly any programming language, `DeclareDesign` is structured to make it easy to mix and match design elements while handling the tedious simulation bookkeeping behind the scenes. 
 
-First, we provide instructions for getting started in R and RStudio. We then introduce the code structure for the three steps of the research planning process: declaration, diagnosis and redesign. After this introduction, readers should be able to *use* the code, but perhaps not write it themselves yet. We devote a longer section (Chapter @sec-ch13) to getting started *writing* the code (@sec-ch13).
+First, we provide instructions for getting started in R and RStudio. We then introduce the code structure for the three steps of the research planning process: declaration, diagnosis and redesign. After this introduction, readers should be able to *use* the code, but perhaps not write it themselves yet. We devote a longer section (@sec-ch13) to getting started *writing* the code.
 
 ## Installing R 
 
@@ -127,10 +127,6 @@ Two-arm randomized experiment
 diagnose_design(declaration_4.1, sims = 100)
 ```
 
-
-
-:::
-
 The output of the diagnosis includes the diagnosand values (top row), such as bias of $-0.02$, and our uncertainty about the diagnosand value (bootstrapped standard error in parentheses in the bottom row). The uncertainty estimates tell us whether we have conducted enough simulations to precisely estimate the diagnosands. The fact that that the estimate of bias is $-0.02$ and the standard error is $0.03$ means that we cannot distinguish the amount of bias from no bias at all. 
 
 ```{r}
@@ -149,6 +145,9 @@ diagnosis_4.1 |>
   ) |> 
   kable_styling()
 ```
+
+:::
+
 
 ## Redesign {#redesign-function}
 
