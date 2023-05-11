@@ -12,8 +12,11 @@ With the *MIDA* framework and the declare, diagnose, redesign algorithm in hand,
 This section offers succinct discussions of each principle. We will expand on the implications of these principles for specific design choices throughout the book.
 
 :::: {.ddbox}
+
 ::: {.ddbox-title}
+
 Design principles
+
 :::
 
 1. [Design holistically](#exm-designholistically)
@@ -25,6 +28,7 @@ Design principles
 ::::
 
 ::: {#exm-designholistically}
+
 Design holistically
 
 This is perhaps the most important of our principles. Designs are good not because they have good components but because the components work together to get a good result. Too often, researchers develop and evaluate parts of their designs in isolation: Is this a good question? Is this a good estimator? What's the best way to sample? But if you design with a view to diagnosis you are forced to focus on how each part of the design fits together. An estimator might be appropriate if you use one assignment scheme but not another. The evaluation of data and answer strategies depends on whether your model and inquiry call for descriptive inference, causal inference, or generalization inference (or perhaps, all three at once).If we ask, "What's your research design?" and you respond "It's a regression discontinuity design," we've learned something about what class your answer strategy might fall into, but we don't have enough information to decide whether it's a strong design until we learn about the model, inquiry, data strategy, and other parts of the answer strategy. Ultimately design evaluation comes not from assessment of the parts but from diagnosis of the full design.
@@ -33,12 +37,18 @@ When we consider whole designs rather than just thinking about one aspect at a t
 
 :::
 
+
 ::: {#exm-designagnostically}
+
 Design agnostically
+
 When we design a research study, we have in mind a model of how the world works. But a good design should work, and work well, even when the world is different from what we expect. One implication is that we should entertain many models, seeking not just to ensure the design produces good results for models that we think likely but trying to expand the set of possible models for which the design delivers good results. A second implication is that inquiries and answer strategies should still *work* when the world looks different from what we expect. Inquiries should have answers even when event generating processes are different to how you imagine them.  In the same way, the ability to apply an answer strategy should depend as little as possible on strong expectations of how the data you will get will look. 
+
 A corollary to "Design agnostically" is that we should know for which models  our design performs well and for which models it performs poorly. We want to diagnose over many models to find where designs break. All designs break under some models, so the fact that a design ever breaks is no criticism. As research designers, we just want to know which models pose problems and which do not.
 
 :::
+
+
 ::: {#exm-designforpurpose}
 
 Design for purpose
@@ -59,6 +69,7 @@ Designing an empirical project entails declaring, diagnosing, and redesigning th
 A reason deeper than regret for designing early is that the declaration, diagnosis, and redesign process inevitably changes designs, almost always for the better. Revealing how each of the four design elements are interconnected yields improvements to each. These choices are almost always better made before any data are collected or analyzed.
 
 :::
+
 
 ::: {#exm-designoften}
 
