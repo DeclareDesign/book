@@ -101,34 +101,30 @@ Every step in a research design can be declared using one of the `declare_*` fun
 
 : Declaration functions in DeclareDesign {#tbl-declarationfunctions} 
 
-We use the `+` operator to build from elements of a design to a design. @def-ch4num1 shows the format of most declarations throughout the book. This declaration represents a two-arm randomized experiment with 100 units from which we aim to estimate the average treatment effect.
-
-::: {#def-ch4num1 .declaration} 
-
-
-$~$
-
-:::
+We use the `+` operator to build from elements of a design to a design. @def-ch4num1 (see @fig-designannotated) shows the format of most declarations throughout the book. This declaration represents a two-arm randomized experiment with 100 units from which we aim to estimate the average treatment effect.
 
 
 ## Diagnosis {#diagnose-design-function}
 
 Diagnosis is the process of simulating the design many times and calculating summary statistics about the design that describe its properties, which we call diagnosands. Once a design is declared, diagnosis is as simple as using the `diagnose_design` function on it.
 
+
+::: {#def-ch4num1 .declaration} 
+
+![Two-arm randomized experiment declaration](/figures/declaration-example){#fig-designannotated}
+Two-arm randomized experiment
+
+:::
+
+
 ::: {#lem-ch4num1} 
 
 Example design diagnosis
-Two-arm randomized experiment
-
-![Two-arm randomized experiment declaration](/figures/declaration-example){#fig-designannotated}
 
 ```{r}
 #| eval: false
 diagnose_design(declaration_4.1, sims = 100)
 ```
-
-The output of the diagnosis includes the diagnosand values (top row), such as bias of $-0.02$, and our uncertainty about the diagnosand value (bootstrapped standard error in parentheses in the bottom row). The uncertainty estimates tell us whether we have conducted enough simulations to precisely estimate the diagnosands. The fact that that the estimate of bias is $-0.02$ and the standard error is $0.03$ means that we cannot distinguish the amount of bias from no bias at all. 
-
 ```{r}
 #| tbl-cap: "Design diagnosis."
 #| echo: false
@@ -147,6 +143,9 @@ diagnosis_4.1 |>
 ```
 
 :::
+
+The output of the diagnosis includes the diagnosand values (top row), such as bias of $-0.02$, and our uncertainty about the diagnosand value (bootstrapped standard error in parentheses in the bottom row). The uncertainty estimates tell us whether we have conducted enough simulations to precisely estimate the diagnosands. The fact that that the estimate of bias is $-0.02$ and the standard error is $0.03$ means that we cannot distinguish the amount of bias from no bias at all. 
+
 
 
 ## Redesign {#redesign-function}
