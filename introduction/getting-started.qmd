@@ -111,8 +111,9 @@ Diagnosis is the process of simulating the design many times and calculating sum
 
 ::: {#def-ch4num1 .declaration} 
 
-![Two-arm randomized experiment declaration](/figures/declaration-example){#fig-designannotated}
 Two-arm randomized experiment
+
+![Two-arm randomized experiment declaration](/figures/declaration-example){#fig-designannotated}
 
 :::
 
