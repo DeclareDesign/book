@@ -243,7 +243,7 @@ The two designs cost the same but differ on the empirical side. Which strategy s
 
 * *I*: The inquiry is the difference between the average treated outcome and the average untreated outcome, which correspond to the average treatment effect. We are writing it this way (as opposed to the equivalent `ATE = mean(Y_Z_1 - Y_Z_0)`) to highlight the similarity between the inquiry and the difference-in-means answer strategy that we will adopt.
 
-* *D*: We imagine a data strategy with three components relating to units, conditions, and outcomes: we sample 100 deputies to participate in the experiment, assign exactly half to treatment and the remainder to control, and finally measure their outcomes through a survey.
+* *D*: We imagine a data strategy with three components relating to units, conditions, and outcomes: we sample 150 deputies to participate in the experiment, assign exactly half to treatment and the remainder to control, and finally measure their outcomes through a survey.
 
 * *A*: The answer strategy takes the difference-in-means between the treated and untreated units. Thus the answer strategy uses a function similar to the inquiry itself.
 
