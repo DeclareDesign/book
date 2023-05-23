@@ -317,7 +317,7 @@ declaration_2.2 |>
   diagnose_design(diagnosands = program_diagnosands)
 ```
 
-The results are shown in Figure @fig-ch2num2. 
+The results are shown in @fig-ch2num2. 
 
 ::: {#lem-ch2num1} 
 
