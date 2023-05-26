@@ -110,10 +110,6 @@ language:
 
 format:
   html:
-    filters:
-      - lightbox
-    lightbox:
-      match: auto
     theme: cosmo
     # number-offset: -1
     default-image-extension: svg
