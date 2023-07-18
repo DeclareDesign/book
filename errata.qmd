@@ -1,0 +1,8 @@
+# Errata {.unnumbered}
+
+These errata are errors in the printed book. These changes are implemented in this online version.
+
+- In Table 8.1, in row 4, `cluster_ra` should be `cluster_rs`, and in row 6, `cluster_ra` should be `cluster_rs` and `strata_ra` should be `strata_rs`.
+- On pg. 101, "The $p$-value is the probability this also goes with the misplaced section estimates of 15 or larger" should read "The $p$-value is the probability under the null model of obtaining estimates of 15 or larger."
+
+*Due to final copyediting by the Press, the website version may differ slightly from the print version. If you discover a discrepency, please email us at graeme.blair@gmail.com, alexander.coppock@yale.edu, and macartan@gmail.com and we will fix it and send you DeclareDesign stickers!*
