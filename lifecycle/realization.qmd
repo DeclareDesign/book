@@ -97,7 +97,6 @@ This small Inquiry reconciliation table describes the heterogeneous effects anal
 
 : Inquiry reconciliation table based on Bonilla and Tillery (2020) analysis and their preanalysis plan. {#tbl-reconciliation} 
 
-
 ## Writing 
 
 When writing up an empirical paper, authors have multiple goals. They want to convince reviewers and readers that the research question they are tackling is important and their research design provides useful answers to that question.  They sometimes also want to influence decision-makers like policymakers, businesses, and journalists. Communicating the elements of MIDA and a diagnosis of the design in a study write-up serve both goals. The declaration in terms of MIDA in the paper enables readers to understand what research design was implemented, and the diagnosis the inferential properties of the design.
