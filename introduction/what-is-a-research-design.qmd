@@ -24,7 +24,7 @@ We think of *MIDA* as having two sides. *M* and *I* form the theoretical half, c
 
 ![The *MIDA* framework. An arrow between two points means that the point at the end of an arrow depends in some way on the one at the start of the arrow. For instance 'the answer you'll get' depends on the dataset you'll get and the answer strategy you specify.](/figures/figure-2-1){#fig-midaplot}
 
-### Model
+### Model {#sec-ch2s1ss1}
 
 \index{Model!in MIDA}
 

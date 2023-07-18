@@ -16,7 +16,7 @@ But studies can also be "complex" in other ways. For instance, although we have 
 Some studies seek not to learn about levels and effects but search explicitly for a model of a phenomenon, asking for instance "what causes $Y$?" or "what model, in some class, best accounts for observed data"? These studies have complex inquiries. Other studies have complex data and answer strategies, for instance, mixing qualitative and quantitative inference strategies or gathering together findings from multiple sub-studies in order to arrive at an overall conclusion.
 
 
-## Discovery using causal forests 
+## Discovery using causal forests
 
 ::: {.ddbox}
 We declare a design in which a researcher examines a large set of continuous covariates to discover (i) which covariate best explains heterogeneity in the effects of a treatment and (ii) which subjects experiences the weakest or strongest effects. The design declaration clarifies the inquiries when the goal of the study is discovery and can be used to guide design decisions regarding how best to split data into training and testing sets.  
@@ -112,7 +112,7 @@ Overall the approach fares well and through diagnosis we get clarity over which 
 - @green2022using study the effects of messages designed to increase vaccine intentions with a survey experiment. They apply a causal forests algorithm to uncover the possibly heterogeneous effects of the treatment depending on observed covariates like income, local disease burden, and political ideology, but find that responses to treatment are mostly homogeneous.
 
 
-## Structural estimation 
+## Structural estimation {#sec-ch19s2}
 
 ::: {.ddbox}
 We declare a design in which a researcher wants to use experimental data to estimate the parameters of a game theoretic model. The premise of the approach is that, to the extent that the model is correct, in-sample parameter estimation allows the researcher to make interesting external inferences to effects in other settings. The risk is that bad models will produce bad inferences. 
