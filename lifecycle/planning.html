@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.433">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design in the Social Sciences - 21&nbsp; Planning</title>
 <style>
@@ -14,14 +14,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -35,8 +36,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -55,10 +55,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -74,7 +71,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
@@ -114,224 +112,266 @@ div.csl-indent {
         createCookie('popupShown', 'yes', 1)
       }
     }
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lifecycle/">Research design lifecycle</a></li><li class="breadcrumb-item"><a href="../lifecycle/planning.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../authors.html" class="sidebar-item-text sidebar-link">About the authors</a>
+  <a href="../authors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the authors</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
+  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
+  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
+  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
+  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
+  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
+  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
+  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
+  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
+  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
+  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
+  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
+  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
+  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../library/" class="sidebar-item-text sidebar-link">Research design library</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a href="../library/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design library</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></a>
+  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></a>
+  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></a>
+  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></a>
+  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/complex.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></a>
+  <a href="../library/complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></a>
+  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></a>
+  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></a>
+  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../epilogue.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></a>
+  <a href="../epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../errata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Errata</span></a>
   </div>
 </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
 <a style="color: black; text-decoration: none; font-size: 17px" target="_new" href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences"> <img style="border: 1px solid darkgray; margin-bottom: 5px" width="100px" src="../figures/cover.jpg"><br>Preorder book</a>
 </p>
 </div></div>
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
+    <ul>
 <li>
-<a href="#ethics" id="toc-ethics" class="nav-link active" data-scroll-target="#ethics"><span class="toc-section-number">21.1</span>  Ethics</a>
-  <ul class="collapse">
-<li><a href="#sec-ch21s1ss1" id="toc-sec-ch21s1ss1" class="nav-link" data-scroll-target="#sec-ch21s1ss1"><span class="toc-section-number">21.1.1</span>  Illustration: Estimating expected costs and expected learning</a></li>
-  <li><a href="#institutional-review-boards" id="toc-institutional-review-boards" class="nav-link" data-scroll-target="#institutional-review-boards"><span class="toc-section-number">21.1.2</span>  Institutional review boards</a></li>
-  </ul>
+<a href="#ethics" id="toc-ethics" class="nav-link active" data-scroll-target="#ethics"><span class="header-section-number">21.1</span> Ethics</a>
+    <ul class="collapse">
+<li><a href="#sec-ch21s1ss1" id="toc-sec-ch21s1ss1" class="nav-link" data-scroll-target="#sec-ch21s1ss1"><span class="header-section-number">21.1.1</span> Illustration: Estimating expected costs and expected learning</a></li>
+    <li><a href="#institutional-review-boards" id="toc-institutional-review-boards" class="nav-link" data-scroll-target="#institutional-review-boards"><span class="header-section-number">21.1.2</span> Institutional review boards</a></li>
+    </ul>
 </li>
-  <li><a href="#partners" id="toc-partners" class="nav-link" data-scroll-target="#partners"><span class="toc-section-number">21.2</span>  Partners</a></li>
-  <li><a href="#funding" id="toc-funding" class="nav-link" data-scroll-target="#funding"><span class="toc-section-number">21.3</span>  Funding</a></li>
-  <li><a href="#sec-ch21s4" id="toc-sec-ch21s4" class="nav-link" data-scroll-target="#sec-ch21s4"><span class="toc-section-number">21.4</span>  Piloting</a></li>
-  <li><a href="#criticism" id="toc-criticism" class="nav-link" data-scroll-target="#criticism"><span class="toc-section-number">21.5</span>  Criticism</a></li>
-  <li>
-<a href="#sec-ch21s6" id="toc-sec-ch21s6" class="nav-link" data-scroll-target="#sec-ch21s6"><span class="toc-section-number">21.6</span>  Preanalysis Plan</a>
-  <ul class="collapse">
-<li><a href="#example-preanalysis-plan" id="toc-example-preanalysis-plan" class="nav-link" data-scroll-target="#example-preanalysis-plan"><span class="toc-section-number">21.6.1</span>  Example Preanalysis Plan</a></li>
-  </ul>
+    <li><a href="#partners" id="toc-partners" class="nav-link" data-scroll-target="#partners"><span class="header-section-number">21.2</span> Partners</a></li>
+    <li><a href="#funding" id="toc-funding" class="nav-link" data-scroll-target="#funding"><span class="header-section-number">21.3</span> Funding</a></li>
+    <li><a href="#sec-ch21s4" id="toc-sec-ch21s4" class="nav-link" data-scroll-target="#sec-ch21s4"><span class="header-section-number">21.4</span> Piloting</a></li>
+    <li><a href="#criticism" id="toc-criticism" class="nav-link" data-scroll-target="#criticism"><span class="header-section-number">21.5</span> Criticism</a></li>
+    <li>
+<a href="#sec-ch21s6" id="toc-sec-ch21s6" class="nav-link" data-scroll-target="#sec-ch21s6"><span class="header-section-number">21.6</span> Preanalysis Plan</a>
+    <ul class="collapse">
+<li><a href="#example-preanalysis-plan" id="toc-example-preanalysis-plan" class="nav-link" data-scroll-target="#example-preanalysis-plan"><span class="header-section-number">21.6.1</span> Example Preanalysis Plan</a></li>
+    </ul>
 </li>
-  </ul></nav>
+    </ul>
+<ul><li><a class="navlink nav-link" href="https://doi.org/10.7910/DVN/HYVPO5" data-scroll-target="https\://doi.org/10.7910/DVN/HYVPO5">Replication code and data</a></li></ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -352,7 +392,7 @@ div.csl-indent {
 </div>
 
 <header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="sec-ch21" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></span></h1>
+<h1 class="title"><span id="sec-ch21" class="quarto-section-identifier"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></span></h1>
 </div>
 
 
@@ -394,9 +434,8 @@ div.csl-indent {
 <p>In short, in principle, ethical decisions can be informed by diagnosis both of how much we learn and how much it costs to participants (along with other ethical costs). The key gain comes from getting a sharper understanding of the gains from design decisions on the research side; the problem of placing value on those gains is not addressed within the framework of course.</p>
 <p>Calculations of this form however always open up risks that researchers overestimate the importance of their research or are blind to ethical costs (in this case for instance an additional cost might arise if because of the study subjects, or other officials, became more skeptical of future real applicants). In practice strategies that maximize autonomy for implicated actors can make these choices easier. In this case for instance if prior consultations with members of the subject population that assessed how <em>they</em> saw the benefits of the research relative to the costs, and how they assessed the costs from this type of deception, would go a long way to ally ethical concerns.</p>
 <div id="fig-ch21num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-21-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Tradeoffs between ethical costs and scientific benefits. A design might have too many subjects but also too few subjects."><img src="../figures/figure-21-1.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;21.1: Tradeoffs between ethical costs and scientific benefits. A design might have too <em>many</em> subjects but also too <em>few</em> subjects.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-21-1.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;21.1: Tradeoffs between ethical costs and scientific benefits. A design might have too <em>many</em> subjects but also too <em>few</em> subjects.</figcaption></figure>
 </div>
 </section><section id="institutional-review-boards" class="level3" data-number="21.1.2"><h3 data-number="21.1.2" class="anchored" data-anchor-id="institutional-review-boards">
 <span class="header-section-number">21.1.2</span> Institutional review boards</h3>
@@ -411,9 +450,8 @@ div.csl-indent {
 <p>Research design diagnosis can help navigate the learning versus doing tradeoff. One instance of the tradeoff is that the proportion of units that receive a treatment represents the rate of “doing,” but this rate also affects the amount of learning. In the extreme, if all units are treated, we can’t measure the effect of the treatment. The tradeoff here is represented in <a href="#fig-ch21num2">Figure&nbsp;<span>21.2</span></a>, which shows the study’s power versus the proportion treated (top facet) and the partner’s utility (bottom facet). The researchers have a power cutoff at the standard 80% threshold. The partner also has a strict cutoff: they need to treat at least 2/3 of the sample to fulfill a donor requirement.</p>
 <p>Researchers might simply ignore the proportion treated and select the design with the highest power in the absence of partners. With a partner organization, the researcher might use this graph in conversation with the partner to jointly select the design that has the highest power that has a sufficiently high proportion treated to meet the partner’s needs. This is represented in the “zone of agreement” in gray: in this region, the design has at least 80% power and at least two-thirds of the sample are treated. Deciding within this region involves a tradeoff between power (which is decreasing in the proportion treated here) and the partner’s utility (which is increasing in proportion treated). The diagnosis surfaces the zone of the agreement and clarifies the choice between designs in that region. Unfortunately, some partnerships simply will not work out if the zone of agreement is empty.</p>
 <div id="fig-ch21num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-21-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Finding the zone of agreement in a research partnership."><img src="../figures/figure-21-2.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;21.2: Finding the zone of agreement in a research partnership.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-21-2.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;21.2: Finding the zone of agreement in a research partnership.</figcaption></figure>
 </div>
 <p>Choosing the proportion treated is one example of integrating partner constraints into research designs. A second common problem is that there are a set of units that must be treated or that must not be treated for ethical or political reasons (e.g., the home district of a government partner must receive the treatment). If these constraints are discovered after treatment assignment, they lead to noncompliance, which may substantially complicate the analysis of the experiment and even prevent providing an answer to the original inquiry. <span class="citation" data-cites="Gerber2012">Gerber and Green (<a href="../references.html#ref-Gerber2012" role="doc-biblioref">2012</a>)</span> recommend, before randomizing treatment, exploring possible treatment assignments with the partner organization and using this exercise to elicit the set of units that must or cannot be treated. <span class="citation" data-cites="king2007politically">King et al. (<a href="../references.html#ref-king2007politically" role="doc-biblioref">2007</a>)</span> describe a “politically-robust” design, which uses pair-matched block randomization. In this design, when any unit is dropped due to political constraints, the whole pair is dropped from the study.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>A major benefit of working with partners is their deep knowledge of the substantive area. For this reason, we recommend involving them in the design declaration and diagnosis process. How can we develop intuitions about the means, variances, and covariances of the variables to be measured? Ask your partner for their best guesses, which may be far more educated than your own. For experimental studies, solicit your partner’s beliefs about the magnitude of the treatment effect on each outcome variable, subgroup by subgroup if possible. Engaging partners in the declaration process improves design – and it very quickly sharpens the discussion of key design details. Pro-tip: share your design diagnoses and mock analyses <em>before</em> the study is launched to quickly build consensus around the study’s goals.</p>
@@ -437,9 +475,8 @@ div.csl-indent {
 <p>Like main studies, pilot studies can be declared and diagnosed – but importantly, the diagnosands for main and pilot studies need not be the same. Statistical power for an average treatment effect may be an essential diagnosand for the main study, but owing to their small size, power for pilot studies will typically be abysmal. Pilot studies should be diagnosed with respect to the decisions they imply for the main study.</p>
 <p><a href="#fig-ch21num3">Figure&nbsp;<span>21.3</span></a> shows the relationship between effect size and the sample size required to achieve 80% statistical power for a two-arm trial using simple random assignment. Uncertainty about the true effect size has enormous design consequences. If the effect size is 0.17, we need about 1,100 subjects to achieve 80% power. If it’s 0.1, we need 3200.</p>
 <div id="fig-ch21num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-21-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Minimum required sample sizes and uncertainty over effect size"><img src="../figures/figure-21-3.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;21.3: Minimum required sample sizes and uncertainty over effect size</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-21-3.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;21.3: Minimum required sample sizes and uncertainty over effect size</figcaption></figure>
 </div>
 <p>Suppose we have prior beliefs about the effect size that can be summarized as a normal distribution centered at 0.3 with a standard deviation of 0.1, as in the bottom panel of <a href="#fig-ch21num2">Figure&nbsp;<span>21.2</span></a>. We could choose a design that corresponds to this best guess, the average of our prior belief distribution. If the true effect size is 0.3, then a study with 350 subjects will have 80% power.</p>
 <p>However, redesigning the study to optimize for the “best guess” is risky because the true effect could be much smaller than 0.3. Suppose we adopt the redesign heuristic of powering the study for an effect size at the 10th percentile of our prior belief distribution, which works out here to be an effect size of 0.17. Following this rule, we would select a design with 1100 subjects.</p>
@@ -447,9 +484,8 @@ div.csl-indent {
 <p>A pilot study can help researchers update their priors about important design parameters. If we do a small scale pilot with 100 subjects, we’ll get a noisy but unbiased estimate of the true effect size. We can update prior beliefs by taking a precision weighted average of our priors and the estimate from the pilot, where the weights are the inverse of the variance of each guess. Our posterior beliefs will be closer to the truth, and our posterior uncertainty will be smaller. If we then follow the heuristic of powering the 10th percentile of our (now posterior) beliefs about effect size, we will have come closer to correctly powering our study. <a href="#fig-ch21num4">Figure&nbsp;<span>21.4</span></a> shows how large the studies would be, depending on how the pilot study came out if we were to follow the 10th percentile decision rule. On average, the pilot leads us to design the main study with 1800 subjects, sometimes more and sometimes less.</p>
 <p>This exercise reveals that a pilot study can be quite valuable. Without a pilot study, we would chose to sample 1100 subjects, but since the true effect size is only 0.1 (not our best guess of 0.3), the experiment would be underpowered. The pilot study helps us correct our diffuse and incorrect prior beliefs. However, since the pilot is small, we don’t update our priors all the way to the truth. We still end up with a main study that is on average too small (1800), with a corresponding power of 56%. That said, a 56% chance of finding a statistically significant result is better than a 38% chance.</p>
 <div id="fig-ch21num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-21-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Distribution of post-pilot sample size choices"><img src="../figures/figure-21-4.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;21.4: Distribution of post-pilot sample size choices</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-21-4.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;21.4: Distribution of post-pilot sample size choices</figcaption></figure>
 </div>
 <p>In summary, pilots are most useful when we are uncertain – or outright wrong – about important design parameters. This uncertainty can often be shrunk by quite a bit without running pilot studies by meta-analyzing past empirical studies. Some things are hard to learn by reading others’ work; pilot studies are especially useful tools for learning about those things.</p>
 </section><section id="criticism" class="level2" data-number="21.5"><h2 data-number="21.5" class="anchored" data-anchor-id="criticism">
@@ -473,65 +509,64 @@ div.csl-indent {
 <p>We provide an example preanalysis plan in the appendix for <span class="citation" data-cites="bonilla_tillery_2020">Bonilla and Tillery (<a href="../references.html#ref-bonilla_tillery_2020" role="doc-biblioref">2020</a>)</span>, a study of the effects of alternative framings of Black Lives Matter on support for the movement. The authors of that study posted a preanalysis plan to the As Predicted registry: <a href="https://aspredicted.org/q56qq.pdf">link</a>. These study authors are models of research transparency: they prominently link to the PAP in the published article, they conduct no non-preregistered analyses except those requested during the review process, and their replication archive includes all materials required to confirm their analyses, all of which we were able to reproduce exactly with minimal effort. Our goal with this alternative PAP is to show how design declaration can supplement and complement existing planning practices.</p>
 <p>We show in <a href="realization.html#sec-ch22s2"><span>Section&nbsp;22.2</span></a> how to “populate” this PAP once the data have been realized and collected.</p>
 <div id="fig-papcontactsheet" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/example-preanalysis-plan.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Example preanalysis plan"><img src="../figures/example-preanalysis-plan.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;21.5: Example preanalysis plan</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/example-preanalysis-plan.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;21.5: Example preanalysis plan</figcaption></figure>
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-young2020" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-young2020" class="csl-entry" role="listitem">
 Baron, Hannah, and Lauren E. Young. 2021. <span>“From Principles to Practice: Methods to Increase the Transparency of Research Ethics in Violent Contexts.”</span> <em>Political Science Research and Methods</em>, 1–8.
 </div>
-<div id="ref-bccmapsr" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bccmapsr" class="csl-entry" role="listitem">
 Blair, Graeme, Jasper Cooper, Alexander Coppock, and Macartan Humphreys. 2019. <span>“Declaring and Diagnosing Research Designs.”</span> <em>American Political Science Review</em> 113 (3): 838–59.
 </div>
-<div id="ref-bonilla_tillery_2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bonilla_tillery_2020" class="csl-entry" role="listitem">
 Bonilla, Tabitha, and Alvin B. Tillery. 2020. <span>“Which Identity Frames Boost Support for and Mobilization in the #BlackLivesMatter Movement? An Experimental Test.”</span> <em>American Political Science Review</em> 114 (4): 947–62.
 </div>
-<div id="ref-Casey2012" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Casey2012" class="csl-entry" role="listitem">
 Casey, Katherine, Rachel Glennerster, and Edward Miguel. 2012. <span>“Reshaping Institutions: Evidence on Aid Impacts Using a Pre-Analysis Plan.”</span> <em>The Quarterly Journal of Economics</em> 127 (4): 1755–1812.
 </div>
-<div id="ref-Gerber2012" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Gerber2012" class="csl-entry" role="listitem">
 Gerber, Alan S., and Donald P. Green. 2012. <em><span class="nocase">Field Experiments: Design, Analysis, and Interpretation</span></em>. New York: W.W. Norton.
 </div>
-<div id="ref-Green2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Green2015" class="csl-entry" role="listitem">
 Green, Donald P., and Winston Lin. 2016. <span>“Standard Operating Procedures: A Safety Net for Pre-Analysis Plans.”</span> <em>PS: Political Science &amp; Politics</em> 49 (3): 495–99.
 </div>
-<div id="ref-humphreys2015reflections" class="csl-entry" role="doc-biblioentry">
+<div id="ref-humphreys2015reflections" class="csl-entry" role="listitem">
 Humphreys, Macartan. 2015. <span>“Reflections on the Ethics of Social Experimentation.”</span> <em>Journal of Globalization and Development</em> 6 (1): 87–112.
 </div>
-<div id="ref-Humphreys2013a" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Humphreys2013a" class="csl-entry" role="listitem">
 Humphreys, Macartan, Raul de la Sierra, and Peter van der Windt. 2013. <span>“<span class="nocase">Fishing, Commitment, and Communication: A Proposal for Comprehensive Nonbinding Research Registration</span>.”</span> <em>Political Analysis</em> 21 (1): 1–20.
 </div>
-<div id="ref-king2007politically" class="csl-entry" role="doc-biblioentry">
+<div id="ref-king2007politically" class="csl-entry" role="listitem">
 King, Gary, Emmanuela Gakidou, Nirmala Ravishankar, Ryan T Moore, Jason Lakin, Manett Vargas, Martha Marı́a Téllez-Rojo, Juan Eugenio Hernández Ávila, Mauricio Hernández Ávila, and Héctor Hernández Llamas. 2007. <span>“A <span>‘Politically Robust’</span> Experimental Design for Public Policy Evaluation, with Application to the Mexican Universal Health Insurance Program.”</span> <em>Journal of Policy Analysis and Management</em> 26 (3): 479–506.
 </div>
-<div id="ref-King2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-King2015" class="csl-entry" role="listitem">
 King, Gary, and Melissa Sands. 2015. <span>“How Human Subjects Research Rules Mislead You and Your University, and What to Do about It.”</span> <em>Unpublished Manuscript</em>.
 </div>
-<div id="ref-levine2021form" class="csl-entry" role="doc-biblioentry">
+<div id="ref-levine2021form" class="csl-entry" role="listitem">
 Levine, Adam Seth. 2021. <span>“How to Form Organizational Partnerships to Run Experiments.”</span> In <em>Advances in Experimental Political Science</em>, 199–216. Cambridge, UK: Cambridge University Press.
 </div>
-<div id="ref-lyall2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lyall2020" class="csl-entry" role="listitem">
 Lyall, Jason. 2022. <span>“Preregister Your Ethical Redlines: Vulnerable Populations, Policy Engagement, and the Perils of e-Hacking.”</span> <em>Unpublished Manuscript</em>.
 </div>
-<div id="ref-Miguel2014" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Miguel2014" class="csl-entry" role="listitem">
 Miguel, Edward, Colin Camerer, Katherine Casey, Joshua Cohen, Kevin M Esterling, Alan S. Gerber, Rachel Glennerster, Donald P. Green, Macartan Humphreys, and Guido W. Imbens. 2014. <span>“Promoting Transparency in Social Science Research.”</span> <em>Science</em> 343 (6166): 30.
 </div>
-<div id="ref-ofosu2021pre" class="csl-entry" role="doc-biblioentry">
+<div id="ref-ofosu2021pre" class="csl-entry" role="listitem">
 Ofosu, George, and Daniel Posner. 2022. <span>“<span class="nocase">Pre-analysis Plans: An Early Stocktaking</span>.”</span> <em>Perspectives on Politics</em>.
 </div>
-<div id="ref-schrag2010ethical" class="csl-entry" role="doc-biblioentry">
+<div id="ref-schrag2010ethical" class="csl-entry" role="listitem">
 Schrag, Zachary M. 2010. <em>Ethical Imperialism: Institutional Review Boards and the Social Sciences, 1965–2009</em>. Johns Hopkins University Press.
 </div>
-<div id="ref-slough2020ethics" class="csl-entry" role="doc-biblioentry">
+<div id="ref-slough2020ethics" class="csl-entry" role="listitem">
 Slough, Tara. 2020. <span>“The Ethics of Electoral Experimentation: Design-Based Recommendations.”</span> <em>Unpublished Manuscript</em>.
 </div>
-<div id="ref-teele2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-teele2020" class="csl-entry" role="listitem">
 Teele, Dawn. 2021. <span>“Virtual Consent: A Bronze Standard for Experimental Ethics.”</span> In <em>Cambridge Handbook of Experimental Political Science</em>, edited by Donald P. Green and James N. Druckman. New York: Cambridge University Press.
 </div>
-<div id="ref-wood2006ethical" class="csl-entry" role="doc-biblioentry">
+<div id="ref-wood2006ethical" class="csl-entry" role="listitem">
 Wood, Elisabeth Jean. 2006. <span>“<span class="nocase">The Ethical Challenges of Field Research in Conflict Zones</span>.”</span> <em>Qualitative Sociology</em> 29 (3): 373–86.
 </div>
 </div>
@@ -565,9 +600,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -632,6 +681,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -682,7 +817,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":true,"selector":".lightbox"});</script>
+
 
 
 </body></html>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.433">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design in the Social Sciences - 16&nbsp; Observational : causal</title>
 <style>
@@ -14,9 +14,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -43,48 +44,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -98,8 +70,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -118,10 +89,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -137,7 +105,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
@@ -178,239 +147,279 @@ div.csl-indent {
       }
     }
 </script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span>
-</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/observational-causal.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../authors.html" class="sidebar-item-text sidebar-link">About the authors</a>
+  <a href="../authors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the authors</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
+  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
+  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
+  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
+  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
+  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
+  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
+  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
+  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
+  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
+  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
+  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
+  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
+  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../library/" class="sidebar-item-text sidebar-link">Research design library</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a href="../library/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design library</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></a>
+  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></a>
+  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></a>
+  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></a>
+  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/complex.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></a>
+  <a href="../library/complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></a>
+  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></a>
+  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></a>
+  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../epilogue.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></a>
+  <a href="../epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../errata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Errata</span></a>
   </div>
 </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
 <a style="color: black; text-decoration: none; font-size: 17px" target="_new" href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences"> <img style="border: 1px solid darkgray; margin-bottom: 5px" width="100px" src="../figures/cover.jpg"><br>Preorder book</a>
 </p>
 </div></div>
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
+    <ul>
 <li>
-<a href="#sec-ch16s1" id="toc-sec-ch16s1" class="nav-link active" data-scroll-target="#sec-ch16s1"><span class="toc-section-number">16.1</span>  Process tracing</a>
-  <ul class="collapse">
-<li><a href="#design-examples" id="toc-design-examples" class="nav-link" data-scroll-target="#design-examples"><span class="toc-section-number">16.1.1</span>  Design examples</a></li>
-  </ul>
+<a href="#sec-ch16s1" id="toc-sec-ch16s1" class="nav-link active" data-scroll-target="#sec-ch16s1"><span class="header-section-number">16.1</span> Process tracing</a>
+    <ul class="collapse">
+<li><a href="#design-examples" id="toc-design-examples" class="nav-link" data-scroll-target="#design-examples"><span class="header-section-number">16.1.1</span> Design examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#sec-ch16s2" id="toc-sec-ch16s2" class="nav-link" data-scroll-target="#sec-ch16s2"><span class="toc-section-number">16.2</span>  Selection-on-observables</a>
-  <ul class="collapse">
-<li><a href="#design-examples-1" id="toc-design-examples-1" class="nav-link" data-scroll-target="#design-examples-1"><span class="toc-section-number">16.2.1</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#sec-ch16s2" id="toc-sec-ch16s2" class="nav-link" data-scroll-target="#sec-ch16s2"><span class="header-section-number">16.2</span> Selection-on-observables</a>
+    <ul class="collapse">
+<li><a href="#design-examples-1" id="toc-design-examples-1" class="nav-link" data-scroll-target="#design-examples-1"><span class="header-section-number">16.2.1</span> Design examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#sec-ch16s3" id="toc-sec-ch16s3" class="nav-link" data-scroll-target="#sec-ch16s3"><span class="toc-section-number">16.3</span>  Difference-in-differences</a>
-  <ul class="collapse">
-<li><a href="#design-examples-2" id="toc-design-examples-2" class="nav-link" data-scroll-target="#design-examples-2"><span class="toc-section-number">16.3.1</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#sec-ch16s3" id="toc-sec-ch16s3" class="nav-link" data-scroll-target="#sec-ch16s3"><span class="header-section-number">16.3</span> Difference-in-differences</a>
+    <ul class="collapse">
+<li><a href="#design-examples-2" id="toc-design-examples-2" class="nav-link" data-scroll-target="#design-examples-2"><span class="header-section-number">16.3.1</span> Design examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#sec-ch16s4" id="toc-sec-ch16s4" class="nav-link" data-scroll-target="#sec-ch16s4"><span class="toc-section-number">16.4</span>  Instrumental variables</a>
-  <ul class="collapse">
-<li><a href="#design-examples-3" id="toc-design-examples-3" class="nav-link" data-scroll-target="#design-examples-3"><span class="toc-section-number">16.4.1</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#sec-ch16s4" id="toc-sec-ch16s4" class="nav-link" data-scroll-target="#sec-ch16s4"><span class="header-section-number">16.4</span> Instrumental variables</a>
+    <ul class="collapse">
+<li><a href="#design-examples-3" id="toc-design-examples-3" class="nav-link" data-scroll-target="#design-examples-3"><span class="header-section-number">16.4.1</span> Design examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#sec-ch16s5" id="toc-sec-ch16s5" class="nav-link" data-scroll-target="#sec-ch16s5"><span class="toc-section-number">16.5</span>  Regression discontinuity designs</a>
-  <ul class="collapse">
-<li><a href="#design-examples-4" id="toc-design-examples-4" class="nav-link" data-scroll-target="#design-examples-4"><span class="toc-section-number">16.5.1</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#sec-ch16s5" id="toc-sec-ch16s5" class="nav-link" data-scroll-target="#sec-ch16s5"><span class="header-section-number">16.5</span> Regression discontinuity designs</a>
+    <ul class="collapse">
+<li><a href="#design-examples-4" id="toc-design-examples-4" class="nav-link" data-scroll-target="#design-examples-4"><span class="header-section-number">16.5.1</span> Design examples</a></li>
+    </ul>
 </li>
-  </ul></nav>
+    </ul>
+<ul><li><a class="navlink nav-link" href="https://doi.org/10.7910/DVN/HYVPO5" data-scroll-target="https\://doi.org/10.7910/DVN/HYVPO5">Replication code and data</a></li></ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -431,7 +440,7 @@ div.csl-indent {
 </div>
 
 <header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">
+<h1 class="title">
 <span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span>
 </h1>
 </div>
@@ -474,9 +483,8 @@ div.csl-indent {
 </div>
 <p>The DAG of the causal model is shown in <a href="#fig-ch16num1">Figure&nbsp;<span>16.1</span></a>.</p>
 <div id="fig-ch16num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-16-1.svg" class="lightbox" title="Directed acyclic graph of a process tracing model" data-gallery="quarto-lightbox-gallery-1"><img src="../figures/figure-16-1.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.1: Directed acyclic graph of a process tracing model</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-16-1.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.1: Directed acyclic graph of a process tracing model</figcaption></figure>
 </div>
 <p>This model definition describes the DAG but also specifies a set of restrictions on causal relations. By default, flat priors are then placed over all other possible causal relations, though of course other prior beliefs could also be specified.</p>
 <p>We now have all we need to assess what inferences we might make given different sorts of observations on <span class="math inline">\(W\)</span> and <span class="math inline">\(M\)</span>.</p>
@@ -484,45 +492,46 @@ div.csl-indent {
 <div class="cell">
 <div class="cell-output-display">
 <div id="tbl-ptprobative" class="anchored">
-
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Table&nbsp;16.1:  Beliefs about the probability X caused Y upon observing X=1, Y=1, updated inferences upon observing additional data on M or W, and the conditional probability of seeing different outcomes for M or W given observation of X=1, Y=1. </caption>
- <thead><tr>
-<th style="text-align:left;"> Query </th>
-   <th style="text-align:center;"> Value </th>
-  </tr></thead>
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table&nbsp;16.1: Beliefs about the probability <span class="math inline">\(X\)</span> caused <span class="math inline">\(Y\)</span> upon observing <span class="math inline">\(X=1, Y=1\)</span>, updated inferences upon observing additional data on <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span>, and the conditional probability of seeing different outcomes for <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span> given observation of <span class="math inline">\(X=1, Y=1\)</span>.</caption>
+<thead><tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Query</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Value</th>
+</tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;"> Prob(CoE=1|X = 1, Y=1) </td>
-   <td style="text-align:center;"> 0.71 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> Prob(CoE=1 | X = 1, Y = 1, M=0) </td>
-   <td style="text-align:center;"> 0.00 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> Prob(CoE=1 | X = 1, Y = 1, M=1) </td>
-   <td style="text-align:center;"> 0.77 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> Prob(CoE=1 | X = 1, Y = 1, W=0) </td>
-   <td style="text-align:center;"> 0.20 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> Prob(CoE=1 | X = 1, Y = 1, W=1) </td>
-   <td style="text-align:center;"> 1.00 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> Prob(M=1 | X = 1, Y = 1) </td>
-   <td style="text-align:center;"> 0.93 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> Prob(W=1 | X = 1, Y = 1) </td>
-   <td style="text-align:center;"> 0.64 </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">Prob(CoE=1|X = 1, Y=1)</td>
+<td style="text-align: center;">0.71</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Prob(CoE=1 | X = 1, Y = 1, M=0)</td>
+<td style="text-align: center;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Prob(CoE=1 | X = 1, Y = 1, M=1)</td>
+<td style="text-align: center;">0.77</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Prob(CoE=1 | X = 1, Y = 1, W=0)</td>
+<td style="text-align: center;">0.20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Prob(CoE=1 | X = 1, Y = 1, W=1)</td>
+<td style="text-align: center;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Prob(M=1 | X = 1, Y = 1)</td>
+<td style="text-align: center;">0.93</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Prob(W=1 | X = 1, Y = 1)</td>
+<td style="text-align: center;">0.64</td>
+</tr>
 </tbody>
 </table>
 </div>
+
+
 </div>
 </div>
 <p>We see here that <span class="math inline">\(M\)</span> provides a hoop test since we are certain that <span class="math inline">\(X\)</span> does not cause <span class="math inline">\(Y\)</span> when <span class="math inline">\(M=0\)</span>, but we are uncertain when <span class="math inline">\(M=1\)</span>. (Moreover, we already expect to see <span class="math inline">\(M=1\)</span> given what we have seen for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>). <span class="math inline">\(W\)</span> provides a smoking gun test since we are certain that <span class="math inline">\(X\)</span> causes <span class="math inline">\(Y\)</span> when <span class="math inline">\(M=1\)</span> but uncertain otherwise. Since we have access to both conditional inferences and the probability of seeing different types of data, we have enough data in <a href="#tbl-ptprobative">Table&nbsp;<span>16.1</span></a> to calculate how different strategies will perform.</p>
@@ -555,9 +564,8 @@ div.csl-indent {
 <p>The answers are given in <a href="#fig-ch16num2">Figure&nbsp;<span>16.2</span></a>. Here we show the expected error from inferences given each process tracing strategy. We break up the diagnoses according to the <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> data already observed—thus illustrating how an unconditional model can be used to assess designs even after some data is observed. Across the four possible data patterns we see equivalent implications for settings in which we are interested in a case with <span class="math inline">\(X=Y=1\)</span> and a case with <span class="math inline">\(X=Y=0\)</span>. For the cases with <span class="math inline">\(X \neq Y\)</span> we already know—because of the monotonicity restrictions in the model—that <span class="math inline">\(X\)</span> did not cause <span class="math inline">\(Y\)</span> and so we learn nothing from all strategies.</p>
 <p>We see only modest declines in expected errors from observation of the mediator <span class="math inline">\(M\)</span> (consistent with the manual calculation above), but large declines from observing <span class="math inline">\(W\)</span>. If we already observe <span class="math inline">\(W\)</span> the gains from observing <span class="math inline">\(M\)</span> are still more slight. Broadly this confirms a more general observation that mediators can provide limited traction for learning about causes of effects relative to moderators <span class="citation" data-cites="dawid2022bounding">(<a href="../references.html#ref-dawid2022bounding" role="doc-biblioref">Dawid, Humphreys, and Musio 2022</a>)</span>.</p>
 <div id="fig-ch16num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-16-2.svg" class="lightbox" title="Inferences from four different process tracing data strategies on whether X caused Y given four different observed X,Y data patterns." data-gallery="quarto-lightbox-gallery-2"><img src="../figures/figure-16-2.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.2: Inferences from four different process tracing data strategies on whether <span class="math inline">\(X\)</span> caused <span class="math inline">\(Y\)</span> given four different observed <span class="math inline">\(X,Y\)</span> data patterns.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-16-2.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.2: Inferences from four different process tracing data strategies on whether <span class="math inline">\(X\)</span> caused <span class="math inline">\(Y\)</span> given four different observed <span class="math inline">\(X,Y\)</span> data patterns.</figcaption></figure>
 </div>
 </div>
 <section id="design-examples" class="level3" data-number="16.1.1"><h3 data-number="16.1.1" class="anchored" data-anchor-id="design-examples">
@@ -575,9 +583,8 @@ div.csl-indent {
 <p>The quality of causal inferences we draw comes down to whether our claims about selection into treatment are correct. If we’ve missed a cause (missed a back door path), then our inferences will be prone to bias. It is the nature of the selection-on-observables design that we can’t know if our claims about the processes that cause selection are correct or not; the design amounts to a leap of faith in the theoretical model.</p>
 <p>The problems don’t end there. We risk bias if we fail to adjust for <span class="math inline">\(X\)</span> under some models — but we will also risk bias if we <em>do</em> adjust for <span class="math inline">\(X\)</span> under other models. In <a href="#fig-ch16num3">Figure&nbsp;<span>16.3</span></a> we illustrate four of the possible roles for an observable variable <span class="math inline">\(X\)</span>: as a confounder of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; as a collider, which is affected by both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; as a mediator of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; and as a predictor of <span class="math inline">\(Y\)</span> with no connection to <span class="math inline">\(D\)</span>. We set aside in these DAGs the possible roles of an unobservable variable <span class="math inline">\(U\)</span> that would introduce additional problems of confounding.</p>
 <div id="fig-ch16num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-16-3.svg" class="lightbox" title="Four roles for an observable variable X." data-gallery="quarto-lightbox-gallery-3"><img src="../figures/figure-16-3.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.3: Four roles for an observable variable X.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-16-3.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.3: Four roles for an observable variable X.</figcaption></figure>
 </div>
 <p>If <span class="math inline">\(X\)</span> is a confounder, failing to adjust for it in studying the relationship between the treatment <span class="math inline">\(D\)</span> and outcome <span class="math inline">\(Y\)</span> will lead to confounding bias. We often think of fourth DAG as the alternative to this, where <span class="math inline">\(X\)</span> is a predictor of <span class="math inline">\(Y\)</span> but has no link to <span class="math inline">\(D\)</span>. In this circumstance, we still want to adjust for <span class="math inline">\(X\)</span> to seek efficiency improvements by soaking up additional variation in <span class="math inline">\(Y\)</span>, but failing to do so will not introduce bias. If the true model is definitely represented by either the first or fourth DAG, we should clearly choose to adjust for <span class="math inline">\(X\)</span>. In the first case, we should adjust to close the back-door path and in the fourth case, we will do no worse in terms of bias and may in fact increase precision.</p>
 <p>However, the middle two DAGs present problems if we <em>do</em> adjust for <span class="math inline">\(X\)</span>. In the first, <span class="math inline">\(X\)</span> is a collider: it is affected by both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. Adjusting for <span class="math inline">\(X\)</span> if this is the true model introduces collider bias, because we open a backdoor path between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> through <span class="math inline">\(X\)</span>. We also introduce bias if we control for <span class="math inline">\(X\)</span> if the mediator model (DAG 3) is the true model, wherein <span class="math inline">\(D\)</span> affects <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span> affects <span class="math inline">\(Y\)</span> (i.e., <span class="math inline">\(X\)</span> is a mediator for the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>). But the reason here is different: controlling for a mediator adjusts away part of the true treatment effect.</p>
@@ -622,9 +629,8 @@ div.csl-indent {
 <p><span class="theorem-title"><strong>Diagnosis 16.2 </strong></span>Matching design diagnosis</p>
 <p>In <a href="#fig-ch16num4">Figure&nbsp;<span>16.4</span></a>, we see that the raw, unmatched estimate is quite biased (about 20% of the average estimate) and that the matched estimate is unbiased. If we fail to adjust for the observable features of the selection process, we have biased answers. But if we do control in this case, we obtain unbiased answers. However, as highlighted earlier, these results depend on the plausibility of our model, which in this case involves observed confounding of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> by <span class="math inline">\(X\)</span>. If there was <em>unobservable</em> confounding from <span class="math inline">\(U\)</span>, or if <span class="math inline">\(X\)</span> was a collider or mediator, there would be bias even if we control for <span class="math inline">\(X\)</span>.</p>
 <div id="fig-ch16num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-16-4.svg" class="lightbox" title="Sampling distribution of two estimators." data-gallery="quarto-lightbox-gallery-4"><img src="../figures/figure-16-4.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.4: Sampling distribution of two estimators.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-16-4.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.4: Sampling distribution of two estimators.</figcaption></figure>
 </div>
 </div>
 <section id="design-examples-1" class="level3" data-number="16.2.1"><h3 data-number="16.2.1" class="anchored" data-anchor-id="design-examples-1">
@@ -708,9 +714,8 @@ div.csl-indent {
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_16.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_16.3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch16num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-16-5.svg" class="lightbox" title="Sampling distributions of two difference-in-differences estimators." data-gallery="quarto-lightbox-gallery-5"><img src="../figures/figure-16-5.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.5: Sampling distributions of two difference-in-differences estimators.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-16-5.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.5: Sampling distributions of two difference-in-differences estimators.</figcaption></figure>
 </div>
 <p><a href="#fig-ch16num5">Figure&nbsp;<span>16.5</span></a> shows that the two-way fixed effects estimator is biased for both the ATT and the ATT on the switchers. By contrast, the <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator is unbiased for the ATT on the switchers. Neither estimator recovers unbiased estimates of the ATT. The next section explains why.</p>
 </div>
@@ -720,9 +725,8 @@ div.csl-indent {
 <p>The timing of treatment, nature of heterogeneous effects, and answer strategies interact to determine the properties of the design. <a href="#fig-ch16num6">Figure&nbsp;<span>16.6</span></a> shows the diagnosis under all three sets of potential outcomes, and examines both the ATT and the ATT for switchers inquiries. We consider both the two-way fixed effects estimator and the <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator.</p>
 <p>When treatment effects happen to be homogeneous (middle panel), both estimators recover unbiased estimates of both the ATT and the ATT for switchers, which of course are equal to one another because of treatment effect homogeneity. However, when treatment effects vary with the timing of treatment (left or right panels), the two-way fixed-effects estimator is biased for both inquiries. The <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator is also biased for the ATT, but remains unbiased for the ATT among switchers regardless of the pattern of treatment effect heterogeneity.</p>
 <div id="fig-ch16num6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-16-6.svg" class="lightbox" title="Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes." data-gallery="quarto-lightbox-gallery-6"><img src="../figures/figure-16-6.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.6: Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-16-6.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.6: Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes.</figcaption></figure>
 </div>
 </div>
 <section id="design-examples-2" class="level3" data-number="16.3.1"><h3 data-number="16.3.1" class="anchored" data-anchor-id="design-examples-2">
@@ -740,9 +744,8 @@ div.csl-indent {
 <p>Instruments are special. They are variables that are randomly assigned by nature, the government, or other individuals or groups. Usually, genuine random assignments have to be crafted by researchers as part of a deliberate data strategy. Experimenters go to great lengths to randomly expose some units but not others to treatments. When the world provides bona fide random variation in an instrumental variable, it’s a rare and valuable opportunity. By virtue of as-if random assignment, we can learn about the average causal effects of the instrument itself without any further consternation. Conditional on geography and season, weather conditions are as-if randomly assigned, so we can learn about the average effects of rainfall on many outcomes, like crop yields, voter turnout, and attendance at sporting events. Conditional on gender and birth year, draft numbers are randomly assigned by the government, so we can learn about the average effects of being drafted on educational attainment, future earnings, or public policy preferences.</p>
 <p>We illustrate the logic of instrumental variables with the DAG shown in <a href="#fig-ch16num7">Figure&nbsp;<span>16.7</span></a>. An instrument <span class="math inline">\(Z\)</span> affects an endogenous treatment <span class="math inline">\(D\)</span> which subsequently affects an outcome <span class="math inline">\(Y\)</span>. Many other common causes, summarized in terms of unknown heterogeneity <span class="math inline">\(U\)</span>, affect both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. It is because of this unmeasured confounding that we cannot learn about the effect of <span class="math inline">\(D\)</span> on <span class="math inline">\(Y\)</span> directly using standard tools.</p>
 <div id="fig-ch16num7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-16-7.svg" class="lightbox" title="Directed acyclic graph of an instrumental variables design." data-gallery="quarto-lightbox-gallery-7"><img src="../figures/figure-16-7.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.7: Directed acyclic graph of an instrumental variables design.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-16-7.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.7: Directed acyclic graph of an instrumental variables design.</figcaption></figure>
 </div>
 <p>We can naturally imagine an inquiry that represents the effect of the instrument (<span class="math inline">\(Z\)</span>) on an outcome of interest such as the effect of the draft number on future earnings. In the terminology of instrumental variables, this inquiry is called the “reduced form” or the “intention-to-treat” (ITT) effect. If it’s really true that the instrument is randomly assigned by the world, estimation of the reduced form effect is straightforward: we estimate the causal effect of <span class="math inline">\(Z\)</span> on <span class="math inline">\(Y\)</span> using, for example, a difference-in-means estimator. Sometimes, we are also interested in the “first-stage” effect of the instrument on the treatment variable. Similarly, we can target this inquiry by studying the causal effect of <span class="math inline">\(Z\)</span> on <span class="math inline">\(D\)</span>, for example using the difference-in-means estimator again.</p>
 <p>The trouble comes when we want to leverage the random assignment of the instrument (<span class="math inline">\(Z\)</span>) to learn about the average causal effect of the treatment variable (<span class="math inline">\(D\)</span>) on the outcome (<span class="math inline">\(Y\)</span>), where <span class="math inline">\(D\)</span> is not randomly assigned but rather affected by <span class="math inline">\(Z\)</span> and also other variables. To do so, we need to understand better how the instrument affects whether units are <em>treated</em> and then how both affect the outcome of interest. We need to understand “compliance” with the instrument.</p>
@@ -780,7 +783,7 @@ div.csl-indent {
 </table>
 </div>
 <p>Never-takers are those who never take the treatment, no matter what the value of the instrument. Compliers take the value of the treatment they are assigned by the instrument. Defiers do exactly the opposite. When the instrument assigns them to take the treatment, defiers refuse it, but if it assigns them not to, they do take treatment. Like their name suggests, always-takers take the treatment regardless of the value of the instrument.</p>
-<p>With these types in mind, we can now define a new inquiry that we will be able to target with instrumental variables under a special set of assumptions: a “local” average treatment effect (LATE) among compliers. The “local” qualifier indicates that the effect applies only to the specific group of units whose treatment status changes as a result of the instrument. The LATE is <span class="math inline">\(\E[Y_i(D_i = 1) - Y_i(D_i = 0) | D_i(Z_i = 1) &gt; D_i(Z_i = 0)]\)</span>. This quantity is the average treatment effect among the compliers. The LATE is different from the ATE because it does not average over the effects for never-takers, always-takers, and defiers, but the ATE does.</p>
+<p>With these types in mind, we can now define a new inquiry that we will be able to target with instrumental variables under a special set of assumptions: a “local” average treatment effect (LATE) among compliers. The “local” qualifier indicates that the effect applies only to the specific group of units whose treatment status changes as a result of the instrument. The LATE is <span class="math inline">\(\mathbb{E}[Y_i(D_i = 1) - Y_i(D_i = 0) | D_i(Z_i = 1) &gt; D_i(Z_i = 0)]\)</span>. This quantity is the average treatment effect among the compliers. The LATE is different from the ATE because it does not average over the effects for never-takers, always-takers, and defiers, but the ATE does.</p>
 <p>We can adopt an instrumental variables answer strategy — using two-stage least squares for example — to estimate the LATE. But to do so without bias, we need to invoke new assumptions on top of those for randomized experiments. In the case of a binary instrument and a binary treatment, the five assumptions are:</p>
 <ol type="1">
 <li><p>Exogeneity of the instrument: <span class="math inline">\(Y_i(D_i = 1), Y_i(D_i = 0), D_i(Z_i = 1), D_i(Z_i = 0) \indep Z_i | X_i\)</span>. Substantively, this assumption requires that (possibly conditional on observed covariates in <span class="math inline">\(X\)</span>) the instrument is as-if randomly assigned, so it is jointly independent of the treated and untreated potential outcomes as well as the potential values the treatment variable <span class="math inline">\(D\)</span> would take on depending on the values of the instrument <span class="math inline">\(Z\)</span>. Exogeneity is usually justified on the basis of qualitative knowledge about why as-if random assignment is a reasonable assumption to make. The assumption can be bolstered — but not directly tested — with design checks like whether pre-treatment values of the covariates are balanced across the levels of the instrument.</p></li>
@@ -832,15 +835,13 @@ div.csl-indent {
 <p>A major assumption required for the regression discontinuity design is that the conditional expectation functions — functions that define the expected value of the outcome at every level of the running variable — for both treatment and control potential outcomes are continuous at the cutoff.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>The regression discontinuity design is closely related to the selection-on-observables design in that exact knowledge of the assignment mechanism is needed. In <a href="#fig-ch16num8">Figure&nbsp;<span>16.8</span></a>, we illustrate the DAG for the RD design, which includes a treatment with a known assignment mechanism (that units with <span class="math inline">\(X&gt;\mathrm{cutoff}\)</span> are treated and those below are not). The running variable <span class="math inline">\(X\)</span>, is a common cause both of treatment and the outcome, and so must be adjusted for (indicated by the dashed box) in order to identify the effect of treatment on the outcome and avoid confounding bias.</p>
 <div id="fig-ch16num8" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-16-8.svg" class="lightbox" title="Directed acyclic graph for the regression discontinuity design." data-gallery="quarto-lightbox-gallery-8"><img src="../figures/figure-16-8.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.8: Directed acyclic graph for the regression discontinuity design.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-16-8.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.8: Directed acyclic graph for the regression discontinuity design.</figcaption></figure>
 </div>
 <p><a href="#fig-ch16num9">Figure&nbsp;<span>16.9</span></a> illustrates the major features of the model for the regression discontinuity using simulated data. The untreated units (blue points) are plotted to the left of the cutoff (vertical line), and the treated units (red points) are plotted to the right. The true conditional expectation functions for both the treated and untreated potential outcomes are displayed as colored lines, dashed where they are unobservable and solid where they are observable.</p>
 <div id="fig-ch16num9" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-16-9.svg" class="lightbox" title="Data from a regression discontinuity design. On the x-axis is the running variable, which defines the cut off between control (here, below 0 on the running variable) and treatment (above 0). The outcome Y is on the y-axis. We illustrate smooth potential outcomes by showing the observed data curve (solid) and the counterfactual potential outcome (dashed)." data-gallery="quarto-lightbox-gallery-9"><img src="../figures/figure-16-9.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.9: Data from a regression discontinuity design. On the x-axis is the running variable, which defines the cut off between control (here, below 0 on the running variable) and treatment (above 0). The outcome Y is on the y-axis. We illustrate smooth potential outcomes by showing the observed data curve (solid) and the counterfactual potential outcome (dashed).</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-16-9.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.9: Data from a regression discontinuity design. On the x-axis is the running variable, which defines the cut off between control (here, below 0 on the running variable) and treatment (above 0). The outcome Y is on the y-axis. We illustrate smooth potential outcomes by showing the observed data curve (solid) and the counterfactual potential outcome (dashed).</figcaption></figure>
 </div>
 <p>The inquiry in a regression discontinuity design is the effect of the treatment exactly at the cutoff. Formally, it is the difference in the conditional expectation functions of the control and treatment potential outcomes when the running variable is exactly zero. The black vertical line in the plot shows this difference.</p>
 <p>The data strategy is to collect the outcome data for all units within a interval (bandwidth) around the cutoff. The choice of bandwidth involves a tradeoff between bias and variance. The wider we make the bandwidth, the more data we have, and thus the more precision we may be able to achieve. However, the claim of causal identification comes from the comparability of units <em>just</em> above and <em>just</em> below the threshold. Units far from the cutoff are not likely to be comparable: at a minimum they differ in their values of the running variable and if that is correlated with other unobserved heterogeneity then they may differ in that too. Thus, the more units we compare further from the threshold, the more likely we are to induce bias in our estimates of the treatment effect. The ultimate bandwidth chosen for analysis is a function of the data collected in the data strategy and the bandwidth chosen in the answer strategy, which is often the output of an automated process.</p>
@@ -901,9 +902,8 @@ div.csl-indent {
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  diagnose_designs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch16num10" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-16-10.svg" class="lightbox" title="Bias-variance tradeoff in bandwidth selection for the regression discontinuity design." data-gallery="quarto-lightbox-gallery-10"><img src="../figures/figure-16-10.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.10: Bias-variance tradeoff in bandwidth selection for the regression discontinuity design.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-16-10.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;16.10: Bias-variance tradeoff in bandwidth selection for the regression discontinuity design.</figcaption></figure>
 </div>
 </div>
 <section id="design-examples-4" class="level3" data-number="16.5.1"><h3 data-number="16.5.1" class="anchored" data-anchor-id="design-examples-4">
@@ -914,71 +914,71 @@ div.csl-indent {
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-angrist2008mostly" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-angrist2008mostly" class="csl-entry" role="listitem">
 Angrist, Joshua D., and Jörn-Steffen Pischke. 2008. <em>Mostly Harmless Econometrics: An Empiricist’s Companion</em>. Princeton: Princeton University Press.
 </div>
-<div id="ref-bateson_2012" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bateson_2012" class="csl-entry" role="listitem">
 Bateson, Regina. 2012. <span>“Crime Victimization and Political Participation.”</span> <em>American Political Science Review</em> 106 (3): 570–87.
 </div>
-<div id="ref-BennettCheckel2015PT" class="csl-entry" role="doc-biblioentry">
+<div id="ref-BennettCheckel2015PT" class="csl-entry" role="listitem">
 Bennett, Andrew, and Jeffrey Checkel. 2015. <span>“Process Tracing: From Philosophical Roots to Best Practices.”</span> In <em>Process Tracing: From Metaphor to Analytic Tool</em>, edited by Andrew Bennett and Jeffrey Checkel, 3–37. New York: Cambridge University Press.
 </div>
-<div id="ref-brady2004data" class="csl-entry" role="doc-biblioentry">
+<div id="ref-brady2004data" class="csl-entry" role="listitem">
 Brady, Henry E. 2004. <span>“Data-Set Observations Versus Causal-Process Observations: The 2000 US Presidential Election.”</span> In <em>Rethinking Social Inquiry: Diverse Tools, Shared Standards</em>, 267–72. Lanham: Rowman &amp; Littlefield.
 </div>
-<div id="ref-calonico2014robust" class="csl-entry" role="doc-biblioentry">
+<div id="ref-calonico2014robust" class="csl-entry" role="listitem">
 Calonico, Sebastian, Matias D Cattaneo, and Rocio Titiunik. 2014. <span>“Robust Nonparametric Confidence Intervals for Regression-Discontinuity Designs.”</span> <em>Econometrica</em> 82 (6): 2295–2326.
 </div>
-<div id="ref-carnegie2017international" class="csl-entry" role="doc-biblioentry">
+<div id="ref-carnegie2017international" class="csl-entry" role="listitem">
 Carnegie, Allison, and Cyrus Samii. 2019. <span>“International Institutions and Political Liberalization: Evidence from the World Bank Loans Program.”</span> <em>British Journal of Political Science</em> 49 (4): 1357–79.
 </div>
-<div id="ref-Carreri2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Carreri2017" class="csl-entry" role="listitem">
 Carreri, Maria, and Oeindrila Dube. 2017. <span>“Do Natural Resources Influence Who Comes to Power, and How?”</span> <em>The Journal of Politics</em> 79 (2): 502–18.
 </div>
-<div id="ref-chaisemartin" class="csl-entry" role="doc-biblioentry">
+<div id="ref-chaisemartin" class="csl-entry" role="listitem">
 Chaisemartin, Clément de, and Xavier d’Haultfoeuille. 2020. <span>“Two-Way Fixed Effects Estimators with Heterogeneous Treatment Effects.”</span> <em>American Economic Review</em> 110 (9): 2964–96.
 </div>
-<div id="ref-dawid2022bounding" class="csl-entry" role="doc-biblioentry">
+<div id="ref-dawid2022bounding" class="csl-entry" role="listitem">
 Dawid, Philip, Macartan Humphreys, and Monica Musio. 2022. <span>“Bounding Causes of Effects with Mediators.”</span> <em>Sociological Methods &amp; Research</em>.
 </div>
-<div id="ref-dunning2012natural" class="csl-entry" role="doc-biblioentry">
+<div id="ref-dunning2012natural" class="csl-entry" role="listitem">
 Dunning, Thad. 2012. <em>Natural Experiments in the Social Sciences: A Design-Based Approach</em>. Cambridge, UK: Cambridge University Press.
 </div>
-<div id="ref-fairfield2017explicit" class="csl-entry" role="doc-biblioentry">
+<div id="ref-fairfield2017explicit" class="csl-entry" role="listitem">
 Fairfield, Tasha, and Andrew E Charman. 2017. <span>“Explicit Bayesian Analysis for Process Tracing: Guidelines, Opportunities, and Caveats.”</span> <em>Political Analysis</em> 25 (3): 363–80.
 </div>
-<div id="ref-frangakis2002principal" class="csl-entry" role="doc-biblioentry">
+<div id="ref-frangakis2002principal" class="csl-entry" role="listitem">
 Frangakis, Constantine E., and Donald B Rubin. 2002. <span>“Principal Stratification in Causal Inference.”</span> <em>Biometrics</em> 58 (1): 21–29.
 </div>
-<div id="ref-humphreys2017qualitative" class="csl-entry" role="doc-biblioentry">
+<div id="ref-humphreys2017qualitative" class="csl-entry" role="listitem">
 Humphreys, Macartan, and Alan Jacobs. forthcoming. <em>Integrated Inferences</em>. Cambridge: Cambridge University Press.
 </div>
-<div id="ref-Kirkland2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Kirkland2021" class="csl-entry" role="listitem">
 Kirkland, Patricia A. 2021. <span>“Business Owners and Executives as Politicians: The Effect on Public Policy.”</span> <em>The Journal of Politics</em> 83 (4): 1652–68.
 </div>
-<div id="ref-nellis_siddiqui_2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-nellis_siddiqui_2018" class="csl-entry" role="listitem">
 Nellis, Gareth, and Niloufer Siddiqui. 2018. <span>“Secular Party Rule and Religious Violence in Pakistan.”</span> <em>American Political Science Review</em> 112 (1): 49–67.
 </div>
-<div id="ref-paglayan2019public" class="csl-entry" role="doc-biblioentry">
+<div id="ref-paglayan2019public" class="csl-entry" role="listitem">
 Paglayan, Agustina S. 2019. <span>“Public-Sector Unions and the Size of Government.”</span> <em>American Journal of Political Science</em> 63 (1): 21–36.
 </div>
-<div id="ref-Prillaman2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Prillaman2022" class="csl-entry" role="listitem">
 Prillaman, Soledad Artiz. 2022. <span>“Strength in Numbers: How Women’s Groups Close India’s Political Gender Gap.”</span> <em>American Journal of Political Science</em>.
 </div>
-<div id="ref-REVKIN2020104981" class="csl-entry" role="doc-biblioentry">
+<div id="ref-REVKIN2020104981" class="csl-entry" role="listitem">
 Revkin, Mara Redlich, and Ariel I. Ahram. 2020. <span>“Perspectives on the Rebel Social Contract: Exit, Voice, and Loyalty in the Islamic State in Iraq and Syria.”</span> <em>World Development</em> 132: 104981.
 </div>
-<div id="ref-snyder_borghard_2011" class="csl-entry" role="doc-biblioentry">
+<div id="ref-snyder_borghard_2011" class="csl-entry" role="listitem">
 Snyder, Jack, and Erica D. Borghard. 2011. <span>“The Cost of Empty Threats: A Penny, Not a Pound.”</span> <em>American Political Science Review</em> 105 (3): 437–56.
 </div>
-<div id="ref-Stokes2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Stokes2016" class="csl-entry" role="listitem">
 Stokes, Leah C. 2016. <span>“Electoral Backlash Against Climate Policy: A Natural Experiment on Retrospective Voting and Local Resistance to Public Policy.”</span> <em>American Journal of Political Science</em> 60 (4): 958–74.
 </div>
-<div id="ref-thistlethwaite1960regression" class="csl-entry" role="doc-biblioentry">
+<div id="ref-thistlethwaite1960regression" class="csl-entry" role="listitem">
 Thistlethwaite, Donald L., and Donald T. Campbell. 1960. <span>“Regression-Discontinuity Analysis: An Alternative to the Ex Post Facto Experiment.”</span> <em>Journal of Educational Psychology</em> 51 (6): 309.
 </div>
-<div id="ref-VanEvera1997" class="csl-entry" role="doc-biblioentry">
+<div id="ref-VanEvera1997" class="csl-entry" role="listitem">
 Van Evera, Stephen. 1997. <em>Guide to Methods for Students of Political Science</em>. Ithaca: Cornell University Press.
 </div>
 </div>
@@ -1013,9 +1013,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1080,6 +1094,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1130,7 +1230,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
+
 
 
 </body></html>

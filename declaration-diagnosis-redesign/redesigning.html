@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.433">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design in the Social Sciences - 11&nbsp; Redesigning</title>
 <style>
@@ -14,9 +14,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -43,48 +44,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -98,8 +70,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -118,10 +89,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -137,7 +105,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
@@ -177,221 +146,263 @@ div.csl-indent {
         createCookie('popupShown', 'yes', 1)
       }
     }
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/redesigning.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../authors.html" class="sidebar-item-text sidebar-link">About the authors</a>
+  <a href="../authors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the authors</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
+  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
+  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
+  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
+  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
+  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
+  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
+  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
+  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
+  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
+  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
+  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
+  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
+  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../library/" class="sidebar-item-text sidebar-link">Research design library</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a href="../library/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design library</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></a>
+  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></a>
+  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></a>
+  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></a>
+  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/complex.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></a>
+  <a href="../library/complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></a>
+  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></a>
+  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></a>
+  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../epilogue.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></a>
+  <a href="../epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../errata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Errata</span></a>
   </div>
 </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
 <a style="color: black; text-decoration: none; font-size: 17px" target="_new" href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences"> <img style="border: 1px solid darkgray; margin-bottom: 5px" width="100px" src="../figures/cover.jpg"><br>Preorder book</a>
 </p>
 </div></div>
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-<li><a href="#redesigning-over-data-strategies" id="toc-redesigning-over-data-strategies" class="nav-link active" data-scroll-target="#redesigning-over-data-strategies"><span class="toc-section-number">11.1</span>  Redesigning over data strategies</a></li>
-  <li>
-<a href="#redesigning-under-model-uncertainty" id="toc-redesigning-under-model-uncertainty" class="nav-link" data-scroll-target="#redesigning-under-model-uncertainty"><span class="toc-section-number">11.2</span>  Redesigning under model uncertainty</a>
-  <ul class="collapse">
-<li><a href="#redesigning-over-two-data-strategy-parameters" id="toc-redesigning-over-two-data-strategy-parameters" class="nav-link" data-scroll-target="#redesigning-over-two-data-strategy-parameters"><span class="toc-section-number">11.2.1</span>  Redesigning over two data strategy parameters</a></li>
-  </ul>
+    <ul>
+<li><a href="#redesigning-over-data-strategies" id="toc-redesigning-over-data-strategies" class="nav-link active" data-scroll-target="#redesigning-over-data-strategies"><span class="header-section-number">11.1</span> Redesigning over data strategies</a></li>
+    <li>
+<a href="#redesigning-under-model-uncertainty" id="toc-redesigning-under-model-uncertainty" class="nav-link" data-scroll-target="#redesigning-under-model-uncertainty"><span class="header-section-number">11.2</span> Redesigning under model uncertainty</a>
+    <ul class="collapse">
+<li><a href="#redesigning-over-two-data-strategy-parameters" id="toc-redesigning-over-two-data-strategy-parameters" class="nav-link" data-scroll-target="#redesigning-over-two-data-strategy-parameters"><span class="header-section-number">11.2.1</span> Redesigning over two data strategy parameters</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#redesigning-over-answer-strategies" id="toc-redesigning-over-answer-strategies" class="nav-link" data-scroll-target="#redesigning-over-answer-strategies"><span class="toc-section-number">11.3</span>  Redesigning over answer strategies</a>
-  <ul class="collapse">
-<li><a href="#sec-ch10s3ss1" id="toc-sec-ch10s3ss1" class="nav-link" data-scroll-target="#sec-ch10s3ss1"><span class="toc-section-number">11.3.1</span>  Redesigning over estimators: Logit, Probit, or OLS?</a></li>
-  </ul>
+    <li>
+<a href="#redesigning-over-answer-strategies" id="toc-redesigning-over-answer-strategies" class="nav-link" data-scroll-target="#redesigning-over-answer-strategies"><span class="header-section-number">11.3</span> Redesigning over answer strategies</a>
+    <ul class="collapse">
+<li><a href="#sec-ch10s3ss1" id="toc-sec-ch10s3ss1" class="nav-link" data-scroll-target="#sec-ch10s3ss1"><span class="header-section-number">11.3.1</span> Redesigning over estimators: Logit, Probit, or OLS?</a></li>
+    </ul>
 </li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="toc-section-number">11.4</span>  Summary</a></li>
-  </ul></nav>
+    <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">11.4</span> Summary</a></li>
+    </ul>
+<ul><li><a class="navlink nav-link" href="https://doi.org/10.7910/DVN/HYVPO5" data-scroll-target="https\://doi.org/10.7910/DVN/HYVPO5">Replication code and data</a></li></ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -412,7 +423,7 @@ div.csl-indent {
 </div>
 
 <header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="sec-ch11" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></span></h1>
+<h1 class="title"><span id="sec-ch11" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></span></h1>
 </div>
 
 
@@ -425,12 +436,12 @@ div.csl-indent {
   </div>
   
 
-</header><p>Redesign is the process of choosing the single empirical design to be implemented from a large family of possible designs. To make this choice, we systematically vary aspects of the data and answer strategies to understand their impact on the most important diagnosands. Redesign entails diagnosing many possible empirical designs over the range of plausible theoretical models, and comparing them.</p>
-<p>A sample size calculation is the prototypical example of a redesign. Holding the model, inquiry, and answer strategy constant, we vary the “sample size” feature of the data strategy in order to understand how a diagnosand like the width of the confidence interval changes as we change <span class="math inline">\(N\)</span>.</p>
-<p>Not surprisingly, most designs get stronger as we allocate more resources to them. The expected width of a confidence interval could always be tighter, if only we had more subjects. Standard errors could always be smaller, if only we took more pre-treatment measurements. At some point, though, the gains are not worth the increased costs, so we settle for an affordable design that meets our scientific goals well enough. (Of course, if the largest affordable design has poor properties, no version of the study is worth implementing). The knowledge-expense tradeoff is a problem that every empirical study faces. The purpose of redesign is to explore this and other tradeoffs in a systematic way.</p>
+</header><p>Redesign is the process of choosing the single empirical design to be implemented from a large family of possible designs. To make this choice, we systematically vary aspects of the data and answer strategies to understand their impact on the most important diagnosands. Redesign entails diagnosing many possible empirical designs over the range of plausible models, and comparing them.</p>
+<p>A sample size calculation is the prototypical result of a redesign. Holding the model, inquiry, and answer strategy constant, we vary the “sample size” feature of the data strategy in order to understand how a diagnosand like the width of the confidence interval changes as we change <span class="math inline">\(N\)</span>. We then choose the <span class="math inline">\(N\)</span> that we will in fact use in our study.</p>
+<p>Not surprisingly, most designs get stronger as we allocate more resources to them. The expected width of a confidence interval could always be tighter, if only we had more subjects. Standard errors could always be smaller, if only we took more pretreatment measurements. At some point, though, the gains are not worth the increased costs, so we settle for an affordable design that meets our scientific goals well enough. (Of course, if the largest affordable design has poor properties, no version of the study is worth implementing). The knowledge-expense trade-off is a problem that every empirical study faces. The purpose of redesign is to explore this and other trade-offs in a systematic way.</p>
 <section id="redesigning-over-data-strategies" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="redesigning-over-data-strategies">
 <span class="header-section-number">11.1</span> Redesigning over data strategies</h2>
-<p>A redesign over a data strategy choice can be summarized with a “power curve.” We want to learn the power of a test at many sample sizes, either so we can learn the price of precision, or so we can learn what sample size is required for a minimum level of statistical power.</p>
+<p>A redesign over a data strategy choice can be illustrated with a “power curve.” We want to learn the power of a test at many sample sizes, either so we can learn the price of precision, or so we can learn what sample size is required for a minimum level of statistical power.</p>
 <p>We start with a minimal design declaration: we draw samples of size <span class="math inline">\(N\)</span> and measure a single binary outcome <span class="math inline">\(Y\)</span>, then conduct a test against the null hypothesis that the true proportion of successes is equal to 0.5.</p>
 <div id="def-ch11num1" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 11.1 </strong></span>A baseline declaration intended to be redesigned over <span class="math inline">\(N\)</span>.</p>
@@ -449,31 +460,27 @@ div.csl-indent {
 </div>
 <div id="lem-ch11num1" class="theorem lemma">
 <p><span class="theorem-title"><strong>Diagnosis 11.1 </strong></span>Diagnosing over a redesign</p>
-<p>To construct a power curve, we redesign our baseline declaration over values of <span class="math inline">\(N\)</span> that vary from 100 to 1000.</p>
+<p>To construct a power curve, we redesign our baseline declaration over values of <span class="math inline">\(N\)</span> that vary from 100 to 1,000.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.1</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">declaration_11.1</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">1000</span>, <span class="fl">100</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-
-</div>
 <p>Redesigns are often easiest to understand graphically, as in <a href="#fig-ch11num1">Figure&nbsp;<span>11.1</span></a>. At each sample size, we learn the associated level of statistical power. We might then choose the least expensive design (sample size 800) that meets a minimum power standard (0.8).</p>
 <div id="fig-ch11num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-11-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Redesigning with respect to sample size"><img src="../figures/figure-11-1.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;11.1: Redesigning with respect to sample size</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-11-1.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;11.1: Redesigning with respect to sample size</figcaption></figure>
 </div>
 </div>
 </section><section id="redesigning-under-model-uncertainty" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="redesigning-under-model-uncertainty">
 <span class="header-section-number">11.2</span> Redesigning under model uncertainty</h2>
 <p>When we diagnose studies, we do so over the many theoretical possibilities we entertain in the model. Through diagnosis, we learn how the values of the diagnosands change depending on model parameters. When we redesign, we explore a <em>range</em> of empirical strategies over the set of model possibilities. Redesign might indicate that one design is optimal under one set of assumptions, but that a different design would be preferred if a different set holds.</p>
-<p>We illustrate this idea with an analysis of the minimum detectable effect (MDE) and how it changes at different sample sizes. The MDE diagnosand is complex. Whereas most diagnosands can be calculated with respect to a single possible model in <span class="math inline">\(M\)</span>, the MDE is defined over a range of possible models. It is obtained by calculating the statistical power of the design over a range of possible effect sizes (holding the empirical design constant), then reporting the effect size that is associated with (typically) 80% statistical power.</p>
-<p>MDEs can be a useful heuristic for thinking about the multiplicity of possibilities in the model. If the minimum detectable effect of a study is enormous – a one standard deviation effect, say – then we don’t have to think much harder about our beliefs about the true effect size. Whatever our priors over the true effect size are, they are probably smaller than 1.0 SDs, so we can immediately conclude that the design is too small.</p>
-<p><a href="#def-ch11num2">Declaration&nbsp;<span>11.2</span></a> contains uncertainty over the true effect size. This uncertainty is encoded in the <code>runif(n = 1, min = 0, max = 0.5)</code> command, which corresponds to our uncertainty over the ATE. It could be as small as 0.0 SDs or as large as 0.5 SDs, and we are equally uncertain about all the values in between. We redesign over three values of <span class="math inline">\(N\)</span>: 100, 500, and 1000, then simulate each design. Each run of simulation features a different true ATE somewhere between 0.0 and 0.5.</p>
+<p>We illustrate this idea with an analysis of the minimum detectable effect (MDE) and how it changes at different sample sizes. The MDE diagnosand is complex. Whereas most diagnosands can be calculated with respect to a single possible model in <span class="math inline">\(M\)</span>, the MDE is defined with respect to a collection of possible models. It is obtained by calculating the statistical power of the design over a range of possible effect sizes (holding the empirical design constant), then reporting the effect size that is associated with (typically) 80% statistical power.</p>
+<p>MDEs can be a useful heuristic for thinking about the multiplicity of possibilities in the model. If the minimum detectable effect of a study is enormous – a one standard deviation effect, say – then we don’t have to think much harder about our beliefs about the true effect size. If we think it implausible that effects could be as large as 1 SD, even if we are otherwise very uncertain, we can immediately conclude that the design is too small.</p>
+<p><a href="#def-ch11num2">Declaration&nbsp;<span>11.2</span></a> contains uncertainty over the true effect size. This uncertainty is encoded in the <code>runif(n = 1, min = 0, max = 0.5)</code> command, which corresponds to our uncertainty over the ATE. It could be as small as 0.0 SDs or as large as 0.5 SDs, and we are equally uncertain about all the values in between. We redesign over three values of <span class="math inline">\(N\)</span>: 100, 500, and 1,000, then simulate each design. Each run of the simulation features a different true ATE somewhere between 0.0 and 0.5.</p>
 <div id="def-ch11num2" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 11.2 </strong></span>Uncertainty over effect size design</p>
+<p><span class="theorem-title"><strong>Declaration 11.2 </strong></span>Uncertainty over effect size design.</p>
 <div class="cell" data-file="scripts_declarations/declaration_11.2.R">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
 <span><span class="va">declaration_11.2</span> <span class="op">&lt;-</span></span>
@@ -494,26 +501,25 @@ div.csl-indent {
 <span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">500</span>, <span class="fl">1000</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><a href="#fig-ch11num2">Figure&nbsp;<span>11.2</span></a> summarizes the simulations by smoothing over effect sizes: the loess curves describes the fraction of simulations that are significant at each effect size.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The MDEs for each sample size can be read off the plot by examining the intersection of each curve with the dotted line at 80% statistical power. At <code>N = 1000</code>, the MDE is approximately 0.175 SDs. At <code>N = 500</code>, the MDE is larger, at approximately 0.225 SDs. If the design only includes 100 units, the MDE is some value higher than 0.5 SDs. We could of course expand the range of effect sizes considered in the diagnosis, but if effect sizes above 0.5 SDs are theoretically unlikely, we don’t even need to – we’ll need a design larger that 100 units in any case.</p>
-<p>This diagnosis and redesign shows how our decisions about the data strategy depend on beliefs in the model. If we think the true effect size is likely to be 0.225 SDs, then a design with 500 subjects is a reasonable choice, but if it is smaller than that, we’ll want a larger study. Small differences in effect size have large consequences for design. Researchers who arrive at a plot like <a href="#fig-ch11num2">Figure&nbsp;<span>11.2</span></a> through redesign should be inspired to sharpen up their prior beliefs about the true effect size, either through literature review, meta-analysis of past studies, or through piloting (see <a href="../lifecycle/planning.html#sec-ch21s4"><span>Section&nbsp;21.4</span></a>).</p>
+<p><a href="#fig-ch11num2">Figure&nbsp;<span>11.2</span></a> summarizes the simulations by smoothing over effect sizes: the loess curves describe the fraction of simulations that are significant at each effect size.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The MDEs for each sample size can be read off the plot by examining the intersection of each curve with the dotted line at 80% statistical power. At <code>N = 1000</code>, the MDE is approximately 0.175 SDs. At <code>N = 500</code>, the MDE is larger, at approximately 0.225 SDs. If the design only includes 100 units, the MDE is some value higher than 0.5 SDs. We could of course expand the range of effect sizes considered in the diagnosis, but if we believe effect sizes above 0.5 SDs are unlikely, we don’t even need to – we’ll need a design larger that 100 units in any case.</p>
+<p>This diagnosis and redesign shows how our decisions about the data strategy depend on beliefs in the model. If we think the true effect size is likely to be 0.225 SDs, then a design with 500 subjects is a reasonable choice, but if it is smaller than that, we’ll want a larger study. Small differences in effect size have large consequences for design. Researchers who arrive at a plot like that in <a href="#fig-ch11num2">Figure&nbsp;<span>11.2</span></a> through redesign should be inspired to sharpen up their prior beliefs about the true effect size, either through literature review, meta-analysis of past studies, or piloting (see <a href="../lifecycle/planning.html#sec-ch21s4"><span>Section&nbsp;21.4</span></a>).</p>
 <div id="fig-ch11num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-11-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Redesigning an experiment over model uncertainty about the true effect size"><img src="../figures/figure-11-2.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;11.2: Redesigning an experiment over model uncertainty about the true effect size</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-11-2.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;11.2: Redesigning an experiment over model uncertainty about the true effect size</figcaption></figure>
 </div>
 </div>
 <section id="redesigning-over-two-data-strategy-parameters" class="level3" data-number="11.2.1"><h3 data-number="11.2.1" class="anchored" data-anchor-id="redesigning-over-two-data-strategy-parameters">
 <span class="header-section-number">11.2.1</span> Redesigning over two data strategy parameters</h3>
-<p>Sometimes, we have a fixed budget (in terms of financial resources, creative effort, or time), so the redesign question isn’t about how much to spend, but how to spend it across competing demands. For example, we might want to find the sample size <code>N</code> and the fraction of units to be treated <code>prob</code> that minimize a design’s error subject to a fixed budget. Data collection costs $2 per unit and treatment costs $20 per treated unit. We need to choose how many subjects to sample and how many to treat. We might rather add an extra 11 units to the control units (additional cost $2 * 11 = $22) than add one extra unit to the treatment group (additional cost $2 + $20 = $22).</p>
+<p>Sometimes, we have a fixed budget (in terms of financial resources, creative effort, or time), so the redesign question isn’t about how much to spend, but how to spend across competing demands. For example, we might want to find the sample size <code>N</code> and the fraction of units to be treated <code>prob</code> that minimize a design’s error subject to a fixed budget. Data collection costs $2 per unit and treatment costs $20 per treated unit. We need to choose how many subjects to sample and how many to treat. We might rather add an extra 11 units to the control units (additional cost $2 * 11 = $22) than add one extra unit to the treatment group (additional cost $2 + $20 = $22).</p>
 <p>We solve the optimization problem:</p>
 <p><span class="math display">\[\begin{align*}
 &amp; \underset{N, N_t}{\text{argmin}}
 &amp; &amp; E_M(L(a^{d} - a^{m}|D_{N, m})) \\
 &amp; \text{s.t.}
-&amp; &amp; 5 N + 20  m \leq 5000
+&amp; &amp; 5 N + 20  m \leq 5000,
 \end{align*}\]</span></p>
 <p>where <span class="math inline">\(L\)</span> is a loss function, increasing in the difference between <span class="math inline">\(a^{d}\)</span> and <span class="math inline">\(a^{m}\)</span>.</p>
-<p>We can explore this optimization with bare-bones declaration of a two-arm trial that depends on two separate data strategy parameters, <code>N</code> and <code>prob</code>:</p>
+<p>We can explore this optimization with a bare-bones declaration of a two-arm trial that depends on two separate data strategy parameters, <code>N</code> and <code>prob</code>:</p>
 <div id="def-ch11num3" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 11.3 </strong></span>Bare-bones two-arm trial</p>
 <div class="cell" data-file="scripts_declarations/declaration_11.3.R">
@@ -530,7 +536,7 @@ div.csl-indent {
 </div>
 <div id="lem-ch11num3" class="theorem lemma">
 <p><span class="theorem-title"><strong>Diagnosis 11.3 </strong></span>Redesigning over two parameters</p>
-<p>We redesign, varying those two parameters over reasonable ranges: 100 to 1000 subjects, with probabilities of assignment from 0.1 to 0.5. The redesign function smartly generates designs with all combinations of the two parameters. We want to consider the consequences of these data strategy choices for two diagnosands: cost and a very common loss function: mean squared error.</p>
+<p>We redesign, varying those two parameters over reasonable ranges: 100 to 1,000 subjects, with probabilities of assignment from 0.1 to 0.5. The redesign function smartly generates designs with all combinations of the two parameters. We want to consider the consequences of these data strategy choices for two diagnosands: cost and a very common loss function, mean squared error.</p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosands</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_diagnosands</span><span class="op">(</span>cost <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">N</span> <span class="op">*</span> <span class="fl">2</span> <span class="op">+</span> <span class="va">prob</span> <span class="op">*</span> <span class="va">N</span> <span class="op">*</span> <span class="fl">20</span><span class="op">)</span>,</span>
@@ -542,22 +548,18 @@ div.csl-indent {
 <span>           prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">diagnose_designs</span><span class="op">(</span>diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-
-</div>
-<p>The diagnosis is represented in <a href="#fig-ch11num3">Figure&nbsp;<span>11.3</span></a>. The top panel shows the cost of empirical designs, at three probabilities of assignment over many sample sizes. The bottom panel shows the RMSE of each design. According to this diagnosis, the best combination that can be achieved for less than $5,000 is <code>N = 600</code> with <code>prob = 0.3</code>. This conclusion is in mild tension with common the design advice that under many circumstances, balanced designs are preferable (see <a href="#sec-ch10s3ss1"><span>Section&nbsp;11.3.1</span></a> in the design library for an in-depth discussion of this point). Here, untreated subjects are so much less expensive than treated subjects, we want to tilt the design towards having a larger control group. How far to tilt depends on model beliefs as well as the cost structure of the study.</p>
+<p>The diagnosis is represented in <a href="#fig-ch11num3">Figure&nbsp;<span>11.3</span></a>. The top panel shows the cost of empirical designs, at three probabilities of assignment over many sample sizes. The bottom panel shows the RMSE of each design. According to this diagnosis, the best combination that can be achieved for less than $5,000 is <code>N = 600</code> with <code>prob = 0.3</code>. This conclusion is in mild tension with the common design advice that under many circumstances, balanced designs are preferable (see <a href="#sec-ch10s3ss1"><span>Section&nbsp;11.3.1</span></a> in the design library for an in-depth discussion of this point). Here, untreated subjects are so much less expensive than treated subjects that we want to tilt the design towards having a larger control group. How far to tilt depends on model beliefs as well as the cost structure of the study.</p>
 <div id="fig-ch11num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-11-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Redesigning an experiment with respect to RMSE and subject to a budget constraint"><img src="../figures/figure-11-3.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;11.3: Redesigning an experiment with respect to RMSE and subject to a budget constraint</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-11-3.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;11.3: Redesigning an experiment with respect to RMSE and subject to a budget constraint</figcaption></figure>
 </div>
 </div>
 </section></section><section id="redesigning-over-answer-strategies" class="level2" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="redesigning-over-answer-strategies">
 <span class="header-section-number">11.3</span> Redesigning over answer strategies</h2>
 <p>Redesign can also take place over possible answer strategies. An inquiry like the average treatment effect could be estimated using many different estimators: difference-in-means, logistic regression, covariate-adjusted ordinary least squares, the stratified estimator, doubly robust regression, targeted maximum likelihood regression, regression trees – the list of possibilities is long. Redesign is an opportunity to explore how many alternative analysis approaches work.</p>
-<p>A key tradeoff in the choice of answer strategy is the bias-variance tradeoff. Some answer strategies exhibit higher bias but lower variance while others have lower bias but higher variance. Choosing which side of the bias-variance tradeoff to take is complicated and the process for choosing among alternatives must be motivated by the scientific goals at hand.</p>
-<p>A common heuristic for trading off bias and variance is the mean squared error (MSE) diagnosand. Mean squared error is equal to the square of bias plus variance, which is to say MSE weighs bias and variance equally. Typically, researchers choose among alternative answer strategies by minimizing MSE. If in your scientific context, bias is more important than variance, you might choose a an answer strategy that accepts slightly more variance in exchange for a decrease in bias.</p>
-<p>To illustrate the bias-variance tradeoff, <a href="#def-ch11num4">Declaration&nbsp;<span>11.4</span></a> describes a setting in which the goal is to estimate the conditional expectation of some outcome variable Y with respect to a covariate X. The true conditional expectation function (produced by the custom <code>dip</code> function) is not smooth, but we estimate it with smooth polynomial functions of increasing order.</p>
+<p>A key trade-off in the choice of answer strategy is the bias-variance trade-off. Some answer strategies exhibit higher bias but lower variance while others have lower bias but higher variance. Choosing which side of the bias-variance trade-off to take is complicated and the process for choosing among alternatives must be motivated by the scientific goals at hand.</p>
+<p>A common heuristic for trading off bias and variance is the mean-squared error (MSE) diagnosand. Mean-squared error is equal to the square of bias plus variance, which is to say, MSE weighs (squared) bias and variance equally. Sometimes, researchers choose among alternative answer strategies by minimizing MSE. If in your scientific context, bias is more important than variance, you might choose an answer strategy that accepts slightly more variance in exchange for a decrease in bias.</p>
+<p>To illustrate the bias-variance tradeoff, <a href="#def-ch11num4">Declaration&nbsp;<span>11.4</span></a> describes a setting in which the goal is to estimate the conditional expectation of some outcome variable <span class="math inline">\(Y\)</span> with respect to a covariate <span class="math inline">\(X\)</span>. The true conditional expectation function (produced by the custom <code>dip</code> function) is not smooth, but we estimate it with smooth polynomial functions of increasing order.</p>
 <div id="def-ch11num4" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 11.4 </strong></span>Conditional expectation function design</p>
 <div class="cell" data-file="scripts_declarations/declaration_11.4.R">
@@ -588,32 +590,27 @@ div.csl-indent {
 <span>  <span class="op">}</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p><a href="#fig-ch11num4">Figure&nbsp;<span>11.4</span></a> shows one draw of this design – the predictions of the CEF made by nine regressions of increasing flexibility. A polynomial of order 1 is just a straight line, a polynomial of order 2 is a quadratic, order 3 is a cubic etc. <span class="citation" data-cites="aronow2019foundations">Aronow and Miller (<a href="../references.html#ref-aronow2019foundations" role="doc-biblioref">2019</a>)</span> show (Theorem 4.3.3) that even nonlinear CEFs can be approximated to up to an arbitrary level of precision by increasing the order of the polynomial regression used to estimate it, given enough data. The figure provides some intuition for why. As the order of the polynomial increases, the line becomes more flexible and can accommodate unexpected twists and turns in the CEF.</p>
+<p><a href="#fig-ch11num4">Figure&nbsp;<span>11.4</span></a> shows one draw of this design – the predictions of the CEF made by nine regressions of increasing flexibility. A polynomial of order 1 is just a straight line, a polynomial of order 2 is a quadratic, that of order 3 is a cubic, etc. <span class="citation" data-cites="aronow2019foundations">Aronow and Miller (<a href="../references.html#ref-aronow2019foundations" role="doc-biblioref">2019</a>)</span> show (Theorem 4.3.3) that even nonlinear CEFs can be approximated to up to an arbitrary level of precision by increasing the order of the polynomial regression used to estimate it, given enough data. The figure provides some intuition for why. As the order of the polynomial increases, the line becomes more flexible and can accommodate unexpected twists and turns in the CEF.</p>
 <div id="fig-ch11num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-11-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Estimating a CEF with polynomials of increasing order"><img src="../figures/figure-11-4.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;11.4: Estimating a CEF with polynomials of increasing order</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-11-4.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;11.4: Estimating a CEF with polynomials of increasing order</figcaption></figure>
 </div>
 <div id="lem-ch11num4" class="theorem lemma">
 <p><span class="theorem-title"><strong>Diagnosis 11.4 </strong></span>Conditional expectation function diagnosis</p>
-<p>Increasing the order of the polynomial decreases bias, but this decrease comes at the cost of variance. <a href="#fig-ch11num4">Figure&nbsp;<span>11.4</span></a> shows how, when the order increases, bias goes down while variance goes up. Mean squared error is one way to trade these two diagnosands off one another. Here, MSE is minimized with a polynomial of order 3. If we were to care much more about bias than variance, perhaps we would choose a polynomial of even higher order.</p>
+<p>Increasing the order of the polynomial decreases bias, but this decrease comes at the cost of variance. <a href="#fig-ch11num4">Figure&nbsp;<span>11.4</span></a> shows how, when the order increases, bias goes down while variance goes up. Mean-squared error is one way to trade these two diagnosands off one another. Here, MSE gains from increasing flexibility disappear after a polynomial order of 3. If we were to care much more about bias than variance, perhaps we would choose a polynomial of even higher order.</p>
 <div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_11.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">diagnosis_11.4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-
-</div>
 <div id="fig-ch11num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-11-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="The bias-variance tradeoff when choosing the flexibility of polynomial approximations to the CEF"><img src="../figures/figure-11-5.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;11.5: The bias-variance tradeoff when choosing the flexibility of polynomial approximations to the CEF</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-11-5.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;11.5: The bias-variance tradeoff when choosing the flexibility of polynomial approximations to the CEF</figcaption></figure>
 </div>
 </div>
 <section id="sec-ch10s3ss1" class="level3" data-number="11.3.1"><h3 data-number="11.3.1" class="anchored" data-anchor-id="sec-ch10s3ss1">
 <span class="header-section-number">11.3.1</span> Redesigning over estimators: Logit, Probit, or OLS?</h3>
-<p>A perennial debate among social scientists is whether to use a binary choice model like logit or probit when the outcome is binary, or if the workhorse OLS estimator is preferable. Unsurprisingly, who is right in this debate depends on other features of the research design. For example, in an observational descriptive study in which the inquiry is a prediction for the probability of success among a particular group of units, explicitly accounting for the binary nature the outcome variable is important; OLS can generate predictions that lie outside the theoretically permissible zero to one range. However, in an experimental causal study in which the inquiry is the average treatment effect, it is not possible for a comparison of treatment and control group means (as estimated by OLS) to generate a nonsense treatment effect estimate in the sense of being outside the theoretically permissible -100 to +100 percentage point range. By contrast, binary choice models like logit or probit can theoretically impossible average treatment effect estimates, once average marginal effect estimates are calculated. This problem is demonstrated in the following declaration, diagnosis, and redesign:</p>
+<p>A perennial debate among social scientists is whether to use a binary choice model like logit or probit when the outcome is binary, or if the workhorse OLS estimator is preferable. Unsurprisingly, who is right in this debate depends on other features of the research design. For example, in an observational descriptive study in which the inquiry is a prediction for the probability of success among a particular group of units, explicitly accounting for the binary nature the outcome variable is important; OLS can generate predictions that lie outside the theoretically permissible 0 to 1 range when the treatment is not binary. However, in a two-arm trial in which the inquiry is the average treatment effect, it is not possible for a comparison of treatment and control group means (as estimated by OLS) to generate a nonsense treatment effect estimate in the sense of being outside the theoretically permissible <span class="math inline">\(-100\)</span> to <span class="math inline">\(+100\)</span> percentage point range.</p>
 <div id="def-ch11num5" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 11.5 </strong></span>Choosing logit, probit, or OLS</p>
+<p><span class="theorem-title"><strong>Declaration 11.5 </strong></span>Choosing logit, probit, or OLS.</p>
 <div class="cell" data-file="scripts_declarations/declaration_11.5.R">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/leeper/margins">margins</a></span><span class="op">)</span></span>
 <span></span>
@@ -662,21 +659,19 @@ div.csl-indent {
 <span>  <span class="fu">redesign</span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span>, by <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><a href="#fig-ch11num6">Figure&nbsp;<span>11.6</span></a> displays the distribution of average treatment effect estimates from this design, over three answer strategies (OLS, logit, and probit) and 10 sample sizes. As sample size increases, the differences across these three approaches vanishes. Eventually, all three sampling distributions center on the ATE. However, at small sample sizes, the three approaches do differ in an important respect. The estimates from OLS are always constrained to the theoretical minimum and maximum average treatment effects of -100 percentage points to 100 percentage points, whereas logit and probit sometimes generate estimates outside this theoretical range.</p>
-<p>This example underlines how the choice among estimators depends so deeply on the inquiry. When the inquiry is a predicted probability, OLS has a bad property of sometimes generating predictions outside the zero-one range. When the inquiry is an average treatment effect, the linear model works just fine, but the nonlinear binary choice models can get tripped up when calculating average marginal effects.</p>
+<p><a href="#fig-ch11num6">Figure&nbsp;<span>11.6</span></a> displays the distribution of average treatment effect estimates from this design, over three answer strategies (OLS, logit, and probit). All three sampling distributions, including the distribution for OLS, are centered on the estimand, despite the binary nature of the outcome variable.</p>
 <div id="fig-ch11num6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-11-6.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Sampling distribution of three estimators, varying sample size"><img src="../figures/figure-11-6.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;11.6: Sampling distribution of three estimators, varying sample size</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-11-6.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;11.6: Sampling distribution of three estimators, varying sample size</figcaption></figure>
 </div>
 </div>
 </section></section><section id="summary" class="level2" data-number="11.4"><h2 data-number="11.4" class="anchored" data-anchor-id="summary">
 <span class="header-section-number">11.4</span> Summary</h2>
-<p>We use the redesign process to learn about design tradeoffs. Most often, the tradeoff is some measure of design quality like power against cost. We want to trade quality off against cost until we find a good enough study for the budget. Sometimes the tradeoff is across design parameters – holding budget fixed, should we sample more clusters or should we sample more people within clusters? Sometimes the tradeoff is across diagnosands – more flexible answer strategies may exhibit lower bias but higher variance. Minimizing RMSE is weighs bias and variance equally, but other weightings are possible. Tradeoffs across diagnosands are implicit in many design decisions, but design diagnosis and redesign can help make those tradeoffs explicit.</p>
+<p>We use the redesign process to learn about design trade-offs. Most often, the trade-off is some measure of design quality like power against cost. We want to trade quality off against cost until we find a good enough study for the budget. Sometimes the trade-off is across design parameters – holding budget fixed, should we sample more clusters or should we sample more people within clusters? Sometimes the trade-off is across diagnosands – more flexible answer strategies may exhibit lower bias, but higher variance. Minimizing RMSE weighs bias and variance equally, but other weightings are possible. Tradeoffs across diagnosands are implicit in many design decisions, but design diagnosis and redesign can help make those trade-offs explicit.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-aronow2019foundations" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-aronow2019foundations" class="csl-entry" role="listitem">
 Aronow, Peter M., and Benjamin T. Miller. 2019. <em>Foundations of Agnostic Statistics</em>. Cambridge, UK: Cambridge University Press.
 </div>
 </div>
@@ -710,9 +705,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -777,6 +786,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -827,7 +922,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":true,"selector":".lightbox"});</script>
+
 
 
 </body></html>

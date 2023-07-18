@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.433">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design in the Social Sciences - 17&nbsp; Experimental : descriptive</title>
 <style>
@@ -14,9 +14,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -43,48 +44,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -98,8 +70,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -118,10 +89,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -137,7 +105,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
@@ -178,235 +147,275 @@ div.csl-indent {
       }
     }
 </script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span>
-</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/experimental-descriptive.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../authors.html" class="sidebar-item-text sidebar-link">About the authors</a>
+  <a href="../authors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the authors</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
+  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
+  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
+  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
+  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
+  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
+  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
+  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
+  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
+  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
+  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
+  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
+  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
+  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../library/" class="sidebar-item-text sidebar-link">Research design library</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a href="../library/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design library</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></a>
+  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></a>
+  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></a>
+  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></a>
+  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/complex.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></a>
+  <a href="../library/complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></a>
+  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></a>
+  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></a>
+  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../epilogue.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></a>
+  <a href="../epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../errata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Errata</span></a>
   </div>
 </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
 <a style="color: black; text-decoration: none; font-size: 17px" target="_new" href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences"> <img style="border: 1px solid darkgray; margin-bottom: 5px" width="100px" src="../figures/cover.jpg"><br>Preorder book</a>
 </p>
 </div></div>
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
+    <ul>
 <li>
-<a href="#audit-experiments" id="toc-audit-experiments" class="nav-link active" data-scroll-target="#audit-experiments"><span class="toc-section-number">17.1</span>  Audit experiments</a>
-  <ul class="collapse">
-<li><a href="#intervening-to-decrease-discrimination" id="toc-intervening-to-decrease-discrimination" class="nav-link" data-scroll-target="#intervening-to-decrease-discrimination"><span class="toc-section-number">17.1.1</span>  Intervening to decrease discrimination</a></li>
-  <li><a href="#avoiding-post-treatment-bias" id="toc-avoiding-post-treatment-bias" class="nav-link" data-scroll-target="#avoiding-post-treatment-bias"><span class="toc-section-number">17.1.2</span>  Avoiding post-treatment bias</a></li>
-  <li><a href="#design-examples" id="toc-design-examples" class="nav-link" data-scroll-target="#design-examples"><span class="toc-section-number">17.1.3</span>  Design examples</a></li>
-  </ul>
+<a href="#audit-experiments" id="toc-audit-experiments" class="nav-link active" data-scroll-target="#audit-experiments"><span class="header-section-number">17.1</span> Audit experiments</a>
+    <ul class="collapse">
+<li><a href="#intervening-to-decrease-discrimination" id="toc-intervening-to-decrease-discrimination" class="nav-link" data-scroll-target="#intervening-to-decrease-discrimination"><span class="header-section-number">17.1.1</span> Intervening to decrease discrimination</a></li>
+    <li><a href="#avoiding-post-treatment-bias" id="toc-avoiding-post-treatment-bias" class="nav-link" data-scroll-target="#avoiding-post-treatment-bias"><span class="header-section-number">17.1.2</span> Avoiding post-treatment bias</a></li>
+    <li><a href="#design-examples" id="toc-design-examples" class="nav-link" data-scroll-target="#design-examples"><span class="header-section-number">17.1.3</span> Design examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#list-experiments" id="toc-list-experiments" class="nav-link" data-scroll-target="#list-experiments"><span class="toc-section-number">17.2</span>  List experiments</a>
-  <ul class="collapse">
-<li><a href="#design-examples-1" id="toc-design-examples-1" class="nav-link" data-scroll-target="#design-examples-1"><span class="toc-section-number">17.2.1</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#list-experiments" id="toc-list-experiments" class="nav-link" data-scroll-target="#list-experiments"><span class="header-section-number">17.2</span> List experiments</a>
+    <ul class="collapse">
+<li><a href="#design-examples-1" id="toc-design-examples-1" class="nav-link" data-scroll-target="#design-examples-1"><span class="header-section-number">17.2.1</span> Design examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#sec-ch17s3" id="toc-sec-ch17s3" class="nav-link" data-scroll-target="#sec-ch17s3"><span class="toc-section-number">17.3</span>  Conjoint experiments</a>
-  <ul class="collapse">
-<li><a href="#design-examples-2" id="toc-design-examples-2" class="nav-link" data-scroll-target="#design-examples-2"><span class="toc-section-number">17.3.1</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#sec-ch17s3" id="toc-sec-ch17s3" class="nav-link" data-scroll-target="#sec-ch17s3"><span class="header-section-number">17.3</span> Conjoint experiments</a>
+    <ul class="collapse">
+<li><a href="#design-examples-2" id="toc-design-examples-2" class="nav-link" data-scroll-target="#design-examples-2"><span class="header-section-number">17.3.1</span> Design examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#behavioral-games" id="toc-behavioral-games" class="nav-link" data-scroll-target="#behavioral-games"><span class="toc-section-number">17.4</span>  Behavioral games</a>
-  <ul class="collapse">
-<li><a href="#design-examples-3" id="toc-design-examples-3" class="nav-link" data-scroll-target="#design-examples-3"><span class="toc-section-number">17.4.1</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#behavioral-games" id="toc-behavioral-games" class="nav-link" data-scroll-target="#behavioral-games"><span class="header-section-number">17.4</span> Behavioral games</a>
+    <ul class="collapse">
+<li><a href="#design-examples-3" id="toc-design-examples-3" class="nav-link" data-scroll-target="#design-examples-3"><span class="header-section-number">17.4.1</span> Design examples</a></li>
+    </ul>
 </li>
-  </ul></nav>
+    </ul>
+<ul><li><a class="navlink nav-link" href="https://doi.org/10.7910/DVN/HYVPO5" data-scroll-target="https\://doi.org/10.7910/DVN/HYVPO5">Replication code and data</a></li></ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -427,7 +436,7 @@ div.csl-indent {
 </div>
 
 <header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">
+<h1 class="title">
 <span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span>
 </h1>
 </div>
@@ -486,7 +495,7 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>Our descriptive inquiry is the fraction of the sample that discriminates: <span class="math inline">\(\E[\textrm{Type}_i = \textrm{Anti}~\textrm{Latino}~\textrm{discriminator}]\)</span>. Under the behavioral assumptions about these three types enumerated in <a href="#tbl-audittypes">Table&nbsp;<span>17.1</span></a> (whether these types would respond depending on the ethnicity of the sender), <span class="math inline">\(\E[\textrm{Type}_i = \textrm{Anti}~\textrm{Latino}~\textrm{discriminator}] = \E[Y_i(Z_i = \textrm{White}) - Y_i(Z_i = \textrm{Latino})]\)</span>. Because this is the expected difference between two potential outcomes, we can use a randomized experiment that randomizes ethnicity to measure this descriptive quantity. In the data strategy, we randomly sample from the <span class="math inline">\(Y_i(Z_i = \textrm{White})\)</span>’s and from the <span class="math inline">\(Y_i(Z_i = \textrm{Latino})\)</span>’s, then in the answer strategy, we take a difference-in-means, generating an estimate of the fraction of the sample that discriminates.</p>
+<p>Our descriptive inquiry is the fraction of the sample that discriminates: <span class="math inline">\(\mathbb{E}[\textrm{Type}_i = \textrm{Anti}~\textrm{Latino}~\textrm{discriminator}]\)</span>. Under the behavioral assumptions about these three types enumerated in <a href="#tbl-audittypes">Table&nbsp;<span>17.1</span></a> (whether these types would respond depending on the ethnicity of the sender), <span class="math inline">\(\mathbb{E}[\textrm{Type}_i = \textrm{Anti}~\textrm{Latino}~\textrm{discriminator}] = \mathbb{E}[Y_i(Z_i = \textrm{White}) - Y_i(Z_i = \textrm{Latino})]\)</span>. Because this is the expected difference between two potential outcomes, we can use a randomized experiment that randomizes ethnicity to measure this descriptive quantity. In the data strategy, we randomly sample from the <span class="math inline">\(Y_i(Z_i = \textrm{White})\)</span>’s and from the <span class="math inline">\(Y_i(Z_i = \textrm{Latino})\)</span>’s, then in the answer strategy, we take a difference-in-means, generating an estimate of the fraction of the sample that discriminates.</p>
 <p>Some finer points about these behavioral assumptions. First, we assume that always-responders and never-responders do not engage in discrimination. It could be that some never-responders don’t respond to Latino voters out of racial animus, but do not respond to White voters out of laziness. In this model, such officials would be not be classified as anti-Latino discriminators by assumption. Second, we assume that there are no anti-White discriminators. If there were, then the difference-in-means would not be unbiased for the fraction of anti-Latino discriminators. Instead, it would be unbiased for “net” discrimination, i.e., how much more election officials discriminate against Latinos versus how much they discriminate against Whites. Anti-Latino discrimination and net discrimination are theoretically separate inquiries. To assess whether the no anti-White discriminators assumption is appropriate in a given setting, substantive knowledge is needed. It is not an assumption that can be directly tested empirically.</p>
 <p><a href="#def-ch17num1">Declaration&nbsp;<span>17.1</span></a> connects the behavioral assumptions we make about subjects to the randomized experiment we use to infer the value of a descriptive quantity. Only never-responders fail to respond to the White request while only always-responders respond to the Latino request. The inquiry is the proportion of the sample that is an anti-Latino discriminator. The data strategy involves randomly assigning the putative ethnicity of the voter making the request and recording whether it was responded to. The answer strategy is compares average response rates by randomly assigned group.</p>
 <div id="def-ch17num1" class="declaration theorem definition">
@@ -566,26 +575,24 @@ div.csl-indent {
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_17.1</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_17.2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-
-</div>
-<div class="cell">
 <div class="cell-output-display">
 <div id="tbl-auditdiagnosis" class="anchored">
-
-<table>
-<caption>Table&nbsp;17.2:  Audit experiment power analysis </caption>
- <thead><tr>
-<th style="text-align:center;"> power </th>
-   <th style="text-align:center;"> se(power) </th>
-   <th style="text-align:center;"> n_sims </th>
-  </tr></thead>
-<tbody><tr>
-<td style="text-align:center;"> 0.15 </td>
-   <td style="text-align:center;"> 0.01 </td>
-   <td style="text-align:center;"> 2000 </td>
-  </tr></tbody>
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Table&nbsp;17.2: Audit experiment power analysis</caption>
+<thead><tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">power</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">se(power)</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">n_sims</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td style="text-align: center;">0.15</td>
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">2000</td>
+</tr></tbody>
 </table>
 </div>
+
+
 </div>
 </div>
 </div>
@@ -645,9 +652,8 @@ div.csl-indent {
 <p>Under these two extra assumptions, the list experimental estimate of the prevalence of opposition to granting Muslim immigrants citizenship is 21.9%.</p>
 <p><a href="#fig-ch17num1">Figure&nbsp;<span>17.1</span></a> represents the list experimental design. The no liars assumption is represented by the lack of an edge from sensitivity bias <span class="math inline">\(S\)</span> to the list experiment outcome <span class="math inline">\(Y^L\)</span>. The no design effects assumption is not represented on the DAG.</p>
 <div id="fig-ch17num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-17-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Directed acyclic graph for the list experiment."><img src="../figures/figure-17-1.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.1: Directed acyclic graph for the list experiment.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-17-1.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;17.1: Directed acyclic graph for the list experiment.</figcaption></figure>
 </div>
 <p><a href="#def-ch17num3">Declaration&nbsp;<span>17.3</span></a> describes a list experimental design. The model includes subjects’ true attitude (<code>Y_star</code>) and whether or not their direct question answers are contaminated by sensitivity bias (<code>S</code>). These two variables combine to determine how subjects will respond when asked directly about support for the policy. The potential outcomes model combines three types of information to determine how subjects will respond to the list experiment: their responses to the three control items (<code>control_count</code>), their true attitude (<code>Y_star</code>), and whether they are assigned to see the treatment or the control list (<code>Z</code>). Our definition of the potential outcomes embeds the no liars and no design effects assumptions.</p>
 <p>The inquiry is the prevalence rate of the sensitive item. In the data strategy, we randomly assign 50% of our 500 subjects to treatment and the remainder to control. In the survey, we ask subjects the list experiment question (<code>Y_list</code>). Our answer strategy estimates the prevalence rate by calculating the difference-in-means in the list outcome between treatment and control.</p>
@@ -678,24 +684,22 @@ div.csl-indent {
 <span><span class="va">diagnosis_17.2</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_17.3</span>, diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-
-</div>
-<div class="cell">
 <div class="cell-output-display">
 <div id="tbl-diagnosislist" class="anchored">
-
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Table&nbsp;17.4:  Diagnosis of a list experiment. </caption>
- <thead><tr>
-<th style="text-align:center;"> Bias </th>
-   <th style="text-align:center;"> Mean CI width </th>
-  </tr></thead>
-<tbody><tr>
-<td style="text-align:center;"> -0.002 </td>
-   <td style="text-align:center;"> 0.325 </td>
-  </tr></tbody>
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table&nbsp;17.4: Diagnosis of a list experiment.</caption>
+<thead><tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Bias</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Mean CI width</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td style="text-align: center;">-0.002</td>
+<td style="text-align: center;">0.325</td>
+</tr></tbody>
 </table>
 </div>
+
+
 </div>
 </div>
 <p>We see in the diagnosis that the list experiment generates unbiased estimates of the prevalence rate, but it is extremely imprecise: the average width of the confidence interval is enormous at 33 percentage points. If the estimate from a list experiment using this design is 25%, this would imply a confidence interval ranging from about 9% to 41% holding the sensitive item, ranging from rare to common and thus providing only a limited amount of information about the prevalence rate.</p>
@@ -734,9 +738,8 @@ div.csl-indent {
 </div>
 </div>
 <div id="fig-ch17num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-17-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Redesign to illustrate tradeoffs in RMSE between list experiment and direct question"><img src="../figures/figure-17-2.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.2: Redesign to illustrate tradeoffs in RMSE between list experiment and direct question</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-17-2.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;17.2: Redesign to illustrate tradeoffs in RMSE between list experiment and direct question</figcaption></figure>
 </div>
 <section id="design-examples-1" class="level3" data-number="17.2.1"><h3 data-number="17.2.1" class="anchored" data-anchor-id="design-examples-1">
 <span class="header-section-number">17.2.1</span> Design examples</h3>
@@ -823,9 +826,8 @@ div.csl-indent {
 </div>
 <p><a href="#fig-ch17num3">Figure&nbsp;<span>17.3</span></a> shows the sampling distribution of the five AMCE estimators. All five are unbiased, but with only 500 subjects evaluating three pairs of candidates, the power for the smaller AMCEs is less than ideal.</p>
 <div id="fig-ch17num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-17-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Sampling Distribution of five AMCE estimators. Statistical significance of estimates indicated by color"><img src="../figures/figure-17-3.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.3: Sampling Distribution of five AMCE estimators. Statistical significance of estimates indicated by color</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-17-3.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;17.3: Sampling Distribution of five AMCE estimators. Statistical significance of estimates indicated by color</figcaption></figure>
 </div>
 </div>
 <section id="design-examples-2" class="level3" data-number="17.3.1"><h3 data-number="17.3.1" class="anchored" data-anchor-id="design-examples-2">
@@ -865,9 +867,8 @@ div.csl-indent {
 <p>The global maximum depends on which of these yields higher utility.</p>
 <p><a href="#fig-ch17num4">Figure&nbsp;<span>17.4</span></a> shows the returns to the trustor from different investments given their own and the trustee’s other-regarding preferences. We see that when other-regarding preferences are weak for both players, nothing is given and nothing is returned. When other regarding preferences are strong for player 1, they offer substantial amounts even when nothing is expected in return. When other-regarding preferences are sufficiently strong for player 2, player 1 invests fully in anticipation of a return.</p>
 <div id="fig-ch17num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-17-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Illustration of a trust game"><img src="../figures/figure-17-4.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.4: Illustration of a trust game</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-17-4.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;17.4: Illustration of a trust game</figcaption></figure>
 </div>
 <p>The predictions of this model are then used to define the inquiry and predict outcomes in the model declaration. The model part of the design includes information on underlying preferences. For this we make use of a set of functions that characterize stipulated beliefs about behavior.</p>
 <div class="cell" data-file="scripts_declarations/declaration_17.6_a.R">
@@ -936,76 +937,77 @@ div.csl-indent {
 <div class="cell">
 <div class="cell-output-display">
 <div id="tbl-behavioralgames" class="anchored">
-
-<table>
-<caption>Table&nbsp;17.5:  Behavioral games diagnosis </caption>
- <thead><tr>
-<th style="text-align:center;"> pair </th>
-   <th style="text-align:center;"> ID_2 </th>
-   <th style="text-align:center;"> ID_1 </th>
-   <th style="text-align:center;"> a_2 </th>
-   <th style="text-align:center;"> a_1 </th>
-   <th style="text-align:center;"> invested </th>
-   <th style="text-align:center;"> returned </th>
-  </tr></thead>
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Table&nbsp;17.5: Behavioral games diagnosis</caption>
+<thead><tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">pair</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">ID_2</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">ID_1</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">a_2</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">a_1</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">invested</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">returned</th>
+</tr></thead>
 <tbody>
-<tr>
-<td style="text-align:center;"> T1 </td>
-   <td style="text-align:center;"> 357 </td>
-   <td style="text-align:center;"> 026 </td>
-   <td style="text-align:center;"> 0.69 </td>
-   <td style="text-align:center;"> 0.51 </td>
-   <td style="text-align:center;"> 1.00 </td>
-   <td style="text-align:center;"> 0.69 </td>
-  </tr>
-<tr>
-<td style="text-align:center;"> T2 </td>
-   <td style="text-align:center;"> 298 </td>
-   <td style="text-align:center;"> 103 </td>
-   <td style="text-align:center;"> 0.60 </td>
-   <td style="text-align:center;"> 0.22 </td>
-   <td style="text-align:center;"> 1.00 </td>
-   <td style="text-align:center;"> 0.60 </td>
-  </tr>
-<tr>
-<td style="text-align:center;"> T3 </td>
-   <td style="text-align:center;"> 362 </td>
-   <td style="text-align:center;"> 390 </td>
-   <td style="text-align:center;"> 0.65 </td>
-   <td style="text-align:center;"> 0.09 </td>
-   <td style="text-align:center;"> 1.00 </td>
-   <td style="text-align:center;"> 0.65 </td>
-  </tr>
-<tr>
-<td style="text-align:center;"> T4 </td>
-   <td style="text-align:center;"> 249 </td>
-   <td style="text-align:center;"> 224 </td>
-   <td style="text-align:center;"> 0.50 </td>
-   <td style="text-align:center;"> 0.96 </td>
-   <td style="text-align:center;"> 0.96 </td>
-   <td style="text-align:center;"> 0.49 </td>
-  </tr>
-<tr>
-<td style="text-align:center;"> T5 </td>
-   <td style="text-align:center;"> 152 </td>
-   <td style="text-align:center;"> 304 </td>
-   <td style="text-align:center;"> 0.32 </td>
-   <td style="text-align:center;"> 0.33 </td>
-   <td style="text-align:center;"> 1.00 </td>
-   <td style="text-align:center;"> 0.32 </td>
-  </tr>
-<tr>
-<td style="text-align:center;"> T6 </td>
-   <td style="text-align:center;"> 250 </td>
-   <td style="text-align:center;"> 244 </td>
-   <td style="text-align:center;"> 0.94 </td>
-   <td style="text-align:center;"> 0.21 </td>
-   <td style="text-align:center;"> 1.00 </td>
-   <td style="text-align:center;"> 0.94 </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: center;">T1</td>
+<td style="text-align: center;">357</td>
+<td style="text-align: center;">026</td>
+<td style="text-align: center;">0.69</td>
+<td style="text-align: center;">0.51</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: center;">0.69</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T2</td>
+<td style="text-align: center;">298</td>
+<td style="text-align: center;">103</td>
+<td style="text-align: center;">0.60</td>
+<td style="text-align: center;">0.22</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: center;">0.60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T3</td>
+<td style="text-align: center;">362</td>
+<td style="text-align: center;">390</td>
+<td style="text-align: center;">0.65</td>
+<td style="text-align: center;">0.09</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: center;">0.65</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T4</td>
+<td style="text-align: center;">249</td>
+<td style="text-align: center;">224</td>
+<td style="text-align: center;">0.50</td>
+<td style="text-align: center;">0.96</td>
+<td style="text-align: center;">0.96</td>
+<td style="text-align: center;">0.49</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T5</td>
+<td style="text-align: center;">152</td>
+<td style="text-align: center;">304</td>
+<td style="text-align: center;">0.32</td>
+<td style="text-align: center;">0.33</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: center;">0.32</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T6</td>
+<td style="text-align: center;">250</td>
+<td style="text-align: center;">244</td>
+<td style="text-align: center;">0.94</td>
+<td style="text-align: center;">0.21</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: center;">0.94</td>
+</tr>
 </tbody>
 </table>
 </div>
+
+
 </div>
 </div>
 <p>We have a row for each game, we have the (unobserved) <span class="math inline">\(a_i, a_j\)</span> parameters as well as actions by both players in the data.</p>
@@ -1018,13 +1020,9 @@ div.csl-indent {
 <span>  <span class="fu">redesign</span><span class="op">(</span>deceive <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-
-</div>
 <div id="fig-ch17num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-17-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Diagnosis of bias in the analysis of trust games with and without deception"><img src="../figures/figure-17-5.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.5: Diagnosis of bias in the analysis of trust games with and without deception</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-17-5.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;17.5: Diagnosis of bias in the analysis of trust games with and without deception</figcaption></figure>
 </div>
 <p>We see that we do well for the first inquiry whether or not deception is used. The first inquiry–<em>trusting</em>–is after all a simple measurement of choices albeit in a controlled setting. But we do poorly for the second and third inquiries.</p>
 <p>Whether we have bias in the measure of <em>trustworthy</em> depends on the use of deception, however, and so presents researchers with a serious design challenge.</p>
@@ -1041,62 +1039,62 @@ div.csl-indent {
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-aguilar2015" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-aguilar2015" class="csl-entry" role="listitem">
 Aguilar, Rosario, Saul Cunow, and Scott Desposato. 2015. <span>“Choice Sets, Gender, and Candidate Choice in Brazil.”</span> <em>Electoral Studies</em> 39: 230–42. https://doi.org/<a href="https://doi.org/10.1016/j.electstud.2015.03.011">https://doi.org/10.1016/j.electstud.2015.03.011</a>.
 </div>
-<div id="ref-avdeenko_gilligan_2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-avdeenko_gilligan_2015" class="csl-entry" role="listitem">
 Avdeenko, Alexandra, and Michael J. Gilligan. 2015. <span>“International Interventions to Build Social Capital: Evidence from a Field Experiment in Sudan.”</span> <em>American Political Science Review</em> 109 (3): 427–49.
 </div>
-<div id="ref-bansak_hainmueller_hopkins_yamamoto_2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bansak_hainmueller_hopkins_yamamoto_2019" class="csl-entry" role="listitem">
 Bansak, Kirk, Jens Hainmueller, Daniel J. Hopkins, and Teppei Yamamoto. 2021. <span>“Beyond the Breaking Point? Survey Satisficing in Conjoint Experiments.”</span> <em>Political Science Research and Methods</em> 9 (1): 53–71.
 </div>
-<div id="ref-birkelund2022gender" class="csl-entry" role="doc-biblioentry">
+<div id="ref-birkelund2022gender" class="csl-entry" role="listitem">
 Birkelund, Gunn Elisabeth, Bram Lancee, Edvard Nergård Larsen, Javier G Polavieja, Jonas Radl, and Ruta Yemane. 2022. <span>“Gender Discrimination in Hiring: Evidence from a Cross-National Harmonized Field Experiment.”</span> <em>European Sociological Review</em> 38 (3): 337–54.
 </div>
-<div id="ref-blair2018list" class="csl-entry" role="doc-biblioentry">
+<div id="ref-blair2018list" class="csl-entry" role="listitem">
 Blair, Graeme, Alexander Coppock, and Margaret Moor. 2020. <span>“When to Worry about Sensitivity Bias: A Social Reference Theory and Evidence from 30 Years of List Experiments.”</span> <em>American Political Science Review</em> 114 (4): 1297–1315.
 </div>
-<div id="ref-butler_crabtree_2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-butler_crabtree_2017" class="csl-entry" role="listitem">
 Butler, Daniel M., and Charles Crabtree. 2017. <span>“Moving Beyond Measurement: Adapting Audit Studies to Test Bias-Reducing Interventions.”</span> <em>Journal of Experimental Political Science</em> 4 (1): 57–67.
 </div>
-<div id="ref-coppock2017did" class="csl-entry" role="doc-biblioentry">
+<div id="ref-coppock2017did" class="csl-entry" role="listitem">
 Coppock, Alexander. 2017. <span>“Did Shy Trump Supporters Bias the 2016 Polls? Evidence from a Nationally-Representative List Experiment.”</span> <em>Statistics, Politics and Policy</em> 8 (1): 29–40.
 </div>
-<div id="ref-coppock_2019b" class="csl-entry" role="doc-biblioentry">
+<div id="ref-coppock_2019b" class="csl-entry" role="listitem">
 ———. 2019. <span>“<span class="nocase">Avoiding Post-Treatment Bias in Audit Experiments</span>.”</span> <em>Journal of Experimental Political Science</em> 6 (1): 1–4.
 </div>
-<div id="ref-creightonjamal2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-creightonjamal2015" class="csl-entry" role="listitem">
 Creighton, Mathew J., and Amaney Jamal. 2015. <span>“Does Islam Play a Role in Anti-Immigrant Sentiment? An Experimental Approach.”</span> <em>Social Science Research</em> 53: 89–103.
 </div>
-<div id="ref-Cruz2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Cruz2019" class="csl-entry" role="listitem">
 Cruz, Cesi. 2019. <span>“Social Networks and the Targeting of Vote Buying.”</span> <em>Comparative Political Studies</em> 52 (3): 382–411.
 </div>
-<div id="ref-fang2019can" class="csl-entry" role="doc-biblioentry">
+<div id="ref-fang2019can" class="csl-entry" role="listitem">
 Fang, Albert H, Andrew M Guess, and Macartan Humphreys. 2019. <span>“Can the Government Deter Discrimination? Evidence from a Randomized Intervention in New York City.”</span> <em>The Journal of Politics</em> 81 (1): 127–41.
 </div>
-<div id="ref-green2012statistical" class="csl-entry" role="doc-biblioentry">
+<div id="ref-green2012statistical" class="csl-entry" role="listitem">
 Green, Donald P., and Andrej Tusicisny. 2012. <span>“Statistical Analysis of Results from Laboratory Studies in Experimental Economics: A Critique of Current Practice.”</span> <em>Available at SSRN 2181654</em>.
 </div>
-<div id="ref-Hainmueller2014" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Hainmueller2014" class="csl-entry" role="listitem">
 Hainmueller, Jens, Daniel J. Hopkins, and Teppei Yamamoto. 2014. <span>“<span class="nocase">Causal Inference in Conjoint Analysis: Understanding Multidimensional Choices via Stated Preference Experiments</span>.”</span> <em>Political Analysis</em> 22 (1): 1–30.
 </div>
-<div id="ref-Imai2011" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Imai2011" class="csl-entry" role="listitem">
 Imai, Kosuke. 2011. <span>“<span class="nocase">Multivariate Regression Analysis for the Item Count Technique</span>.”</span> <em>Journal of the American Statistical Association</em> 106 (494): 407–16.
 </div>
-<div id="ref-Iyengar2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Iyengar2015" class="csl-entry" role="listitem">
 Iyengar, Shanto, and Sean J. Westwood. 2015. <span>“Fear and Loathing Across Party Lines: New Evidence on Group Polarization.”</span> <em>American Journal of Political Science</em> 59 (3): 690–707.
 </div>
-<div id="ref-johnson2011trust" class="csl-entry" role="doc-biblioentry">
+<div id="ref-johnson2011trust" class="csl-entry" role="listitem">
 Johnson, Noel D, and Alexandra A Mislin. 2011. <span>“Trust Games: A Meta-Analysis.”</span> <em>Journal of Economic Psychology</em> 32 (5): 865–89.
 </div>
-<div id="ref-Kao2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Kao2022" class="csl-entry" role="listitem">
 Kao, Kristen, and Mara R. Revkin. 2022. <span>“Retribution or Reconciliation? Post-Conflict Attitudes Toward Enemy Collaborators.”</span> <em>American Journal of Political Science</em>.
 </div>
-<div id="ref-miller1984new" class="csl-entry" role="doc-biblioentry">
+<div id="ref-miller1984new" class="csl-entry" role="listitem">
 Miller, Judith Droitcour. 1984. <span>“A New Survey Technique for Studying Deviant Behavior.”</span> PhD thesis, George Washington University.
 </div>
-<div id="ref-WHITE_NATHAN_FALLER_2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-WHITE_NATHAN_FALLER_2015" class="csl-entry" role="listitem">
 White, Ariel R., Noah L. Nathan, and Julie K. Faller. 2015. <span>“<span class="nocase">What Do I Need to Vote? Bureaucratic Discretion and Discrimination by Local Election Officials</span>.”</span> <em>American Political Science Review</em> 109 (1): 129–42.
 </div>
 </div>
@@ -1131,9 +1129,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1198,6 +1210,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1248,7 +1346,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":true});</script>
+
 
 
 </body></html>

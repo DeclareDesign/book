@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.433">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design in the Social Sciences - 19&nbsp; Complex designs</title>
 <style>
@@ -14,9 +14,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -43,48 +44,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -98,8 +70,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -118,10 +89,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -137,7 +105,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
@@ -178,233 +147,273 @@ div.csl-indent {
       }
     }
 </script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span>
-</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/complex.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../authors.html" class="sidebar-item-text sidebar-link">About the authors</a>
+  <a href="../authors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the authors</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
+  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
+  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
+  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
+  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
+  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
+  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
+  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
+  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
+  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
+  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
+  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
+  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
+  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../library/" class="sidebar-item-text sidebar-link">Research design library</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a href="../library/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design library</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></a>
+  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></a>
+  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></a>
+  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></a>
+  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/complex.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></a>
+  <a href="../library/complex.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></a>
+  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></a>
+  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></a>
+  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../epilogue.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></a>
+  <a href="../epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../errata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Errata</span></a>
   </div>
 </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
 <a style="color: black; text-decoration: none; font-size: 17px" target="_new" href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences"> <img style="border: 1px solid darkgray; margin-bottom: 5px" width="100px" src="../figures/cover.jpg"><br>Preorder book</a>
 </p>
 </div></div>
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
+    <ul>
 <li>
-<a href="#discovery-using-causal-forests" id="toc-discovery-using-causal-forests" class="nav-link active" data-scroll-target="#discovery-using-causal-forests"><span class="toc-section-number">19.1</span>  Discovery using causal forests</a>
-  <ul class="collapse">
-<li><a href="#design-examples" id="toc-design-examples" class="nav-link" data-scroll-target="#design-examples"><span class="toc-section-number">19.1.1</span>  Design examples</a></li>
-  </ul>
+<a href="#discovery-using-causal-forests" id="toc-discovery-using-causal-forests" class="nav-link active" data-scroll-target="#discovery-using-causal-forests"><span class="header-section-number">19.1</span> Discovery using causal forests</a>
+    <ul class="collapse">
+<li><a href="#design-examples" id="toc-design-examples" class="nav-link" data-scroll-target="#design-examples"><span class="header-section-number">19.1.1</span> Design examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#structural-estimation" id="toc-structural-estimation" class="nav-link" data-scroll-target="#structural-estimation"><span class="toc-section-number">19.2</span>  Structural estimation</a>
-  <ul class="collapse">
-<li><a href="#design-examples-1" id="toc-design-examples-1" class="nav-link" data-scroll-target="#design-examples-1"><span class="toc-section-number">19.2.1</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#structural-estimation" id="toc-structural-estimation" class="nav-link" data-scroll-target="#structural-estimation"><span class="header-section-number">19.2</span> Structural estimation</a>
+    <ul class="collapse">
+<li><a href="#design-examples-1" id="toc-design-examples-1" class="nav-link" data-scroll-target="#design-examples-1"><span class="header-section-number">19.2.1</span> Design examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#sec-ch19s3" id="toc-sec-ch19s3" class="nav-link" data-scroll-target="#sec-ch19s3"><span class="toc-section-number">19.3</span>  Meta-analysis</a>
-  <ul class="collapse">
-<li><a href="#design-examples-2" id="toc-design-examples-2" class="nav-link" data-scroll-target="#design-examples-2"><span class="toc-section-number">19.3.1</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#sec-ch19s3" id="toc-sec-ch19s3" class="nav-link" data-scroll-target="#sec-ch19s3"><span class="header-section-number">19.3</span> Meta-analysis</a>
+    <ul class="collapse">
+<li><a href="#design-examples-2" id="toc-design-examples-2" class="nav-link" data-scroll-target="#design-examples-2"><span class="header-section-number">19.3.1</span> Design examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#multi-site-studies" id="toc-multi-site-studies" class="nav-link" data-scroll-target="#multi-site-studies"><span class="toc-section-number">19.4</span>  Multi-site studies</a>
-  <ul class="collapse">
-<li><a href="#design-examples-3" id="toc-design-examples-3" class="nav-link" data-scroll-target="#design-examples-3"><span class="toc-section-number">19.4.1</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#multi-site-studies" id="toc-multi-site-studies" class="nav-link" data-scroll-target="#multi-site-studies"><span class="header-section-number">19.4</span> Multi-site studies</a>
+    <ul class="collapse">
+<li><a href="#design-examples-3" id="toc-design-examples-3" class="nav-link" data-scroll-target="#design-examples-3"><span class="header-section-number">19.4.1</span> Design examples</a></li>
+    </ul>
 </li>
-  </ul></nav>
+    </ul>
+<ul><li><a class="navlink nav-link" href="https://doi.org/10.7910/DVN/HYVPO5" data-scroll-target="https\://doi.org/10.7910/DVN/HYVPO5">Replication code and data</a></li></ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -425,7 +434,7 @@ div.csl-indent {
 </div>
 
 <header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">
+<h1 class="title">
 <span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span>
 </h1>
 </div>
@@ -517,16 +526,14 @@ div.csl-indent {
 </div>
 <p>Before turning to diagnosis we can get a feel for the performance of the causal forest estimator by comparing the predicted effects for each unit generated by the estimator, with the actual unit level treatment effects generated by <em>M</em>, as shown in <a href="#fig-ch19num1">Figure&nbsp;<span>19.1</span></a>.</p>
 <div id="fig-ch19num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-19-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="One draw from the causal forests design"><img src="../figures/figure-19-1.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.1: One draw from the causal forests design</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-19-1.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;19.1: One draw from the causal forests design</figcaption></figure>
 </div>
 <p>We see that we get some traction — but we also get a lot wrong. Estimating unit level causal effects is hard. We see in particular that that the <em>range</em> of the predictions is narrower than the range of the true effects, which will mean that the average effects in the groups with the best or worst predicted effects will generally not be the same as the effects for the groups with the best and worst actual effects.</p>
 <p>To see how the design is choosing the best predictor, we illustrate the adjusted r-squared for a regression predicting the treatment effect with a partitioning of each variable, as well as the rank of predictors given the r-squared number in <a href="#fig-ch19num2">Figure&nbsp;<span>19.2</span></a>. We see that the third covariate <code>X.3</code> has a very high adjusted r-squared, and is ranked first, and most of the covariates are bunched at a very low r-squared.</p>
 <div id="fig-ch19num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-19-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="How the best predictor estimates are constructed, from ranking variables in terms of their prediction power of the individual treatment effects as measured by the r-squared in a regression."><img src="../figures/figure-19-2.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.2: How the best predictor estimates are constructed, from ranking variables in terms of their prediction power of the individual treatment effects as measured by the r-squared in a regression.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-19-2.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;19.2: How the best predictor estimates are constructed, from ranking variables in terms of their prediction power of the individual treatment effects as measured by the r-squared in a regression.</figcaption></figure>
 </div>
 <div id="lem-ch19num1" class="theorem lemma">
 <p><span class="theorem-title"><strong>Diagnosis 19.1 </strong></span>Causal forests diagnosis</p>
@@ -554,9 +561,8 @@ div.csl-indent {
 <span>                  diagnosands <span class="op">=</span> <span class="va">discovery_diagnosands</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch19num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-19-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Sampling distributions of estimates of five estimands from the causal forest design."><img src="../figures/figure-19-3.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.3: Sampling distributions of estimates of five estimands from the causal forest design.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-19-3.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;19.3: Sampling distributions of estimates of five estimands from the causal forest design.</figcaption></figure>
 </div>
 <p>We see that we do very well in identifying the most powerful predictor of heterogeneity, correct nearly all of the time. (We are never “correct” for the continuous estimands, but we would never expect to be.) Our estimator for the effects for the weak group within the testing set is unbiased. This follows from the fact that we are in essence estimating the causal effect within a subgroup that has been selected without knowledge of their potential outcomes. Substantively the effects for this group are indeed considerably lower than the average treatment effects and so we have been successful in identifying units that experience weak effects on average and estimating the effects for these. Thus we have been successful for a version of both inquiries.</p>
 <p>The other diagnoses sharpen our understanding of what questions cannot be so easily answered with this design. First we see that estimates of the effects for the weak performers do not do a good job of estimating effects for the <em>worst</em> performers. This highlights that the procedure can generate unbiased estimates for <em>a</em> group that does poorly but not <em>the</em> group that does most poorly. We can further see from the diagnosis that while we recover effects for the test group well, we have some bias when trying to estimate the effects for the weak performing set in the combined training and test data data. The reason for bias here is that training group units enter the worse performing set in part because of their realized outcomes (which helped define the set) and not just on the basis of pre-treatment features. The bias is small however—so small it is barely discernible in the histograms—and so the restriction of analysis to the training set only ultimately increases mean squared error here.</p>
@@ -643,68 +649,65 @@ div.csl-indent {
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_19.2</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_19.2</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-
-</div>
-<div class="cell">
 <div class="cell-output-display">
 <div id="tbl-structuraldiagnosisa" class="anchored">
-
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Table&nbsp;19.1:  Estimation of structural parameters from behavior in a bargaining game </caption>
- <thead><tr>
-<th style="text-align:left;"> Inquiry </th>
-   <th style="text-align:left;"> Mean Estimand </th>
-   <th style="text-align:left;"> Bias </th>
-   <th style="text-align:left;"> RMSE </th>
-  </tr></thead>
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table&nbsp;19.1: Estimation of structural parameters from behavior in a bargaining game</caption>
+<thead><tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Inquiry</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Mean Estimand</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Bias</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">RMSE</th>
+</tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;"> alpha </td>
-   <td style="text-align:left;"> 0.50 </td>
-   <td style="text-align:left;"> -0.00 </td>
-   <td style="text-align:left;"> 0.08 </td>
-  </tr>
-<tr>
-<td style="text-align:left;">  </td>
-   <td style="text-align:left;"> (0.00) </td>
-   <td style="text-align:left;"> (0.01) </td>
-   <td style="text-align:left;"> (0.01) </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> delta </td>
-   <td style="text-align:left;"> 0.80 </td>
-   <td style="text-align:left;"> 0.00 </td>
-   <td style="text-align:left;"> 0.03 </td>
-  </tr>
-<tr>
-<td style="text-align:left;">  </td>
-   <td style="text-align:left;"> (0.00) </td>
-   <td style="text-align:left;"> (0.00) </td>
-   <td style="text-align:left;"> (0.00) </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> kappa </td>
-   <td style="text-align:left;"> 2.00 </td>
-   <td style="text-align:left;"> 0.07 </td>
-   <td style="text-align:left;"> 0.26 </td>
-  </tr>
-<tr>
-<td style="text-align:left;">  </td>
-   <td style="text-align:left;"> (0.00) </td>
-   <td style="text-align:left;"> (0.03) </td>
-   <td style="text-align:left;"> (0.02) </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">alpha</td>
+<td style="text-align: left;">0.50</td>
+<td style="text-align: left;">-0.00</td>
+<td style="text-align: left;">0.08</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">(0.00)</td>
+<td style="text-align: left;">(0.01)</td>
+<td style="text-align: left;">(0.01)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">delta</td>
+<td style="text-align: left;">0.80</td>
+<td style="text-align: left;">0.00</td>
+<td style="text-align: left;">0.03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">(0.00)</td>
+<td style="text-align: left;">(0.00)</td>
+<td style="text-align: left;">(0.00)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">kappa</td>
+<td style="text-align: left;">2.00</td>
+<td style="text-align: left;">0.07</td>
+<td style="text-align: left;">0.26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">(0.00)</td>
+<td style="text-align: left;">(0.03)</td>
+<td style="text-align: left;">(0.02)</td>
+</tr>
 </tbody>
 </table>
 </div>
+
+
 </div>
 </div>
 <p>Turning to diagnosis we see first that we do a good job in recovering parameter values. All three parameters are estimated precisely. From these, we can calculate estimates of causal quantities such as the first mover advantage and assess the extent to which this depends on features such as the length of the game.</p>
 <p>As always, diagnosis can be used to fine-tune designs. In <a href="#fig-ch19num4">Figure&nbsp;<span>19.4</span></a>, we compare design performance as we vary <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(n\)</span>. We see from the comparison of designs that estimates are less accurate when either longer games are used or when there are many nonstrategic players. Shorter games have an advantage here of producing a more pronounced difference in the payoffs of first and second movers. The gains from shorter games are especially pronounced in settings in which many nonstrategic players dampen the variation in payoffs. Though not shown here, it we can also use design diagnosis to show that the design fails if we set <span class="math inline">\(n\)</span> at 3 (for instance) as in this case <span class="math inline">\(\delta\)</span> is not identified (the same probability distribution is consistent with different values for <span class="math inline">\(\delta\)</span>).</p>
 <div id="fig-ch19num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-19-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Performance of the structural estimation design depends on the number of rounds and the types of players."><img src="../figures/figure-19-4.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.4: Performance of the structural estimation design depends on the number of rounds and the types of players.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-19-4.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;19.4: Performance of the structural estimation design depends on the number of rounds and the types of players.</figcaption></figure>
 </div>
 <p>The basic structure used here can be used for a wide range of structural models. The first step is to write down the theory well enough to specify the implied likelihood function. Doing so might require adding noise to the model so that the data that are seen in practice can be seen in theory. The next step is to estimate the model parameters that have the greatest likelihood of having producing the observed data. (The same fundamental approach can be used with estimation via Bayesian methods or methods of moments.)</p>
 <p>The payoffs from structural estimation can be great: we can operationalize our theoretical models to make specific real-world predictions by disciplining them with real-world information. The risks are large too. Because the inferences are necessarily model dependent, model misspecification can lead to faulty conclusions. When doing structural estimation, apply <a href="../introduction/research-design-principles.html#exm-designagnostically">Principle&nbsp;<span>3.2</span></a>: Design agnostically liberally.</p>
@@ -762,13 +765,9 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_19.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_19.3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-
-</div>
 <div id="fig-ch19num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-19-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Coverage and bias of the fixed and random effects under two settings, effect homogeneity and effect heterogeneity."><img src="../figures/figure-19-5.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.5: Coverage and bias of the fixed and random effects under two settings, effect homogeneity and effect heterogeneity.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-19-5.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;19.5: Coverage and bias of the fixed and random effects under two settings, effect homogeneity and effect heterogeneity.</figcaption></figure>
 </div>
 </div>
 <section id="design-examples-2" class="level3" data-number="19.3.1"><h3 data-number="19.3.1" class="anchored" data-anchor-id="design-examples-2">
@@ -881,9 +880,8 @@ div.csl-indent {
 <p><span class="theorem-title"><strong>Diagnosis 19.4 </strong></span>Multi-site studies diagnosis</p>
 <p>We now diagnose the two designs, with and without coordination, and assess the bias for the average common effect treatment and the average effect of the site-specific optimal treatment inquiries. <a href="#fig-ch19num6">Figure&nbsp;<span>19.6</span></a> displays the sampling distribution of the estimates from the two designs along with the estimands from these two inquiries in each case.</p>
 <div id="fig-ch19num6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-19-6.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Sampling distribution of the meta-analytic estimates from a multi-site trial compared to the true average common treatment effect and the true average effect of the site-specific optimal treatment effect."><img src="../figures/figure-19-6.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.6: Sampling distribution of the meta-analytic estimates from a multi-site trial compared to the true average common treatment effect and the true average effect of the site-specific optimal treatment effect.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-19-6.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;19.6: Sampling distribution of the meta-analytic estimates from a multi-site trial compared to the true average common treatment effect and the true average effect of the site-specific optimal treatment effect.</figcaption></figure>
 </div>
 <p>In the coordinated trial, of course, the common treatment and the implemented treatment are the same. Only the coordinated study produces unbiased estimates for the coordinated inquiry. However the diagnosis shows that <em>both</em> approaches (strongly and weakly coordinated trials) are unbiased for the (more powerful) “selected treatment” inquiry. This inquiry then is well defined and can be estimated without bias. The difficulty with this inquiry though is that being able to make an out-of-sample predictions for this inquiry requires information you might not have: what version of a treatment is likely to be selected in that new context.</p>
 </div>
@@ -895,62 +893,62 @@ div.csl-indent {
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-Bauer2021" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Bauer2021" class="csl-entry" role="listitem">
 Bauer, Paul C., and Bernhard Clemm von Hohenberg. 2021. <span>“Believing and Sharing Information by Fake Sources: An Experiment.”</span> <em>Political Communication</em> 38 (6): 647–71.
 </div>
-<div id="ref-blair_christensen_rudkin_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-blair_christensen_rudkin_2021" class="csl-entry" role="listitem">
 Blair, Graeme, Darin Christensen, and Aaron Rudkin. 2021. <span>“Do Commodity Price Shocks Cause Armed Conflict? A Meta-Analysis of Natural Experiments.”</span> <em>American Political Science Review</em> 115 (2): 709–16.
 </div>
-<div id="ref-borenstein2021introduction" class="csl-entry" role="doc-biblioentry">
+<div id="ref-borenstein2021introduction" class="csl-entry" role="listitem">
 Borenstein, Michael, Larry V Hedges, Julian PT Higgins, and Hannah R Rothstein. 2021. <em>Introduction to Meta-Analysis</em>. John Wiley &amp; Sons.
 </div>
-<div id="ref-Dunning2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Dunning2019" class="csl-entry" role="listitem">
 Dunning, Thad, Guy Grossman, Macartan Humphreys, Susan D. Hyde, Craig McIntosh, Gareth Nellis, Claire L. Adida, et al. 2019. <span>“Voter Information Campaigns and Political Accountability: Cumulative Findings from a Preregistered Meta-Analysis of Coordinated Trials.”</span> <em>Science Advances</em> 5 (7): 1–10.
 </div>
-<div id="ref-francois2015power" class="csl-entry" role="doc-biblioentry">
+<div id="ref-francois2015power" class="csl-entry" role="listitem">
 Francois, Patrick, Ilia Rainer, and Francesco Trebbi. 2015. <span>“How Is Power Shared in Africa?”</span> <em>Econometrica</em> 83 (2): 465–503.
 </div>
-<div id="ref-frederiksen_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-frederiksen_2022" class="csl-entry" role="listitem">
 Frederiksen, Kristian Vrede Skaaning. 2022. <span>“Does Competence Make Citizens Tolerate Undemocratic Behavior?”</span> <em>American Political Science Review</em>, 1–7.
 </div>
-<div id="ref-Frey2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Frey2022" class="csl-entry" role="listitem">
 Frey, Anderson, Gabriel López-Moctezuma, and Sergio Montero. 2022. <span>“Sleeping with the Enemy: Effective Representation Under Dynamic Electoral Competition.”</span> <em>American Journal of Political Science</em>.
 </div>
-<div id="ref-galos_coppock_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-galos_coppock_2022" class="csl-entry" role="listitem">
 Galos, Diana, and Alexander Coppock. 2022. <span>“What Have Employment Audits Taught Us about the Effects of Gender on Hiring? A Meta-Analyis.”</span> <em>Unpublished Manuscript</em>.
 </div>
-<div id="ref-green2022using" class="csl-entry" role="doc-biblioentry">
+<div id="ref-green2022using" class="csl-entry" role="listitem">
 Green, Jon, James N. Druckman, Matthew A. Baum, David Lazer, Katherine Ognyanova, Matthew Simonson, Jennifer Lin, Mauricio Santillana, and Roy H. Perlis. 2022. <span>“Using General Messages to Persuade on a Politicized Scientific Issue.”</span> <em>British Journal of Political Science</em>.
 </div>
-<div id="ref-king1998unifying" class="csl-entry" role="doc-biblioentry">
+<div id="ref-king1998unifying" class="csl-entry" role="listitem">
 King, Gary. 1998. <em>Unifying Political Methodology: The Likelihood Theory of Statistical Inference</em>. Ann Arbor, Michigan: University of Michigan Press.
 </div>
-<div id="ref-paluck_green_green_2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-paluck_green_green_2019" class="csl-entry" role="listitem">
 Paluck, Elizabeth Levy, Seth A. Green, and Donald P. Green. 2019. <span>“The Contact Hypothesis Re-Evaluated.”</span> <em>Behavioural Public Policy</em> 3 (2): 129–58.
 </div>
-<div id="ref-Pettigrew:2006th" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Pettigrew:2006th" class="csl-entry" role="listitem">
 Pettigrew, Thomas F., and Linda R. Tropp. 2006. <span>“A Meta-Analytic Test of Intergroup Contact Theory.”</span> <em>Journal of Personality and Social Psychology</em> 90 (5): 751–83.
 </div>
-<div id="ref-reiss2007structural" class="csl-entry" role="doc-biblioentry">
+<div id="ref-reiss2007structural" class="csl-entry" role="listitem">
 Reiss, Peter C, and Frank A Wolak. 2007. <span>“Structural Econometric Modeling: Rationales and Examples from Industrial Organization.”</span> <em>Handbook of Econometrics</em> 6: 4277–4415.
 </div>
-<div id="ref-rubinstein1982perfect" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rubinstein1982perfect" class="csl-entry" role="listitem">
 Rubinstein, Ariel. 1982. <span>“Perfect Equilibrium in a Bargaining Model.”</span> <em>Econometrica: Journal of the Econometric Society</em>, 97–109.
 </div>
-<div id="ref-Samii2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Samii2016" class="csl-entry" role="listitem">
 Samii, Cyrus. 2016. <span>“Causal Empiricism in Quantitative Research.”</span> <em>The Journal of Politics</em> 78 (3): 941–55.
 </div>
-<div id="ref-schwarz_coppock_2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-schwarz_coppock_2020" class="csl-entry" role="listitem">
 Schwarz, Susanne, and Alexander Coppock. 2022. <span>“<span class="nocase">What Have We Learned About Gender From Candidate Choice Experiments? A Meta-analysis of 67 Factorial Survey Experiments</span>.”</span> <em>Journal of Politics</em> 84 (2): 655–68.
 </div>
-<div id="ref-wager2018estimation" class="csl-entry" role="doc-biblioentry">
+<div id="ref-wager2018estimation" class="csl-entry" role="listitem">
 Wager, Stefan, and Susan Athey. 2018. <span>“Estimation and Inference of Heterogeneous Treatment Effects Using Random Forests.”</span> <em>Journal of the American Statistical Association</em> 113 (523): 1228–42.
 </div>
-<div id="ref-white1982maximum" class="csl-entry" role="doc-biblioentry">
+<div id="ref-white1982maximum" class="csl-entry" role="listitem">
 White, Halbert. 1982. <span>“Maximum Likelihood Estimation of Misspecified Models.”</span> <em>Econometrica: Journal of the Econometric Society</em> 50 (1): 1–25.
 </div>
-<div id="ref-wilke2020field" class="csl-entry" role="doc-biblioentry">
+<div id="ref-wilke2020field" class="csl-entry" role="listitem">
 Wilke, Anna M., and Macartan Humphreys. 2020. <span>“Field Experiments, Theory, and External Validity.”</span> SAGE Handbook of Research Methods in Political Science; International Relations.
 </div>
 </div>
@@ -984,9 +982,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1051,6 +1063,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1101,7 +1199,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","loop":true});</script>
+
 
 
 </body></html>

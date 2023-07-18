@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.433">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Research Design in the Social Sciences - 15&nbsp; Observational : descriptive</title>
 <style>
@@ -14,9 +14,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -43,48 +44,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -98,8 +70,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -118,10 +89,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -137,7 +105,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
@@ -178,235 +147,275 @@ div.csl-indent {
       }
     }
 </script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span>
-</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/observational-descriptive.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../authors.html" class="sidebar-item-text sidebar-link">About the authors</a>
+  <a href="../authors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the authors</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
+  <a href="../introduction/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
+  <a href="../introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
+  <a href="../introduction/research-design-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
+  <a href="../introduction/getting-started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
+  <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
+  <a href="../declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
+  <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
+  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
+  <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
+  <a href="../declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
+  <a href="../declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
+  <a href="../declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
+  <a href="../declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../library/" class="sidebar-item-text sidebar-link">Research design library</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a href="../library/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design library</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></a>
+  <a href="../library/observational-descriptive.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></a>
+  <a href="../library/observational-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></a>
+  <a href="../library/experimental-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></a>
+  <a href="../library/experimental-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/complex.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></a>
+  <a href="../library/complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></a>
+  <a href="../lifecycle/planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></a>
+  <a href="../lifecycle/realization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></a>
+  <a href="../lifecycle/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../epilogue.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></a>
+  <a href="../epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../errata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Errata</span></a>
   </div>
 </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
 <a style="color: black; text-decoration: none; font-size: 17px" target="_new" href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences"> <img style="border: 1px solid darkgray; margin-bottom: 5px" width="100px" src="../figures/cover.jpg"><br>Preorder book</a>
 </p>
 </div></div>
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
+    <ul>
 <li>
-<a href="#simple-random-sampling" id="toc-simple-random-sampling" class="nav-link active" data-scroll-target="#simple-random-sampling"><span class="toc-section-number">15.1</span>  Simple random sampling</a>
-  <ul class="collapse">
-<li><a href="#sec-ch15s1ss1" id="toc-sec-ch15s1ss1" class="nav-link" data-scroll-target="#sec-ch15s1ss1"><span class="toc-section-number">15.1.1</span>  What can go wrong</a></li>
-  <li><a href="#design-examples" id="toc-design-examples" class="nav-link" data-scroll-target="#design-examples"><span class="toc-section-number">15.1.2</span>  Design Examples</a></li>
-  </ul>
+<a href="#simple-random-sampling" id="toc-simple-random-sampling" class="nav-link active" data-scroll-target="#simple-random-sampling"><span class="header-section-number">15.1</span> Simple random sampling</a>
+    <ul class="collapse">
+<li><a href="#sec-ch15s1ss1" id="toc-sec-ch15s1ss1" class="nav-link" data-scroll-target="#sec-ch15s1ss1"><span class="header-section-number">15.1.1</span> What can go wrong</a></li>
+    <li><a href="#design-examples" id="toc-design-examples" class="nav-link" data-scroll-target="#design-examples"><span class="header-section-number">15.1.2</span> Design Examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#sec-ch15s2" id="toc-sec-ch15s2" class="nav-link" data-scroll-target="#sec-ch15s2"><span class="toc-section-number">15.2</span>  Cluster random sampling</a>
-  <ul class="collapse">
-<li><a href="#design-examples-1" id="toc-design-examples-1" class="nav-link" data-scroll-target="#design-examples-1"><span class="toc-section-number">15.2.1</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#sec-ch15s2" id="toc-sec-ch15s2" class="nav-link" data-scroll-target="#sec-ch15s2"><span class="header-section-number">15.2</span> Cluster random sampling</a>
+    <ul class="collapse">
+<li><a href="#design-examples-1" id="toc-design-examples-1" class="nav-link" data-scroll-target="#design-examples-1"><span class="header-section-number">15.2.1</span> Design examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#sec-ch15s3" id="toc-sec-ch15s3" class="nav-link" data-scroll-target="#sec-ch15s3"><span class="toc-section-number">15.3</span>  Multi-level regression and poststratification</a>
-  <ul class="collapse">
-<li><a href="#redesign-over-answer-strategies" id="toc-redesign-over-answer-strategies" class="nav-link" data-scroll-target="#redesign-over-answer-strategies"><span class="toc-section-number">15.3.1</span>  Redesign over answer strategies</a></li>
-  <li><a href="#design-examples-2" id="toc-design-examples-2" class="nav-link" data-scroll-target="#design-examples-2"><span class="toc-section-number">15.3.2</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#sec-ch15s3" id="toc-sec-ch15s3" class="nav-link" data-scroll-target="#sec-ch15s3"><span class="header-section-number">15.3</span> Multi-level regression and poststratification</a>
+    <ul class="collapse">
+<li><a href="#redesign-over-answer-strategies" id="toc-redesign-over-answer-strategies" class="nav-link" data-scroll-target="#redesign-over-answer-strategies"><span class="header-section-number">15.3.1</span> Redesign over answer strategies</a></li>
+    <li><a href="#design-examples-2" id="toc-design-examples-2" class="nav-link" data-scroll-target="#design-examples-2"><span class="header-section-number">15.3.2</span> Design examples</a></li>
+    </ul>
 </li>
-  <li>
-<a href="#index-creation" id="toc-index-creation" class="nav-link" data-scroll-target="#index-creation"><span class="toc-section-number">15.4</span>  Index creation</a>
-  <ul class="collapse">
-<li><a href="#design-examples-3" id="toc-design-examples-3" class="nav-link" data-scroll-target="#design-examples-3"><span class="toc-section-number">15.4.1</span>  Design examples</a></li>
-  </ul>
+    <li>
+<a href="#index-creation" id="toc-index-creation" class="nav-link" data-scroll-target="#index-creation"><span class="header-section-number">15.4</span> Index creation</a>
+    <ul class="collapse">
+<li><a href="#design-examples-3" id="toc-design-examples-3" class="nav-link" data-scroll-target="#design-examples-3"><span class="header-section-number">15.4.1</span> Design examples</a></li>
+    </ul>
 </li>
-  </ul></nav>
+    </ul>
+<ul><li><a class="navlink nav-link" href="https://doi.org/10.7910/DVN/HYVPO5" data-scroll-target="https\://doi.org/10.7910/DVN/HYVPO5">Replication code and data</a></li></ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -427,7 +436,7 @@ div.csl-indent {
 </div>
 
 <header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">
+<h1 class="title">
 <span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span>
 </h1>
 </div>
@@ -455,9 +464,8 @@ div.csl-indent {
 <p>The data strategy <span class="math inline">\(D\)</span> has two components: a survey question <span class="math inline">\(Q\)</span> and a sampling procedure <span class="math inline">\(S\)</span>. The survey question asks subjects to place themselves on a left-right scale that varies from 1 (most liberal) to 7 (most conservative). We approximate this measurement procedure with a function that “cuts” the latent ideology into 7 separate groups. This survey question will introduce measurement error insofar as it does not distinguish among people with different latent ideologies who, because of our measurement tool, place themselves at the same place on the seven-point scale.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Our main hope for this measurement procedure is that all of the people who give themselves higher scores are indeed more conservative than those who give themselves lower scores. The sampling procedure is “complete” random sampling. We draw a sample of exactly <span class="math inline">\(n = 100\)</span>, where every member of the population has an equal probability of inclusion in the sample, <span class="math inline">\(\frac{n}{N}\)</span>.</p>
 <p>The model and data strategy are represented by the DAG in <a href="#fig-ch15num1">Figure&nbsp;<span>15.1</span></a>. The DAG shows that the observed outcome <span class="math inline">\(Y\)</span> is a function of the latent score <span class="math inline">\(Y^*\)</span> and the survey question <span class="math inline">\(Q\)</span>. The observed outcome <span class="math inline">\(Y\)</span> is only measured for sampled units, i.e., units that have <span class="math inline">\(S = 1\)</span>. This simple diagram represents important design assumptions. First, no arrow leads from <span class="math inline">\(Y^*\)</span> to <span class="math inline">\(S\)</span>. If such an arrow were present, then units with higher or lower latent ideologies would be more likely to be sampled. Second, an arrow does lead from <span class="math inline">\(Y^*\)</span> to <span class="math inline">\(Y\)</span>, indicating that we assume the measured variable does indeed respond to the latent variable. Finally, the diagram includes an explicit role for the survey question, which helps us to consider how alternative wordings of <span class="math inline">\(Q\)</span> might change the observed variable <span class="math inline">\(Y\)</span>.</p>
 <div id="fig-ch15num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-15-1.svg" class="lightbox" title="Directed acyclic graph for the simple random sampling design" data-gallery="quarto-lightbox-gallery-1"><img src="../figures/figure-15-1.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;15.1: Directed acyclic graph for the simple random sampling design</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-15-1.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;15.1: Directed acyclic graph for the simple random sampling design</figcaption></figure>
 </div>
 <p>Our inquiry <span class="math inline">\(I\)</span> is the population mean of the <em>measured</em> variable <span class="math inline">\(Y\)</span>: <span class="math inline">\(\frac{1}{N} \sum_1^N Y_i = \bar{Y}\)</span>, rather than the mean of the latent variable <span class="math inline">\(Y^*\)</span>. In this sense, our inquiry is “data-strategy dependent”, since we are interested in the average value of what we <em>would</em> measure for any member of the population were we to sample them.</p>
 <p>Our answer strategy is the sample mean estimator: <span class="math inline">\(\widehat{\overline{Y}} = \frac{1}{n} \sum_1^n Y_i\)</span>, implemented here as an ordinary least squares regression to facilitate the easy calculation of auxiliary statistics like the standard error of the estimate and the 95% confidence interval.</p>
@@ -492,30 +500,28 @@ div.csl-indent {
 <span><span class="va">diagnosis_15.1</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_15.1</span>, diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-
-</div>
-<div class="cell">
 <div class="cell-output-display">
 <div id="tbl-diagnosis15s1" class="anchored">
-
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Table&nbsp;15.1:  Complete random sampling design diagnosis. </caption>
- <thead><tr>
-<th style="text-align:center;"> Bias </th>
-   <th style="text-align:center;"> RMSE </th>
-  </tr></thead>
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table&nbsp;15.1: Complete random sampling design diagnosis.</caption>
+<thead><tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Bias</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">RMSE</th>
+</tr></thead>
 <tbody>
-<tr>
-<td style="text-align:center;"> 0.00 </td>
-   <td style="text-align:center;"> 0.11 </td>
-  </tr>
-<tr>
-<td style="text-align:center;"> (0.00) </td>
-   <td style="text-align:center;"> (0.00) </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">0.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">(0.00)</td>
+<td style="text-align: center;">(0.00)</td>
+</tr>
 </tbody>
 </table>
 </div>
+
+
 </div>
 </div>
 <p>The diagnosis in <a href="#tbl-diagnosis15s1">Table&nbsp;<span>15.1</span></a> indicates that under complete random sampling, the sample mean estimator of the population mean is unbiased and that the root mean squared error is manageable at 0.11.</p>
@@ -552,13 +558,9 @@ div.csl-indent {
 <span>  <span class="fu">redesign</span><span class="op">(</span>effort <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5</span>, by <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">diagnose_designs</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-
-</div>
 <div id="fig-ch15num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-15-2.svg" class="lightbox" title="Redesigning the random sampling design over researcher effort" data-gallery="quarto-lightbox-gallery-2"><img src="../figures/figure-15-2.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;15.2: Redesigning the random sampling design over researcher effort</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-15-2.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;15.2: Redesigning the random sampling design over researcher effort</figcaption></figure>
 </div>
 </div>
 </section><section id="design-examples" class="level3" data-number="15.1.2"><h3 data-number="15.1.2" class="anchored" data-anchor-id="design-examples">
@@ -655,13 +657,9 @@ div.csl-indent {
 <span>                    cluster_prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.9</span>, <span class="fl">0.1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">diagnosis_15.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">designs</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-
-</div>
 <div id="fig-ch15num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-15-3.svg" class="lightbox" title="Trading off the number of clusters and the number of individuals per cluster" data-gallery="quarto-lightbox-gallery-3"><img src="../figures/figure-15-3.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;15.3: Trading off the number of clusters and the number of individuals per cluster</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-15-3.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;15.3: Trading off the number of clusters and the number of individuals per cluster</figcaption></figure>
 </div>
 </div>
 <section id="design-examples-1" class="level3" data-number="15.2.1"><h3 data-number="15.2.1" class="anchored" data-anchor-id="design-examples-1">
@@ -730,9 +728,8 @@ div.csl-indent {
 </div>
 <p><a href="#fig-ch15num4">Figure&nbsp;<span>15.4</span></a> shows one draw from this design, plotting the MRP estimates against the true level of opinion.</p>
 <div id="fig-ch15num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-15-4.svg" class="lightbox" title="Estimates of state-level option plotted against their true levels" data-gallery="quarto-lightbox-gallery-4"><img src="../figures/figure-15-4.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;15.4: Estimates of state-level option plotted against their true levels</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-15-4.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;15.4: Estimates of state-level option plotted against their true levels</figcaption></figure>
 </div>
 <section id="redesign-over-answer-strategies" class="level3" data-number="15.3.1"><h3 data-number="15.3.1" class="anchored" data-anchor-id="redesign-over-answer-strategies">
 <span class="header-section-number">15.3.1</span> Redesign over answer strategies</h3>
@@ -773,9 +770,8 @@ div.csl-indent {
 <p>On the right side of the figure, we see the bias, RMSE, and standard deviation diagnosands for each inquiry under all three answer strategies. Under no pooling, bias is very low, but the RMSE and standard deviation for small states is very high. Under full pooling, the standard deviation is very low, but bias is very positive for states with low support and very negative for states with high support. The resulting RMSE has a funny “V” shape – we only do well for states that happen to have opinion that is very close to the national average.</p>
 <p>Partial pooling represents a Goldilocks compromise between full and no pooling. Yes, we have some positive bias for low-opinion states and negative bias for high opinion states, but variance has been brought under control. As a result, the RMSE for both small and large states is small.</p>
 <div id="fig-ch15num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-15-5.svg" class="lightbox" title="Comparison of three answer strategies" data-gallery="quarto-lightbox-gallery-5"><img src="../figures/figure-15-5.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;15.5: Comparison of three answer strategies</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-15-5.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;15.5: Comparison of three answer strategies</figcaption></figure>
 </div>
 </div>
 </section><section id="design-examples-2" class="level3" data-number="15.3.2"><h3 data-number="15.3.2" class="anchored" data-anchor-id="design-examples-2">
@@ -836,9 +832,8 @@ div.csl-indent {
 </div>
 <p>In <a href="#fig-ch15num6">Figure&nbsp;<span>15.6</span></a> we show that the correlation between all the indices and the underlying quantity is quite good, even though the strength of the correlations for some of the components is weak. Trickier however is being sure we have an interpretable <em>scale</em>.</p>
 <div id="fig-ch15num6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-15-6.svg" class="lightbox" title="Correlations between the latent variable, measured components, and indices." data-gallery="quarto-lightbox-gallery-6"><img src="../figures/figure-15-6.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;15.6: Correlations between the latent variable, measured components, and indices.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-15-6.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;15.6: Correlations between the latent variable, measured components, and indices.</figcaption></figure>
 </div>
 <div id="lem-ch15num5" class="theorem lemma">
 <p><span class="theorem-title"><strong>Diagnosis 15.5 </strong></span>Latent variables diagnosis over alternative answer strategies</p>
@@ -849,9 +844,8 @@ div.csl-indent {
 <p>The simple averaging of the normalized scales also generates estimates that are too small. Rescaling the scaled components instead of taking the average helps only a small amount. The principal component version appears to do especially poorly, but there is a simple reason for this: the method does not presuppose knowledge of the <em>direction</em> of the scale of the latent variable and can come up with index that reverse the actual scale of interest. Avoiding this requires an interpretative step after the principal components analysis is implemented (more subtly the averaging approach also has an interpretative step <em>before</em> averaging, when components are introduced with a metric that presupposes a positive correlation with the underlying quantity). Even accounting for the different sign patterns however, the estimates are too small.</p>
 <p>Scaling by units with <code>X = 1</code> does best in this case. The key insight here is that the total variation in the latent variable combines the variation within groups and between them: we want to measure outcomes on a scale benchmarked to the within group variation and so have to take out the between group variation when rescaling.</p>
 <div id="fig-ch15num7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="../figures/figure-15-7.svg" class="lightbox" title="Distribution of estimates from different approaches to generating indices" data-gallery="quarto-lightbox-gallery-7"><img src="../figures/figure-15-7.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;15.7: Distribution of estimates from different approaches to generating indices</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="../figures/figure-15-7.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;15.7: Distribution of estimates from different approaches to generating indices</figcaption></figure>
 </div>
 <p>Overall we see from the diagnosis that we <em>can</em> do quite well here in recovering the conditional mean of the standardized latent variable. Though we see risks here. We declared a design under optimistic conditions in which we knew the relevant components and these were all related to the latent variable in a simple way. Even in this case we had difficulty getting the answer right.</p>
 </div>
@@ -863,38 +857,38 @@ div.csl-indent {
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-bisbee_2019" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-bisbee_2019" class="csl-entry" role="listitem">
 Bisbee, James. 2019. <span>“BARP: Improving Mister p Using Bayesian Additive Regression Trees.”</span> <em>American Political Science Review</em> 113 (4): 1060–65.
 </div>
-<div id="ref-Bradley:2021us" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Bradley:2021us" class="csl-entry" role="listitem">
 Bradley, Valerie C., Shiro Kuriwaki, Michael Isakov, Dino Sejdinovic, Xiao-Li Meng, and Seth Flaxman. 2021. <span>“Unrepresentative Big Surveys Significantly Overestimated US Vaccine Uptake.”</span> <em>Nature</em> 600 (7890): 695–700.
 </div>
-<div id="ref-broockman2016durably" class="csl-entry" role="doc-biblioentry">
+<div id="ref-broockman2016durably" class="csl-entry" role="listitem">
 Broockman, David, and Joshua Kalla. 2016. <span>“Durably Reducing Transphobia: A Field Experiment on Door-to-Door Canvassing.”</span> <em>Science</em> 352 (6282): 220–24.
 </div>
-<div id="ref-HEDAYAT2019192" class="csl-entry" role="doc-biblioentry">
+<div id="ref-HEDAYAT2019192" class="csl-entry" role="listitem">
 Hedayat, A. S., Hansheng Cheng, and Jennifer Pajda-De La O. 2019. <span>“Existence of Unbiased Estimation for the Minimum, Maximum, and Median in Finite Population Sampling.”</span> <em>Statistics &amp; Probability Letters</em> 153: 192–95.
 </div>
-<div id="ref-Jefferson2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Jefferson2022" class="csl-entry" role="listitem">
 Jefferson, Hakeem. 2022. <span>“Respectability and the Politics of Punishment Among Black Americans.”</span> <em>Unpublished Manuscript</em>.
 </div>
-<div id="ref-kling2007experimental" class="csl-entry" role="doc-biblioentry">
+<div id="ref-kling2007experimental" class="csl-entry" role="listitem">
 Kling, Jeffrey R, Jeffrey B Liebman, and Lawrence F Katz. 2007. <span>“Experimental Analysis of Neighborhood Effects.”</span> <em>Econometrica</em> 75 (1): 83–119.
 </div>
-<div id="ref-lax2009gay" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lax2009gay" class="csl-entry" role="listitem">
 Lax, Jeffrey R., and Justin H. Phillips. 2009. <span>“Gay Rights in the States: Public Opinion and Policy Responsiveness.”</span> <em>American Political Science Review</em> 103 (3): 367–86.
 </div>
-<div id="ref-merkley_stecula_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-merkley_stecula_2021" class="csl-entry" role="listitem">
 Merkley, Eric, and Dominik A. Stecula. 2021. <span>“Party Cues in the News: Democratic Elites, Republican Backlash, and the Dynamics of Climate Skepticism.”</span> <em>British Journal of Political Science</em> 51 (4): 1439–56.
 </div>
-<div id="ref-Paler2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Paler2018" class="csl-entry" role="listitem">
 Paler, Laura, Leslie Marshall, and Sami Atallah. 2018. <span>“The Social Costs of Public Political Participation: Evidence from a Petition Experiment in Lebanon.”</span> <em>The Journal of Politics</em> 80 (4): 1405–10.
 </div>
-<div id="ref-stokes_2005" class="csl-entry" role="doc-biblioentry">
+<div id="ref-stokes_2005" class="csl-entry" role="listitem">
 Stokes, Susan C. 2005. <span>“Perverse Accountability: A Formal Model of Machine Politics with Evidence from Argentina.”</span> <em>American Political Science Review</em> 99 (3): 315–25.
 </div>
-<div id="ref-Tausanovitch:2013wp" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Tausanovitch:2013wp" class="csl-entry" role="listitem">
 Tausanovitch, Chris, and Christopher Warshaw. 2013. <span>“Measuring Constituent Policy Preferences in Congress, State Legislatures, and Cities.”</span> <em>The Journal of Politics</em> 75 (2): 330–42.
 </div>
 </div>
@@ -929,9 +923,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -996,6 +1004,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1046,7 +1140,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom"});</script>
+
 
 
 </body></html>

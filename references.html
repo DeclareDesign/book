@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,14 +17,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -38,8 +39,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,6 +49,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./errata.html" rel="next">
 <link href="./epilogue.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -75,7 +76,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <style type="text/css" media="print">
@@ -126,11 +128,16 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">References</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -138,187 +145,223 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Research Design in the Social Sciences</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./authors.html" class="sidebar-item-text sidebar-link">About the authors</a>
+  <a href="./authors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the authors</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduction/preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
+  <a href="./introduction/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></a>
+  <a href="./introduction/what-is-a-research-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduction/research-design-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a>
+  <a href="./introduction/research-design-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduction/getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></a>
+  <a href="./introduction/getting-started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Declaration, Diagnosis, Redesign</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></a>
+  <a href="./declaration-diagnosis-redesign/declaring-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a>
+  <a href="./declaration-diagnosis-redesign/specifying-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a>
+  <a href="./declaration-diagnosis-redesign/defining-inquiry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a>
+  <a href="./declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></a>
+  <a href="./declaration-diagnosis-redesign/choosing-answer-strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></a>
+  <a href="./declaration-diagnosis-redesign/redesigning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Redesigning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></a>
+  <a href="./declaration-diagnosis-redesign/diagnosing-designs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diagnosing designs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></a>
+  <a href="./declaration-diagnosis-redesign/design-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a>
+  <a href="./declaration-diagnosis-redesign/declaration-in-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./library/" class="sidebar-item-text sidebar-link">Research design library</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a href="./library/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design library</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./library/observational-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></a>
+  <a href="./library/observational-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./library/observational-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></a>
+  <a href="./library/observational-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./library/experimental-descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></a>
+  <a href="./library/experimental-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./library/experimental-causal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></a>
+  <a href="./library/experimental-causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./library/complex.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></a>
+  <a href="./library/complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./lifecycle/" class="sidebar-item-text sidebar-link">Research design lifecycle</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a href="./lifecycle/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research design lifecycle</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lifecycle/planning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></a>
+  <a href="./lifecycle/planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lifecycle/realization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></a>
+  <a href="./lifecycle/realization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lifecycle/integration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></a>
+  <a href="./lifecycle/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./epilogue.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></a>
+  <a href="./epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">References</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./errata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Errata</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
@@ -348,7 +391,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">References</h1>
+<h1 class="title">References</h1>
 </div>
 
 
@@ -363,569 +406,569 @@ div.csl-indent {
 
 </header>
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-abadie2017clustering" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-abadie2017clustering" class="csl-entry" role="listitem">
 Abadie, Alberto, Susan Athey, Guido W. Imbens, and Jeffrey Wooldridge.
 2017. <span>“When Should You Adjust Standard Errors for
 Clustering?”</span> NBER Working Paper 24003.
 </div>
-<div id="ref-abell2019subjective" class="csl-entry" role="doc-biblioentry">
+<div id="ref-abell2019subjective" class="csl-entry" role="listitem">
 Abell, Peter, and Ofer Engel. 2021. <span>“Subjective Causality and
 Counterfactuals in the Social Sciences: Toward an Ethnographic
 Causality?”</span> <em>Sociological Methods &amp; Research</em> 50 (4):
 1842–62.
 </div>
-<div id="ref-aguilar2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-aguilar2015" class="csl-entry" role="listitem">
 Aguilar, Rosario, Saul Cunow, and Scott Desposato. 2015. <span>“Choice
 Sets, Gender, and Candidate Choice in Brazil.”</span> <em>Electoral
 Studies</em> 39: 230–42. https://doi.org/<a href="https://doi.org/10.1016/j.electstud.2015.03.011">https://doi.org/10.1016/j.electstud.2015.03.011</a>.
 </div>
-<div id="ref-alrababag_2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-alrababag_2020" class="csl-entry" role="listitem">
 Alrababa’h, Ala’, Scott Williamson, Andrea Dillon, Jens Hainmueller,
 Dominik Hangartner, Michael Hotard, David Laitin, Duncan Lawrence, and
 Jeremy Weinstein. 2022. <span>“Learning from Null Effects: A Bottom-up
 Approach.”</span> <em>Political Analysis</em>.
 </div>
-<div id="ref-alvarez2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-alvarez2018" class="csl-entry" role="listitem">
 Alvarez, R. Michael, Ellen M. Key, and Lucas Núñez. 2018.
 <span>“<span>Research Replication: Practical
 Considerations</span>.”</span> <em>PS: Political Science
 <span>&amp;</span> Politics</em> 51 (2): 422–26.
 </div>
-<div id="ref-angrist2008mostly" class="csl-entry" role="doc-biblioentry">
+<div id="ref-angrist2008mostly" class="csl-entry" role="listitem">
 Angrist, Joshua D., and Jörn-Steffen Pischke. 2008. <em>Mostly Harmless
 Econometrics: An Empiricist’s Companion</em>. Princeton: Princeton
 University Press.
 </div>
-<div id="ref-aronow2019note" class="csl-entry" role="doc-biblioentry">
+<div id="ref-aronow2019note" class="csl-entry" role="listitem">
 Aronow, Peter M., Jonathon Baron, and Lauren Pinson. 2019. <span>“A Note
 on Dropping Experimental Subjects Who Fail a Manipulation Check.”</span>
 <em>Political Analysis</em> 27 (4): 572–89.
 </div>
-<div id="ref-aronow_green_lee_2014" class="csl-entry" role="doc-biblioentry">
+<div id="ref-aronow_green_lee_2014" class="csl-entry" role="listitem">
 Aronow, Peter M., Donald P. Green, and Donald K. K. Lee. 2014.
 <span>“<span>Sharp Bounds On The Variance In Randomized
 Experiments</span>.”</span> <em>The Annals of Statistics</em> 42 (3):
 850–71.
 </div>
-<div id="ref-aronow2019foundations" class="csl-entry" role="doc-biblioentry">
+<div id="ref-aronow2019foundations" class="csl-entry" role="listitem">
 Aronow, Peter M., and Benjamin T. Miller. 2019. <em>Foundations of
 Agnostic Statistics</em>. Cambridge, UK: Cambridge University Press.
 </div>
-<div id="ref-aronow2017estimating" class="csl-entry" role="doc-biblioentry">
+<div id="ref-aronow2017estimating" class="csl-entry" role="listitem">
 Aronow, Peter M., and Cyrus Samii. 2017. <span>“Estimating Average
 Causal Effects Under General Interference, with Application to a Social
 Network Experiment.”</span> <em>The Annals of Applied Statistics</em> 11
 (4): 1912–47.
 </div>
-<div id="ref-avdeenko_gilligan_2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-avdeenko_gilligan_2015" class="csl-entry" role="listitem">
 Avdeenko, Alexandra, and Michael J. Gilligan. 2015. <span>“International
 Interventions to Build Social Capital: Evidence from a Field Experiment
 in Sudan.”</span> <em>American Political Science Review</em> 109 (3):
 427–49.
 </div>
-<div id="ref-bai2021randomize" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bai2021randomize" class="csl-entry" role="listitem">
 Bai, Yuehao. 2021. <span>“Why Randomize? Minimax Optimality Under
 Permutation Invariance.”</span> <em>Journal of Econometrics</em>.
 </div>
-<div id="ref-bairdetal2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bairdetal2018" class="csl-entry" role="listitem">
 Baird, Sarah, J. Aislinn Bohren, Craig McIntosh, and Berk Ozler. 2018.
 <span>“<span class="nocase">Optimal Design of Experiments in the
 Presence of Interference</span>.”</span> <em><span>Review of Economics
 &amp; Statistics</span></em> 5 (100): 844–60.
 </div>
-<div id="ref-balcells2022transitional" class="csl-entry" role="doc-biblioentry">
+<div id="ref-balcells2022transitional" class="csl-entry" role="listitem">
 Balcells, Laia, Valeria Palanza, and Elsa Voytas. 2022. <span>“Do
 Transitional Justice Museums Persuade Visitors? Evidence from a Field
 Experiment.”</span> <em>The Journal of Politics</em> 84 (1).
 </div>
-<div id="ref-Banerjee2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Banerjee2020" class="csl-entry" role="listitem">
 Banerjee, Abhijit, Esther Duflo, Amy Finkelstein, Lawrence F Katz,
 Benjamin A Olken, and Anja Sautmann. 2020. <span>“In Praise of
 Moderation: Suggestions for the Scope and Use of Pre-Analysis Plans for
 RCTs in Economics.”</span> Working Paper 26993. Working Paper Series.
 National Bureau of Economic Research. <a href="https://doi.org/10.3386/w26993">https://doi.org/10.3386/w26993</a>.
 </div>
-<div id="ref-bansak_hainmueller_hopkins_yamamoto_2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bansak_hainmueller_hopkins_yamamoto_2019" class="csl-entry" role="listitem">
 Bansak, Kirk, Jens Hainmueller, Daniel J. Hopkins, and Teppei Yamamoto.
 2021. <span>“Beyond the Breaking Point? Survey Satisficing in Conjoint
 Experiments.”</span> <em>Political Science Research and Methods</em> 9
 (1): 53–71.
 </div>
-<div id="ref-young2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-young2020" class="csl-entry" role="listitem">
 Baron, Hannah, and Lauren E. Young. 2021. <span>“From Principles to
 Practice: Methods to Increase the Transparency of Research Ethics in
 Violent Contexts.”</span> <em>Political Science Research and
 Methods</em>, 1–8.
 </div>
-<div id="ref-bateson_2012" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bateson_2012" class="csl-entry" role="listitem">
 Bateson, Regina. 2012. <span>“Crime Victimization and Political
 Participation.”</span> <em>American Political Science Review</em> 106
 (3): 570–87.
 </div>
-<div id="ref-Bauer2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Bauer2021" class="csl-entry" role="listitem">
 Bauer, Paul C., and Bernhard Clemm von Hohenberg. 2021. <span>“Believing
 and Sharing Information by Fake Sources: An Experiment.”</span>
 <em>Political Communication</em> 38 (6): 647–71.
 </div>
-<div id="ref-Benjamin:2018vj" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Benjamin:2018vj" class="csl-entry" role="listitem">
 Benjamin, Daniel J., James O. Berger, Magnus Johannesson, Brian A.
 Nosek, E. -J. Wagenmakers, Richard Berk, Kenneth A. Bollen, et al. 2018.
 <span>“Redefine Statistical Significance.”</span> <em>Nature Human
 Behaviour</em> 2 (1): 6–10.
 </div>
-<div id="ref-BennettAppendix" class="csl-entry" role="doc-biblioentry">
+<div id="ref-BennettAppendix" class="csl-entry" role="listitem">
 Bennett, Andrew. 2015. <span>“Appendix.”</span> In <em>Process Tracing:
 From Metaphor to Analytic Tool</em>, edited by Andrew Bennett and
 Jeffrey Checkel. New York: Cambridge University Press.
 </div>
-<div id="ref-BennettCheckel2015PT" class="csl-entry" role="doc-biblioentry">
+<div id="ref-BennettCheckel2015PT" class="csl-entry" role="listitem">
 Bennett, Andrew, and Jeffrey Checkel. 2015. <span>“Process Tracing: From
 Philosophical Roots to Best Practices.”</span> In <em>Process Tracing:
 From Metaphor to Analytic Tool</em>, edited by Andrew Bennett and
 Jeffrey Checkel, 3–37. New York: Cambridge University Press.
 </div>
-<div id="ref-birkelund2022gender" class="csl-entry" role="doc-biblioentry">
+<div id="ref-birkelund2022gender" class="csl-entry" role="listitem">
 Birkelund, Gunn Elisabeth, Bram Lancee, Edvard Nergård Larsen, Javier G
 Polavieja, Jonas Radl, and Ruta Yemane. 2022. <span>“Gender
 Discrimination in Hiring: Evidence from a Cross-National Harmonized
 Field Experiment.”</span> <em>European Sociological Review</em> 38 (3):
 337–54.
 </div>
-<div id="ref-bisbee_2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bisbee_2019" class="csl-entry" role="listitem">
 Bisbee, James. 2019. <span>“BARP: Improving Mister p Using Bayesian
 Additive Regression Trees.”</span> <em>American Political Science
 Review</em> 113 (4): 1060–65.
 </div>
-<div id="ref-blair_christensen_rudkin_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-blair_christensen_rudkin_2021" class="csl-entry" role="listitem">
 Blair, Graeme, Darin Christensen, and Aaron Rudkin. 2021. <span>“Do
 Commodity Price Shocks Cause Armed Conflict? A Meta-Analysis of Natural
 Experiments.”</span> <em>American Political Science Review</em> 115 (2):
 709–16.
 </div>
-<div id="ref-bccmapsr" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bccmapsr" class="csl-entry" role="listitem">
 Blair, Graeme, Jasper Cooper, Alexander Coppock, and Macartan Humphreys.
 2019. <span>“Declaring and Diagnosing Research Designs.”</span>
 <em>American Political Science Review</em> 113 (3): 838–59.
 </div>
-<div id="ref-blair2018list" class="csl-entry" role="doc-biblioentry">
+<div id="ref-blair2018list" class="csl-entry" role="listitem">
 Blair, Graeme, Alexander Coppock, and Margaret Moor. 2020. <span>“When
 to Worry about Sensitivity Bias: A Social Reference Theory and Evidence
 from 30 Years of List Experiments.”</span> <em>American Political
 Science Review</em> 114 (4): 1297–1315.
 </div>
-<div id="ref-blair_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-blair_2022" class="csl-entry" role="listitem">
 Blair, Robert A., Manuel Moscoso-Rojas, Andres Vargas Castillo, and
 Michael Weintraub. 2022. <span>“Preventing Rebel Resurgence After Civil
 War: A Field Experiment in Security and Justice Provision in Rural
 Colombia.”</span> <em>American Political Science Review</em>, 1–20.
 </div>
-<div id="ref-bonilla_tillery_2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bonilla_tillery_2020" class="csl-entry" role="listitem">
 Bonilla, Tabitha, and Alvin B. Tillery. 2020. <span>“Which Identity
 Frames Boost Support for and Mobilization in the #BlackLivesMatter
 Movement? An Experimental Test.”</span> <em>American Political Science
 Review</em> 114 (4): 947–62.
 </div>
-<div id="ref-borenstein2021introduction" class="csl-entry" role="doc-biblioentry">
+<div id="ref-borenstein2021introduction" class="csl-entry" role="listitem">
 Borenstein, Michael, Larry V Hedges, Julian PT Higgins, and Hannah R
 Rothstein. 2021. <em>Introduction to Meta-Analysis</em>. John Wiley
 &amp; Sons.
 </div>
-<div id="ref-Bowers2011" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Bowers2011" class="csl-entry" role="listitem">
 Bowers, Jake. 2011. <span>“Six Steps to a Better Relationship with Your
 Future Self.”</span> <em>The Political Methodologist</em> 18 (2): 2–8.
 </div>
-<div id="ref-Bradley:2021us" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Bradley:2021us" class="csl-entry" role="listitem">
 Bradley, Valerie C., Shiro Kuriwaki, Michael Isakov, Dino Sejdinovic,
 Xiao-Li Meng, and Seth Flaxman. 2021. <span>“Unrepresentative Big
 Surveys Significantly Overestimated US Vaccine Uptake.”</span>
 <em>Nature</em> 600 (7890): 695–700.
 </div>
-<div id="ref-brady2004data" class="csl-entry" role="doc-biblioentry">
+<div id="ref-brady2004data" class="csl-entry" role="listitem">
 Brady, Henry E. 2004. <span>“Data-Set Observations Versus Causal-Process
 Observations: The 2000 US Presidential Election.”</span> In
 <em>Rethinking Social Inquiry: Diverse Tools, Shared Standards</em>,
 267–72. Lanham: Rowman &amp; Littlefield.
 </div>
-<div id="ref-broockman_kalla_sekhon_2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-broockman_kalla_sekhon_2017" class="csl-entry" role="listitem">
 Broockman, David E., Joshua L. Kalla, and Jasjeet S. Sekhon. 2017.
 <span>“The Design of Field Experiments with Survey Outcomes: A Framework
 for Selecting More Efficient, Robust, and Ethical Designs.”</span>
 <em>Political Analysis</em> 25 (4): 435–64.
 </div>
-<div id="ref-broockman2016durably" class="csl-entry" role="doc-biblioentry">
+<div id="ref-broockman2016durably" class="csl-entry" role="listitem">
 Broockman, David, and Joshua Kalla. 2016. <span>“Durably Reducing
 Transphobia: A Field Experiment on Door-to-Door Canvassing.”</span>
 <em>Science</em> 352 (6282): 220–24.
 </div>
-<div id="ref-butler_crabtree_2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-butler_crabtree_2017" class="csl-entry" role="listitem">
 Butler, Daniel M., and Charles Crabtree. 2017. <span>“Moving Beyond
 Measurement: Adapting Audit Studies to Test Bias-Reducing
 Interventions.”</span> <em>Journal of Experimental Political
 Science</em> 4 (1): 57–67.
 </div>
-<div id="ref-calonico2014robust" class="csl-entry" role="doc-biblioentry">
+<div id="ref-calonico2014robust" class="csl-entry" role="listitem">
 Calonico, Sebastian, Matias D Cattaneo, and Rocio Titiunik. 2014.
 <span>“Robust Nonparametric Confidence Intervals for
 Regression-Discontinuity Designs.”</span> <em>Econometrica</em> 82 (6):
 2295–2326.
 </div>
-<div id="ref-carnegie2017international" class="csl-entry" role="doc-biblioentry">
+<div id="ref-carnegie2017international" class="csl-entry" role="listitem">
 Carnegie, Allison, and Cyrus Samii. 2019. <span>“International
 Institutions and Political Liberalization: Evidence from the World Bank
 Loans Program.”</span> <em>British Journal of Political Science</em> 49
 (4): 1357–79.
 </div>
-<div id="ref-Carreri2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Carreri2017" class="csl-entry" role="listitem">
 Carreri, Maria, and Oeindrila Dube. 2017. <span>“Do Natural Resources
 Influence Who Comes to Power, and How?”</span> <em>The Journal of
 Politics</em> 79 (2): 502–18.
 </div>
-<div id="ref-Casey2012" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Casey2012" class="csl-entry" role="listitem">
 Casey, Katherine, Rachel Glennerster, and Edward Miguel. 2012.
 <span>“Reshaping Institutions: Evidence on Aid Impacts Using a
 Pre-Analysis Plan.”</span> <em>The Quarterly Journal of Economics</em>
 127 (4): 1755–1812.
 </div>
-<div id="ref-chaisemartin" class="csl-entry" role="doc-biblioentry">
+<div id="ref-chaisemartin" class="csl-entry" role="listitem">
 Chaisemartin, Clément de, and Xavier d’Haultfoeuille. 2020.
 <span>“Two-Way Fixed Effects Estimators with Heterogeneous Treatment
 Effects.”</span> <em>American Economic Review</em> 110 (9): 2964–96.
 </div>
-<div id="ref-cheema_khan_liaqat_mohmand_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-cheema_khan_liaqat_mohmand_2022" class="csl-entry" role="listitem">
 Cheema, Ali, Sarah Khan, Asad Liaqat, and Shandana Khan Mohmand. 2022.
 <span>“Canvassing the Gatekeepers: A Field Experiment to Increase Women
 Voters’ Turnout in Pakistan.”</span> <em>American Political Science
 Review</em>, 1–21.
 </div>
-<div id="ref-chopra2022null" class="csl-entry" role="doc-biblioentry">
+<div id="ref-chopra2022null" class="csl-entry" role="listitem">
 Chopra, Felix, Ingar Haaland, Christopher Roth, and Andreas Stegmann.
 2022. <span>“The Null Result Penalty.”</span> <em>Unpublished
 Manuscript</em>.
 </div>
-<div id="ref-clingingsmith2009estimating" class="csl-entry" role="doc-biblioentry">
+<div id="ref-clingingsmith2009estimating" class="csl-entry" role="listitem">
 Clingingsmith, David, Asim Ijaz Khwaja, and Michael Kremer. 2009.
 <span>“Estimating the Impact of the Hajj: Religion and Tolerance in
 Islam’s Global Gathering.”</span> <em>The Quarterly Journal of
 Economics</em> 124 (3): 1133–70.
 </div>
-<div id="ref-collier2008symposium" class="csl-entry" role="doc-biblioentry">
+<div id="ref-collier2008symposium" class="csl-entry" role="listitem">
 Collier, David, David A Freedman, James D Fearon, David D Laitin, John
 Gerring, and Gary Goertz. 2008. <span>“Symposium: Case Selection, Case
 Studies, and Causal Inference.”</span> <em>Qualitative &amp; Multimethod
 Research</em> 6 (2): 2–16.
 </div>
-<div id="ref-collins_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-collins_2021" class="csl-entry" role="listitem">
 Collins, Jonathan E. 2021. <span>“Does the Meeting Style Matter? The
 Effects of Exposure to Participatory and Deliberative School Board
 Meetings.”</span> <em>American Political Science Review</em> 115 (3):
 790–804.
 </div>
-<div id="ref-coppock2017did" class="csl-entry" role="doc-biblioentry">
+<div id="ref-coppock2017did" class="csl-entry" role="listitem">
 Coppock, Alexander. 2017. <span>“Did Shy Trump Supporters Bias the 2016
 Polls? Evidence from a Nationally-Representative List
 Experiment.”</span> <em>Statistics, Politics and Policy</em> 8 (1):
 29–40.
 </div>
-<div id="ref-coppock_2019b" class="csl-entry" role="doc-biblioentry">
+<div id="ref-coppock_2019b" class="csl-entry" role="listitem">
 ———. 2019. <span>“<span class="nocase">Avoiding Post-Treatment Bias in
 Audit Experiments</span>.”</span> <em>Journal of Experimental Political
 Science</em> 6 (1): 1–4.
 </div>
-<div id="ref-coppock2017double" class="csl-entry" role="doc-biblioentry">
+<div id="ref-coppock2017double" class="csl-entry" role="listitem">
 Coppock, Alexander, Alan S. Gerber, Donald P. Green, and Holger L. Kern.
 2017. <span>“Combining Double Sampling and Bounds to Address
 Nonignorable Missing Outcomes in Randomized Experiments.”</span>
 <em>Political Analysis</em> 25 (2): 188–206.
 </div>
-<div id="ref-coppock_kaur_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-coppock_kaur_2021" class="csl-entry" role="listitem">
 Coppock, Alexander, and Dipin Kaur. 2022. <span>“<span class="nocase">Qualitative Imputation of Missing Potential
 Outcomes</span>.”</span> <em>American Journal of Political Science</em>.
 </div>
-<div id="ref-creightonjamal2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-creightonjamal2015" class="csl-entry" role="listitem">
 Creighton, Mathew J., and Amaney Jamal. 2015. <span>“Does Islam Play a
 Role in Anti-Immigrant Sentiment? An Experimental Approach.”</span>
 <em>Social Science Research</em> 53: 89–103.
 </div>
-<div id="ref-Cruz2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Cruz2019" class="csl-entry" role="listitem">
 Cruz, Cesi. 2019. <span>“Social Networks and the Targeting of Vote
 Buying.”</span> <em>Comparative Political Studies</em> 52 (3): 382–411.
 </div>
-<div id="ref-dawid2022bounding" class="csl-entry" role="doc-biblioentry">
+<div id="ref-dawid2022bounding" class="csl-entry" role="listitem">
 Dawid, Philip, Macartan Humphreys, and Monica Musio. 2022.
 <span>“Bounding Causes of Effects with Mediators.”</span>
 <em>Sociological Methods &amp; Research</em>.
 </div>
-<div id="ref-deaton2009instruments" class="csl-entry" role="doc-biblioentry">
+<div id="ref-deaton2009instruments" class="csl-entry" role="listitem">
 Deaton, Angus S. 2010. <span>“Instruments, Randomization, and Learning
 about Development.”</span> <em>Journal of Economic Literature</em> 48
 (2): 424–55.
 </div>
-<div id="ref-dunning2012natural" class="csl-entry" role="doc-biblioentry">
+<div id="ref-dunning2012natural" class="csl-entry" role="listitem">
 Dunning, Thad. 2012. <em>Natural Experiments in the Social Sciences: A
 Design-Based Approach</em>. Cambridge, UK: Cambridge University Press.
 </div>
-<div id="ref-Dunning2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Dunning2019" class="csl-entry" role="listitem">
 Dunning, Thad, Guy Grossman, Macartan Humphreys, Susan D. Hyde, Craig
 McIntosh, Gareth Nellis, Claire L. Adida, et al. 2019. <span>“Voter
 Information Campaigns and Political Accountability: Cumulative Findings
 from a Preregistered Meta-Analysis of Coordinated Trials.”</span>
 <em>Science Advances</em> 5 (7): 1–10.
 </div>
-<div id="ref-egami2021elements" class="csl-entry" role="doc-biblioentry">
+<div id="ref-egami2021elements" class="csl-entry" role="listitem">
 Egami, Naoki, and Erin Hartman. 2022. <span>“Elements of External
 Validity: Framework, Design, and Analysis.”</span> <em>American
 Political Science Review</em>.
 </div>
-<div id="ref-Egger2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Egger2019" class="csl-entry" role="listitem">
 Egger, Dennis, Johannes Haushofer, Edward Miguel, Paul Niehaus, and
 Michael W Walker. 2019. <span>“General Equilibrium Effects of Cash
 Transfers: Experimental Evidence from Kenya.”</span> Working Paper
 26600. National Bureau of Economic Research.
 </div>
-<div id="ref-fairfield2017explicit" class="csl-entry" role="doc-biblioentry">
+<div id="ref-fairfield2017explicit" class="csl-entry" role="listitem">
 Fairfield, Tasha, and Andrew E Charman. 2017. <span>“Explicit Bayesian
 Analysis for Process Tracing: Guidelines, Opportunities, and
 Caveats.”</span> <em>Political Analysis</em> 25 (3): 363–80.
 </div>
-<div id="ref-fang2019can" class="csl-entry" role="doc-biblioentry">
+<div id="ref-fang2019can" class="csl-entry" role="listitem">
 Fang, Albert H, Andrew M Guess, and Macartan Humphreys. 2019. <span>“Can
 the Government Deter Discrimination? Evidence from a Randomized
 Intervention in New York City.”</span> <em>The Journal of Politics</em>
 81 (1): 127–41.
 </div>
-<div id="ref-fearon2008integrating" class="csl-entry" role="doc-biblioentry">
+<div id="ref-fearon2008integrating" class="csl-entry" role="listitem">
 Fearon, James, and David Laitin. 2008. <span>“Integrating Qualitative
 and Quantitative Methods.”</span> In <em>Oxford Handbook of Political
 Methodology</em>, edited by Janet M. Box-Steffenmeier, David Collier,
 and Henry E Brady, 756–76. London, England: Oxford University Press.
 </div>
-<div id="ref-fenno1978home" class="csl-entry" role="doc-biblioentry">
+<div id="ref-fenno1978home" class="csl-entry" role="listitem">
 Fenno, Richard F. 1978. <em>Home Style: House Members in Their
 Districts</em>. New York: Longman.
 </div>
-<div id="ref-Foos2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Foos2021" class="csl-entry" role="listitem">
 Foos, Florian, Peter John, Christian Müller, and Kevin Cunningham. 2021.
 <span>“Social Mobilization in Partisan Spaces.”</span> <em>The Journal
 of Politics</em> 83 (3): 1190–97.
 </div>
-<div id="ref-francois2015power" class="csl-entry" role="doc-biblioentry">
+<div id="ref-francois2015power" class="csl-entry" role="listitem">
 Francois, Patrick, Ilia Rainer, and Francesco Trebbi. 2015. <span>“How
 Is Power Shared in Africa?”</span> <em>Econometrica</em> 83 (2):
 465–503.
 </div>
-<div id="ref-frangakis2002principal" class="csl-entry" role="doc-biblioentry">
+<div id="ref-frangakis2002principal" class="csl-entry" role="listitem">
 Frangakis, Constantine E., and Donald B Rubin. 2002. <span>“Principal
 Stratification in Causal Inference.”</span> <em>Biometrics</em> 58 (1):
 21–29.
 </div>
-<div id="ref-frederiksen_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-frederiksen_2022" class="csl-entry" role="listitem">
 Frederiksen, Kristian Vrede Skaaning. 2022. <span>“Does Competence Make
 Citizens Tolerate Undemocratic Behavior?”</span> <em>American Political
 Science Review</em>, 1–7.
 </div>
-<div id="ref-freedman2008regression" class="csl-entry" role="doc-biblioentry">
+<div id="ref-freedman2008regression" class="csl-entry" role="listitem">
 Freedman, David A. 2008. <span>“On Regression Adjustments to
 Experimental Data.”</span> <em>Advances in Applied Mathematics</em> 40
 (2): 180–93.
 </div>
-<div id="ref-Frey2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Frey2022" class="csl-entry" role="listitem">
 Frey, Anderson, Gabriel López-Moctezuma, and Sergio Montero. 2022.
 <span>“Sleeping with the Enemy: Effective Representation Under Dynamic
 Electoral Competition.”</span> <em>American Journal of Political
 Science</em>.
 </div>
-<div id="ref-GABELICA2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-GABELICA2022" class="csl-entry" role="listitem">
 Gabelica, Mirko, Ružica Bojčić, and Livia Puljak. 2022. <span>“Many
 Researchers Were Not Compliant with Their Published Data Sharing
 Statement: Mixed-Methods Study.”</span> <em>Journal of Clinical
 Epidemiology</em>.
 </div>
-<div id="ref-galos_coppock_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-galos_coppock_2022" class="csl-entry" role="listitem">
 Galos, Diana, and Alexander Coppock. 2022. <span>“What Have Employment
 Audits Taught Us about the Effects of Gender on Hiring? A
 Meta-Analyis.”</span> <em>Unpublished Manuscript</em>.
 </div>
-<div id="ref-geddes2003paradigms" class="csl-entry" role="doc-biblioentry">
+<div id="ref-geddes2003paradigms" class="csl-entry" role="listitem">
 Geddes, Barbara. 2003. <em>Paradigms and Sand Castles: Theory Building
 and Research Design in Comparative Politics</em>. Ann Arbor, Michigan:
 University of Michigan Press.
 </div>
-<div id="ref-Gelman2014b" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Gelman2014b" class="csl-entry" role="listitem">
 Gelman, Andrew, and John Carlin. 2014. <span>“Beyond Power Calculations
 Assessing Type s (Sign) and Type m (Magnitude) Errors.”</span>
 <em>Perspectives on Psychological Science</em> 9 (6): 641–51.
 </div>
-<div id="ref-gerber2011large" class="csl-entry" role="doc-biblioentry">
+<div id="ref-gerber2011large" class="csl-entry" role="listitem">
 Gerber, Alan S., James G. Gimpel, Donald P. Green, and Daron R. Shaw.
 2011. <span>“How Large and Long-Lasting Are the Persuasive Effects of
 Televised Campaign Ads? Results from a Randomized Field
 Experiment.”</span> <em>American Political Science Review</em> 105 (1):
 135–50.
 </div>
-<div id="ref-Gerber2012" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Gerber2012" class="csl-entry" role="listitem">
 Gerber, Alan S., and Donald P. Green. 2012. <em><span class="nocase">Field Experiments: Design, Analysis, and
 Interpretation</span></em>. New York: W.W. Norton.
 </div>
-<div id="ref-gerring2016selecting" class="csl-entry" role="doc-biblioentry">
+<div id="ref-gerring2016selecting" class="csl-entry" role="listitem">
 Gerring, John, and Lee Cojocaru. 2016. <span>“Selecting Cases for
 Intensive Analysis: A Diversity of Goals and Methods.”</span>
 <em>Sociological Methods &amp; Research</em> 45 (3): 392–423.
 </div>
-<div id="ref-goertz2008choosing" class="csl-entry" role="doc-biblioentry">
+<div id="ref-goertz2008choosing" class="csl-entry" role="listitem">
 Goertz, Gary. 2008. <span>“Choosing Cases for Case Studies: A
 Qualitative Logic.”</span> <em>Newsletter of the APSA Section on
 Qualitative &amp; Multi-Method Research</em> 6 (2): 11–14.
 </div>
-<div id="ref-goertz2012tale" class="csl-entry" role="doc-biblioentry">
+<div id="ref-goertz2012tale" class="csl-entry" role="listitem">
 Goertz, Gary, and James Mahoney. 2012. <em>A Tale of Two Cultures:
 Qualitative and Quantitative Research in the Social Sciences</em>.
 Princeton: Princeton University Press.
 </div>
-<div id="ref-green2016lawnsigns" class="csl-entry" role="doc-biblioentry">
+<div id="ref-green2016lawnsigns" class="csl-entry" role="listitem">
 Green, Donald P., Jonathan S. Krasno, Alexander Coppock, Benjamin D.
 Farrer, Brandon Lenoir, and Joshua N. Zingher. 2016. <span>“The Effects
 of Lawn Signs on Vote Outcomes: Results from Four Randomized Field
 Experiments.”</span> <em>Electoral Studies</em> 41: 143–50.
 </div>
-<div id="ref-Green2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Green2015" class="csl-entry" role="listitem">
 Green, Donald P., and Winston Lin. 2016. <span>“Standard Operating
 Procedures: A Safety Net for Pre-Analysis Plans.”</span> <em>PS:
 Political Science &amp; Politics</em> 49 (3): 495–99.
 </div>
-<div id="ref-green2012statistical" class="csl-entry" role="doc-biblioentry">
+<div id="ref-green2012statistical" class="csl-entry" role="listitem">
 Green, Donald P., and Andrej Tusicisny. 2012. <span>“Statistical
 Analysis of Results from Laboratory Studies in Experimental Economics: A
 Critique of Current Practice.”</span> <em>Available at SSRN
 2181654</em>.
 </div>
-<div id="ref-green2022using" class="csl-entry" role="doc-biblioentry">
+<div id="ref-green2022using" class="csl-entry" role="listitem">
 Green, Jon, James N. Druckman, Matthew A. Baum, David Lazer, Katherine
 Ognyanova, Matthew Simonson, Jennifer Lin, Mauricio Santillana, and Roy
 H. Perlis. 2022. <span>“Using General Messages to Persuade on a
 Politicized Scientific Issue.”</span> <em>British Journal of Political
 Science</em>.
 </div>
-<div id="ref-Gulzar2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Gulzar2020" class="csl-entry" role="listitem">
 Gulzar, Saad, and Muhammad Yasir Khan. 2021. <span>“<span>‘Good
 Politicians:’</span> Experimental Evidence on Motivations for Political
 Candidacy and Government Performance.”</span>
 </div>
-<div id="ref-Hainmueller2014" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Hainmueller2014" class="csl-entry" role="listitem">
 Hainmueller, Jens, Daniel J. Hopkins, and Teppei Yamamoto. 2014.
 <span>“<span class="nocase">Causal Inference in Conjoint Analysis:
 Understanding Multidimensional Choices via Stated Preference
 Experiments</span>.”</span> <em>Political Analysis</em> 22 (1): 1–30.
 </div>
-<div id="ref-halpern2000" class="csl-entry" role="doc-biblioentry">
+<div id="ref-halpern2000" class="csl-entry" role="listitem">
 Halpern, Joseph Y. 2000. <span>“Axiomatizing Causal Reasoning.”</span>
 <em>Journal of Artificial Intelligence Research</em> 12: 317–37.
 </div>
-<div id="ref-hartman2018equivalence" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hartman2018equivalence" class="csl-entry" role="listitem">
 Hartman, Erin, and F. Daniel Hidalgo. 2018. <span>“An Equivalence
 Approach to Balance and Placebo Tests.”</span> <em>American Journal of
 Political Science</em> 62 (4): 1000–1013.
 </div>
-<div id="ref-HEDAYAT2019192" class="csl-entry" role="doc-biblioentry">
+<div id="ref-HEDAYAT2019192" class="csl-entry" role="listitem">
 Hedayat, A. S., Hansheng Cheng, and Jennifer Pajda-De La O. 2019.
 <span>“Existence of Unbiased Estimation for the Minimum, Maximum, and
 Median in Finite Population Sampling.”</span> <em>Statistics &amp;
 Probability Letters</em> 153: 192–95.
 </div>
-<div id="ref-herron2016careful" class="csl-entry" role="doc-biblioentry">
+<div id="ref-herron2016careful" class="csl-entry" role="listitem">
 Herron, Michael C., and Kevin M. Quinn. 2016. <span>“A Careful Look at
 Modern Case Selection Methods.”</span> <em>Sociological Methods &amp;
 Research</em> 45 (3): 458–92.
 </div>
-<div id="ref-humphreys2015reflections" class="csl-entry" role="doc-biblioentry">
+<div id="ref-humphreys2015reflections" class="csl-entry" role="listitem">
 Humphreys, Macartan. 2015. <span>“Reflections on the Ethics of Social
 Experimentation.”</span> <em>Journal of Globalization and
 Development</em> 6 (1): 87–112.
 </div>
-<div id="ref-humphreys2017qualitative" class="csl-entry" role="doc-biblioentry">
+<div id="ref-humphreys2017qualitative" class="csl-entry" role="listitem">
 Humphreys, Macartan, and Alan Jacobs. forthcoming. <em>Integrated
 Inferences</em>. Cambridge: Cambridge University Press.
 </div>
-<div id="ref-humphreys2015mixing" class="csl-entry" role="doc-biblioentry">
+<div id="ref-humphreys2015mixing" class="csl-entry" role="listitem">
 Humphreys, Macartan, and Alan M. Jacobs. 2015. <span>“Mixing Methods: A
 Bayesian Approach.”</span> <em>American Political Science Review</em>
 109 (4): 653–73.
 </div>
-<div id="ref-Imai2011" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Imai2011" class="csl-entry" role="listitem">
 Imai, Kosuke. 2011. <span>“<span class="nocase">Multivariate Regression
 Analysis for the Item Count Technique</span>.”</span> <em>Journal of the
 American Statistical Association</em> 106 (494): 407–16.
 </div>
-<div id="ref-imai2009essential" class="csl-entry" role="doc-biblioentry">
+<div id="ref-imai2009essential" class="csl-entry" role="listitem">
 Imai, Kosuke, Gary King, and Clayton Nall. 2009. <span>“The Essential
 Role of Pair Matching in Cluster-Randomized Experiments, with
 Application to the Mexican Universal Health Insurance
 Evaluation.”</span> <em>Statistical Science</em> 24 (1): 29–53.
 </div>
-<div id="ref-imai2008essential" class="csl-entry" role="doc-biblioentry">
+<div id="ref-imai2008essential" class="csl-entry" role="listitem">
 Imai, Kosuke, Gary King, and Elizabeth A. Stuart. 2008.
 <span>“Misunderstandings Between Experimentalists and Observationalists
 about Causal Inference.”</span> <em>Journal of the Royal Statistical
 Society: Series A (Statistics in Society)</em> 171 (2): 481–502.
 </div>
-<div id="ref-imbens2010better" class="csl-entry" role="doc-biblioentry">
+<div id="ref-imbens2010better" class="csl-entry" role="listitem">
 Imbens, Guido W. 2010. <span>“Better LATE Than Nothing: Some Comments on
 Deaton (2009) and Heckman and Urzua (2009).”</span> <em>Journal of
 Economic Literature</em> 48 (2): 399–423.
 </div>
-<div id="ref-Imbens2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Imbens2015" class="csl-entry" role="listitem">
 Imbens, Guido W., and Donald B. Rubin. 2015. <em>Causal Inference in
 Statistics, Social, and Biomedical Sciences</em>. Cambridge: Cambridge
 University Press.
 </div>
-<div id="ref-Iyengar2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Iyengar2015" class="csl-entry" role="listitem">
 Iyengar, Shanto, and Sean J. Westwood. 2015. <span>“Fear and Loathing
 Across Party Lines: New Evidence on Group Polarization.”</span>
 <em>American Journal of Political Science</em> 59 (3): 690–707.
 </div>
-<div id="ref-Jamison2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Jamison2019" class="csl-entry" role="listitem">
 Jamison, Julian C. 2019. <span>“The Entry of Randomized Assignment into
 the Social Sciences.”</span> <em>Journal of Causal Inference</em> 7 (1):
 1–16.
 </div>
-<div id="ref-Jefferson2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Jefferson2022" class="csl-entry" role="listitem">
 Jefferson, Hakeem. 2022. <span>“Respectability and the Politics of
 Punishment Among Black Americans.”</span> <em>Unpublished
 Manuscript</em>.
 </div>
-<div id="ref-johnson2011trust" class="csl-entry" role="doc-biblioentry">
+<div id="ref-johnson2011trust" class="csl-entry" role="listitem">
 Johnson, Noel D, and Alexandra A Mislin. 2011. <span>“Trust Games: A
 Meta-Analysis.”</span> <em>Journal of Economic Psychology</em> 32 (5):
 865–89.
 </div>
-<div id="ref-Kalla2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Kalla2018" class="csl-entry" role="listitem">
 Kalla, Joshua, Frances Rosenbluth, and Dawn Langan Teele. 2018.
 <span>“Are You My Mentor? A Field Experiment on Gender, Ethnicity, and
 Political Self-Starters.”</span> <em>The Journal of Politics</em> 80
 (1): 337–41.
 </div>
-<div id="ref-Kao2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Kao2022" class="csl-entry" role="listitem">
 Kao, Kristen, and Mara R. Revkin. 2022. <span>“Retribution or
 Reconciliation? Post-Conflict Attitudes Toward Enemy
 Collaborators.”</span> <em>American Journal of Political Science</em>.
 </div>
-<div id="ref-karpowitz2017elect" class="csl-entry" role="doc-biblioentry">
+<div id="ref-karpowitz2017elect" class="csl-entry" role="listitem">
 Karpowitz, Christopher F., J. Quin Monson, and Jessica Robinson Preece.
 2017. <span>“How to Elect More Women: Gender and Candidate Success in a
 Field Experiment.”</span> <em>American Journal of Political Science</em>
 61 (4): 927–43.
 </div>
-<div id="ref-kasy2016experimenters" class="csl-entry" role="doc-biblioentry">
+<div id="ref-kasy2016experimenters" class="csl-entry" role="listitem">
 Kasy, Maximilian. 2016. <span>“Why Experimenters Might Not Always Want
 to Randomize, and What They Could Do Instead.”</span> <em>Political
 Analysis</em> 24 (3): 324–38.
 </div>
-<div id="ref-king1998unifying" class="csl-entry" role="doc-biblioentry">
+<div id="ref-king1998unifying" class="csl-entry" role="listitem">
 King, Gary. 1998. <em>Unifying Political Methodology: The Likelihood
 Theory of Statistical Inference</em>. Ann Arbor, Michigan: University of
 Michigan Press.
 </div>
-<div id="ref-king2007politically" class="csl-entry" role="doc-biblioentry">
+<div id="ref-king2007politically" class="csl-entry" role="listitem">
 King, Gary, Emmanuela Gakidou, Nirmala Ravishankar, Ryan T Moore, Jason
 Lakin, Manett Vargas, Martha Marı́a Téllez-Rojo, Juan Eugenio Hernández
 Ávila, Mauricio Hernández Ávila, and Héctor Hernández Llamas. 2007.
@@ -934,372 +977,372 @@ Public Policy Evaluation, with Application to the Mexican Universal
 Health Insurance Program.”</span> <em>Journal of Policy Analysis and
 Management</em> 26 (3): 479–506.
 </div>
-<div id="ref-King2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-King2015" class="csl-entry" role="listitem">
 King, Gary, and Melissa Sands. 2015. <span>“How Human Subjects Research
 Rules Mislead You and Your University, and What to Do about It.”</span>
 <em>Unpublished Manuscript</em>.
 </div>
-<div id="ref-Kirkland2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Kirkland2021" class="csl-entry" role="listitem">
 Kirkland, Patricia A. 2021. <span>“Business Owners and Executives as
 Politicians: The Effect on Public Policy.”</span> <em>The Journal of
 Politics</em> 83 (4): 1652–68.
 </div>
-<div id="ref-klar2019identities" class="csl-entry" role="doc-biblioentry">
+<div id="ref-klar2019identities" class="csl-entry" role="listitem">
 Klar, Samara, and Thomas J Leeper. 2019. <span>“Identities and
 Intersectionality: A Case for Purposive Sampling in Survey-Experimental
 Research.”</span> <em>Experimental Methods in Survey Research:
 Techniques That Combine Random Sampling with Random Assignment</em>,
 419–33.
 </div>
-<div id="ref-kling2007experimental" class="csl-entry" role="doc-biblioentry">
+<div id="ref-kling2007experimental" class="csl-entry" role="listitem">
 Kling, Jeffrey R, Jeffrey B Liebman, and Lawrence F Katz. 2007.
 <span>“Experimental Analysis of Neighborhood Effects.”</span>
 <em>Econometrica</em> 75 (1): 83–119.
 </div>
-<div id="ref-lax2009gay" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lax2009gay" class="csl-entry" role="listitem">
 Lax, Jeffrey R., and Justin H. Phillips. 2009. <span>“Gay Rights in the
 States: Public Opinion and Policy Responsiveness.”</span> <em>American
 Political Science Review</em> 103 (3): 367–86.
 </div>
-<div id="ref-levine2021form" class="csl-entry" role="doc-biblioentry">
+<div id="ref-levine2021form" class="csl-entry" role="listitem">
 Levine, Adam Seth. 2021. <span>“How to Form Organizational Partnerships
 to Run Experiments.”</span> In <em>Advances in Experimental Political
 Science</em>, 199–216. Cambridge, UK: Cambridge University Press.
 </div>
-<div id="ref-levy2008case" class="csl-entry" role="doc-biblioentry">
+<div id="ref-levy2008case" class="csl-entry" role="listitem">
 Levy, Jack S. 2008. <span>“Case Studies: Types, Designs, and Logics of
 Inference.”</span> <em>Conflict Management and Peace Science</em> 25
 (1): 1–18.
 </div>
-<div id="ref-lieberman2005nested" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lieberman2005nested" class="csl-entry" role="listitem">
 Lieberman, Evan S. 2005. <span>“Nested Analysis as a Mixed-Method
 Strategy for Comparative Research.”</span> <em>American Political
 Science Review</em> 99 (3): 435–52.
 </div>
-<div id="ref-lin2013agnostic" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lin2013agnostic" class="csl-entry" role="listitem">
 Lin, Winston. 2013. <span>“Agnostic Notes on Regression Adjustments to
 Experimental Data: Reexamining Freedman’s Critique.”</span> <em>Annals
 of Applied Statistics</em> 7 (1): 295–318.
 </div>
-<div id="ref-lyall2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lyall2020" class="csl-entry" role="listitem">
 Lyall, Jason. 2022. <span>“Preregister Your Ethical Redlines: Vulnerable
 Populations, Policy Engagement, and the Perils of e-Hacking.”</span>
 <em>Unpublished Manuscript</em>.
 </div>
-<div id="ref-lyall_zhou_imai_2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lyall_zhou_imai_2020" class="csl-entry" role="listitem">
 Lyall, Jason, Yang-Yang Zhou, and Kosuke Imai. 2020. <span>“Can Economic
 Assistance Shape Combatant Support in Wartime? Experimental Evidence
 from Afghanistan.”</span> <em>American Political Science Review</em> 114
 (1): 126–43.
 </div>
-<div id="ref-Martin1992" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Martin1992" class="csl-entry" role="listitem">
 Martin, Lisa. 1992. <em><span>Coercive Cooperation: Explaining
 Multilateral Economic Sanctions</span></em>. Princeton: Princeton
 University Press.
 </div>
-<div id="ref-mcphetres_2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mcphetres_2020" class="csl-entry" role="listitem">
 McPhetres, Jonathon, Nihan Albayrak-Aydemir, Ana Barbosa Mendes, Elvina
 C. Chow, Patricio Gonzalez-Marquez, Erin Loukras, Annika Maus, et al.
 2020. <span>“A Decade of Theory as Reflected in Psychological Science
 (2009-2019).”</span>
 </div>
-<div id="ref-mellon_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mellon_2021" class="csl-entry" role="listitem">
 Mellon, Jonathan. 2021. <span>“Rain, Rain, Go Away: 176 Potential
 Exclusion-Restriction Violations for Studies Using Weather as an
 Instrumental Variable.”</span> <em>Unpublished Manuscript</em>.
 </div>
-<div id="ref-merkley_stecula_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-merkley_stecula_2021" class="csl-entry" role="listitem">
 Merkley, Eric, and Dominik A. Stecula. 2021. <span>“Party Cues in the
 News: Democratic Elites, Republican Backlash, and the Dynamics of
 Climate Skepticism.”</span> <em>British Journal of Political
 Science</em> 51 (4): 1439–56.
 </div>
-<div id="ref-middleton2008bias" class="csl-entry" role="doc-biblioentry">
+<div id="ref-middleton2008bias" class="csl-entry" role="listitem">
 Middleton, Joel A. 2008. <span>“Bias of the Regression Estimator for
 Experiments Using Clustered Random Assignment.”</span> <em>Statistics
 &amp; Probability Letters</em> 78 (16): 2654–59.
 </div>
-<div id="ref-mill1884system" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mill1884system" class="csl-entry" role="listitem">
 Mill, John Stuart. 1869. <em>A System of Logic, Ratiocinative and
 Inductive: Being a Connected View of the Principles of Evidence and the
 Methods of Scientific Investigation</em>. New York: Harper &amp;
 Brothers.
 </div>
-<div id="ref-miller1984new" class="csl-entry" role="doc-biblioentry">
+<div id="ref-miller1984new" class="csl-entry" role="listitem">
 Miller, Judith Droitcour. 1984. <span>“A New Survey Technique for
 Studying Deviant Behavior.”</span> PhD thesis, George Washington
 University.
 </div>
-<div id="ref-montgomery2020so" class="csl-entry" role="doc-biblioentry">
+<div id="ref-montgomery2020so" class="csl-entry" role="listitem">
 Montgomery, Jacob M., and Erin L. Rossiter. 2020. <span>“So Many
 Questions, so Little Time: Integrating Adaptive Inventories into Public
 Opinion Research.”</span> <em>Journal of Survey Statistics and
 Methodology</em> 8 (4): 667–90.
 </div>
-<div id="ref-morrisetal2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-morrisetal2019" class="csl-entry" role="listitem">
 Morris, Tim P., Ian R. White, and Michael J. Crowther. 2021.
 <span>“Using Simulation Studies to Evaluate Statistical Methods.”</span>
 <em>Statistics in Medicine</em> 38 (11): 2074–2102.
 </div>
-<div id="ref-mousa2020building" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mousa2020building" class="csl-entry" role="listitem">
 Mousa, Salma. 2020. <span>“Building Social Cohesion Between Christians
 and Muslims Through Soccer in Post-ISIS Iraq.”</span> <em>Science</em>
 369 (6505): 866–70.
 </div>
-<div id="ref-nellis_siddiqui_2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-nellis_siddiqui_2018" class="csl-entry" role="listitem">
 Nellis, Gareth, and Niloufer Siddiqui. 2018. <span>“Secular Party Rule
 and Religious Violence in Pakistan.”</span> <em>American Political
 Science Review</em> 112 (1): 49–67.
 </div>
-<div id="ref-offer-westort_coppock_green_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-offer-westort_coppock_green_2021" class="csl-entry" role="listitem">
 Offer-Westort, Molly, Alexander Coppock, and Donald P. Green. 2021.
 <span>“<span class="nocase">Adaptive Experimental Design: Prospects and
 Applications in Political Science</span>.”</span> <em>American Journal
 of Political Science</em> 65: 826–44.
 </div>
-<div id="ref-ofosu2021pre" class="csl-entry" role="doc-biblioentry">
+<div id="ref-ofosu2021pre" class="csl-entry" role="listitem">
 Ofosu, George, and Daniel Posner. 2022. <span>“<span class="nocase">Pre-analysis Plans: An Early Stocktaking</span>.”</span>
 <em>Perspectives on Politics</em>.
 </div>
-<div id="ref-paglayan2019public" class="csl-entry" role="doc-biblioentry">
+<div id="ref-paglayan2019public" class="csl-entry" role="listitem">
 Paglayan, Agustina S. 2019. <span>“Public-Sector Unions and the Size of
 Government.”</span> <em>American Journal of Political Science</em> 63
 (1): 21–36.
 </div>
-<div id="ref-Paler2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Paler2018" class="csl-entry" role="listitem">
 Paler, Laura, Leslie Marshall, and Sami Atallah. 2018. <span>“The Social
 Costs of Public Political Participation: Evidence from a Petition
 Experiment in Lebanon.”</span> <em>The Journal of Politics</em> 80 (4):
 1405–10.
 </div>
-<div id="ref-paluck_green_2009" class="csl-entry" role="doc-biblioentry">
+<div id="ref-paluck_green_2009" class="csl-entry" role="listitem">
 Paluck, Elizabeth Levy, and Donald P. Green. 2009. <span>“Deference,
 Dissent, and Dispute Resolution: An Experimental Intervention Using Mass
 Media to Change Norms and Behavior in Rwanda.”</span> <em>American
 Political Science Review</em> 103 (4): 622–44.
 </div>
-<div id="ref-paluck_green_green_2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-paluck_green_green_2019" class="csl-entry" role="listitem">
 Paluck, Elizabeth Levy, Seth A. Green, and Donald P. Green. 2019.
 <span>“The Contact Hypothesis Re-Evaluated.”</span> <em>Behavioural
 Public Policy</em> 3 (2): 129–58.
 </div>
-<div id="ref-pearl1999probabilities" class="csl-entry" role="doc-biblioentry">
+<div id="ref-pearl1999probabilities" class="csl-entry" role="listitem">
 Pearl, Judea. 1999. <span>“Probabilities of Causation: Three
 Counterfactual Interpretations and Their Identification.”</span>
 <em>Synthese</em> 121 (1-2): 93–149.
 </div>
-<div id="ref-pearl2009causality" class="csl-entry" role="doc-biblioentry">
+<div id="ref-pearl2009causality" class="csl-entry" role="listitem">
 ———. 2009. <em>Causality: Models, Reasoning and Inference</em>. Second
 Edition. Cambridge: Cambridge University Press.
 </div>
-<div id="ref-pearl2018book" class="csl-entry" role="doc-biblioentry">
+<div id="ref-pearl2018book" class="csl-entry" role="listitem">
 Pearl, Judea, and Dana Mackenzie. 2018. <em>The Book of Why: The New
 Science of Cause and Effect</em>. New York: Basic Books.
 </div>
-<div id="ref-peer_orr_coppock_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-peer_orr_coppock_2021" class="csl-entry" role="listitem">
 Peer, Limor, Lilla Orr, and Alexander Coppock. 2021. <span>“<span class="nocase">Active Maintenance: A Proposal for the Long-term
 Computational Reproducibility of Scientific Results</span>.”</span>
 <em>PS: Political Science &amp; Politics</em> 54 (3): 462–66.
 </div>
-<div id="ref-Pennycook:2021uk" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Pennycook:2021uk" class="csl-entry" role="listitem">
 Pennycook, Gordon, Ziv Epstein, Mohsen Mosleh, Antonio A. Arechar, Dean
 Eckles, and David G. Rand. 2021. <span>“Shifting Attention to Accuracy
 Can Reduce Misinformation Online.”</span> <em>Nature</em> 592 (7855):
 590–95.
 </div>
-<div id="ref-Pettigrew:2006th" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Pettigrew:2006th" class="csl-entry" role="listitem">
 Pettigrew, Thomas F., and Linda R. Tropp. 2006. <span>“A Meta-Analytic
 Test of Intergroup Contact Theory.”</span> <em>Journal of Personality
 and Social Psychology</em> 90 (5): 751–83.
 </div>
-<div id="ref-Peyton2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Peyton2019" class="csl-entry" role="listitem">
 Peyton, Kyle, Michael Sierra-Arévalo, and David G. Rand. 2019. <span>“A
 Field Experiment on Community Policing and Police Legitimacy.”</span>
 <em>Proceedings of the National Academy of Sciences</em> 116 (40):
 19894–98.
 </div>
-<div id="ref-plumper2010case" class="csl-entry" role="doc-biblioentry">
+<div id="ref-plumper2010case" class="csl-entry" role="listitem">
 Plümper, Thomas, Vera E. Troeger, and Eric Neumayer. 2019. <span>“Case
 Selection and Causal Inference in Qualitative Research.”</span> <em>PloS
 One</em> 14 (7): 1–18.
 </div>
-<div id="ref-porter2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-porter2021" class="csl-entry" role="listitem">
 Porter, Ethan, and Yamil Velez. 2021. <span>“Placebo Selection in Survey
 Experiments: An Agnostic Approach.”</span> <em>Political Analysis</em>,
 1–14.
 </div>
-<div id="ref-Prillaman2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Prillaman2022" class="csl-entry" role="listitem">
 Prillaman, Soledad Artiz. 2022. <span>“Strength in Numbers: How Women’s
 Groups Close India’s Political Gender Gap.”</span> <em>American Journal
 of Political Science</em>.
 </div>
-<div id="ref-reiss2007structural" class="csl-entry" role="doc-biblioentry">
+<div id="ref-reiss2007structural" class="csl-entry" role="listitem">
 Reiss, Peter C, and Frank A Wolak. 2007. <span>“Structural Econometric
 Modeling: Rationales and Examples from Industrial Organization.”</span>
 <em>Handbook of Econometrics</em> 6: 4277–4415.
 </div>
-<div id="ref-REVKIN2020104981" class="csl-entry" role="doc-biblioentry">
+<div id="ref-REVKIN2020104981" class="csl-entry" role="listitem">
 Revkin, Mara Redlich, and Ariel I. Ahram. 2020. <span>“Perspectives on
 the Rebel Social Contract: Exit, Voice, and Loyalty in the Islamic State
 in Iraq and Syria.”</span> <em>World Development</em> 132: 104981.
 </div>
-<div id="ref-Rubin1980" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Rubin1980" class="csl-entry" role="listitem">
 Rubin, Donald B. 1980. <span>“Randomization Analysis of Experimental
 Data: The Fisher Randomization Test Comment.”</span> <em>Journal of the
 American Statistical Association</em> 75 (371): 591–93.
 </div>
-<div id="ref-rubinstein1982perfect" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rubinstein1982perfect" class="csl-entry" role="listitem">
 Rubinstein, Ariel. 1982. <span>“Perfect Equilibrium in a Bargaining
 Model.”</span> <em>Econometrica: Journal of the Econometric
 Society</em>, 97–109.
 </div>
-<div id="ref-Samii2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Samii2016" class="csl-entry" role="listitem">
 Samii, Cyrus. 2016. <span>“Causal Empiricism in Quantitative
 Research.”</span> <em>The Journal of Politics</em> 78 (3): 941–55.
 </div>
-<div id="ref-samii2012equivalencies" class="csl-entry" role="doc-biblioentry">
+<div id="ref-samii2012equivalencies" class="csl-entry" role="listitem">
 Samii, Cyrus, and Peter M. Aronow. 2012. <span>“On Equivalencies Between
 Design-Based and Regression-Based Variance Estimators for Randomized
 Experiments.”</span> <em>Statistics &amp; Probability Letters</em> 82
 (2): 365–70.
 </div>
-<div id="ref-scacco_warren_2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-scacco_warren_2018" class="csl-entry" role="listitem">
 Scacco, Alexandra, and Shana S. Warren. 2018. <span>“Can Social Contact
 Reduce Prejudice and Discrimination? Evidence from a Field Experiment in
 Nigeria.”</span> <em>American Political Science Review</em> 112 (3):
 654–77.
 </div>
-<div id="ref-schwarz_coppock_2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-schwarz_coppock_2020" class="csl-entry" role="listitem">
 Schwarz, Susanne, and Alexander Coppock. 2022. <span>“<span class="nocase">What Have We Learned About Gender From Candidate Choice
 Experiments? A Meta-analysis of 67 Factorial Survey
 Experiments</span>.”</span> <em>Journal of Politics</em> 84 (2): 655–68.
 </div>
-<div id="ref-SeawrightGerring2008" class="csl-entry" role="doc-biblioentry">
+<div id="ref-SeawrightGerring2008" class="csl-entry" role="listitem">
 Seawright, Jason, and John Gerring. 2008. <span>“Case Selection
 Techniques in Case Study Research: A Menu of Qualitative and
 Quantitative Options.”</span> <em>Political Research Quarterly</em> 61
 (2): 294–308.
 </div>
-<div id="ref-cook2002experimental" class="csl-entry" role="doc-biblioentry">
+<div id="ref-cook2002experimental" class="csl-entry" role="listitem">
 Shadish, William, Thomas D. Cook, and Donald Thomas Campbell. 2002.
 <em>Experimental and Quasi-Experimental Designs for Generalized Causal
 Inference</em>. Boston: Houghton Mifflin.
 </div>
-<div id="ref-betsy2012detecting" class="csl-entry" role="doc-biblioentry">
+<div id="ref-betsy2012detecting" class="csl-entry" role="listitem">
 Sinclair, Betsy, Margaret McConnell, and Donald P. Green. 2012.
 <span>“Detecting Spillover Effects: Design and Analysis of Multilevel
 Experiments.”</span> <em>American Journal of Political Science</em> 56
 (4): 1055–69.
 </div>
-<div id="ref-skocpol1979states" class="csl-entry" role="doc-biblioentry">
+<div id="ref-skocpol1979states" class="csl-entry" role="listitem">
 Skocpol, Theda. 1979. <em>States and Social Revolutions: A Comparative
 Analysis of France, Russia and China</em>. Cambridge, UK: Cambridge
 University Press.
 </div>
-<div id="ref-slough2020ethics" class="csl-entry" role="doc-biblioentry">
+<div id="ref-slough2020ethics" class="csl-entry" role="listitem">
 Slough, Tara. 2020. <span>“The Ethics of Electoral Experimentation:
 Design-Based Recommendations.”</span> <em>Unpublished Manuscript</em>.
 </div>
-<div id="ref-snyder_borghard_2011" class="csl-entry" role="doc-biblioentry">
+<div id="ref-snyder_borghard_2011" class="csl-entry" role="listitem">
 Snyder, Jack, and Erica D. Borghard. 2011. <span>“The Cost of Empty
 Threats: A Penny, Not a Pound.”</span> <em>American Political Science
 Review</em> 105 (3): 437–56.
 </div>
-<div id="ref-Stokes2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Stokes2016" class="csl-entry" role="listitem">
 Stokes, Leah C. 2016. <span>“Electoral Backlash Against Climate Policy:
 A Natural Experiment on Retrospective Voting and Local Resistance to
 Public Policy.”</span> <em>American Journal of Political Science</em> 60
 (4): 958–74.
 </div>
-<div id="ref-stokes_2005" class="csl-entry" role="doc-biblioentry">
+<div id="ref-stokes_2005" class="csl-entry" role="listitem">
 Stokes, Susan C. 2005. <span>“Perverse Accountability: A Formal Model of
 Machine Politics with Evidence from Argentina.”</span> <em>American
 Political Science Review</em> 99 (3): 315–25.
 </div>
-<div id="ref-Swank2002" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Swank2002" class="csl-entry" role="listitem">
 Swank, Duane. 2002. <em><span class="nocase">Global Capital, Political
 Institutions, and Policy Change in Developed Welfare States</span></em>.
 New York: Cambridge University Press.
 </div>
-<div id="ref-Swire2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Swire2017" class="csl-entry" role="listitem">
 Swire, Briony, Adam J. Berinsky, Stephan Lewandowsky, and Ullrich K. H.
 Ecker. 2017. <span>“Processing Political Misinformation: Comprehending
 the Trump Phenomenon.”</span> <em>Royal Society Open Science</em> 4 (3):
 1–21.
 </div>
-<div id="ref-Tausanovitch:2013wp" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Tausanovitch:2013wp" class="csl-entry" role="listitem">
 Tausanovitch, Chris, and Christopher Warshaw. 2013. <span>“Measuring
 Constituent Policy Preferences in Congress, State Legislatures, and
 Cities.”</span> <em>The Journal of Politics</em> 75 (2): 330–42.
 </div>
-<div id="ref-teele2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-teele2020" class="csl-entry" role="listitem">
 Teele, Dawn. 2021. <span>“Virtual Consent: A Bronze Standard for
 Experimental Ethics.”</span> In <em>Cambridge Handbook of Experimental
 Political Science</em>, edited by Donald P. Green and James N. Druckman.
 New York: Cambridge University Press.
 </div>
-<div id="ref-thistlethwaite1960regression" class="csl-entry" role="doc-biblioentry">
+<div id="ref-thistlethwaite1960regression" class="csl-entry" role="listitem">
 Thistlethwaite, Donald L., and Donald T. Campbell. 1960.
 <span>“Regression-Discontinuity Analysis: An Alternative to the Ex Post
 Facto Experiment.”</span> <em>Journal of Educational Psychology</em> 51
 (6): 309.
 </div>
-<div id="ref-van2000asymptotic" class="csl-entry" role="doc-biblioentry">
+<div id="ref-van2000asymptotic" class="csl-entry" role="listitem">
 Van der Vaart, Aad W. 2000. <em>Asymptotic Statistics</em>. Vol. 3.
 Cambridge university press.
 </div>
-<div id="ref-VanEvera1997" class="csl-entry" role="doc-biblioentry">
+<div id="ref-VanEvera1997" class="csl-entry" role="listitem">
 Van Evera, Stephen. 1997. <em>Guide to Methods for Students of Political
 Science</em>. Ithaca: Cornell University Press.
 </div>
-<div id="ref-wager2018estimation" class="csl-entry" role="doc-biblioentry">
+<div id="ref-wager2018estimation" class="csl-entry" role="listitem">
 Wager, Stefan, and Susan Athey. 2018. <span>“Estimation and Inference of
 Heterogeneous Treatment Effects Using Random Forests.”</span>
 <em>Journal of the American Statistical Association</em> 113 (523):
 1228–42.
 </div>
-<div id="ref-WHITE_NATHAN_FALLER_2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-WHITE_NATHAN_FALLER_2015" class="csl-entry" role="listitem">
 White, Ariel R., Noah L. Nathan, and Julie K. Faller. 2015. <span>“<span class="nocase">What Do I Need to Vote? Bureaucratic Discretion and
 Discrimination by Local Election Officials</span>.”</span> <em>American
 Political Science Review</em> 109 (1): 129–42.
 </div>
-<div id="ref-white1982maximum" class="csl-entry" role="doc-biblioentry">
+<div id="ref-white1982maximum" class="csl-entry" role="listitem">
 White, Halbert. 1982. <span>“Maximum Likelihood Estimation of
 Misspecified Models.”</span> <em>Econometrica: Journal of the
 Econometric Society</em> 50 (1): 1–25.
 </div>
-<div id="ref-wilke2021does" class="csl-entry" role="doc-biblioentry">
+<div id="ref-wilke2021does" class="csl-entry" role="listitem">
 Wilke, Anna M. 2021. <span>“How Does the State Replace the Community?
 Experimental Evidence on Crime Control from South Africa.”</span>
 <em>Unpublished Manuscript</em>.
 </div>
-<div id="ref-wilke2020placebo" class="csl-entry" role="doc-biblioentry">
+<div id="ref-wilke2020placebo" class="csl-entry" role="listitem">
 Wilke, Anna M., Donald P. Green, and Jasper Cooper. 2020. <span>“A
 Placebo Design to Detect Spillovers from an Education–Entertainment
 Experiment in Uganda.”</span> <em>Journal of the Royal Statistical
 Society: Series A (Statistics in Society)</em> 183 (3): 1075–96.
 </div>
-<div id="ref-wilke2020field" class="csl-entry" role="doc-biblioentry">
+<div id="ref-wilke2020field" class="csl-entry" role="listitem">
 Wilke, Anna M., and Macartan Humphreys. 2020. <span>“Field Experiments,
 Theory, and External Validity.”</span> SAGE Handbook of Research Methods
 in Political Science; International Relations.
 </div>
-<div id="ref-wood2006ethical" class="csl-entry" role="doc-biblioentry">
+<div id="ref-wood2006ethical" class="csl-entry" role="listitem">
 Wood, Elisabeth Jean. 2006. <span>“<span class="nocase">The Ethical
 Challenges of Field Research in Conflict Zones</span>.”</span>
 <em>Qualitative Sociology</em> 29 (3): 373–86.
 </div>
-<div id="ref-yamamoto2012understanding" class="csl-entry" role="doc-biblioentry">
+<div id="ref-yamamoto2012understanding" class="csl-entry" role="listitem">
 Yamamoto, Teppei. 2012. <span>“Understanding the Past: Statistical
 Analysis of Causal Attribution.”</span> <em>American Journal of
 Political Science</em> 56 (1): 237–56.
 </div>
-<div id="ref-yao2018using" class="csl-entry" role="doc-biblioentry">
+<div id="ref-yao2018using" class="csl-entry" role="listitem">
 Yao, Yuling, Aki Vehtari, Daniel Simpson, and Andrew Gelman. 2018.
 <span>“Using Stacking to Average Bayesian Predictive Distributions (with
 Discussion).”</span> <em>Bayesian Analysis</em> 13 (3): 917–1007.
 </div>
-<div id="ref-zelizer_2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-zelizer_2019" class="csl-entry" role="listitem">
 Zelizer, Adam. 2019. <span>“Is Position-Taking Contagious? Evidence of
 Cue-Taking from Two Field Experiments in a State Legislature.”</span>
 <em>American Political Science Review</em> 113 (2): 340–52.
@@ -1336,9 +1379,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1403,6 +1460,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1449,6 +1592,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./errata.html" class="pagination-link">
+        <span class="nav-page-text">Errata</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
