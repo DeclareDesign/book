@@ -436,7 +436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In <code>DeclareDesign</code>, each design element is made with a function that starts with the word <code>declare</code>. For example, we can declare an assignment procedure using <code>declare_assignment</code> as follows:</p>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">simple_random_assignment</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="fu"><a href="https://declaredesign.org/r/declaredesign/reference/declare_assignment.html">declare_assignment</a></span><span class="op">(</span>Z <span class="op">=</span> <span class="fu"><a href="https://declaredesign.org/r/randomizr/reference/simple_ra.html">simple_ra</a></span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, prob <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/DeclareDesign/man/declare_assignment.html">declare_assignment</a></span><span class="op">(</span>Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/randomizr/man/simple_ra.html">simple_ra</a></span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, prob <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Each element created by a <code>declare_*</code> function, perhaps surprisingly, is itself a function. The object <code>simple_random_assignment</code> is not a particular assignment — instead, it is a function that conducts assignment when called. Each time we call <code>simple_random_assignment</code> we get a different random assignment:</p>
 <div class="cell">
@@ -448,118 +448,86 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_cols.html">bind_cols</a></span><span class="op">(</span><span class="va">assignment_1</span>, <span class="va">assignment_2</span>, <span class="va">assignment_3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tbl-multiple-assignments" class="cell tbl-parent quarto-layout-panel anchored">
-<div class="panel-caption table-caption">
-<p>Table&nbsp;4.1: Three random assignments from the same random assignment step.</p>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div id="tbl-multiple-assignments-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-multiple-assignments" style="flex-basis: 33.3%;justify-content: center;">
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-multiple-assignments" class="anchored">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>(a) 1</caption>
-<thead><tr class="header">
+<caption>Table&nbsp;4.1: Three random assignments from the same random assignment step.</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Assignment 1
+</div></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Assignment 2
+</div></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Assignment 3
+</div></th>
+</tr>
+<tr class="odd">
 <th style="text-align: center;" data-quarto-table-cell-role="th">ID</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">Z</th>
-</tr></thead>
+<th style="text-align: center;" data-quarto-table-cell-role="th">ID</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Z</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">ID</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Z</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
 <td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-
-
-</div>
-<div id="tbl-multiple-assignments-2" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-multiple-assignments" style="flex-basis: 33.3%;justify-content: center;">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>(b) 2</caption>
-<thead><tr class="header">
-<th style="text-align: center;" data-quarto-table-cell-role="th">ID</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Z</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
 <td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
 <td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-
-
-</div>
-<div id="tbl-multiple-assignments-3" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-multiple-assignments" style="flex-basis: 33.3%;justify-content: center;">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>(c) 3</caption>
-<thead><tr class="header">
-<th style="text-align: center;" data-quarto-table-cell-role="th">ID</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Z</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">0</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 
 
-</div>
 </div>
 </div>
 <p>Every step in a research design can be declared using one of the <code>declare_*</code> functions. <a href="#tbl-declarationfunctions">Table&nbsp;<span>4.2</span></a> collects these according to the four elements of a research design. In <a href="../declaration-diagnosis-redesign/declaration-in-code.html"><span>Chapter&nbsp;13</span></a>, we detail how to build each kind of step.</p>
@@ -579,37 +547,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>Model</td>
-<td><code><a href="https://declaredesign.org/r/declaredesign/reference/declare_model.html">declare_model()</a></code></td>
+<td><code><a href="https://rdrr.io/pkg/DeclareDesign/man/declare_model.html">declare_model()</a></code></td>
 <td>background variables and potential outcomes</td>
 </tr>
 <tr class="even">
 <td>Inquiry</td>
-<td><code><a href="https://declaredesign.org/r/declaredesign/reference/declare_inquiry.html">declare_inquiry()</a></code></td>
+<td><code><a href="https://rdrr.io/pkg/DeclareDesign/man/declare_inquiry.html">declare_inquiry()</a></code></td>
 <td>research questions</td>
 </tr>
 <tr class="odd">
 <td>Data strategy</td>
-<td><code><a href="https://declaredesign.org/r/declaredesign/reference/declare_sampling.html">declare_sampling()</a></code></td>
+<td><code><a href="https://rdrr.io/pkg/DeclareDesign/man/declare_sampling.html">declare_sampling()</a></code></td>
 <td>sampling procedures</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><code><a href="https://declaredesign.org/r/declaredesign/reference/declare_assignment.html">declare_assignment()</a></code></td>
+<td><code><a href="https://rdrr.io/pkg/DeclareDesign/man/declare_assignment.html">declare_assignment()</a></code></td>
 <td>assignment procedures</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><code><a href="https://declaredesign.org/r/declaredesign/reference/declare_measurement.html">declare_measurement()</a></code></td>
+<td><code><a href="https://rdrr.io/pkg/DeclareDesign/man/declare_measurement.html">declare_measurement()</a></code></td>
 <td>measurement procedures</td>
 </tr>
 <tr class="even">
 <td>Answer strategy</td>
-<td><code><a href="https://declaredesign.org/r/declaredesign/reference/declare_estimator.html">declare_estimator()</a></code></td>
+<td><code><a href="https://rdrr.io/pkg/DeclareDesign/man/declare_estimator.html">declare_estimator()</a></code></td>
 <td>estimation procedures</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><code><a href="https://declaredesign.org/r/declaredesign/reference/declare_test.html">declare_test()</a></code></td>
+<td><code><a href="https://rdrr.io/pkg/DeclareDesign/man/declare_test.html">declare_test()</a></code></td>
 <td>testing procedures</td>
 </tr>
 </tbody>
@@ -629,7 +597,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="lem-ch4num1" class="theorem lemma">
 <p><span class="theorem-title"><strong>Diagnosis 4.1 </strong></span>Example design diagnosis</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://declaredesign.org/r/declaredesign/reference/diagnose_design.html">diagnose_design</a></span><span class="op">(</span><span class="va">declaration_4.1</span>, sims <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/DeclareDesign/man/diagnose_design.html">diagnose_design</a></span><span class="op">(</span><span class="va">declaration_4.1</span>, sims <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -665,11 +633,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">4.4</span> Redesign</h2>
 <p>We redesign to learn how the diagnosands change as design features change. We can do this using the <code>redesign</code> function over a range of sample sizes, which produces a list of designs.</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://declaredesign.org/r/declaredesign/reference/redesign.html">redesign</a></span><span class="op">(</span><span class="va">declaration_4.1</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">200</span>, <span class="fl">300</span>, <span class="fl">400</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/DeclareDesign/man/redesign.html">redesign</a></span><span class="op">(</span><span class="va">declaration_4.1</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">200</span>, <span class="fl">300</span>, <span class="fl">400</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Our simulation and diagnosis tools can operate directly on this list of designs:</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://declaredesign.org/r/declaredesign/reference/diagnose_design.html">diagnose_design</a></span><span class="op">(</span><span class="va">designs</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/DeclareDesign/man/diagnose_design.html">diagnose_design</a></span><span class="op">(</span><span class="va">designs</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="library-of-designs" class="level2" data-number="4.5"><h2 data-number="4.5" class="anchored" data-anchor-id="library-of-designs">
 <span class="header-section-number">4.5</span> Library of designs</h2>
@@ -678,7 +646,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://declaredesign.org/r/designlibrary/">DesignLibrary</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">block_cluster_design</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="fu"><a href="https://declaredesign.org/r/designlibrary/reference/block_cluster_two_arm_designer.html">block_cluster_two_arm_designer</a></span><span class="op">(</span>N <span class="op">=</span> <span class="fl">1000</span>, N_blocks <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/DesignLibrary/man/block_cluster_two_arm_designer.html">block_cluster_two_arm_designer</a></span><span class="op">(</span>N <span class="op">=</span> <span class="fl">1000</span>, N_blocks <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="long-term-code-usability" class="level2" data-number="4.6"><h2 data-number="4.6" class="anchored" data-anchor-id="long-term-code-usability">
 <span class="header-section-number">4.6</span> Long term code usability</h2>
