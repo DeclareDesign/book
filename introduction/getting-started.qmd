@@ -64,27 +64,23 @@ bind_cols(assignment_1, assignment_2, assignment_3)
 ```
 ```{r}
 #| echo: false
+#| message: false
+#| warning: false
 #| label: tbl-multiple-assignments
 #| tbl-cap: Three random assignments from the same random assignment step.
-#| tbl-subcap: ["1", "2", "3"]
-#| layout-ncol: 3
 
 participants <- data.frame(ID = 1:100)
 
 set.seed(7)
 
-assignment_1 <- simple_random_assignment(participants)
-assignment_2 <- simple_random_assignment(participants)
-assignment_3 <- simple_random_assignment(participants)
-head(assignment_1, 5) |> 
-  kable(booktabs = TRUE, align = "c", digits = 3) |> 
-  kable_styling()
-head(assignment_2, 5) |> 
-  kable(booktabs = TRUE, align = "c", digits = 3) |> 
-  kable_styling()
-head(assignment_3, 5) |> 
-  kable(booktabs = TRUE, align = "c", digits = 3) |> 
-  kable_styling()
+assignment_1 <- simple_random_assignment(participants) |> head(5) 
+assignment_2 <- simple_random_assignment(participants) |> head(5) 
+assignment_3 <- simple_random_assignment(participants) |> head(5) 
+
+bind_cols(assignment_1, assignment_2, assignment_3) |> 
+  kable(booktabs = TRUE, align = "c", digits = 3, col.names = rep(c("ID", "Z"), times = 3)) |> 
+  kable_styling() |> 
+  add_header_above(c("Assignment 1" = 2, "Assignment 2" = 2, "Assignment 3" = 2))
 ```
 
 Every step in a research design can be declared using one of the `declare_*` functions. @tbl-declarationfunctions collects these according to the four elements of a research design. In @sec-ch13, we detail how to build each kind of step.
