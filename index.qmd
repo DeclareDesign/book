@@ -6,7 +6,7 @@ format:
     page-layout: full
 ---
 
-Forthcoming, *Princeton University Press*.
+*Princeton University Press*, 2023.
 
 ::: {.content-hidden}
 
