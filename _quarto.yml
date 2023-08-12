@@ -92,6 +92,7 @@ book:
           - lifecycle/integration.qmd
         - epilogue.qmd
         - references.qmd
+        - student-teacher.qmd
         - errata.qmd
 
 bibliography: references.bib
