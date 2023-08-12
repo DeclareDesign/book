@@ -151,7 +151,7 @@ Lin estimator diagnosis
 
 ```{r, eval=FALSE}
 diagnosis_18.3 <- 
-  diagnosis_18.3 |> 
+  declaration_18.3 |> 
   redesign(
     control_slope = seq(-1, 1, 0.5), 
     prob = seq(0.1, 0.9, 0.1)) |> 
