@@ -7,7 +7,7 @@
 source("scripts/before_chapter_script.R")
 ```
 
-An observational design for descriptive inference usually has an inquiry like a population mean, covariance, or distribution as the main research goal. In an observational research design, the data strategy includes sampling and measurement components, but no treatments are allocated by the researcher. Put differently, in an observational design for descriptive inference, researchers seek to measure and summarize the world, but not to change it. This class of research designs encompasses a huge portion of research activity -- most surveys fall into this class, as do large-scale data collections of economic and sociopolitical indicators, classic case studies focused on "thick description," and many text analysis projects.
+An observational design for descriptive inference usually has an inquiry like a population mean, covariance, or distribution as the main research goal. In an observational research design, the data strategy includes sampling and measurement components, but no treatments are allocated by the researcher. Put differently, in an observational design for descriptive inference, researchers seek to measure and summarize the world. This class of research designs encompasses a huge portion of research activity -- many surveys fall into this class, as do large-scale data collections of economic and sociopolitical indicators, classic case studies focused on "thick description," and many text analysis projects.
 
 ## Simple random sampling 
 
@@ -15,25 +15,25 @@ An observational design for descriptive inference usually has an inquiry like a 
 We declare a design in which a researcher takes a simple random sample of a population and uses a survey instrument to measure a latent quantity. The inquiry is the population average of the measured quantity. We show how to declare this design and an approach to incorporate concerns about non random non response in the design.
 :::
 
-Descriptive inquiries like the population mean of one variable or the population correlation between two variables are defined with respect to a specific group of units -- the population about which we want to draw inferences.
+Descriptive inquiries like the population mean of one variable or the population correlation between two variables are defined with respect to a specific group of units: the population about which we want to draw inferences.
 
 One approach to studying a population is to conduct a census in which we record data on all $N$ units (written with an upper-case $N$ to represent the population). A census has the clear advantage of being comprehensive, but it usually comes at an overwhelming and prohibitive cost. 
 
-To avoid those costs, we collect data from only $n$ units (written with a lower-case $n$), where the sample size $n$ is smaller than the population size $N$. When the $n$ units we sample are chosen at random, we can obtain unbiased estimates of many descriptive inquiries.^[But not all. @HEDAYAT2019192 prove that that unbiased estimators of the population minimum, maximum, and even median do not exist for any sampling procedure except a census. The intuition behind this result is easiest to see for a maximum: unless the random sample happens to contain the unit with the highest value of the outcome, the estimate will necessarily fall below the maximum.] 
+To avoid those costs, we collect data from only $n$ units (written with a lowercase $n$), where the sample size $n$ is smaller than the population size $N$. When the $n$ units we sample are chosen at random, we can obtain unbiased estimates of many descriptive inquiries.^[But not all. @HEDAYAT2019192 prove that unbiased estimators of the population minimum, maximum, and even median do not exist for any sampling procedure except a census. The intuition behind this result is easiest to see for a maximum: unless the random sample happens to contain the unit with the highest value of the outcome, the estimate will necessarily fall below the maximum.] 
 
 Imagine we seek to estimate the average political ideology of adult residents of the small town of Portola, California (population 2,100). Under our model *M*, the latent ideology $Y^*$ is drawn from a standard normal distribution.
 
-The data strategy $D$ has two components: a survey question $Q$ and a sampling procedure $S$. The survey question asks subjects to place themselves on a left-right scale that varies from 1 (most liberal) to 7 (most conservative). We approximate this measurement procedure with a function that "cuts" the latent ideology into 7 separate groups. This survey question will introduce measurement error insofar as it does not distinguish among people with different latent ideologies who, because of our measurement tool, place themselves at the same place on the seven-point scale.^[Why do we choose this strategy? Respondents may have trouble placing them on a finer scale, and we cannot ask them on an infinitely-fine scale.] Our main hope for this measurement procedure is that all of the people who give themselves higher scores are indeed more conservative than those who give themselves lower scores. The sampling procedure is "complete" random sampling. We draw a sample of exactly $n = 100$, where every member of the population has an equal probability of inclusion in the sample, $\frac{n}{N}$. 
+The data strategy $D$ has two components: a survey question $Q$ and a sampling procedure $S$. The survey question asks subjects to place themselves on a left-right scale that varies from 1 (most liberal) to 7 (most conservative). We approximate this measurement procedure with a function that "cuts" the latent ideology into seven separate groups. This survey question will introduce measurement error insofar as it does not distinguish among people with different latent ideologies who, because of our measurement tool, place themselves at the same place on the seven-point scale.^[Why do we choose this strategy? Respondents may have trouble placing them on a finer scale, and we cannot ask them on an infinitely fine scale.] Our main hope for this measurement procedure is that all of the people who give themselves higher scores are indeed more conservative than those who give themselves lower scores. The sampling procedure is "complete" random sampling. We draw a sample of exactly $n = 100$, where every member of the population has an equal probability of inclusion in the sample, $\frac{n}{N}$. 
 
 The model and data strategy are represented by the DAG in @fig-ch15num1. The DAG shows that the observed outcome $Y$ is a function of the latent score $Y^*$ and the survey question $Q$. The observed outcome $Y$ is only measured for sampled units, i.e., units that have $S = 1$. This simple diagram represents important design assumptions. First, no arrow leads from $Y^*$ to $S$. If such an arrow were present, then units with higher or lower latent ideologies would be more likely to be sampled. Second, an arrow does lead from $Y^*$ to $Y$, indicating that we assume the measured variable does indeed respond to the latent variable. Finally, the diagram includes an explicit role for the survey question, which helps us to consider how alternative wordings of $Q$ might change the observed variable $Y$.
 
 ![Directed acyclic graph for the simple random sampling design](/figures/figure-15-1){#fig-ch15num1}
 
-Our inquiry $I$ is the population mean of the *measured* variable $Y$: $\frac{1}{N} \sum_1^N Y_i = \bar{Y}$, rather than the mean of the latent variable $Y^*$. In this sense, our inquiry is "data-strategy dependent", since we are interested in the average value of what we *would* measure for any member of the population were we to sample them. 
+We imagine here that our inquiry $I$ is the population mean of the *measured* variable $Y$: $\frac{1}{N} \sum_1^N Y_i = \bar{Y}$, rather than the more ambitious target, the mean of the latent variable $Y^*$. In this sense, our inquiry is "data-strategy dependent," since we are interested in the expected value of what we *would* measure for any member of the population were we to sample them and apply question $Q$. 
 
 Our answer strategy is the sample mean estimator: $\widehat{\overline{Y}} = \frac{1}{n} \sum_1^n Y_i$, implemented here as an ordinary least squares regression to facilitate the easy calculation of auxiliary statistics like the standard error of the estimate and the 95% confidence interval.
 
-We incorporate these design features into @def-ch15num1. The `portola` object is a fixed population of 2100 units with a latent ideology `Y_star`. The declaration of the measurement strategy comes before the declaration of the inquiry, showing how the inquiry is data strategy dependent.  
+We incorporate these design features into @def-ch15num1. The `portola` object is a fixed population of 2,100 units with a latent ideology `Y_star`. The declaration of the measurement strategy comes before the declaration of the inquiry, showing how the inquiry is data strategy-dependent.  
 
 ::: {#def-ch15num1 .declaration} 
 
@@ -46,7 +46,7 @@ $~$
 
 :::
 
-Two main diagnosands for the simple random sampling design are bias and root mean-squared error. We want to know if we get the right answer on average and we want to know, on average, how far off from the truth we are.
+Two main diagnosands for the simple random sampling design are bias and root-mean-squared error. We want to know if we get the right answer on average and we want to know, on average, how far off from the truth we are.
 
 ::: {#lem-ch15num1} 
 
@@ -81,23 +81,23 @@ diagnosis_15.1 |>
   kable_styling()
 ```
 
-The diagnosis in @tbl-diagnosis15s1 indicates that under complete random sampling, the sample mean estimator of the population mean is unbiased and that the root mean squared error is manageable at `r round(diagnosis_15.1$diagnosands_df$rmse,2)`.
+The diagnosis in @tbl-diagnosis15s1 indicates that under complete random sampling, the sample mean estimator of the population mean is unbiased and that the root-mean-squared error is manageable at `r round(diagnosis_15.1$diagnosands_df$rmse,2)`.
 
 :::
 
-### What can go wrong {#sec-ch15s1ss1}
+### What can go wrong {#sec-ch15s1ss1} 
 
-The most serious threat to descriptive inference in a randomized sampling design is nonresponse. Missingness due to nonresponse can lead to bias if missingness is correlated with outcomes. Sometimes this bias is referred to as "selection bias" in the sense that some units select out of responding when sampled.
+A serious threat to descriptive inference in a randomized sampling design like this is nonresponse. Missingness due to nonresponse can lead to bias if missingness is correlated with outcomes. Sometimes this bias is referred to as "selection bias" in the sense that some units select out of responding when sampled.
 
-Depending on what information is available about the missing units, various answer strategy fix-ups are available to analysts. For example, if we have demographic or other covariate information about the missing units, we can search for similar-seeming units in the observed data, then impute their missing outcomes. This approach depends on the strong assumption that units with the same covariate profile have the same average outcome, regardless of whether they go missing. The imputation process is often done on the basis of a regression model; multiple imputation methods attempt to incorporate the additional uncertainty that accompanies the modeling technique. Answer strategies that employ inverse probability weights adjust for non response by upweighting types of units we have too few of (relative to a population target) and downweighting units we have too many of.
+Depending on what information is available about the missing units, various answer strategy fix-ups are available to analysts. For example, if we have demographic or other covariate information about the missing units, we can search for similar-seeming units in the observed data, then impute their missing outcomes. This approach depends on the strong assumption that units with the same covariate profile have the same average outcome, regardless of whether they go missing. The imputation process is often done on the basis of a regression model; multiple imputation methods attempt to incorporate the additional uncertainty that accompanies the modeling technique. Answer strategies that employ inverse probability weights adjust for nonresponse by upweighting types of units we have too few of (relative to a population target) and downweighting units we have too many of.
 
-Avoiding -- or dynamically responding to -- missingness in the data strategy is usually preferable to the addition of modeling assumptions in the answer strategy. Avoiding missingness often means adding extra effort and expense, such as monetary incentives for participation, multiple rounds of attempted contact, and attempting contact through a variety of modes (phone, mail, email, direct message, text, in-person visit). The best way to allocate extra effort will vary from context to context, as will the payoff from doing so. Our recommendation is to reason about the plausible response rates that would result from different levels of effort, then to consider how to optimize the bias-effort tradeoff. Sometimes, achieving zero bias would be far too costly, so we would be willing to tolerate some bias because effort is too expensive.
+Avoiding -- or dynamically responding to -- missingness in the data strategy can be preferable to the addition of modeling assumptions in the answer strategy. Avoiding missingness often means extra effort and expense, such as adding monetary incentives for participation, making multiple rounds of attempted contact, and attempting contact through a variety of modes (phone, mail, email, direct message, text, or in-person visit). The best way to allocate extra effort will vary from context to context, as will the payoff from doing so. Our recommendation is to reason about the plausible response rates that would result from different levels of effort, then to consider how to optimize the bias-effort trade-off. Sometimes, achieving zero bias would be far too costly, so we would be willing to tolerate some bias because effort is too expensive.
 
 @def-ch15num2 builds in a dependence between the latent outcome $Y*$ and the probability of responding to the survey. That probability also responds to researcher effort. The diagnosis shows how effort translates into higher response rates and lower bias:
 
 ::: {#def-ch15num2 .declaration} 
 
-Survey nonresponse design
+Survey nonresponse design.
   
 ```{r, file = "scripts_declarations/declaration_15.2.R"}
 ```
@@ -140,34 +140,34 @@ We declare a design in which a researcher takes a clustered random sample of a p
 
 Researchers often cannot randomly sample at the individual level because it may, among other reasons, be too costly or logistically impractical. Instead, they may choose to sample clusters at random first, then randomly sample units within clusters. Clusters might be schools, localities, or households.
 
-How does clustering change the research design relative to the individual-level design? First, we need to elaborate the model $M$ to make the clustering hierarchy explicit. In the declaration below, we imagine our research site is two states in Nigeria. Localities are nested within states and individuals are nested within localities. Second, we want to respect this hierarchy when thinking about the distribution of outcomes. Individuals living in the same locality are likely to share political viewpoints, either through the explicit transmission of political views or because of common exposure to political influence. The "intra-cluster correlation" or ICC is an extremely important statistic for the design of cluster-sampled studies. It describes what fraction of the total variation in the outcome can be attributed to the across-cluster differences in average outcomes. 
+How does clustering change the research design relative to the individual-level design? First, we need to elaborate the model $M$ to make the clustering hierarchy explicit. In the declaration below, we imagine our research site is two states in Nigeria. Localities are nested within states and individuals are nested within localities. Second, we want to respect this hierarchy when thinking about the distribution of outcomes. Individuals living in the same locality are likely to share political viewpoints, either through the explicit transmission of political views or because of common exposure to political influence. The "intra-cluster correlation," or ICC, is an extremely important statistic for the design of cluster-sampled studies. It describes what fraction of the total variation in the outcome can be attributed to the across-cluster differences in average outcomes. 
 
-In the declaration below, the latent outcome `Y_star` describes subject's latent political preferences. This latent outcome is a function of locality differences and individual differences. The variances of these two shocks (difference parameters) are determined by the `ICC` parameter. If ICC were equal to 1, the variance across localities would be equal to 1, and all individuals within a locality would have exactly the same political preferences. If ICC were equal to zero, then the variation in preferences would be entirely at the individual level. 
+In the declaration below, the latent outcome `Y_star` describes a subject's latent political preferences. This latent outcome is a function of locality differences and individual differences. The variances of these two shocks (difference parameters) are determined by the `ICC` parameter. If ICC were equal to 1, the variance across localities would be equal to 1, and all individuals within a locality would have exactly the same political preferences. If ICC were equal to 0, then the variation in preferences would be entirely at the individual level. 
 
 ```{r, file = "scripts_declarations/declaration_15.3a.R"}
 ```
 
 Many different cluster sampling designs are possible, but a standard choice is a two-stage design in which first, some but not all clusters are sampled, and second, some but not all units within a cluster are sampled. The sampling at either stage may be stratified by covariates at the appropriate level. The first stage can be stratified by cluster-level covariates and the second stage can be stratified by individual-level covariates in order to improve precision. In this declaration, we form cluster-level strata by state.
 
-The two stage random-sampling design raises an important tradeoff: Should we invest in sampling more clusters or in more individuals per cluster? Typically, adding the marginal cluster is more expensive than adding the marginal individual. We formalize the tradeoff with a "budget function" that returns the largest individual level inclusion probability that is budget-compatible with a given cluster sampling probability:
+The two-stage random-sampling design raises an important trade-off: Should we invest in sampling more clusters or in more individuals per cluster? Typically, adding the marginal cluster is more expensive than adding the marginal individual. We formalize the trade-off with a "budget function" that returns the largest individual level inclusion probability that is budget-compatible with a given cluster sampling probability:
 
 ```{r, file = "scripts_declarations/declaration_15.3b.R"}
 ```
 
 We use the output of this function to determine the probability of an individual being sampled, conditional on their cluster being sampled. 
 
-Lastly, the answer strategy must also respects the data strategy by clustering standard errors at the highest level at which units are sampled, which in this case is the locality.
+Lastly, the answer strategy must also respect the data strategy by clustering standard errors at the highest level at which units are sampled, which in this case is the locality.
 
 ::: {#def-ch15num3 .declaration} 
 
-Cluster random sampling design
+Cluster random sampling design.
 
 ```{r, file = "scripts_declarations/declaration_15.3c.R"}
 ```
 
 :::
 
-We redesign @def-ch15num3 over various levels of the cluster-level probability of sampling, which in turn sets the probability of sampling at the individual level. @fig-ch15num3 shows that for a good while, adding additional clusters yields precision gains. At some point, however, the cost to sample size within cluster is too large, and we start seeing precision loss around a probability of 0.75 of a cluster being sampled. The precise combination of design parameters that minimize the standard deviation of the sampling distribution will depend on nearly every aspect of the design declaration, but the most important are the total budget, the relative costs of clusters and individuals, and the ICC. When the ICC is zero, we should invest in few clusters and many individuals. When the ICC is one, we should invest in many clusters and few individuals.
+We redesign @def-ch15num3 over various levels of the cluster-level probability of sampling, which in turn sets the probability of sampling at the individual level. @fig-ch15num3 shows that for a good while, adding additional clusters yields precision gains. At some point, however, the cost to sample size within cluster is too large, and we start seeing precision loss around a probability of 0.75 of a cluster being sampled. The precise combination of design parameters that minimize the standard deviation of the sampling distribution will depend on nearly every aspect of the design declaration, but the most important are the total budget, the relative costs of clusters and individuals, and the ICC. When the ICC is 0, we should invest in few clusters and many individuals. When the ICC is 1, we should invest in many clusters and few individuals.
 
 ::: {#lem-ch15num3} 
 
@@ -192,28 +192,28 @@ diagnosis_15.3 <- get_rdddr_file_local("diagnosis_15.3")
 
 ### Design examples
 
-- @stokes_2005 use a stratified cluster sampling design to estimate the prevalence of vote buying in Argentina. The strata were provinces, the clusters were census tracts. A simple random sample of individuals residing in selected census tracts were ultimately interviewed.
+- @stokes_2005 uses a stratified cluster sampling design to estimate the prevalence of vote buying in Argentina. The strata were provinces and the clusters were census tracts. A simple random sample of individuals residing in selected census tracts were ultimately interviewed.
 
-- @Paler2018 use a multistage clustered sampling design to study Lebanese citizen's willingness to sign a petition condemning sectarian politics. The clusters were localities (villages in rural areas, neighborhoods in urban areas), which were stratified by population size. Within selected localities, simple random samples of households were drawn; within households, a single adult was drawn at random. The study also included a randomized treatment that manipulated whether petition signatures were public or private. 
+- @Paler2018 use a multistage clustered sampling design to study Lebanese citizen's willingness to sign a petition condemning sectarian politics. The clusters were localities (villages in rural areas, neighborhoods in urban areas), which were stratified by population size. Within selected localities, simple random samples of households were drawn; within households, a single adult was selected at random. The study also included a randomized treatment that manipulated whether petition signatures were public or private. 
 
 
 ## Multi-level regression and poststratification {#sec-ch15s3}
 
 ::: {.ddbox}
-We declare a design in which researchers reweight the responses of different units in a sample in order to better estimate a population level quantity. Reweighting depends on how much units are thought to "represent" other nonsampled units and requires making decisions about how much units of different types should be pooled together. Design performance of a partially pooled model is compared against designs that involve no pooling and full pooling. 
+We declare a design in which researchers reweight the responses of different units in a sample in order to better estimate a population-level quantity. Reweighting depends on how much units are thought to "represent" other nonsampled units and requires making decisions about how much units of different types should be pooled together. Design performance of a partially pooled model is compared against designs that involve no pooling and full pooling. 
 :::
 
-Multi-level regression and poststratification (MRP) is a technique used primarily for "small area estimation." In the prototypical setting, we conduct a nationally-representative survey of public opinion, but our goal is to generate estimates of the average level of public opinion for many subnational units. In the United States context, these "small area" units are often the 50 states. The main problem is that in a national poll of 2,000 Americans, we might only have 4 respondents from small states like Alaska, Wyoming, or Vermont, but more than 100 from large states like California, New York, or Texas. Accordingly, it is harder to estimate opinion in small states than in large states. The key insight of an MRP design is that we can "borrow strength" across states and kinds of people in order to improve state level estimates.
+Multilevel regression and poststratification (MRP) is a technique used primarily for "small area estimation." In the prototypical setting, we conduct a nationally-representative survey of public opinion, but our goal is to generate estimates of the average level of public opinion for many subnational units. In the United States context, these "small area" units are often the 50 states. The main problem is that in a national poll of 2,000 Americans, we might only have four respondents from small states like Alaska, Wyoming, or Vermont, but more than 100 from large states like California, New York, or Texas. Accordingly, it is harder to estimate opinion in small states than in large states. The key insight of an MRP design is that we can "borrow strength" across states and kinds of people in order to improve state level estimates.
 
-In an MRP design, the answer strategy includes two steps: a multi-level regression step and a poststratification step. The regression model generates estimates of the average opinion for classes of people within each state. The precise flavor of regression model can vary from application to application. In the simple example below, we use a generalized linear mixed effects model with an individual-level covariate and random effects by state, but regression models of substantial complexity are sometimes used to model important nuances in how opinions covary with individual and state-level characteristics (see, e.g., @bisbee_2019). 
+In an MRP design, the answer strategy includes two steps: a multilevel regression step and a poststratification step. The regression model generates estimates of the average opinion for classes of people within each state. The precise flavor of regression model can vary from application to application. In the simple example below, we use a generalized linear mixed effects model with an individual-level covariate and random effects by state, but regression models of substantial complexity are sometimes used to model important nuances in how opinions covary with individual and state-level characteristics (see, e.g., @bisbee_2019). 
 
-The regression model generates estimates of the average opinion for classes of people within each state. The post-stratification step reweights these estimates to *known* proportions of each class of person within each state. The knowledge of these proportions has to come from outside the survey. The US census is the usual source of these population proportions in the American context, though any reliable source of this information is suitable.
+The regression model generates estimates of the average opinion for classes of people within each state. The poststratification step reweights these estimates to *known* proportions of each class of person within each state. The knowledge of these proportions has to come from outside the survey. The US census is the usual source of these population proportions in the American context, though any reliable source of this information is suitable.
 
-In @def-ch15num4, we begin with a dataset of the fifty states that describes what fraction of people in each state has graduated from high school. This code block also establishes the true state means that will form our inquiry. In the model, we draw a nationally-representative sample of size 2,000, respecting the fraction of people within each state with a high school degree. The post-stratification weights are built from the that fraction as well. The binary public opinion variable `policy_support` is a function of the high school covariate, an individual-level shock, and a state-level shock. The inquiry is the mean policy support at the state level. The tricky part of this design is the two-step answer strategy. The first step is handled by the multilevel regression function `glmer`. The second step is handled by the `post_stratification_helper` function (available in the `rdss` companion package) that obtains predictions from the model, then reweights them according to the post-stratification weights.
+In @def-ch15num4, we begin with a dataset of the 50 states that describes what fraction of people in each state has graduated from high school. This code block also establishes the true state means that will be summarized by our inquiry. In the model, we draw a nationally representative sample of size 2,000, respecting the fraction of people within each state with a high school degree. The poststratification weights are built from that fraction as well. The binary public opinion variable `policy_support` is a function of the high school covariate, an individual-level shock, and a state-level shock. The inquiry is the mean policy support at the state level. The tricky part of this design is the two-step answer strategy. The first step is handled by the multilevel regression function `glmer`. The second step is handled by the `post_stratification_helper` function (available in the `rdss` companion package), which obtains predictions from the model, then reweights them according to the poststratification weights.
 
 ::: {#def-ch15num4 .declaration} 
 
-Multilevel regression and poststratification design
+Multilevel regression and poststratification design.
   
 ```{r, file = "scripts_declarations/declaration_15.4.R"}
 ```
@@ -230,7 +230,7 @@ The strengths of the MRP design are best appreciated by contrasting MRP's partia
 
 ::: {#def-ch15num5 .declaration} 
 
-Redesign over answer strategies
+Redesign over answer strategies.
 
 ```{r, file = "scripts_declarations/declaration_15.5.R"}
 ```
@@ -247,13 +247,13 @@ Diagnosing over answer strategies
 diagnosis_15.4 <- diagnose_design(declaration_15.5)
 ```
 
+![Comparison of three answer strategies](/figures/figure-15-5){#fig-ch15num5}
+
 @fig-ch15num5 compares the three estimators. The first column of facets shows one draw of the estimates against the estimands. The main thing to notice here is that the full pooling estimate is more or less a flat line -- regardless of the estimand, the estimates are just above 50%. Relative to partial pooling, the no pooling estimates are further spread around the 45 degree line, with small states bouncing around the most. 
 
 On the right side of the figure, we see the bias, RMSE, and standard deviation diagnosands for each inquiry under all three answer strategies. Under no pooling, bias is very low, but the RMSE and standard deviation for small states is very high. Under full pooling, the standard deviation is very low, but bias is very positive for states with low support and very negative for states with high support. The resulting RMSE has a funny "V" shape -- we only do well for states that happen to have opinion that is very close to the national average.
 
-Partial pooling represents a Goldilocks compromise between full and no pooling.  Yes, we have some positive bias for low-opinion states and negative bias for high opinion states, but variance has been brought under control. As a result, the RMSE for both small and large states is small.
-
-![Comparison of three answer strategies](/figures/figure-15-5){#fig-ch15num5}
+Partial pooling represents a Goldilocks compromise between full and no pooling. Yes, we have some positive bias for low-opinion states and negative bias for high-opinion states, but variance has been brought under control. As a result, the RMSE for both small and large states is small. 
 
 :::
 
@@ -266,29 +266,29 @@ Partial pooling represents a Goldilocks compromise between full and no pooling. 
 
 ## Index creation 
 
-::: {.ddbox}
-We declare a design is which we take multiple measures and combine them to learn about a latent, unobservable quantity. The design diagnosis shows that it is possible to generate interpretable conditional estimates of this quantity and assess bias even though the metric of the unobservable quantity is unknown. The diagnosis highlights how subtle differences in scale construction generate different biases. 
+::: {.ddbox} 
+We declare a design is which we take multiple measures and combine them to learn about a latent, unobservable quantity. The design diagnosis shows that it is possible to generate interpretable conditional estimates of this quantity and assess bias even though the metric of the unobservable quantity is unknown. The diagnosis highlights how subtle differences in scale construction generate different biases.
 :::
 
-Models often specify a latent variable (`Y_star`) that we can't observe directly. The measurement procedures we use to produce observed variables (`Y_1`, `Y_2`, `Y_3`) are not perfect: observed values may be related to the latent variables but are often on different scales. A common strategy for addressing measurement error is to combine multiple measures of the same latent variable into an index. The basic intuition for this procedure is that when we combine multiple measures, the errors attending to each measure will tend to cancel one another out. When this happens, the index itself has lower measurement error than any of the constituent parts. 
+Models often specify a latent variable (`Y_star`) that we can't observe directly. The measurement procedures we use involve imperfect proxies (`Y_1`, `Y_2`, `Y_3`): observed values for these proxies may be related to the latent variables but are often on different scales. A common strategy for addressing measurement error is to combine multiple measures of the same latent variable into an index. The basic intuition for this procedure is that when we combine multiple measures, the errors attending to each measure will tend to cancel one another out. When this happens, the index itself has lower measurement error than any of the constituent parts. 
 
-The first difficult feature of such problems is that we do not have access to the *scale* on which `Y_star` is measured and so it may seem like a hopeless exercise to try to assess whether we have got good or bad estimates of `Y_star` when we combine the measured data. 
+The first difficult feature of such problems is that we do not have access to the *scale* on which `Y_star` is measured and so it may seem like a hopeless exercise to try to assess whether we have good or bad estimates of `Y_star` when we combine the measured data. 
 
-One way around this is to normalize the scale of both the latent variable and the measured variable so that they have a mean of zero and a standard deviation of one. But in that case, we are guaranteed that our estimate of the mean of the normalized variable will be unbiased because we will certainly estimate a mean of 0! That may be --- but as we show in the declaration below, if your model is correct this approach may still be useful for calculating other quantities (such as conditional means) that you don't just get right by construction.  
+One way around this is to normalize the scale of both the latent variable and the measured variable so that they have a mean of 0 and a standard deviation of 1. But in that case, we are guaranteed that our estimate of the mean of the normalized variable will be unbiased because we will certainly estimate a mean of 0! That may be --- but as we show in the declaration below, if your model is correct this approach may still be useful for calculating other quantities (such as conditional means) that you don't get right just by construction.  
 
-A second challenge is deciding which measurements to combine into the index. We clearly only want to create indices using measurements of the same latent variable, but it can hard to be sure which latent variable, exactly, is being measured. Just relying on whether the measurements are positively correlated or not is not sufficient, because measurements can be correlated even if they are not measurements of the same underlying variable. Ultimately we have to rely on theory to make these decisions, as uncomfortable as that may make us.
+A second challenge is deciding which measurements to combine into the index. We clearly only want to create indices using measurements of the same latent variable, but it can hard to be sure ex ante whether a given measurement is a good proxy for a given latent variable. Just relying on whether the measurements are positively correlated or not is not sufficient, because measurements can be correlated even if they are not measurements of the same underlying variable. Ultimately we have to rely on theory to make these decisions, as uncomfortable as that may make us.
 
-In @def-ch15num6, our inquiry is the average level of the latent variable among units whose binary covariate `X` is equal to one.
+In @def-ch15num6, our inquiry is the average level of the latent variable among units whose binary covariate `X` is equal to 1.
 
-In the declaration below `Y_star` has a normal distribution but it is not centered on zero. The measured variables `Y_1`, `Y_2`, `Y_3` are also normally distributed but each has its own scale; they are all related to `Y_star`, though some more strongly than others. Many procedures for combining these measured variables into an index exist. Here we'll consider a few of the common approaches: 
+In the declaration below `Y_star` has a normal distribution but it is not centered on 0. The measured variables `Y_1`, `Y_2`, `Y_3` are also normally distributed but each has its own scale; they are all related to `Y_star`, though some more strongly than others. Many procedures for combining these measured variables into an index exist. Here we'll consider a few of the common approaches: 
 
-- `Y_avg` is constructed by first scaling each of these measured variables, then averaging and then scaling again. This is akin to the approach used in @kling2007experimental. 
+- `Y_avg` is constructed by first scaling each of these measured variables, then averaging them. This is akin to the approach used in @kling2007experimental. 
 
-- `Y_avg_adjusted` is the same as `Y_avg`, but we scale the measured values by the units with `X = 0`.
+- `Y_avg_adjusted` is the same as `Y_avg`, but we scale the measured values by features of the units with `X = 0`.
 
-- `Y_avg_rescaled` is the same as `Y_avg`, but instead of taking an equally-weighted average of the scaled components, we rescale their sum by its mean and standard deviation.
+- `Y_avg_rescaled` is the same as `Y_avg`, but instead of taking an equally weighted average of the scaled components, we rescale their sum by its mean and standard deviation.
 
-- `Y_first_factor` extracts the first factor from a 'principal components analysis' which, intuitively, seeks to find a weighting that minimizes the distance to the measured variables. 
+- `Y_first_factor` extracts the first factor from a principal components analysis, which, intuitively, seeks to find a weighting that minimizes the distance to the measured variables. 
 
 ::: {#def-ch15num6 .declaration} 
 
@@ -299,7 +299,7 @@ Latent variable design
 
 :::
 
-In @fig-ch15num6 we show that the correlation between all the indices and the underlying quantity is quite good, even though the strength of the correlations for some of the components is weak. Trickier however is being sure we have an interpretable  *scale*.
+In @fig-ch15num6 we show that the correlation between all the indices and the underlying quantity is quite good, even though the strength of the correlations for some of the components is weak. Trickier, however, is being sure we have an interpretable *scale*.
 
 ![Correlations between the latent variable, measured components, and indices.](/figures/figure-15-6){#fig-ch15num6}
 
@@ -313,15 +313,15 @@ Latent variables diagnosis over alternative answer strategies
 diagnosis_15.5 <- diagnose_design(declaration_15.6, make_groups = vars(outcome)) 
 ```
 
-@fig-ch15num7 shows the distribution of estimates from different approaches to generating indices. A few features stand out from the distribution of estimates. 
+Figure \ref{fig:figure-15-7} shows the distribution of estimates from different approaches to generating indices. A few features stand out from the distribution of estimates.
 
-The simple averaging of the normalized scales also generates estimates that are too small. Rescaling the scaled components instead of taking the average helps only a small amount. The principal component version appears to do especially poorly, but there is a simple reason for this: the method does not presuppose knowledge of the *direction* of the scale of the latent variable and can come up with index that reverse the actual scale of interest. Avoiding this requires an interpretative step after the principal components analysis is implemented (more subtly the averaging approach also has an interpretative step *before* averaging, when components are introduced with a metric that presupposes a positive correlation with the underlying quantity). Even accounting for the different sign patterns however, the estimates are too small.
+The simple averaging of the normalized scales also generates estimates that are too small. Rescaling the scaled components instead of taking the average helps only a small amount. The principal component version appears to do especially poorly, but there is a simple reason for this: the method does not presuppose knowledge of the *direction* of the scale of the latent variable and can come up with an index that reverses the actual scale of interest. Avoiding this requires an interpretative step after the principal components analysis is implemented (more subtly, the averaging approach also has an interpretative step *before* averaging, when components are introduced with a metric that presupposes a positive correlation with the underlying quantity). Even accounting for the different sign patterns however, the estimates are too small.
 
-Scaling by units with `X = 1` does best in this case. The key insight here is that the total variation in the latent variable combines the variation within groups and between them: we want to measure outcomes on a scale benchmarked to the within group variation and so have to take out the between group variation when rescaling. 
+Scaling by units with `X = 1` does best in this case. The key insight here is that the total variation in the latent variable combines the variation within groups and between them: we want to measure outcomes on a scale benchmarked to the within-group variation and so have to take out the between-group variation when rescaling. 
 
 ![Distribution of estimates from different approaches to generating indices](/figures/figure-15-7){#fig-ch15num7}
 
-Overall we see from the diagnosis that we *can* do quite well here in recovering the conditional mean of the standardized latent variable. Though we see risks here. We declared a design under optimistic conditions in which we knew the relevant components and these were all related to the latent variable in a simple way. Even in this case we had difficulty getting the answer right. 
+Overall, we see from the diagnosis that we *can* do quite well here in recovering the conditional mean of the standardized latent variable. But we see risks here. We declared a design under optimistic conditions in which we knew the relevant components and these were all related to the latent variable in a simple way. Even in this case we had difficulty getting the answer right. 
 
 :::
 
