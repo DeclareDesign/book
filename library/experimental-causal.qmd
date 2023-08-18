@@ -9,62 +9,60 @@ source("scripts/before_chapter_script.R")
 
 An inquiry is causal if it involves a comparison of counterfactual states of the world and a data strategy is experimental if it involves explicit assignment of units to treatment conditions. Experimental designs for causal inference combine these two elements. The designs in this section aim to estimate causal effects and the procedure for doing so involves actively allocating treatments. 
 
-Many experimental designs for causal inference in the social sciences take advantage of researcher control over the assignment of treatments to assign treatments *at random*. In the archetypal two-arm randomized trial, a group of $N$ subjects are recruited, $m$ of them are chosen at random to receive treatment and the remaining $N-m$ of them do not receive treatment and serve as controls. The inquiry is the average treatment effect, the answer strategy is the difference-in-means estimator. The strength of the design can be appreciated by analogy to random sampling. The $m$ outcomes in the treatment group represent a random sample from the treated potential outcomes among all $N$ subjects, so the sample mean in the treatment group is a good estimator of the true average treated potential outcome; an analogous claim holds for the control group.
+Many experimental designs for causal inference in the social sciences take advantage of researcher control over the assignment of treatments to assign them *at random*. In the archetypal two-arm randomized trial, a group of $N$ subjects are recruited, $m$ of them are chosen at random to receive treatment and the remaining $N-m$ of them do not receive treatment and serve as controls. The inquiry is the average treatment effect, the answer strategy is the difference-in-means estimator. The strength of the design can be appreciated by analogy to random sampling. The $m$ outcomes in the treatment group represent a random sample from the treated potential outcomes among all $N$ subjects, so the sample mean in the treatment group is a good estimator of the true average treated potential outcome; an analogous claim holds for the control group.
 
 The randomization of treatments to estimate average causal effects is a relatively recent human invention. While glimmers of the idea appeared earlier, it wasn't until at least the 1920s that explicit randomization appeared in agricultural science, medicine, education, and political science [@Jamison2019]. Only a few generations of scientists have had access to this tool. Sometimes critics of experiments will charge "you can't randomize [important causal variable]."  There are of course practical constraints on what treatments researchers can control, be they ethical, financial, or otherwise. We think the main constraint is researcher creativity. The scientific history of randomized experiments is short -- just because it hasn't been randomized *yet* doesn't mean it can't be. (By the same token, just because it *can* be randomized doesn't mean that it should be.)
 
-Randomized experiments are rightly praised for their desirable inferential properties, but of course they can go wrong in many ways that designers of experiments should anticipate and minimize. These problems include problems in the data strategy (randomization implementation failures, excludability violations, noncompliance, attrition, and interference between units), problems in the answer strategy (conditioning on post-treatment variables, failure to account for clustering, $p$-hacking), and even problems in the inquiry (estimator-inquiry mismatches). Of course all these problems apply *a fortiori* to non-experimental studies, but they are important to emphasize for experimental studies since they are often characterized as being "unbiased" without qualification.
+Randomized experiments are rightly praised for their desirable inferential properties, but of course they can go wrong in many ways that designers of experiments should anticipate, and whose effects they should minimize. These problems include problems in the data strategy (randomization implementation failures, excludability violations, noncompliance, attrition, and interference between units), problems in the answer strategy (conditioning on posttreatment variables, failure to account for clustering, $p$-hacking), and even problems in the inquiry (estimator-inquiry mismatches). Of course, all these problems apply *a fortiori* to nonexperimental studies, but they are important to emphasize for experimental studies since they are often characterized as being "unbiased" without qualification.
 
-The designs in this chapter proceed from the simplest experimental design -- the two arm trial -- up through very complex designs like the randomized saturation design. 
+The designs in this chapter proceed from the simplest experimental design -- the two-arm trial -- up through very complex designs such as the randomized saturation design. 
 
 
 ## Two-arm randomized experiments {#sec-ch18s1}
 
 ::: {.ddbox}
-We declare a canonical two-arm trial, motivate key diagnosands for assessing the quality of the design, use diagnosis and redesign to explore the properties of two-arm trials, and discuss key risks to inference.  This entry includes code for a "designer" which lets you quickly design and redesign two-arm trials.   
+We declare a canonical two-arm trial, motivate key diagnosands for assessing the quality of the design, use diagnosis and redesign to explore the properties of two-arm trials, and discuss key risks to inference. 
 :::
 
 All two-arm randomized trials have in common that subjects are randomly assigned to one of two conditions. Canonically, the two conditions include one treatment condition and one control condition. Some two-arm trials eschew the pure control condition in favor of a placebo control condition, or even a second treatment condition. The uniting feature of all these designs is that the model includes two and only two potential outcomes for each unit and that the data strategy randomly assigns which of these potential outcomes will be revealed by each unit.
 
-A key choice in the design of two-arm trials is the random assignment procedure. Will we use simple random assignment (coin flip, or Bernoulli) or will we use complete random assignment? Will the randomization be blocked or clustered? Will we "restrict" the randomization so that only randomizations that generate acceptable levels of balance on pre-treatment characteristics are permitted? We will explore the implications of some of these choices in the coming sections, but for the moment, the main point is that saying "treatments were assigned at random" is insufficient. We need to describe the randomization procedure in detail in order to know how to analyze the resulting experiment. See @sec-ch8s1ss2 for a description of many different random assignment procedures.
+A key choice in the design of two-arm trials is the random assignment procedure. Will we use simple random assignment (coin flip, or Bernoulli) or will we use complete random assignment? Will the randomization be blocked or clustered? Will we "restrict" the randomization so that only randomizations that generate acceptable levels of balance on pretreatment characteristics are permitted? We will explore the implications of some of these choices in the coming sections, but for the moment, the main point is that saying "treatments were assigned at random" is insufficient. We need to describe the randomization procedure in detail in order to know how to analyze the resulting experiment. See @sec-ch8s1ss2 for a description of many different random assignment procedures.
 
-In this chapter, we'll consider a canonical two arm-trial design, with complete random assignment in a fixed population, which uses difference-in-means to estimate the average treatment effect. We'll now unpack this shorthand into the components of *M*, *I*, *D*, and *A*.
+In this chapter, we'll consider a canonical two-arm trial design, with complete random assignment in a fixed population, which uses difference-in-means to estimate the average treatment effect. We'll now unpack this shorthand into the components of *M*, *I*, *D*, and *A*.
 
-The model specifies a fixed sample of $N$ subjects. Here we aren't imagining that we are first sampling from a larger population. We have in mind a fixed set of units among which we will conduct our experiment: we are conducting "finite sample inference." Under the model, each unit is endowed with two latent potential outcomes: a treated potential outcome and an untreated potential outcome. The difference between them is the individual treatment effect. In the canonical design, we assume that potential outcomes are "stable," in the sense that all $N$ units' potential outcomes are defined with respect to the same treatment and that units' potential outcomes do not depend on the treatment status of other units. This assumption is often referred to as the "stable unit treatment value assumption," or SUTVA [@Rubin1980].
+The model specifies a fixed sample of $N$ subjects. Here we aren't imagining that we are first sampling from a larger population. We have in mind a fixed set of units from which we will conduct our experiment: we are conducting "finite sample inference." Under the model, each unit is endowed with two latent potential outcomes: a treated potential outcome and an untreated potential outcome. The difference between them is the individual treatment effect. In the canonical design, we assume that potential outcomes are "stable," in the sense that all $N$ units' potential outcomes are defined with respect to the same treatment and that units' potential outcomes do not depend on the treatment status of other units. This assumption is often referred to as the "stable unit treatment value assumption," or SUTVA [@Rubin1980].
 
 Because the model specifies a fixed sample, the inquiries are also defined at the sample level. The most common inquiry for a two-arm trial is the sample average treatment effect, or SATE. It is equal to the average difference between the treated and untreated potential outcomes for the units in the sample: $\E_{i\in N}[Y_i(1) - Y_i(0)]$. Two-arm trials can also support other inquiries like the SATE among a subgroup (called a conditional average treatment effect, or CATE), but we'll leave those inquiries to the side for the moment. 
 
-The data strategy uses complete random assignment in which exactly $m$ of $N$ units are assigned to treatment ($Z_i = 1$) and the remainder are assigned to control ($Z_i = 0$). We measure observed outcomes in such a way that we measure the treated potential outcome in the treatment group and untreated potential outcomes in the control group: $Y_i = Y_i(1) \times Z_i + Y_i(0)\times(1 - Z_i)$. This expression is sometimes called the "switching equation" because of the way it "switches" which potential outcome is revealed by the treatment assignment. It also embeds the crucial assumption that units reveal the potential outcome they are assigned to reveal. If the experiment encounters noncompliance, this assumption is violated. It's also violated if "excludability" is violated, i.e., if something other than treatment moves with assignment to treatment. For example, if the treatment group is measured differently from the control group, excludability would be violated.
+The data strategy uses complete random assignment, in which exactly $m$ of $N$ units are assigned to treatment ($Z_i = 1$) and the remainder are assigned to control ($Z_i = 0$). We measure observed outcomes in such a way that we measure the treated potential outcome in the treatment group and untreated potential outcomes in the control group: $Y_i = Y_i(1) \times Z_i + Y_i(0)\times(1 - Z_i)$. This expression is sometimes called the "switching equation" because of the way it "switches" which potential outcome is revealed by the treatment assignment. It also embeds the crucial assumption that units reveal the potential outcome they are assigned to reveal. If the experiment encounters noncompliance, this assumption is violated. It's also violated if "excludability" is violated, i.e., if something other than treatment moves with assignment to treatment. For example, if the treatment group is measured differently from the control group, excludability would be violated.
 
-The answer strategy is the difference-in-means estimator with so-called Neyman standard errors. In mathematical notation, if units are ordered with treated units first and control units after, we can wrote both as:
+The answer strategy is the difference-in-means estimator with so-called Neyman standard errors. In mathematical notation, if units are ordered with treated units first and control units after, we can write both as:
 
 \begin{align}
 \widehat{DIM} &= \frac{\sum_1^mY_i}{m} - \frac{\sum_{m + 1}^NY_i}{N-m} \\
 \widehat{\mathrm{se}(DIM)} &= \sqrt{\frac{\widehat{Var}(Y_i(1))}{m} + \frac{\widehat{Var}(Y_i(0))}{N-m}}\\
-\end{align}
+\end{align} {#eq-neymanse}
 
 The estimated standard error can be used as an input for two other statistical procedures: null hypothesis significance testing via a $t$-test and the construction of a 95% confidence interval.
 
-The DAG corresponding to a two-arm randomized trial is very simple. An outcome $Y$ is affected by unknown factors $U$ and a treatment $Z$. The measurement procedure $Q$ affects $Y$ in the sense that it measures a latent $Y$ and records the measurement in a dataset. No arrows lead into $Z$ because it is randomly assigned. No arrow leads from $Z$ to $Q$, because we assume no excludability violations wherein the treatment changes how units are measured. This simple DAG confirms that the average causal effect of $Z$ on $Y$ is nonparametrically identified because no back-door paths lead from $Z$ to $Y$.
+The DAG corresponding to a two-arm randomized trial is very simple. An outcome $Y$ is affected by unknown factors $U$ and a treatment $Z$. The measurement procedure $Q$ affects $Y$ in the sense that it measures a latent outcome and records the measurement in a dataset. No arrows lead into $Z$ because it is randomly assigned. No arrow leads from $Z$ to $Q$, because we assume no excludability violations wherein the treatment changes how units are measured. This simple DAG confirms that the average causal effect of $Z$ on $Y$ is nonparametrically identified because no back-door paths lead from $Z$ to $Y$.
 
 ![Directed acyclic graph of a two-arm randomized experiment](/figures/figure-18-1){#fig-ch18num1}
 
 ::: {#def-ch18num1 .declaration} 
 
-Canonical two arm trial design
+Canonical two-arm trial design.
 
 ```{r, file = "scripts_declarations/declaration_18.1.R"}
 ```
 
 :::
 
+Diagnosing this two-arm trial design, we see that, as expected, we encountered no bias, but encountered high variance. In the model, we set the ATE at 0.2 standard units, but the true standard deviation of the estimator (the true standard error) is nearly the same value, at 0.19 standard units. We have low statistical power, at 16\%. Two approaches to increasing the precision of the estimate include increasing the sample size and including prognostic pretreatment covariates in the answer strategy. We explore both of these approaches in the next section.
 
-
-::: {#lem-ch18num1} 
+::: {#lem-ch18num1}  
 
 Two arm trial diagnosis
-
-Diagnosing this two arm trial design, we see that as expected, we encountered no bias, but high variance. In the model, we set the ATE at 0.2 standard units, but the true standard deviation of the estimator (the true standard error) is nearly the same value, at 0.19 standard units. We have low statistical power, at 16\%. Two approaches to increasing the precision of the estimate include increasing the sample size and including prognostic pre-treatment covariates in the answer strategy. We explore both of these approaches in the next section.
 
 ```{r, eval=FALSE}
 diagnosis_18.1 <- diagnose_design(declaration_18.1)
@@ -90,17 +88,17 @@ diagnosis_18.1 |>
 
 ### Using covariates to increase precision
 
-When treatments are randomized, whether we adjust for pre-treatment covariates makes little difference for bias. By contrast, when treatments are not randomized, we often do need on adjust for covariates in order to account for the confounding introduced by "omitted variables" (see @sec-ch16s2). 
+When treatments are randomized, whether we adjust for pretreatment covariates makes little difference for bias. By contrast, when treatments are not randomized, we often do need to adjust for covariates in order to account for the confounding introduced by "omitted variables" (see @sec-ch16s2). 
 
-The purpose of adjusting for covariates in an experimental study is to increase precision. The more predictive the covariates are of the outcome, the more they help the precision of the estimates. 
+The purpose of adjusting for covariates in an experimental study is to increase precision. The more predictive the covariates are of the outcome, the more they improve the precision of the estimates. 
 
-One way to think about how much the inclusion of covariates will help precision is to summarize their predictive power in a statistic like $R^2$. The $R^2$ value from a regression of the outcome on the covariates alone (i.e., without the treatment indicator) gives an understanding of how jointly predictive the covariates are. If $R^2$ is close to zero, including the covariates will make almost no difference for precision. If $R^2$ is close to one, we can achieve dramatic increases in precision and statistical power.
+One way to think about how much the inclusion of covariates will help precision is to summarize their predictive power in a statistic like $R^2$. The $R^2$ value from a regression of the outcome on the covariates alone (i.e., without the treatment indicator) gives an understanding of how jointly predictive the covariates are. If $R^2$ is close to 0, including the covariates will make almost no difference for precision. If $R^2$ is close to 1, we can achieve dramatic increases in precision and statistical power.
 
 @def-ch18num2 draws a summary covariate `X` and unobserved heterogeneity `U` from a multivariate normal distribution with a specified covariance between the two variables. By redesigning over the values of that correlation, we can learn how covariate adjustment affects precision depending on the level of $R^2$. The answer strategy uses the estimator proposed in @lin2013agnostic for reasons explained in the next section. 
 
 ::: {#def-ch18num2 .declaration} 
 
-Two arm trial with covariate adjustment
+Two-arm trial with covariate adjustment.
 
 ```{r, file = "scripts_declarations/declaration_18.2.R"}
 ```
@@ -109,7 +107,7 @@ Two arm trial with covariate adjustment
 
 ::: {#lem-ch18num2} 
 
-Two arm trial diagnosis
+Two-arm trial diagnosis.
 
 ```{r, eval=FALSE}
 diagnosis_18.2 <- 
@@ -120,21 +118,21 @@ diagnosis_18.2 <-
 
 :::
 
-@fig-ch18num2 plots sample size on the horizontal axis and diagnosand estimates on the vertical axis. In the left hand panel, we see that, as usual, statistical power increases with sample size. Different values of $R^2$ are distinguished by colored lines. Higher values of $R^2$ lead to higher statistical power. The gains can be dramatic. The no-adjustment benchmark is represented by the $R^2 = 0$ line. We achieve approximately the same statistical power as a 1,000 unit experiment with no adjustment when we the pre-treatment covariates yield an $R^2$ of 0.8 and we have just 200 units. The right panel tells a similar story, though it emphasizes that the marginal benefits of covariate adjustment get smaller as the sample size gets bigger. In any real experimental scenario, designers should take care to generate informed guesses about the probable $R^2$ of the covariates and then explore the tradeoffs between pre-treatment data collection and additional sample size.
+@fig-ch18num2 plots sample size on the horizontal axis and diagnosand estimates on the vertical axis. In the left-hand panel, we see that, as usual, statistical power increases with sample size. Different values of $R^2$ are distinguished by colored lines. Higher values of $R^2$ lead to higher statistical power. The gains can be dramatic. The no-adjustment benchmark is represented by the $R^2 = 0$ line. We achieve approximately the same statistical power as a 1,000 unit experiment with no adjustment when the pretreatment covariates yield an $R^2$ of 0.8 and we have just 200 units. The right panel tells a similar story, though it emphasizes that the marginal benefits of covariate adjustment get smaller as the sample size gets bigger. In any real experimental scenario, designers should take care to generate informed guesses about the probable $R^2$ of the covariates and then explore the trade-offs between pretreatment data collection and additional sample size.
 
 ![Power and precision increases from covariate adjustment](/figures/figure-18-2){#fig-ch18num2}
 
 ### Can controlling for covariates hurt precision?
 
-@freedman2008regression critiques the practice of using OLS regression to adjust experimental data. While the difference-in-means estimator is unbiased for the average treatment effect, the covariate-adjusted OLS estimator exhibits a small sample bias (sometimes called "Freedman bias") that diminishes quickly as sample sizes increase. More worrying is the critique that covariate adjustment can even hurt precision.
+@freedman2008regression critiques the practice of using covariates in an OLS regression to adjust experimental data. While the difference-in-means estimator is unbiased for the average treatment effect, the covariate-adjusted OLS estimator exhibits a small sample bias (sometimes called "Freedman bias") that diminishes quickly as sample sizes increase. More worrying is the critique that covariate adjustment can even hurt precision.
 
-@lin2013agnostic unpacks the circumstances under which this precision loss occurs and offers an alternative estimator that is guaranteed to be at least as precise as the unadjusted estimator. The trouble occurs when the correlation of covariates with the outcome is quite different in the treatment condition from in the control condition and when designs are strongly imbalanced in the sense of having large proportions of treated or untreated units. We refer the reader to this excellent paper for details and the connection between covariate adjustment in randomized experiments and covariate adjustment in random sampling designs. In sum, the Lin estimator deals with the problem by performing covariate adjustment in each arm of the experiment separately, which is equivalent to the inclusion of a full set of treatment-by-covariate interactions. In a clever bit of regression magic, Lin shows how first pre-processing the data by de-meaning the covariates renders the coefficient on the treatment regressor an estimate of the overall ATE. The `lm_lin` estimator in the `estimatr` package implements this pre-processing in one step.
+@lin2013agnostic unpacks the circumstances under which this precision loss occurs and offers an alternative estimator that is guaranteed to be at least as precise as the unadjusted estimator. The trouble occurs when the correlation of covariates with the outcome is quite different in the treatment condition from that in the control condition and when designs are strongly imbalanced in the sense of having large proportions of treated or untreated units. We refer the reader to this excellent paper for details and the connection between covariate adjustment in randomized experiments and covariate adjustment in random sampling designs. In sum, the Lin estimator deals with the problem by performing covariate adjustment in each arm of the experiment separately, which is equivalent to the inclusion of a full set of treatment-by-covariate interactions. In a clever bit of regression magic, Lin shows how first preprocessing the data by de-meaning the covariates renders the coefficient on the treatment regressor an estimate of the overall ATE. The `lm_lin` estimator in the `estimatr` package implements this pre-processing in one step.
 
 @def-ch18num3 will help us to explore the precision of three estimators under a variety of circumstances. We want to understand the performance of the difference-in-means, OLS, and Lin estimators depending on how different the correlation between `X` and the outcome is by treatment arm, and depending on the fraction of units assigned to treatment.
 
 ::: {#def-ch18num3 .declaration} 
 
-Lin estimator design
+Lin estimator design.
 
 ```{r, file = "scripts_declarations/declaration_18.3.R"}
 ```
@@ -143,7 +141,7 @@ Lin estimator design
 
 ::: {#lem-ch18num3} 
 
-Lin estimator diagnosis
+Lin estimator diagnosis.
 
 ```{r, eval=FALSE}
 diagnosis_18.3 <- 
@@ -154,20 +152,19 @@ diagnosis_18.3 <-
   diagnose_designs()
 ```
 
-@fig-ch18num3 considers a range of designs under three possible models. The three models are described by the top row of facets. In all cases, the slope of the treated potential outcomes with respect to $X$ is set to 1. All the way to the left, the slope with respect to the control potential outcomes is set to -1, and all the way to the right, is set to +1. The bottom row of facets shows the performance of three estimators along a range of treatment assignment probabilities.
-
-When the control slope is -1, we can see Freedman's precision critique. The standard error of the OLS is *larger* than difference-in-means for many designs, though they coincide when the fraction treated is 50%. This problem persists in some form until the slope of the control potential outcome with respect to $X$ gets close enough to the slope of the treated potential outcomes with respect to $X$.
-
-All along this range, however, the Lin estimator dominates OLS and difference-in-means. Regardless of the fraction assigned to treatment and the model of potential outcomes, the Lin estimator achieves equal or better precision than either difference-in-means or OLS.
-
 ![Comparing the Lin estimator to OLS and difference-in-means, varying fraction assigned to treatment and correlation of potential outcomes with the covariate.](/figures/figure-18-3){#fig-ch18num3}
+
+@fig-ch18num3 considers a range of designs under three possible models. The three models are described by the top row of facets. In all cases, the slope of the treated potential outcomes with respect to $X$ is set to 1. All the way to the left, the slope with respect to the control potential outcomes is set to $-$1, and all the way to the right is set to $+$1. The bottom row of facets shows the performance of three estimators along a range of treatment assignment probabilities.
+
+When the control slope is $-1$, we can see Freedman's precision critique. The standard error of the OLS is *larger* than difference-in-means for many designs, though they coincide when the fraction treated is 50%. This problem persists in some form until the slope of the control potential outcome with respect to $X$ gets close enough to the slope of the treated potential outcomes with respect to $X$.
+
+All along this range, however, the Lin estimator dominates OLS and difference-in-means. Regardless of the fraction assigned to treatment and the model of potential outcomes, the Lin estimator achieves equal or better precision than either difference-in-means or OLS. These results highlight the gains that can be made by including covariate controls in your ex ante design, as long as you use the right answer strategy. They do not provide support for the more worrying practice of selecting controls ex post based on how they affect your results. 
 
 :::
 
-
 ### Design examples
 
-- @Peyton2019 conduct a two-arm randomized experiment in which treatment households were assigned to receive a nonenforcement visit from police and control households were not. Outcomes were measured via follow-up survey.
+- @Peyton2019 conduct a two-arm randomized experiment in which treatment households were assigned to receive a nonenforcement visit from police and control households were not. Outcomes were measured via a follow-up survey.
 
 - @balcells2022transitional use a two-arm randomized experiment to study the effects of a visit to a transitional justice museum in Chile on support for democratic institutions.
 
@@ -175,18 +172,18 @@ All along this range, however, the Lin estimator dominates OLS and difference-in
 ## Block-randomized experiments 
 
 ::: {.ddbox}
-We declare a block-randomized trial in which subjects are assigned to treatment and control conditions within groups. We use design diagnosis to assess the reductions in variance in estimation that can be achieved from block randomization.        
+We declare a block-randomized trial in which subjects are assigned to treatment and control conditions within groups. We use design diagnosis to assess the variance reductions that can be achieved from block randomization.        
 :::
 
-In a block-randomized experimental design, homogeneous sets of units are grouped together into blocks on the basis of covariates. The ideal blocking would group together units with identical potential outcomes, but since we don't have access to any outcome information at the moment of treatment assignment, let alone the full set of potential outcomes, we have to make do grouping together units on the basis of covariates we hope are strongly correlated with potential outcomes. The stronger the correlation between blocking variable and the potential outcomes, the more effective the blocking in terms of increasing precision.
+In a block-randomized experimental design, homogeneous sets of units are grouped together into blocks on the basis of covariates. The ideal blocking would group together units with identical potential outcomes, but since we don't have access to any outcome information at the moment of treatment assignment, let alone the full set of potential outcomes, we have to make do with grouping together units on the basis of covariates we hope are strongly correlated with potential outcomes. The stronger the correlation between a blocking variable and the potential outcomes, the more effective the blocking in terms of increasing precision.
 
-Blocks can be formed in many ways. The can be constructed based on the levels of a single discrete covariate. We might be able to do better by blocking on the intersection of the levels of two discrete covariates. We could coarsen a continuous variable in order to create strata. We could even create matched quartets of units, partitioning the sample into sets of four units that are as similar as possible on many covariates. In any of these cases, we then randomize units *within* blocks to treatment. All of these procedures fall under the rubric of block random assignment. Methodologists have crafted many algorithms for creating blocks, each with their own tradeoffs in terms of computational speed and efficiency guarantees. 
+Blocks can be formed in many ways. They can be constructed based on the levels of a single discrete covariate. We might be able to do better by blocking on the intersection of the levels of two discrete covariates. We could coarsen a continuous variable in order to create strata. We could even create matched quartets of units, partitioning the sample into sets of four units that are as similar as possible on many covariates. In any of these cases, we then randomize units *within* blocks to treatment. All of these procedures fall under the rubric of block random assignment. Methodologists have crafted many algorithms for creating blocks, each with their own trade-offs in terms of computational speed and efficiency guarantees. 
 
 In @def-ch18num4, we block our assignment on a binary covariate `X`. We assign different fractions of each block to treatment to illustrate the notion that probabilities of assignment need not be constant across blocks, and if they aren't, we need to weight units by the inverse of the probability of assignment to the condition that they are in. In the answer strategy, we adjust for blocks using the @lin2013agnostic regression adjustment estimator including IPW weights. 
 
 ::: {#def-ch18num4 .declaration} 
 
-Block randomized two arm trial design
+Block randomized two-arm trial design.
 
 ```{r, file = "scripts_declarations/declaration_18.4.R"}
 ```
@@ -195,13 +192,13 @@ Block randomized two arm trial design
 
 ### Why does blocking help?
 
-Why does blocking increase the precision with which we estimate the ATE? One piece of intuition is that blocking rules out "bad" random assignments that exhibit imbalance on the blocking variable. If $N$ = 12 and $m$ = 6, complete random assignment allows `choose(12, 6) = 924` possible permutations. If we form two blocks of six units and conduct block random assignment, then there are `choose(6, 3) * choose(6, 3) = 400` remaining possible assignments. The assignments that are ruled are those in which too many or too few units in a block are assigned to treatment, because blocking requires that exactly $m_B$ units be treated in each block $B$. When potential outcomes are correlated with the blocking variable, those "extreme" assignments produce estimates that are in the tails of the sampling distribution associated with complete random assignment.^[One mistake sometimes made by new experimenters is to conduct *simple* random assignment within each block -- none of the gains from blocking described here apply if simple random assignment is conducted in each block, because that procedure produces the identical randomization distribution as a simple random assignment procedure without any blocking (provided that the probability of assignment is the same in each block).]
+Why does blocking increase the precision with which we estimate the ATE? One piece of intuition is that blocking rules out "bad" random assignments that exhibit imbalance on the blocking variable. If $N$ = 12 and $m$ = 6, complete random assignment allows `choose(12, 6) = 924` possible permutations. If we form two blocks of six units and conduct block random assignment, then there are `choose(6, 3) * choose(6, 3) = 400` remaining possible assignments. The assignments that are ruled are those in which too many or too few units in a block are assigned to treatment, because blocking requires that exactly $m_B$ units be treated in each block $B$. When potential outcomes are correlated with the blocking variable, those "extreme" assignments produce estimates that are in the tails of the sampling distribution associated with complete random assignment.^[One mistake sometimes made by new experimenters is to conduct *simple* random assignment within each block. None of the gains from blocking described here apply if simple random assignment is conducted in each block, because that procedure produces the identical randomization distribution as a simple random assignment procedure without any blocking (provided that the probability of assignment is the same in each block).]
 
 ::: {#lem-ch18num4} 
 
-Diagnosis comparing block random assignment and complete random assignment
+Diagnosis comparing block random assignment and complete random assignment.
 
-This intuition behind blocking is illustrated in @fig-ch18num4, which shows the sampling distribution of the difference-in-means estimator under *complete* random assignment. The histogram is shaded according to whether the particular random assignment is permissible under a procedure that blocks on the binary covariate $X$. The sampling distribution of the estimator among the set of assignments that are permissible under blocking is more tightly distributed around the true average treatment effect than the estimates associated with assignments that are not perfectly balanced. Here we can see the value of a blocking procedure -- it *it rules out by design* those assignments that are not perfectly balanced. 
+This intuition behind blocking is illustrated in @fig-ch18num4, which shows the sampling distribution of the difference-in-means estimator under *complete* random assignment. The histogram is shaded according to whether the particular random assignment is permissible under a procedure that blocks on the binary covariate $X$. The sampling distribution of the estimator among the set of assignments that are permissible under blocking is more tightly distributed around the true average treatment effect than the estimates associated with assignments that are not perfectly balanced. Here we can see the value of a blocking procedure -- *it rules out by design* those assignments that are not perfectly balanced. 
 
 ![Sampling distribution under complete random assignment, by covariate balance](/figures/figure-18-4){#fig-ch18num4}
 
@@ -209,7 +206,7 @@ This intuition behind blocking is illustrated in @fig-ch18num4, which shows the 
  
 ### Design examples
 
-- @Kalla2018 conduct an audit experiment among legislators in which the gender of a student asking for advice about starting a career in politics was randomized. Units were block-randomized into treatments on the basis the legislators own gender and their state.
+- @Kalla2018 conduct an audit experiment among legislators in which the gender of a student asking for advice about starting a career in politics is randomized. Units are block-randomized into treatments on the basis of the legislators' own gender and their state.
 
 - @lyall_zhou_imai_2020 use a block-randomized design to evaluate the effect of vocational training and cash transfers on support for combatants among youth in Afghanistan. Matched quartet blocks were created on the basis of district, gender, employment status, displacement status, and exposure to violence.
 
@@ -217,20 +214,20 @@ This intuition behind blocking is illustrated in @fig-ch18num4, which shows the 
 ## Cluster-randomized experiments {#sec-ch18s3}
 
 ::: {.ddbox}
-We declare a cluster-randomized trial in which subjects are assigned to treatment and control conditions in groups. We use design diagnosis to quantify how the magnitude of the efficiency losses from clustering depend on the intra-cluster correlation.
+We declare a cluster-randomized trial in which subjects are assigned to treatment and control conditions in groups. We use design diagnosis to quantify how the magnitude of the efficiency losses from clustering depends on the intra-cluster correlation.
 :::
 
-When whole groups of units are assigned to treatment conditions together, we say that the assignment procedure is clustered. A common example is an education experiment in which the treatment randomized at the classroom level. All students in a classroom are assigned to either treatment or control together; assignments do not vary within classroom. Clusters can be localities, like villages, precincts, or neighborhood. Clusters can be households if treatments are assigned at the household level. 
+When whole groups of units are assigned to treatment conditions together, we say that the assignment procedure is clustered. A common example is an education experiment in which the treatment is randomized at the classroom level. All students in a classroom are assigned to either treatment or control together; assignments do not vary within the classroom. Clusters can be localities, like villages, precincts, or neighborhoods. Clusters can be households if treatments are assigned at the household level.
 
-Typically, cluster randomized trials exhibit higher variance than the equivalent individually-randomized trial. How much higher variance depends on a statistic that can be hard to think about, the intra-cluster correlation (ICC) of the outcome. The total variance can be decomposed into the variance of the cluster means $\sigma^2_{\textrm{between}}$ plus the individual variance of the cluster-demeaned outcome $\sigma^2_{\textrm{within}}$. The ICC is a number between zero and one that describes the fraction of the total variance that is due to the between variance: $ICC = \frac{\sigma^2_{\textrm{between}}}{\sigma^2_{\textrm{between}} + \sigma^2_{\textrm{within}}}$. If ICC equals one, then all units within a cluster express the same outcome, and all of the variation in outcomes is due to cluster-level differences. If ICC equals zero, then the cluster means are all identical, but the individuals vary within each cluster. When ICC is one, the effective sample size is equal to the number of clusters. When ICC is zero, the effective sample size is equal to the number of individuals. Since ICC is usually somewhere between these two values, we can see that clustering decreases the effective sample size from the number of individuals. The size of this decrease depends on how similar outcomes are within cluster compared to how similar outcomes are across clusters.
+Typically, cluster randomized trials exhibit higher variance than the equivalent individually randomized trial. How much higher variance depends on a statistic that can be hard to think about, the intra-cluster correlation (ICC) of the outcome. The total variance can be decomposed into the variance of the cluster means $\sigma^2_{\textrm{between}}$ plus the individual variance of the cluster-demeaned outcome $\sigma^2_{\textrm{within}}$. The ICC is a number between 0 and 1 that describes the fraction of the total variance that is due to the between variance: $ICC = \frac{\sigma^2_{\textrm{between}}}{\sigma^2_{\textrm{between}} + \sigma^2_{\textrm{within}}}$. If ICC equals 1, then all units within a cluster express the same outcome, and all of the variation in outcomes is due to cluster-level differences. If ICC equals zero, then the cluster means are all identical, but the individuals vary within each cluster. When ICC is 1, the effective sample size is equal to the number of clusters. When ICC is 0, the effective sample size is equal to the number of individuals. Since ICC is usually somewhere between these two values, we can see that clustering decreases the effective sample size from the number of individuals. The size of this decrease depends on how similar outcomes are within a cluster compared to how similar outcomes are across clusters.
 
 For these reasons clustered random assignment is not usually a desirable feature of a design. Sometimes, however, it is useful or even  *necessary* for logistical or ethical reasons for subjects to be assigned together in groups. 
 
-To demonstrate the consequences of clustering, @def-ch18num5 shows a design in which both the untreated outcome `Y_Z_0` and the treatment effect `tau_i` exhibit intra-cluster correlation. The inquiry is the average treatment effect over individuals which can be defined without reference to the clustered structure of the data. The data strategy employs clustered random assignment. We highlight two features of the clustered assignment. First, the clustered nature of the data does not itself *require* for clustered assignment. In principle, one could assign treatments at the individual level or subgroup level even if outcomes are correlated within groups. Second, surprisingly, random assignment of clusters to conditions does not guarantee unbiasedness of outcomes when clusters are of unequal size [@middleton2008bias;  @imai2009essential]. The bias stems from the possibility that potential outcomes could be correlated with cluster size. With uneven cluster sizes, the total number of units (the denominator in the mean estimation) in each group bounces around from assignment to assignment. Since the expectation of a ratio is not, in general, equal to the ratio of expectations, any dependence between cluster size and potential outcomes will cause bias. We can address this problem by blocking clusters into groups according to cluster size. If all clusters in a block are of the same size, then then overall size of the treatment group will remain stable from assignment to assignment. For this reason the design below uses clustered assignment blocked on cluster size.
+To demonstrate the consequences of clustering, @def-ch18num5 shows a design in which both the untreated outcome `Y_Z_0` and the treatment effect `tau_i` exhibit intra-cluster correlation. The inquiry is the average treatment effect over individuals, which can be defined without reference to the clustered structure of the data. The data strategy employs clustered random assignment. We highlight two features of the clustered assignment. First, the clustered nature of the data does not itself *require* clustered assignment. In principle, one could assign treatments at the individual level or subgroup level even if outcomes are correlated within groups. Second, surprisingly, random assignment of clusters to conditions does not guarantee unbiasedness of outcomes when clusters are of unequal size [@middleton2008bias;  @imai2009essential]. The bias stems from the possibility that potential outcomes could be correlated with cluster size. With uneven cluster sizes, the total number of units (the denominator in the mean estimation) in each group bounces around from assignment to assignment. Since the expectation of a ratio is not, in general, equal to the ratio of expectations, any dependence between cluster size and potential outcomes will cause bias. We can address this problem by blocking clusters into groups according to cluster size. If all clusters in a block are of the same size, then the overall size of the treatment group will remain stable from assignment to assignment. For this reason the design below uses clustered assignment blocked on cluster size.
 
 ::: {#def-ch18num5 .declaration} 
 
-Blocked and clustered randomized trial
+Blocked and clustered randomized trial.
 
 ```{r, file = "scripts_declarations/declaration_18.5.R"}
 ```
@@ -253,7 +250,7 @@ diagnosis_18.5 <-
 
 @fig-ch18num5 shows the sampling distribution of the difference-in-means estimator under cluster random assignment at three levels of intra-cluster correlation ranging from 0.1 to 0.9.
 
-The top row of panels plots the treatment effect on the vertical axis and the untreated potential outcome on the horizontal axis. Clusters of units are circled. At low levels of ICC, the circles all overlap, because the differences across clusters are smaller than the differences within cluster. At high levels of ICC, the differences across clusters are more pronounced than differences within cluster. The bottom row of panels shows that the sampling distribution of the difference-in-means estimator spreads out as the ICC increases. At low levels of ICC, the standard error is small; at high levels the standard error is high.
+The top row of panels plot the treatment effect on the vertical axis and the untreated potential outcome on the horizontal axis. Clusters of units are circled. At low levels of ICC, the circles all overlap, because the differences across clusters are smaller than the differences within a cluster. At high levels of ICC, the differences across clusters are more pronounced than differences within a cluster. The bottom row of panels shows that the sampling distribution of the difference-in-means estimator spreads out as the ICC increases. At low levels of ICC, the standard error is small; at high levels the standard error is high.
 
 ![Sampling distribution under differenct ICCs](/figures/figure-18-5){#fig-ch18num5}
 
@@ -265,7 +262,7 @@ This diagnosis clarifies the *costs* of cluster assignment. These costs are grea
 
 - @mousa2020building studies the effects of inter-group contact on tolerance by cluster assigning players in a Christian football league in Iraq to play with four new Muslim teammates or four new Christian teammates, where the clusters are the teams. 
 
-- @paluck_green_2009 cluster assigned communities in Rwanda to radio programs encouraging dissent and disobedience to authorities and measured individual-level outcomes via survey.
+- @paluck_green_2009 cluster-assigned communities in Rwanda to radio programs encouraging dissent and disobedience to authorities and measured individual-level outcomes via survey.
 
 
 
@@ -279,17 +276,17 @@ Subgroup designs are experimental designs that have been tailored to a specific 
 
 For example, studies of political communication often have the *difference* in response to a party cue by subject partisanship as the main inquiry, since Republican subjects tend to respond positively to a Republican party cue, whereas Democratic subjects tend to respond negatively. 
 
-Subgroup designs share much in common with factorial designs, discussed in detail in @sec-ch18s5. The main source of commonality is the answer strategy for the difference-in-CATEs inquiry. In subgroup designs and factorial designs, the usual approach is to inspect the interaction term from an OLS regression. The two designs differ because in the subgroup design, the difference-in-CATEs is a descriptive difference. We don't randomly assign partisanship, so we can't attribute the difference in response to treatment to partisanship, which could just be marker for the true causes of the difference in response. In the factorial design, we randomize the levels of all treatments, so the differences-in-CATEs carry with them a causal interpretation.
+Subgroup designs share much in common with factorial designs, discussed in detail in @sec-ch18s5. The main source of commonality is the answer strategy for the difference-in-CATEs inquiry. In subgroup designs and factorial designs, the usual approach is to inspect the interaction term from an OLS regression. The two designs differ because in the subgroup design, the difference-in-CATEs is a descriptive difference. We don't randomly assign partisanship, so we can't attribute the difference in response to treatment to partisanship, which could just be a marker for the true causes of the difference in response. But this makes it no less important a quantity of interest. In the factorial design, we randomize the levels of all treatments, so the differences-in-CATEs carry with them a causal interpretation.
 
 Since we don't randomly assign membership in subgroups, how can we optimize the design to target the difference-in-CATEs? Our main data strategy choice comes in sampling. We need to obtain sufficient numbers of both groups in order to generate sharp enough estimates of each CATE, the better to estimate their difference. For example, at the time of this writing, many sources of convenience samples (Mechanical Turk, Lucid, Prolific, and many others) appear to under-represent Republicans, so researchers sometimes need to make special efforts to increase their numbers in the eventual sample.^[@klar2019identities make a similar point when specifically advocating for oversampling minority groups in experimental studies of intersectionality.]
 
-@def-ch18num6 describes a fixed population of 10,000 units, among whom people with `X = 1` are relatively rare (only 20%). In the `potential_outcomes` call, we build in both baseline differences in the outcome, and also responses to treatment that are oppositely-signed across the two subgroups. Those with `X = 0` have a CATE of `0.1` and those with `X = 1` have a CATE of `0.1 - 0.2 = -0.1`. The true difference-in-CATEs is therefore 20 percentage points. 
+@def-ch18num6 describes a fixed population of 10,000 units, among whom people with `X = 1` are relatively rare (only 20%). In the `potential_outcomes` call, we build in both baseline differences in the outcome, and also responses to treatment that are oppositely signed across the two subgroups. Those with `X = 0` have a CATE of `0.1` and those with `X = 1` have a CATE of `0.1 - 0.2 = -0.1`. The true difference-in-CATEs is therefore 20 percentage points. 
 
 If we were to draw a sample of 1,000 at random, we would expect to yield only 200 people with `X = 1`. Here we improve upon that through stratified sampling. We deliberately sample 500 units with `X = 1` and 500 with `X = 0`, then block-random-assign the treatment within groups defined by `X`.
 
 ::: {#def-ch18num6 .declaration} 
 
-Subgroup design declaration
+Subgroup design declaration.
 
 ```{r, file = "scripts_declarations/declaration_18.6.R"}
 ```
@@ -299,11 +296,11 @@ Subgroup design declaration
 
 ::: {#lem-ch18num6} 
 
-Subgroup design diagnosis
+Subgroup design diagnosis.
 
-To show the benefits of stratified sampling for experiments, we redesign over many values of under- and over-sampling units with `X = 1`, holding the total sample size fixed at `1000`. The top panel of @fig-ch18num6 shows the distribution of difference-in-CATE estimates at each size of the `X = 1` group. When very small or very large fractions of the total sample have `X = 1`, the variance of the estimator is much larger than when the two groups the same size. 
+To show the benefits of stratified sampling for experiments, we redesign over many values of under- and over-sampling units with `X = 1`, holding the total sample size fixed at `1000`. The top panel of @fig-ch18num6 shows the distribution of difference-in-CATE estimates at each size of the `X = 1` group. When very small or very large fractions of the total sample have `X = 1`, the variance of the estimator is much larger than when the two groups have the same size. 
 
-The bottom panel of the figure shows how three diagnosands change over the oversampling design parameter. Bias is never a problem -- even small subgroups will generate unbiased difference-in-CATE estimates. As suggested by the top panel, the standard error is minimized in the middle and is largest at the extremes. Likewise, statistical power is maximized in the middle, but drops off surprisingly quickly as we move away from evenly-balanced recruitment. 
+The bottom panel of the figure shows how three diagnosands change over the oversampling design parameter. Bias is never a problem -- even small subgroups will generate unbiased difference-in-CATE estimates. As suggested by the top panel, the standard error is minimized in the middle and is largest at the extremes. Likewise, statistical power is maximized in the middle, but drops off surprisingly quickly as we move away from evenly balanced recruitment. 
 
 ```{r}
 #| eval: false
@@ -312,7 +309,7 @@ diagnosis_18.6 <-
   declaration_18.6 |> 
   redesign(n_x1 = seq(20, 980, by = 96)) |> 
   diagnose_designs()
-```
+``` 
 
 ![Performance of the subgroup depending on oversampling strategy.](/figures/figure-18-6){#fig-ch18num6}
 
@@ -320,20 +317,20 @@ diagnosis_18.6 <-
 
 ### Design examples
 
-- @collins_2021 conducts a survey experiment that measures the effects of school board meeting style (standard, participatory, or deliberative) on willingness to attend meetings. The author hypothesized that the effects of participatory and deliberative meeting styles would be larger for nonwhite subjects, which motivated an oversample of this type of respondent. The final sample included 1,061 nonwhite subjects and 1,122 white subjects, so the design was well-poised to estimate the conditional average effects of the treatments for both groups, which ended up being quite similar.
+- @collins_2021 conducts a survey experiment that measures the effects of school board meeting style (standard, participatory, or deliberative) on willingness to attend meetings. The author hypothesized that the effects of participatory and deliberative meeting styles would be larger for non-white subjects, which motivated an oversample of this type of respondent. The final sample included 1,061 non-White subjects and 1,122 White subjects, so the design was well poised to estimate the conditional average effects of the treatments for both groups, which ended up being quite similar.
 
-- @Swire2017 conduct an experimental study of misinformation and corrections that compares Republican and Democratic subjects beliefs in false statements. These authors oversampled Republicans from the Mechanical Turk platform, since usual samples from the platform underrepresent Republicans. Republicans believed false claims more when they were attributed to President Trump and Democrats believed them less; this difference-in-CATEs is especially precisely estimated because of the over sample. Both partisan groups responded to *corrections* of false claims by believing them less, by similar amounts.
+- @Swire2017 conduct an experimental study of misinformation and corrections that compares Republican and Democratic subjects beliefs in false statements. These authors oversampled Republicans from the Mechanical Turk platform, since usual samples from the platform underrepresent Republicans. Republicans believed false claims more when they were attributed to President Trump and Democrats believed them less; this difference-in-CATEs is especially precisely estimated because of the over-sample. Both partisan groups responded to *corrections* of false claims by believing them less, by similar amounts.
 
 
 ## Factorial experiments {#sec-ch18s5}
 
 ::: {.ddbox}
-We declare and diagnose a simple factorial design in which two different treatments are crossed. The design allows for unbiased estimation of a number of estimands including conditional effects and interaction effects. We highlight the difficulty of achieving statistical power for interaction terms and the risks of treating a difference between a significant conditional effect and a non-significant effect as itself significant. 
+We declare and diagnose a simple factorial design in which two different treatments are crossed. The design allows for unbiased estimation of a number of estimands, including conditional effects and interaction effects. We highlight the difficulty of achieving statistical power for interaction terms and the risks of treating a difference between a significant conditional effect and a nonsignificant effect as itself significant. 
 :::
 
 In factorial experiments, researchers randomly assign the level of not just one treatment, but multiple treatments. The prototypical factorial design is a "two-by-two" factorial design in which factor 1 has two levels and so does factor 2. Similarly, a "three-by-three" factorial design has two factors, each of which has three levels. We can entertain any number of factors with any number of levels. For example, a "two-by-three-by-two" factorial design has three factors, two of which have two levels and one of which has three levels. Conjoint experiments are highly factorial, often including six or more factors with two or more levels each (see @sec-ch17s3).
 
-Factorial designs can help researchers answer many inquiries, so it is crucial to design factorials with a particular set in mind. Let's consider the two-by-two case, which is complicated enough. Let's call the first factor `Z1` and the second factor `Z2`, each of which can take on the values of zero or one. Considering only average effects, this design can support seven separate inquiries: 
+Factorial designs can help researchers answer many inquiries, so it is crucial to design factorials with a particular set in mind. Let's consider the two-by-two case, which is complicated enough. Let's call the first factor `Z1` and the second factor `Z2`, each of which can take on the value of 0 or 1. Considering only average effects, this design can support at least seven separate inquiries: 
 
 1. the average treatment effect (ATE) of `Z1`, 
 2. the ATE of `Z2`, 
@@ -345,13 +342,13 @@ Factorial designs can help researchers answer many inquiries, so it is crucial t
 
 The reason we distinguish between the ATE of `Z1` versus the CATEs of `Z1` depending on the level of `Z2` is that the two factors may "interact." When factors interact, the effects of `Z1` are heterogeneous in the sense that they differ depending on the level of `Z2`. We often care about the difference-in-CATEs inquiry when we think the effects of one treatment will depend on the level of another treatment.
 
-However, if we are not so interested in the difference-in-CATEs, then factorial experiments have another good justification -- we can learn about the ATEs of each treatment for half price, in the sense that we apply treatments to the same subject pool using the same measurement strategy. Conjoint experiments are a kind of factorial design (discussed in @sec-ch17s3) that often target average treatments effects that average over the levels of the other factors.
+However, if we are not so interested in the difference-in-CATEs, then factorial experiments have another good justification -- we can learn about the ATEs of each treatment for half price, in the sense that we apply treatments to the same subject pool using the same measurement strategy. Conjoint experiments are a kind of factorial design (discussed in @sec-ch17s3) that often target average treatment effects that average over the levels of the other factors.
 
 Here we declare a factorial design with two treatments and a normally distributed outcome variable. We imagine that the CATE of `Z1` given `Z2 = 0` is 0.2 standard units, the CATE of `Z2` given `Z1 = 0` is equal to 0.1, and the interaction of the two treatments is 0.1.
 
 ::: {#def-ch18num7 .declaration} 
 
-Two-by-two factorial design
+Two-by-two factorial design.
 
 ```{r, file = "scripts_declarations/declaration_18.7.R"}
 ```
@@ -360,9 +357,9 @@ Two-by-two factorial design
 
 ::: {#lem-ch18num7} 
 
-Two-by-two factorial diagnosis
+Two-by-two factorial diagnosis.
 
-We now redesign this factorial over many sample sizes, considering the statistical power for each of the inquiries. @fig-ch18num7 shows that depending on the inquiry, the statistical power of this design can vary dramatically. The average treatment effect of `Z1` is relatively large at 0.25 standard units, so power is above the 80% threshold at all the sample sizes we consider. The ATE of `Z2` is smaller, at 0.15 standard units, so power is lower, but not dramatically so. Both ATEs use all $N$ data points, so power is manageable for the average effects. The conditional average effects generally fare worse, mainly because each is estimated on only half the sample. The power for the 0.1 standard unit difference-in-CATEs is abysmal at all sample sizes considered here. This diagnosis underlines @exm-designholistically: Design holistically. The power of a factorial design is not just one number -- we have to calculate power for each inquiry separately, as they can differ dramatically.
+We now redesign this factorial over many sample sizes, considering the statistical power for each of the inquiries. @fig-ch18num7 shows that depending on the inquiry, the statistical power of this design can vary dramatically. The average treatment effect of `Z1` is relatively large at 0.25 standard units, so power is above the 80% threshold at all the sample sizes we consider. The ATE of `Z2` is smaller, at 0.15 standard units, so power is lower, but not dramatically so. Both ATEs use all $N$ data points, so power is manageable for the average effects. The conditional average effects generally fare worse, mainly because each is estimated on only half the sample. The power for the 0.1 standard unit difference-in-CATEs is abysmal at all sample sizes considered here. This diagnosis underlines @exm-designholistically: *Design holistically*. The power of a factorial design is not just one number -- we have to calculate power for each inquiry separately, as they can differ dramatically.
 
 ```{r}
 #| eval: false
@@ -381,11 +378,11 @@ diagnosis_18.7 <-
 
 The very poor power for the difference-in-CATEs sometimes leads researchers to rely on a different answer strategy for considering whether the effects of `Z1` depend on the level of `Z2`. Sometimes, researchers will consider the statistical significance of each of `Z1`'s CATEs separately, then conclude the CATEs are "different" if the effect is significant for one CATE but not the other. This is a bad practice and we'll show why.
 
-Here we diagnose over the true values of the `Z1` ATE, setting the true interaction term to zero. Our diagnostic question will be, how frequently do we conclude the two CATEs are different, using two different strategies. The first is the usual approach, i.e., we consider the statistical significance of the interaction term. The second considers whether one, but not the other, of the two CATE estimates is significant.
+Here we diagnose over the true values of the `Z1` ATE, setting the true interaction term to 0. Our diagnostic question will be, how frequently do we conclude the two CATEs are different, using two different strategies. The first is the usual approach, i.e., we consider the statistical significance of the interaction term. The second considers whether one, but not the other, of the two CATE estimates is significant.
 
 ::: {#lem-ch18num8} 
 
-Redesign over models
+Redesign over models.
 
 ```{r}
 #| eval: false
@@ -423,15 +420,15 @@ In many experimental settings, we cannot require units we *assign* to take treat
 
 Encouragements are often only partially successful. Some units assigned to treatment refuse treatment and some units assigned to control find a way to obtain treatment after all. In these settings, we say that experiments encounter "noncompliance." This section will describe the most common approach to the design and analysis of encouragement trials, and will point out potential pitfalls along the way.
 
-Any time a data strategy entails contacting subjects in order to deliver a treatment like a bundle of information or some good, noncompliance is a potential problem. Emails go undelivered, unopened, and unread. Letters get lost in the mail. Phone calls are screened, text messages get blocked, direct messages on social media are ignored. People don't come to the door when you knock, either because they aren't home or they don't trust strangers. Noncompliance can affect non-informational treatments as well: goods may be difficult to deliver to remote locations, subjects may refuse to participate in assigned experimental activities, or research staff might simply fail to respect the realized treatment schedule.
+Any time a data strategy entails contacting subjects in order to deliver a treatment like a bundle of information or some good, noncompliance is a potential problem. Emails go undelivered, unopened, and unread. Letters get lost in the mail. Phone calls are screened, text messages get blocked, direct messages on social media are ignored. People don't come to the door when you knock, either because they aren't home or because they don't trust strangers. Noncompliance can affect non-informational treatments as well: goods may be difficult to deliver to remote locations, subjects may refuse to participate in assigned experimental activities, or research staff might simply fail to respect the realized treatment schedule.
 
-Experimenters who anticipate noncompliance should make compensating adjustments to their research designs (relative to the canonical two arm design). These adjustments ripple through *M*, *I*, *D*, and *A*. 
+Experimenters who anticipate noncompliance should make compensating adjustments to their research designs (relative to the canonical two-arm design). These adjustments ripple through *M*, *I*, *D*, and *A*. 
 
 ### Changes to the model
 
-The biggest change to *M* is developing beliefs about compliance types, also called "principal strata" [@frangakis2002principal]. In a two-arm trial, subjects can be one of four compliance types, depending on how their treatment status responds to their treatment assignment. The four types are described in @tbl-compliancetypes2. $D_i(Z_i = 0)$ is a potential outcome -- it is the treatment status that unit $i$ would express if assigned to control. Likewise, $D_i(Z_i = 1)$ is the treatment status that unit $i$ would express if assigned to treatment. These potential outcomes can take each take on a value of 0 or 1, so their intersection allows for four types. For Always-takers, $D_i$ is equal to 1 regardless of the value of $Z$ -- they always take treatment. Never-takers are the opposite -- $D_i$ is equal to 0 regardless of the value of $Z_i$. For Always-takers and Never-takers, assignment to treatment *does not change* whether they take treatment. 
+The biggest difference in *M* relative to the two arm trial is that we now need to provide beliefs about compliance types, also called "principal strata" [@frangakis2002principal]. In a two-arm trial, subjects can be one of four compliance types, depending on how their treatment status responds to their treatment assignment. The four types are described in @tbl-compliancetypes2. $D_i(Z_i = 0)$ is a potential outcome -- it is the treatment status that unit $i$ would express if assigned to control. Likewise, $D_i(Z_i = 1)$ is the treatment status that unit $i$ would express if assigned to treatment. These potential outcomes can each take on a value of 0 or 1, so their intersection allows for four types. For always-takers, $D_i$ is equal to 1 regardless of the value of $Z$ -- they always take treatment. Never-takers are the opposite -- $D_i$ is equal to 0 regardless of the value of $Z_i$. For always-takers and never-takers, assignment to treatment *does not change* whether they take treatment. 
 
-Compliers are units that take treatment if assigned to treatment and do not take treatment if assigned to control. Their name "compliers" connotes that something about their disposition as subjects makes them "compliant" or otherwise docile, but this connotation is misleading. Compliance types are generated by the confluence of subject behavior and data strategy choices. Whether or not a subject answers the door when the canvasser comes calling is a function many things, including whether the subject is at home and whether they open the door to canvassers. Data strategies that attempt to deliver treatments in the evenings or on weekends might generate more (or different) compliers than those that attempt treatment during working hours.
+Compliers are units that take treatment if assigned to treatment and do not take treatment if assigned to control. Their name "compliers" connotes that something about their disposition as subjects makes them "compliant" or otherwise docile, but this connotation is misleading. Compliance types are generated by the confluence of subject behavior and data strategy choices. Whether or not a subject answers the door when the canvasser comes calling is a function of many things, including whether the subject is at home and whether they open the door to canvassers. Data strategies that attempt to deliver treatments in the evenings or on weekends might generate more (or different) compliers than those that attempt treatment during working hours.
 
 | Compliance Type | $D_i(Z_i = 0)$ | $D_i(Z_i = 1)$ |
 |-----------------|----------------|----------------|
@@ -442,62 +439,62 @@ Compliers are units that take treatment if assigned to treatment and do not take
 
 : Compliance types {#tbl-compliancetypes2} 
 
-The last compliance type to describe are defiers. These strange birds refuse treatment when assigned to treatment, but find a way to obtain treatment when assigned to control. Whether or not "defiers" exist turns out to be a consequential assumption that must be made in the model. We have good reason to believe that defiers are rare -- assignment to treatment almost always has a positive average effect on treatment take-up.
+The last compliance type to describe are defiers. These strange birds refuse treatment when assigned to treatment, but find a way to obtain treatment when assigned to control. Whether or not "defiers" exist turns out to be a consequential assumption that must be made in the model.
 
 A unit's compliance type is usually not possible to observe directly. Subjects assigned to the control group who take take treatment ($D_i(0) = 1$) could be defiers or always-takers. Subjects assigned to the treatment group who do not take treatment ($D_i(1) = 0$) could be defiers or never-takers. Our inability to be sure of compliance types is another facet of the fundamental problem of causal inference. Even though a subject's compliance type (with respect to a given design) is a stable trait, it is defined by how the subject would act in multiple counterfactual worlds. We can't tell what type a unit is because we would need to see whether they take treatment when assigned to treatment and also when assigned to control. 
 
 ### Changes to the inquiry
 
-The inclusion of compliance types in the model also necessitate changes to the inquiry. Always-takers and never-takers present a real problem for causal inference. Even with the power to randomly assign, we can't change what treatments these units take. As a result, *we don't get to learn* about the effects of treatment among these groups. Even if our inquiry were the average effect of treatment among the never-takers, the experiment (as designed) would not be able to generate empirical estimates of it.^[We write "as designed" because compliance types are defined with respect to a particular design. If it were possible to induce the never-takers to take treatment (i.e., under a different data strategy, these units might be compliers), this inquiry would not necessarily be out of reach.] Our inquiry has to fall back to the average effects among those units that whose treatment status we can successfully encourage to change -- the compliers.
+The inclusion of compliance types in the model accompanies changes to the inquiry. Always-takers and never-takers present a real problem for causal inference. Even with the power to randomly assign, we can't change what treatments these units take. As a result, *we don't get to learn* about the effects of treatment among these groups. Even if our inquiry were the average effect of treatment among the never-takers, the experiment (as designed) would not be able to generate empirical estimates of it.^[We write "as designed" because compliance types are defined with respect to a particular design. If it were possible to induce the never-takers to take treatment (i.e., under a different data strategy, these units might be compliers), this inquiry would not necessarily be out of reach.] Our inquiry has to fall back to the average effects among those units whose treatment status we can affect: the compliers.
 
 This inquiry is called the complier average causal effect (the CACE). It is defined as $\E[Y_i(1) - Y_i(0) | d_i(1) > d_i(0)]$. Just like the average treatment effect, it refers to an average over individual causal effects, but this average is taken over a specific subset of units, the compliers. Compliers are the only units for whom $d_i(1) > d_i(0)$, because for compliers, $d_i(1) = 1$ and $d_i(0) = 0$. When assignments and treatments are binary, the CACE is mathematically identical to the local average treatment effect (LATE) described in @sec-ch16s4. Whether we write CACE or LATE sometimes depends on academic discipline, with LATE being more common among economists and CATE more common among political scientists. An advantage of "CACE" over "LATE" is that it is specific about which units the effect is "local" to -- it is local to the compliers. 
 
-When experiments encounter noncompliance, the CACE is *usually* the most important inquiry for theory, since it refers to an average effect of the causal variable, at least for a subset of the units in the study. However, two other common inquiries are important to address here as well. 
+When experiments encounter noncompliance, the CACE may well be the most important inquiry for theory, since it refers to an average effect of the causal variable, at least for a subset of the units in the study. However, two other common inquiries are important to address here as well. 
 
 The first is the intention-to-treat (ITT) inquiry, which is defined as $\E[Y_i(D_i(Z = 1), Z = 1) - Y_i(D_i(Z = 0), Z = 0)]$. The encouragement itself $Z$ has a total effect on $Y$ that is mediated in whole or in part by the treatment status. Sometimes the ITT is the policy-relevant inquiry, since it describes what would happen if a policy maker implemented the policy in the same way as the experiment, *inclusive* of noncompliance. Consider an encouragement design to study the effectiveness of a tax webinar on tax compliance. Even if the webinar is very effective among people willing to watch it (the CACE is large), the main trouble faced by the policy maker will be getting people to sit through the webinar. The ITT describes the average effect of *inviting* people to the webinar, which could be quite small if very few people are willing to join.
 
 The second additional inquiry is the compliance rate, sometimes referred to as the $\mathrm{ITT}_{\textrm{D}}$. It describes the average effect of assignment on treatment, and is written $\E[(D_i(Z = 1) - D_i(Z = 0)]$. A small bit of algebra shows that the $\mathrm{ITT}_{\textrm{D}}$ is equal to the fraction of the sample that are compliers minus the fraction that are defiers. 
 
-These three inquiries are tightly related. Under five very important assumptions (described below), we can write: 
+These three inquiries are tightly related. Under five very important assumptions discussed in @sec-ch16s4 on instrumental variables (see also Angrist, Imbens, and Rubin 1996), we can write: 
 
 \begin{align*}
 \mathrm{CACE} = \frac{\mathrm{ITT}}{\mathrm{ITT}_{\mathrm{D}}}
 \end{align*}
 
-A derivation of this relationship is given in @sec-ch16s4 on instrumental variables. The five assumptions described in that section are identical to the assumptions required here. In an experimental setting, "exogeneity of the instrument" is guaranteed by features of the data strategy. Since we use random assignment, we know for sure that the "instrument" (the encouragement) is exogenous. Excludability of the instrument refers to the idea that the effect of the encouragement on the outcome is fully mediated by the treatment. This assumption could be violated if the mere act of encouragement changes outcomes. Stated differently, if never-takers or always-takers reveal *different* potential outcomes in treatment and control ($Y_i(D_i(Z = 1), Z = 1) \neq Y_i(D_i(Z = 0), Z = 0)$), it must be because encouragement itself changes outcomes. Non-interference in this setting means that units' treatment status and outcomes do not depend on the assignment or treatment status of other units. In an experimental context, the assumption of monotonicity rules out the existence of defiers. This assumption is often made plausible by features of the data strategy (perhaps it is impossible for those who are not assigned to treatment to obtain treatment) or features of the model ("defiant" responses to encouragement are behaviorally unlikely). The final assumption -- nonzero effect of the instrument on the treatment -- can also be assured by features of the data strategy. In order to learn about the effects of treatment, data strategies must successfully encourage at least some units to take treatment.
+In an experimental setting, the "exogeneity of the instrument" assumption is guaranteed by features of the data strategy. Since we use random assignment, we know for sure that the "instrument" (the encouragement) is exogenous. Excludability of the instrument refers to the idea that the effect of the encouragement on the outcome is fully mediated by the treatment. This assumption could be violated if the mere act of encouragement changes outcomes. Stated differently, if never-takers or always-takers reveal *different* potential outcomes in treatment and control ($Y_i(D_i(Z = 1), Z = 1) \neq Y_i(D_i(Z = 0), Z = 0)$), it must be because encouragement itself changes outcomes. Noninterference in this setting means that units' treatment status and outcomes do not depend on the assignment or treatment status of other units. In an experimental context, the assumption of monotonicity rules out the existence of defiers. This assumption is often made plausible by features of the data strategy (perhaps it is impossible for those who are not assigned to treatment to obtain treatment) or by theoretical considerations ("defiant" responses to encouragement are behaviorally unlikely). The final assumption -- nonzero effect of the instrument on the treatment -- can also be bolstered by features of the data strategy. In order to learn about the effects of treatment, data strategies must successfully encourage at least some units to take treatment.
 
 ### Changes to the data strategy
 
 When experimenters expect that noncompliance will be a problem, they should take steps to mitigate that problem in the data strategy. Sometimes doing so just means trying harder: investigating the patterns of noncompliance, attempting to deliver treatment on multiple occasions, or offering subjects incentives for participation. "Trying harder" is about turning more subjects into compliers by choosing a data strategy that encounters less noncompliance.
 
-A second important change to the data strategy is the explicit measurement of treatment status as distinct from treatment assignment. For some designs, measuring treatment status is easy. We just record which units were treated and which were untreated. But in some settings, measuring compliance is trickier. For example, if treatments are emailed, we might never know if subjects read the email. Perhaps our email service will track read receipts, in which case one facet of this measurement problem is solved. We won't know, however, how many subjects read the subject line -- and if the subject line contains any treatment information, then even subjects who don't click on the email may be "partially" treated. Our main advice is to measure compliance in the most conservative way: if treatment emails bounce altogether, then subjects are not treated. 
+A second important change to the data strategy is the explicit measurement of treatment status as distinct from treatment assignment. For some designs, measuring treatment status is easy. We just record which units were treated and which were untreated. But in some settings, measuring compliance is trickier. For example, if treatments are emailed, we might never know if subjects read the email. Perhaps our email service will track read receipts, in which case one facet of this measurement problem is solved. We won't know, however, how many subjects read the subject line -- and if the subject line contains any treatment information, then even subjects who don't click on the email may be "partially" treated. One approach is to measure compliance in the most conservative way: if treatment emails bounce altogether, then subjects are not treated. 
            
-In multiarm trials or with continuous rather than binary instruments, noncompliance becomes a more complex problem to define and address through the data strategy and answer strategy. We must define complier types according to all of the possible treatment conditions. For multiarm trials, the complier types for the first treatment may not be the same for the second treatment; in other words, units will comply at different rates to different treatments. Apparent differences in complier average treatment effects and intent-to-treat effects, as a result, may reflect not differences in treatment effects but different rates of compliance.
+In multi-arm trials or with continuous rather than binary instruments, noncompliance becomes a more complex problem to define and address through the data strategy and answer strategy. We must define complier types according to all of the possible treatment conditions. For multi-arm trials, the complier types for the first treatment may not be the same for the second treatment; in other words, units will comply at different rates to different treatments. Apparent differences in complier average treatment effects and intent-to-treat effects, as a result, may reflect not differences in treatment effects but different rates of compliance.
 
 ### Changes to the answer strategy
 
-Estimation of the CACE is not as straightforward subsetting the analysis to compliers. A plug-in estimator of the CACE with good properties takes the ratio of the $ITT$ estimate to the $ITT_d$ estimate. Since the $ITT_d$ must be a number between zero and one, this estimator "inflates" the $ITT$ by the compliance rate. Another way of thinking about this is that the $ITT$ is deflated by all the never-takers and always-takers, among whom the $ITT$ is by construction 0, so instead of "inflating", we are "re-inflating" the ITT to the level of the CACE. Two-stage least squares in which we instrument the treatment with the random assignment is a numerically equivalent procedure when treatment and assignments are binary. Two-stage least squares has the further advantage of being able to seamlessly incorporate covariate information to increase precision.
+Estimation of the CACE is not as straightforward subsetting the analysis to compliers (since we cannot observe who they are!). A plug-in estimator of the CACE with good properties takes the ratio of the $ITT$ estimate to the $ITT_d$ estimate. Since the $ITT_d$ must be a number between 0 and 1, this estimator "inflates" the $ITT$ by the compliance rate. Another way of thinking about this is that the $ITT$ is deflated by all the never-takers and always-takers, among whom the $ITT$ is by construction 0, so instead of "inflating", we are "re-inflating" the ITT to the level of the CACE. Two-stage least squares in which we instrument the treatment with the random assignment is a numerically equivalent procedure when treatment and assignments are binary. Two-stage least squares has the further advantage of being able to seamlessly incorporate covariate information to increase precision.
 
-Two alternative answer strategies are biased and should be avoided. An "as-treated" analysis ignores the encouragement $Z$ and instead compares units by their revealed treatment status $D$. This procedure is prone to bias because those who come to be treated may differ systematically from those who do not. The "per protocol" analysis is similarly biased. It drops any unit that fails to comply with its assignment, but those who take treatment in the treatment group (compliers and always-takers) may differ systematically from those who do not take treatment in the control group (compliers and never-takers). Both the "as-treated" and "per-protocol" answer strategies suffer from a special case of post-treatment bias, wherein conditioning on a post-assignment variable (treatment status) essentially de-randomizes the study.
+Two alternative answer strategies are biased and should be avoided. An "as-treated" analysis ignores the encouragement $Z$ and instead compares units by their revealed treatment status $D$. This procedure is prone to bias because those who come to be treated may differ systematically from those who do not. The "per protocol" analysis is similarly biased. It drops any unit that fails to comply with its assignment, but those who take treatment in the treatment group (compliers and always-takers) may differ systematically from those who do not take treatment in the control group (compliers and never-takers). Both the "as-treated" and "per-protocol" answer strategies suffer from a special case of posttreatment bias, wherein conditioning on a post-assignment variable (treatment status) essentially de-randomizes the study.
 
 @def-ch18num9 elaborates the model to include the four compliance types, setting the share of defiers to zero to match the assumption of monotonicity. It imagines that the potential outcomes of the outcomes $Y$ with respect to the treatment $D$ are different for each compliance type, reflecting the idea that compliance type could be correlated with potential outcomes. The declaration also links compliance type to the potential outcomes of the treatment $D$ with respect to the randomized encouragement $Z$. We then move on to declaring two inquiries (the CACE and the ATE) and three answer strategies (two-stage least squares, as-treated analysis, and per-protocol analysis).
 
 ::: {#def-ch18num8 .declaration} 
 
-Encouragement design
+Encouragement design.
 
 ```{r, file = "scripts_declarations/declaration_18.8.R"}
 ```
 
 :::
 
-@fig-ch18num9 represents the encouragement design as a DAG. No arrows lead into $Z$, because the treatment was randomly assigned. The compliance type $C$, the assignment $Z$, and unobserved heterogeneity $U$ conspire to set the level of $D$. The outcome $Y$ is affected by the treatment $D$ of course, but also by compliance type $C$ and unobserved heterogeneity $U$. The required exclusion restriction that $Z$ only affect $Y$ through $D$ is represented by the *lack* of an arrow from $Z$ to $Y$.  The deficiencies of the as-treated and per-protocol analysis strategies can be learned from the DAG as well. $D$ is a collider, so conditioning on it would open up back-door paths between $Z$, $C$, and $U$, leading to bias of unknown direction and magnitude.
+@fig-ch18num9 represents the encouragement design as a DAG. No arrows lead into $Z$, because the treatment was randomly assigned. The compliance type $C$, the assignment $Z$, and unobserved heterogeneity $U$ conspire to set the level of $D$. The outcome $Y$ is affected by the treatment $D$ of course, but also by compliance type $C$ and unobserved heterogeneity $U$. The required exclusion restriction that $Z$ only affect $Y$ through $D$ is represented by the *lack* of an arrow from $Z$ to $Y$.  The deficiencies of the as-treated and per-protocol analysis strategies can be learned from the DAG as well. $D$ is a collider, so conditioning on it would open up backdoor paths between $Z$, $C$, and $U$, leading to bias of unknown direction and magnitude.
 
 ![Directed acyclic graph of the encouragement design](/figures/figure-18-9){#fig-ch18num9}
 
 ::: {#lem-ch18num9} 
 
-Diagnosis of encouragement design
+Diagnosis of encouragement design.
 
 The design diagnosis shows the sampling distribution of the three answer strategies and compares it to two potential inquiries: the complier average causal effect and the average treatment effect. Our preferred method, two-stage least squares, is *biased* for the ATE. Because we can't learn about the effects of treatment among never-takers or always-takers, any estimate of the true ATE will be necessarily be prone to bias, except in the happy circumstance that never-takers and always-takers happen to be just like compliers in terms of their potential outcomes.
 
@@ -507,7 +504,7 @@ Two-stage least squares does a much better job of estimating the complier averag
 #| eval: false
 
 diagnosis_18.9 <- diagnose_design(declaration_18.8)
-```
+``` 
 
 ![Sampling distributions of the two-stage least squares, per protocol, and as-treated answer strategies.](/figures/figure-18-10){#fig-ch18num10}
 
@@ -518,7 +515,7 @@ diagnosis_18.9 <- diagnose_design(declaration_18.8)
 
 - @scacco_warren_2018 randomize young men in Nigeria to participate in a vocational training program -- 84% of subjects assigned to the training participated, but the remainder did not. The authors attempted to measure outcomes for all subjects, regardless of treatment or compliance status and estimated intention-to-treat effects in all cases.
 
-- @blair_2022 randomize communities in Colombia to receive a program aimed at improving local governance through enhanced cooperation between state and local agencies. Some communities assigned to participate in the program did not, or did not participate fully. The authors present the intention-to-treat estimates of treatment effects as well as complier average causal effect estimates, varying the definition of compliance to include or exclude partial compliance (defining compliance as "any compliance including partial compliance" is the conservative choice, as defining partial compliers as noncompliers could violate excludability.)
+- @blair_2022 randomize communities in Colombia to receive a program aimed at improving local governance through enhanced cooperation between state and local agencies. Some communities assigned to participate in the program did not participate, or did not participate fully. The authors present the intention-to-treat estimates of treatment effects as well as complier average causal effect estimates, varying the definition of compliance to include or exclude partial compliance. (Defining compliance as "any compliance including partial compliance" is the conservative choice, as defining partial compliers as noncompliers could violate excludability.)
 
 
 
@@ -528,30 +525,30 @@ diagnosis_18.9 <- diagnose_design(declaration_18.8)
 We compare an encouragement design to a placebo-controlled trial in which units are selected into treatment based on whether they receive *either* treatment or a placebo treatment with a similar deployment method. At low levels of compliance, the diagnosis reveals the placebo-controlled design is preferred, but then the encouragement design is preferred as compliance increases.
 :::
 
-In common usage, the notion of a placebo is a treatment that carries with it everything about the bona fide treatment -- except the active ingredient. We're used to thinking about placebos in terms of the "placebo effect" in medical trials. Some portion of the total effect of the actual treatment is due to the mere act of *getting treated*, so the administration of placebo treatments can difference this portion off. Placebo-controlled designs abound in the social sciences too for similar purposes [see @porter2021]. Media treatments often work through a bundle of priming effects and new information; a placebo treatment might include only the prime but not the information. The main use of placebos is to difference off the many small excludability violations involved in bundled treatments the better to understand the main causal variable of interest.
+In common usage, the notion of a placebo is a treatment that carries with it everything about the bona fide treatment -- except the active ingredient. We're used to thinking about placebos in terms of the "placebo effect" in medical trials. Some portion of the total effect of the actual treatment is due to the mere act of *getting treated*, so the administration of placebo treatments can difference this portion off. Placebo-controlled designs abound in the social sciences, too; for similar purposes [see @porter2021]. Media treatments often work through a bundle of priming effects and new information; a placebo treatment might include only the prime but not the information. The main use of placebos is to difference off the many small excludability violations involved in bundled treatments to better understand the main causal variable of interest.
 
 In this chapter, we study the use of placebos for a different purpose: to combat the negative design consequences of noncompliance in experiments. As described in the previous chapter, a challenge for experiments that encounter noncompliance is that we do not know for sure who the compliers are. Compliers are units that would take treatment if assigned to treatment, but would not do so if assigned to control. Compliers are different from always-takers and never-takers in that assignment to treatment actually changes which potential outcome they reveal.
 
-In the placebo-controlled design, we attempt to deliver a real treatment to the treatment group and a placebo treatment to the placebo group, then we conduct our analysis among those units that accept either treatment. This design solves two problems at once. First, it lets us answer a *descriptive* question: "Who are the compliers?" Second, it lets answer a *causal* causal question: "What is the average effect of treatment among compliers?" 
+In the placebo-controlled design, we attempt to deliver a real treatment to the treatment group and a placebo treatment to the placebo group, then conduct our analysis among those units that accept either treatment. This design solves two problems at once. First, it lets us answer a *descriptive* question: "Who are the compliers?" Second, it lets answer a *causal* question: "What is the average effect of treatment among compliers?" 
 
-Employing a placebo control can seem like an odd design choice -- you go to all the effort of contacting a unit but at the very moment you get in touch, you deliver a placebo message instead of the treatment message. It turns out that despite this apparent waste, the placebo-controlled design can often lead to more precise estimates than the standard encouragement design. Whether it does or not depends in large part on the underlying compliance rate.
+Employing a placebo control can seem like an odd design choice -- you go through the effort of contacting a unit but at the very moment you get in touch, you deliver a placebo message instead of the treatment message. It turns out that despite this apparent waste, the placebo-controlled design can often lead to more precise estimates than the standard encouragement design. Whether it does or not depends in large part on the underlying compliance rate.
 
-@def-ch18num9 actually includes two separate designs. Here we'll directly compare the standard encouragement design to the placebo-controlled design. They have identical models and inquiries, so we'll just declare those once, before declaring the specifics of the empirical strategies for each design.
+@def-ch18num9 actually includes two separate designs. Here we'll directly compare the standard encouragement design to the placebo-controlled design. They have identical models and inquiries, so we'll just declare those once, before declaring the specifics of the empirical strategies for each design. The model has no always takers, which is a reasonable assumption if the treatment can only be provided through the researchers. When we use this model for the placebo design we will also assume that the compliance types are the same for both the treatment and the placebo conditions---that is, there is no differential selection conditional on contact.
 
 ::: {#def-ch18num9 .declaration} 
 
-Comparing the encouragement and placebo-controlled designs
+Comparing the encouragement and placebo-controlled designs.
 
 ```{r, file = "scripts_declarations/declaration_18.9a.R"}
 
 ```
 
-Here again are the data and answer strategies for the encouragement design (simplified from the previous chapter to focus on the one-sided compliance case). We conducted a random assignment among all units, then reveal treatment status and outcomes according to the potential outcomes declared in the model. The two-stage least squares estimator operates on all $N$ units to generate estimates of the CACE.
+Here, again, are the data and answer strategies for the encouragement design (simplified from the previous chapter to focus on the one-sided compliance case, in which units can fail to take treatment but cannot take treatment if assigned to control). We conduct a random assignment among all units, then reveal treatment statuses and outcomes according to the potential outcomes declared in the model. The two-stage least squares estimator operates on all $N$ units to generate estimates of the CACE.
 
 ```{r, file = "scripts_declarations/declaration_18.9b.R"}
 ```
 
-By contrast, here are the data and answer strategies for the placebo-controlled design. In a typical canvassing experiment setting, the expensive part is sending canvassing teams to each household, regardless of whether a treatment or a placebo message is delivered when the door opens. So in order to keep things "fair" across the placebo-controlled and encouragement designs, we're going to hold fixed the number of treatment attempts -- the sampling step subsets to the same $N/2$ that we will attempt. Then among that subset, we conduct a random assignment to treatment or placebo. When we attempt to deliver the placebo or the treatment, we will either succeed or fail, which gives us a direct measure of whether a unit is a complier. This measurement is represented in the `declare_measurement` step where an observable `X` now corresponds to compliance type. We conduct our estimation directly conditioning on the subset of the sample we have measured to be compliers.
+By contrast, here are the data and answer strategies for the placebo-controlled design. In a typical canvassing experiment setting, the expensive part is sending canvassing teams to each household, regardless of whether a treatment or a placebo message is delivered when the door opens. So in order to keep things "fair" across the placebo-controlled and encouragement designs, we're going to hold fixed the number of treatment attempts by sampling 200 of the 400 individuals to participate. Then among that subset, we conduct a random assignment to treatment or placebo. When we attempt to deliver the placebo or the treatment, we will either succeed or fail, which gives us a direct measure of whether a unit is a complier---made possible by the assumption that there are no always takers and that compliance types are the same in the treatment and placebo condition. This measurement is represented in the `declare_measurement` step, where an observable `X` now corresponds to compliance type. We conduct our estimation directly conditioning on the subset of the sample we have measured to be compliers.
 
 ```{r, file = "scripts_declarations/declaration_18.9c.R"}
 ```
@@ -560,7 +557,7 @@ By contrast, here are the data and answer strategies for the placebo-controlled 
 
 ::: {#lem-ch18num10} 
 
-Diagnosing the encouragement and placebo-controlled designs
+Diagnosing the encouragement and placebo-controlled designs.
 
 We diagnose both the encouragement design and the placebo-controlled design over a range of possible levels of noncompliance, focusing on the standard deviation of the estimates (the standard error) as our main diagnosand. @fig-ch18num11 shows the results of the diagnosis. At high levels of compliance, the standard encouragement design actually outperforms the placebo-controlled design. But when compliance is low, the placebo-controlled design is preferred. Which design is preferable in any particular scenario will depend on the compliance rate as well as other design features like the total number of attempts and the fraction treated [see @broockman_kalla_sekhon_2017].
 
@@ -586,37 +583,37 @@ diagnosis_18.10_placebo <-
 
 - @broockman2016durably use a placebo-controlled design in their study of a transphobia-reduction canvassing treatment. Households were assigned either a placebo (a conversation about recycling) or the treatment; analysis was conducted among those who opened the door to the canvasser. 
 
-- @wilke2020placebo extend the placebo-controlled design in a media experiment in Uganda. Film festival attendees were assigned to watch public service announcements on one or two of three topics; post-treatment attitudes about all three topics were measured for all subjects. Subjects who saw the treatment on a given topic served as placebo controls for subjects who saw treatments on other topics. Under the maintained placebo assumption that treatments on one topic won't affect attitudes on other topics, this design allows for efficient, unbiased inference for the effects of multiple treatments on their targeted outcomes.
+- @wilke2020placebo extend the placebo-controlled design in a media experiment in Uganda. Film festival attendees were assigned to watch public service announcements on one or two of three topics; posttreatment attitudes about all three topics were measured for all subjects. Subjects who saw the treatment on a given topic served as placebo controls for subjects who saw treatments on other topics. Under the maintained placebo assumption that treatments on one topic won't affect attitudes on other topics, this design allows for efficient, unbiased inference for the effects of multiple treatments on their targeted outcomes.
 
 
 ## Stepped-wedge experiments 
 
 ::: {.ddbox}
-We declare a stepped-wedge design in which units are assigned a *sequence* of treatments across multiple periods. In each period, one third are treated successively. Diagnosis of this design compared to similar-cost standard two-arm trials, and suggests that a double-sized two-arm trial is preferable in terms of power but that the stepped-wedge is useful when the number of study units is limited.
+We declare a stepped-wedge design in which units are assigned a *sequence* of treatments across multiple periods. In each period, one third are treated successively. Diagnosis of this design and of similar-cost standard two-arm trials suggests that a double-sized two-arm trial is preferable in terms of power but that the stepped-wedge experiment is useful when the number of study units is limited.
 :::
 
-We often face an ethical dilemma in allocating treatments to some units but not others, since we would rather not withhold treatment from anyone. However, practical constraints often make it impossible to allocate treatments to everyone at the same time. In these circumstances, a stepped-wedge experiment, also known as a waitlist design, can help. Under a stepped-wedge design, we follow an allocation rule that randomly assigns a portion of units to treatment in each of one or more periods, and then in a final period, everyone is allocated treatment. We conduct posttreatment measurement after each period except for the last one. @fig-ch18num12 illustrates the allocation procedure. A common design is allocating one third to treatment in the first period, an additional third in the second period, and the remaining third in the final period.
+We often face an ethical dilemma in allocating treatments to some units but not others, since we would rather not withhold treatment from anyone. However, practical constraints often make it impossible to allocate treatments to everyone at the same time. In these circumstances, a stepped-wedge experiment, also known as a waitlist design, can help. Under a stepped-wedge design, we follow an allocation rule that randomly assigns a portion of units to treatment in each of one or more periods, and then in a final period everyone is allocated treatment. We conduct posttreatment measurement after each period except for the last one. @fig-ch18num12 illustrates the allocation procedure. A common design is allocating one third to treatment in the first period, an additional third in the second period, and the remaining third in the final period.
 
 ![Illustration of random assignment in a stepped-wedge design.](/figures/figure-18-12){#fig-ch18num12}
 
-Our model describes unit-specific effects, time-specific effects, and time trends in the potential outcomes. Our inquiry is the average treatment effect among time periods *before* the last period, since in the stepped-wedge design, we don't obtain information about the control potential outcome in the final period. In the data strategy, the assign treatment by randomly assigning the wave each unit will receive treatment. We use cluster assignment at the unit level because the data is at the unit-period level. We then transform this treatment variable into a unit-period treatment indicator, if the time period is at or after the treatment wave. The answer strategy also only uses the data from the first two periods (we probably would not collect outcome data after the last period for this reason). We fit a two-way fixed effects regression model by periods and units with standard errors clustered at the unit level. 
+Our model describes unit-specific effects, time-specific effects, and time trends in the potential outcomes. Our inquiry is the average treatment effect among time periods *before* the last period, since in the stepped-wedge design, we don't obtain information about the control potential outcome in the final period. In the data strategy, we assign treatment by randomly assigning the wave in which each unit will receive treatment. We use cluster assignment at the unit level because the data is at the unit-period level. We then transform this treatment variable into a unit-period treatment indicator if the time period is at or after the treatment wave. The answer strategy also only uses the data from the first two periods (we probably would not collect outcome data after the last period for this reason). We fit a two-way fixed effects regression model by periods and units, with standard errors clustered at the unit level. 
 
-The stepped-wedge experimental design, described in @def-ch18num10, shares much in common with the observational difference-in-differences design. We show in @sec-ch16s3, the two-way fixed effects estimator is biased for the average treatment effect on the treated in the presence of treatment effect by time interactions. However, in the stepped-wedge design, we randomize treatment, so we do not need to make a parallel trends assumption. Our diagnosis below shows no bias when estimating the average treatment effect with the two-way fixed effects estimator in the stepped-wedge design even when treatment effects vary by period. A regression with only period effects would also return unbiased answers as would a design with inverse assignment probability weights described in @Gerber2012[ch. 8], but if there are large unit differences the two-way design will be more efficient. Only including unit fixed effects, by contrast, without period effects will yield biased answers, because the probabilities of assignment vary by round.
+The stepped-wedge experimental design, described in @def-ch18num10, shares much in common with the observational difference-in-differences design. We show in @sec-ch16s3 that the two-way fixed effects estimator is biased for the average treatment effect on the treated in the presence of treatment effect by time interactions. However, in the stepped-wedge design, we randomize treatment, so we do not need to make a parallel trends assumption. Our diagnosis below shows no bias when estimating the average treatment effect with the two-way fixed effects estimator in the stepped-wedge design even when treatment effects vary by period. A regression with only period effects would also return unbiased answers as would a design with inverse assignment probability weights described in @Gerber2012[ch. 8], but if there are large unit differences the two-way design will be more efficient. Only including unit fixed effects, by contrast, without period effects, will yield biased answers, because the probabilities of assignment vary by round.
 
 ::: {#def-ch18num10 .declaration} 
 
-Stepped-wedge design
+Stepped-wedge design.
 
 ```{r, file = "scripts_declarations/declaration_18.10.R"}
 ```
 
 :::
 
-### When to use a stepped wedge experiment
+### When to use a stepped-wedge experiment
 
 Compared to the equivalent two-arm randomized experiment, a stepped-wedge experiment involves the same number of units, but more treatment (all versus half) and more measurement (all units are measured at least twice). The decision of whether to adopt the stepped-wedge design, then, rides on budget, the relative costs of measurement and treatment, ethical and logistical constraints such as the imperative to treat all units, and beliefs about effect sizes and outcome variances.
 
-We compare the stepped-wedge design to a two-arm randomized experiment with varying sample sizes to assess these tradeoffs. First we compare designs with the same number of units, which would be the relevant comparison if the number of units is fixed. The second comparison is a two-arm experiment with double the number of units, which would be the right comparison if the number of units can be increased at some cost. We summarize each design in terms of the number of study units, the number that are treated, and the number of unit measurements taken.
+We compare the stepped-wedge design to a two-arm randomized experiment with varying sample sizes to assess these trade-offs. First we compare designs with the same number of units, which would be the relevant comparison if the number of units is fixed. The second comparison is a two-arm experiment with double the number of units, which would be the right comparison if the number of units can be increased at some cost. We summarize each design in terms of the number of study units, the number that are treated, and the number of unit measurements taken.
 
 | Design        | N        | m treated  | n measurements  |
 |---------------|----------|------------|-----------------|
@@ -626,11 +623,11 @@ We compare the stepped-wedge design to a two-arm randomized experiment with vary
 
 : Design parameters in the comparison between stepped-wedge and two-arm experimental designs. {#tbl-steppedwedgedesigns} 
 
-We declare a comparable two-arm experimental design in @def-ch18num11, with the wrinkle being that the estimand is slightly different by necessity. In the stepped-wedge design, we target the average treatment effect averaging over all periods up to the penultimate one, because there is no information about the control group from the last period. In a single period design, by its nature, we cannot average over time. We would obtain a biased answer if we targeted an out-of-sample time period. The average treatment effect we target is the current-period ATE for the period that is chosen. We cannot extrapolate beyond that if treatment effects vary over time. If we expect time heterogeneity in effects, we may *not* want to use a stepped-wedge design but instead design a new experiment that efficiently targets the conditional average treatment effects within each period. Then we could describe both the average effect and how effects vary over time.
+We declare a comparable two-arm experimental design in @def-ch18num11, with the wrinkle being that the estimand is slightly different by necessity. In the stepped-wedge design, we target the average treatment effect averaging over all periods up to the penultimate one, because there is no information about the control group from the last period. In a single period design, by its nature, we cannot average over time. We would obtain a biased answer if we targeted an out-of-sample time period. The average treatment effect we target is the current-period ATE for the period that is chosen. We cannot extrapolate beyond that if treatment effects vary over time. If we expect time heterogeneity in effects, we may *not* want to use a stepped-wedge design but instead to design a new experiment that efficiently targets the conditional average treatment effects within each period. Then we could describe both the average effect and how effects vary over time.
 
 ::: {#def-ch18num11 .declaration} 
 
-Comparison single-period two arm trial design
+Comparison single-period two arm trial design.
 
 ```{r, file = "scripts_declarations/declaration_18.11.R"}
 ```
@@ -639,7 +636,7 @@ Comparison single-period two arm trial design
 
 ::: {#lem-ch18num11} 
 
-Diagnosis of stepped-wedge design compared to two single-period two arm trial designs
+Diagnosis of stepped-wedge design compared to two single-period two arm trial designs.
 
 ```{r}
 #| eval: false
@@ -662,9 +659,9 @@ attr(designs, "names") <- paste0("design_", 1:length(designs))
 diagnosis_18.11 <- diagnose_design(designs)
 ```
 
-We plot power curves for the three comparison designs in @fig-ch18num13. The top line (blue dashed) is the 200-unit study, which is preferred in terms of power, and by a considerable margin. That design involves the same amount of measurement and treatment as the stepped-wedge so may be the same cost. However, if only 100 units are available for study, then the relevant comparison is between the stepped-wedge and the 100-unit two arm study. Here, the stepped-wedge design is preferable in terms of power and may satisfy ethical requirements to eventually treat all subjects.
-
 ![Power analysis of three designs: stepped wedge with 100 units and 1/3-1/3-1/3 allocation, two-arm experiment with 100 units, and two-arm experiment with 200 units.](/figures/figure-18-13){#fig-ch18num13}
+
+We plot power curves for the three comparison designs in @fig-ch18num13. The top line (purple) is the 200-unit study, which is preferred in terms of power, and by a considerable margin. That design involves the same amount of measurement and treatment as the stepped-wedge design, so may have the same cost. However, if only 100 units are available for study, then the relevant comparison is between the stepped-wedge and the 100-unit two-arm study. Here, the stepped-wedge design is preferable in terms of power and may satisfy ethical requirements to eventually treat all subjects. 
 
 :::
 
@@ -672,38 +669,38 @@ We plot power curves for the three comparison designs in @fig-ch18num13. The top
 
 - @gerber2011large use a stepped-wedge design to randomize the timing of political television ads in 18 media markets in Texas in advance of a primary election. 
 
-- @Pennycook:2021uk conduct an online field experiment with Twitter users who had shared links to untrustworthy websites. The authors randomized the timing of a direct messages to those users, asking them to rate the accuracy of a non-political headline, then observed the quality of the news articles they subsequently shared.
+- @Pennycook:2021uk conduct an online field experiment with Twitter users who had shared links to untrustworthy Web sites. The authors randomized the timing of direct messages to those users, asking them to rate the accuracy of a nonpolitical headline, then observed the quality of the news articles they subsequently shared.
 
 
 
 ## Randomized saturation experiments {#sec-ch18s9}
 
 ::: {.ddbox}
-We declare a multilevel design in which we randomize first the "saturation" or probability of assignment with clusters and then randomly assign within the clusters based on that saturation probability. The diagnosis highlights that the efficiency for estimating the causal effect of the saturation level is low, because assignment is clustered, and higher for estimating the individual treatment effect within clusters of a given saturation.
+We declare a multilevel design in which we randomize first the "saturation" or probability of assignment with clusters and then randomly assign within the clusters based on that saturation probability. The diagnosis highlights that the efficiency for estimating the causal effect of the saturation level is low, because assignment is clustered, and is higher for estimating the individual treatment effect within clusters of a given saturation.
 :::
 
 
-We study most treatments at an isolated, atomized, individualistic level. We define potential outcomes with respect to a unit's own treatment status, ignoring the treatment status of all other units in the study. Accordingly, our inquiries tend to be averages of individual-level causal effects and our data strategies tend to assign treatments at the individual level as well. All of the experimental designs we have considered to this point have been of this flavor.
+We study most treatments at an isolated, atomized, individualistic level. We define potential outcomes with respect to a unit's own treatment status, ignoring the treatment status of all other units in the study. Accordingly, our inquiries tend to be averages of individual-level causal effects, and our data strategies tend to assign treatments at the individual level as well. All of the experimental designs we have considered to this point have been of this flavor.
 
-However, when the potential outcome revealed by a unit depends on the treatment status of other units, then we have to make adjustments to every part of the design. We have to redefine the model *M* to specify what potential outcomes are possible. Under a no-spillover model, we might only have the treated and untreated potential outcome $Y_i(1)$ and $Y_i(0)$. But under spillover models, we have to expand the set of possibilities. For example, we might imagine that unit $i$'s potential outcomes can be written as a function of their own treatment status and that of their housemate, unit $j$: $Y_i(Z_i, Z_j)$. We have to redefine our inquiry *I* with respect to those reimagined potential outcomes. The average treatment effect is typically defined as $\E[Y_i(1) - Y_i(0)]$, but if $Y_i(1)$ and $Y_i(0)$ no longer exist, we need to choose a new inquiry, like the average direct effect of treatment when unit $j$ is not treated: $\E[Y_i(1, 0) - Y_i(0, 0)]$. We have to alter our data strategy *D* so that the randomization procedure produces healthy samples of all of the potential outcomes involved in the inquiries, and we have to amend our answer strategy *A* to account for the important features of the new randomization protocol.
+However, when the potential outcome revealed by a unit depends on the treatment status of other units, then we have to make adjustments to every part of the design. We have to redefine the model *M* to specify what potential outcomes are possible. Under a no-spillover model, we might only have the treated and untreated potential outcomes, $Y_i(1)$ and $Y_i(0)$. But under spillover models, we have to expand the set of possibilities. For example, we might imagine that unit $i$'s potential outcomes can be written as a function of their own treatment status and that of their housemate, unit $j$: $Y_i(Z_i, Z_j)$. We have to redefine our inquiry *I* with respect to those reimagined potential outcomes. The average treatment effect is typically defined as $\E[Y_i(1) - Y_i(0)]$, but if $Y_i(1)$ and $Y_i(0)$ are no longer well-defined, we need to choose a new inquiry, like the average direct effect of treatment when unit $j$ is not treated: $\E[Y_i(1, 0) - Y_i(0, 0)]$. We have to alter our data strategy *D* so that the randomization procedure produces healthy samples of all of the potential outcomes involved in the inquiries, and we have to amend our answer strategy *A* to account for the important features of the new randomization protocol.
 
 We divide up our investigation of experimental designs to learn about spillovers into two sets. This chapter addresses randomized saturation designs, which are appropriate when we can exploit a hierarchical clustering of subjects into groups within which spillover can occur but across which spillover can't occur. The next chapter addresses experiments over networks, which are appropriate when spillover occurs over geographic, temporal, or social networks.
 
-The randomized saturation design (sometimes called the partial population design, as in @bairdetal2018) is purpose-built for scenarios in we have good reason to imagine that a unit's potential outcomes depend on the fraction of treated units within the same cluster. For example, we might want to consider the fraction of people within a neighborhood assigned to receive a vaccine: a person's health outcomes could easily depend on whether two-thirds or one-third of neighbors have been treated. 
+The randomized saturation design (sometimes called the partial population design, as in @bairdetal2018) is purpose-built for scenarios in which we have good reason to imagine that a unit's potential outcomes depend on the fraction of treated units within the same cluster. For example, we might want to consider the fraction of people within a neighborhood assigned to receive a vaccine: a person's health outcomes could easily depend on whether two thirds or one third of neighbors have been treated. 
 
 In the model, we now have to define potential outcomes with respect to both the individual level treatment and also the saturation level. We can imagine a variety of different kinds of potential outcomes functions. Consider the vaccine example, imagining a 100\% effective vaccine against infection. Directly treated individuals never contract the illness, but the probability of infection for untreated units depends on the fraction who are treated nearby. If the treatment is a persuasive message to vote for a particular candidate, we might imagine that direct treatment is ineffective when only a few people around you hear the message, but becomes much more effective when many people hear the message at the same time. The main challenge in developing intuitions about complex interactions like this is articulating the discrete potential outcomes that each subject could express, then reasoning about the plausible values for each potential outcome.
 
 The randomized saturation design is a factorial design of sorts, and like any factorial design can support a number of different inquiries. We can describe the average effect of direct treatment at low saturation, at high saturation, the average of the two, or the difference between the two. Similarly, we could describe the average effect of high versus low saturation among the untreated, among the treated, the average of the two, or the difference between the two. In some settings, all eight of these inquiries might be appropriate to report, in others just a subset.
 
-The design employs a two-stage data strategy. First, pre-defined clusters of units are randomly assigned to treatment saturation levels, for example 25\% or 75\%. Then, in each cluster, individual units are assigned to treatment or control with probabilities determined by their clusters' saturation level. The main answer strategy complication is that now there are two levels of randomization that must be respected. The saturation of treatment varies at the cluster level, so whenever we are estimating saturation effects, we have to cluster standard errors at the level saturation was assigned. The direct treatments are assigned at the individual level, so we do not need to cluster.
+The design employs a two-stage data strategy. First, predefined clusters of units are randomly assigned to treatment saturation levels, for example, 25\% or 75\%. Then, in each cluster, individual units are assigned to treatment or control with probabilities determined by their clusters' saturation level. The main answer strategy complication is that now there are two levels of randomization that must be respected. The saturation of treatment varies at the cluster level, so whenever we are estimating saturation effects, we have to cluster standard errors at the level saturation was assigned. The direct treatments are assigned at the individual level, so we do not need to cluster.
 
-@def-ch18num12 describes 50 groups of 20 individuals each. We imagine one source of unobserved variation at the group level (the `group_shock`) and another at the individual level (the `individual shock`). We built potential outcomes in which the individual and saturation treatment assignments each have additive (non-interacting) effects, though more complex potential outcomes functions are of course possible. We choose two inquiries in particular: the conditional average effect of saturation among the untreated and the conditional average effect of treatment when saturation is low. 
+@def-ch18num12 describes 50 groups of 20 individuals each. We imagine one source of unobserved variation at the group level (the `group_shock`) and another at the individual level (the `individual shock`). We build potential outcomes in which the individual and saturation treatment assignments each have additive (noninteracting) effects, though more complex potential outcomes functions are of course possible. We choose two inquiries in particular: the conditional average effect of saturation among the untreated and the conditional average effect of treatment when saturation is low. 
 
 We can learn about the effects of the dosage of indirect treatment by comparing units with the same individual treatment status across the levels of dosage. For example, we could compare untreated units across the 25\% and 75\% saturation clusters. We can also learn about the direct effects of treatment at either saturation level, e.g., the effect of treatment when saturation is low. We use difference-in-means estimators of both inquiries, subsetted and clustered appropriately.
 
 ::: {#def-ch18num12 .declaration} 
 
-Randomized saturation design
+Randomized saturation design.
 
 ```{r, file = "scripts_declarations/declaration_18.12.R"}
 ```
@@ -713,7 +710,7 @@ Randomized saturation design
 
 ::: {#lem-ch18num12} 
 
-Randomized saturation diagnosis
+Randomized saturation diagnosis.
 
 ```{r}
 #| eval: false
@@ -721,7 +718,7 @@ Randomized saturation diagnosis
 diagnosis_18.12 <- diagnose_design(declaration_18.12)
 ```
 
-The diagnosis plot in @fig-ch18num14 shows the sampling distribution of the two estimators with the value of the relevant inquiry overlaid. Both estimators are unbiased for their targets, but the thing to notice from this plot is that the estimator of the saturation inquiry is far more variable than the estimator of the direct treatment inquiry. Saturation is by its nature a group-level treatment, so must be assigned at a group level. The clustered nature of the assignment to saturation level brings extra uncertainty. When designing randomized saturation experiments, researchers should be aware that we typically have much better precision for individually-randomized treatments than cluster-randomized treatments, and should plan accordingly.
+The diagnosis plot in @fig-ch18num14 shows the sampling distribution of the two estimators with the value of the relevant inquiry overlaid. Both estimators are unbiased for their targets, but the thing to notice from this plot is that the estimator of the saturation inquiry is far more variable than the estimator of the direct treatment inquiry. Saturation is by its nature a group-level treatment, so must be assigned at a group level. The clustered nature of the assignment to saturation level brings extra uncertainty. When designing randomized saturation experiments, researchers should be aware that we typically have much better precision for individually randomized treatments than cluster-randomized treatments, and should plan accordingly.
 
 ![Sampling distributions of indirect and direct treatment effect estimators](/figures/figure-18-14){#fig-ch18num14}
 
@@ -729,23 +726,23 @@ The diagnosis plot in @fig-ch18num14 shows the sampling distribution of the two 
 
 ### Design examples
 
-- @cheema_khan_liaqat_mohmand_2022 used a randomized saturation design in their study of a get-out-the-vote campaign in Pakistan. Wards could be assigned to one of three treatment conditions or a control condition; within treated wards, four of five study households received the assigned condition but the fifth was assigned to control. A comparison of untreated household in treated wards to untreated household in untreated wards generates an estimate of the spillover effect (small and nonsignificant in this case).
+- @cheema_khan_liaqat_mohmand_2022 used a randomized saturation design in their study of a get-out-the-vote campaign in Pakistan. Wards could be assigned to one of three treatment conditions or to a control condition; within treated wards, four of five study households received the assigned condition but the fifth was assigned to control. A comparison of untreated households in treated wards to untreated households in untreated wards generates an estimate of the spillover effect (small and nonsignificant in this case).
 
-- @Egger2019 study how a cash transfer program implemented in one locality may affect outcomes in neighboring localities. In Kenya, the authors grouped villages into "saturation groups" and randomized the saturation groups to have one-third or two-thirds of their constituent villages assigned to treatment. A comparison of the untreated villages in the one-third and two-thirds saturation groups yields an estimate of the spillover effect.
+- @Egger2019 study how a cash transfer program implemented in one locality may affect outcomes in neighboring localities. In Kenya, the authors grouped villages into "saturation groups" and randomized the saturation groups to have one third or two thirds of their constituent villages assigned to treatment. A comparison of the untreated villages in the one third and two thirds saturation groups yields an estimate of the spillover effect.
 
 
 
 ## Experiments over networks {#sec-ch18s10}
 
 ::: {.ddbox}
-We declare a design for a randomized trial in which the researcher controls the assignment of direct treatment, but then assess the effects of direct treatment *and* of being indirectly treated by being geographically-proximate to a unit directly treated. The diagnosis demonstrates both can be estimated without bias if the probability of indirect treatment is estimated through simulation, but that common estimators differ greatly in efficiency.  
+We declare a design for a randomized trial in which the researcher controls the assignment of direct treatment, but then assesses the effects of direct treatment *and* of being indirectly treated by being geographically proximate to a unit directly treated. The diagnosis demonstrates both can be estimated without bias if the probability of indirect treatment is estimated through simulation, but that common estimators differ greatly in efficiency.  
 :::
 
-When experimental subjects are embedded in a network, units' outcomes may depend on the treatment statuses of nearby units. In other words, treatments map spill over across the network. For example, in a geographic network, vote margin in one precinct may depend on outdoor advertisements in neighboring precincts. In a social network, information delivered to a treated subjects might be shared with friends or followers. In a temporal network, treatments in the past might affect outcomes in the future.
+When experimental subjects are embedded in a network, units' outcomes may depend on the treatment statuses of nearby units. In other words, treatments map spillover across the network. For example, in a geographic network, vote margin in one precinct may depend on outdoor advertisements in neighboring precincts. In a social network, information delivered to a treated subject might be shared with friends or followers. In a temporal network, treatments in the past might affect outcomes in the future.
 
 This chapter describes the special challenges associated with experiments over networks. In the previous chapter, we discussed randomized saturation designs, which are appropriate when we can describe a hierarchy of units embedded in clusters, within which spillovers can occur but across which spillovers cannot occur. In other words, the randomized saturation design is appropriate when the network is composed of many disconnected network components (the clusters). But most networks are not disconnected. Instead, all or almost all units are typically connected in a vast web. This chapter describes how we need to modify the model, inquiry, data strategy, and answer strategy to learn from experiments over networks.
 
-In the model, our main challenge is to define how far apart (in social, geographic, or temporal space) units have to be in order for unit $i$'s potential outcomes not to depend on unit $j$. We might say units within 5km matter but units further away do not. We might say that units within two friendship links matter but more distal connections do not. We might allow the treatment statuses of three, two, or one periods ago to impact present outcomes differently from one another. For example, we might stipulate that each unit has only four potential outcomes that depend on whether a unit is directly treated or indirectly treated by virtue of being adjacent to a directly treated unit as in @tbl-networksconditions.
+In the model, our main challenge is to define how far apart (in social, geographic, or temporal space) units have to be in order for unit $i$'s potential outcomes not to depend on unit $j$. We might say units within 5km matter, but units further away do not. We might say that units within two friendship links matter, but more distal connections do not. We might allow the treatment statuses of three, two, or one period ago to impact present outcomes differently from one another. For example, we might stipulate that each unit has only four potential outcomes that depend on whether a unit is directly treated or indirectly treated by virtue of being adjacent to a directly treated unit as in @tbl-networksconditions.
 
 | Condition           | Potential outcomes                                |
 |---------------------|---------------------------------------------------|
@@ -764,29 +761,29 @@ We need to adjust our answer strategy to compensate for the differential probabi
 
 To illustrate these ideas, we declare a hypothetical experimental design to estimate the effects of lawn signs [modeled after @green2016lawnsigns]. The units are the lowest level at which we can observe vote margin, the voting precinct. In our model, we define four potential outcomes. Precincts can be both directly and indirectly treated, only directly treated, only indirectly treated, or neither. Indirect treatment occurs when a neighboring precinct is treated. This model could support many possible inquiries, but here we will focus on three: the direct effect of treatment when the precinct is not indirectly treated, the effect of indirect treatment when the precinct is not directly treated, and the total effect of direct and indirect treatment versus pure control. The data strategy will involve randomly assigning some units to direct treatment, which will in turn cause other units to be indirectly treated. We will need to learn via simulation the probabilities of assignments to conditions that this procedure produces. We'll make use of two answer strategies: the Horvitz-Thompson and Hajek estimators proposed by @aronow2017estimating, along with their associated variance estimators, as implemented in the `interference` package.
 
-First, we load the Fairfax County, Virginia, voting precincts shapefile, removing one singleton voting precinct, and we plot the precincts in @fig-ch18num5.
+To do this, we load the Fairfax County, Virginia, voting precincts shapefile, and remove the state capital which is not part of the county. We plot the precincts in @fig-ch18num5. 
 
 ![Voting Precincts in Fairfax County, Virginia](/figures/figure-18-5){#fig-ch18num5}
 
-To declare the full design, shown in @def-ch18num13, we first need to obtain the adjacency matrix of precincts in Fairfax. Second, we obtain a permutation matrix of possible random assignments, from which probabilities of assignment to each condition can be calculated. The `declare_model` call builds in a dependence of potential outcomes on the length of each precinct's perimeter to reflect the idea that outcomes are correlated with geography in some way. The `declare_inquiry` call describes the three inquiries in terms of potential outcomes. The `declare_assignment` call first conducts a random assignment according to the procedure describes by `declare_ra` earlier in the code, then obtains the exposures that the assignment generates. Finally, all the relevant information is fed into the Aronow and Samii estimation functions via `estimator_AS` (the `get_exposure_AS` and `estimator_AS` helper functions are available in the `rdss` package).
+To declare the full design, shown in @def-ch18num13, we first need to obtain the adjacency matrix of precincts in Fairfax. Second, we obtain a permutation matrix of possible random assignments, from which probabilities of assignment to each condition can be calculated. The `declare_model` call builds in a dependence of potential outcomes on the length of each precinct's perimeter to reflect the idea that outcomes are correlated with geography in some way. The `declare_inquiry` call describes the three inquiries in terms of potential outcomes. The `declare_assignment` call first conducts a random assignment according to the procedure described by `declare_ra` earlier in the code, then obtains the exposures that the assignment generates. Finally, all the relevant information is fed into the Aronow and Samii estimation functions via `estimator_AS` (the `get_exposure_AS` and `estimator_AS` helper functions are available in the `rdss` package).
 
 ::: {#def-ch18num13 .declaration} 
 
-Experiments over spatial networks design
+Experiments over spatial networks design.
 
 ```{r, file = "scripts_declarations/declaration_18.13.R"}
 ```
 
 :::
 
-The maps in @fig-ch18num16 show how this procedure generates differential probabilities of assignment to each exposure condition. Units that are in denser areas of the county are more likely to be in the `Indirect Exposure Only` and `Direct and Indirect Exposure` conditions than those in less dense areas.
+The maps in @fig-ch18num16 show how this procedure generates differential probabilities of assignment to each exposure condition. Units that are in denser areas of the county are more likely to be in the `Indirect Exposure Only` and `Direct and Indirect Exposure` conditions than those in less dense areas. 
 
 ![Probabilities of assignment to each of four conditions depend on position in geographic space.](/figures/figure-18-16){#fig-ch18num16}
 
 
 ::: {#lem-ch18num13} 
 
-Experiments over spatial networks diagnosis
+Experiments over spatial networks diagnosis.
 
 @fig-ch18num17 compares the performance of the Hajek and Horvitz-Thompson estimators. Both are approximately unbiased for their targets, but the Horvitz-Thompson estimator exhibits much higher variance, suggesting that in many design settings, researchers will want to opt for the Hajek estimator. 
 
@@ -802,9 +799,9 @@ diagnosis_18.13 <- diagnose_design(declaration_18.13)
 
 ### Design examples
 
-- @zelizer_2019 conducts experiments within a legislative network defined by office-sharing. Legislators were randomly assigned briefings on a subset of bills and their decision to cosponsor the bill (or not) was recorded. The design was able to estimate spillover effects bill by comparing legislators whose officemates were and were not assigned to treatment on various bills.
+- @zelizer_2019 conducts experiments within a legislative network defined by office-sharing. Legislators were randomly assigned briefings on a subset of bills and their decision to cosponsor the bill (or not) was recorded. The design was able to estimate spillover effects bill by comparing legislators whose office mates were and were not assigned to treatment on various bills.
 
-- @green2016lawnsigns conducts a randomized experiment within geographic network of adjacent voting precincts. Treated units were assigned many lawn signs supporting a candidate. The design supported inference on the direct effect (treated units relative to untreated units surrounded by untreated units) and the indirect effects (untreated units adjacent to treated units relative to untreated units surrounded by untreated units). The answer strategy accounted for the differential probabilities of assignment to each of these conditions depending on geographic network position.
+- @green2016lawnsigns conducts a randomized experiment within a geographic network of adjacent voting precincts. Treated units were assigned many lawn signs supporting a candidate. The design supported inference on the direct effects (treated units relative to untreated units surrounded by untreated units) and the indirect effects (untreated units adjacent to treated units relative to untreated units surrounded by untreated units). The answer strategy accounted for the different probabilities of assignment to each of these conditions depending on geographic network position.
 
 
 
