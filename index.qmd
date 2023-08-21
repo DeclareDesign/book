@@ -16,4 +16,4 @@ format:
 
 <img style="border: 1px solid darkgray; height: 55vh" src="figures/cover.jpg">
 
-Preorder the printed book via [Princeton University Press](https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences) or [Amazon](https://www.amazon.com/Research-Design-Social-Sciences-Declaration/dp/0691199574/?&_encoding=UTF8&tag=declaredesign-20&linkCode=ur2&linkId=84be1f952d1d7aaaa5be867eade93474&camp=1789&creative=9325).
+Printed book available at [Princeton University Press](https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences) or [Amazon](https://www.amazon.com/Research-Design-Social-Sciences-Declaration/dp/0691199574/?&_encoding=UTF8&tag=declaredesign-20&linkCode=ur2&linkId=84be1f952d1d7aaaa5be867eade93474&camp=1789&creative=9325).

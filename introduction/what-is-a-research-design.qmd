@@ -67,7 +67,7 @@ Examples of models
 
 ::::
 
-### Inquiry
+### Inquiry {#sec-ch2s2ss1}
 
 \index{Inquiry}
 

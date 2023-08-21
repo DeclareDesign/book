@@ -379,7 +379,7 @@ Trust game design.
 
 A few features are worth highlighting. First, the inquiries are defined using a set of hypothetical responses under the model using a specified response function. However the inquiry is robust to the model in the sense that it remains well defined even if you stipulate very different behaviors. Second, the declaration involves a step where we shift from a "long" data frame with a row per subject to a "wide" data frame with a row per game. Third, the design orders steps so that an estimation stage is implemented before a measurement stage; this is a little unusual but it is done in this way to allow the researchers to analyze Player 1 investment decisions before (possibly) replacing them with fabricated decisions.
 
-A sample of data that might be produced by this design is shown in @tb1-behavioralgames. 
+A sample of data that might be produced by this design is shown in @tbl-behavioralgames. 
 
 ```{r}
 #| tbl-cap: "Behavioral games diagnosis"

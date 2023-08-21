@@ -60,7 +60,7 @@ In some cases, reconciliation will lead to additional learning beyond what can b
 
 There are no current standards for how to report reconciliation. We recommend, however, providing two types of tables, a qualitative *Inquiry reconciliation* table and a quantitative *Answer strategy reconciliation table*. In the latter case, especially, guiding readers to relevant discussions or sections of replication code can make the reconciliation tables easier to evaluate. Such answer strategy reconciliation tables could also usefully include output from diagnosis comparisons to provide motivation for change. In general they should also include brief explanations for decisions taken.
 
-We provide illustrations for both of these in @tb1-reconciliation1 and @tb1-reconciliation2.
+We provide illustrations for both of these in @tbl-reconciliation1 and @tbl-reconciliation2.
 
 | Inquiry        | In the preanalysis plan | In the paper  | In the appendix |
 |:--------------:|:-----------------------:|:-------------:|:---------------:|
@@ -71,8 +71,8 @@ We provide illustrations for both of these in @tb1-reconciliation1 and @tb1-reco
 
 
 | Inquiry       | Following *A* from the PAP | Following *A* from the paper     | Notes                                                                                         |
-| --------------|:------------------------- :|:--------------------------------:|---------------------------------------------------------------------------------------------- |
-| Gender effect | estimate = 0.6, s.e = 0.31 | estimate = 0.6, s.e = 0.25       |  Difference due to change in control variables  [provide cross references to tables and code] |
+|:-------------:|:--------------------------:|:--------------------------------:|:---------------------------------------------------------------------------------------------:|
+| Gender effect | estimate = 0.6, s.e = 0.31 | estimate = 0.6, s.e = 0.25       | Difference due to change in control variables [provide cross references to tables and code]   |
 
 : Illustration of an answer strategy reconciliation table. {#tbl-reconciliation2} 
 

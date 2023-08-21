@@ -38,10 +38,13 @@ The data strategy uses complete random assignment, in which exactly $m$ of $N$ u
 
 The answer strategy is the difference-in-means estimator with so-called Neyman standard errors. In mathematical notation, if units are ordered with treated units first and control units after, we can write both as:
 
-\begin{align}
-\widehat{DIM} &= \frac{\sum_1^mY_i}{m} - \frac{\sum_{m + 1}^NY_i}{N-m} \\
+$$
+\widehat{DIM} &= \frac{\sum_1^mY_i}{m} - \frac{\sum_{m + 1}^NY_i}{N-m}
+$$ {#eq-dim}
+
+$$
 \widehat{\mathrm{se}(DIM)} &= \sqrt{\frac{\widehat{Var}(Y_i(1))}{m} + \frac{\widehat{Var}(Y_i(0))}{N-m}}\\
-\end{align} {#eq-neymanse}
+$$ {#eq-neymanse}
 
 The estimated standard error can be used as an input for two other statistical procedures: null hypothesis significance testing via a $t$-test and the construction of a 95% confidence interval.
 
