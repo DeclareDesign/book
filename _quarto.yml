@@ -49,6 +49,7 @@ book:
         - lifecycle/integration.qmd
     - epilogue.qmd
     - references.qmd
+    - appendix.qmd
     - student-teacher.qmd
     - errata.qmd
 
@@ -93,6 +94,7 @@ book:
           - lifecycle/integration.qmd
         - epilogue.qmd
         - references.qmd
+        - appendix.qmd
         - student-teacher.qmd
         - errata.qmd
 
