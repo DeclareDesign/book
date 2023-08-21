@@ -11,7 +11,7 @@ The software package `DeclareDesign` provides tools for declaration, diagnosis, 
 
 ## Model {#model-code}
 
-In this section, we describe how to declare models in practice in the `DeclareDesign` code language. We start with declarations of units and the hierarchical structures that contain them, then move on to declarations of the characteristics of units. An important feature of models is the set of potential outcomes associated with each unit, so we spend some time describing a few approaches for thinking about them. This section is meant as a reference guide so it covers common settings and a few uncommon ones as well.
+In this section, we describe how to declare models in practice in the `DeclareDesign` code language. We start with declarations of units and the hierarchical structures that contain them, then move on to declarations of the characteristics of units. An important feature of models is the set of potential outcomes associated with each unit, so we spend some time describing a few approaches for thinking about them. This section is meant as a reference guide, so it covers common settings and a few uncommon ones as well.
 
 ### Units 
 
@@ -23,7 +23,7 @@ The model is first defined by the units under study. If there are 1,000 people w
 M <- declare_model(N = 1000)
 ```
 
-Units often sit within multiple, sometimes overlapping geographic and social hierarchies. Households live on blocks that make up neighborhoods. Workers have jobs at firms and also often are represented by unions that sometimes represent workers in multiple firms (a non-nested hierarchy). These hierarchies are important to declare in the model as they often form the basis for why units are similar and different. Within `declare_model`, we define hierarchy using `add_level`, which adds a new level of hierarchy. This model declaration creates 100 households of varying size, then creates the appropriate number of individuals within households.
+Units often sit within multiple, sometimes overlapping geographic and social hierarchies. Households live on blocks that make up neighborhoods. Workers have jobs at firms and also often are represented by unions that sometimes represent workers in multiple firms (a non-nested hierarchy). These hierarchies are important to declare in the model as they often form the basis for why units are similar or different. Within `declare_model`, we define hierarchy using `add_level`, which adds a new level of hierarchy. This model declaration creates 100 households of varying sizes, then creates the appropriate number of individuals within households.
 
 ```{r}
 #| results: hide
@@ -42,7 +42,7 @@ M <-
   )
 ```
 
-Panel data have a different structure. For example, in a country-year panel dataset, we observe every country in every year. To create data with this structure, we first declare a country-level dataset, then a years-level dataset, then we join them. The join is accomplished in `cross_levels` call, which defines the variables we join by with `by = join_using(countries, years)`. In `cross_levels`, we also create the observation-level outcome variable, which is a function in this case of a country shock, a year shock, an observation shock, and a time trend.
+Panel data have a different structure. For example, in a country-year panel dataset, we observe every country in every year. To create data with this structure, we first declare a country-level dataset, then a years-level dataset, then we join them. The join is accomplished in the `cross_levels` call, which defines the variables we join by with `by = join_using(countries, years)`. In `cross_levels`, we also create the observation-level outcome variable, which is a function in this case of a country shock, a year shock, an observation shock, and a time trend.
 
 ```{r}
 #| results: hide
@@ -69,7 +69,7 @@ M <-
 
 ### Unit characteristics {#sec-ch13s1ss2}
 
-We can describe the characteristics of units with either by supplying existing data or generating simulated data.
+We can describe the characteristics of units by either supplying existing data or generating simulated data.
 
 Here is an example of the simulation approach. We imagine 100 units with a characteristic `X` that is uniformly distributed between 0 and 100.
 
@@ -100,9 +100,9 @@ M <-
 
 ![Six kinds of characteristics of units](/figures/figure-13-1){#fig-ch13num1}
 
-Binary variables are very important in the socials science, but they can be particularly tricky to make, so we'll spend a little more time on them. In a common way of thinking, binary variables are translations from a latent, continuous variable into an observed binary outcomes.
+Binary variables are very important in the social sciences, but they can be particularly tricky to make, so we'll spend a little more time on them. In a common way of thinking, binary variables are translations from latent, continuous variables into observed binary outcomes.
 
-We can draw binary outcomes in one of three ways. First, we can simulate a binary outcomes using the `rbinom` function as we have already seen. The function `rbinom(N, size = 1, prob = 0.5)` flips 1 coin for each of `N` subjects with a constant latent probability of success across units. 
+We can draw binary outcomes in one of three ways. First, we can simulate binary outcomes using the `rbinom` function, as we have already seen. The function `rbinom(N, size = 1, prob = 0.5)` flips 1 coin for each of `N` subjects with a constant latent probability of success across units. 
 
 ```{r}
 M1 <- 
@@ -112,7 +112,7 @@ M1 <-
   )
 ```
 
-If you believe the latent probability varies across units, you might want to set up latent variable first before the call to `rbinom`. A major reason to do it this way is to build in correlation between the binary outcome `Y` and some other variable, like `X` in this model declaration.
+If you believe the latent probability varies across units, you might want to set up a latent variable first before the call to `rbinom`. A major reason to do it this way is to build in correlation between the binary outcome `Y` and some other variable, like `X` in this model declaration.
 
 ```{r}
 M2 <- 
@@ -152,7 +152,7 @@ M1 <-
   )
 ```
 
-The second way draws on an explicit draw from a *multivariate* distribution. The `mvrnorm` function in the `MASS` package generates draws from the multivariate normal distribution. We have to give it two means (`mu`) and a variance-covariance matrix (`Sigma`). The `draw_multivariate` function is a wrapper that makes these functions (that return more than one column of data!) play nicely with `declare_model`.
+The second way uses an explicit draw from a *multivariate* distribution. The `mvrnorm` function in the `MASS` package generates draws from the multivariate normal distribution. We have to give it a two dimensional mean (`mu`) and a variance-covariance matrix (`Sigma`). The `draw_multivariate` function is a wrapper that makes these functions (which return more than one column of data!) play nicely with `declare_model`.
 
 ```{r}
 M2 <-
@@ -167,7 +167,7 @@ M2 <-
 
 #### Building in correlations within clusters
 
-A second important form of correlation is correlation within clusters, described by the intra-cluster correlation coefficient (ICC). When ICC is low, the within-cluster differences are similar across clusters. When it is high, clusters are more homogeneous within themselves and more heterogeneous across themselves. For more on clustered designs for surveys and for experiments, see @sec-ch15s2 and @sec-ch18s3.
+A second important form of correlation is correlation within clusters, described by the intra-cluster correlation coefficient (ICC). When ICC is low, units are not much more similar to other units in their cluster than they are to units in other clusters. When it is high, clusters are more homogeneous within themselves and more heterogeneous across themselves. For more on clustered designs for surveys and for experiments, see @sec-ch15s2 and @sec-ch18s3.
 
 We can introduce ICC using the `draw_normal_icc` function:
 
@@ -228,11 +228,11 @@ M <-
   )
 ```
 
-Drawing on past data holds several advantages. The natural correlations with clusters and across background characteristics are already built-in to your data. Using past data makes declaring your model easier, and in some cases can provide more realistic simulation of the data you end up collecting.  
+Drawing on past data holds several advantages. The natural correlations with clusters and across background characteristics are already built into your data. Using past data makes declaring your model easier, and in some cases can provide more realistic simulation of the data you end up collecting.  
 
 #### Unknown heterogeneity
 
-Most declarations include unobserved variables, or unknown heterogeneity. These `U`s represent the lurking variables that confound our inferences and the variation in outcomes not correlated with observed values. In virtually every declaration in the book, we include a `U` term to represent these unobserved values.
+Most declarations include unobserved variables, or unknown heterogeneity. These represent the lurking variables that confound our inferences and the variation in outcomes not correlated with observed values. In virtually every declaration in the book, we include a `U` term to represent these unobserved values.
 
 At the point of declaration we face problems immediately: how much heterogeneity do we introduce, where, and of what kind? 
 
@@ -250,7 +250,7 @@ M1 <-
   )
 ```
 
-`M2` is more worrisome. `U` now affects `X` as well, by affecting the probability of `X` equaling one. See @sec-ch16s2 for designs that face this sort of problem.
+`M2` is more worrisome. `U` now affects `X` as well, by affecting the probability of `X` equaling 1. See @sec-ch16s2 for designs that face this sort of problem.
 
 ```{r}
 #| results: hide
@@ -264,7 +264,7 @@ M2 <-
   )
 ```
 
-A further question for `U` is how much it should vary. This question is tougher to answer. `U` is an important source of variation in outcomes, so it needs to be calibrated in a way that the simulated data look like the data you expect to generate or encounter in the world. So our best advice here is to follow @exm-designagnostically: Design agnostically to figure out which ones seem reasonable.
+A further question for `U` is how much it should vary. This question is tougher to answer. `U` is an important source of variation in outcomes, so it needs to be calibrated in a way that the simulated data look like the data you expect to generate or encounter in the world. So our best advice here is to follow @exm-designagnostically: *Design agnostically* to figure out the conditions under which your design works well.
 
 ### Potential outcomes
 
@@ -375,7 +375,7 @@ M <-
   )
 ```
 
-Where do our expectations about effect sizes, and the minimal plausible effect size, come from? We may conduct meta-analysis of past studies when there are more than one sufficiently relevant estimates of the same effect, or a systematic review or literature review when they are less comparable but we may want to find a range (see @sec-ch18s3 for a discussion of meta-analysis). We may be tempted to conduct a pilot study to estimate the effect size. We need to be careful when doing so what to infer and how much to update from small pilot studies, as we discuss in @sec-ch21s4, but we can often shrink our uncertainty about them. In the absence of pilot studies or past studies to draw on, we need to make educated guesses and understand under what true effect sizes our design will perform well and when it will not following @exm-designholistically: Design holistically.
+Where do our expectations about effect sizes, and the minimal plausible effect size, come from? We may conduct meta-analyses of past studies when there are sufficiently many with at least one relevant estimate of the same effect, or a systematic review or literature review when they are less comparable, but we want to find a range (see @sec-ch18s3 for a discussion of meta-analyses). We may be tempted to conduct a pilot study to estimate the effect size. We need to be careful when doing so about what to infer and how much to update from small pilot studies, as we discuss in @sec-ch21s4, but we can often shrink our uncertainty over models. In the absence of pilot studies or past studies to draw on, we need to make educated guesses and understand under what true effect sizes our design will perform well and when it will not follow @exm-designholistically: *Design holistically*.
 
 #### Effect heterogeneity
 
@@ -395,9 +395,9 @@ M <-
 
 #### Correlation between potential outcomes
 
-Treated and untreated potential outcomes are typically highly correlated. When treatment effects are exactly homogeneous, the correlation is equal to 1.  Rarely are potential outcomes *negatively* correlated, but it can occur. The sign and magnitude of the correlation especially affects the standard errors of estimates for causal effects (for more discussion of the correlation of potential outcomes in experiments and also standard error estimators, see @sec-ch10s3ss1). 
+Treated and untreated potential outcomes are typically highly correlated. When treatment effects are exactly homogeneous, the correlation is equal to 1. Rarely are potential outcomes *negatively* correlated, but it can occur. The sign and magnitude of the correlation especially affects the standard errors of estimates for causal effects (for more discussion of the correlation of potential outcomes in experiments and also standard error estimators, see @sec-ch10s3ss1). 
 
-We described some complexities of generating binary variables above. They transfer over to the generation of correlated potential outcomes in special ways. In the declarations below, `M1` generates uncorrelated potential outcomes, because the draws from `rbinom` are independent of one another. In `M2`, we still use `rbinom`, but with a transformation of the normally-distributed variable into a probability via `pnorm`. This allows the potential outcomes to be correlated because they are both influence by the same latent variable. Finally, in `M3`, we generate highly correlated potential outcomes because we peel off the layer of randomness introduced by `rbinom`.
+We described some complexities of generating binary variables above. They transfer over to the generation of correlated potential outcomes in special ways. In the declarations below, `M1` generates uncorrelated potential outcomes, because the draws from `rbinom` are independent of one another. In `M2`, we still use `rbinom`, but with a transformation of the normally distributed variable into a probability via `pnorm`. This allows the potential outcomes to be correlated because they are both influenced by the same latent variable. Finally, in `M3`, we generate highly correlated potential outcomes because we peel off the layer of randomness introduced by `rbinom`.
 
 ```{r}
 #| results: hide
@@ -434,7 +434,7 @@ M <- declare_model(N = 100, U = rnorm(N), potential_outcomes(Y ~ Z + U))
 I <- declare_inquiry(ATE = mean(Y_Z_1 - Y_Z_0))
 ```
 
-Descriptive inquiries can be declared in a similar way: they are just functions of outcomes rather than potential outcomes.
+Descriptive inquiries can be declared in a similar way: they are just functions of outcomes rather than comparisons of potential outcomes.
 
 ```{r}
 #| eval: false
@@ -472,7 +472,7 @@ I <- declare_inquiry(CATE = mean(Y_Z_1[X == 1] - Y_Z_0[X == 1]))
 
 ### Inquiries with continuous potential outcomes
 
-"Non-decomposable" inquiries are not as simple as an average over the units in the model. A common example arises with continuous potential outcomes. The regression discontinuity design described in @sec-ch16s5 has an inquiry that is defined by two continuous functions of the running variable. The control function is a polynomial function representing the potential outcome under control and the treatment function is a different polynomial representing treated potential outcomes. The inquiry is the difference in the two functions evaluated at the cut-off point on the running variable. We declare it as follows:
+"Non-decomposable" inquiries are not as simple as an average over the units in the model. A common example arises with continuous potential outcomes. The regression discontinuity design described in @sec-ch16s5 has an inquiry that is defined by two continuous functions of the running variable. The control function is a polynomial function representing the potential outcome under control and the treatment function is a different polynomial representing treated potential outcomes. The inquiry is the difference in the two functions evaluated at the cutoff point on the running variable. We declare it as follows:
 
 ```{r}
 #| eval: false
@@ -489,7 +489,7 @@ I <- declare_inquiry(LATE = treatment(cutoff) - control(cutoff))
 
 In some designs, we are interested in the value of an inquiry for many units or for many types of units. 
 
-We can enumerate them one-by-one, to describe the average treatment effect, two conditional average treatment effects, and the difference between them.
+We can enumerate them one by one, to describe the average treatment effect, two conditional average treatment effects, and the difference between them.
 
 ```{r}
 #| eval: false
@@ -530,17 +530,17 @@ We discuss further in @sec-ch13s4 how to link inquiries to answer strategies, in
 
 ## Data strategy {#data-strategy-code}
 
-The three data strategy functions, `declare_sampling`, `declare_assignment`, and `declare_measurement` share most features in common. All three all add variables to the running data frame. `declare_sampling` is special in that it has a filter argument that determines which (if any) of the units should be dropped from the data and which should be retained as the sample. `declare_assignment`, and `declare_measurement` work in the exact same way as one another. The reason we separate them is to insist on the features of the data strategy, not for a deep programming reason.
+The three data strategy functions, `declare_sampling`, `declare_assignment`, and `declare_measurement`, share most features in common. All three add variables to the running data frame. `declare_sampling` is special in that it has a filter argument that determines which (if any) of the units should be dropped from the data and which should be retained as the sample. `declare_assignment` and `declare_measurement` work in the exact same way as one another. The reason we separate them is to insist on the features of the data strategy, not for a deep programming reason.
 
 ### Sampling
 
-Declaring a sampling procedure involves constructing a variable indicating whether a unit is sampled or not and then filtering to sampled units. By default, you should create a variable `S` and `declare_sampling` will filter to sampled units by selecting those for which `S == 1`. You can rename your sampling variable or you can create more sampling variable to develop multistage sampling procedures, though you will need to alter the `filter` argument to reflect your changed procedure. 
+Declaring a sampling procedure involves constructing a variable indicating whether a unit is sampled or not and then filtering to sampled units. By default, you should create a variable `S` and `declare_sampling` will filter to sampled units by selecting those for which `S == 1`. You can rename your sampling variable or you can create more sampling variables to develop multistage sampling procedures, though you will need to alter the `filter` argument to reflect your changed procedure. 
 
 ```{r}
 D <- declare_sampling(S = complete_rs(N = 100, n = 10))
 ```
 
-For a multistage sample of districts then villages then households, we start out with all the data and sample at each stage then combine the three sampling indicators to form the final indicator `S`. 
+For a multistage sample of districts, then villages, then households, we start out with all the data and sample at each stage then combine the three sampling indicators to form the final indicator `S`. 
 
 ```{r}
 #| eval: false
@@ -582,10 +582,10 @@ D <-
     strata = villages,
     clusters = households,
     strata_n = 25
-  ))
+  )) 
 ```
 
-For many sampling designs, the probabilities of inclusion are not constant across units. We often need to adjust the answer strategy by reweighting the data according to the inverse of the inclusion probabilities. For common sampling designs in `randomizr`, we provide a built-in function for calculating these. If you roll your own sampling function, you will need to calculate them yourself. Here we show how to include probabilities from a stratified sampling design.
+For many sampling designs, the probabilities of inclusion are not constant across units. We often need to adjust the answer strategy by reweighting the data according to the inverse of the inclusion probabilities. For common sampling designs in `randomizr`, we provide a built-in function for calculating these. If you use your own sampling function, you will need to calculate them yourself. Here we show how to include probabilities from a stratified sampling design.
 
 ```{r}
 M <-
@@ -598,7 +598,7 @@ D <-
     S_inclusion_probability =
       strata_rs_probabilities(strata = X,
                               strata_prob = c(0.2, 0.5))
-  )
+  ) 
 ```
 
 ### Treatment assignment
@@ -625,7 +625,7 @@ D <- declare_measurement(observed = rbinom(N, 1, prob = latent))
 
 #### Revealing potential outcomes
 
-The most common use of `declare_measurement` in this book, however, is for the "revelation" of potential outcomes according to treatment assignments. We build potential outcomes in `declare_model`, randomly assign in `declare_assignment`, then reveal outcomes in `declare_measurement`. We use the `reveal_outcomes` function to pick out the right potential outcome to reveal for each unit.
+A very common use of `declare_measurement` in this book is for the "revelation" of potential outcomes according to treatment assignments. We build potential outcomes in `declare_model`, randomly assign in `declare_assignment`, then reveal outcomes in `declare_measurement`. We use the `reveal_outcomes` function to pick out the right potential outcome to reveal for each unit.
 
 ```{r}
 M <-
@@ -678,13 +678,13 @@ D <-
 
 An answer strategy is a function that provides answers to an inquiry. Declaring one in code involves selecting that function and linking the answer or answers it returns to one or more inquiries. 
 
-The functions we declare in `DeclareDesign` for answer strategies differ from those for the other elements of research design to reflect the two-step nature of many answer strategies. Often, first a statistical model (e.g., a linear regression) is fit to data, and then summaries of that model fit (e.g., the coefficient on a variable `X`, its standard error, *t*-statistic, p-value, and confidence interval) are combined to form an answer and its associated measures of uncertainty. 
+The functions we declare in `DeclareDesign` for answer strategies differ from those for the other elements of research design to reflect the two-step nature of many answer strategies. Often, first a statistical model (e.g., a linear regression) is fit to data, and then summaries of that model fit (e.g., the coefficient on a variable `X`, its standard error, *t*-statistic, *p*-value, and confidence interval) are combined to form an answer and its associated measures of uncertainty. 
 
 ### Statistical modeling functions
 
-In `DeclareDesign`, we call these two steps `.method` and `.summary` (these arguments are preceded by `.`'s to avoid argument conflicts). The `.method` argument in `declare_estimator` can take almost any modelling function in `R` (e.g., `lm` for linear regression) and `.summary` consists of a summary function that calculates statistics from the fit such as `tidy` or `glance`. You can write your own model or model summary. When your answer strategy does not fit this two-step structure, you can (as with all `declare_` functions) write your own handler.
+In `DeclareDesign`, we call these two steps `.method` and `.summary` (these arguments are preceded by `.`'s to avoid argument conflicts). The `.method` argument in `declare_estimator` can take almost any modelling function in `R` (e.g., `lm` for linear regression) and `.summary` consists of a summary function that calculates statistics from the fit such as `tidy` or `glance`. You can write your own `.method` or `.summary` functions. When your answer strategy does not fit this two-step structure, you can (as with all `declare_` functions) write your own handler. 
 
-We break down each part of a standard answer strategy declaration using the example of a linear regression of the effect of a variable `Z` on an outcome `Y` in Declaration \@ref(def:declaration-13-1}. The first argument in our `declare_estimator` step defines the method we will use, here `lm_robust` which is our function in the `estimatr` package for running linear regressions with robust standard errors. The second is the main argument for `lm_robust`, the formula for the regression specification, in this case Y on Z with no controls. 
+We break down each part of a standard answer strategy declaration using the example of a linear regression of the effect of a variable `Z` on an outcome `Y` in @def-ch13num1. The first argument in our `declare_estimator` step defines the method we will use, here `lm_robust`, which is our function in the `estimatr` package for running linear regressions with robust standard errors. The second is the main argument for `lm_robust`, the formula for the regression specification, in this case Y on Z with no controls.
 
 ::: {#def-ch13num1 .declaration} 
 
@@ -716,13 +716,13 @@ kable(
 
 ### Tidying statistical modelling function output
 
-Let's unpack the `.summary` argument. In this case we sent the `tidy` function from the `broom` package (the default). Understanding what `tidy` does opens a window into the way we match estimates and estimands. The tidy function takes many model fit objects and returns a data frame in which rows represent estimates and columns represent statistics about that estimate. The columns typically include the estimate itself (`estimate`), an estimated standard error (`std.error`), a test statistic of some kind reported by the model function such as a *t*-statistic or *Z*-statistic (`statistic`), a p-value based on the test statistic (`p.value`), a confidence interval (`conf.low`, `conf.high`), and the degrees of freedom of the test statistic if relevant (`df`). 
+Let's unpack the `.summary` argument. In this case we sent the `tidy` function from the `broom` package (the default). Understanding what `tidy` does opens a window into the way we match estimates and estimands. The tidy function takes many model fit objects and returns a data frame in which rows represent estimates and columns represent statistics about that estimate. The columns typically include the estimate itself (`estimate`), an estimated standard error (`std.error`), a test statistic of some kind reported by the model function such as a *t*-statistic or *Z*-statistic (`statistic`), a *p*-value based on the test statistic (`p.value`), a confidence interval (`conf.low`, `conf.high`), and the degrees of freedom of the test statistic if relevant (`df`). 
 
-A key column in the output of tidy is `term`, which represents which coefficient (term) is being described in that row. The term column uniquely identifies the row. We will often need to use the term column in conjunction with the name of the estimator to link estimates to estimands when there are more than one. If in the regression we pull out two coefficients (e.g., for treatment indicator 1 and for treatment indicator 2), we need to be able to link those to separate inquiries representing the true effect of treatment 1 and the true effect of treatment 2. Term is our tool for doing so. The default is for term to pick the first coefficient that is not the intercept, so for the regression `Y ~ Z` there will be an intercept and then the coefficient on `Z` which is what will be picked.
+A key column in the output of tidy is `term`, which represents which coefficient (term) is being described in that row. We will often need to use the term column in conjunction with the name of the estimator to link estimates to inquiries when there is more than one. If in the regression we pull out two coefficients (e.g., for treatment indicator 1 and for treatment indicator 2), we need to be able to link those to separate inquiries representing the true effect of treatment 1 and the true effect of treatment 2. Term is our tool for doing so. The default is for term to pick the first coefficient that is not the intercept, so for the regression `Y ~ Z` there will be an intercept and then the coefficient on `Z`, which is what will be picked.
 
-The `inquiry` argument defines which inquiry or inquiries the estimates will be linked to. In this case, we link to a single inquiry, the ATE. You can also declare an estimator that shoots at multiple inquiries: `declare_estimator(Y ~ Z, .method = lm_robust, term = "Z", inquiry = c("ATE", "ATT"))` - useful for learning how well an estimator does for different targets. When we run the answer strategy on data, we get two additional pieces of information tacked on to the model summary data frame: the name of the estimator, which comes from the `label` argument, and the inquiry. The unit of analysis of a diagnosis is the inquiry-estimator pair, so if you link an estimator to multiple inquiries, then there will be a row for each inquiry. 
+The `inquiry` argument defines which inquiry or inquiries the estimates will be linked to. In this case, we link to a single inquiry, the ATE. You can also declare an estimator that shoots at multiple inquiries: `declare_estimator(Y ~ Z, .method = lm_robust, term = "Z", inquiry = c("ATE", "ATT"))`, useful for learning how well an estimator does for different targets. When we run the answer strategy on data, we get two additional pieces of information tacked on to the model summary data frame: the name of the estimator, which comes from the `label` argument, and the inquiry. The unit of analysis of a diagnosis is the inquiry-estimator pair, so if you link an estimator to multiple inquiries, then there will be a row for each inquiry. 
 
-We can use other summary functions to obtain other summaries of the fitted model. For example `glance` will provide model fit statistics such as the r-squared:
+We can use other summary functions to obtain other summaries of the fitted model. For example `glance` will provide model fit statistics such as the R-squared:
 
 ```{r, results = "hide"}
 A <- declare_estimator(Y ~ Z, 
@@ -734,16 +734,12 @@ declaration_13.1 |>
   A()
 ```
 
+When neither `tidy` nor `glance` works well for your answer strategy, you can write your own summary function. Below, we build up a tidy function for the `lm` model from scratch. (One is already built-in to the `broom` package, but we do so here to illustrate how you can write your own for a function that does not already have one.) Before you start to write your own summary function, check whether one exists on the [Broom website](https://broom.tidymodels.org/articles/available-methods.html).
+
 ```{r, echo = FALSE}
 #| tbl-cap: "The model fit statistics from one draw of the linear regression design"
 #| echo: false
 #| label: tbl-modelfitstats
-
-dat <- 
-  declaration_13.1 |> 
-  draw_data() |> 
-  A() |> 
-  select(-estimator)
 
 kable(
   dat,
@@ -754,14 +750,11 @@ kable(
   kable_styling()
 ```
 
-When neither `tidy` nor `glance` works well for your answer strategy, you can write your own summary function. Below, we build up a tidy function for the `lm` model from scratch. (One is already built-in to the `broom` package, but we do so here to illustrate how you can write your own for a function that does not already have one.) Before you start to write your own summary function, check whether one exists on the [Broom Web site](https://broom.tidymodels.org/articles/available-methods.html).
-
-There are three sets for a tidy function:
+There are three steps for a tidy function:
 
 1. Pull out statistics from the model fit object. You can extract out any statistics and transform them in any relevant way. 
 2. Return a data frame (or `tibble`). 
-
-3. Name your estimates in a common format that works across all tidy functions. The estimate column should be called "estimate", the standard error column "std.error", etc., as described earlier. However, if you want to add other statistics from the model fit that you will diagnose, you can and you can name them whatever you want.
+3. Name your estimates in a common format that works across all tidy functions. The estimate column should be called "estimate", the standard error column "std.error", etc., as described earlier. However, if you want to add other statistics from the model fit that you will diagnose, you can, and you can name them whatever you want.
 
 ```{r}
 #| eval: false
@@ -787,10 +780,10 @@ declare_estimator(
   Y ~ Z,
   .method = lm,
   .summary = tidy_lm
-)
+) 
 ```
 
-In other cases, you may want to build on functions that inter-operate with the `broom` functions to do specialized summary tasks like calculating marginal effects or predicted effects. The `margins` function from the `margins` package calculates marginal effects and the `predictions` package from the `predictions` package are especially useful and work well with the `tidy` workflow. To calculate marginal effects, run margins and then tidy as your model summary: 
+In other cases, you may want to build on functions that interoperate with the `broom` functions to do specialized summary tasks like calculating marginal effects or predicted effects. The `margins` function from the `margins` package calculates marginal effects and the `predictions` function from the `predictions` package constructs predictions. These two functions are especially useful and work well with the `tidy` workflow. To calculate marginal effects, run margins and then tidy as your model summary:
 
 ```{r}
 #| eval: false
@@ -810,7 +803,7 @@ declare_estimator(
 
 ### Custom answer strategies
 
-If your answer strategy does not use a `.method` function, you'll need to provide a function that takes `data` as an input and returns a data frame with the estimate. Set the handler to be `label_estimator(your_function_name)` to take advantage of DeclareDesign's mechanism for matching inquiries to estimators. When you use `label_estimator`, you can provide an inquiry, and DeclareDesign will keep track of which estimates match each inquiry. (It simply adds a column to your tidy estimates data frame for the name of the estimator and the inquiry.) For example, to calculate the mean of an outcome, you could write your own estimator in this way:
+If your answer strategy does not use a `.method` function, you'll need to provide a function that takes `data` as an input and returns a data frame with the estimate. Set the handler to be `label_estimator(your_function_name)` to take advantage of `DeclareDesigns`'s mechanism for matching inquiries to estimators. When you use `label_estimator`, you can provide an inquiry, and `DeclareDesign` will keep track of which estimates match each inquiry. (It simply adds a column to your tidy estimates data frame for the name of the estimator and the inquiry.) For example, to calculate the mean of an outcome, you could write your own estimator in this way:
 
 ```{r}
 #| eval: false
@@ -825,11 +818,11 @@ declare_estimator(handler = label_estimator(my_estimator),
                   inquiry = "Y_bar")
 ```
 
-Often you may want to construct a test as part of your answer strategy that does not target an inquiry. Our `declare_test` function works just like `declare_estimator` except you need not include an inquiry. The `label_test` infrastructure works just like `label_estimator` for custom test functions.
+Often you may want to construct a test as part of your answer strategy that does not target an inquiry. Our `declare_test` function works just like `declare_estimator`, except you need not include an inquiry. The `label_test` infrastructure works just like `label_estimator` for custom test functions.
 
 ## Declaration {#declaration-code}
 
-To construct a research *design* object that we can operate on --- diagnose it, redesign it, draw data from it, etc. --- we add research design elements together with the `+` operator. In @def-ch13num2, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.
+To construct a research *design* object that we can operate on --- diagnose, redesign, draw data from it, etc. --- we add research design elements together with the `+` operator. In @def-ch13num2, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.
 
 ::: {#def-ch13num2 .declaration} 
 
@@ -890,6 +883,8 @@ reshape_diagnosis(diagnosis_13.1)
 diagnosis_13.1 <- get_rdddr_file_local("diagnosis_13.1")
 ```
 
+We can "tidy" the results of the diagnosis for easier printing and plotting of the results. Here, each row is an estimate of a diagnosand and then uncertainty statistics such as the standard error and 95% confidence interval around the diagnosand estimate.
+
 ```{r} 
 #| echo: false
 #| tbl-cap: "Design diagnosis of two-arm randomized experiment"
@@ -903,8 +898,6 @@ diagnosis_13.1 |>
     digits = 2
   )
 ```
-
-We can "tidy" the results of the diagnosis for easier printing and plotting of the results. Here, each row is an estimate of a diagnosand and then uncertainty statistics such as the standard error and 95% confidence interval around the diagnosand estimate.
 
 ```{r}
 #| eval: false
@@ -952,7 +945,7 @@ simulations_df |>
 
 Plotting simulations using `ggplot2` is often a great way to gain a deeper sense of the properties of the design.
 
-The answer strategy for @def-ch13num1 includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using `geom_histogram`, then faceting by estimator using `facet_wrap`. We often want to overlay the true value of the estimand on these plots, which we do here with `geom_vline`. Notice that in order to do, we had to create a `summary_df` that includes the value of the estimand. The resulting plot shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.
+The answer strategy for @def-ch13num1 includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using `geom_histogram`, then faceting by estimator using `facet_wrap`. We often want to overlay the true value of the estimand on these plots, which we do here with `geom_vline`. Notice that in order to do, we had to create a `summary_df` that includes the value of the estimand. The resulting plot in @fig-ch13num2 shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.
 
 ```{r samplingdistincode}
 #| eval: false
@@ -979,7 +972,7 @@ ggplot(simulations_df) +
 
 ![Example visualization of a diagnosis](/figures/figure-13-2){#fig-ch13num2}
 
-Diagnosing over model uncertainty is a crucial part of diagnosis. We want to understand when our design performs well and when it does not. A classical example of this in wide practice is the power curve. In a power curve, we display the power of a design (the probability of achieving statistical significance) along different possible effect sizes. In this setting, plotting the simulations directly with an indicator for whether that simulation's estimate is statistically significant is the easiest way to learn about the properties of the design.
+Diagnosing over model uncertainty is a crucial part of diagnosis. We want to understand when our design performs well and when it does not. A classical example of this in wide practice is the power curve. In a power curve (see @fig-ch13num3), we display the power of a design (the probability of achieving statistical significance) along different possible effect sizes. In this setting, plotting the simulations directly with an indicator for whether that simulation's estimate is statistically significant is the easiest way to learn about the properties of the design.
 
 ```{r powercurveincode}
 #| eval: false
@@ -1016,7 +1009,7 @@ ggplot(simulations_df) +
 
 ## Redesign {#redesign-code}
 
-This chapter already displays the main computational approaches to redesign. The basic principle is that we need to create a list of designs which then get passed to `simulate_designs` or `diagnose_designs`. (The plural versions of these functions are identical to their singular counterparts, we just provide both to allow the code to speak for itself a little more easily). 
+The basic principle is that we need to create a list of designs which then get passed to `simulate_designs` or `diagnose_designs`. (The plural versions of these functions are identical to their singular counterparts, we just provide both to allow the code to speak for itself a little more easily). 
 
 You can make lists of designs to redesign across directly with `list`:
 
@@ -1024,7 +1017,7 @@ You can make lists of designs to redesign across directly with `list`:
 designs <- list(design1, design2)
 ```
 
-More often, you'll vary designs over a parameter with `redesign`. Here, we're imagining we've already declared a `design` that has an `N` parameter that we allow to have 3 values.
+More often, you'll vary designs over a parameter with `redesign`. Any quantity that you define in the global environment and use in a declaration step can become a parameter like this and then altered via redesign. Here, we're imagining we've already declared a `design` that has an `N` parameter that we allow to have 3 values.
 
 ```{r, eval=FALSE}
 designs <- redesign(design, N = c(100, 200, 300))
