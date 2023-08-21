@@ -741,6 +741,12 @@ When neither `tidy` nor `glance` works well for your answer strategy, you can wr
 #| echo: false
 #| label: tbl-modelfitstats
 
+dat <- 
+  declaration_13.1 |> 
+  draw_data() |> 
+  A() |> 
+  select(-estimator)
+
 kable(
   dat,
   booktabs = TRUE,
