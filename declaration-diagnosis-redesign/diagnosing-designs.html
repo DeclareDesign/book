@@ -373,6 +373,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../student-teacher.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Student and teacher resources</span></a>
   </div>
@@ -389,7 +395,7 @@ div.csl-indent {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
-<a style="color: black; text-decoration: none; font-size: 17px" target="_new" href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences"> <img style="border: 1px solid darkgray; margin-bottom: 5px" width="100px" src="../figures/cover.jpg"><br>Preorder book</a>
+<a style="color: black; text-decoration: none; font-size: 17px" target="_new" href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences"> <img style="border: 1px solid darkgray; margin-bottom: 5px" width="100px" src="../figures/cover.jpg"><br>Buy book</a>
 </p>
 </div></div>
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
@@ -428,7 +434,7 @@ div.csl-indent {
     <div class="modal-content">
       <div class="modal-body" style="text-align: center">
         <img width="400px" src="https://book.declaredesign.org/figures/cover.jpg" style="margin-bottom: 15px"><br>
-        Available for preorder from Princeton University Press
+        Available from Princeton University Press
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -477,9 +483,9 @@ div.csl-indent {
 <p>Typically, diagnostic statistics will be different from simulation to simulation. In other words, <span class="math inline">\(\phi_1\)</span> will be different from <span class="math inline">\(\phi_2\)</span>, <span class="math inline">\(\phi_2\)</span> will be different from <span class="math inline">\(\phi_3\)</span>, and so on. These differences arise partially from the variation in <em>M</em>: <span class="math inline">\(m_1\)</span> is different from <span class="math inline">\(m_2\)</span>, <span class="math inline">\(m_2\)</span> is different from <span class="math inline">\(m_3\)</span>, and so on. Differences can also arise from the explicitly random procedures in <span class="math inline">\(D\)</span>: sampling, assignment, and measurement can all include stochastic elements that will ramify through to the diagnostic statistics. As a result of these sources of variation, a diagnostic statistic is a random variable <span class="math inline">\(\Phi\)</span>.</p>
 </section><section id="diagnosands" class="level3" data-number="10.1.2"><h3 data-number="10.1.2" class="anchored" data-anchor-id="diagnosands">
 <span class="header-section-number">10.1.2</span> Diagnosands</h3>
-<p>A diagnosand is a summary of the distribution of <span class="math inline">\(\Phi\)</span>, written <span class="math inline">\(f(\Phi)\)</span>. For example, the expectation function <span class="math inline">\(\E[\Phi]\)</span> reports the expectation (the mean) of <span class="math inline">\(\Phi\)</span>.</p>
+<p>A diagnosand is a summary of the distribution of <span class="math inline">\(\Phi\)</span>, written <span class="math inline">\(f(\Phi)\)</span>. For example, the expectation function <span class="math inline">\(\mathbb{E}[\Phi]\)</span> reports the expectation (the mean) of <span class="math inline">\(\Phi\)</span>.</p>
 <p>Let’s now work through two concrete examples of common diagnosands: bias and power (see <a href="#sec-ch10s2"><span>Section&nbsp;10.2</span></a> for a more exhaustive list).</p>
-<p>Consider the diagnosand “bias” in the context of a two-arm randomized trial where the inquiry is the average treatment effect, the data strategy entails complete random assignment, and the answer strategy is the difference-in-means. Bias is the average difference between the estimand and the estimate. Under a single realization <span class="math inline">\(m_j\)</span> of the model <em>M</em>, the value of the ATE will be a particular number, which we call <span class="math inline">\(a_{m_j}\)</span>. We simulate a random assignment and measurement of observed outcomes, then apply the difference-in-means estimator. The diagnostic statistic is the error <span class="math inline">\(a_{d_j} - a_{m_j}\)</span>; this error is a random variable because each <span class="math inline">\(m_j\)</span> differs slightly. The bias diagnosand is the expectation of this random variable is <span class="math inline">\(\E[a_{d_j} - a_{m_j}]\)</span>, where the expectation is taken over the randomization distribution implied by <em>M</em> and <em>D</em> (or distinct regions of the randomization distribution).</p>
+<p>Consider the diagnosand “bias” in the context of a two-arm randomized trial where the inquiry is the average treatment effect, the data strategy entails complete random assignment, and the answer strategy is the difference-in-means. Bias is the average difference between the estimand and the estimate. Under a single realization <span class="math inline">\(m_j\)</span> of the model <em>M</em>, the value of the ATE will be a particular number, which we call <span class="math inline">\(a_{m_j}\)</span>. We simulate a random assignment and measurement of observed outcomes, then apply the difference-in-means estimator. The diagnostic statistic is the error <span class="math inline">\(a_{d_j} - a_{m_j}\)</span>; this error is a random variable because each <span class="math inline">\(m_j\)</span> differs slightly. The bias diagnosand is the expectation of this random variable is <span class="math inline">\(\mathbb{E}[a_{d_j} - a_{m_j}]\)</span>, where the expectation is taken over the randomization distribution implied by <em>M</em> and <em>D</em> (or distinct regions of the randomization distribution).</p>
 <p>Now consider the diagnosand “power.” Like bias, statistical power is an expectation, this time of the “significant” diagnostic statistic <span class="math inline">\(\mathbf{I}(p(a_{d_k}) \leq 0.05)\)</span>. Power describes how frequently the answer strategy will return a statistically significant result. Some textbooks define statistical power as one minus the Type II error rate, where a Type II error is the failure to reject the null hypothesis, given that the null hypothesis is false. This definition is accurate, but hard to understand. The phrase “given that the null hypothesis is false” could refer to any number of model possibilities (<span class="math inline">\(a_{m_j}\)</span>’s) in which the null hypothesis does not hold. Our definition of power is instead, “the probability of getting a statistically significant result, conditional on a set of beliefs about the model.”</p>
 <p>Uncertainty statistics like standard errors can be thought of as empirical estimates of diagnosands describing the quality of your design under some set of models.</p>
 <p>Suppose we report that the estimate is equal to 15 and carries with it a standard error of 6. Here we are communicating that we now think our design has the property that, if we were to run it over and over, the standard deviation of our estimates would be 6. That is, if we were to fix the design at a particular <span class="math inline">\(m\)</span> and combine it with <em>I</em>, <em>D</em>, and <em>A</em>, the standard deviation of the estimates across simulations of the design would be 6.</p>
@@ -566,37 +572,37 @@ div.csl-indent {
 <tr class="odd">
 <td>Average estimate</td>
 <td></td>
-<td><span class="math inline">\(\E(a_d)\)</span></td>
+<td><span class="math inline">\(\mathbb{E}(a_d)\)</span></td>
 </tr>
 <tr class="even">
 <td>Average estimand</td>
 <td></td>
-<td><span class="math inline">\(\E(a_m)\)</span></td>
+<td><span class="math inline">\(\mathbb{E}(a_m)\)</span></td>
 </tr>
 <tr class="odd">
 <td>Power</td>
 <td>Probability of rejecting null hypothesis of no effect</td>
-<td><span class="math inline">\(\E(I(p \leq \alpha))\)</span></td>
+<td><span class="math inline">\(\mathbb{E}(I(p \leq \alpha))\)</span></td>
 </tr>
 <tr class="even">
 <td>Null risk</td>
 <td>Probability of failing to reject null hypothesis of no effect</td>
-<td><span class="math inline">\(\E(I(p &gt; \alpha))\)</span></td>
+<td><span class="math inline">\(\mathbb{E}(I(p &gt; \alpha))\)</span></td>
 </tr>
 <tr class="odd">
 <td>Bias</td>
 <td>Expected difference between estimate and estimand</td>
-<td><span class="math inline">\(\E(a_d - a_m)\)</span></td>
+<td><span class="math inline">\(\mathbb{E}(a_d - a_m)\)</span></td>
 </tr>
 <tr class="even">
 <td>Variance of the estimates</td>
 <td></td>
-<td><span class="math inline">\(\V(a_d)\)</span></td>
+<td><span class="math inline">\(\mathbb{V}(a_d)\)</span></td>
 </tr>
 <tr class="odd">
 <td>True standard error</td>
 <td></td>
-<td><span class="math inline">\(\sqrt{\V(a_d)}\)</span></td>
+<td><span class="math inline">\(\sqrt{\mathbb{V}(a_d)}\)</span></td>
 </tr>
 <tr class="even">
 <td>Average estimated standard error</td>
@@ -606,7 +612,7 @@ div.csl-indent {
 <tr class="odd">
 <td>Root mean-squared-error (RMSE)</td>
 <td></td>
-<td><span class="math inline">\(\sqrt{\E(a_d - a_m)}\)</span></td>
+<td><span class="math inline">\(\sqrt{\mathbb{E}(a_d - a_m)}\)</span></td>
 </tr>
 <tr class="even">
 <td>Coverage</td>
@@ -628,7 +634,7 @@ div.csl-indent {
 <td>Exaggeration ratio</td>
 <td>Expected ratio of absolute value of estimate to estimand, if statistically significant <span class="citation" data-cites="Gelman2014b">(<a href="../references.html#ref-Gelman2014b" role="doc-biblioref">Gelman and Carlin 2014</a>)</span>
 </td>
-<td><span class="math inline">\(\E( a_d / a_m \mid p \leq \alpha)\)</span></td>
+<td><span class="math inline">\(\mathbb{E}( a_d / a_m \mid p \leq \alpha)\)</span></td>
 </tr>
 <tr class="even">
 <td>Type I error</td>
@@ -644,7 +650,7 @@ div.csl-indent {
 <td>Sampling bias</td>
 <td>Expected difference between population average treatment effect and sample average treatment effect <span class="citation" data-cites="imai2008essential">(<a href="../references.html#ref-imai2008essential" role="doc-biblioref">Imai, King, and Stuart 2008</a>)</span>
 </td>
-<td><span class="math inline">\(\E(a_{m_{\mathrm{sample}}} - a_{m_{\mathrm{population}}})\)</span></td>
+<td><span class="math inline">\(\mathbb{E}(a_{m_{\mathrm{sample}}} - a_{m_{\mathrm{population}}})\)</span></td>
 </tr>
 <tr class="odd">
 <td>Expected maximum cost</td>
@@ -695,7 +701,7 @@ div.csl-indent {
 \]</span> where <span class="math inline">\(\beta\)</span> is the statistical power of the experiment, <span class="math inline">\(\Phi(\cdot)\)</span> is the normal cumulative distribution function (CDF), and <span class="math inline">\(\Phi^{-1}(\cdot)\)</span> is the inverse of the normal CDF.”</p>
 </blockquote>
 <p>This power formula is usually motivated by a set of assumptions about <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em>. Under <em>M</em>, it usually assumes that both potential outcomes are normally distributed with group specific means and a common variance. Under <em>I</em>, it usually assumes the average treatment effect. Under <em>D</em>, it usually assumes a particular randomization strategy (simple random assignment). Under <em>A</em>, it usually assumes a particular hypothesis testing approach (equal variance <span class="math inline">\(t\)</span>-test with <span class="math inline">\(N - 2\)</span> degrees of freedom). Whether this set of assumptions is “close enough” will depend on the research setting.</p>
-<p>Analytic design diagnosis can be hugely useful, since they cover a large families of designs that meet the scope criteria. For example, consider the “standard error” diagnosand <span class="math inline">\(\sqrt{\E[(a_{d_j} - \E[a_{d_j}])^2]}\)</span> for the Sample Average Treatment Effect estimate in a two arm trial with complete random assignment and estimation via difference in means. This has been worked out by statisticians to be <span class="math inline">\(\sqrt{\frac{1}{n-1}\left\{\frac{m\V(Y_i(0))}{n-m} + \frac{(N-m)\V(Y_i(1))}{m} + 2\mathrm{Cov}(Y_i(0), Y_i(1))\right\}}\)</span>, where <span class="math inline">\(N\)</span> is the number of units and <span class="math inline">\(m\)</span> is the number in treatment. The Neyman standard error estimator targets this quantity (see <a href="../library/experimental-causal.html#eq-neymanse">Equation&nbsp;<span>18.2</span></a>). Many advances in our understanding of the properties of research design come from analytic design diagnosis. For example, <span class="citation" data-cites="middleton2008bias">Middleton (<a href="../references.html#ref-middleton2008bias" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="imai2009essential">Imai, King, and Nall (<a href="../references.html#ref-imai2009essential" role="doc-biblioref">2009</a>)</span> show that cluster randomized trials with heterogeneous cluster sizes are not unbiased for the ATE, which leads to the design recommendation that clustered trials should block on cluster size. These lessons apply broadly, more broadly perhaps than the lessons learned about a specific design in a specific Monte Carlo simulation.</p>
+<p>Analytic design diagnosis can be hugely useful, since they cover a large families of designs that meet the scope criteria. For example, consider the “standard error” diagnosand <span class="math inline">\(\sqrt{\mathbb{E}[(a_{d_j} - \mathbb{E}[a_{d_j}])^2]}\)</span> for the Sample Average Treatment Effect estimate in a two arm trial with complete random assignment and estimation via difference in means. This has been worked out by statisticians to be <span class="math inline">\(\sqrt{\frac{1}{n-1}\left\{\frac{m\V(Y_i(0))}{n-m} + \frac{(N-m)\V(Y_i(1))}{m} + 2\mathrm{Cov}(Y_i(0), Y_i(1))\right\}}\)</span>, where <span class="math inline">\(N\)</span> is the number of units and <span class="math inline">\(m\)</span> is the number in treatment. The Neyman standard error estimator targets this quantity (see <a href="../library/experimental-causal.html#eq-neymanse">Equation&nbsp;<span>18.2</span></a>). Many advances in our understanding of the properties of research design come from analytic design diagnosis. For example, <span class="citation" data-cites="middleton2008bias">Middleton (<a href="../references.html#ref-middleton2008bias" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="imai2009essential">Imai, King, and Nall (<a href="../references.html#ref-imai2009essential" role="doc-biblioref">2009</a>)</span> show that cluster randomized trials with heterogeneous cluster sizes are not unbiased for the ATE, which leads to the design recommendation that clustered trials should block on cluster size. These lessons apply broadly, more broadly perhaps than the lessons learned about a specific design in a specific Monte Carlo simulation.</p>
 <p>That said, scholars conducting analytic design diagnosis have only worked out a few diagnosands for a limited set of designs. Since designs are so heterogeneous and can vary on so many dimensions, computer simulation is often the only feasible way to diagnose. We learn a lot from analytic design diagnosis—what the important parameters to consider are, what the important inferential problems are—but they often cannot provide direct answers to practical questions like, how many subjects do I need for my conjoint experiment? For that reason, we turn to design diagnosis via Monte Carlo simulation.</p>
 </section><section id="design-diagnosis-by-simulation" class="level3" data-number="10.3.2"><h3 data-number="10.3.2" class="anchored" data-anchor-id="design-diagnosis-by-simulation">
 <span class="header-section-number">10.3.2</span> Design diagnosis by simulation</h3>

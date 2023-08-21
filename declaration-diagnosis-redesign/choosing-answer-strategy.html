@@ -373,6 +373,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../student-teacher.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Student and teacher resources</span></a>
   </div>
@@ -389,7 +395,7 @@ div.csl-indent {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
-<a style="color: black; text-decoration: none; font-size: 17px" target="_new" href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences"> <img style="border: 1px solid darkgray; margin-bottom: 5px" width="100px" src="../figures/cover.jpg"><br>Preorder book</a>
+<a style="color: black; text-decoration: none; font-size: 17px" target="_new" href="https://press.princeton.edu/books/paperback/9780691199573/research-design-in-the-social-sciences"> <img style="border: 1px solid darkgray; margin-bottom: 5px" width="100px" src="../figures/cover.jpg"><br>Buy book</a>
 </p>
 </div></div>
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
@@ -432,7 +438,7 @@ div.csl-indent {
     <div class="modal-content">
       <div class="modal-body" style="text-align: center">
         <img width="400px" src="https://book.declaredesign.org/figures/cover.jpg" style="margin-bottom: 15px"><br>
-        Available for preorder from Princeton University Press
+        Available from Princeton University Press
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -897,7 +903,7 @@ div.csl-indent {
 </div>
 <p>This principle applies most clearly to the bias diagnosand, but it applies to others as well. For example, <span class="citation" data-cites="abadie2017clustering">Abadie et al. (<a href="../references.html#ref-abadie2017clustering" role="doc-biblioref">2017</a>)</span> recommend that answer strategies include clustered standard errors at the level of sampling or assignment, whichever is higher. The data strategies that include clustering introduce a dependence among units that was not present in the model; clustered standard errors account for this dependence. If we did not account for this dependence, our estimated standard error would be a bad estimate of the “standard deviation” diagnosand.</p>
 <p>More generally, the principle to “design agnostically” implies that we should choose “agnostic” answer strategies, by which we mean answer strategies that produce good answers under a wide range of models. Selecting answer strategies that are robust to multiple models ensures that we get good answers not only when our model is spot on — which is rare! — but also under many possible circumstances.</p>
-<p>Understanding whether the choices over answer strategies—logit or probit or OLS—depend on the model being a particular way is crucial to making a choice. For example, many people have been taught that whenever the outcome variable is binary, OLS is inappropriate and they must use a binary choice model like logit instead. When the inquiry is the probability of success for each unit and we use covariates to model them, how much better logit performs at estimating probabilities depends on the model. When probabilities are all close to 0.5, the two answer strategies both perform well. When the probabilities spread out from 0.5, OLS is less robust and logit beats it []. In the same breath, however, we can consider these same two estimators in the context of a randomized experiment with a binary outcome. Here, OLS can be just as strong as logit, no matter what the distribution of the potential outcomes. In this setting, when designing agnostically, we find that both estimators are robust (see <a href="redesigning.html#sec-ch10s3ss1"><span>Section&nbsp;11.3.1</span></a>).</p>
+<p>Understanding whether the choices over answer strategies—logit or probit or OLS—depend on the model being a particular way is crucial to making a choice. For example, many people have been taught that whenever the outcome variable is binary, OLS is inappropriate and they must use a binary choice model like logit instead. When the inquiry is the probability of success for each unit and we use covariates to model them, how much better logit performs at estimating probabilities depends on the model. When probabilities are all close to 0.5, the two answer strategies both perform well. When the probabilities spread out from 0.5, OLS is less robust and logit beats it (<span class="citation" data-cites="hellevik2009">Hellevik (<a href="../references.html#ref-hellevik2009" role="doc-biblioref">2009</a>)</span>). In the same breath, however, we can consider these same two estimators in the context of a randomized experiment with a binary outcome. Here, OLS can be just as strong as logit, no matter what the distribution of the potential outcomes. In this setting, when designing agnostically, we find that both estimators are robust (see <a href="redesigning.html#sec-ch10s3ss1"><span>Section&nbsp;11.3.1</span></a>).</p>
 <p>Designing agnostically has something in common with robustness checks: both share the motivation that we have fundamental uncertainty about the true model. A robustness check is an <em>alternative</em> answer strategy that changes some model assumption that the main answer strategy depends on. Presenting three estimates of the same parameter under different answer strategies (logit, probit, and OLS) and making a joint decision based on the set of estimates about whether the main analysis is “robust” is a procedure for assessing “model dependence” — meaning, dependence on <em>statistical</em> models. But robustness checks are just answer strategies themselves, and we should declare them and diagnose them to understand whether they are good answer strategies. We want to understand the <em>properties</em> of the robustness check, e.g., under what models and how frequently does it correctly describe the main answer strategy as “robust.”</p>
 </section><section id="illustration-of-estimates-of-uncertainty-using-the-aayr-principle" class="level3" data-number="9.3.6"><h3 data-number="9.3.6" class="anchored" data-anchor-id="illustration-of-estimates-of-uncertainty-using-the-aayr-principle">
 <span class="header-section-number">9.3.6</span> Illustration of estimates of uncertainty using the AAYR principle</h3>
@@ -1042,6 +1048,9 @@ Gerber, Alan S., and Donald P. Green. 2012. <em><span class="nocase">Field Exper
 </div>
 <div id="ref-Green2015" class="csl-entry" role="listitem">
 Green, Donald P., and Winston Lin. 2016. <span>“Standard Operating Procedures: A Safety Net for Pre-Analysis Plans.”</span> <em>PS: Political Science &amp; Politics</em> 49 (3): 495–99.
+</div>
+<div id="ref-hellevik2009" class="csl-entry" role="listitem">
+Hellevik, Ottar. 2009. <span>“Linear Versus Logistic Regression When the Dependent Variable Is a Dichotomy.”</span> <em>Quality and Quantity</em> 43: 59–74.
 </div>
 <div id="ref-herron2016careful" class="csl-entry" role="listitem">
 Herron, Michael C., and Kevin M. Quinn. 2016. <span>“A Careful Look at Modern Case Selection Methods.”</span> <em>Sociological Methods &amp; Research</em> 45 (3): 458–92.
