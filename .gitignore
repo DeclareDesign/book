@@ -7,3 +7,5 @@ _book
 /.quarto/
 *.markdown
 *.rmarkdown
+site_libs
+*.html

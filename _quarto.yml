@@ -49,6 +49,8 @@ book:
         - lifecycle/integration.qmd
     - epilogue.qmd
     - references.qmd
+    - student-teacher.qmd
+    - errata.qmd
 
   sidebar:
     - title: "Research Design in the Social Sciences"
@@ -91,6 +93,8 @@ book:
           - lifecycle/integration.qmd
         - epilogue.qmd
         - references.qmd
+        - student-teacher.qmd
+        - errata.qmd
 
 bibliography: references.bib
 
@@ -110,16 +114,15 @@ language:
 
 format:
   html:
-    filters:
-      - lightbox
-    lightbox:
-      match: auto
     theme: cosmo
     # number-offset: -1
     default-image-extension: svg
     code-link: true
-    include-in-header: header-additions.html
+    include-in-header:
+      - header-additions.html
     include-before-body: buy-book.html
+    template-partials:
+      - partials/toc.html
     # self-contained: true
     # self-contained-math: true
   # pdf:
