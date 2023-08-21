@@ -455,7 +455,7 @@ The first is the intention-to-treat (ITT) inquiry, which is defined as $\E[Y_i(D
 
 The second additional inquiry is the compliance rate, sometimes referred to as the $\mathrm{ITT}_{\textrm{D}}$. It describes the average effect of assignment on treatment, and is written $\E[(D_i(Z = 1) - D_i(Z = 0)]$. A small bit of algebra shows that the $\mathrm{ITT}_{\textrm{D}}$ is equal to the fraction of the sample that are compliers minus the fraction that are defiers. 
 
-These three inquiries are tightly related. Under five very important assumptions discussed in @sec-ch16s4 on instrumental variables (see also Angrist, Imbens, and Rubin 1996), we can write: 
+These three inquiries are tightly related. Under five very important assumptions discussed in @sec-ch16s4 on instrumental variables (see also @angrist1996), we can write: 
 
 \begin{align*}
 \mathrm{CACE} = \frac{\mathrm{ITT}}{\mathrm{ITT}_{\mathrm{D}}}
