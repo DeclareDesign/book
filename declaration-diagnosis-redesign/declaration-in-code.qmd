@@ -753,9 +753,7 @@ kable(
 There are three steps for a tidy function:
 
 1. Pull out statistics from the model fit object. You can extract out any statistics and transform them in any relevant way. 
-
 2. Return a data frame (or `tibble`). 
-
 3. Name your estimates in a common format that works across all tidy functions. The estimate column should be called "estimate", the standard error column "std.error", etc., as described earlier. However, if you want to add other statistics from the model fit that you will diagnose, you can, and you can name them whatever you want.
 
 ```{r}
@@ -805,7 +803,7 @@ declare_estimator(
 
 ### Custom answer strategies
 
-If your answer strategy does not use a `.method` function, you'll need to provide a function that takes `data` as an input and returns a data frame with the estimate. Set the handler to be `label_estimator(your_function_name)` to take advantage of `DeclareDesign's` mechanism for matching inquiries to estimators. When you use `label_estimator`, you can provide an inquiry, and `DeclareDesign` will keep track of which estimates match each inquiry. (It simply adds a column to your tidy estimates data frame for the name of the estimator and the inquiry.) For example, to calculate the mean of an outcome, you could write your own estimator in this way:
+If your answer strategy does not use a `.method` function, you'll need to provide a function that takes `data` as an input and returns a data frame with the estimate. Set the handler to be `label_estimator(your_function_name)` to take advantage of `DeclareDesigns`'s mechanism for matching inquiries to estimators. When you use `label_estimator`, you can provide an inquiry, and `DeclareDesign` will keep track of which estimates match each inquiry. (It simply adds a column to your tidy estimates data frame for the name of the estimator and the inquiry.) For example, to calculate the mean of an outcome, you could write your own estimator in this way:
 
 ```{r}
 #| eval: false

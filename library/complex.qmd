@@ -116,7 +116,7 @@ Overall the approach fares well and through diagnosis we get clarity over which 
 
 ::: {.ddbox}
 We declare a design in which a researcher wants to use experimental data to estimate the parameters of a game-theoretic model. The premise of the approach is that, to the extent that the model is correct, in-sample parameter estimation allows the researcher to make interesting external inferences about effects in other settings. The risk is that bad models will produce bad inferences. 
-::: CORREGIR ref cruzada
+::: 
 
 Structural estimation is used when researchers have in mind a model for how processes work and their goal is to estimate the parameters of that model. We referred to this type of a model as an "inquiry model" in @sec-ch2s2ss1 to distinguish it from the reference models that are required to provide a setting in which to assess the performance of a design. If only they knew the parameters of the model, they could draw inferences about levels of unobserved variables, treatment effects, or other quantities. They might even extrapolate to estimate counterfactual quantities, such as the effects of interventions that have not been implemented [@reiss2007structural]. 
 

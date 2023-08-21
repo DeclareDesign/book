@@ -1,0 +1,4 @@
+# Appendix {.unnumbered}
+
+- [Example preanalysis plan from @sec-ch21s6](/example-preanalysis-plan.pdf) (PDF)
+- [Example populated preanalysis plan from @sec-ch22s2](/example-populated-pap.pdf) (PDF)
