@@ -64,7 +64,7 @@ For each of these steps we show `DeclareDesign` code in the first column. In the
 +--------------------------------------------+--------------------------------------------------------------------+
 | Description                                | Draw                                                               | 
 +============================================+====================================================================+
-| ```                                        | ![Draw of events from m](/figures/ch6-m.svg){width=100%}            |
+| ```                                        | ![Draw of events from m](/figures/ch6-m.svg){width=100%}           |
 | M <- declare_model(N = 1000,               |                                                                    |
 |   U = rnorm(N),                            |                                                                    |
 |   X = rbinom(N, 1, prob = pnorm(U)),       |                                                                    |
@@ -72,29 +72,29 @@ For each of these steps we show `DeclareDesign` code in the first column. In the
 | m <- M()                                   |                                                                    |
 | ```                                        |                                                                    |
 +--------------------------------------------+--------------------------------------------------------------------+
-| ```                                        | ![Draw of am](/figures/ch6-am.svg){width=100%}                      |
+| ```                                        | ![Draw of am](/figures/ch6-am.svg){width=100%}                     |
 | I <- declare_inquiry(Ybar = mean(Y[X==1])) |                                                                    |
 | a_m <- I(m)                                |                                                                    |
 | ```                                        |                                                                    |
 +--------------------------------------------+--------------------------------------------------------------------+
-| ```                                        | ![Draw of events from mstar](/figures/ch6-mstar.svg){width=100%}    |
+| ```                                        | ![Draw of events from mstar](/figures/ch6-mstar.svg){width=100%}   |
 | mstar <- fabricate(N = 1000,               |                                                                    |
 |   U = rnorm(N),                            |                                                                    |
 |   X = rbinom(N, 1, prob = pnorm(U)),       |                                                                    |
 |   Y = rbinom(N, 1, prob = pnorm(U)))       |                                                                    |
 | ```                                        |                                                                    |
 +--------------------------------------------+--------------------------------------------------------------------+
-| ```                                        | ![Draw of amstar](/figures/ch6-amstar.svg){width=100%}              |
+| ```                                        | ![Draw of amstar](/figures/ch6-amstar.svg){width=100%}             |
 | a_mstar <- I(mstar)                        |                                                                    |
 | ```                                        |                                                                    |
 +--------------------------------------------+--------------------------------------------------------------------+
-| ```                                        | ![Draw of dstar](/figures/ch6-dstar.svg){width=100%}                |
+| ```                                        | ![Draw of dstar](/figures/ch6-dstar.svg){width=100%}               |
 | D <- declare_sampling(                     |                                                                    |        
 |   S = simple_rs(N, prob = 0.1))            |                                                                    |        
 | dstar <- D(mstar)                          |                                                                    |
 | ```                                        |                                                                    |
 +--------------------------------------------+--------------------------------------------------------------------+
-| ```                                        | ![Draw of adstar](/figures/ch6-adstar.svg){width=100%}              |
+| ```                                        | ![Draw of adstar](/figures/ch6-adstar.svg){width=100%}             |
 | A <- declare_estimator(                    |                                                                    |
 |  Y ~ 1, .method = lm_robust,               |                                                                    |
 |  subset = X == 1, inquiry = "Ybar")        |                                                                    |        

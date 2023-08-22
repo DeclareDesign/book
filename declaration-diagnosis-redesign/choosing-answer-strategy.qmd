@@ -104,7 +104,7 @@ But that doesn't tell us much about how confident we should be in this answer. T
 
 ::: {#def-ch9num1 .declaration} 
 
-Italian village design
+Italian village design.
 
 ```{r, file = "scripts_declarations/declaration_9.1.R"}
 ```
@@ -212,27 +212,30 @@ What does characterize our uncertainty about a significance test? The Type I and
 ### Bayesian formalizations
 
 #### Answer
+
 Bayesian answer strategies sometimes target the same inquiries as classical approaches, but rather than seeking a point estimate, they try to generate rational beliefs over possible values of the estimand. Rather than trying to provide a single best guess for the average age in a village, a Bayesian answer strategy would try to figure out how likely different answers are given the data. To do so they need to know how likely different age distributions are *before* seeing the data---the priors---and the likelihood of different types of data for each possible age distribution. A Bayesian who knows anything about Italy would likely not be very impressed by the "15" answer given by the point estimator in @sec-ch9s2ss1 because, prior to seeing any samples, they would likely expect that the answer had to be bigger than this. Bayesians would chalk the answer "15" down to an unusual draw.
 
 The Bayesian answer strategy specifies a prior distribution over the average age (here a normal distribution centered on 50 to reflect a prior that Italian villages skew older) as well as a lognormal distribution for ages. Here we retain the (median) posterior estimates for average age alongside a standard error based on the posterior variance. In the `.summary` argument we ask the tidier to exponentiate the coefficient estimate and standard error before returning them.
 
-::: {#def-ch9num4 .declaration} 
+::: {#def-ch9num3 .declaration} 
 
-Italian village design a la Bayes
+Italian village design a la Bayes.
 
-```{r, file = "scripts_declarations/declaration_9.4.R"}
+```{r, file = "scripts_declarations/declaration_9.3.R"}
 ```
 
 :::
 
-::: {#lem-ch9num4} 
+::: {#lem-ch9num3} 
+
+Diagnosis of Italian village design a la Bayes.
 
 We can then simulate this design in the same way and examine the distribution of estimates we might get. 
 
 ```{r}
 #| eval: false
 
-diagnosis_9.4 <- diagnose_design(declaration_9.4)
+diagnosis_9.3 <- diagnose_design(declaration_9.3)
 ```
 
 What we see in @fig-ch9num3 is that using the same (poor) data strategy as before, a Bayesian answer strategy gets us a somewhat tighter distribution on our answer, but exhibits greater bias: the average estimate is higher than the estimand. We might accept higher bias for lower variance if overall, the root-mean-squared error is lower for the Bayesian approach. See @sec-ch10s4ss1 for a further discussion of RMSE.  A major difference between the Bayesian and classical approaches is the handling of prior beliefs, which carry a lot of weight in the Bayesian estimation, but no weight in the classical approach.
@@ -280,21 +283,21 @@ answer_strategy(three_italian_citizens) |>
   kable_styling()
 ```
 
-::: {#def-ch9num5 .declaration} 
+::: {#def-ch9num4 .declaration} 
 
 Italian village declaration, varying the true mean age parameter.
 
-```{r, file = "scripts_declarations/declaration_9.5.R"}
+```{r, file = "scripts_declarations/declaration_9.4.R"}
 ```
 
 :::
 
-::: {#lem-ch9num5} 
+::: {#lem-ch9num4} 
 
-Diagnosing the Italian village design over many values of the true mean age parameter
+Diagnosing the Italian village design over many values of the true mean age parameter.
 
 ```{r, eval=FALSE}
-diagnosis_9.5 <- diagnose_designs(declaration_9.5)
+diagnosis_9.4 <- diagnose_designs(declaration_9.4)
 ```
 
 ![Type II error rates of the Italian village design](/figures/figure-9-4){#fig-ch9num4}
@@ -399,9 +402,9 @@ As an illustration of the logic of the approach using `DeclareDesign`, we compar
 
 First we set up a design that resamples from the @clingingsmith2009estimating's study of the effect of being randomly assigned to go on Hajj on the tolerance of foreigners. 
 
-:::{.definition #bootstrapping}
+::: {#def-ch9num5 .declaration} 
 
-Bootstrapped standard errors
+Bootstrapped standard errors.
 
 ```{r, file = "scripts_declarations/declaration_9.5.R"}
 ```
@@ -410,7 +413,7 @@ Bootstrapped standard errors
 
 ::: {#lem-ch9numbootstrap} 
 
-Bootstrap diagnosis
+Bootstrap diagnosis.
 
 The bootstrapped estimates are gotten by summarizing over multiple runs of the design:
 
@@ -464,7 +467,7 @@ This idea can be summarized as "analyze as you randomize," a dictum attributed t
 
 ::: {#def-ch9num6 .declaration} 
 
-Restoring parallelism design
+Restoring parallelism design.
 
 ```{r, file = "scripts_declarations/declaration_9.6.R"}
 ```
@@ -474,7 +477,7 @@ Restoring parallelism design
 
 ::: {#lem-ch9num6} 
 
-Restoring parallelism diagnosis
+Restoring parallelism diagnosis.
 
 ```{r}
 #| eval: false
@@ -492,7 +495,7 @@ This principle applies most clearly to the bias diagnosand, but it applies to ot
 
 More generally, the principle to "design agnostically" implies that we should choose "agnostic" answer strategies, by which we mean answer strategies that produce good answers under a wide range of models.  Selecting answer strategies that are robust to multiple models ensures that we get good answers not only when our model is spot on --- which is rare! --- but also under many possible circumstances.
 
-Understanding whether the choices over answer strategies---logit or probit or OLS---depend on the model being a particular way is crucial to making a choice. For example, many people have been taught that whenever the outcome variable is binary, OLS is inappropriate and they must use a binary choice model like logit instead. When the inquiry is the probability of success for each unit and we use covariates to model them, how much better logit performs at estimating probabilities depends on the model. When probabilities are all close to 0.5, the two answer strategies both perform well. When the probabilities spread out from 0.5, OLS is less robust and logit beats it (@hellevik2009). In the same breath, however, we can consider these same two estimators in the context of a randomized experiment with a binary outcome. Here, OLS can be just as strong as logit, no matter what the distribution of the potential outcomes. In this setting, when designing agnostically, we find that both estimators are robust (see @sec-ch10s3ss1).
+Understanding whether the choices over answer strategies---logit or probit or OLS---depend on the model being a particular way is crucial to making a choice. For example, many people have been taught that whenever the outcome variable is binary, OLS is inappropriate and they must use a binary choice model like logit instead. When the inquiry is the probability of success for each unit and we use covariates to model them, how much better logit performs at estimating probabilities depends on the model. When probabilities are all close to 0.5, the two answer strategies both perform well. When the probabilities spread out from 0.5, OLS is less robust and logit beats it []. In the same breath, however, we can consider these same two estimators in the context of a randomized experiment with a binary outcome. Here, OLS can be just as strong as logit, no matter what the distribution of the potential outcomes. In this setting, when designing agnostically, we find that both estimators are robust (see @sec-ch10s3ss1).
 
 Designing agnostically has something in common with robustness checks: both share the motivation that we have fundamental uncertainty about the true model. A robustness check is an *alternative* answer strategy that changes some model assumption that the main answer strategy depends on. Presenting three estimates of the same parameter under different answer strategies (logit, probit, and OLS) and making a joint decision based on the set of estimates about whether the main analysis is "robust" is a procedure for assessing "model dependence" --- meaning, dependence on *statistical* models. But robustness checks are just answer strategies themselves, and we should declare them and diagnose them to understand whether they are good answer strategies. We want to understand the *properties* of the robustness check, e.g., under what models and how frequently does it correctly describe the main answer strategy as "robust."
 
@@ -535,18 +538,18 @@ observed_estimate |>
 
 Here we declare the null model (indicated by `potential_outcomes(Y ~ 0 * Z + marked_register_2014)`) and add it to the data and answer strategies:
 
-:::{.definition #randomizationinference}
+::: {#def-ch9num7 .declaration} 
 
-Randomization inference under the sharp null
+Randomization inference under the sharp null.
 
-```{r, file = "scripts_declarations/declaration_9.3.R"}
+```{r, file = "scripts_declarations/declaration_9.7.R"}
 ```
 
 :::
 
-::: {#lem-ch9num3} 
+::: {#lem-ch9num7} 
 
-Randomization inference "diagnosis"
+Randomization inference "diagnosis".
 
 :::
 

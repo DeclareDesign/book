@@ -233,10 +233,10 @@ Thus far we have considered assignment strategies that allocate subjects to just
 +-------------------------------------------------+--------------------------------------------------------------------------------------------+
 | Design                                          | Description and randomizr R code                                                           |
 +=================================================+============================================================================================+
-| Multi-arm random assignment (complete)           | Fixed numbers of units are assigned to three or more conditions                            |
+| Multi-arm random assignment (complete)          | Fixed numbers of units are assigned to three or more conditions                            |
 |                                                 |                                                                                            |
 |                                                 | ```                                                                                        |
-|                                                 | complete_ra(N = 100, m_each = c(40, 30, 30))                                                |
+|                                                 | complete_ra(N = 100, m_each = c(40, 30, 30))                                               |
 |                                                 | ```                                                                                        |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------+
 | Factorial random assignment (complete)          | Units are assigned to receive one treatment, the second treatment, neither, or both        |
@@ -300,7 +300,7 @@ Descriptive inference is threatened whenever measurements differ from the quanti
 
 Some measurement strategies exhibit little to no measurement error. It's easy enough to measure some plain matters of fact, like whether a country is a member of the European Union (though clerical errors could still crop up). In the social sciences, most measurement strategies are threatened by the possibility of measurement errors due to any number of biases (e.g., recall bias, observer bias, Hawthorn effects, demand effects, sensitivity bias, response substitution, among many others).  
 
-We often describe measurement error in two ways, measurement *validity*, and measurement *reliability*. Validity is the difference between the observed and latent outcome, $Y^{\mathrm obs} - Y^*$. Reliability is the consistency of the measurements we would obtain if we were to repeat the measurement many times, which we can operationalize as low variance of the measurements:, $\V(Y_1^{\mathrm obs}, Y_2^{\mathrm obs}, \ldots, Y_k^{\mathrm obs})$. We would of course like to always select valid, reliable measurement strategies. When no perfect measure is available, choices among alternative measurement strategies typically reduce to tradeoffs between their validity and reliability. 
+We often describe measurement error in two ways, measurement *validity*, and measurement *reliability*. Validity is the difference between the observed and latent outcome, $Y^{\mathrm obs} - Y^*$. Reliability is the consistency of the measurements we would obtain if we were to repeat the measurement many times, which we can operationalize as low variance of the measurements:, $\mathbb{V}(Y_1^{\mathrm obs}, Y_2^{\mathrm obs}, \ldots, Y_k^{\mathrm obs})$. We would of course like to always select valid, reliable measurement strategies. When no perfect measure is available, choices among alternative measurement strategies typically reduce to tradeoffs between their validity and reliability. 
 
 To make these choices, we depend on methodological research whose main~inquiries are the reliability and validity of particular measurement procedures. Sometimes measurement studies are presented as "validation" studies that compare a proposed measure to a "ground truth." But even "ground truths" must be measured, usually with an expensive or otherwise unfeasible approach (otherwise they would be no need for the alternative measurement). Further, neither measurement is known to be exactly $Y^*$, so ultimately validation studies are comparisons of multiple techniques each with their own advantages and disadvantages. This fact does not make these studies useless, but rather underlines that they rely on our faith in ground truths.
 
@@ -335,7 +335,7 @@ Just as we can use data-adaptive methods to hone in on the most effective treatm
 
 <!-- ### Robustness -->
 
-@exm-designagnostically: `Design agnostically` focuses on models, encouraging us to consider plausible variations of the set of variables, their probability distributions, and the relationships between them. The principle has implications for the data and answer strategies also, in particular we should choose *D* and *A* such that we have good designs under a wide array of plausible models.
+@exm-designagnostically: *Design agnostically* focuses on models, encouraging us to consider plausible variations of the set of variables, their probability distributions, and the relationships between them. The principle has implications for the data and answer strategies also, in particular we should choose *D* and *A* such that we have good designs under a wide array of plausible models.
 
 In this section, we discuss four core threats to data strategies and ways to respond to them: noncompliance (failure to treat), attrition (failure to be included in the sample or provide measures), excludability violations (causal effects of random sampling, random assignment, or measurement on the latent outcome), and interference (the dependence of potential outcomes on whether other units are treated). These threats are often discussed in the context of experimental designs, but the core issues they raise are relevant for observational designs also. If serious, these threats may necessitate changes to the inquiry, the answer strategy, or the data strategy~itself.
 

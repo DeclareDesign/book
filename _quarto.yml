@@ -27,7 +27,7 @@ book:
         - declaration-diagnosis-redesign/declaring-designs.qmd
         - declaration-diagnosis-redesign/specifying-model.qmd
         - declaration-diagnosis-redesign/defining-inquiry.qmd
-        - declaration-diagnosis-redesign/crafting-research-strategy.qmd
+        - declaration-diagnosis-redesign/crafting-data-strategy.qmd
         - declaration-diagnosis-redesign/choosing-answer-strategy.qmd
         - declaration-diagnosis-redesign/diagnosing-designs.qmd
         - declaration-diagnosis-redesign/redesigning.qmd
@@ -72,7 +72,7 @@ book:
             - declaration-diagnosis-redesign/declaring-designs.qmd
             - declaration-diagnosis-redesign/specifying-model.qmd
             - declaration-diagnosis-redesign/defining-inquiry.qmd
-            - declaration-diagnosis-redesign/crafting-research-strategy.qmd
+            - declaration-diagnosis-redesign/crafting-data-strategy.qmd
             - declaration-diagnosis-redesign/choosing-answer-strategy.qmd
             - declaration-diagnosis-redesign/redesigning.qmd
             - declaration-diagnosis-redesign/diagnosing-designs.qmd

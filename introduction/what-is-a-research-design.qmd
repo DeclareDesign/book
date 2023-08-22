@@ -303,7 +303,9 @@ A design that exploits background information
 
 We can then diagnose both designs over a series of conjectured values for the importance of history (`b`) and see how they perform on our specified criterion for success.
 
-Diagnosis of `declaration_2.1` and `declaration_2.2`
+::: {#lem-ch2num1} 
+
+Diagnosis of `declaration_2.1` and `declaration_2.2`.
 
 ```{r}
 #| eval: false
@@ -317,9 +319,7 @@ declaration_2.2 |>
   diagnose_design(diagnosands = program_diagnosands)
 ```
 
-The results are shown in @fig-ch2num2. 
-
-::: {#lem-ch2num1} 
+The results are shown in @fig-ch2num2.
 
 ![How success depends on choice of *D* and *A* given different possibilities for *M*](/figures/figure-2-2){#fig-ch2num2}
 
