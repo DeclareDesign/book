@@ -4,6 +4,7 @@
 #| echo: false
 #| include: false
 #| purl:  false
+#| cache: false
 source("scripts/before_chapter_script.R")
 ```
 
@@ -84,15 +85,70 @@ The reanalyst has in mind a different model. In this second model, $X$ confounds
 ```{r, file = "scripts_declarations/declaration_23.1b.R"}
 ```
 
+
+
 The original answer strategy `A` is a regression of the outcome $Y$ on the treatment $Z$. The reanalyst collects the covariate $X$ and proposes to control for it in a linear regression; call that strategy `A_prime`. 
 
 ```{r, file = "scripts_declarations/declaration_23.1c.R"}
 ```
+
+
 Applying the two answer strategies, we get differing results. The treatment effect estimate is significant under `A` but not under `A_prime`. Commonly, reanalysts would infer from this that the answer strategy `A_prime` is preferred and that the original result was incorrect.
+
+```{r, eval = FALSE}
+draw_estimates(model_2 + A + A_prime)
+```
+
+```{r}
+#| tbl-cap: "Results under A and A'"
+#| echo: false
+#| label: tbl-reanalysisresults
+set.seed(3)
+est <- draw_estimates(model_2 + A + A_prime)
+est |>
+  select(estimator, estimate, std.error, p.value) |>
+  kable(booktabs = TRUE,
+        align = "c",
+        digits = 3,
+        caption = "Analysis and reanalysis estiamtes")
+```
+
 
 As we show now, these claims depend on the validity of the model and should be assessed with design diagnosis. Consider a third model in which *X* is affected by *Z* and *Y*. (In many observational settings, which variables are causally prior or posterior to others can be difficult to know with certainty.) We now diagnose both answer strategies under all three models.
 
-{What we see in the diagnosis below is that `A_prime` is only preferred if we know for sure that *X* is measured pretreatment. In design 3, where *X* is measured posttreatment, `A` is preferred, because controlling for *X* leads to posttreatment bias. This diagnosis indicates that the reanalyst needs to justify their beliefs about the causal ordering of *X* and *Z* to claim that `A_prime` is preferred to `A`. The reanalyst should not conclude on the basis of the realized estimates only that their answer strategy is preferred.}
+::: {#def-ch23num1 .declaration} 
+
+Reanalysis declaration.
+
+```{r, file = "scripts_declarations/declaration_23.1d.R", eval = FALSE}
+```
+
+:::
+
+
+```{r, echo = FALSE, eval = FALSE}
+diagnosis_23.1 <- diagnose_designs(declaration_23.1)
+```
+
+::: {#lem-ch23num1} 
+
+Reanalysis diagnosis.
+
+What we see in the diagnosis below is that `A_prime` is only preferred if we know for sure that $X$ is measured pretreatment. In design 3, where $X$ is measured posttreatment, `A` is preferred, because controlling for $X$ leads to posttreatment bias. This diagnosis indicates that the reanalyst needs to justify their beliefs about the causal ordering of $X$ and $Z$ to claim that `A_prime` is preferred to `A`. The reanalyst should not conclude on the basis of the realized estimates only that their answer strategy is preferred.
+
+```{r renalysisdiagnosis, echo = FALSE}
+diagnosis_23.1 <- get_rdddr_file_local("diagnosis_23.1")
+get_diagnosands(diagnosis_23.1) |>
+  select(design, estimator, bias) |>
+  kable(
+    booktabs = TRUE,
+    align = "c",
+    digits = 3,
+    caption = "Diagnosis of the reanalysis design under alternative models"
+  )
+```
+
+:::
 
 Three principles emerge from the idea that changing *A* to $A'$ should be justified by diagnosis, not by the comparison of the realized results of the two answer strategies.
 
@@ -152,5 +208,6 @@ How can you best anticipate how your research findings will be synthesized? For 
 For the second kind of synthesis---literature-wide progress on a full causal model---even greater care is required. Specific studies cannot make up bespoke models *M* but instead must understand how the specific *M* adopted in the study is a special case of some broader *M* that is in principle agreed to by a wider research community. Perhaps in this spirit, @Samii2016 sets the role of "causal empiricists" apart from the role of theorists. The nonstop, never-ending proliferation of study-specific theories is a threat to this kind of knowledge accumulation. In a telling piece, @mcphetres_2020 document that in a decade of research articles published in *Psychological Science*, 359 specific theories were named. Of these 70% were named just once and a further 12% were named just twice.
 
 Design then with a view to integration. In the ideal case the meta-analytic design will already exist and your job will be to design a new study that can demonstrably add value to the collective design.
+
 
 
