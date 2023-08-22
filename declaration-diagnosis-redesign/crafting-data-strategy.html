@@ -121,7 +121,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/crafting-research-strategy.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/crafting-data-strategy.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -218,7 +218,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link active">
+  <a href="../declaration-diagnosis-redesign/crafting-data-strategy.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span></a>
   </div>
 </li>
@@ -633,17 +633,19 @@ block_ra(blocks = villages, prob_unit = saturation)</code></pre>
 <caption>Table&nbsp;8.3: Examples of multi-arm random assignment</caption>
 <colgroup>
 <col style="width: 34%">
-<col style="width: 64%">
-<col style="width: 0%">
+<col style="width: 65%">
 </colgroup>
 <thead><tr class="header">
 <th>Design</th>
 <th>Description and randomizr R code</th>
-<th></th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td colspan="3">Multi-arm random assignment (complete) | Fixed numbers of units are assigned to three or more conditions | | | <code>|                                                 | complete_ra(N = 100, m_each = c(40, 30, 30))                                                 |</code> |</td>
+<td>Multi-arm random assignment (complete)</td>
+<td>
+<p>Fixed numbers of units are assigned to three or more conditions</p>
+<pre><code>complete_ra(N = 100, m_each = c(40, 30, 30))</code></pre>
+</td>
 </tr>
 <tr class="even">
 <td>Factorial random assignment (complete)</td>
@@ -656,7 +658,6 @@ Z2 = block_ra(blocks = Z1, block_m = 25)</code></pre>
 Z1 = Z %in% c("T1", "T2")
 Z2 = Z %in% c("T1", "T3")</code></pre>
 </td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -693,7 +694,7 @@ Z2 = Z %in% c("T1", "T3")</code></pre>
 <p>Measurement is the part of the data strategy in which variables are collected about the population of units to enable sampling; variables are collected about the sample and outcomes are collected, following any treatment assignment. All variables used in the answer strategy are collected in measurement, aside from any treatment assignment variables and assignment and sample inclusion probabilities.</p>
 <p>Descriptive inference is threatened whenever measurements differ from the quantities they are meant to measure. For example when we want to measure “latent variables” such as fear, support for a political candidate, or economic well-being, we use a measurement technology to imperfectly observe them. We might represent that measurement technology as the function <span class="math inline">\(Q\)</span> that yields the observed outcome <span class="math inline">\(Y^{\mathrm obs}\)</span>: <span class="math inline">\(Q(Y^*) = Y^{\mathrm obs}\)</span>. Our measurement strategy is a set of such functions for each variable we measure.</p>
 <p>Some measurement strategies exhibit little to no measurement error. It’s easy enough to measure some plain matters of fact, like whether a country is a member of the European Union (though clerical errors could still crop up). In the social sciences, most measurement strategies are threatened by the possibility of measurement errors due to any number of biases (e.g., recall bias, observer bias, Hawthorn effects, demand effects, sensitivity bias, response substitution, among many others).</p>
-<p>We often describe measurement error in two ways, measurement <em>validity</em>, and measurement <em>reliability</em>. Validity is the difference between the observed and latent outcome, <span class="math inline">\(Y^{\mathrm obs} - Y^*\)</span>. Reliability is the consistency of the measurements we would obtain if we were to repeat the measurement many times, which we can operationalize as low variance of the measurements:, <span class="math inline">\(\V(Y_1^{\mathrm obs}, Y_2^{\mathrm obs}, \ldots, Y_k^{\mathrm obs})\)</span>. We would of course like to always select valid, reliable measurement strategies. When no perfect measure is available, choices among alternative measurement strategies typically reduce to tradeoffs between their validity and reliability.</p>
+<p>We often describe measurement error in two ways, measurement <em>validity</em>, and measurement <em>reliability</em>. Validity is the difference between the observed and latent outcome, <span class="math inline">\(Y^{\mathrm obs} - Y^*\)</span>. Reliability is the consistency of the measurements we would obtain if we were to repeat the measurement many times, which we can operationalize as low variance of the measurements:, <span class="math inline">\(\mathbb{V}(Y_1^{\mathrm obs}, Y_2^{\mathrm obs}, \ldots, Y_k^{\mathrm obs})\)</span>. We would of course like to always select valid, reliable measurement strategies. When no perfect measure is available, choices among alternative measurement strategies typically reduce to tradeoffs between their validity and reliability.</p>
 <p>To make these choices, we depend on methodological research whose main~inquiries are the reliability and validity of particular measurement procedures. Sometimes measurement studies are presented as “validation” studies that compare a proposed measure to a “ground truth.” But even “ground truths” must be measured, usually with an expensive or otherwise unfeasible approach (otherwise they would be no need for the alternative measurement). Further, neither measurement is known to be exactly <span class="math inline">\(Y^*\)</span>, so ultimately validation studies are comparisons of multiple techniques each with their own advantages and disadvantages. This fact does not make these studies useless, but rather underlines that they rely on our faith in ground truths.</p>
 <p>Researchers select several characteristics of a measurement strategy: who collects the measures, the mode of measurement, how often and when measures are taken, how many different observed measures of the latent outcome <span class="math inline">\(Y^*\)</span> are collected, and how they are summarized into a single measure. These design characteristics may affect validity, reliability, cost, or all three.</p>
 <p>Data may be collected by researchers themselves, by participants, or by third parties. In some forms of qualitative research such as participant-observation and interview-based research, the researcher may be the primary data collector. In survey research, interviewers are typically a hired agents of the researcher, each of whom may ask questions differently. Participants are sometimes asked to collect data on themselves, either through self-administered surveys, journaling, or taking measurements of themselves using thermometers or scales. A primary concern with self-reports is validity: do respondents report their measurements truthfully? A parallel concern is raised when participants do not collect their own data, but are made aware of the fact that they are being measured by others. Finally, data may be collected by agents of governments or other organizations, yielding so-called “administrative” data.</p>
@@ -714,7 +715,7 @@ Z2 = Z %in% c("T1", "T3")</code></pre>
 <!-- One general piece of advice when choosing a data strategy is to follow the inquiry. -->
 <!-- In the data strategy, we sample units from a population, assign units to treatment conditions, and measure outcomes to target as closely as we can the three analogous elements that make up the inquiry. That is, we want representative sampling, balanced treatment assignments, and error-free measurements. When data strategies are straightforward in this way, we can often use straightforward answer strategies -- this is the idea of the "plug-in principle." When the data strategy introduces distortions in the sampling, treatment assignment, or measurement, we need to adjust the answer strategy to compensate, which is the idea behind "analyze as you randomize."  -->
 <!-- ### Robustness -->
-<p><a href="../introduction/research-design-principles.html#exm-designagnostically">Principle&nbsp;<span>3.2</span></a>: <code>Design agnostically</code> focuses on models, encouraging us to consider plausible variations of the set of variables, their probability distributions, and the relationships between them. The principle has implications for the data and answer strategies also, in particular we should choose <em>D</em> and <em>A</em> such that we have good designs under a wide array of plausible models.</p>
+<p><a href="../introduction/research-design-principles.html#exm-designagnostically">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em> focuses on models, encouraging us to consider plausible variations of the set of variables, their probability distributions, and the relationships between them. The principle has implications for the data and answer strategies also, in particular we should choose <em>D</em> and <em>A</em> such that we have good designs under a wide array of plausible models.</p>
 <p>In this section, we discuss four core threats to data strategies and ways to respond to them: noncompliance (failure to treat), attrition (failure to be included in the sample or provide measures), excludability violations (causal effects of random sampling, random assignment, or measurement on the latent outcome), and interference (the dependence of potential outcomes on whether other units are treated). These threats are often discussed in the context of experimental designs, but the core issues they raise are relevant for observational designs also. If serious, these threats may necessitate changes to the inquiry, the answer strategy, or the data strategy~itself.</p>
 <p><a href="#fig-ch8num7">Figure&nbsp;<span>8.7</span></a> adapts <a href="#fig-ch8num1">Figure&nbsp;<span>8.1</span></a> to introduce each of these threats. The remainder of this section discusses these four threats in turn.</p>
 <div id="fig-ch8num7" class="quarto-figure quarto-figure-center anchored">

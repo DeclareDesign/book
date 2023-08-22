@@ -252,7 +252,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link">
+  <a href="../declaration-diagnosis-redesign/crafting-data-strategy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span></a>
   </div>
 </li>
@@ -540,14 +540,12 @@ div.csl-indent {
 <table class="table">
 <caption>Table&nbsp;5.2: Elements of research design in code.</caption>
 <colgroup>
-<col style="width: 38%">
-<col style="width: 59%">
-<col style="width: 0%">
+<col style="width: 39%">
+<col style="width: 60%">
 </colgroup>
 <thead><tr class="header">
 <th>Description</th>
 <th>Draw</th>
-<th></th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -556,42 +554,36 @@ div.csl-indent {
   X = rbinom(N, 1, prob = pnorm(U)),
   Y = rbinom(N, 1, prob = pnorm(U + X)))
 m &lt;- M()</code></pre></td>
-<td colspan="2">
-<img src="../figures/ch6-m.svg" class="img-fluid" style="width:100.0%" alt="Draw of events from m"> | | | | | |</td>
+<td><img src="../figures/ch6-m.svg" class="img-fluid" style="width:100.0%" alt="Draw of events from m"></td>
 </tr>
 <tr class="even">
 <td><pre><code>I &lt;- declare_inquiry(Ybar = mean(Y[X==1]))
 a_m &lt;- I(m)</code></pre></td>
-<td colspan="2">
-<img src="../figures/ch6-am.svg" class="img-fluid" style="width:100.0%" alt="Draw of am"> | | |</td>
+<td><img src="../figures/ch6-am.svg" class="img-fluid" style="width:100.0%" alt="Draw of am"></td>
 </tr>
 <tr class="odd">
 <td><pre><code>mstar &lt;- fabricate(N = 1000,
   U = rnorm(N),
   X = rbinom(N, 1, prob = pnorm(U)),
   Y = rbinom(N, 1, prob = pnorm(U)))</code></pre></td>
-<td colspan="2">
-<img src="../figures/ch6-mstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of events from mstar"> | | | | |</td>
+<td><img src="../figures/ch6-mstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of events from mstar"></td>
 </tr>
 <tr class="even">
 <td><pre><code>a_mstar &lt;- I(mstar)</code></pre></td>
-<td colspan="2">
-<img src="../figures/ch6-amstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of amstar"> | |</td>
+<td><img src="../figures/ch6-amstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of amstar"></td>
 </tr>
 <tr class="odd">
 <td><pre><code>D &lt;- declare_sampling(
   S = simple_rs(N, prob = 0.1))
 dstar &lt;- D(mstar)</code></pre></td>
-<td colspan="2">
-<img src="../figures/ch6-dstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of dstar"> | | | |</td>
+<td><img src="../figures/ch6-dstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of dstar"></td>
 </tr>
 <tr class="even">
 <td><pre><code>A &lt;- declare_estimator(
  Y ~ 1, .method = lm_robust,
  subset = X == 1, inquiry = "Ybar")
 a_dstar &lt;- A(dstar)</code></pre></td>
-<td colspan="2">
-<img src="../figures/ch6-adstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of adstar"> | | | | |</td>
+<td><img src="../figures/ch6-adstar.svg" class="img-fluid" style="width:100.0%" alt="Draw of adstar"></td>
 </tr>
 </tbody>
 </table>

@@ -80,7 +80,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../declaration-diagnosis-redesign/redesigning.html" rel="next">
-<link href="../declaration-diagnosis-redesign/crafting-research-strategy.html" rel="prev">
+<link href="../declaration-diagnosis-redesign/crafting-data-strategy.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -253,7 +253,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="sidebar-item-text sidebar-link">
+  <a href="../declaration-diagnosis-redesign/crafting-data-strategy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span></a>
   </div>
 </li>
@@ -522,7 +522,7 @@ div.csl-indent {
 <p>A standard way to report uncertainty of a point estimate is to provide a “standard error.” In this case we know that our answer is probably not a good answer. It is almost certainly wrong in the sense that the population average age in the small village is probably not 15 (Italy’s population is aging!), but we don’t know how wrong because, of course, we don’t actually know the value of the inquiry under study. We have instead to evaluate the properties of the procedure. Under a random sampling design – even an egregiously stingy random sampling design that only selects three citizens! – we can justify the approach on the basis of the “bias” diagnosand.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>But that doesn’t tell us much about how confident we should be in this answer. The design in <a href="#def-ch9num1">Declaration&nbsp;<span>9.1</span></a> can be used to generate a view of what answers we might get when we choose just three subjects for our sample given a particular model of the age distribution.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div id="def-ch9num1" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 9.1 </strong></span>Italian village design</p>
+<p><span class="theorem-title"><strong>Declaration 9.1 </strong></span>Italian village design.</p>
 <div class="cell" data-file="scripts_declarations/declaration_9.1.R">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_9.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">80</span>, size <span class="op">=</span> <span class="va">N</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -619,24 +619,31 @@ div.csl-indent {
 <span class="header-section-number">9.2.3.1</span> Answer</h4>
 <p>Bayesian answer strategies sometimes target the same inquiries as classical approaches, but rather than seeking a point estimate, they try to generate rational beliefs over possible values of the estimand. Rather than trying to provide a single best guess for the average age in a village, a Bayesian answer strategy would try to figure out how likely different answers are given the data. To do so they need to know how likely different age distributions are <em>before</em> seeing the data—the priors—and the likelihood of different types of data for each possible age distribution. A Bayesian who knows anything about Italy would likely not be very impressed by the “15” answer given by the point estimator in <a href="#sec-ch9s2ss1"><span>Section&nbsp;9.2.1</span></a> because, prior to seeing any samples, they would likely expect that the answer had to be bigger than this. Bayesians would chalk the answer “15” down to an unusual draw.</p>
 <p>The Bayesian answer strategy specifies a prior distribution over the average age (here a normal distribution centered on 50 to reflect a prior that Italian villages skew older) as well as a lognormal distribution for ages. Here we retain the (median) posterior estimates for average age alongside a standard error based on the posterior variance. In the <code>.summary</code> argument we ask the tidier to exponentiate the coefficient estimate and standard error before returning them.</p>
-<div id="def-ch9num4" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 9.3 </strong></span>Italian village design a la Bayes</p>
-<div class="cell" data-file="scripts_declarations/declaration_9.4.R">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span></span>
-<span><span class="va">base_declaration</span> <span class="op">&lt;-</span></span>
-<span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, </span>
-<span>                age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, mean <span class="op">=</span> <span class="va">true_mean</span>, sd <span class="op">=</span> <span class="fl">23</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<div id="def-ch9num3" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration 9.3 </strong></span>Italian village design a la Bayes.</p>
+<div class="cell" data-file="scripts_declarations/declaration_9.3.R">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdss</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mc-stan.org/rstanarm/">rstanarm</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">declaration_9.3</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">80</span>, size <span class="op">=</span> <span class="va">N</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_inquiry</span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">age</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_sampling</span><span class="op">(</span>S <span class="op">=</span> <span class="fu">complete_rs</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">age</span> <span class="op">~</span> <span class="fl">1</span>, .method <span class="op">=</span> <span class="va">lm_robust</span><span class="op">)</span> </span>
-<span></span>
-<span><span class="va">declaration_9.4</span> <span class="op">&lt;-</span> <span class="fu">redesign</span><span class="op">(</span><span class="va">base_declaration</span>, true_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">100</span>, length.out <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
+<span>    <span class="va">age</span> <span class="op">~</span> <span class="fl">1</span>,</span>
+<span>    .method <span class="op">=</span> <span class="va">stan_glm</span>,</span>
+<span>    family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/family.html">gaussian</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"log"</span><span class="op">)</span>,</span>
+<span>    prior_intercept <span class="op">=</span> <span class="fu"><a href="https://mc-stan.org/rstanarm/reference/priors.html">normal</a></span><span class="op">(</span><span class="fl">50</span>, <span class="fl">5</span><span class="op">)</span>,</span>
+<span>    .summary <span class="op">=</span> <span class="op">~</span><span class="fu"><a href="https://rdrr.io/pkg/rdss/man/tidy_stan.html">tidy_stan</a></span><span class="op">(</span><span class="va">.</span>, exponentiate <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    inquiry <span class="op">=</span> <span class="st">"mean_age"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="lem-ch9num4" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 9.3 </strong></span>We can then simulate this design in the same way and examine the distribution of estimates we might get.</p>
+<div id="lem-ch9num3" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 9.3 </strong></span>Diagnosis of Italian village design a la Bayes.</p>
+<p>We can then simulate this design in the same way and examine the distribution of estimates we might get.</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_9.4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_9.3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What we see in <a href="#fig-ch9num3">Figure&nbsp;<span>9.3</span></a> is that using the same (poor) data strategy as before, a Bayesian answer strategy gets us a somewhat tighter distribution on our answer, but exhibits greater bias: the average estimate is higher than the estimand. We might accept higher bias for lower variance if overall, the root-mean-squared error is lower for the Bayesian approach. See <a href="diagnosing-designs.html#sec-ch10s4ss1"><span>Section&nbsp;10.4.1</span></a> for a further discussion of RMSE. A major difference between the Bayesian and classical approaches is the handling of prior beliefs, which carry a lot of weight in the Bayesian estimation, but no weight in the classical approach.</p>
 <div id="fig-ch9num3" class="quarto-figure quarto-figure-center anchored">
@@ -686,18 +693,24 @@ div.csl-indent {
 
 </div>
 </div>
-<div id="def-ch9num5" class="declaration theorem definition">
+<div id="def-ch9num4" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 9.4 </strong></span>Italian village declaration, varying the true mean age parameter.</p>
-<div class="cell" data-file="scripts_declarations/declaration_9.5.R">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_9.5</span> <span class="op">&lt;-</span></span>
-<span>  <span class="fu">declare_model</span><span class="op">(</span>data <span class="op">=</span> <span class="fu">resample_data</span><span class="op">(</span><span class="va">clingingsmith_etal</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">views</span> <span class="op">~</span> <span class="va">success</span>, .method <span class="op">=</span> <span class="va">difference_in_means</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-file="scripts_declarations/declaration_9.4.R">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span></span>
+<span><span class="va">base_declaration</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, </span>
+<span>                age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, mean <span class="op">=</span> <span class="va">true_mean</span>, sd <span class="op">=</span> <span class="fl">23</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">age</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_sampling</span><span class="op">(</span>S <span class="op">=</span> <span class="fu">complete_rs</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">age</span> <span class="op">~</span> <span class="fl">1</span>, .method <span class="op">=</span> <span class="va">lm_robust</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">declaration_9.4</span> <span class="op">&lt;-</span> <span class="fu">redesign</span><span class="op">(</span><span class="va">base_declaration</span>, true_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">100</span>, length.out <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="lem-ch9num5" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 9.4 </strong></span>Diagnosing the Italian village design over many values of the true mean age parameter</p>
+<div id="lem-ch9num4" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 9.4 </strong></span>Diagnosing the Italian village design over many values of the true mean age parameter.</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.5</span> <span class="op">&lt;-</span> <span class="fu">diagnose_designs</span><span class="op">(</span><span class="va">declaration_9.5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_designs</span><span class="op">(</span><span class="va">declaration_9.4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch9num4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../figures/figure-9-4.svg" class="img-fluid figure-img"></p>
@@ -786,8 +799,8 @@ div.csl-indent {
 <p>The plug-in principle can be used also for generating estimates of uncertainty. For instance if we are interested in understanding the variance of the sampling distribution of estimates that we get from our procedure, we can use the bootstrap. With the bootstrap, we “plug-in” the sample for the population data, then repeatedly <em>re</em>sample from our existing data. We can then approximate the true sampling distribution by calculating estimates on each resampled dataset, from which we can estimate the variance. (We use this nonparametric bootstrapping approach when generating estimates of uncertainty of diagnosands, see <a href="diagnosing-designs.html#sec-ch10s3ss3"><span>Section&nbsp;10.3.3</span></a>).</p>
 <p>As an illustration of the logic of the approach using <code>DeclareDesign</code>, we compare usual the standard error estimate that accompanies a difference-in-means estimate with a bootstrapped standard error.</p>
 <p>First we set up a design that resamples from the <span class="citation" data-cites="clingingsmith2009estimating">Clingingsmith, Khwaja, and Kremer (<a href="../references.html#ref-clingingsmith2009estimating" role="doc-biblioref">2009</a>)</span>’s study of the effect of being randomly assigned to go on Hajj on the tolerance of foreigners.</p>
-<div id="bootstrapping" class="definition">
-<p>Bootstrapped standard errors</p>
+<div id="def-ch9num5" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration 9.5 </strong></span>Bootstrapped standard errors.</p>
 <div class="cell" data-file="scripts_declarations/declaration_9.5.R">
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_9.5</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>data <span class="op">=</span> <span class="fu">resample_data</span><span class="op">(</span><span class="va">clingingsmith_etal</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -795,7 +808,7 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch9numbootstrap" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 9.5 </strong></span>Bootstrap diagnosis</p>
+<p><span class="theorem-title"><strong>Diagnosis 9.5 </strong></span>Bootstrap diagnosis.</p>
 <p>The bootstrapped estimates are gotten by summarizing over multiple runs of the design:</p>
 <div class="cell">
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.5</span> <span class="op">&lt;-</span> </span>
@@ -851,9 +864,9 @@ div.csl-indent {
 <p>This idea can be summarized as “analyze as you randomize,” a dictum attributed to R. A. Fisher. We use known features of the data strategy to adjust the answer strategy. We can undo the distortion introduced by differential probabilities of assignment by weighting units by the inverse of the probability of being in the condition that they are in. If we use an inverse-probability weighted (IPW) estimator, we restore parallelism because even though <em>A</em> no longer equals <em>I</em>, the relationship of <em>D</em> to <em>A</em> once again parallels the relationship of <em>M</em> to <em>I</em>.</p>
 </section><section id="sec-ch9s3ss5" class="level3" data-number="9.3.5"><h3 data-number="9.3.5" class="anchored" data-anchor-id="sec-ch9s3ss5">
 <span class="header-section-number">9.3.5</span> Illustration of estimates using the AAYR principle</h3>
-<p><a href="#def-ch9num6">Declaration&nbsp;<span>9.5</span></a> illustrates this idea. We declare the theoretical half of the design as <code>MI</code> then consider the intersection of two data strategies with two answer strategies. <code>D1</code> has constant probabilities of assignment and <code>D2</code> has differential probabilities of assignment. <code>A1</code> is the plug-in estimator, applied to unweighted data, and <code>A2</code> is the IPW estimator with the inverse probability weights generated by the <code>D2</code> randomization protocol.</p>
+<p><a href="#def-ch9num6">Declaration&nbsp;<span>9.6</span></a> illustrates this idea. We declare the theoretical half of the design as <code>MI</code> then consider the intersection of two data strategies with two answer strategies. <code>D1</code> has constant probabilities of assignment and <code>D2</code> has differential probabilities of assignment. <code>A1</code> is the plug-in estimator, applied to unweighted data, and <code>A2</code> is the IPW estimator with the inverse probability weights generated by the <code>D2</code> randomization protocol.</p>
 <div id="def-ch9num6" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 9.5 </strong></span>Restoring parallelism design</p>
+<p><span class="theorem-title"><strong>Declaration 9.6 </strong></span>Restoring parallelism design.</p>
 <div class="cell" data-file="scripts_declarations/declaration_9.6.R">
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">MI</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -891,7 +904,7 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch9num6" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 9.6 </strong></span>Restoring parallelism diagnosis</p>
+<p><span class="theorem-title"><strong>Diagnosis 9.6 </strong></span>Restoring parallelism diagnosis.</p>
 <div class="cell">
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_9.6</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_9.6</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -903,7 +916,7 @@ div.csl-indent {
 </div>
 <p>This principle applies most clearly to the bias diagnosand, but it applies to others as well. For example, <span class="citation" data-cites="abadie2017clustering">Abadie et al. (<a href="../references.html#ref-abadie2017clustering" role="doc-biblioref">2017</a>)</span> recommend that answer strategies include clustered standard errors at the level of sampling or assignment, whichever is higher. The data strategies that include clustering introduce a dependence among units that was not present in the model; clustered standard errors account for this dependence. If we did not account for this dependence, our estimated standard error would be a bad estimate of the “standard deviation” diagnosand.</p>
 <p>More generally, the principle to “design agnostically” implies that we should choose “agnostic” answer strategies, by which we mean answer strategies that produce good answers under a wide range of models. Selecting answer strategies that are robust to multiple models ensures that we get good answers not only when our model is spot on — which is rare! — but also under many possible circumstances.</p>
-<p>Understanding whether the choices over answer strategies—logit or probit or OLS—depend on the model being a particular way is crucial to making a choice. For example, many people have been taught that whenever the outcome variable is binary, OLS is inappropriate and they must use a binary choice model like logit instead. When the inquiry is the probability of success for each unit and we use covariates to model them, how much better logit performs at estimating probabilities depends on the model. When probabilities are all close to 0.5, the two answer strategies both perform well. When the probabilities spread out from 0.5, OLS is less robust and logit beats it (<span class="citation" data-cites="hellevik2009">Hellevik (<a href="../references.html#ref-hellevik2009" role="doc-biblioref">2009</a>)</span>). In the same breath, however, we can consider these same two estimators in the context of a randomized experiment with a binary outcome. Here, OLS can be just as strong as logit, no matter what the distribution of the potential outcomes. In this setting, when designing agnostically, we find that both estimators are robust (see <a href="redesigning.html#sec-ch10s3ss1"><span>Section&nbsp;11.3.1</span></a>).</p>
+<p>Understanding whether the choices over answer strategies—logit or probit or OLS—depend on the model being a particular way is crucial to making a choice. For example, many people have been taught that whenever the outcome variable is binary, OLS is inappropriate and they must use a binary choice model like logit instead. When the inquiry is the probability of success for each unit and we use covariates to model them, how much better logit performs at estimating probabilities depends on the model. When probabilities are all close to 0.5, the two answer strategies both perform well. When the probabilities spread out from 0.5, OLS is less robust and logit beats it []. In the same breath, however, we can consider these same two estimators in the context of a randomized experiment with a binary outcome. Here, OLS can be just as strong as logit, no matter what the distribution of the potential outcomes. In this setting, when designing agnostically, we find that both estimators are robust (see <a href="redesigning.html#sec-ch10s3ss1"><span>Section&nbsp;11.3.1</span></a>).</p>
 <p>Designing agnostically has something in common with robustness checks: both share the motivation that we have fundamental uncertainty about the true model. A robustness check is an <em>alternative</em> answer strategy that changes some model assumption that the main answer strategy depends on. Presenting three estimates of the same parameter under different answer strategies (logit, probit, and OLS) and making a joint decision based on the set of estimates about whether the main analysis is “robust” is a procedure for assessing “model dependence” — meaning, dependence on <em>statistical</em> models. But robustness checks are just answer strategies themselves, and we should declare them and diagnose them to understand whether they are good answer strategies. We want to understand the <em>properties</em> of the robustness check, e.g., under what models and how frequently does it correctly describe the main answer strategy as “robust.”</p>
 </section><section id="illustration-of-estimates-of-uncertainty-using-the-aayr-principle" class="level3" data-number="9.3.6"><h3 data-number="9.3.6" class="anchored" data-anchor-id="illustration-of-estimates-of-uncertainty-using-the-aayr-principle">
 <span class="header-section-number">9.3.6</span> Illustration of estimates of uncertainty using the AAYR principle</h3>
@@ -941,28 +954,32 @@ div.csl-indent {
 </div>
 </div>
 <p>Here we declare the null model (indicated by <code>potential_outcomes(Y ~ 0 * Z + marked_register_2014)</code>) and add it to the data and answer strategies:</p>
-<div id="randomizationinference" class="definition">
-<p>Randomization inference under the sharp null</p>
-<div class="cell" data-file="scripts_declarations/declaration_9.3.R">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdss</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mc-stan.org/rstanarm/">rstanarm</a></span><span class="op">)</span></span>
+<div id="def-ch9num7" class="declaration theorem definition">
+<p><span class="theorem-title"><strong>Declaration 9.7 </strong></span>Randomization inference under the sharp null.</p>
+<div class="cell" data-file="scripts_declarations/declaration_9.7.R">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># number of streets to treat in each ward</span></span>
+<span><span class="va">block_m</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">71</span>, <span class="fl">47</span>, <span class="fl">60</span>, <span class="fl">48</span>, <span class="fl">35</span>, <span class="fl">39</span>, <span class="fl">63</span>, <span class="fl">32</span>, <span class="fl">52</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">declaration_9.3</span> <span class="op">&lt;-</span></span>
-<span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">80</span>, size <span class="op">=</span> <span class="va">N</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">age</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">declare_sampling</span><span class="op">(</span>S <span class="op">=</span> <span class="fu">complete_rs</span><span class="op">(</span>N <span class="op">=</span> <span class="va">N</span>, n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
-<span>    <span class="va">age</span> <span class="op">~</span> <span class="fl">1</span>,</span>
-<span>    .method <span class="op">=</span> <span class="va">stan_glm</span>,</span>
-<span>    family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/family.html">gaussian</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"log"</span><span class="op">)</span>,</span>
-<span>    prior_intercept <span class="op">=</span> <span class="fu"><a href="https://mc-stan.org/rstanarm/reference/priors.html">normal</a></span><span class="op">(</span><span class="fl">50</span>, <span class="fl">5</span><span class="op">)</span>,</span>
-<span>    .summary <span class="op">=</span> <span class="op">~</span><span class="fu"><a href="https://rdrr.io/pkg/rdss/man/tidy_stan.html">tidy_stan</a></span><span class="op">(</span><span class="va">.</span>, exponentiate <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    inquiry <span class="op">=</span> <span class="st">"mean_age"</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">declaration_9.7</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span>data <span class="op">=</span> <span class="va">foos_etal</span>,</span>
+<span>                <span class="co"># this is the sharp null hypothesis</span></span>
+<span>                <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">0</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">marked_register_2014</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">block_and_cluster_ra</span><span class="op">(</span>blocks <span class="op">=</span> <span class="va">ward</span>, </span>
+<span>                                              clusters <span class="op">=</span> <span class="va">street</span>, </span>
+<span>                                              block_m <span class="op">=</span> <span class="va">block_m</span><span class="op">)</span>,</span>
+<span>                     probs <span class="op">=</span> <span class="fu">obtain_condition_probabilities</span><span class="op">(</span></span>
+<span>                       assignment <span class="op">=</span> <span class="va">Z</span>,</span>
+<span>                       blocks <span class="op">=</span> <span class="va">ward</span>,</span>
+<span>                       clusters <span class="op">=</span> <span class="va">street</span>,</span>
+<span>                       block_m <span class="op">=</span> <span class="va">block_m</span></span>
+<span>                     <span class="op">)</span>,</span>
+<span>                     ipw <span class="op">=</span> <span class="fl">1</span> <span class="op">/</span> <span class="va">probs</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">ward</span>, weights <span class="op">=</span> <span class="va">ipw</span>, clusters <span class="op">=</span> <span class="va">street</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="lem-ch9num3" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 9.7 </strong></span>Randomization inference “diagnosis”</p>
+<div id="lem-ch9num7" class="theorem lemma">
+<p><span class="theorem-title"><strong>Diagnosis 9.7 </strong></span>Randomization inference “diagnosis”.</p>
 </div>
 <div class="cell">
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p.value</span> <span class="op">&lt;-</span></span>
@@ -1048,9 +1065,6 @@ Gerber, Alan S., and Donald P. Green. 2012. <em><span class="nocase">Field Exper
 </div>
 <div id="ref-Green2015" class="csl-entry" role="listitem">
 Green, Donald P., and Winston Lin. 2016. <span>“Standard Operating Procedures: A Safety Net for Pre-Analysis Plans.”</span> <em>PS: Political Science &amp; Politics</em> 49 (3): 495–99.
-</div>
-<div id="ref-hellevik2009" class="csl-entry" role="listitem">
-Hellevik, Ottar. 2009. <span>“Linear Versus Logistic Regression When the Dependent Variable Is a Dichotomy.”</span> <em>Quality and Quantity</em> 43: 59–74.
 </div>
 <div id="ref-herron2016careful" class="csl-entry" role="listitem">
 Herron, Michael C., and Kevin M. Quinn. 2016. <span>“A Careful Look at Modern Case Selection Methods.”</span> <em>Sociological Methods &amp; Research</em> 45 (3): 458–92.
@@ -1303,7 +1317,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../declaration-diagnosis-redesign/crafting-research-strategy.html" class="pagination-link">
+      <a href="../declaration-diagnosis-redesign/crafting-data-strategy.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span>
       </a>          
   </div>
