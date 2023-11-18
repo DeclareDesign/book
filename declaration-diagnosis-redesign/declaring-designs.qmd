@@ -104,7 +104,7 @@ For each of these steps we show `DeclareDesign` code in the first column. In the
 
 : Elements of research design in code. {#tbl-midarealizations} 
 
-As described in the getting started guide in [Chapter 4](@\ref(getting-started)), we concatenate the design steps into a full design declaration using the `+` operator:
+As described in the getting started guide in \@ref(sec-ch4), we concatenate the design steps into a full design declaration using the `+` operator:
 
 ::: {#def-ch5num1 .declaration} 
 
