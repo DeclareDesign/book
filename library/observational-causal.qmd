@@ -70,7 +70,7 @@ query_model(
                  "Y==1 & X==1",
                  "Y==1 & X==1"
                  )) |> 
-  select(Query, Value = mean) |> 
+  select(query, Value = mean) |> 
   kable(booktabs = TRUE, 
         align = c("l","c"), 
         digits = 2) |>
