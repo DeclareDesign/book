@@ -3,6 +3,7 @@ project:
   execute-dir: project
 
 book:
+  google-analytics: "G-MMK8CF9JC0"
   title: "Research Design in the Social Sciences"
   subtitle: "Declaration, Diagnosis, and Redesign"
   margin-header: >
