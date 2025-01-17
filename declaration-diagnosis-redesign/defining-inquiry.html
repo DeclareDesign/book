@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design in the Social Sciences - 7&nbsp; Defining the inquiry</title>
+<title>7&nbsp; Defining the inquiry – Research Design in the Social Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,7 +19,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -30,7 +30,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -55,6 +55,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -86,16 +87,22 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -104,11 +111,18 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style type="text/css" media="print">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MMK8CF9JC0"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
+</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
 </style>
 <script type="text/javascript">
@@ -147,25 +161,50 @@ div.csl-indent {
       }
     }
 </script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/defining-inquiry.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/defining-inquiry.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
@@ -191,9 +230,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -226,9 +265,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -293,7 +332,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../library/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design library</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -334,7 +373,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design lifecycle</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -391,7 +430,7 @@ div.csl-indent {
 </li>
     </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
@@ -441,7 +480,7 @@ div.csl-indent {
   </div>
 </div>
 
-<header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/defining-inquiry.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title"><span id="sec-ch7" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></span></h1>
 </div>
 
@@ -454,6 +493,7 @@ div.csl-indent {
     
   </div>
   
+
 
 </header><p>An inquiry is a question we ask of the world, and in the same way, of our models of the world. If we stipulate a reference model, <span class="math inline">\(m\)</span>, then our inquiry is a summary of <span class="math inline">\(m\)</span>. Suppose in some reference model that <span class="math inline">\(X\)</span> affects <span class="math inline">\(Y\)</span>. One inquiry might be descriptive: what is the average level of <span class="math inline">\(Y\)</span> when <span class="math inline">\(X=1\)</span>, under the model? A second might be causal: what is the average treatment effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>? A third is about counterfactuals: for what share of units would <span class="math inline">\(Y\)</span> have been different if <span class="math inline">\(X\)</span> were different? If a model involves more variables, many more questions open up, for instance, regarding how the effect of one variable passes through, or is modified by, another.</p>
 <p>When designing research, we should have our inquiries front of mind. Amazingly, very many research projects do not specify the target of inference, focusing instead on the specification of estimation procedures. At some stages of research it is not possible to specify the inquiry with great precision. In early stages you may need to do model-building research in order to find out what the right question is. But once you are at the stage of thinking through inferential strategies you need an inquiry in mind in order to select among options. For the same reason readers need to know your inquiry in order to evaluate your choices.</p>
@@ -478,10 +518,12 @@ div.csl-indent {
 </section><section id="treatment-conditions" class="level3" data-number="7.1.3"><h3 data-number="7.1.3" class="anchored" data-anchor-id="treatment-conditions">
 <span class="header-section-number">7.1.3</span> Treatment conditions</h3>
 <p>The final element of an inquiry is the treatment conditions under consideration and, in the case of more than one, compared.</p>
-<p><em>Descriptive</em> inquiries are defined with respect to one single treatment condition. That treatment condition is often the “unmanipulated” condition in which the researcher exposes units to no additional causal agents. Here the goal is not to learn about the summaries of the distributions of outcomes as we observe them. <a href="#tbl-descriptiveinquiries">Table&nbsp;<span>7.1</span></a> (top panel) enumerates some common descriptive inquiries. These inquiries have in common that you do not need any counterfactual quantities in order to define them. The covariance (similarly, the correlation) between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> enters as a descriptive inquiry; so too does the line of best fit for <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span>. For each descriptive inquiry, we list the units, treatment conditions, and outcomes that define them. We also provide <code>R</code> code snippets for each.</p>
-<div id="tbl-descriptiveinquiries" class="anchored">
-<table class="table">
-<caption>Table&nbsp;7.1: Examples of descriptive inquiries and their three elements: units, treatment conditions, and outcomes.</caption>
+<p><em>Descriptive</em> inquiries are defined with respect to one single treatment condition. That treatment condition is often the “unmanipulated” condition in which the researcher exposes units to no additional causal agents. Here the goal is not to learn about the summaries of the distributions of outcomes as we observe them. <a href="#tbl-descriptiveinquiries" class="quarto-xref">Table&nbsp;<span>7.1</span></a> (top panel) enumerates some common descriptive inquiries. These inquiries have in common that you do not need any counterfactual quantities in order to define them. The covariance (similarly, the correlation) between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> enters as a descriptive inquiry; so too does the line of best fit for <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span>. For each descriptive inquiry, we list the units, treatment conditions, and outcomes that define them. We also provide <code>R</code> code snippets for each.</p>
+<div id="tbl-descriptiveinquiries" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descriptiveinquiries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7.1: Examples of descriptive inquiries and their three elements: units, treatment conditions, and outcomes.
+</figcaption><div aria-describedby="tbl-descriptiveinquiries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 27%">
 <col style="width: 22%">
@@ -549,10 +591,14 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>Causal inquiries involve a comparison of at least two possible treatment conditions. For example, an inquiry might be the causal effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> for a single unit. In order to infer that causal effect, we would need to know the value of <span class="math inline">\(Y\)</span> in two worlds: one world in which <span class="math inline">\(X\)</span> is set to 1 and one in which <span class="math inline">\(X\)</span> is set to 0. <a href="#tbl-causalinquiries">Table&nbsp;<span>7.2</span></a> (middle panel) enumerates some common causal inquiries. These inquiries vary in the units they refer to. For instance, some are questions about samples (SATEs) and others about populations (PATEs). Inquiries can also be defined for units of a particular covariate class (CATEs). Finally, they may be summaries of more than one potential outcome. For instance, the interaction effect is defined here at the individual level as the effect of one treatment on the effect of another treatment.</p>
-<div id="tbl-causalinquiries" class="anchored">
-<table class="table">
-<caption>Table&nbsp;7.2: Examples of causal inquiries and their three elements: units, treatment conditions, and outcomes.</caption>
+</figure>
+</div>
+<p>Causal inquiries involve a comparison of at least two possible treatment conditions. For example, an inquiry might be the causal effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> for a single unit. In order to infer that causal effect, we would need to know the value of <span class="math inline">\(Y\)</span> in two worlds: one world in which <span class="math inline">\(X\)</span> is set to 1 and one in which <span class="math inline">\(X\)</span> is set to 0. <a href="#tbl-causalinquiries" class="quarto-xref">Table&nbsp;<span>7.2</span></a> (middle panel) enumerates some common causal inquiries. These inquiries vary in the units they refer to. For instance, some are questions about samples (SATEs) and others about populations (PATEs). Inquiries can also be defined for units of a particular covariate class (CATEs). Finally, they may be summaries of more than one potential outcome. For instance, the interaction effect is defined here at the individual level as the effect of one treatment on the effect of another treatment.</p>
+<div id="tbl-causalinquiries" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-causalinquiries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7.2: Examples of causal inquiries and their three elements: units, treatment conditions, and outcomes.
+</figcaption><div aria-describedby="tbl-causalinquiries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 27%">
 <col style="width: 22%">
@@ -600,12 +646,14 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <p>Generations of students have been told to excise words that connote causality from their empirical writing. “Affects” becomes “is associated with” and “impacts” becomes “moves with.” Being careful about causal language is of course very important (it’s really true that correlation does not imply causation!). But this change in language is not usually accompanied by a change in inquiry. Many times we are faced with drawing causal inferences from less than ideal data, but the deficiencies of the data strategy should not lead us too far away from our inferential targets. If the inquiry is a causal inquiry, then although the move from “causes” to “is correlated with” might involve more defensible claims about the data, we still need a strategy to get to an answer to the inquiry.</p>
 </section><section id="summary-functions" class="level3" data-number="7.1.4"><h3 data-number="7.1.4" class="anchored" data-anchor-id="summary-functions">
 <span class="header-section-number">7.1.4</span> Summary functions</h3>
 <p>With the units, treatments, and outcomes specified, the last element of the inquiry is the summary function that is applied to them. For a great many inquiries, this function is the <code>mean</code> function: the ATE, the CATE, the LATE, the SATE, the population mean—these are all averages. These and other inquiries are “decomposable” in the sense that you can think of an average effect for a large group as being the weighted average of a set of average effects of smaller groups.</p>
 <p>However, not all inquiries are of this form. For example, the line of best fit is defined as the covariance of <em>X</em> and <em>Y</em> divided by the variance of <em>X</em>. This inquiry is a complex summary of all the units in the model.</p>
-<p>The inquiry that the regression discontinuity design shoots at is also non-decomposable. In the RDD model (see <a href="../library/observational-causal.html#sec-ch16s5"><span>Section&nbsp;16.5</span></a>), we imagine units with <span class="math inline">\(Y_i(1)\)</span>, <span class="math inline">\(Y_i(0)\)</span>. Each <span class="math inline">\(i\)</span> also has a value on a “running variable”, <span class="math inline">\(X_i\)</span>, and units receive treatment if and only if <span class="math inline">\(X_i&gt;0\)</span>. In this case the “effect at the point of discontinuity” might be written:</p>
+<p>The inquiry that the regression discontinuity design shoots at is also non-decomposable. In the RDD model (see <a href="../library/observational-causal.html#sec-ch16s5" class="quarto-xref"><span>Section 16.5</span></a>), we imagine units with <span class="math inline">\(Y_i(1)\)</span>, <span class="math inline">\(Y_i(0)\)</span>. Each <span class="math inline">\(i\)</span> also has a value on a “running variable”, <span class="math inline">\(X_i\)</span>, and units receive treatment if and only if <span class="math inline">\(X_i&gt;0\)</span>. In this case the “effect at the point of discontinuity” might be written:</p>
 <p><span class="math display">\[E_{i|X_i = 0}(Y_i(Z_i=1) - Y_i(Z_i=0))\]</span></p>
 <p>Curiously, however, there may be no units for whom <span class="math inline">\(X_i\)</span> equals exactly 0 (a candidate who wins exactly 50% of the vote happens, but it is rare), so we cannot easily think of the inquiry as being a summary of individual potential outcomes. Instead, we construct a conditional expectation function for both potential outcome functions with respect to <span class="math inline">\(X_i\)</span> and evaluate the difference between these when <span class="math inline">\(X_i = 0\)</span>. Though not an average of individual effects, this difference is nevertheless a summary of the potential outcomes.</p>
 </section></section><section id="types-of-inquiries" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="types-of-inquiries">
@@ -614,10 +662,12 @@ div.csl-indent {
 <section id="data-dependent-inquiries" class="level3" data-number="7.2.1"><h3 data-number="7.2.1" class="anchored" data-anchor-id="data-dependent-inquiries">
 <span class="header-section-number">7.2.1</span> Data-dependent inquiries</h3>
 <p>Most of the inquiries we have introduced thus far depend on variables in the model, but not on features of the data and answer strategies. However, common inquiries do depend on realizations of the research design.</p>
-<p>The first type depends on realizations of the data <span class="math inline">\(d\)</span>: inquiries about units within a sample depend on which units enter the sample; inquiries about treated units depend on which are treated. For example, the average treatment effect on the treated (ATT) is a data-dependent inquiry in the sense that it is the average effect of treatment among the particular set of units that happened to be randomly assigned to treatment. The value of that <em>particular</em> ATT doesn’t change depending on the data strategy, of course, but <em>which</em> ATT we end up estimating depends on the realization of the data strategy. <a href="#tbl-datadependentinquiry">Table&nbsp;<span>7.3</span></a> describes three data-dependent inquiries.</p>
-<div id="tbl-datadependentinquiry" class="anchored">
-<table class="table">
-<caption>Table&nbsp;7.3: Examples of data-dependent inquiries and their three elements: units, treatment conditions, and outcomes.</caption>
+<p>The first type depends on realizations of the data <span class="math inline">\(d\)</span>: inquiries about units within a sample depend on which units enter the sample; inquiries about treated units depend on which are treated. For example, the average treatment effect on the treated (ATT) is a data-dependent inquiry in the sense that it is the average effect of treatment among the particular set of units that happened to be randomly assigned to treatment. The value of that <em>particular</em> ATT doesn’t change depending on the data strategy, of course, but <em>which</em> ATT we end up estimating depends on the realization of the data strategy. <a href="#tbl-datadependentinquiry" class="quarto-xref">Table&nbsp;<span>7.3</span></a> describes three data-dependent inquiries.</p>
+<div id="tbl-datadependentinquiry" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-datadependentinquiry-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7.3: Examples of data-dependent inquiries and their three elements: units, treatment conditions, and outcomes.
+</figcaption><div aria-describedby="tbl-datadependentinquiry-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 36%">
 <col style="width: 11%">
@@ -657,14 +707,18 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 </section><section id="causal-attribution-inquiries" class="level3" data-number="7.2.2"><h3 data-number="7.2.2" class="anchored" data-anchor-id="causal-attribution-inquiries">
 <span class="header-section-number">7.2.2</span> Causal attribution inquiries</h3>
 <p>A causal attribution inquiry is a different kind of data-dependent inquiry. A causal effect inquiry focuses on the change in an outcome that would be induced by a change in the causal variable, irrespective of the values that the outcome takes in the realized data. By contrast, causal attribution inquiries focus on inquiries that condition on realized outcomes, such as the “the absence of the outcome in the hypothetical absence of the treatment (<span class="math inline">\(Y_i(0) = 0\)</span>) given the actual presence of both (<span class="math inline">\(D_i = Y_i = 1\)</span>)” <span class="citation" data-cites="yamamoto2012understanding">(<a href="../references.html#ref-yamamoto2012understanding" role="doc-biblioref">Yamamoto 2012, 240–41</a>)</span>. In other words, had this feature been different would the outcome have been different? <span class="citation" data-cites="goertz2012tale">Goertz and Mahoney (<a href="../references.html#ref-goertz2012tale" role="doc-biblioref">2012</a>)</span> and others refer to causal attribution inquiries as cause-of-effects questions because they start with an outcome (an “effect”) and seek to validate a hypothesis about its cause.</p>
 <p>The dependence of these inquiries on actual outcomes makes them harder (though not impossible!) to answer with the tools of quantitative science, though they are often of central interest to scientific and policy agendas and have occupied a large number of qualitative studies. Questions like “Was economic crisis necessary for democratization in the Southern Cone of Latin America?” or “Were high levels of foreign investment in combination with soft authoritarianism and export-oriented policies sufficient for the economic miracles in South Korea and Taiwan?” are examples of such inquiries <span class="citation" data-cites="goertz2012tale">(<a href="../references.html#ref-goertz2012tale" role="doc-biblioref">Goertz and Mahoney 2012</a>)</span>. Though they bear a resemblance to causal effect inquiries that focus on observed subsets (such as the average treatment effect on the treated, or ATT)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> it is important not to confuse the two kinds of inquiries.</p>
-<p>While it is increasingly common to explicitly formalize causal effect inquiries, it is less common to formalize causal attribution inquiries. Doing so, however, can provide the specificity required to diagnose a design. <span class="citation" data-cites="pearl1999probabilities">Pearl (<a href="../references.html#ref-pearl1999probabilities" role="doc-biblioref">1999</a>)</span> provides formal definitions for these inquiries using the language of causal necessity and sufficiency, depicted in <a href="#tbl-causalattributioninquiries">Table&nbsp;<span>7.4</span></a>. To put these inquiries in the context of the democratic peace hypothesis (which states that no two democracies will go to war), for example, in a given country dyad-year, <span class="math inline">\(Y_i = 1\)</span> and <span class="math inline">\(D_i = 1\)</span> could represent “Peace” and “Both democracies” and <span class="math inline">\(Y_i = 0\)</span> and <span class="math inline">\(D_i = 0\)</span> could represent “War” and “Not both democracies.”<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Then <span class="math inline">\(\Pr(Y_i(D_i = 0) = 0 \mid D_i = Y_i = 1)\)</span> asks, among peaceful, fully democratic dyads, what is the proportion that would have had wars were they not both democracies—that is, in what proportion of dyad-years was democracy a necessary cause of peace? Similarly, <span class="math inline">\(\Pr(Y_i(D_i = 1)=1 \mid D_i = Y_i = 0)\)</span> asks, among dyads that had a war and at least one non-democracy in a given year, what is the proportion that would have experienced peace if both countries were democracies—in other words, in what proportion of cases would democracy have been sufficient to cause peace? <span class="citation" data-cites="yamamoto2012understanding">Yamamoto (<a href="../references.html#ref-yamamoto2012understanding" role="doc-biblioref">2012</a>)</span> extends on this account to focus on causal attribution inquiries for particular subsets, such as compilers.</p>
-<div id="tbl-causalattributioninquiries" class="anchored">
-<table class="table">
-<caption>Table&nbsp;7.4: Examples of causal attribution inquiries and their three elements: units, treatment conditions, and outcomes.</caption>
+<p>While it is increasingly common to explicitly formalize causal effect inquiries, it is less common to formalize causal attribution inquiries. Doing so, however, can provide the specificity required to diagnose a design. <span class="citation" data-cites="pearl1999probabilities">Pearl (<a href="../references.html#ref-pearl1999probabilities" role="doc-biblioref">1999</a>)</span> provides formal definitions for these inquiries using the language of causal necessity and sufficiency, depicted in <a href="#tbl-causalattributioninquiries" class="quarto-xref">Table&nbsp;<span>7.4</span></a>. To put these inquiries in the context of the democratic peace hypothesis (which states that no two democracies will go to war), for example, in a given country dyad-year, <span class="math inline">\(Y_i = 1\)</span> and <span class="math inline">\(D_i = 1\)</span> could represent “Peace” and “Both democracies” and <span class="math inline">\(Y_i = 0\)</span> and <span class="math inline">\(D_i = 0\)</span> could represent “War” and “Not both democracies.”<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Then <span class="math inline">\(\Pr(Y_i(D_i = 0) = 0  \mid D_i = Y_i = 1)\)</span> asks, among peaceful, fully democratic dyads, what is the proportion that would have had wars were they not both democracies—that is, in what proportion of dyad-years was democracy a necessary cause of peace? Similarly, <span class="math inline">\(\Pr(Y_i(D_i = 1)=1  \mid D_i = Y_i = 0)\)</span> asks, among dyads that had a war and at least one non-democracy in a given year, what is the proportion that would have experienced peace if both countries were democracies—in other words, in what proportion of cases would democracy have been sufficient to cause peace? <span class="citation" data-cites="yamamoto2012understanding">Yamamoto (<a href="../references.html#ref-yamamoto2012understanding" role="doc-biblioref">2012</a>)</span> extends on this account to focus on causal attribution inquiries for particular subsets, such as compilers.</p>
+<div id="tbl-causalattributioninquiries" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-causalattributioninquiries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7.4: Examples of causal attribution inquiries and their three elements: units, treatment conditions, and outcomes.
+</figcaption><div aria-describedby="tbl-causalattributioninquiries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 27%">
 <col style="width: 22%">
@@ -707,6 +761,8 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 </section><section id="complex-counterfactual-inquiries" class="level3" data-number="7.2.3"><h3 data-number="7.2.3" class="anchored" data-anchor-id="complex-counterfactual-inquiries">
 <span class="header-section-number">7.2.3</span> Complex counterfactual inquiries</h3>
 <p>The causal inquiries we have considered thus far have involved comparisons of the counterfactual values an outcome could take, depending on the value of one or more treatment variables. These inquiries are mind-bending in that we have to imagine two counterfactual states at the same time. <em>Complex</em> counterfactual inquiries require more mind bending still.</p>
@@ -727,10 +783,10 @@ div.csl-indent {
 <p>One common approach is to define inferences with respect to a “finite population.” For instance, all US states. You might then sample from this finite population in the data strategy in such a way that you can use the sample to draw inferences about the population. The probability distribution over the exogenous variables simply enumerates the values that these variables take on in the population. Any randomness in the design is generated by the sampling and, perhaps, by assignment procedures, not in the values of the exogenous variables.</p>
 <p>A second, and closely related, approach is to define inferences for a finite <em>sample</em>. This is like population inference when you sample the whole population. In a sense the sample <em>is</em> the population. Finite sample inference is common in research designs that involve random assignment of treatments. The only source of randomness in the finite sample setting is the random assignment itself.</p>
 <p>A third approach is to think in terms of “superpopulations”, in which we imagine that any particular population is just a draw from an infinite superpopulation. In this case, we can conceive of the randomness in the design as being fundamental—every unit is a random draw from the superpopulation.</p>
-<p>Implicitly if you set up a simulation and draw data using some probability density function, you are drawing from a superpopulation. But you get to specify the type of target of inference when you specify the inquiry, as in <a href="#def-ch7num1">Declaration&nbsp;<span>7.1</span></a>.</p>
+<p>Implicitly if you set up a simulation and draw data using some probability density function, you are drawing from a superpopulation. But you get to specify the type of target of inference when you specify the inquiry, as in <a href="#def-ch7num1" class="quarto-xref">Declaration&nbsp;<span>7.1</span></a>.</p>
 <div id="def-ch7num1" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 7.1 </strong></span>Super-population, population, and finite sample design</p>
-<div class="cell" data-file="scripts_declarations/declaration_7.1.R">
+<p><span class="theorem-title"><strong>Declaration 7.1</strong></span> Super-population, population, and finite sample design</p>
+<div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_7.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">20</span>, </span>
@@ -752,10 +808,12 @@ div.csl-indent {
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">draw_estimands</span><span class="op">(</span><span class="va">declaration_7.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-estimands" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-estimands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7.5: Super-population, population, and finite sample inquiries.
+</figcaption><div aria-describedby="tbl-estimands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-estimands" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;7.5: Super-population, population, and finite sample inquiries.</caption>
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">inquiry</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">estimand</th>
@@ -776,8 +834,8 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>Which of these to choose? Researchers sometimes prefer superpopulation inquiries because they describe general processes on substantive grounds, seeing understanding general processes as the primary goal of social scientific interest. Some are skeptical however about speculating about general, unobservable, processes, preferring to make statements about cases that actually exist in the world. They prefer to select populations of substantive importance. Others seeking to avoid engaging in generalization inference prefer to focus on sample quantities. In some cases the statistics are more suited for finite populations: for instance, randomization inference is based on the randomness induced by assignment and not from sampling populations from superpopulations or samples from populations.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Critics worry that keeping the focus on the sample means having inquiries that are determined by the realizations of your data strategy rather than having data strategies developed to answer prespecified inquiries.</p>
@@ -786,7 +844,7 @@ div.csl-indent {
 <p>Inquiries define our targets of inference, stated in terms of a model of the world. We described how inquiries are defined with respect to specific outcomes expressed by specific units under specific conditions, which are summarized with a chosen function. Inquiries can be descriptive or causal, depending on the mix of conditions they depend on. They can be data-dependent or not and decomposable or not. They should be well-defined and they should be answerable. When we lose track of our inquiries, research studies can end up estimating whatever the answer strategy ends up targeting. Researchers should choose their inquiries with intention so that they can select appropriate empirical strategies for them.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-aronow_green_lee_2014" class="csl-entry" role="listitem">
 Aronow, Peter M., Donald P. Green, and Donald K. K. Lee. 2014. <span>“<span>Sharp Bounds On The Variance In Randomized Experiments</span>.”</span> <em>The Annals of Statistics</em> 42 (3): 850–71.
 </div>
@@ -820,7 +878,7 @@ Yamamoto, Teppei. 2012. <span>“Understanding the Past: Statistical Analysis of
 </div>
 </section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
 <ol>
-<li id="fn1"><p>Here, we are referring to an “inquiry model” not a “reference model,” as discussed in <a href="../introduction/what-is-a-research-design.html#sec-ch2s1ss1"><span>Section&nbsp;2.1.1</span></a>. We provide an example of this type of inquiry model in <a href="../library/complex.html#sec-ch19s2"><span>Section&nbsp;19.2</span></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Here, we are referring to an “inquiry model” not a “reference model,” as discussed in <a href="../introduction/what-is-a-research-design.html#sec-ch2s1ss1" class="quarto-xref"><span>Section 2.1.1</span></a>. We provide an example of this type of inquiry model in <a href="../library/complex.html#sec-ch19s2" class="quarto-xref"><span>Section 19.2</span></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Specifically, as <span class="citation" data-cites="yamamoto2012understanding">Yamamoto (<a href="../references.html#ref-yamamoto2012understanding" role="doc-biblioref">2012</a>)</span> points out, the causal attribution inquiry for binary variables can be written <span class="math inline">\(\Pr(Y_i(0) = 0 \mid D_i = Y_i = 1)\)</span>, while the average treatment effect among those successfully treated can be written <span class="math inline">\(E[Y_i(1) - Y_i(0) \mid D_i = Y_i = 1]\)</span>. Given binary outcomes and the additive property of expectations, the ATE among those successfully treated can be written <span class="math inline">\(\Pr(Y_i(1)\mid D_i = Y_i = 1) - \Pr(Y_i(0) \mid D_i = Y_i = 1)\)</span>. The causal attribution inquiry can be written as 1 minus the second term of the ATE among the successfully treated.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Note that we can think of the probability in this statement as implying a population level inquiry—the share with a given feature; or as a representation of a unit level Bayesian <em>answer</em> to the question. See e.g. <span class="citation" data-cites="dawid2022bounding">Dawid, Humphreys, and Musio (<a href="../references.html#ref-dawid2022bounding" role="doc-biblioref">2022</a>)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>For some purposes the statistics are easier for the superpopulation quantities: for instance, the Neyman variance estimate is exact in this case but conservative in the finite population case (for instance <span class="citation" data-cites="aronow_green_lee_2014">Aronow, Green, and Lee (<a href="../references.html#ref-aronow_green_lee_2014" role="doc-biblioref">2014</a>)</span>).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -859,18 +917,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -902,11 +949,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -916,8 +1000,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -929,7 +1022,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -973,6 +1188,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -998,6 +1214,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1057,12 +1299,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../declaration-diagnosis-redesign/specifying-model.html" class="pagination-link">
+      <a href="../declaration-diagnosis-redesign/specifying-model.html" class="pagination-link" aria-label="Specifying the model">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../declaration-diagnosis-redesign/crafting-data-strategy.html" class="pagination-link">
+      <a href="../declaration-diagnosis-redesign/crafting-data-strategy.html" class="pagination-link" aria-label="Crafting a data strategy">
         <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

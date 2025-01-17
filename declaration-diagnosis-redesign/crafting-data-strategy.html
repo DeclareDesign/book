@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design in the Social Sciences - 8&nbsp; Crafting a data strategy</title>
+<title>8&nbsp; Crafting a data strategy – Research Design in the Social Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -52,16 +53,22 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -70,11 +77,18 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style type="text/css" media="print">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MMK8CF9JC0"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
+</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
 </style>
 <script type="text/javascript">
@@ -112,25 +126,50 @@ div.csl-indent {
         createCookie('popupShown', 'yes', 1)
       }
     }
-</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/crafting-data-strategy.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/crafting-data-strategy.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
@@ -156,9 +195,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -191,9 +230,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -258,7 +297,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../library/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design library</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -299,7 +338,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design lifecycle</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -356,7 +395,7 @@ div.csl-indent {
 </li>
     </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
@@ -369,20 +408,20 @@ div.csl-indent {
 <a href="#elements-of-data-strategies" id="toc-elements-of-data-strategies" class="nav-link active" data-scroll-target="#elements-of-data-strategies"><span class="header-section-number">8.1</span> Elements of data strategies</a>
     <ul class="collapse">
 <li><a href="#sampling" id="toc-sampling" class="nav-link" data-scroll-target="#sampling"><span class="header-section-number">8.1.1</span> Sampling</a></li>
-    <li><a href="#sec-ch8s1ss2" id="toc-sec-ch8s1ss2" class="nav-link" data-scroll-target="#sec-ch8s1ss2"><span class="header-section-number">8.1.2</span> Treatment assignment</a></li>
-    <li><a href="#measurement" id="toc-measurement" class="nav-link" data-scroll-target="#measurement"><span class="header-section-number">8.1.3</span> Measurement</a></li>
+    <li><a href="#sec-ch8s1ss2" id="toc-sec-ch8s1ss2" class="nav-link" data-scroll-target="#sec-ch8s1ss2"><span class="header-section-number">9.0.1</span> Treatment assignment</a></li>
+    <li><a href="#measurement" id="toc-measurement" class="nav-link" data-scroll-target="#measurement"><span class="header-section-number">9.0.2</span> Measurement</a></li>
     </ul>
 </li>
     <li>
-<a href="#challenges-to-data-strategies" id="toc-challenges-to-data-strategies" class="nav-link" data-scroll-target="#challenges-to-data-strategies"><span class="header-section-number">8.2</span> Challenges to data strategies</a>
+<a href="#challenges-to-data-strategies" id="toc-challenges-to-data-strategies" class="nav-link" data-scroll-target="#challenges-to-data-strategies"><span class="header-section-number">9.1</span> Challenges to data strategies</a>
     <ul class="collapse">
-<li><a href="#noncompliance" id="toc-noncompliance" class="nav-link" data-scroll-target="#noncompliance"><span class="header-section-number">8.2.1</span> Noncompliance</a></li>
-    <li><a href="#attrition" id="toc-attrition" class="nav-link" data-scroll-target="#attrition"><span class="header-section-number">8.2.2</span> Attrition</a></li>
-    <li><a href="#excludability" id="toc-excludability" class="nav-link" data-scroll-target="#excludability"><span class="header-section-number">8.2.3</span> Excludability</a></li>
-    <li><a href="#interference" id="toc-interference" class="nav-link" data-scroll-target="#interference"><span class="header-section-number">8.2.4</span> Interference</a></li>
+<li><a href="#noncompliance" id="toc-noncompliance" class="nav-link" data-scroll-target="#noncompliance"><span class="header-section-number">9.1.1</span> Noncompliance</a></li>
+    <li><a href="#attrition" id="toc-attrition" class="nav-link" data-scroll-target="#attrition"><span class="header-section-number">9.1.2</span> Attrition</a></li>
+    <li><a href="#excludability" id="toc-excludability" class="nav-link" data-scroll-target="#excludability"><span class="header-section-number">9.1.3</span> Excludability</a></li>
+    <li><a href="#interference" id="toc-interference" class="nav-link" data-scroll-target="#interference"><span class="header-section-number">9.1.4</span> Interference</a></li>
     </ul>
 </li>
-    <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">8.3</span> Summary</a></li>
+    <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">9.2</span> Summary</a></li>
     </ul>
 <ul><li><a class="navlink nav-link" href="https://doi.org/10.7910/DVN/HYVPO5" data-scroll-target="https\://doi.org/10.7910/DVN/HYVPO5">Replication code and data</a></li></ul></nav>
     </div>
@@ -404,7 +443,7 @@ div.csl-indent {
   </div>
 </div>
 
-<header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/crafting-data-strategy.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title"><span id="sec-ch8" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Crafting a data strategy</span></span></h1>
 </div>
 
@@ -418,21 +457,26 @@ div.csl-indent {
   </div>
   
 
+
 </header><p>In order to collect information about the world, researchers must deploy a data strategy. Depending on the design, the data strategy could include decisions about any or all of the following: sampling, treatment assignment, and measurement. Sampling is the procedure for selecting which units will be measured; treatment assignment is the procedure for allocating treatments to sampled units; and measurement is the procedure for turning information about the sampled units into data. These three procedures parallel the three elements of an inquiry: the units, treatment conditions, and outcomes.</p>
-<p>We think about data strategies in response to <a href="../introduction/research-design-principles.html#exm-designholistically">Principle&nbsp;<span>3.1</span></a>: <em>Design holistically</em> – we make data strategy choices to respond to model features.</p>
+<p>We think about data strategies in response to <a href="../introduction/research-design-principles.html#exm-designholistically" class="quarto-xref">Principle&nbsp;<span>3.1</span></a>: <em>Design holistically</em> – we make data strategy choices to respond to model features.</p>
 <p>Sampling choices are used to justify generalization inferences: we want to make general claims, which often implies inferences about units <em>not</em> sampled. For this reason, we need to pay special attention to the procedure by which units are selected into the sample. We might use a random sampling procedure in order to generate a design-based justification for generalizing from samples to populations. Nonrandom sampling procedures are also possible: convenience sampling, respondent-driven sampling, and snowball sampling are examples of data strategies that do not include an explicitly randomized component.</p>
 <p>Assignment choices are used to justify causal inferences: we want to make inferences about the conditions to which units were <em>not</em> assigned. For this reason, experimental design is focused on the assignment of treatments. Should the treatment be randomized? How many treatment conditions should there be? Should we use a simple coin flip to decide who receives treatment, or should we use a more complicated strategy like blocking?</p>
 <p>Measurement choices are used to justify descriptive inferences: we want to make inferences about latent values <em>not</em> observed on the basis of measured values. The tools we use to measure are a critical part of the data strategy. For many social scientific studies, a prominent way we collect information is through surveys. A huge methodological literature on survey administration has been developed to help guide questionnaire development. Bad survey questions yield distorted or noisy responses due to large measurement error. A biased question systematically misses the true latent target it is designed to measure, in which case we say the question has low “validity.” A question is high variance if (hypothetically) we would obtain different answers each time we ask, in which case we say the question has low “reliability.” The concerns about validity and reliability do not disappear once we move out of the survey environment. For example, the information that shows up in an administrative database is itself the result of many human decisions, each of which has the possibility of increasing or decreasing the distance between the measurement and the latent measurement target.</p>
 <p>Strong research design can help address these three inferential challenges, but we can never be sure that our sample generalizes, or that we know what would have happened in a counterfactual state of the world, or what the true latent value of the outcome is (or if it even exists). Researchers have to choose good sampling, treatment assignment, and measurement techniques that, when combined and applied to the world, will produce analysis-ready information.</p>
 <p>More formally, the data strategy, <em>D</em>, is a set of procedures that result in a dataset <span class="math inline">\(d^*\)</span>. It is important to keep these two concepts straight. If you apply data strategy <em>D</em> to the world <span class="math inline">\(m^*\)</span>, it produces a dataset <span class="math inline">\(d^*\)</span>. Similarly, application of <em>D</em> to model <em>m</em> produces <em>d</em>. We say <span class="math inline">\(d^*\)</span> is “the” result of <em>D</em>, since when we apply the data strategy to the world, we only do so once and we obtain the data we obtain. But when we are crafting a data strategy, we have to think about the many datasets that the data strategy <em>could have</em> produced under all the models in <em>M</em>, since we don’t know <span class="math inline">\(m^*\)</span>. Some of the datasets might be really excellent (from the researcher’s perspective). For example, in good datasets, we achieve good covariate balance across the treatment and control groups. Or we might draw a sample whose distribution of observable characteristics looks really similar to the population. But some of the datasets might be worse: because of the vagaries of randomization, the particular realizations of the random assignment or random sampling might be more or less balanced. We do not have to settle for data strategies that might produce weak datasets – we are in control of the procedures we choose. We want to choose a data strategy <em>D</em> that is likely to result in a high-quality dataset <span class="math inline">\(d^*\)</span>.</p>
-<p>In <a href="#fig-ch8num1">Figure&nbsp;<span>8.1</span></a>, we illustrate these three elements of data strategies: sampling (<span class="math inline">\(S\)</span>), treatment assignment (<span class="math inline">\(Z\)</span>), and measurement (<span class="math inline">\(Q\)</span>). These nodes are highlighted by blue boxes to emphasize that they are in the control of the researcher. No arrows go into the <span class="math inline">\(S\)</span>, <span class="math inline">\(Z\)</span>, or <span class="math inline">\(Q\)</span> nodes; they are <em>set</em> by the researcher. In each case, the strategy selected by the researcher affects a corresponding endogenous variable. The sampling procedure causes changes in the endogenous response (<span class="math inline">\(R\)</span>), which represents whether participants provide outcome data, for example responding to survey questions. <span class="math inline">\(R\)</span> is not under the full control the researchers: it is affected by <span class="math inline">\(S\)</span>, the sampling procedure, but also by the idiosyncratic choices of participants who have higher and lower interest and ability to respond and participate in the study (<span class="math inline">\(U\)</span>). Similarly, the endogenous variable treatment <span class="math inline">\(D\)</span> represents whether participants <em>actually</em> receive the treatment, regardless of their assignment <span class="math inline">\(Z\)</span>. <span class="math inline">\(D\)</span> is affected by the treatment assignment procedure (<span class="math inline">\(Z\)</span>) of course. But except in cases when <span class="math inline">\(Z\)</span> fully determines <span class="math inline">\(D\)</span> (no noncompliance), we are concerned that it will be affected by unobserved idiosyncratic features of individuals <span class="math inline">\(U\)</span>. The third researcher node is <span class="math inline">\(Q\)</span>, the measurement procedure. <span class="math inline">\(Q\)</span> affects <span class="math inline">\(Y\)</span>, the observed outcome, measured by the researcher. <span class="math inline">\(Y\)</span> is also affected by a latent variable <span class="math inline">\(Y^*\)</span>, which cannot be directly observed. The measurement procedure provides an imperfect measurement of that latent variable, which is (potentially) affected by treatment <span class="math inline">\(D\)</span> and unobserved heterogeneity <span class="math inline">\(U\)</span>. In the robustness section at the end of the chapter, we explore further variations of this DAG that incorporate threats to inference from noncompliance, attrition, excludability violations, and interference.</p>
-<div id="fig-ch8num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-8-1.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;8.1: Directed acyclic graph illustrating three elements of a data strategy: sampling, assignment, and measurement.</figcaption></figure>
+<p>In <a href="#fig-ch8num1" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>, we illustrate these three elements of data strategies: sampling (<span class="math inline">\(S\)</span>), treatment assignment (<span class="math inline">\(Z\)</span>), and measurement (<span class="math inline">\(Q\)</span>). These nodes are highlighted by blue boxes to emphasize that they are in the control of the researcher. No arrows go into the <span class="math inline">\(S\)</span>, <span class="math inline">\(Z\)</span>, or <span class="math inline">\(Q\)</span> nodes; they are <em>set</em> by the researcher. In each case, the strategy selected by the researcher affects a corresponding endogenous variable. The sampling procedure causes changes in the endogenous response (<span class="math inline">\(R\)</span>), which represents whether participants provide outcome data, for example responding to survey questions. <span class="math inline">\(R\)</span> is not under the full control the researchers: it is affected by <span class="math inline">\(S\)</span>, the sampling procedure, but also by the idiosyncratic choices of participants who have higher and lower interest and ability to respond and participate in the study (<span class="math inline">\(U\)</span>). Similarly, the endogenous variable treatment <span class="math inline">\(D\)</span> represents whether participants <em>actually</em> receive the treatment, regardless of their assignment <span class="math inline">\(Z\)</span>. <span class="math inline">\(D\)</span> is affected by the treatment assignment procedure (<span class="math inline">\(Z\)</span>) of course. But except in cases when <span class="math inline">\(Z\)</span> fully determines <span class="math inline">\(D\)</span> (no noncompliance), we are concerned that it will be affected by unobserved idiosyncratic features of individuals <span class="math inline">\(U\)</span>. The third researcher node is <span class="math inline">\(Q\)</span>, the measurement procedure. <span class="math inline">\(Q\)</span> affects <span class="math inline">\(Y\)</span>, the observed outcome, measured by the researcher. <span class="math inline">\(Y\)</span> is also affected by a latent variable <span class="math inline">\(Y^*\)</span>, which cannot be directly observed. The measurement procedure provides an imperfect measurement of that latent variable, which is (potentially) affected by treatment <span class="math inline">\(D\)</span> and unobserved heterogeneity <span class="math inline">\(U\)</span>. In the robustness section at the end of the chapter, we explore further variations of this DAG that incorporate threats to inference from noncompliance, attrition, excludability violations, and interference.</p>
+<div id="fig-ch8num1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-8-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Directed acyclic graph illustrating three elements of a data strategy: sampling, assignment, and measurement.
+</figcaption></figure>
 </div>
 <section id="elements-of-data-strategies" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="elements-of-data-strategies">
 <span class="header-section-number">8.1</span> Elements of data strategies</h2>
-<p>In <a href="defining-inquiry.html"><span>Chapter&nbsp;7</span></a>, an inquiry <span class="math inline">\(I\)</span> was characterized by a set of outcomes, a set of treatment conditions, and a set of units, as well as a function that summarizes those outcomes, assessed at those conditions, over those units. The three elements of the data strategy <span class="math inline">\(D\)</span> parallel the first three elements of inquiries: we sample units, assign treatment conditions, and measure outcomes. We next describe menus of approaches that you might use for each of these three parts of your data strategy.</p>
+<p>In <a href="defining-inquiry.html" class="quarto-xref"><span>Chapter 7</span></a>, an inquiry <span class="math inline">\(I\)</span> was characterized by a set of outcomes, a set of treatment conditions, and a set of units, as well as a function that summarizes those outcomes, assessed at those conditions, over those units. The three elements of the data strategy <span class="math inline">\(D\)</span> parallel the first three elements of inquiries: we sample units, assign treatment conditions, and measure outcomes. We next describe menus of approaches that you might use for each of these three parts of your data strategy.</p>
 <section id="sampling" class="level3" data-number="8.1.1"><h3 data-number="8.1.1" class="anchored" data-anchor-id="sampling">
 <span class="header-section-number">8.1.1</span> Sampling</h3>
 <p>Sampling is the process by which units are selected from the population to be studied. The starting point for every sampling strategy should be to consider the units defined in the inquiry. In some cases, all the units to whom the inquiry apply are included in the study, but in others, we consider only a subset.</p>
@@ -441,67 +485,75 @@ div.csl-indent {
 <section id="randomized-sampling-designs" class="level4" data-number="8.1.1.1"><h4 data-number="8.1.1.1" class="anchored" data-anchor-id="randomized-sampling-designs">
 <span class="header-section-number">8.1.1.1</span> Randomized sampling designs</h4>
 <p>Owing to the natural appeal of design-based inference, we start off with randomized designs before proceeding to nonrandomized designs. Randomized sampling designs typically begin with a list of all units in a population, then choose a subset to sample using a random process. These random processes can be simple (every unit has an equal probability of inclusion) or complex (first we select regions at random, then villages at random within selected regions, then households within selected villages, then individuals within selected households).</p>
-<p><a href="#tbl-samplingtypes">Table&nbsp;<span>8.1</span></a> collects all of these kinds of random sampling together and offers examples of functions in the <code>randomizr</code> package you can use to conduct them. The most basic form is simple random sampling. Under simple random sampling, all units in the population have the same probability <span class="math inline">\(p\)</span> of being included in the sample. It is sometimes called coin flip random sampling because it is as though for each unit, we flip a weighted coin that has probability <span class="math inline">\(p\)</span> of landing heads up. While quite straightforward, a drawback of simple random sampling is that we can’t be sure of the number of sampled units in advance. Although, in expectation, we’ll sample <span class="math inline">\(N*p\)</span> units, in practice, sometimes slightly more units will be sampled and sometimes fewer.</p>
-<div id="tbl-samplingtypes" class="anchored">
-<table class="table">
-<caption>Table&nbsp;8.1: Kinds of random sampling</caption>
+<p><a href="#tbl-samplingtypes" class="quarto-xref">Table&nbsp;<span>9.1</span></a> collects all of these kinds of random sampling together and offers examples of functions in the <code>randomizr</code> package you can use to conduct them. The most basic form is simple random sampling. Under simple random sampling, all units in the population have the same probability <span class="math inline">\(p\)</span> of being included in the sample. It is sometimes called coin flip random sampling because it is as though for each unit, we flip a weighted coin that has probability <span class="math inline">\(p\)</span> of landing heads up. While quite straightforward, a drawback of simple random sampling is that we can’t be sure of the number of sampled units in advance. Although, in expectation, we’ll sample <span class="math inline">\(N*p\)</span> units, in practice, sometimes slightly more units will be sampled and sometimes fewer.</p>
+<div id="tbl-samplingtypes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-samplingtypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.1: Kinds of random sampling
+</figcaption><div aria-describedby="tbl-samplingtypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 18%">
-<col style="width: 81%">
+<col style="width: 79%">
+<col style="width: 1%">
 </colgroup>
-<thead><tr class="header">
-<th>Design</th>
-<th>Description and randomizr R code</th>
-</tr></thead>
 <tbody>
 <tr class="odd">
-<td>Simple random sampling</td>
-<td>
-<p>“Coin flip” or Bernoulli random sampling. All units have the same inclusion probability p</p>
-<pre><code>simple_rs(N = 100, p = 0.25)</code></pre>
+<td rowspan="2">
+<h1 id="design" data-number="9">
+<span class="header-section-number">9</span> Design</h1>
+<p>Simple random sampling</p>
 </td>
+<td colspan="2" rowspan="2">Description and randomizr R code | ================================================================================================================================+ “Coin flip” or Bernoulli random sampling. All units have the same inclusion probability p | | <code>|  simple_rs(N = 100, prob = 0.25)</code> |</td>
 </tr>
-<tr class="even">
+<tr class="even"></tr>
+<tr class="odd">
 <td>Complete random sampling</td>
 <td>
 <p>Exactly n of N units are sampled, and all units have the same inclusion probability n/N</p>
-<pre><code>simple_rs(N = 100, p = 0.25)</code></pre>
+<pre><code>complete_rs(N = 100, n = 25)</code></pre>
 </td>
+<td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Stratified random sampling</td>
 <td>
 <p>Complete random sampling within pre-defined strata. Units within the same strata have the same inclusion probability n_s / N_s</p>
 <pre><code>strata_rs(strata = regions)</code></pre>
 </td>
+<td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Cluster random sampling</td>
 <td>
 <p>Whole groups of units are brought into the sample together.</p>
 <pre><code>cluster_rs(clusters = households)</code></pre>
 </td>
+<td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Stratified cluster sampling</td>
 <td>
 <p>Cluster random sampling within strata</p>
 <pre><code>strata_and_cluster_rs(strata = regions,clusters = villages)</code></pre>
 </td>
+<td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Multi-stage random sampling</td>
 <td>
 <p>First clusters, then units within clusters</p>
 <pre><code>cluster_rs(clusters = villages)
 strata_rs(strata = villages)</code></pre>
 </td>
+<td></td>
 </tr>
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <p>Complete random sampling addresses this problem. Under complete random sampling, exactly <span class="math inline">\(n\)</span> of <span class="math inline">\(N\)</span> units are sampled. Each unit still has an inclusion probability of <span class="math inline">\(p = n/N\)</span>, but in contrast to simple random sampling, we are guaranteed that the final sample will be of size <span class="math inline">\(n\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Complete random sampling represents an improvement over simple random sampling because it rules out samples in which more or fewer than <span class="math inline">\(N*p\)</span> units are sampled. One circumstance in which we might nevertheless go with simple random sampling is when the size of the population is not known in advance, and sampling choices may have to be made “on the fly.”</p>
-<p>Complete random sampling solves the problem of fixing the total number of sampled units, but it doesn’t address the problem that the total number of units with particular characteristics will not be fixed. Imagine a population with <span class="math inline">\(N_{y}\)</span> young people and <span class="math inline">\(N_{o}\)</span> old people. If we sample exactly <span class="math inline">\(n\)</span> from the population <span class="math inline">\(N_{y} + N_{o}\)</span>, the number of sampled young people (<span class="math inline">\(n_y\)</span>) and sampled old people (<span class="math inline">\(n_{o}\)</span>) will bounce around from sample to sample. We can solve this problem by conducting complete random sampling <em>within</em> each group of units. This procedure goes by the name stratified random sampling, since the sampling is conducted separately within the strata of units.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> In our example, our strata were formed by a dichotomous grouping of people into “young” and “old” categories, but in general, the sampling strata can be defined by any information we have about units before they are sampled. Stratification offers at least three major benefits. First, we defend against sampling surprisingly too few units in some stratum by “bad luck.” Second, stratification tends to produce lower variance estimates of many estimands. Finally, stratification allows researchers to “oversample” subgroups of particular interest (see <a href="../library/experimental-causal.html#sec-ch18s4"><span>Section&nbsp;18.4</span></a>).</p>
+<p>Complete random sampling solves the problem of fixing the total number of sampled units, but it doesn’t address the problem that the total number of units with particular characteristics will not be fixed. Imagine a population with <span class="math inline">\(N_{y}\)</span> young people and <span class="math inline">\(N_{o}\)</span> old people. If we sample exactly <span class="math inline">\(n\)</span> from the population <span class="math inline">\(N_{y} + N_{o}\)</span>, the number of sampled young people (<span class="math inline">\(n_y\)</span>) and sampled old people (<span class="math inline">\(n_{o}\)</span>) will bounce around from sample to sample. We can solve this problem by conducting complete random sampling <em>within</em> each group of units. This procedure goes by the name stratified random sampling, since the sampling is conducted separately within the strata of units.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> In our example, our strata were formed by a dichotomous grouping of people into “young” and “old” categories, but in general, the sampling strata can be defined by any information we have about units before they are sampled. Stratification offers at least three major benefits. First, we defend against sampling surprisingly too few units in some stratum by “bad luck.” Second, stratification tends to produce lower variance estimates of many estimands. Finally, stratification allows researchers to “oversample” subgroups of particular interest (see <a href="../library/experimental-causal.html#sec-ch18s4" class="quarto-xref"><span>Section 18.4</span></a>).</p>
 <p>Stratified sampling should not be confused with cluster sampling. Stratified sampling means that a fixed number of units from a particular group are drawn into the sample. Cluster sampling means that units from a particular group are brought into the sample <em>together</em>. For example, if we cluster sample households, we interview all individuals living in a sampled household. Clustering introduces dependence in the sampling procedure – if one member of the household is sampled, the other members are also always sampled. Relative to a complete random sample of the same size, cluster samples tend to produce higher variance estimates. Just as with individual sampling designs, cluster sampling comes in simple, complete, and stratified varieties with parallel logics and motivations.</p>
 <p>Lastly, we turn to multi-stage random sampling, in which we conduct random sampling at multiple levels of a hierarchically structured population. For example, we might first sample regions, then villages within regions, then households within villages, then individuals within households. Each of those sampling steps might be stratified or clustered depending on the researcher’s goals. The purpose of a multi-stage approach is typically to balance the logistical difficulties of visiting many geographic areas with the relative ease of collecting additional data once there.</p>
 <!-- # Groups:   unit [3] -->
@@ -516,27 +568,35 @@ strata_rs(strata = villages)</code></pre>
 <!-- 7 Multistage Simple           64                  13 -->
 <!-- 8 Multistage Complete         64                  16 -->
 <!-- 9 Multistage Stratified       64                  16 -->
-<p><a href="#fig-ch8num2">Figure&nbsp;<span>8.2</span></a> gives a graphical interpretation of each of these kinds of random sampling. Here, we imagine a population of 64 units with two levels of hierarchy. For concreteness, we can imagine that the units are individuals nested within 16 households of four people each and the 16 households are nested within four villages of four households each. Starting at the top left, we have simple random sampling at the individual level. The inclusion probability was set to 0.5, so on average, we ought to sample 32 people, but in this particular draw, we actually sampled only 29. Complete random sampling (top center), fixes this problem, so exactly 32 people are sampled – but these 32 are unevenly spread across the four villages. This is addressed with stratified sampling. In the top right, we sample exactly eight people at random from each village of 16 total people.</p>
+<p><a href="#fig-ch8num2" class="quarto-xref">Figure&nbsp;<span>9.1</span></a> gives a graphical interpretation of each of these kinds of random sampling. Here, we imagine a population of 64 units with two levels of hierarchy. For concreteness, we can imagine that the units are individuals nested within 16 households of four people each and the 16 households are nested within four villages of four households each. Starting at the top left, we have simple random sampling at the individual level. The inclusion probability was set to 0.5, so on average, we ought to sample 32 people, but in this particular draw, we actually sampled only 29. Complete random sampling (top center), fixes this problem, so exactly 32 people are sampled – but these 32 are unevenly spread across the four villages. This is addressed with stratified sampling. In the top right, we sample exactly eight people at random from each village of 16 total people.</p>
 <p>Moving down to the middle row of the figure, we have three approaches to cluster random sampling. Under simple random sampling at the cluster level, each cluster has the same probability <span class="math inline">\(p\)</span> of inclusion in the sample, so on average we will sample eight clusters. This time, we only sampled seven. This problem can again be fixed with complete random sampling (center facet), but again we have an uneven distribution across villages. Stratified cluster sampling ensures that exactly two households from each village are sampled.</p>
 <p>The bottom row of the figure illustrates some approaches to multistage sampling. In the bottom left panel, we conduct a simple random sample of individuals in each sampled cluster. In the bottom center, we draw a complete random sample of individuals in each sampled household. And in the bottom right, we stratify on an individual-level characteristic – we always draw one individual from each row of the household (substantively, we could imagine that “row” could refer to the age of the household members). This doubly stratified multistage random sampling procedure ensures that we sample two households from each village, and within those households, one older member and one younger member.</p>
-<div id="fig-ch8num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-8-2.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;8.2: Nine kinds of random sampling. In the first row individuals are the sampling units, in the second row clusters are sampled, in the third clusters are sampled and then individuals within these clusters are sampled. In the first column units are sampled independently, in the second units are sampled to hit a target, in the third units are sampled to hit targets within strata.</figcaption></figure>
+<div id="fig-ch8num2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-8-2.svg" class="img-fluid figure-img">
 </div>
-</section><section id="nonrandomized-sampling-designs" class="level4" data-number="8.1.1.2"><h4 data-number="8.1.1.2" class="anchored" data-anchor-id="nonrandomized-sampling-designs">
-<span class="header-section-number">8.1.1.2</span> Nonrandomized sampling designs</h4>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Nine kinds of random sampling. In the first row individuals are the sampling units, in the second row clusters are sampled, in the third clusters are sampled and then individuals within these clusters are sampled. In the first column units are sampled independently, in the second units are sampled to hit a target, in the third units are sampled to hit targets within strata.
+</figcaption></figure>
+</div>
+</section><section id="nonrandomized-sampling-designs" class="level4" data-number="9.0.0.1"><h4 data-number="9.0.0.1" class="anchored" data-anchor-id="nonrandomized-sampling-designs">
+<span class="header-section-number">9.0.0.1</span> Nonrandomized sampling designs</h4>
 <p>Because nonrandomized sampling procedures are defined by what they don’t do – they don’t use randomization – the term encompasses a hugely varied set of procedures. We’ll consider just a few common ones, since the idiosyncrasies of each nonrandomized approach are hard to systematize.</p>
 <p>Convenience sampling refers to the practice of gathering units from the population in an inexpensive way. Convenience sampling might be a good choice when generalizing to an explicit population is not a main goal of the design – for example, when a sample average treatment effect is a theoretically important inquiry. For many decades, social science undergraduates were the most abundant data source available to academics and many important theoretical claims have been established on the basis of experiments conducted with such samples. In recent years, however, online convenience samples like Mechanical Turk, Prolific, or Lucid have mostly supplanted undergraduates as the convenience sample of choice in some disciplines. Convenience sampling may lead to badly biased estimates of population quantities. For example, cable news shows often conduct viewer polls that should not be taken at all seriously. While such polls might promote viewer loyalty (and so might be worth doing from the cable executives’ perspective), they do not provide credible evidence about what the population at large thinks or believes.</p>
 <p>Many types of qualitative and quantitative research involve convenience sampling. Archival research often involves the “convenience” sample of documents on a certain topic that exist in an archive. The question of how these documents differ from those that would be in a different archive, or how the documents available in archives differ from those that do not ever make it into the archive, importantly shapes what we can learn from them. With the decline of telephone survey response rates, researchers can no longer rely on random digit dialing to obtain a representative sample of people in many countries, and instead must rely on convenience samples from the internet or panels who agree to have their phone numbers in a list. Reweighting techniques in the answer strategy can, in some cases, help recover estimates for the population as a whole if a credible model of the unknown sampling process can be agreed upon.</p>
 <p>Next, we consider purposive sampling. Purposive is a catch-all term for rule-based sampling strategies that do not involve random draws, but also are not purely based on convenience and cost. A common example is quota sampling. Sampling purely based on convenience often means we will end up with many units of one type but very few of another type. Quota sampling addresses the problem by continuing to search for subjects until target counts (quotas) of each kind of subject are found. Loosely speaking, quota sampling is to convenience sampling what stratified random sampling is to complete random sampling: it fixes the problem that not enough (or too many) subjects of particular types are sampled by employing specific quotas. Importantly, however, we have no guarantee that the sampled units <em>within</em> a type are representative of that type overall. Quota samples remain within-stratum convenience samples.</p>
 <p>A second common form of purposive sampling is respondent-driven sampling (RDS), which is used to sample from hard-to-reach populations such as HIV-positive needle users. RDS methods often begin with a convenience sample and then systematically obtain contacts for other units who share the same characteristic in order the build a large sample. The hope is that as you move out from the initial sample the new subjects become increasingly representative of the population of interest (<span class="citation" data-cites="heckathorn1997">Heckathorn (<a href="../references.html#ref-heckathorn1997" role="doc-biblioref">1997</a>)</span>).</p>
-<p>Each of these three nonrandom sampling procedures – convenience, quota, and respondent-driven – is illustrated in <a href="#fig-ch8num3">Figure&nbsp;<span>8.3</span></a>. Imagining that village A is easier to reach, we could obtain a convenience sample by contacting everyone we can reach in village A before moving on to village B. This process doesn’t yield good coverage across villages. For that, we can turn to quota sampling scheme in which we talk to the five people who are easiest to reach in each of the four villages. Finally, if we conduct a respondent-driven sample, we select a seed that person recruits their four closest friends (who may or may not reside in the same village), who in turn recruit from their friends, and so on.</p>
-<div id="fig-ch8num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-8-3.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;8.3: Three forms of non-random sampling.</figcaption></figure>
+<p>Each of these three nonrandom sampling procedures – convenience, quota, and respondent-driven – is illustrated in <a href="#fig-ch8num3" class="quarto-xref">Figure&nbsp;<span>9.2</span></a>. Imagining that village A is easier to reach, we could obtain a convenience sample by contacting everyone we can reach in village A before moving on to village B. This process doesn’t yield good coverage across villages. For that, we can turn to quota sampling scheme in which we talk to the five people who are easiest to reach in each of the four villages. Finally, if we conduct a respondent-driven sample, we select a seed that person recruits their four closest friends (who may or may not reside in the same village), who in turn recruit from their friends, and so on.</p>
+<div id="fig-ch8num3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-8-3.svg" class="img-fluid figure-img">
 </div>
-</section><section id="sampling-designs-for-qualitative-research" class="level4" data-number="8.1.1.3"><h4 data-number="8.1.1.3" class="anchored" data-anchor-id="sampling-designs-for-qualitative-research">
-<span class="header-section-number">8.1.1.3</span> Sampling designs for qualitative research</h4>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.2: Three forms of non-random sampling.
+</figcaption></figure>
+</div>
+</section><section id="sampling-designs-for-qualitative-research" class="level4" data-number="9.0.0.2"><h4 data-number="9.0.0.2" class="anchored" data-anchor-id="sampling-designs-for-qualitative-research">
+<span class="header-section-number">9.0.0.2</span> Sampling designs for qualitative research</h4>
 <p>Another term for sampling is case selection. In case study research, whether qualitative or quantitative, the way we select the (typically small) set of cases is of great importance, and considerable attention has been paid to developing case selection methods.</p>
 <p>Advice for selecting cases ranges widely, with many seeming disagreements across scholars (see, for instance, the symposium in <span class="citation" data-cites="collier2008symposium">Collier et al. (<a href="../references.html#ref-collier2008symposium" role="doc-biblioref">2008</a>)</span>). We describe the major strategies used below and highlight some of the goals and assumptions motivating them. The most general advice, however, is that there are likely situations and rationales that could justify any of these strategies. But whether one or the other strategy is right for the problem you face most likely depends on the three other components of your design: what your model set is, what your inquiry is, and what your answer strategy is. Conversely, it is very difficult to assess whether one approach is more appropriate than another without knowing about these other parts of a design because it is hard to tell whether a case will be useful without knowing what you plan to do with it. In short, the case selection decision is one that is usefully made, and justified, by diagnosis.</p>
 <p><span class="citation" data-cites="geddes2003paradigms">Geddes (<a href="../references.html#ref-geddes2003paradigms" role="doc-biblioref">2003</a>)</span> warned that “the cases you choose affect the answers you get.” This warning emphasizes the importance of case selection. If we select cases in order to arrive at a particular answer, then the research design doesn’t provide good evidence in favor of the answer.</p>
@@ -545,23 +605,25 @@ strata_rs(strata = villages)</code></pre>
 <p><strong>Other purposive strategies.</strong> <span class="citation" data-cites="lieberman2005nested">Lieberman (<a href="../references.html#ref-lieberman2005nested" role="doc-biblioref">2005</a>)</span> proposes using the predicted values from an initial cross-case regression model in order to select cases for in-depth analysis. Exactly how to select, however, depends on the inquiry and answer strategy. When the inquiry is focused on uncovering the same causal relationship sought in the regression analysis, <span class="citation" data-cites="lieberman2005nested">Lieberman (<a href="../references.html#ref-lieberman2005nested" role="doc-biblioref">2005</a>)</span> suggests selecting cases that are relatively well predicted and that maximize variation on the causal variable. He points to <span class="citation" data-cites="Martin1992">Martin (<a href="../references.html#ref-Martin1992" role="doc-biblioref">1992</a>)</span> and <span class="citation" data-cites="Swank2002">Swank (<a href="../references.html#ref-Swank2002" role="doc-biblioref">2002</a>)</span> as examples of designs employing this strategy. However, <span class="citation" data-cites="lieberman2005nested">Lieberman (<a href="../references.html#ref-lieberman2005nested" role="doc-biblioref">2005</a>)</span> advocates a different case selection strategy when the goal is to expand upon the theory initially tested in the regression analysis. In that instance, he recommends choosing cases lying far from the regression line, which are not well predicted and may therefore lead to insights about what alternative considerations were left out of the initial regression.</p>
 <p><span class="citation" data-cites="SeawrightGerring2008">Seawright and Gerring (<a href="../references.html#ref-SeawrightGerring2008" role="doc-biblioref">2008</a>)</span> use the regression line analogy to describe seven different sampling strategies tailored to suit different inquiries.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> These include “typical cases” that are representative of the cross-case relationship and can be chosen in order to explore and validate mediating mechanisms. If the researcher’s model implies union membership increases welfare spending in democracies through its effects on negotiations with the government, for example, then the researcher might look for evidence of such processes in the cases well predicted by the theory. Diverse cases maximize variation on both <span class="math inline">\(X\)</span> <em>and</em> <span class="math inline">\(Y\)</span>, while extreme cases are located at a maximal distance from other cases on just one dimension—in our example, the researcher chooses the two cases with the highest degree of union strength. While diverse and extreme cases might lie on the regression line, deviant cases are defined by their distance from it. Such cases call for new explanations to account for outcomes. Influential cases are those whose exclusion would most noticeably change the imaginary regression line (i.e., those with the highest leverage in a regression).</p>
 <p><strong>Mills methods.</strong> Two more approaches correspond to “methods of difference” and “methods of similarity” <span class="citation" data-cites="mill1884system">(<a href="../references.html#ref-mill1884system" role="doc-biblioref">Mill 1869</a>)</span>. The method of difference approach selects a set of cases that are similar in a set of pretreatment variables, but nevertheless differ in <span class="math inline">\(Y\)</span>. This gives an opportunity to search for a cause other than those held constant that could explain the variation. The method of similarity approach selects a set of cases that have similar outcomes and discounts causes that vary across these cases and focuses on potential causes that do not. If one characteristic covaries with the outcome, it becomes a candidate for the cause. For example, <span class="citation" data-cites="skocpol1979states">Skocpol (<a href="../references.html#ref-skocpol1979states" role="doc-biblioref">1979</a>)</span> compares historical periods in France, Russia, the United Kingdom, and Germany that look very similar in many regards. The first two, however, had social revolutions, while the second two did not. The presence of agrarian institutions that provided a degree of political autonomy to the peasants in France and Russia and their absence in the UK and Germany then becomes a possible clue to understanding the underlying causal structure of social revolutions. By contrast, the method of agreement involves examining cases that share the same outcome but diverge on other characteristics. Any characteristics that are <em>common</em> to the cases then become candidates for causal attribution. These “methods” are inferential rules given characteristics of cases.</p>
-<p>These methods make sense for identifying possible causes within cases. But they are a dangerous guide to case selection if you want to use covariation to assess the effect of a putative cause, and you select on the basis of both causes and outcomes. Simply put, if we <em>select</em> two cases because they differ on the outcome but agree on all but one (observable) characteristic and then apply the method of difference to conclude that the different factor made the difference, then we have effectively <em>selected</em> the answer. More generally, if the information used to make an inference is already available prior to data gathering, then there is nothing to be gained from the data gathering.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Following <a href="../introduction/research-design-principles.html#exm-designholistically">Principle&nbsp;<span>3.1</span></a>: Design holistically will point to the errors of the strategy.</p>
+<p>These methods make sense for identifying possible causes within cases. But they are a dangerous guide to case selection if you want to use covariation to assess the effect of a putative cause, and you select on the basis of both causes and outcomes. Simply put, if we <em>select</em> two cases because they differ on the outcome but agree on all but one (observable) characteristic and then apply the method of difference to conclude that the different factor made the difference, then we have effectively <em>selected</em> the answer. More generally, if the information used to make an inference is already available prior to data gathering, then there is nothing to be gained from the data gathering.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Following <a href="../introduction/research-design-principles.html#exm-designholistically" class="quarto-xref">Principle&nbsp;<span>3.1</span></a>: Design holistically will point to the errors of the strategy.</p>
 <p><span class="citation" data-cites="herron2016careful">Herron and Quinn (<a href="../references.html#ref-herron2016careful" role="doc-biblioref">2016</a>)</span> used Monte Carlo simulations to study how well these strategies perform for the specific question of providing leverage on average causal effects. The inquiry is the average treatment effect in the population, and the answer strategy involves, perhaps optimistically, perfectly observing the selected cases’ causal types. With these simplifying assumptions, they uncover a clear hierarchy and set of prescriptions: extreme and deviant case selection fare much worse than the other methods in terms of the three diagnosands considered (root-mean-squared error, variance, and bias of the mean of the posterior distribution). By contrast, influential case selection outperforms the other strategies, followed closely by diverse and simple random sampling. As the authors acknowledge, however, this hierarchy might look very different if the inquiry aimed at a different, exploratory quantity (such as discovering the number of causal types that exist).</p>
 <p>Other advice focuses less on the values of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and more on the scope for learning within the case. <span class="citation" data-cites="humphreys2015mixing">Humphreys and Jacobs (<a href="../references.html#ref-humphreys2015mixing" role="doc-biblioref">2015</a>)</span> provide simulations of a process tracing procedure that highlight the importance of “probative value” for case selection. The point is that there is rarely a case selection strategy that fits all problems equally well. The best strategy is the one that optimizes a particular diagnosand given stipulations about the inquiry, the model, and the answer strategy. If you can justify those stipulations and the importance of the diagnosand, then defending the choice of sampling strategy is straightforward.</p>
 <p>Finally, <span class="citation" data-cites="levy2008case">Levy (<a href="../references.html#ref-levy2008case" role="doc-biblioref">2008</a>)</span> clarifies the logic behind “most likely” and “least likely” case selection strategies – sometimes called “crucial case” designs. The idea here is that we may have beliefs over the heterogeneity of causal effects over cases but uncertainty about the level. If we learn that a causal effect is indeed in operation in a least likely case, we update on our beliefs about it operating in other cases. This is “Sinatra inference” <span class="citation" data-cites="levy2008case">(<a href="../references.html#ref-levy2008case" role="doc-biblioref">Levy 2008</a>)</span>: “if I can make it [in New York], I’ll make it anywhere.” Conversely the most likely case is based on the idea that if I <em>can’t</em> make it in New York then I can’t make it anywhere! Both logics presuppose an answer strategy that can reliably impute counterfactual outcomes.</p>
-</section><section id="choosing-among-sampling-designs" class="level4" data-number="8.1.1.4"><h4 data-number="8.1.1.4" class="anchored" data-anchor-id="choosing-among-sampling-designs">
-<span class="header-section-number">8.1.1.4</span> Choosing among sampling designs</h4>
+</section><section id="choosing-among-sampling-designs" class="level4" data-number="9.0.0.3"><h4 data-number="9.0.0.3" class="anchored" data-anchor-id="choosing-among-sampling-designs">
+<span class="header-section-number">9.0.0.3</span> Choosing among sampling designs</h4>
 <p>The choice of sampling strategy depends on features of the model and the inquiry, and different sampling strategies can be compared in terms of bias, power, and RMSE in design diagnosis. The model defines the population of units we want to make inferences about, and the sampling frame of the sampling strategy should match that as much as possible. The model also points us to important subgroups that we may wish to stratify on, depending on the variability within those subgroups. Whether we select convenience, random, or purposive sampling depends on our budget and logistical constraints as well as the efficiency (power or RMSE) of the design. If there is little bias from convenience sampling, we will often want to select it for cost reasons. If we cannot obtain a convenience sample that has the right composition, we may choose a purposive method that ensures we do. The choice between simple and stratified sampling comes down to the inquiry and to a diagnosis of the RMSE. When the inquiry involves a comparison of subgroups, we will often select stratified sampling. In either, a diagnosis of alternative designs in terms of power or RMSE will guide selection.</p>
-</section></section><section id="sec-ch8s1ss2" class="level3" data-number="8.1.2"><h3 data-number="8.1.2" class="anchored" data-anchor-id="sec-ch8s1ss2">
-<span class="header-section-number">8.1.2</span> Treatment assignment</h3>
+</section></section><section id="sec-ch8s1ss2" class="level3" data-number="9.0.1"><h3 data-number="9.0.1" class="anchored" data-anchor-id="sec-ch8s1ss2">
+<span class="header-section-number">9.0.1</span> Treatment assignment</h3>
 <p>In many studies, researchers intervene in the world to <strong>set</strong> the level of the causal variable of interest. The procedures used to assign units to treatment are tightly analogous to the procedures explored in the previous section on sampling. Like sampling, assignment procedures fall into two classes, randomized and nonrandomized.</p>
-<section id="two-arm-trials" class="level4" data-number="8.1.2.1"><h4 data-number="8.1.2.1" class="anchored" data-anchor-id="two-arm-trials">
-<span class="header-section-number">8.1.2.1</span> Two arm trials</h4>
+<section id="two-arm-trials" class="level4" data-number="9.0.1.1"><h4 data-number="9.0.1.1" class="anchored" data-anchor-id="two-arm-trials">
+<span class="header-section-number">9.0.1.1</span> Two arm trials</h4>
 <p>The analogy between sampling and assignment runs deep. All of the sampling designs discussed in the previous section have directly equivalent assignment designs. Simple random sampling is analogous to Bernoulli random assignment, stratified random sampling is analogous to blocked random assignment, and so on. Many of the same design trade-offs hold as well: just like cluster sampling generates higher variance estimates than individual sampling, clustered assignment generates higher variance estimates than individual assignment. While we usually think of randomized assignment designs only, nonrandomized designs in which the researcher applies treatments also occur. For example, researchers sometimes treat a convenience sample, then search out a different convenience sample to serve as a control group. Within-subject designs in which subjects are measured, then treated, then measured again are a second example of a nonrandomized application of treatment.</p>
-<p>The analogy between sampling and assignment runs so deep because, in a sense, assignment <strong>is</strong> sampling. Instead of sampling units in or out of the study, we sample from alternative possible worlds. The treatment group represents a sample from the world in which all units are treated and the control group represents a sample from the alternative world in which all units are untreated.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> We can re-encounter the fundamental problem of causal inference through this lens – if a unit is sampled from one possible world, it can’t be sampled from any other possible world. <a href="#tbl-assignmenttypes">Table&nbsp;<span>8.2</span></a> collects together common forms of random assignment.</p>
-<div id="tbl-assignmenttypes" class="anchored">
-<table class="table">
-<caption>Table&nbsp;8.2: Kinds of random assignment</caption>
+<p>The analogy between sampling and assignment runs so deep because, in a sense, assignment <strong>is</strong> sampling. Instead of sampling units in or out of the study, we sample from alternative possible worlds. The treatment group represents a sample from the world in which all units are treated and the control group represents a sample from the alternative world in which all units are untreated.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> We can re-encounter the fundamental problem of causal inference through this lens – if a unit is sampled from one possible world, it can’t be sampled from any other possible world. <a href="#tbl-assignmenttypes" class="quarto-xref">Table&nbsp;<span>9.2</span></a> collects together common forms of random assignment.</p>
+<div id="tbl-assignmenttypes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-assignmenttypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.2: Kinds of random assignment
+</figcaption><div aria-describedby="tbl-assignmenttypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 24%">
 <col style="width: 75%">
@@ -618,19 +680,27 @@ block_ra(blocks = villages, prob_unit = saturation)</code></pre>
 </tbody>
 </table>
 </div>
-<p><a href="#fig-ch8num4">Figure&nbsp;<span>8.4</span></a> visualizes nine kinds of random assignment, arranged according to whether the assignment procedure is simple, complete, or blocked and according to whether the assignment procedure is carried out at the individual, cluster, or saturation level. In the top left facet, we have simple (or Bernoulli) random assignment, in which all units have a 50% probability of treatment, but the total number of treated units can bounce around from assignment to assignment. In the top center, this problem is fixed: under complete random assignment, exactly <span class="math inline">\(m\)</span> of <span class="math inline">\(N\)</span> units are assigned to treatment and the <span class="math inline">\(N - m\)</span> are assigned to control. While complete random assignment fixes the number of units treated at exactly <span class="math inline">\(m\)</span>, the number of units that are treated within any particular group of units (defined by a pre-treatment covariate) could vary. Under block random assignment, we conduct complete random assignment within each block separately, so we directly control the number treated within each block. Moving from simple to complete random assignment tends to decrease sampling variability a bit, by ruling out highly unbalanced allocations. Moving from complete to blocked can help more, so long as the blocking variable is correlated with the outcome. Blocking rules out assignments in which too many or too few units in a particular subgroup are treated.</p>
-<p>The second row of <a href="#fig-ch8num4">Figure&nbsp;<span>8.4</span></a> shows clustered designs in which all units within a cluster receive the same treatment assignment. Clustered designs are common for household-level, school-level, or village-level designs, where it would be impractical or unfeasible to conduct individual level assignment. When units within the same cluster are more alike than units in different clusters (as in most cases), clustering increases sampling variability relative to individual level assignment. Just like in individual level designs, moving from simple to complete or from complete to blocked tends to result in lower sampling variability.</p>
-<p>The final row of <a href="#fig-ch8num4">Figure&nbsp;<span>8.4</span></a> shows a series of designs that are analogous to the multi-stage sampling designs shown in <a href="#fig-ch8num2">Figure&nbsp;<span>8.2</span></a> – but their purpose is subtly different in spirit. Multi-stage sampling designs are employed to reduce costs – first clusters are sampled but not all units within a cluster are sampled. A saturation randomization design (sometimes called a “partial population design”, see <a href="../library/experimental-causal.html#sec-ch18s10"><span>Section&nbsp;18.10</span></a>) uses a similar procedure to both contain and learn about spillover effects. Some clusters are chosen for treatment, but some units <em>within</em> those clusters are not treated. Units that are untreated in treated clusters can be compared with units that are untreated in untreated clusters in order to suss out intra-cluster spillover effects <span class="citation" data-cites="betsy2012detecting">(<a href="../references.html#ref-betsy2012detecting" role="doc-biblioref">Sinclair, McConnell, and Green 2012</a>)</span>. <a href="#fig-ch8num4">Figure&nbsp;<span>8.4</span></a> shows how the saturation design comes in simple, complete, and blocked varieties.</p>
-<div id="fig-ch8num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-8-4.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;8.4: Nine kinds of random assignment. In the first row individuals are the units of assignment, in the second row clusters are randomly assigned, in the third clusters are randomly assigned a saturation level and then individuals within these clusters are randomly assigned. In the first column units are assigned independently, in the second units are assigned to hit a target, in the third units are assigned to hit targets within strata.</figcaption></figure>
+</figure>
 </div>
-</section><section id="multi-arm-and-factorial-trials" class="level4" data-number="8.1.2.2"><h4 data-number="8.1.2.2" class="anchored" data-anchor-id="multi-arm-and-factorial-trials">
-<span class="header-section-number">8.1.2.2</span> Multi-arm and factorial trials</h4>
-<p>Thus far we have considered assignment strategies that allocate subjects to just two conditions: either treatment or control. All generalize quite nicely to multi-arm trials (see <a href="#tbl-multiarmassignmenttypes">Table&nbsp;<span>8.3</span></a>). Trials that have three, four, or many more arms can of course be simple, complete, blocked, clustered, or feature variable saturation, but we show the complete random assignment versions of multi-arm and factorial assignment here.</p>
-<div id="tbl-multiarmassignmenttypes" class="anchored">
-<table class="table">
-<caption>Table&nbsp;8.3: Examples of multi-arm random assignment</caption>
+<p><a href="#fig-ch8num4" class="quarto-xref">Figure&nbsp;<span>9.3</span></a> visualizes nine kinds of random assignment, arranged according to whether the assignment procedure is simple, complete, or blocked and according to whether the assignment procedure is carried out at the individual, cluster, or saturation level. In the top left facet, we have simple (or Bernoulli) random assignment, in which all units have a 50% probability of treatment, but the total number of treated units can bounce around from assignment to assignment. In the top center, this problem is fixed: under complete random assignment, exactly <span class="math inline">\(m\)</span> of <span class="math inline">\(N\)</span> units are assigned to treatment and the <span class="math inline">\(N - m\)</span> are assigned to control. While complete random assignment fixes the number of units treated at exactly <span class="math inline">\(m\)</span>, the number of units that are treated within any particular group of units (defined by a pre-treatment covariate) could vary. Under block random assignment, we conduct complete random assignment within each block separately, so we directly control the number treated within each block. Moving from simple to complete random assignment tends to decrease sampling variability a bit, by ruling out highly unbalanced allocations. Moving from complete to blocked can help more, so long as the blocking variable is correlated with the outcome. Blocking rules out assignments in which too many or too few units in a particular subgroup are treated.</p>
+<p>The second row of <a href="#fig-ch8num4" class="quarto-xref">Figure&nbsp;<span>9.3</span></a> shows clustered designs in which all units within a cluster receive the same treatment assignment. Clustered designs are common for household-level, school-level, or village-level designs, where it would be impractical or unfeasible to conduct individual level assignment. When units within the same cluster are more alike than units in different clusters (as in most cases), clustering increases sampling variability relative to individual level assignment. Just like in individual level designs, moving from simple to complete or from complete to blocked tends to result in lower sampling variability.</p>
+<p>The final row of <a href="#fig-ch8num4" class="quarto-xref">Figure&nbsp;<span>9.3</span></a> shows a series of designs that are analogous to the multi-stage sampling designs shown in <a href="#fig-ch8num2" class="quarto-xref">Figure&nbsp;<span>9.1</span></a> – but their purpose is subtly different in spirit. Multi-stage sampling designs are employed to reduce costs – first clusters are sampled but not all units within a cluster are sampled. A saturation randomization design (sometimes called a “partial population design”, see <a href="../library/experimental-causal.html#sec-ch18s10" class="quarto-xref"><span>Section 18.10</span></a>) uses a similar procedure to both contain and learn about spillover effects. Some clusters are chosen for treatment, but some units <em>within</em> those clusters are not treated. Units that are untreated in treated clusters can be compared with units that are untreated in untreated clusters in order to suss out intra-cluster spillover effects <span class="citation" data-cites="betsy2012detecting">(<a href="../references.html#ref-betsy2012detecting" role="doc-biblioref">Sinclair, McConnell, and Green 2012</a>)</span>. <a href="#fig-ch8num4" class="quarto-xref">Figure&nbsp;<span>9.3</span></a> shows how the saturation design comes in simple, complete, and blocked varieties.</p>
+<div id="fig-ch8num4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-8-4.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.3: Nine kinds of random assignment. In the first row individuals are the units of assignment, in the second row clusters are randomly assigned, in the third clusters are randomly assigned a saturation level and then individuals within these clusters are randomly assigned. In the first column units are assigned independently, in the second units are assigned to hit a target, in the third units are assigned to hit targets within strata.
+</figcaption></figure>
+</div>
+</section><section id="multi-arm-and-factorial-trials" class="level4" data-number="9.0.1.2"><h4 data-number="9.0.1.2" class="anchored" data-anchor-id="multi-arm-and-factorial-trials">
+<span class="header-section-number">9.0.1.2</span> Multi-arm and factorial trials</h4>
+<p>Thus far we have considered assignment strategies that allocate subjects to just two conditions: either treatment or control. All generalize quite nicely to multi-arm trials (see <a href="#tbl-multiarmassignmenttypes" class="quarto-xref">Table&nbsp;<span>9.3</span></a>). Trials that have three, four, or many more arms can of course be simple, complete, blocked, clustered, or feature variable saturation, but we show the complete random assignment versions of multi-arm and factorial assignment here.</p>
+<div id="tbl-multiarmassignmenttypes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-multiarmassignmenttypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.3: Examples of multi-arm random assignment
+</figcaption><div aria-describedby="tbl-multiarmassignmenttypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 34%">
 <col style="width: 65%">
@@ -662,35 +732,45 @@ Z2 = Z %in% c("T1", "T3")</code></pre>
 </tbody>
 </table>
 </div>
-<p><a href="#fig-ch8num5">Figure&nbsp;<span>8.5</span></a> shows blocked versions of a three-arm trial, a factorial trial, and a four-arm trial.</p>
+</figure>
+</div>
+<p><a href="#fig-ch8num5" class="quarto-xref">Figure&nbsp;<span>9.4</span></a> shows blocked versions of a three-arm trial, a factorial trial, and a four-arm trial.</p>
 <p>In the three-arm trial on the left, subjects can be assigned to a control condition or one of two treatments. This design enables three comparisons: a comparison of each treatment to the control condition, but also a comparison of the two treatment conditions to each other. In the four-arm trial on the right, subjects can be assigned to a control condition or one of three treatments. This design supports six comparisons: each of the treatments to control, and all three of the pairwise comparisons across treatments.</p>
 <p>The two-by-two factorial design in the center panel shares similarities with both the three-arm and the four-arm trials. Like the three-arm, it considers two treatments T1 and T2, but it also includes a fourth condition in which both treatments are applied. Factorial designs can be analyzed like a four-arm trial, but the structure of the design also enables further analyses. In particular, the factorial structure allows researchers to investigate whether the effects of one treatment depend on the level of the other treatment.</p>
-<div id="fig-ch8num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-8-5.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;8.5: Multi-arm random assignment.</figcaption></figure>
+<div id="fig-ch8num5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-8-5.svg" class="img-fluid figure-img">
 </div>
-</section><section id="over-time-designs" class="level4" data-number="8.1.2.3"><h4 data-number="8.1.2.3" class="anchored" data-anchor-id="over-time-designs">
-<span class="header-section-number">8.1.2.3</span> Over-time designs</h4>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.4: Multi-arm random assignment.
+</figcaption></figure>
+</div>
+</section><section id="over-time-designs" class="level4" data-number="9.0.1.3"><h4 data-number="9.0.1.3" class="anchored" data-anchor-id="over-time-designs">
+<span class="header-section-number">9.0.1.3</span> Over-time designs</h4>
 <p>Treatment conditions can also be randomized over multiple time periods, with each unit receiving different treatment conditions in different periods. By focusing on variation in outcomes <em>within units</em> rather than across them, these designs can be more efficient than designs that compare across units. Often there is more variation across units than within the same units over time. However, there can be a tradeoff in the form of increased bias. Within-unit comparisons must rely on strong stability assumptions such as “no carryover effects” of the treatment condition assigned in the preceding period. If the condition a unit is assigned to in one period affects outcomes in later periods, we cannot isolate the effect of treatment just by considering the treatment it was assigned in this period, we need to know the entire treatment <em>history</em>.</p>
-<p>A stepped-wedge random assignment procedure involves assigning a subset of units to treatment in the first period, a subset of those who were not treated in the first in the second period, and so on. In the final period, all units are treated. In this design, once you are treated in a period, you are treated in all subsequent periods. For example, once you receive information in a treatment about how to vote, you already have that information in later periods. In <a href="#fig-ch8num6">Figure&nbsp;<span>8.6</span></a>, we illustrate a three-period step-wedge design, in which one third of units are assigned in the first period, a second third are treated in the second period, and the remainder in the third and final period. In such a design, we can make two comparisons: the treatment versus control contrast in each period, and the within-units over-time contrast before and after treatment. By combining these two comparisons, we have a more efficient estimate of the average treatment effect than if we had randomly assigned one half of units to treatment and the other half to control in a single period. However, we must invoke a no carryover assumption that in the second and third periods, potential outcomes are only a function of the current treatment status, not whether (or not) the unit was treated earlier.</p>
-<div id="fig-ch8num6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-8-6.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;8.6: Step-wedge random assignment.</figcaption></figure>
+<p>A stepped-wedge random assignment procedure involves assigning a subset of units to treatment in the first period, a subset of those who were not treated in the first in the second period, and so on. In the final period, all units are treated. In this design, once you are treated in a period, you are treated in all subsequent periods. For example, once you receive information in a treatment about how to vote, you already have that information in later periods. In <a href="#fig-ch8num6" class="quarto-xref">Figure&nbsp;<span>9.5</span></a>, we illustrate a three-period step-wedge design, in which one third of units are assigned in the first period, a second third are treated in the second period, and the remainder in the third and final period. In such a design, we can make two comparisons: the treatment versus control contrast in each period, and the within-units over-time contrast before and after treatment. By combining these two comparisons, we have a more efficient estimate of the average treatment effect than if we had randomly assigned one half of units to treatment and the other half to control in a single period. However, we must invoke a no carryover assumption that in the second and third periods, potential outcomes are only a function of the current treatment status, not whether (or not) the unit was treated earlier.</p>
+<div id="fig-ch8num6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-8-6.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.5: Step-wedge random assignment.
+</figcaption></figure>
 </div>
 <p>Crossover designs are another common over-time random assignment procedure, in which units are first assigned one condition and then, in a second period, the opposite condition. Such a design is appropriate when units, once treated, do not retain their treatment over time. Crossover designs must also rely on an assumption of no carryover. If this assumption is valid, the design is highly efficient: instead of having half treated and half control in a single period, all units receive treatment in one period and control in the other so we can make comparisons within each period across units with different conditions <em>and</em> for all units over time before and after treatment. Whether the crucial no carryover assumption holds is fundamentally not testable: it is an excludability assumption about the unobservable potential outcomes. The assumption may be easier to accept if there is a “washout period” between measurement waves, like buffer rows between crops in agricultural experiments.</p>
-</section><section id="sec-ch8s1ss2sss4" class="level4" data-number="8.1.2.4"><h4 data-number="8.1.2.4" class="anchored" data-anchor-id="sec-ch8s1ss2sss4">
-<span class="header-section-number">8.1.2.4</span> Data-adaptive assignment strategies</h4>
-<p>We usually think of data strategies as static: a survey asks a fixed set of questions, a randomization protocol has a fixed probability of assignment, sampling designs are designed to yield a fixed number of subjects. But they can also be dynamic. For example, the GRE standardized test many graduate students take is data-adaptive: if you answer the easy questions right, they skip you to harder ones. This process uses fewer questions to figure out test-takers’ scores, saving everyone the laborious effort of taking and grading long examinations (see <a href="#sec-ch8s1ss3sss3"><span>Section&nbsp;8.1.3.3</span></a> for more on data-adaptive measurement).</p>
+</section><section id="sec-ch8s1ss2sss4" class="level4" data-number="9.0.1.4"><h4 data-number="9.0.1.4" class="anchored" data-anchor-id="sec-ch8s1ss2sss4">
+<span class="header-section-number">9.0.1.4</span> Data-adaptive assignment strategies</h4>
+<p>We usually think of data strategies as static: a survey asks a fixed set of questions, a randomization protocol has a fixed probability of assignment, sampling designs are designed to yield a fixed number of subjects. But they can also be dynamic. For example, the GRE standardized test many graduate students take is data-adaptive: if you answer the easy questions right, they skip you to harder ones. This process uses fewer questions to figure out test-takers’ scores, saving everyone the laborious effort of taking and grading long examinations (see <a href="#sec-ch8s1ss3sss3" class="quarto-xref"><span>Section 9.0.2.3</span></a> for more on data-adaptive measurement).</p>
 <p>Data-adaptive designs are also used when the space of possible treatments to choose from is large. We could conduct a static multi-arm trial to evaluate all of them, but experiments with too many conditions tend to have low precision because the sample is spread too thinly across conditions. The usual response to this cost problem is to turn to theory to consider which treatments are most likely to work and test those options only.</p>
 <p>“Response-adaptive” designs are an alternative that may be appropriate in these settings. The subject pool is split into sequential “batches.” The first batch does the experiment, then the second, and so on. The probabilities of assignment to each condition (or arm) start out equal, but we tweak them between batches. We assign a higher fraction of the second batch to conditions that performed well in the first batch. This process continues until the sample pool is exhausted. Many algorithms for deciding how to update between batches are available, but the most common (Thompson sampling) estimates the probability that each arm is the best arm, then randomly allocates subjects to arms using these probabilities. See <span class="citation" data-cites="offer-westort_coppock_green_2021">Offer-Westort, Coppock, and Green (<a href="../references.html#ref-offer-westort_coppock_green_2021" role="doc-biblioref">2021</a>)</span> for a recent introduction to this algorithm and elaborations.</p>
-</section><section id="non-randomized-assignment" class="level4" data-number="8.1.2.5"><h4 data-number="8.1.2.5" class="anchored" data-anchor-id="non-randomized-assignment">
-<span class="header-section-number">8.1.2.5</span> Non-randomized assignment</h4>
+</section><section id="non-randomized-assignment" class="level4" data-number="9.0.1.5"><h4 data-number="9.0.1.5" class="anchored" data-anchor-id="non-randomized-assignment">
+<span class="header-section-number">9.0.1.5</span> Non-randomized assignment</h4>
 <p>Strong causal inferences can sometimes be drawn from treatment allocation strategies that do not involve random assignment. We outline four such strategies below, with their costs and benefits.</p>
 <p>A commonly considered strategy is alternating assignment, in which every other participant who arrives is assigned to treatment. The procedure would be identical to block random assignment — blocked on time of treatment — if participants arrived in a randomized order. It is appealing for this similarity, but it is often impossible to demonstrate that order was randomized. In fact, participants who work at different times of day may arrive at different times, and many other correlations between individual characteristics and order may arise. But the real problem comes when there are correlations between those characteristics and the order within each couple of participants. For example, if treatment status is correlated with who goes through the door first, there could be a very strong correlation between individual characteristics and treatment condition. A simple fix for this would be to block units into pairs or quartets as they arrive, then randomize within each block, rather than alternating.</p>
-<p>When participants can be assigned a score that represents need, desire, or eligibility for a treatment, with higher score representing higher likelihood of treatment, a common design is to set a cutoff score above which all units are treated and below which none are. With such a cutoff, units very near the cutoff may be very similar to each other, so a regression discontinuity design can be used to estimate the treatment effect by predicting the outcome under control (just below the cutoff) and the outcome under treatment (just above the cutoff). In such a design, the assignment of treatment is deterministic and has no random component. We discuss this design in <a href="../library/observational-causal.html#sec-ch16s5"><span>Section&nbsp;16.5</span></a>.</p>
+<p>When participants can be assigned a score that represents need, desire, or eligibility for a treatment, with higher score representing higher likelihood of treatment, a common design is to set a cutoff score above which all units are treated and below which none are. With such a cutoff, units very near the cutoff may be very similar to each other, so a regression discontinuity design can be used to estimate the treatment effect by predicting the outcome under control (just below the cutoff) and the outcome under treatment (just above the cutoff). In such a design, the assignment of treatment is deterministic and has no random component. We discuss this design in <a href="../library/observational-causal.html#sec-ch16s5" class="quarto-xref"><span>Section 16.5</span></a>.</p>
 <p>A range of strategies aim to improve upon random assignment by identifying assignments that are optimal in some sense. Bayesian optimal assignment strategies identify individually optimal assignments from a set of multiple treatments, based on past data from experiments and individual characteristics that predict treatment effectiveness. Indeed, from a Bayesian perspective randomization is an unusual choice of procedure for assigning treatment because it suggests that you expect the same learning will emerge from all assignments that you might select via randomization (see <span class="citation" data-cites="kasy2016experimenters">Kasy (<a href="../references.html#ref-kasy2016experimenters" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="bai2021randomize">Bai (<a href="../references.html#ref-bai2021randomize" role="doc-biblioref">2021</a>)</span> for an alternative motivation for randomization in this setting). Diagnosing the properties of these so-called optimal designs is crucial, because, though a treatment assignment may be optimal in terms of the likelihood that each individual receives the treatment most effective for them, the design may be inefficient due to highly variable assignment propensities. Such choices may be appropriate, but in a diagnosis researchers can assess sensitivity to priors and directly trade off design criteria like efficiency with the average expected effectiveness of the treatment assigned to units.</p>
-</section></section><section id="measurement" class="level3" data-number="8.1.3"><h3 data-number="8.1.3" class="anchored" data-anchor-id="measurement">
-<span class="header-section-number">8.1.3</span> Measurement</h3>
+</section></section><section id="measurement" class="level3" data-number="9.0.2"><h3 data-number="9.0.2" class="anchored" data-anchor-id="measurement">
+<span class="header-section-number">9.0.2</span> Measurement</h3>
 <p>Measurement is the part of the data strategy in which variables are collected about the population of units to enable sampling; variables are collected about the sample and outcomes are collected, following any treatment assignment. All variables used in the answer strategy are collected in measurement, aside from any treatment assignment variables and assignment and sample inclusion probabilities.</p>
 <p>Descriptive inference is threatened whenever measurements differ from the quantities they are meant to measure. For example when we want to measure “latent variables” such as fear, support for a political candidate, or economic well-being, we use a measurement technology to imperfectly observe them. We might represent that measurement technology as the function <span class="math inline">\(Q\)</span> that yields the observed outcome <span class="math inline">\(Y^{\mathrm obs}\)</span>: <span class="math inline">\(Q(Y^*) = Y^{\mathrm obs}\)</span>. Our measurement strategy is a set of such functions for each variable we measure.</p>
 <p>Some measurement strategies exhibit little to no measurement error. It’s easy enough to measure some plain matters of fact, like whether a country is a member of the European Union (though clerical errors could still crop up). In the social sciences, most measurement strategies are threatened by the possibility of measurement errors due to any number of biases (e.g., recall bias, observer bias, Hawthorn effects, demand effects, sensitivity bias, response substitution, among many others).</p>
@@ -699,61 +779,65 @@ Z2 = Z %in% c("T1", "T3")</code></pre>
 <p>Researchers select several characteristics of a measurement strategy: who collects the measures, the mode of measurement, how often and when measures are taken, how many different observed measures of the latent outcome <span class="math inline">\(Y^*\)</span> are collected, and how they are summarized into a single measure. These design characteristics may affect validity, reliability, cost, or all three.</p>
 <p>Data may be collected by researchers themselves, by participants, or by third parties. In some forms of qualitative research such as participant-observation and interview-based research, the researcher may be the primary data collector. In survey research, interviewers are typically a hired agents of the researcher, each of whom may ask questions differently. Participants are sometimes asked to collect data on themselves, either through self-administered surveys, journaling, or taking measurements of themselves using thermometers or scales. A primary concern with self-reports is validity: do respondents report their measurements truthfully? A parallel concern is raised when participants do not collect their own data, but are made aware of the fact that they are being measured by others. Finally, data may be collected by agents of governments or other organizations, yielding so-called “administrative” data.</p>
 <p>Most of the variety in measurement strategies is how those data collectors obtain their data. Data collectors can use observation and ask respondents for self-reports. Increasingly, photos, videos, sound recordings, and even water and soil measurements are used for outcome measurement. The translation of raw data, like videos, into coded data, like counts of the number of police stops, that can be used for analysis is part of <span class="math inline">\(Q\)</span> in the measurement strategy.</p>
-<section id="multiple-measures" class="level4" data-number="8.1.3.1"><h4 data-number="8.1.3.1" class="anchored" data-anchor-id="multiple-measures">
-<span class="header-section-number">8.1.3.1</span> Multiple measures</h4>
-<p>We measure the latent outcome <span class="math inline">\(Y^*\)</span> imperfectly with any single measure. In many cases, we have access to multiple imperfect measures of the same <span class="math inline">\(Y^*\)</span>. When possible, collecting all of these different measures and averaging them to construct a single index measure will yield efficiency improvements (see <a href="../library/observational-causal.html#sec-ch16s4"><span>Section&nbsp;16.4</span></a>). The average measure can borrow the different strengths of the different measures. When the tools produce answers that are highly correlated, taking multiple measures is unlikely to be worth the cost, because the same information is simply duplicated, but when the correlation is low, it will be worth taking multiple measurements and averaging to improve efficiency. Pilot studies may be usefully tasked with measuring the correlation between items. Index measures are distinct from <span class="math inline">\(Y^*\)</span> outcomes that have multiple dimensions and that typically must be measured with multiple items, one per dimension. An index represents a single measure of <span class="math inline">\(Y_i^*\)</span> just constructed in a more complex way.</p>
-</section><section id="over-time-measurement" class="level4" data-number="8.1.3.2"><h4 data-number="8.1.3.2" class="anchored" data-anchor-id="over-time-measurement">
-<span class="header-section-number">8.1.3.2</span> Over-time measurement</h4>
+<section id="multiple-measures" class="level4" data-number="9.0.2.1"><h4 data-number="9.0.2.1" class="anchored" data-anchor-id="multiple-measures">
+<span class="header-section-number">9.0.2.1</span> Multiple measures</h4>
+<p>We measure the latent outcome <span class="math inline">\(Y^*\)</span> imperfectly with any single measure. In many cases, we have access to multiple imperfect measures of the same <span class="math inline">\(Y^*\)</span>. When possible, collecting all of these different measures and averaging them to construct a single index measure will yield efficiency improvements (see <a href="../library/observational-causal.html#sec-ch16s4" class="quarto-xref"><span>Section 16.4</span></a>). The average measure can borrow the different strengths of the different measures. When the tools produce answers that are highly correlated, taking multiple measures is unlikely to be worth the cost, because the same information is simply duplicated, but when the correlation is low, it will be worth taking multiple measurements and averaging to improve efficiency. Pilot studies may be usefully tasked with measuring the correlation between items. Index measures are distinct from <span class="math inline">\(Y^*\)</span> outcomes that have multiple dimensions and that typically must be measured with multiple items, one per dimension. An index represents a single measure of <span class="math inline">\(Y_i^*\)</span> just constructed in a more complex way.</p>
+</section><section id="over-time-measurement" class="level4" data-number="9.0.2.2"><h4 data-number="9.0.2.2" class="anchored" data-anchor-id="over-time-measurement">
+<span class="header-section-number">9.0.2.2</span> Over-time measurement</h4>
 <p>Data need not be collected at a single time period. The model encodes beliefs about the autocorrelation (correlation over time) of outcomes, and this can help guide whether to collect multiple measurements or just one. If data are expected to be highly variable (low autocorrelation), then taking multiple measurements and averaging them may provide efficiency gains.</p>
 <p>When outcomes exhibit high autocorrelation, there will be large precision gains from collecting a baseline measure before a treatment in an experiment. When outcomes exhibit lower autocorrelation, baseline measurements may not be worth the~cost.</p>
-</section><section id="sec-ch8s1ss3sss3" class="level4" data-number="8.1.3.3"><h4 data-number="8.1.3.3" class="anchored" data-anchor-id="sec-ch8s1ss3sss3">
-<span class="header-section-number">8.1.3.3</span> Data-adaptive measurement</h4>
-<p>Just as we can use data-adaptive methods to hone in on the most effective treatments (<a href="#sec-ch8s1ss2sss4"><span>Section&nbsp;8.1.2.4</span></a>), we can use adaptive measurement techniques to hone in on the most useful measures. Adaptive inventory techniques enable deploying long batteries of survey items, for example, but enumerating the shortest set of items to any given respondent that results in a definitive measurement of <span class="math inline">\(Y^*\)</span>. In the same way as many modern standardized tests condition the choice of survey items on students’ past answers in order to hone in quickly on the correct test score, adaptive inventories ask questions that will be maximally informative. The logic is the same as that of using multiple different measures for the same construct: the lower the correlation, or, in other words, the more new information, between two items, the more informative they are. Adaptive inventories select a set of items to enumerate that provide the most uncorrelated information. See <span class="citation" data-cites="montgomery2020so">Montgomery and Rossiter (<a href="../references.html#ref-montgomery2020so" role="doc-biblioref">2020</a>)</span> for an up-to-date treatment of the adaptive measurement possibilities for constructs measured by long survey batteries.</p>
-</section></section></section><section id="challenges-to-data-strategies" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="challenges-to-data-strategies">
-<span class="header-section-number">8.2</span> Challenges to data strategies</h2>
+</section><section id="sec-ch8s1ss3sss3" class="level4" data-number="9.0.2.3"><h4 data-number="9.0.2.3" class="anchored" data-anchor-id="sec-ch8s1ss3sss3">
+<span class="header-section-number">9.0.2.3</span> Data-adaptive measurement</h4>
+<p>Just as we can use data-adaptive methods to hone in on the most effective treatments (<a href="#sec-ch8s1ss2sss4" class="quarto-xref"><span>Section 9.0.1.4</span></a>), we can use adaptive measurement techniques to hone in on the most useful measures. Adaptive inventory techniques enable deploying long batteries of survey items, for example, but enumerating the shortest set of items to any given respondent that results in a definitive measurement of <span class="math inline">\(Y^*\)</span>. In the same way as many modern standardized tests condition the choice of survey items on students’ past answers in order to hone in quickly on the correct test score, adaptive inventories ask questions that will be maximally informative. The logic is the same as that of using multiple different measures for the same construct: the lower the correlation, or, in other words, the more new information, between two items, the more informative they are. Adaptive inventories select a set of items to enumerate that provide the most uncorrelated information. See <span class="citation" data-cites="montgomery2020so">Montgomery and Rossiter (<a href="../references.html#ref-montgomery2020so" role="doc-biblioref">2020</a>)</span> for an up-to-date treatment of the adaptive measurement possibilities for constructs measured by long survey batteries.</p>
+</section></section></section><section id="challenges-to-data-strategies" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="challenges-to-data-strategies">
+<span class="header-section-number">9.1</span> Challenges to data strategies</h2>
 <!-- ### Follow the inquiry -->
 <!-- One general piece of advice when choosing a data strategy is to follow the inquiry. -->
 <!-- In the data strategy, we sample units from a population, assign units to treatment conditions, and measure outcomes to target as closely as we can the three analogous elements that make up the inquiry. That is, we want representative sampling, balanced treatment assignments, and error-free measurements. When data strategies are straightforward in this way, we can often use straightforward answer strategies -- this is the idea of the "plug-in principle." When the data strategy introduces distortions in the sampling, treatment assignment, or measurement, we need to adjust the answer strategy to compensate, which is the idea behind "analyze as you randomize."  -->
 <!-- ### Robustness -->
-<p><a href="../introduction/research-design-principles.html#exm-designagnostically">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em> focuses on models, encouraging us to consider plausible variations of the set of variables, their probability distributions, and the relationships between them. The principle has implications for the data and answer strategies also, in particular we should choose <em>D</em> and <em>A</em> such that we have good designs under a wide array of plausible models.</p>
+<p><a href="../introduction/research-design-principles.html#exm-designagnostically" class="quarto-xref">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em> focuses on models, encouraging us to consider plausible variations of the set of variables, their probability distributions, and the relationships between them. The principle has implications for the data and answer strategies also, in particular we should choose <em>D</em> and <em>A</em> such that we have good designs under a wide array of plausible models.</p>
 <p>In this section, we discuss four core threats to data strategies and ways to respond to them: noncompliance (failure to treat), attrition (failure to be included in the sample or provide measures), excludability violations (causal effects of random sampling, random assignment, or measurement on the latent outcome), and interference (the dependence of potential outcomes on whether other units are treated). These threats are often discussed in the context of experimental designs, but the core issues they raise are relevant for observational designs also. If serious, these threats may necessitate changes to the inquiry, the answer strategy, or the data strategy~itself.</p>
-<p><a href="#fig-ch8num7">Figure&nbsp;<span>8.7</span></a> adapts <a href="#fig-ch8num1">Figure&nbsp;<span>8.1</span></a> to introduce each of these threats. The remainder of this section discusses these four threats in turn.</p>
-<div id="fig-ch8num7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-8-7.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;8.7: Directed acyclic graph of random sampling, random assignment, and measurement with exclusion restriction violations as dotted lines.</figcaption></figure>
+<p><a href="#fig-ch8num7" class="quarto-xref">Figure&nbsp;<span>9.6</span></a> adapts <a href="#fig-ch8num1" class="quarto-xref">Figure&nbsp;<span>8.1</span></a> to introduce each of these threats. The remainder of this section discusses these four threats in turn.</p>
+<div id="fig-ch8num7" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-8-7.svg" class="img-fluid figure-img">
 </div>
-<section id="noncompliance" class="level3" data-number="8.2.1"><h3 data-number="8.2.1" class="anchored" data-anchor-id="noncompliance">
-<span class="header-section-number">8.2.1</span> Noncompliance</h3>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.6: Directed acyclic graph of random sampling, random assignment, and measurement with exclusion restriction violations as dotted lines.
+</figcaption></figure>
+</div>
+<section id="noncompliance" class="level3" data-number="9.1.1"><h3 data-number="9.1.1" class="anchored" data-anchor-id="noncompliance">
+<span class="header-section-number">9.1.1</span> Noncompliance</h3>
 <p>Noncompliance occurs when the assignment variable <span class="math inline">\(Z\)</span> imperfectly manipulates the treatment variable <span class="math inline">\(D\)</span>. When noncompliance is not a problem, <span class="math inline">\(D_i = Z_i\)</span>, but in design that encounter noncompliance <span class="math inline">\(D_i \neq Z_i\)</span>. One-sided noncompliance occurs when some treated units fail to be treated (and receive the control condition instead). Two-sided noncompliance occurs when some units assigned to treatment do not take treatment and some units assigned to control do take treatment. Noncompliance hampers experimental studies, but also affects observational designs for causal inference in which nature or a nonrandom administrative process affects treatment such as a threshold cutoff, but only imperfectly.</p>
 <p>In the presence of noncompliance, a change in inquiry is sometimes worth considering. The average difference between those assigned to treatment and those assigned to control no longer targets the average treatment effect, but instead only the effect of <em>assignment</em> to treatment. We instead call this inquiry the intent-to-treat effect, and we can estimate it well by comparing the groups as assigned. An alternative inquiry is the complier average treatment effect, which is “local” to the subset of units that comply with treatment (take it when offered).</p>
-<p>You can also sometimes use design strategies to limit the risk of noncompliance. The problem is perhaps best solved, when possible, by using strong encouragements. Another strategy is to pre-identify units that you expect are likely to comply and assign treatments from among those units. Or you can include placebos in your data strategy in order to identify compliers. These solutions may also have to be accompanied by a change in inquiry. See <a href="../library/experimental-causal.html#sec-ch18s7"><span>Section&nbsp;18.7</span></a> for more on this last strategy.</p>
-<p>See <a href="../library/experimental-causal.html#sec-ch18s6"><span>Section&nbsp;18.6</span></a> for a discussion of noncompliance in randomized experiments and <a href="../library/observational-causal.html#sec-ch16s4"><span>Section&nbsp;16.4</span></a> for a related discussion of “noncompliance” in observational studies.</p>
-</section><section id="attrition" class="level3" data-number="8.2.2"><h3 data-number="8.2.2" class="anchored" data-anchor-id="attrition">
-<span class="header-section-number">8.2.2</span> Attrition</h3>
+<p>You can also sometimes use design strategies to limit the risk of noncompliance. The problem is perhaps best solved, when possible, by using strong encouragements. Another strategy is to pre-identify units that you expect are likely to comply and assign treatments from among those units. Or you can include placebos in your data strategy in order to identify compliers. These solutions may also have to be accompanied by a change in inquiry. See <a href="../library/experimental-causal.html#sec-ch18s7" class="quarto-xref"><span>Section 18.7</span></a> for more on this last strategy.</p>
+<p>See <a href="../library/experimental-causal.html#sec-ch18s6" class="quarto-xref"><span>Section 18.6</span></a> for a discussion of noncompliance in randomized experiments and <a href="../library/observational-causal.html#sec-ch16s4" class="quarto-xref"><span>Section 16.4</span></a> for a related discussion of “noncompliance” in observational studies.</p>
+</section><section id="attrition" class="level3" data-number="9.1.2"><h3 data-number="9.1.2" class="anchored" data-anchor-id="attrition">
+<span class="header-section-number">9.1.2</span> Attrition</h3>
 <p>Attrition occurs when we do not obtain outcome measures for all sampled units. Two types of missing data may result: when a single measure is missing (known as item nonresponse) and when all measures are missing for a participant (known as survey nonresponse). Though these terms were coined by survey researchers, analogous problems can affect non-survey measurement strategies, like missing administrative data, for example.</p>
 <p>Whether attrition is a problem depends on whether response (<span class="math inline">\(R\)</span>) is causally affected by variables other than random sampling. If it is not, we say the missingness is completely at random, just as if we had simply added one more random sampling step to the design. Outside of explicit sampling designs, missingness completely at random is rare, though possible, perhaps due to idiosyncratic administrative procedures or computer error. If attrition is completely at random, precision suffers due to a loss of sample size, but bias is unaffected.</p>
 <p>If missingness <em>is</em> affected by other variables – some units are more likely to response because of unobserved background characteristics such as being at home when the survey taker calls – then inferences may be biased. Attrition is doubly difficult in experiments, because if treatment affects not just how a unit responds, but <em>whether</em> it responds, then treatment-control comparisons on the basis of observed data may be biased.</p>
-<p>One approach is to address this weakness in the data strategy via changes to the answer strategy. A bounding approach like the one described in <a href="choosing-answer-strategy.html#sec-ch9s2ss4"><span>Section&nbsp;9.2.4</span></a> (interval-estimation) is a design-based answer strategy for drawing inferences despite missingness. Model-based approaches involve reweighting the data by stratum, supposing random missingness within a stratum but not across strata. An example of a data strategy response is to intensively revist a subset of attritors to gather information about them—including information about why they attrited.For more see the disccussion in <a href="../library/observational-descriptive.html#sec-ch15s1ss1"><span>Section&nbsp;15.1.1</span></a> as well as the combination of data strategy and answer strategy response in <span class="citation" data-cites="coppock2017double">Coppock et al. (<a href="../references.html#ref-coppock2017double" role="doc-biblioref">2017</a>)</span>.</p>
-</section><section id="excludability" class="level3" data-number="8.2.3"><h3 data-number="8.2.3" class="anchored" data-anchor-id="excludability">
-<span class="header-section-number">8.2.3</span> Excludability</h3>
-<p>Excludability means that when we define potential outcomes, we can exclude extraneous, nontreatment variables from the potential outcomes functions. When we define the treated potential outcome for the latent outcome as <span class="math inline">\(Y_i^*(D_i = 0)\)</span>, we invoke (at least) three important excludability assumptions: no effect of sampling <span class="math inline">\(S\)</span>, no effect of treatment assignment <span class="math inline">\(Z\)</span> (except through treatment <span class="math inline">\(D\)</span>!), and no effect of measurement <span class="math inline">\(Q\)</span> on the latent outcome <span class="math inline">\(Y_i^*\)</span>. If we did not invoke these assumptions, we would have to define the potential outcome function as <span class="math inline">\(Y_i^*(D_i, S_i, Z_i, Q_i)\)</span>. When we do invoke the assumptions, we can write simply <span class="math inline">\(Y_i^*(D_i)\)</span>. The three assumptions are represented as gray dotted lines in <a href="#fig-ch8num7">Figure&nbsp;<span>8.7</span></a>.</p>
+<p>One approach is to address this weakness in the data strategy via changes to the answer strategy. A bounding approach like the one described in <a href="choosing-answer-strategy.html#sec-ch9s2ss4" class="quarto-xref"><span>Section 9.2.4</span></a> (interval-estimation) is a design-based answer strategy for drawing inferences despite missingness. Model-based approaches involve reweighting the data by stratum, supposing random missingness within a stratum but not across strata. An example of a data strategy response is to intensively revist a subset of attritors to gather information about them—including information about why they attrited.For more see the disccussion in <a href="../library/observational-descriptive.html#sec-ch15s1ss1" class="quarto-xref"><span>Section 15.1.1</span></a> as well as the combination of data strategy and answer strategy response in <span class="citation" data-cites="coppock2017double">Coppock et al. (<a href="../references.html#ref-coppock2017double" role="doc-biblioref">2017</a>)</span>.</p>
+</section><section id="excludability" class="level3" data-number="9.1.3"><h3 data-number="9.1.3" class="anchored" data-anchor-id="excludability">
+<span class="header-section-number">9.1.3</span> Excludability</h3>
+<p>Excludability means that when we define potential outcomes, we can exclude extraneous, nontreatment variables from the potential outcomes functions. When we define the treated potential outcome for the latent outcome as <span class="math inline">\(Y_i^*(D_i = 0)\)</span>, we invoke (at least) three important excludability assumptions: no effect of sampling <span class="math inline">\(S\)</span>, no effect of treatment assignment <span class="math inline">\(Z\)</span> (except through treatment <span class="math inline">\(D\)</span>!), and no effect of measurement <span class="math inline">\(Q\)</span> on the latent outcome <span class="math inline">\(Y_i^*\)</span>. If we did not invoke these assumptions, we would have to define the potential outcome function as <span class="math inline">\(Y_i^*(D_i, S_i, Z_i, Q_i)\)</span>. When we do invoke the assumptions, we can write simply <span class="math inline">\(Y_i^*(D_i)\)</span>. The three assumptions are represented as gray dotted lines in <a href="#fig-ch8num7" class="quarto-xref">Figure&nbsp;<span>9.6</span></a>.</p>
 <p>The figure asserts no effect of sampling <span class="math inline">\(S\)</span> on latent outcome <span class="math inline">\(Y_i^*\)</span>. This assumption could be violated if the fact of being <em>included in the sample</em> changes your attitudes. For example, if the very act of being asked to be in a focus group causes subjects to reflect on their political beliefs and thereby change them, the sampling excludability assumption would be violated.</p>
 <p>Next, we assert no causal effect of assignment <span class="math inline">\(Z\)</span> on outcome <span class="math inline">\(Y^*\)</span> – except through the treatment <span class="math inline">\(D\)</span>. This assumption is constantly under threat! In observational studies “instrumental variables” design, excludability is the assumption of no alternative channels through which the instrument affects outcomes except the treatment variable. In the entertainingly titled “Rain, Rain, Go Away: 176 potential exclusion-restriction violations for studies using weather as an instrumental variable,” <span class="citation" data-cites="mellon_2021">Mellon (<a href="../references.html#ref-mellon_2021" role="doc-biblioref">2021</a>)</span> discusses how random variation in rainfall has been misused to study the effects of other treatments.</p>
 <p>We further assume that <span class="math inline">\(Q\)</span> does not affect <span class="math inline">\(Y^*\)</span>. Hawthorne effects, in which the fact of being measured changes outcomes, are an example a violation of this kind excludability assumption. If outcomes depend on whether subjects know they are being measured or do not, then we cannot exclude the effect of measurement from our effect estimates.</p>
 <p>The DAG also encodes the assumption that <span class="math inline">\(Z\)</span> has no effect on <span class="math inline">\(Q\)</span>. How and whether we measure outcomes should not depend on whether a unit is assigned to treatment. This excludability assumption is commonly referred to as the requirement that measurement be parallel across treatment conditions. In this sense a failure of the exclusion restriction can sometimes be thought of as a weakness in a data strategy: a failure to treat or measure cleanly.</p>
 <p>To the extent possible, data strategies should try to limit such violations of exclusion restrictions. Strategies include using simple rather than complex treatments, using placebos to identify confounding effects, and maintaining parallelism wherever possible. If we measure outcomes using a face-to-face survey in the treatment group and a mail-back survey in control, then we cannot separate (exclude!) the effect of measurement from the effect of treatment.</p>
-</section><section id="interference" class="level3" data-number="8.2.4"><h3 data-number="8.2.4" class="anchored" data-anchor-id="interference">
-<span class="header-section-number">8.2.4</span> Interference</h3>
-<p>We have four endogenous outcomes in the DAG of a research design in <a href="#fig-ch8num7">Figure&nbsp;<span>8.7</span></a>: <span class="math inline">\(R\)</span>, whether a participant responds to data collection; <span class="math inline">\(D\)</span>, whether a respondent receives treatment; <span class="math inline">\(Y^*\)</span>, the latent outcome; and <span class="math inline">\(Y\)</span>, the observed outcome. Setting aside attrition and noncompliance for the moment, <span class="math inline">\(R\)</span> is a function only of sampling; <span class="math inline">\(D\)</span> of treatment assignment; <span class="math inline">\(Y^*\)</span> of <span class="math inline">\(D\)</span>; and <span class="math inline">\(Y\)</span> of measurement strategy <span class="math inline">\(Q\)</span>.</p>
+</section><section id="interference" class="level3" data-number="9.1.4"><h3 data-number="9.1.4" class="anchored" data-anchor-id="interference">
+<span class="header-section-number">9.1.4</span> Interference</h3>
+<p>We have four endogenous outcomes in the DAG of a research design in <a href="#fig-ch8num7" class="quarto-xref">Figure&nbsp;<span>9.6</span></a>: <span class="math inline">\(R\)</span>, whether a participant responds to data collection; <span class="math inline">\(D\)</span>, whether a respondent receives treatment; <span class="math inline">\(Y^*\)</span>, the latent outcome; and <span class="math inline">\(Y\)</span>, the observed outcome. Setting aside attrition and noncompliance for the moment, <span class="math inline">\(R\)</span> is a function only of sampling; <span class="math inline">\(D\)</span> of treatment assignment; <span class="math inline">\(Y^*\)</span> of <span class="math inline">\(D\)</span>; and <span class="math inline">\(Y\)</span> of measurement strategy <span class="math inline">\(Q\)</span>.</p>
 <p>Interference occurs when these endogenous variables depend not only on whether and how individual units are sampled, assigned to treatment, and measured, but whether and how <em>other</em> units are sampled, assigned to treatment, and measured. We usually assume, for example, that <span class="math inline">\(Y_i(Z_i) = Y_i(Z_i, \mathbf{Z}_{-i})\)</span> where <span class="math inline">\(Z_{-i}\)</span> is a vector of the treatment assignments of all units but <span class="math inline">\(i\)</span>. In other words, <span class="math inline">\(Y_i\)</span>, the outcome for unit <span class="math inline">\(i\)</span>, is a function of its own treatment assignment status <span class="math inline">\(Z_i\)</span>, not of other units (<span class="math inline">\(\mathbf{Z}_{-i}\)</span>).</p>
 <p>We often think of interference when considering how treatments spill from treated to untreated units. But interference can also be induced by sampling: potential outcomes might depend on whether other units are included in the sample. Or by measurement: measurement interference occurs when <span class="math inline">\(Y_i^*\)</span> depends on whether and how other units (or outcomes) are measured. For example, asking about one attitude might affect how subjects respond to a second question.</p>
-<p>Interference can sometimes be thought of as reflecting weaknesses in data strategies and data strategies can be deployed – often in combination with modified answer strategies – to make it easier to study interference directly. We discuss examples of such strategies in <a href="../library/experimental-causal.html#sec-ch18s9"><span>Section&nbsp;18.9</span></a> and <a href="../library/experimental-causal.html#sec-ch18s10"><span>Section&nbsp;18.10</span></a>.</p>
-</section></section><section id="summary" class="level2" data-number="8.3"><h2 data-number="8.3" class="anchored" data-anchor-id="summary">
-<span class="header-section-number">8.3</span> Summary</h2>
+<p>Interference can sometimes be thought of as reflecting weaknesses in data strategies and data strategies can be deployed – often in combination with modified answer strategies – to make it easier to study interference directly. We discuss examples of such strategies in <a href="../library/experimental-causal.html#sec-ch18s9" class="quarto-xref"><span>Section 18.9</span></a> and <a href="../library/experimental-causal.html#sec-ch18s10" class="quarto-xref"><span>Section 18.10</span></a>.</p>
+</section></section><section id="summary" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="summary">
+<span class="header-section-number">9.2</span> Summary</h2>
 <p>Data strategies are made of up three kinds of empirical strategies: sampling strategies, assignment strategies, and measurement strategies. All research designs have a data strategy – even just downloading a dataset curated by others constitutes a data strategy (the original researcher’s data strategy). The blizzard of choices enumerated in this chapter underlines the central importance of the data strategy in developing strong research designs. The data strategy is where we exert researcher control over how, over the conditions under which, and over the population from which we collect the empirical information we will use when generating answers to our research questions.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-bai2021randomize" class="csl-entry" role="listitem">
 Bai, Yuehao. 2021. <span>“Why Randomize? Minimax Optimality Under Permutation Invariance.”</span> <em>Journal of Econometrics</em>.
 </div>
@@ -866,18 +950,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -909,11 +982,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -923,8 +1033,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -936,7 +1055,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -980,6 +1221,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1005,6 +1247,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1064,12 +1332,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="pagination-link">
+      <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="pagination-link" aria-label="Defining the inquiry">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="pagination-link">
+      <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="pagination-link" aria-label="Choosing an answer strategy">
         <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

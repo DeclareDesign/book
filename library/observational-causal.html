@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design in the Social Sciences - 16&nbsp; Observational : causal</title>
+<title>16&nbsp; Observational : causal – Research Design in the Social Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,7 +19,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -30,7 +30,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -55,6 +55,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -86,16 +87,22 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -104,11 +111,18 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style type="text/css" media="print">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MMK8CF9JC0"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
+</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
 </style>
 <script type="text/javascript">
@@ -147,25 +161,50 @@ div.csl-indent {
       }
     }
 </script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/observational-causal.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/observational-causal.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
@@ -191,9 +230,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -226,9 +265,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -293,7 +332,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../library/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design library</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -334,7 +373,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design lifecycle</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -391,7 +430,7 @@ div.csl-indent {
 </li>
     </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
@@ -451,7 +490,7 @@ div.csl-indent {
   </div>
 </div>
 
-<header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/observational-causal.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
 <span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span>
 </h1>
@@ -466,6 +505,7 @@ div.csl-indent {
     
   </div>
   
+
 
 </header><p>In an observational design, researchers do not themselves assign units to conditions; the natural processes of the world are responsible for the observed treatment conditions. Causal inference from observational research designs is the art of imagining what outcomes treated units would have expressed if they had not been treated – and the outcomes of the untreated units if they had been treated.</p>
 <p>Observational causal inference is hard because it depends on the world generating just the right circumstances. This is true for all five of the observational designs we describe in this chapter. Process tracing requires observation of just the right clues to the causal mystery. Selection-on-observables requires measurement of a set of variables that collectively close all the backdoor paths from treatment to outcome. A difference-in-difference design requires a very specific kind of over-time stability — that untreated potential outcomes move exactly in parallel. Instrumental variables designs require nature to randomly assign something we can measure. Regression discontinuity designs require a cutoff that determines who is treated and who is not that we can observe and understand.</p>
@@ -483,86 +523,92 @@ div.csl-indent {
 <p>More specifically we imagine a model with two ancillary variables, <span class="math inline">\(M\)</span> and <span class="math inline">\(W\)</span>. We posit that <span class="math inline">\(X\)</span> causes <span class="math inline">\(Y\)</span> via <span class="math inline">\(M\)</span>—with negative effects of <span class="math inline">\(X\)</span> on <span class="math inline">\(M\)</span> and of <span class="math inline">\(M\)</span> and <span class="math inline">\(Y\)</span> ruled out. And we posit that <span class="math inline">\(W\)</span> is a cause of both <span class="math inline">\(M\)</span> and <span class="math inline">\(Y\)</span>. Specifically, our model asserts that if <span class="math inline">\(W=1\)</span> then <span class="math inline">\(X\)</span> causes <span class="math inline">\(M\)</span> and <span class="math inline">\(M\)</span> causes <span class="math inline">\(Y\)</span> for sure. Under this model <span class="math inline">\(M\)</span> and <span class="math inline">\(W\)</span> each serves as “clues” for the causal effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>.</p>
 <p>Using the language popularized by <span class="citation" data-cites="VanEvera1997">Van Evera (<a href="../references.html#ref-VanEvera1997" role="doc-biblioref">1997</a>)</span>, <span class="math inline">\(M\)</span> provides a “hoop” test: if you look for data on <span class="math inline">\(M\)</span> and find that <span class="math inline">\(M=0\)</span> when <span class="math inline">\(X=1\)</span> and <span class="math inline">\(Y=1\)</span> then you infer that <span class="math inline">\(X\)</span> did not cause <span class="math inline">\(Y\)</span>. If on the other hand you examine <span class="math inline">\(W\)</span> and find that <span class="math inline">\(W=1\)</span> then you have a “smoking gun” test: you infer that <span class="math inline">\(X\)</span> did indeed cause <span class="math inline">\(Y\)</span>. However, if you find both <span class="math inline">\(M=0\)</span> and <span class="math inline">\(W=1\)</span>, then you know your model is wrong.</p>
 <p>The model can be described using the <code>CausalQueries</code> package thus:</p>
-<div class="cell" data-file="scripts_declarations/declaration_16.1a.R">
+<div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdss</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">CausalQueries</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://integrated-inferences.github.io/CausalQueries/">CausalQueries</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">causal_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/make_model.html">make_model</a></span><span class="op">(</span><span class="st">"X -&gt; M -&gt; Y &lt;- W -&gt; M"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/set_restrictions.html">set_restrictions</a></span><span class="op">(</span><span class="st">"(M[X=1] &lt; M[X=0]) | (M[X=1, W=1] == M[X=0, W=1])"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/set_restrictions.html">set_restrictions</a></span><span class="op">(</span><span class="st">"(Y[M=1] &lt; Y[M=0]) | (Y[M=1, W=1] == Y[M=0, W=1])"</span><span class="op">)</span></span>
+<span><span class="va">causal_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://integrated-inferences.github.io/CausalQueries/reference/make_model.html">make_model</a></span><span class="op">(</span><span class="st">"X -&gt; M -&gt; Y &lt;- W -&gt; M"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://integrated-inferences.github.io/CausalQueries/reference/set_restrictions.html">set_restrictions</a></span><span class="op">(</span><span class="st">"(M[X=1] &lt; M[X=0]) | (M[X=1, W=1] == M[X=0, W=1])"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://integrated-inferences.github.io/CausalQueries/reference/set_restrictions.html">set_restrictions</a></span><span class="op">(</span><span class="st">"(Y[M=1] &lt; Y[M=0]) | (Y[M=1, W=1] == Y[M=0, W=1])"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">strategies</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X-Y"</span>, <span class="st">"X-Y-M"</span>, <span class="st">"X-Y-W"</span>,  <span class="st">"X-Y-W-M"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The DAG of the causal model is shown in <a href="#fig-ch16num1">Figure&nbsp;<span>16.1</span></a>.</p>
-<div id="fig-ch16num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-16-1.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;16.1: Directed acyclic graph of a process tracing model</figcaption></figure>
+<p>The DAG of the causal model is shown in <a href="#fig-ch16num1" class="quarto-xref">Figure&nbsp;<span>16.1</span></a>.</p>
+<div id="fig-ch16num1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-16-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.1: Directed acyclic graph of a process tracing model
+</figcaption></figure>
 </div>
 <p>This model definition describes the DAG but also specifies a set of restrictions on causal relations. By default, flat priors are then placed over all other possible causal relations, though of course other prior beliefs could also be specified.</p>
 <p>We now have all we need to assess what inferences we might make given different sorts of observations on <span class="math inline">\(W\)</span> and <span class="math inline">\(M\)</span>.</p>
-<p><a href="#tbl-ptprobative">Table&nbsp;<span>16.1</span></a> shows three types of quantities: beliefs upon observing <span class="math inline">\(X=1, Y=1\)</span>, conditional inferences upon observing additional data on <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span>, and the conditional probability of seeing different outcomes for <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span>.</p>
+<p><a href="#tbl-ptprobative" class="quarto-xref">Table&nbsp;<span>16.1</span></a> shows three types of quantities: beliefs upon observing <span class="math inline">\(X=1, Y=1\)</span>, conditional inferences upon observing additional data on <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span>, and the conditional probability of seeing different outcomes for <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span>.</p>
 <div class="cell">
+<div id="tbl-ptprobative" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ptprobative-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;16.1: Beliefs about the probability <span class="math inline">\(X\)</span> caused <span class="math inline">\(Y\)</span> upon observing <span class="math inline">\(X=1, Y=1\)</span>, updated inferences upon observing additional data on <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span>, and the conditional probability of seeing different outcomes for <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span> given observation of <span class="math inline">\(X=1, Y=1\)</span>.
+</figcaption><div aria-describedby="tbl-ptprobative-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-ptprobative" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;16.1: Beliefs about the probability <span class="math inline">\(X\)</span> caused <span class="math inline">\(Y\)</span> upon observing <span class="math inline">\(X=1, Y=1\)</span>, updated inferences upon observing additional data on <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span>, and the conditional probability of seeing different outcomes for <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span> given observation of <span class="math inline">\(X=1, Y=1\)</span>.</caption>
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">query</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">Value</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Prob(CoE=1|X = 1, Y=1)</td>
+<td style="text-align: left;">Y[X=1] &gt; Y[X=0]</td>
 <td style="text-align: center;">0.71</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Prob(CoE=1|X = 1, Y=1)</td>
+<td style="text-align: left;">Y[X=1] &gt; Y[X=0]</td>
 <td style="text-align: center;">0.00</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Prob(CoE=1|X = 1, Y=1)</td>
+<td style="text-align: left;">Y[X=1] &gt; Y[X=0]</td>
 <td style="text-align: center;">0.77</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Prob(CoE=1|X = 1, Y=1)</td>
+<td style="text-align: left;">Y[X=1] &gt; Y[X=0]</td>
 <td style="text-align: center;">0.20</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Prob(CoE=1|X = 1, Y=1)</td>
+<td style="text-align: left;">Y[X=1] &gt; Y[X=0]</td>
 <td style="text-align: center;">1.00</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Prob(M=1 | X = 1, Y = 1)</td>
+<td style="text-align: left;">M==1</td>
 <td style="text-align: center;">0.93</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Prob(W=1 | X = 1, Y = 1)</td>
+<td style="text-align: left;">W==1</td>
 <td style="text-align: center;">0.64</td>
 </tr>
 </tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
-<p>We see here that <span class="math inline">\(M\)</span> provides a hoop test since we are certain that <span class="math inline">\(X\)</span> does not cause <span class="math inline">\(Y\)</span> when <span class="math inline">\(M=0\)</span>, but we are uncertain when <span class="math inline">\(M=1\)</span>. (Moreover, we already expect to see <span class="math inline">\(M=1\)</span> given what we have seen for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>). <span class="math inline">\(W\)</span> provides a smoking gun test since we are certain that <span class="math inline">\(X\)</span> causes <span class="math inline">\(Y\)</span> when <span class="math inline">\(M=1\)</span> but uncertain otherwise. Since we have access to both conditional inferences and the probability of seeing different types of data, we have enough data in <a href="#tbl-ptprobative">Table&nbsp;<span>16.1</span></a> to calculate how different strategies will perform.</p>
+<p>We see here that <span class="math inline">\(M\)</span> provides a hoop test since we are certain that <span class="math inline">\(X\)</span> does not cause <span class="math inline">\(Y\)</span> when <span class="math inline">\(M=0\)</span>, but we are uncertain when <span class="math inline">\(M=1\)</span>. (Moreover, we already expect to see <span class="math inline">\(M=1\)</span> given what we have seen for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>). <span class="math inline">\(W\)</span> provides a smoking gun test since we are certain that <span class="math inline">\(X\)</span> causes <span class="math inline">\(Y\)</span> when <span class="math inline">\(M=1\)</span> but uncertain otherwise. Since we have access to both conditional inferences and the probability of seeing different types of data, we have enough data in <a href="#tbl-ptprobative" class="quarto-xref">Table&nbsp;<span>16.1</span></a> to calculate how different strategies will perform.</p>
 <p>We think it useful to fold these quantities into a design declaration so that research consumers can access the data strategies and answer strategies in the same way as they would for any other problem.</p>
-<p><a href="#def-ch16num1">Declaration&nbsp;<span>16.1</span></a> provides a flexible process tracing design. You can use this design with a different causal model and substitute in different causal queries and process tracing strategies. Given a background causal model, the design first draws a “causal type”—that is, a case together with all its causal relations. The value of the estimand (CoE) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query—like those in <a href="#tbl-ptprobative">Table&nbsp;<span>16.1</span></a>— given different possible observed values for all nodes. No data strategy is provided explicitly as the data strategy is tied up here in the estimation, that is, the estimation step describes what data will be used.</p>
+<p><a href="#def-ch16num1" class="quarto-xref">Declaration&nbsp;<span>16.1</span></a> provides a flexible process tracing design. You can use this design with a different causal model and substitute in different causal queries and process tracing strategies. Given a background causal model, the design first draws a “causal type”—that is, a case together with all its causal relations. The value of the estimand (CoE) can then be calculated and the observable data corresponding to the type revealed. The estimation uses a custom function, which simply returns the inferences on the query—like those in <a href="#tbl-ptprobative" class="quarto-xref">Table&nbsp;<span>16.1</span></a>— given different possible observed values for all nodes. No data strategy is provided explicitly as the data strategy is tied up here in the estimation, that is, the estimation step describes what data will be used.</p>
 <div id="def-ch16num1" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 16.1 </strong></span>Process tracing design declaration</p>
-<div class="cell" data-file="scripts_declarations/declaration_16.1b.R">
+<p><span class="theorem-title"><strong>Declaration 16.1</strong></span> Process tracing design declaration</p>
+<div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_16.1</span> <span class="op">&lt;-</span></span>
-<span>  <span class="fu">declare_model</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/draw_causal_type.html">draw_causal_type</a></span><span class="op">(</span><span class="va">causal_model</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_model</span><span class="op">(</span><span class="fu"><a href="https://integrated-inferences.github.io/CausalQueries/reference/draw_causal_type.html">draw_causal_type</a></span><span class="op">(</span><span class="va">causal_model</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_inquiry</span><span class="op">(</span></span>
-<span>    CoE <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/query_distribution.html">query_distribution</a></span><span class="op">(</span></span>
+<span>    CoE <span class="op">=</span>  <span class="fu"><a href="https://integrated-inferences.github.io/CausalQueries/reference/query_distribution.html">query_distribution</a></span><span class="op">(</span></span>
 <span>      <span class="va">causal_model</span>, </span>
 <span>      query <span class="op">=</span> <span class="st">"Y[X=1] - Y[X=0]"</span>, </span>
 <span>      parameters <span class="op">=</span> <span class="va">causal_type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_measurement</span><span class="op">(</span></span>
 <span>    handler <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
 <span>      <span class="va">causal_model</span> <span class="op">|&gt;</span></span>
-<span>      <span class="fu"><a href="https://rdrr.io/pkg/CausalQueries/man/make_data.html">make_data</a></span><span class="op">(</span>parameters <span class="op">=</span> <span class="va">data</span><span class="op">$</span><span class="va">causal_type</span><span class="op">)</span><span class="op">)</span>  <span class="op">+</span></span>
+<span>      <span class="fu"><a href="https://integrated-inferences.github.io/CausalQueries/reference/data_helpers.html">make_data</a></span><span class="op">(</span>parameters <span class="op">=</span> <span class="va">data</span><span class="op">$</span><span class="va">causal_type</span><span class="op">)</span><span class="op">)</span>  <span class="op">+</span></span>
 <span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
 <span>    handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="va">process_tracing_estimator</span><span class="op">)</span>, </span>
 <span>    causal_model <span class="op">=</span> <span class="va">causal_model</span>,</span>
@@ -571,13 +617,17 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch16num1" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 16.1 </strong></span>Process tracing diagnosis</p>
+<p><span class="theorem-title"><strong>Diagnosis 16.1</strong></span> Process tracing diagnosis</p>
 <p>Given such a model, a case in which <span class="math inline">\(X = Y = 1\)</span> (for instance), and limited resources, we now want to know whether we would be better gathering data on <span class="math inline">\(M\)</span> or <span class="math inline">\(W\)</span> or both.</p>
-<p>The answers are given in <a href="#fig-ch16num2">Figure&nbsp;<span>16.2</span></a>. Here we show the expected error from inferences given each process tracing strategy. We break up the diagnoses according to the <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> data already observed—thus illustrating how an unconditional model can be used to assess designs even after some data is observed. Across the four possible data patterns we see equivalent implications for settings in which we are interested, in one case with <span class="math inline">\(X=Y=1\)</span>, and in one case with <span class="math inline">\(X=Y=0\)</span>. For the cases with <span class="math inline">\(X \neq Y\)</span> we already know—because of the monotonicity restrictions in the model—that <span class="math inline">\(X\)</span> did not cause <span class="math inline">\(Y\)</span> and so we learn nothing from all strategies.</p>
+<p>The answers are given in <a href="#fig-ch16num2" class="quarto-xref">Figure&nbsp;<span>16.2</span></a>. Here we show the expected error from inferences given each process tracing strategy. We break up the diagnoses according to the <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> data already observed—thus illustrating how an unconditional model can be used to assess designs even after some data is observed. Across the four possible data patterns we see equivalent implications for settings in which we are interested, in one case with <span class="math inline">\(X=Y=1\)</span>, and in one case with <span class="math inline">\(X=Y=0\)</span>. For the cases with <span class="math inline">\(X \neq Y\)</span> we already know—because of the monotonicity restrictions in the model—that <span class="math inline">\(X\)</span> did not cause <span class="math inline">\(Y\)</span> and so we learn nothing from all strategies.</p>
 <p>We see only modest declines in expected errors from observation of the mediator <span class="math inline">\(M\)</span> (consistent with the manual calculation above), but large declines from observing <span class="math inline">\(W\)</span>. If we have already observed <span class="math inline">\(W\)</span> the gains from observing <span class="math inline">\(M\)</span> are still more slight. Broadly this confirms a more general observation that mediators can often provide limited traction for learning about causes of effects relative to moderators <span class="citation" data-cites="dawid2022bounding">(<a href="../references.html#ref-dawid2022bounding" role="doc-biblioref">Dawid, Humphreys, and Musio 2022</a>)</span>.</p>
-<div id="fig-ch16num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-16-2.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;16.2: Inferences from four different process tracing data strategies on whether <span class="math inline">\(X\)</span> caused <span class="math inline">\(Y\)</span> given four different observed <span class="math inline">\(X,Y\)</span> data patterns.</figcaption></figure>
+<div id="fig-ch16num2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-16-2.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.2: Inferences from four different process tracing data strategies on whether <span class="math inline">\(X\)</span> caused <span class="math inline">\(Y\)</span> given four different observed <span class="math inline">\(X,Y\)</span> data patterns.
+</figcaption></figure>
 </div>
 </div>
 <section id="design-examples" class="level3" data-number="16.1.1"><h3 data-number="16.1.1" class="anchored" data-anchor-id="design-examples">
@@ -593,24 +643,28 @@ div.csl-indent {
 <p>When we want to learn about causal effects, but treatments are allocated by the world and not by the researcher, we are sometimes stuck. It is possible that a comparison of treated units to control units will generate biased inferences because of selection – the problem that certain types of units “select” into treatment and others into control. If the average potential outcomes of the groups that come to be treated or untreated are not equal, then a comparison of the realized outcomes of the two groups is not guaranteed to yield unbiased causal inferences.</p>
 <p>Sometimes, however, we know enough about selection in order to condition on the variables that cause it. A selection-on-observables design stipulates a family of models <span class="math inline">\(M\)</span> of the world that describe which variables are responsible for selection, then employs a data strategy that measures those variables, rendering them “observable.” In the answer strategy, we draw on substantive knowledge of the causal process to generate an “adjustment set,” or a set of variables that can account for selection into treatment. In the language of causal path diagrams, an adjustment set is a set of variables that, when conditioned upon, closes all backdoor paths from the treatment to the outcome. We can condition on the adjustment set using a variety of alternative answer strategies, for example, through regression adjustment, stratification, or matching.</p>
 <p>The quality of causal inferences we draw comes down to whether our claims about selection into treatment are correct. If we’ve missed a cause (missed a backdoor path), then our inferences will be prone to bias. It is the nature of the selection-on-observables design that we can’t know if our claims about the processes that cause selection are correct or not; the design amounts to a leap of faith in the theoretical model.</p>
-<p>The problems don’t end there. We risk bias if we fail to adjust for <span class="math inline">\(X\)</span> under some models — but we will also risk bias if we <em>do</em> adjust for <span class="math inline">\(X\)</span> under other models. In <a href="#fig-ch16num3">Figure&nbsp;<span>16.3</span></a> we illustrate four of the possible roles for an observable variable <span class="math inline">\(X\)</span>: as a confounder of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; as a collider, which is affected by both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; as a mediator of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; and as a predictor of <span class="math inline">\(Y\)</span> with no connection to <span class="math inline">\(D\)</span>. We set aside in these DAGs the possible roles of an unobservable variable <span class="math inline">\(U\)</span> that would introduce additional problems of confounding.</p>
-<div id="fig-ch16num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-16-3.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;16.3: Four roles for an observable variable X.</figcaption></figure>
+<p>The problems don’t end there. We risk bias if we fail to adjust for <span class="math inline">\(X\)</span> under some models — but we will also risk bias if we <em>do</em> adjust for <span class="math inline">\(X\)</span> under other models. In <a href="#fig-ch16num3" class="quarto-xref">Figure&nbsp;<span>16.3</span></a> we illustrate four of the possible roles for an observable variable <span class="math inline">\(X\)</span>: as a confounder of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; as a collider, which is affected by both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; as a mediator of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; and as a predictor of <span class="math inline">\(Y\)</span> with no connection to <span class="math inline">\(D\)</span>. We set aside in these DAGs the possible roles of an unobservable variable <span class="math inline">\(U\)</span> that would introduce additional problems of confounding.</p>
+<div id="fig-ch16num3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-16-3.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.3: Four roles for an observable variable X.
+</figcaption></figure>
 </div>
 <p>If <span class="math inline">\(X\)</span> is a confounder, failing to adjust for it in studying the relationship between the treatment <span class="math inline">\(D\)</span> and outcome <span class="math inline">\(Y\)</span> will lead to a risk of confounding bias. We often think of the fourth DAG as the alternative to this, where <span class="math inline">\(X\)</span> is a predictor of <span class="math inline">\(Y\)</span> but has no link to <span class="math inline">\(D\)</span>. In this circumstance, we still want to adjust for <span class="math inline">\(X\)</span> to seek efficiency improvements by soaking up additional variation in <span class="math inline">\(Y\)</span>, but failing to do so will not introduce bias. If the true model is definitely represented by either the first or fourth DAG, we should clearly choose to adjust for <span class="math inline">\(X\)</span>. In the first case, we should adjust to close the backdoor path, and in the fourth case, we will do no worse in terms of bias and may in fact increase precision.</p>
 <p>However, the middle two DAGs present problems if we <em>do</em> adjust for <span class="math inline">\(X\)</span>. In the first, <span class="math inline">\(X\)</span> is a collider: it is affected by both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. Adjusting for <span class="math inline">\(X\)</span> if this is the true model introduces collider bias, because we open a backdoor path between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> through <span class="math inline">\(X\)</span>. We also introduce bias if we control for <span class="math inline">\(X\)</span> if the mediator model (DAG 3) is the true model, wherein <span class="math inline">\(D\)</span> affects <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span> affects <span class="math inline">\(Y\)</span> (i.e., <span class="math inline">\(X\)</span> is a mediator for the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>). But the reason here is different: controlling for a mediator adjusts away part of the true treatment effect.</p>
 <p>In a selection-on-observables design, we must get many features of the model correct, not only about the factors that affect <span class="math inline">\(D\)</span>. We must be sure of all the arrows into <span class="math inline">\(X\)</span>, <span class="math inline">\(D\)</span>, and <span class="math inline">\(Y\)</span> and the order of the causal arrows. In some cases, in natural experiments where selection processes are not randomized by researchers but are nevertheless known, these assumptions can be sustained. In others, we will be making heroic assumptions.</p>
-<p><a href="#def-ch16num2">Declaration&nbsp;<span>16.2</span></a> explores these considerations, with a model defining the relationship between a causal factor of interest <span class="math inline">\(D\)</span> and outcome <span class="math inline">\(Y\)</span> and an observable confounder <span class="math inline">\(X\)</span>; the average treatment effect as the inquiry; a simple measurement strategy, and two estimators with and without adjustment for <span class="math inline">\(X\)</span>. We use exact matching as our adjustment strategy.</p>
+<p><a href="#def-ch16num2" class="quarto-xref">Declaration&nbsp;<span>16.2</span></a> explores these considerations, with a model defining the relationship between a causal factor of interest <span class="math inline">\(D\)</span> and outcome <span class="math inline">\(Y\)</span> and an observable confounder <span class="math inline">\(X\)</span>; the average treatment effect as the inquiry; a simple measurement strategy, and two estimators with and without adjustment for <span class="math inline">\(X\)</span>. We use exact matching as our adjustment strategy.</p>
 <div id="def-ch16num2" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 16.2 </strong></span>Matching design declaration.</p>
-<div class="cell" data-file="scripts_declarations/declaration_16.2.R">
+<p><span class="theorem-title"><strong>Declaration 16.2</strong></span> Matching design declaration.</p>
+<div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://kosukeimai.github.io/MatchIt/">MatchIt</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">exact_matching</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span> </span>
 <span>    <span class="va">matched</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://kosukeimai.github.io/MatchIt/reference/matchit.html">matchit</a></span><span class="op">(</span><span class="va">D</span> <span class="op">~</span> <span class="va">X</span>, method <span class="op">=</span> <span class="st">"exact"</span>, data <span class="op">=</span> <span class="va">data</span><span class="op">)</span> </span>
-<span>    <span class="fu"><a href="https://kosukeimai.github.io/MatchIt/reference/match.data.html">match.data</a></span><span class="op">(</span><span class="va">matched</span><span class="op">)</span> </span>
+<span>    <span class="fu"><a href="https://kosukeimai.github.io/MatchIt/reference/match_data.html">match.data</a></span><span class="op">(</span><span class="va">matched</span><span class="op">)</span> </span>
 <span>  <span class="op">}</span></span>
 <span></span>
 <span></span>
@@ -638,11 +692,15 @@ div.csl-indent {
 <p>We declare beliefs about the selection process and how <span class="math inline">\(D\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(X\)</span> are related. The model needs to include potential outcomes for the main outcome of interest (<span class="math inline">\(Y\)</span>) and a specification of the assignment of the key causal variable (in this case, <span class="math inline">\(D\)</span>). Here, we have defined the assignment process as a function of an observable variable <span class="math inline">\(X\)</span>. In fact, <span class="math inline">\(X\)</span> is the only variable that affects selection into treatment: <span class="math inline">\(X\)</span> is a binary variable (i.e., two groups), and the probability of treatment is 0.4 when <span class="math inline">\(X=0\)</span> and 0.6 when <span class="math inline">\(X=1\)</span>. In addition, we define the potential outcomes for <span class="math inline">\(Y\)</span>, which invoke confounding by <span class="math inline">\(X\)</span> because it affects both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. We only invoke one possible relationship between <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(D\)</span>, and so do not consider the possibilities of colliders or mediators.</p>
 <p>In our model, <span class="math inline">\(U\)</span> is not a confounder, because it affects <span class="math inline">\(Y\)</span> but not <span class="math inline">\(D\)</span>; this is a strong excludability assumption on which our causal inferences depend. The assumption is strong because ruling out all unobservable confounders is typically impossible. Most causal factors in nature are affected by many variables, only some of which we can imagine and measure. The first estimator, with adjustment, uses the weights from the exact matching estimator. The matching procedure adjusts for differences in the probability of selection into treatment according to <span class="math inline">\(X\)</span>. The second, unadjusted, estimator does not control for <span class="math inline">\(X\)</span>. It suffers from unobserved confounding, because <span class="math inline">\(X\)</span> predicts both treatment and the outcome.</p>
 <div id="lem-ch16num2" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 16.2 </strong></span>Matching design diagnosis</p>
-<p>In <a href="#fig-ch16num4">Figure&nbsp;<span>16.4</span></a>, we see that the raw, unmatched estimate is upwardly biased (by about 20% of the average estimate) and that the matched estimate is unbiased. If we fail to adjust for the observable features of the selection process, we have biased answers. But if we do control in this case, we obtain unbiased answers. However, as highlighted earlier, these results depend on the plausibility of our model, which in this case involves observed confounding of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> by <span class="math inline">\(X\)</span>. If there was <em>unobservable</em> confounding from <span class="math inline">\(U\)</span>, or if <span class="math inline">\(X\)</span> were a collider or mediator, there would be bias even if we control for <span class="math inline">\(X\)</span>.</p>
-<div id="fig-ch16num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-16-4.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;16.4: Sampling distribution of two estimators.</figcaption></figure>
+<p><span class="theorem-title"><strong>Diagnosis 16.2</strong></span> Matching design diagnosis</p>
+<p>In <a href="#fig-ch16num4" class="quarto-xref">Figure&nbsp;<span>16.4</span></a>, we see that the raw, unmatched estimate is upwardly biased (by about 20% of the average estimate) and that the matched estimate is unbiased. If we fail to adjust for the observable features of the selection process, we have biased answers. But if we do control in this case, we obtain unbiased answers. However, as highlighted earlier, these results depend on the plausibility of our model, which in this case involves observed confounding of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> by <span class="math inline">\(X\)</span>. If there was <em>unobservable</em> confounding from <span class="math inline">\(U\)</span>, or if <span class="math inline">\(X\)</span> were a collider or mediator, there would be bias even if we control for <span class="math inline">\(X\)</span>.</p>
+<div id="fig-ch16num4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-16-4.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.4: Sampling distribution of two estimators.
+</figcaption></figure>
 </div>
 </div>
 <section id="design-examples-1" class="level3" data-number="16.2.1"><h3 data-number="16.2.1" class="anchored" data-anchor-id="design-examples-1">
@@ -658,10 +716,10 @@ div.csl-indent {
 <p>The difference-in-differences design compares the pre-to-posttreatment difference in treated units to that in untreated units. By focusing on the difference over time, unit-specific characteristics of treated units are subtracted out. We use the over-time change in the untreated units to account for the changes over time in the treated units that are not due to the treatment. Suppose outcomes were rising over time for all units but we only looked at the pre-to-post difference in the treatment group. We might falsely infer the treatment increased outcomes. The logic of the difference-in-differences design is that we can subtract off first unit-specific characteristics and then trends affecting all units in order to adjust our causal effect estimates.</p>
 <p>The difference-in-differences design relies on a strong assumption in <span class="math inline">\(M\)</span>: the parallel trends assumption. This assumption asserts that the <em>changes</em> (not the levels) in untreated potential outcomes are the same for treated and untreated units. Because this assumption depends on the values of the unrealized (and thus unobservable) control potential outcomes in the treated units after treatment, it cannot be tested. A widely used diagnostic is to look at the trends in outcomes between the treated and control unit <em>before</em> treatment; this is only an indirect test because the parallel trends assumption concerns the unobserved control trend of the actually treated unit.</p>
 <p>The design has been commonly used for analyses of two periods (before and after) and two groups (treated and untreated), such as a policy change in one state compared to another before and after the policy change. Today, difference-in-differences is often used in many-period, many-group settings with observational panel data. Here, the logic of the two-period, two-group design is extended through analogy. Parallel trends between treated and control groups are assumed <em>on average</em> across treated groups and periods. Unfortunately, the analogy holds only under limited circumstances, a fact only recently appreciated.</p>
-<p><a href="#def-ch16num3">Declaration&nbsp;<span>16.3</span></a> describes a 20-period, 20-unit design in which eventually treated units become treated at different times, a common setting in empirical social science often referred to as the staggered adoption design. The treatment effect of interest might be a state-level policy adopted in 20 states at some point within a 20-year period, so we draw on comparisons before and after policy adoption within states and comparisons across states that have and have not yet adopted treatment. We use the <code>did_multiplegt_tidy</code> function (available in the <code>rdss</code> companion package) to prepare the output from the <code>DIDmultiplegt</code> package that implements the estimation procedure suggested by <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span>.</p>
+<p><a href="#def-ch16num3" class="quarto-xref">Declaration&nbsp;<span>16.3</span></a> describes a 20-period, 20-unit design in which eventually treated units become treated at different times, a common setting in empirical social science often referred to as the staggered adoption design. The treatment effect of interest might be a state-level policy adopted in 20 states at some point within a 20-year period, so we draw on comparisons before and after policy adoption within states and comparisons across states that have and have not yet adopted treatment. We use the <code>did_multiplegt_tidy</code> function (available in the <code>rdss</code> companion package) to prepare the output from the <code>DIDmultiplegt</code> package that implements the estimation procedure suggested by <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span>.</p>
 <div id="def-ch16num3" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 16.3 </strong></span>Difference-in-differences design</p>
-<div class="cell" data-file="scripts_declarations/declaration_16.3.R">
+<p><span class="theorem-title"><strong>Declaration 16.3</strong></span> Difference-in-differences design</p>
+<div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdss</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">DIDmultiplegt</span><span class="op">)</span></span>
 <span></span>
@@ -673,7 +731,7 @@ div.csl-indent {
 <span>  units <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="va">N_units</span>, </span>
 <span>    U_unit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>, </span>
-<span>    D_unit <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">U_unit</span> <span class="op">&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">U_unit</span><span class="op">)</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>,</span>
+<span>    D_unit <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">U_unit</span> <span class="op">&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">U_unit</span><span class="op">)</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>,</span>
 <span>    D_time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="va">N_time_periods</span>, <span class="va">N</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span>  <span class="op">)</span>,</span>
 <span>  periods <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
@@ -687,7 +745,7 @@ div.csl-indent {
 <span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">U</span> <span class="op">+</span> <span class="va">U_unit</span> <span class="op">+</span> <span class="va">U_time</span> <span class="op">+</span> </span>
 <span>                         <span class="va">D</span> <span class="op">*</span> <span class="op">(</span><span class="fl">0.2</span> <span class="op">-</span> <span class="fl">1</span> <span class="op">*</span> <span class="op">(</span><span class="va">D_time</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">periods</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, </span>
 <span>                       conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>D <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>    D <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">D_unit</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">periods</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="va">D_time</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>,</span>
+<span>    D <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">D_unit</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">periods</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="va">D_time</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>,</span>
 <span>    D_lag <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/rdss/man/lag_by_group.html">lag_by_group</a></span><span class="op">(</span><span class="va">D</span>, groups <span class="op">=</span> <span class="va">units</span>, n <span class="op">=</span> <span class="fl">1</span>, order_by <span class="op">=</span> <span class="va">periods</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">)</span> <span class="op">+</span></span>
@@ -721,24 +779,32 @@ div.csl-indent {
 <p>The difference-in-differences design typically targets the average treatment effect on the treated (ATT) inquiry. We leverage over time comparisons within units to isolate the causal effect of treatment, and difference out time-varying characteristics by subtracting off the change in untreated units. Unfortunately, except under extremely limited circumstances — exactly homogeneous treatment effects — we will not be able to recover unbiased estimates of the ATT. We can, however, under some circumstances and with some estimators, recover the ATT for a specific subgroup: units in those periods that just switched from untreated to treated. We declare the ATT for these “switchers” as the inquiry.</p>
 <p>So many answer strategies have been proposed in recent years to address bias in the difference-in-differences design that we cannot summarize them in this short entry. Instead, we illustrate how to assess the properties of two particular estimators under a range of conditions. First, we define the standard two-way fixed effects estimator with fixed effects by time and unit. The two-way fixed effects fits the empirical goal of difference-in-differences: the time fixed effects net out time-varying unit-invariant variables such as seasonality and time trends. The unit fixed effects net out unit-varying variables that are time-invariant, like race or gender at birth of individuals and long-term histories of violence in territories. However, the two-way fixed effects estimator relies on comparisons between units that are treated and units that are <em>not yet</em> treated. When treatment effects differ across units depending on when they are treated (as they do in the design here), then those comparisons can be biased: part of the treatment effect will be subtracted out of the estimate. Our second estimator, proposed by <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span>, addresses this problem when estimating the ATT among switchers.</p>
 <div id="lem-ch16num3" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 16.3 </strong></span>Difference-in-Differences diagnosis</p>
+<p><span class="theorem-title"><strong>Diagnosis 16.3</strong></span> Difference-in-Differences diagnosis</p>
 <div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_16.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_16.3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch16num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-16-5.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;16.5: Sampling distributions of two difference-in-differences estimators.</figcaption></figure>
+<div id="fig-ch16num5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-16-5.svg" class="img-fluid figure-img">
 </div>
-<p><a href="#fig-ch16num5">Figure&nbsp;<span>16.5</span></a> shows that the two-way fixed effects estimator is biased for both the ATT and the ATT on the switchers. By contrast, the <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator is unbiased for the ATT on the switchers. Neither estimator recovers unbiased estimates of the ATT. The next section explains why.</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.5: Sampling distributions of two difference-in-differences estimators.
+</figcaption></figure>
+</div>
+<p><a href="#fig-ch16num5" class="quarto-xref">Figure&nbsp;<span>16.5</span></a> shows that the two-way fixed effects estimator is biased for both the ATT and the ATT on the switchers. By contrast, the <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator is unbiased for the ATT on the switchers. Neither estimator recovers unbiased estimates of the ATT. The next section explains why.</p>
 </div>
 <div id="lem-ch16num4" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 16.4 </strong></span>Redesigning over alternative models of treatment effect heterogeneity</p>
-<p>The issues with the two-way fixed effects estimator emerge when treatment effects differ for units that are treated later versus earlier. Following <a href="../introduction/research-design-principles.html#exm-designagnostically">Principle&nbsp;<span>3.2</span></a>: Design agnostically, we declare a model with homogeneous treatment effects, as well as two kinds of time-varying heterogeneous treatment effects: one in which effects are lower for units treated later and one in which effects are higher for units treated later.</p>
-<p>The timing of treatment, nature of heterogeneous effects, and answer strategies interact to determine the properties of the design. <a href="#fig-ch16num6">Figure&nbsp;<span>16.6</span></a> shows the diagnosis under all three sets of potential outcomes, and examines both the ATT and the ATT for switchers inquiries. We consider both the two-way fixed effects estimator and the <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator.</p>
+<p><span class="theorem-title"><strong>Diagnosis 16.4</strong></span> Redesigning over alternative models of treatment effect heterogeneity</p>
+<p>The issues with the two-way fixed effects estimator emerge when treatment effects differ for units that are treated later versus earlier. Following <a href="../introduction/research-design-principles.html#exm-designagnostically" class="quarto-xref">Principle&nbsp;<span>3.2</span></a>: Design agnostically, we declare a model with homogeneous treatment effects, as well as two kinds of time-varying heterogeneous treatment effects: one in which effects are lower for units treated later and one in which effects are higher for units treated later.</p>
+<p>The timing of treatment, nature of heterogeneous effects, and answer strategies interact to determine the properties of the design. <a href="#fig-ch16num6" class="quarto-xref">Figure&nbsp;<span>16.6</span></a> shows the diagnosis under all three sets of potential outcomes, and examines both the ATT and the ATT for switchers inquiries. We consider both the two-way fixed effects estimator and the <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator.</p>
 <p>When treatment effects happen to be homogeneous (middle panel), both estimators recover unbiased estimates of both the ATT and the ATT for switchers, which of course are equal to one another because of treatment effect homogeneity. However, when treatment effects vary with the timing of treatment (left or right panels), the two-way fixed effects estimator is biased for both inquiries. The <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator is also biased for the ATT, but remains unbiased for the ATT among switchers regardless of the pattern of treatment effect heterogeneity.</p>
-<div id="fig-ch16num6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-16-6.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;16.6: Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes.</figcaption></figure>
+<div id="fig-ch16num6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-16-6.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.6: Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes.
+</figcaption></figure>
 </div>
 </div>
 <section id="design-examples-2" class="level3" data-number="16.3.1"><h3 data-number="16.3.1" class="anchored" data-anchor-id="design-examples-2">
@@ -751,20 +817,26 @@ div.csl-indent {
 <div class="ddbox">
 <p>We declare a design in which a researcher addresses confounding concerns by using an instrumental variable. Under the right conditions, the approach can generate unbiased estimates for treatment effects for units whose treatment status is sensitive to the instrument.</p>
 </div>
-<p>When we cannot credibly assert that we have controlled for all confounding variables as in a selection-on-observables design (see <a href="#sec-ch16s2"><span>Section&nbsp;16.2</span></a>) and when we do not think the parallel trends assumption is likely to hold in a difference-in-differences design (see <a href="#sec-ch16s3"><span>Section&nbsp;16.3</span></a>), we might have to give up on our goal of drawing causal inferences.</p>
+<p>When we cannot credibly assert that we have controlled for all confounding variables as in a selection-on-observables design (see <a href="#sec-ch16s2" class="quarto-xref"><span>Section 16.2</span></a>) and when we do not think the parallel trends assumption is likely to hold in a difference-in-differences design (see <a href="#sec-ch16s3" class="quarto-xref"><span>Section 16.3</span></a>), we might have to give up on our goal of drawing causal inferences.</p>
 <p>But occasionally, the world yields an opportunity to sidestep unobserved confounding by generating as-if random variation in a variable that itself affects the treatment variable but does not directly affect the outcome. We call the variable that is as-if randomly assigned by the world an “instrument.”</p>
 <p>Instruments are special. They are variables that are “as-if” randomly assigned by nature, the government, or other individuals or groups. Usually, genuine random assignments have to be crafted by researchers as part of a deliberate data strategy. Experimenters go to great lengths to randomly expose some units but not others to treatments. When the world provides credibly random variation in an instrumental variable, it’s a rare and valuable opportunity. By virtue of as-if random assignment, we can learn about the average causal effects of the instrument itself without any further consternation. Conditional on geography and season, weather conditions are plausibly as-if randomly assigned, so we can learn about the average effects of rainfall on many outcomes, like crop yields, voter turnout, and attendance at sporting events. Conditional on gender and birth year, draft numbers in the US were actually randomly assigned by the government, so we can learn about the average effects of being drafted on educational attainment, future earnings, or public policy preferences.</p>
-<p>We illustrate the logic of instrumental variables with the DAG shown in <a href="#fig-ch16num7">Figure&nbsp;<span>16.7</span></a>. An instrument <span class="math inline">\(Z\)</span> affects an endogenous treatment <span class="math inline">\(D\)</span> which subsequently affects an outcome <span class="math inline">\(Y\)</span>. Many other common causes, summarized in terms of unknown heterogeneity <span class="math inline">\(U\)</span>, affect both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. It is because of this unmeasured confounding that we cannot learn about the effect of <span class="math inline">\(D\)</span> on <span class="math inline">\(Y\)</span> directly using standard tools.</p>
-<div id="fig-ch16num7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-16-7.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;16.7: Directed acyclic graph of an instrumental variables design.</figcaption></figure>
+<p>We illustrate the logic of instrumental variables with the DAG shown in <a href="#fig-ch16num7" class="quarto-xref">Figure&nbsp;<span>16.7</span></a>. An instrument <span class="math inline">\(Z\)</span> affects an endogenous treatment <span class="math inline">\(D\)</span> which subsequently affects an outcome <span class="math inline">\(Y\)</span>. Many other common causes, summarized in terms of unknown heterogeneity <span class="math inline">\(U\)</span>, affect both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. It is because of this unmeasured confounding that we cannot learn about the effect of <span class="math inline">\(D\)</span> on <span class="math inline">\(Y\)</span> directly using standard tools.</p>
+<div id="fig-ch16num7" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-16-7.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.7: Directed acyclic graph of an instrumental variables design.
+</figcaption></figure>
 </div>
 <p>We can naturally imagine an inquiry that represents the effect of the instrument (<span class="math inline">\(Z\)</span>) on an outcome of interest, such as the effect of features of the draft number on future earnings. In the terminology of instrumental variables, this inquiry is called the “reduced form” or the “intention-to-treat” (ITT) effect. If it’s really true that the instrument is randomly assigned by the world, estimation of the reduced form effect is straightforward: we estimate the causal effect of <span class="math inline">\(Z\)</span> on <span class="math inline">\(Y\)</span> using, for example, a difference-in-means estimator. Sometimes, we are also interested in the “first-stage” effect of the instrument on the treatment variable. Similarly, we can target this inquiry by studying the causal effect of <span class="math inline">\(Z\)</span> on <span class="math inline">\(D\)</span>, for example, by using the difference-in-means estimator again.</p>
 <p>The trouble comes when we want to leverage the random assignment of the instrument (<span class="math inline">\(Z\)</span>) to learn about the average causal effect of the treatment variable (<span class="math inline">\(D\)</span>) on the outcome (<span class="math inline">\(Y\)</span>), where <span class="math inline">\(D\)</span> is not randomly assigned but rather affected by <span class="math inline">\(Z\)</span> and also other variables. To do so, we need to understand better how the instrument affects whether units are <em>treated</em> and then how both affect the outcome of interest. We need to understand “compliance” with the instrument.</p>
-<p>We can define the compliance types of units in terms of the combinations of values the potential outcomes of <span class="math inline">\(D\)</span> take on as a function of the values of the instrument <span class="math inline">\(Z\)</span>. The combinations are made up of the value of the treatment if unit <span class="math inline">\(i\)</span> is assigned to control (<span class="math inline">\(D_i(Z_i = 0)\)</span>) and the value if it is assigned to treatment (<span class="math inline">\(D_i(Z_i = 1)\)</span>). With a binary instrument and binary treatment, there are four possible potential outcome values and thus four types, enumerated in <a href="#tbl-compliancetypes">Table&nbsp;<span>16.2</span></a>. These compliance types are sometimes known as “principal strata” <span class="citation" data-cites="frangakis2002principal">(<a href="../references.html#ref-frangakis2002principal" role="doc-biblioref">Frangakis and Rubin 2002</a>)</span>.</p>
-<div id="tbl-compliancetypes" class="anchored">
-<table class="table">
-<caption>Table&nbsp;16.2: Compliance types</caption>
+<p>We can define the compliance types of units in terms of the combinations of values the potential outcomes of <span class="math inline">\(D\)</span> take on as a function of the values of the instrument <span class="math inline">\(Z\)</span>. The combinations are made up of the value of the treatment if unit <span class="math inline">\(i\)</span> is assigned to control (<span class="math inline">\(D_i(Z_i = 0)\)</span>) and the value if it is assigned to treatment (<span class="math inline">\(D_i(Z_i = 1)\)</span>). With a binary instrument and binary treatment, there are four possible potential outcome values and thus four types, enumerated in <a href="#tbl-compliancetypes" class="quarto-xref">Table&nbsp;<span>16.2</span></a>. These compliance types are sometimes known as “principal strata” <span class="citation" data-cites="frangakis2002principal">(<a href="../references.html#ref-frangakis2002principal" role="doc-biblioref">Frangakis and Rubin 2002</a>)</span>.</p>
+<div id="tbl-compliancetypes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-compliancetypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;16.2: Compliance types
+</figcaption><div aria-describedby="tbl-compliancetypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <thead><tr class="header">
 <th>Type</th>
 <th><span class="math inline">\(D_i(Z_i = 0)\)</span></th>
@@ -794,6 +866,8 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <p>Never-takers are those who never take the treatment, no matter what the value of the instrument. Compliers take the value of the treatment they are assigned by the instrument. Defiers do exactly the opposite. When the instrument assigns them to take the treatment, defiers refuse it, but if it assigns them not to, they do take treatment. As their name suggests, always-takers take the treatment regardless of the value of the instrument.</p>
 <p>With these types in mind, we can now define a new inquiry that we will be able to target with instrumental variables under a special set of assumptions: a “local” average treatment effect (LATE) among compliers. The “local” qualifier indicates that the effect applies only to the specific group of units whose treatment status changes as a result of the instrument. The LATE is <span class="math inline">\(\mathbb{E}[Y_i(D_i = 1) - Y_i(D_i = 0) | D_i(Z_i = 1) &gt; D_i(Z_i = 0)]\)</span>. This quantity is the average treatment effect among the compliers. The LATE is different from the ATE because it does not average over the effects for never-takers, always-takers, and defiers, but the ATE does.</p>
 <p>We can adopt an instrumental variables answer strategy — using two-stage least squares, for example — to estimate the LATE. <span class="citation" data-cites="angrist1996">Angrist, Imbens, and Rubin (<a href="../references.html#ref-angrist1996" role="doc-biblioref">1996</a>)</span> show that this LATE estimand can be identified under the following five assumptions:</p>
@@ -805,17 +879,17 @@ div.csl-indent {
 <li><p>Nonzero effect of the instrument on the treatment. If the instrument does not affect the treatment, then it is useless for learning about the effects of the treatment on the outcome, simply because it generates no compliers. If there are no compliers, the LATE itself is undefined.</p></li>
 </ol>
 <p>If all five of these assumptions are met, it can be shown that the inquiry <span class="math inline">\(\mathrm{LATE} = \frac{\mathrm{ATE}_{ \mathrm{Z\rightarrow Y} }}{\mathrm{ATE}_{Z\rightarrow D}} = \frac{\mathrm{Reduced~Form}}{\mathrm{First~Stage}}\)</span>. It is the quotient of the ATE of the instrument on the outcome divided by the ATE of the instrument on the treatment. This expression underlines the importance of the fifth assumption: if the instrument doesn’t affect the treatment, the first stage is equal to zero and the ratio is undefined.</p>
-<p>Many of the five assumptions are represented in the DAG in <a href="#fig-ch16num7">Figure&nbsp;<span>16.7</span></a>. The exogeneity of the instrument is represented by the exclusion of a causal effect of <span class="math inline">\(U\)</span> on <span class="math inline">\(Z\)</span>. The omission of an arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span> directly invokes the exclusion restriction. Noninterference is typically not directly represented in DAGs. The nonzero effect of the instrument on the treatment is represented by the causal arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(D\)</span>.</p>
+<p>Many of the five assumptions are represented in the DAG in <a href="#fig-ch16num7" class="quarto-xref">Figure&nbsp;<span>16.7</span></a>. The exogeneity of the instrument is represented by the exclusion of a causal effect of <span class="math inline">\(U\)</span> on <span class="math inline">\(Z\)</span>. The omission of an arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span> directly invokes the exclusion restriction. Noninterference is typically not directly represented in DAGs. The nonzero effect of the instrument on the treatment is represented by the causal arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(D\)</span>.</p>
 <p>Moving to the answer strategy, a plug-in estimator of the LATE is the difference-in-means of the outcome according to the instrument divided by the difference-in-means of the treatment according to the instrument. Equivalently, we can use two-stage least squares, which will yield the identical answer as the ratio of the difference-in-means estimates when no covariates are included in the regression.</p>
 <p>With the four elements of the design in hand, we declare the model in code, invoking each of the five assumptions in doing so:</p>
 <div id="def-ch16num4" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 16.4 </strong></span>Instrumental variables design.</p>
-<div class="cell" data-file="scripts_declarations/declaration_16.4.R">
+<p><span class="theorem-title"><strong>Declaration 16.4</strong></span> Instrumental variables design.</p>
+<div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_16.4</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>, </span>
 <span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
-<span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">D</span> <span class="op">~</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">Z</span> <span class="op">+</span> <span class="va">U</span> <span class="op">&gt;</span> <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>, </span>
+<span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">D</span> <span class="op">~</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">Z</span> <span class="op">+</span> <span class="va">U</span> <span class="op">&gt;</span> <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>, </span>
 <span>                       conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, </span>
 <span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">D</span> <span class="op">+</span> <span class="fl">0.25</span> <span class="op">+</span> <span class="va">U</span>, </span>
 <span>                       conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>D <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
@@ -845,21 +919,29 @@ div.csl-indent {
 <p>Just like instrumental variables, regression discontinuity designs identify a local average treatment effect: in this case, the average effect of treatment local to the cutoff. The main trouble with the design is the vanishing amount of data available as we approach the cutoff, so any answer strategy needs to use data that is some distance away from the cutoff. The further away from the cutoff we move, the larger the threat of bias, because units become less and less similar.</p>
 <p>Regression discontinuity designs have four components: a running variable <span class="math inline">\(X\)</span>, a cutoff, a treatment variable <span class="math inline">\(D\)</span>, and an outcome <span class="math inline">\(Y\)</span>. The cutoff determines which units are treated, depending on the value of the running variable. If the goal is to study the causal effects of winning an election on the likelihood of future elections, the running variable might be the Democratic party’s margin of victory at time <span class="math inline">\(t-1\)</span>, the treatment <span class="math inline">\(D\)</span> might be whether the Democratic party won the election in time <span class="math inline">\(t-1\)</span>, outcome <span class="math inline">\(Y\)</span> might be the Democratic vote margin at time <span class="math inline">\(t\)</span>.</p>
 <p>A major assumption required for the regression discontinuity design is that the conditional expectation functions — functions that define the expected value of the outcome at every level of the running variable — for both treatment and control potential outcomes are continuous at the cutoff.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>The regression discontinuity design is closely related to the selection-on-observables design in that we exploit precise knowledge of the assignment mechanism. In <a href="#fig-ch16num8">Figure&nbsp;<span>16.8</span></a>, we illustrate the DAG for the RD design, which includes a treatment with a known assignment mechanism (that units with <span class="math inline">\(X&gt;\mathrm{cutoff}\)</span> are treated and the others are not). The running variable <span class="math inline">\(X\)</span> is a common cause both of treatment and the outcome, and so must be adjusted for (indicated by the dashed box) in order to identify the effect of treatment on the outcome and avoid confounding bias.</p>
-<div id="fig-ch16num8" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-16-8.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;16.8: Directed acyclic graph for the regression discontinuity design.</figcaption></figure>
+<p>The regression discontinuity design is closely related to the selection-on-observables design in that we exploit precise knowledge of the assignment mechanism. In <a href="#fig-ch16num8" class="quarto-xref">Figure&nbsp;<span>16.8</span></a>, we illustrate the DAG for the RD design, which includes a treatment with a known assignment mechanism (that units with <span class="math inline">\(X&gt;\mathrm{cutoff}\)</span> are treated and the others are not). The running variable <span class="math inline">\(X\)</span> is a common cause both of treatment and the outcome, and so must be adjusted for (indicated by the dashed box) in order to identify the effect of treatment on the outcome and avoid confounding bias.</p>
+<div id="fig-ch16num8" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-16-8.svg" class="img-fluid figure-img">
 </div>
-<p><a href="#fig-ch16num9">Figure&nbsp;<span>16.9</span></a> illustrates the major features of the model for the regression discontinuity using simulated data. The untreated units (blue points) are plotted to the left of the cutoff (vertical line), and the treated units (red points) are plotted to the right. The true conditional expectation functions for both the treated and untreated potential outcomes are displayed as colored lines, dashed where they are unobservable, and solid where they are observable.</p>
-<div id="fig-ch16num9" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-16-9.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;16.9: Data from a regression discontinuity design. On the x-axis is the running variable, which defines the cutoff between control (here, below 0 on the running variable) and treatment (above 0). The outcome Y is on the y-axis. We illustrate smooth potential outcomes by showing the observed data curve (solid) and the counterfactual potential outcome (dashed).</figcaption></figure>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.8: Directed acyclic graph for the regression discontinuity design.
+</figcaption></figure>
+</div>
+<p><a href="#fig-ch16num9" class="quarto-xref">Figure&nbsp;<span>16.9</span></a> illustrates the major features of the model for the regression discontinuity using simulated data. The untreated units (blue points) are plotted to the left of the cutoff (vertical line), and the treated units (red points) are plotted to the right. The true conditional expectation functions for both the treated and untreated potential outcomes are displayed as colored lines, dashed where they are unobservable, and solid where they are observable.</p>
+<div id="fig-ch16num9" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-16-9.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.9: Data from a regression discontinuity design. On the x-axis is the running variable, which defines the cutoff between control (here, below 0 on the running variable) and treatment (above 0). The outcome Y is on the y-axis. We illustrate smooth potential outcomes by showing the observed data curve (solid) and the counterfactual potential outcome (dashed).
+</figcaption></figure>
 </div>
 <p>The inquiry in a regression discontinuity design is the effect of the treatment exactly at the cutoff. Formally, it is the difference in the conditional expectation functions of the control and treatment potential outcomes when the running variable is exactly zero. The thicker black vertical line segment in the plot shows this difference.</p>
 <p>The data strategy is to collect the outcome data for all units within an interval (bandwidth) around the cutoff. The choice of bandwidth involves a trade-off between bias and variance. The wider we make the bandwidth, the more data we have, and thus the more precision we may be able to achieve. However, the claim of causal identification comes from the comparability of units <em>just</em> above and <em>just</em> below the threshold. Units far from the cutoff are less likely to be comparable: at a minimum they differ in their values of the running variable and if that is correlated with other unobserved heterogeneity then they may differ in that too. Thus, the more units we compare further from the threshold, the more likely we are to induce bias in our estimates of the treatment effect. The ultimate bandwidth chosen for analysis is a function of the data collected in the data strategy and the bandwidth chosen in the answer strategy, which is often the output of an automated process.</p>
 <div id="def-ch16num5" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 16.5 </strong></span>Regression discontinuity design</p>
-<div class="cell" data-file="scripts_declarations/declaration_16.5.R">
+<p><span class="theorem-title"><strong>Declaration 16.5</strong></span> Regression discontinuity design</p>
+<div class="cell">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdss</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdrobust</span><span class="op">)</span></span>
 <span></span>
@@ -890,10 +972,10 @@ div.csl-indent {
 </div>
 </div>
 <p>Regression discontinuity answer strategies approximate the treated and untreated conditional expectation functions to the left and right of the cutoff. The choice of answer strategy involves two key choices: the bandwidth of data around the threshold that is used for estimation, and the model used to fit that data. We declare the local polynomial regression discontinuity estimator with the robust bias-corrected inference procedures described in <span class="citation" data-cites="calonico2014robust">Calonico, Cattaneo, and Titiunik (<a href="../references.html#ref-calonico2014robust" role="doc-biblioref">2014</a>)</span>, which fits a nonparametric model to the data and chooses an optimal bandwidth that minimizes bias. This robust estimator is now widely used in practice, because it navigates the bias-variance trade-off in selecting bandwidths and statistical model specifications in a data-driven manner. The procedure also obviates the need for researchers to select these parameters themselves.</p>
-<p><a href="#fig-ch16num10">Figure&nbsp;<span>16.10</span></a> illustrates the trade-off in bandwidth selection for a one-degree polynomial (linear interaction). We see the bias-variance tradeoff directly. The bias increases the wider the bandwidth and the more we are relying on data further from the threshold, whereas the variance (here, the standard deviation of the estimates) gets smaller the more we add data by widening the bandwidth.</p>
+<p><a href="#fig-ch16num10" class="quarto-xref">Figure&nbsp;<span>16.10</span></a> illustrates the trade-off in bandwidth selection for a one-degree polynomial (linear interaction). We see the bias-variance tradeoff directly. The bias increases the wider the bandwidth and the more we are relying on data further from the threshold, whereas the variance (here, the standard deviation of the estimates) gets smaller the more we add data by widening the bandwidth.</p>
 <div id="def-ch16num6" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 16.6 </strong></span>Regression discontinuity designs with varying bandwidths</p>
-<div class="cell" data-file="scripts_declarations/declaration_16.6.R">
+<p><span class="theorem-title"><strong>Declaration 16.6</strong></span> Regression discontinuity designs with varying bandwidths</p>
+<div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_16.6</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">declaration_16.5</span> <span class="op">+</span> </span>
 <span>  <span class="fu">declare_estimator</span><span class="op">(</span></span>
@@ -906,16 +988,20 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch16num5" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 16.5 </strong></span>Regression discontinuity diagnosis across varying bandwidths</p>
+<p><span class="theorem-title"><strong>Diagnosis 16.5</strong></span> Regression discontinuity diagnosis across varying bandwidths</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>diagnosis_16<span class="fl">.5</span> <span class="ot">&lt;-</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  declaration_16<span class="fl">.6</span> <span class="sc">|&gt;</span> </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">redesign</span>(<span class="at">bandwidth =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">0.05</span>, <span class="at">to =</span> <span class="fl">0.5</span>, <span class="at">by =</span> <span class="fl">0.05</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  diagnose_designs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch16num10" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-16-10.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;16.10: Bias-variance tradeoff in bandwidth selection for the regression discontinuity design.</figcaption></figure>
+<div id="fig-ch16num10" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-16-10.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.10: Bias-variance tradeoff in bandwidth selection for the regression discontinuity design.
+</figcaption></figure>
 </div>
 </div>
 <section id="design-examples-4" class="level3" data-number="16.5.1"><h3 data-number="16.5.1" class="anchored" data-anchor-id="design-examples-4">
@@ -926,7 +1012,7 @@ div.csl-indent {
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-angrist1996" class="csl-entry" role="listitem">
 Angrist, Joshua D., Guido W. Imbens, and Donald B. Rubin. 1996. <span>“Identification of Causal Effects Using Instrumental Variables.”</span> <em>Journal of the American Statistical Association</em> 91 (434): 444–55.
 </div>
@@ -1036,18 +1122,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1079,11 +1154,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1093,8 +1205,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1106,7 +1227,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1150,6 +1393,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1175,6 +1419,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1234,12 +1504,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../library/observational-descriptive.html" class="pagination-link">
+      <a href="../library/observational-descriptive.html" class="pagination-link" aria-label="Observational : descriptive">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Observational : descriptive</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../library/experimental-descriptive.html" class="pagination-link">
+      <a href="../library/experimental-descriptive.html" class="pagination-link" aria-label="Experimental : descriptive">
         <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

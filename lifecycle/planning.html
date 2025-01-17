@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design in the Social Sciences - 21&nbsp; Planning</title>
+<title>21&nbsp; Planning – Research Design in the Social Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -52,16 +53,22 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -70,11 +77,18 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style type="text/css" media="print">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MMK8CF9JC0"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
+</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
 </style>
 <script type="text/javascript">
@@ -112,25 +126,50 @@ div.csl-indent {
         createCookie('popupShown', 'yes', 1)
       }
     }
-</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lifecycle/">Research design lifecycle</a></li><li class="breadcrumb-item"><a href="../lifecycle/planning.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lifecycle/">Research design lifecycle</a></li><li class="breadcrumb-item"><a href="../lifecycle/planning.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
@@ -156,9 +195,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -191,9 +230,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -258,7 +297,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../library/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design library</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -299,7 +338,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design lifecycle</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -356,7 +395,7 @@ div.csl-indent {
 </li>
     </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
@@ -403,7 +442,7 @@ div.csl-indent {
   </div>
 </div>
 
-<header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lifecycle/">Research design lifecycle</a></li><li class="breadcrumb-item"><a href="../lifecycle/planning.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title"><span id="sec-ch21" class="quarto-section-identifier"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></span></h1>
 </div>
 
@@ -417,7 +456,8 @@ div.csl-indent {
   </div>
   
 
-</header><p>We list “design early” among our research design principles (<a href="../introduction/research-design-principles.html#exm-designearly">Principle&nbsp;<span>3.4</span></a>) to emphasize the gains from early planning. Research projects are very long journeys: going from the kernel of an idea to a published paper typically takes multiple years. Once the data strategy has been implemented, you’re stuck with it, so mindful planning beforehand is important. “Measure twice, cut once.”</p>
+
+</header><p>We list “design early” among our research design principles (<a href="../introduction/research-design-principles.html#exm-designearly" class="quarto-xref">Principle&nbsp;<span>3.4</span></a>) to emphasize the gains from early planning. Research projects are very long journeys: going from the kernel of an idea to a published paper typically takes multiple years. Once the data strategy has been implemented, you’re stuck with it, so mindful planning beforehand is important. “Measure twice, cut once.”</p>
 <p>The planning process changes designs. We work out designs that meet ethical as well as scientific standards, accommodate the needs of research partners, and operate within financial and logistical constraints. When we are insufficiently sure of key inputs to design declarations, we can run pilots, but we need to be careful about how we incorporate what we learn from them. Finally, when we write up a declaration or a PAP with a declaration, this can be a useful moment to get feedback from our peers to improve the design. We discuss each of these steps in this chapter.</p>
 <section id="ethics" class="level2" data-number="21.1"><h2 data-number="21.1" class="anchored" data-anchor-id="ethics">
 <span class="header-section-number">21.1</span> Ethics</h2>
@@ -439,15 +479,19 @@ div.csl-indent {
 <span class="header-section-number">21.1.1</span> Illustration: Estimating expected costs and expected learning</h3>
 <p>We illustrate how researchers can weigh the trade-offs between the value of research and its ethical costs with a hypothetical audit study of discrimination in government hiring. We imagine that three characteristics of applicants to a municipal government job are randomized and whether the applicant receives a callback is recorded. The three candidate characteristics are race (Black or White), area of residence (urban or suburban), or high school attended (East or West).</p>
 <p>Suppose we could rank the scientific importance of measuring discrimination along all three dimensions and we judged race-based discrimination of high importance and discrimination on the basis of residence or high school to be of medium and low importance, respectively.</p>
-<p>The value of the research then is a function of the importance of the inquiries, of course, but also of how much we learn about it. We proxy for the learning from the experiment by sample size: the higher the <span class="math inline">\(N\)</span>, the more we learn, but with decreasing marginal returns (it’s a lot better to have a sample of 100 compared to 10; it matters less if it is 1010 or 1100). <a href="../declaration-diagnosis-redesign/design-example.html#fig-ch12num1">Figure&nbsp;<span>12.1</span></a> shows the three expected learning curves labeled by the importance of the inquiry.</p>
-<p>We turn now to the expected costs side of the calculation. Because the job applicants are fictitious but appear real, alongside concerns around deception, a primary ethical concern in audit experiments is how much time hiring managers waste reviewing fictitious applications. In the case of government hiring, it is public money spent on their review. Suppose the cost to participants is linear in the number of applications, since an application takes about ten minutes to review. We represent the cost to participants as the purple line in <a href="../declaration-diagnosis-redesign/design-example.html#fig-ch12num1">Figure&nbsp;<span>12.1</span></a>.</p>
+<p>The value of the research then is a function of the importance of the inquiries, of course, but also of how much we learn about it. We proxy for the learning from the experiment by sample size: the higher the <span class="math inline">\(N\)</span>, the more we learn, but with decreasing marginal returns (it’s a lot better to have a sample of 100 compared to 10; it matters less if it is 1010 or 1100). <a href="../declaration-diagnosis-redesign/design-example.html#fig-ch12num1" class="quarto-xref">Figure&nbsp;<span>12.1</span></a> shows the three expected learning curves labeled by the importance of the inquiry.</p>
+<p>We turn now to the expected costs side of the calculation. Because the job applicants are fictitious but appear real, alongside concerns around deception, a primary ethical concern in audit experiments is how much time hiring managers waste reviewing fictitious applications. In the case of government hiring, it is public money spent on their review. Suppose the cost to participants is linear in the number of applications, since an application takes about ten minutes to review. We represent the cost to participants as the purple line in <a href="../declaration-diagnosis-redesign/design-example.html#fig-ch12num1" class="quarto-xref">Figure&nbsp;<span>12.1</span></a>.</p>
 <p>We have placed the costs to participants on the same scale as the value of the research, by placing a value to society of the research and a value to society of the administrative time. Doing so requires taking positions that can be read off from the definition of the diagnosands. When benefit exceeds cost (upper blue region), we decide to move forward with the research; if costs exceed benefits (lower gray region), we do not conduct the study.</p>
 <p>The key takeaway from the graph is that there is a region at low sample sizes where the cost to participants exceeds the benefits from the research, because of the very imprecise answers we get from the research. We don’t learn enough about the inquiry, despite its importance, to make it worth wasting the hiring managers’ time. In the medium importance cases there is a “goldilocks” range: there is a region of the benefits curve (highlighted in blue) where it is worth doing the study, but there are two regions (highlighted in gray) above and below it where it is not worth it. The left region is where the sample is too small, so the value of the research is low both because of its medium importance and because we do not learn enough about it. The second gray region at right in the medium importance curve is where, though we learn a lot about the inquiry, the cost is too high from the many hours of hiring managers’ time to justify what we learn because the inquiry is not important enough.</p>
 <p>In short, in principle, ethical decisions can be informed by diagnosis both of how much we learn and of how much it costs participants (along with other ethical costs). The key benefit of this approach comes from getting a sharper understanding of the gains from design decisions on the research side; the problem of placing value on those gains is not addressed within the framework of course but using the framework makes it clearer what positions researchers are taking on these issues.</p>
 <p>Calculations of this form, however, always open up risks that researchers overestimate the importance of their research or are blind to ethical costs (in this case, for instance, an additional cost might arise if, because of the study, subjects, or other officials, became more skeptical of future real applicants). In practice, strategies that maximize autonomy for implicated actors can make these choices easier. In this case, for instance, prior consultations with members of the subject population that assessed how <em>they</em> saw the benefits of the research relative to the costs, and how they assessed the costs from this type of deception, would go a long way to allay ethical concerns.</p>
-<div id="fig-ch21num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-21-1.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;21.1: Tradeoffs between ethical costs and scientific benefits. A design might have too <em>many</em> subjects but also too <em>few</em> subjects.</figcaption></figure>
+<div id="fig-ch21num1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch21num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-21-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch21num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.1: Tradeoffs between ethical costs and scientific benefits. A design might have too <em>many</em> subjects but also too <em>few</em> subjects.
+</figcaption></figure>
 </div>
 </section><section id="institutional-review-boards" class="level3" data-number="21.1.2"><h3 data-number="21.1.2" class="anchored" data-anchor-id="institutional-review-boards">
 <span class="header-section-number">21.1.2</span> Institutional review boards</h3>
@@ -458,12 +502,16 @@ div.csl-indent {
 <p>In the best-case scenario, the goals of the researchers and partner organizations are aligned. When the scientific question to be answered is the same as the practical question the organization cares about, the gains from cooperation are clear. The research team gains access to the organization’s financial and logistical capacity to act in the world, and the partner organization gains access to the researchers’ scientific expertise. Finding the right research partner almost always amounts to finding an organization with a common – or at least not conflicting – goal. Selecting a research design amenable to both parties requires understanding each partners’ private goals. Research design declaration and diagnosis can help with this problem by formalizing trade-offs between the two sets of goals.</p>
 <p>One frequent divergence between partner and researcher goals is that partner organizations often want to learn, but they care most about their primary mission <span class="citation" data-cites="levine2021form">(<a href="../references.html#ref-levine2021form" role="doc-biblioref">Levine 2021</a>)</span>. This dynamic is sometimes referred to as the “learning versus doing” trade-off. (In business settings, this trade-off goes by names like “learning versus earning” or “exploration versus exploitation”). An aid organization cares about delivering their program to as many people as possible. Learning whether the program has the intended effects on the outcomes of interest is obviously also important, but resources spent on evaluation are resources <em>not</em> spent on program delivery.</p>
 <div id="lem-ch21num1" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 21.1 </strong></span>Learning versus doing diagnosis</p>
-<p>Research design diagnosis can help navigate the learning versus doing trade-off. One instance of the trade-off is that the proportion of units that receive a treatment represents the rate of “doing,” but this rate also affects the amount of learning. In the extreme, if all units are treated, we can’t measure the effect of the treatment. The trade-off here is represented in <a href="#fig-ch21num2">Figure&nbsp;<span>21.2</span></a>, which shows the study’s power versus the proportion treated (top facet) and the partner’s utility (bottom facet). The researchers have a power cutoff at the standard 80% threshold. The partner also has a strict cutoff: they need to treat at least 2/3 of the sample to fulfill a donor requirement.</p>
+<p><span class="theorem-title"><strong>Diagnosis 21.1</strong></span> Learning versus doing diagnosis</p>
+<p>Research design diagnosis can help navigate the learning versus doing trade-off. One instance of the trade-off is that the proportion of units that receive a treatment represents the rate of “doing,” but this rate also affects the amount of learning. In the extreme, if all units are treated, we can’t measure the effect of the treatment. The trade-off here is represented in <a href="#fig-ch21num2" class="quarto-xref">Figure&nbsp;<span>21.2</span></a>, which shows the study’s power versus the proportion treated (top facet) and the partner’s utility (bottom facet). The researchers have a power cutoff at the standard 80% threshold. The partner also has a strict cutoff: they need to treat at least 2/3 of the sample to fulfill a donor requirement.</p>
 <p>A researcher might use this graph together with the partner to jointly select the design that has the highest power that has a sufficiently high proportion treated to meet the partner’s needs. This is represented in the “zone of agreement” in gray: in this region, the design has at least 80% power and at least two thirds of the sample are treated. Deciding within this region involves a trade-off between power (which is decreasing in the proportion treated here) and the partner’s utility (which is increasing in the proportion treated). The diagnosis surfaces the zone of the agreement and clarifies the choice between designs in that region. Unfortunately, some partnerships simply will not work out if the zone of agreement is empty.</p>
-<div id="fig-ch21num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-21-2.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;21.2: Finding the zone of agreement in a research partnership.</figcaption></figure>
+<div id="fig-ch21num2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch21num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-21-2.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch21num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.2: Finding the zone of agreement in a research partnership.
+</figcaption></figure>
 </div>
 <p>Choosing the proportion treated is one example of integrating partner constraints into research designs. A second common problem is that there are a set of units that must be treated or that must not be treated for ethical or political reasons (e.g., the home district of a government partner must receive the treatment). If these constraints are discovered after treatment assignment, they lead to noncompliance, which may substantially complicate the analysis of the experiment and even prevent providing an answer to the original inquiry. <span class="citation" data-cites="Gerber2012">Gerber and Green (<a href="../references.html#ref-Gerber2012" role="doc-biblioref">2012</a>)</span> recommend, before randomizing treatment, exploring possible treatment assignments with the partner organization and using this exercise to elicit the set of units that must or cannot be treated. <span class="citation" data-cites="king2007politically">King et al. (<a href="../references.html#ref-king2007politically" role="doc-biblioref">2007</a>)</span> describe a “politically-robust” design, which uses pair-matched block randomization. In this design, when any unit is dropped due to political constraints, the whole pair is dropped from the study.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>A major benefit of working with partners is their deep knowledge of the substantive area. For this reason, we recommend involving them in the design declaration and diagnosis process. How can we develop intuitions about the means, variances, and covariances of the variables to be measured? Ask your partner for their best guesses, which may be far more educated than your own. For experimental studies, solicit your partner’s beliefs about the magnitude of the treatment effect on each outcome variable, subgroup by subgroup if possible. Engaging partners in the declaration process improves design – and it very quickly sharpens the discussion of key design details. Pro-tip: Share your design diagnoses and mock analyses <em>before</em> the study is launched to quickly build consensus around the study’s goals.</p>
@@ -485,32 +533,40 @@ div.csl-indent {
 <p>The main goal of pilot studies is to reduce this uncertainty. We would like to learn which models in <em>M</em> are more likely, so that the main study can be designed under beliefs that are closer to the truth. Pilots take many forms: focus groups, small-scale tests of measurement tools, even miniature versions of the main study. We want to learn things like the distribution of outcomes, how covariates and outcomes might be correlated, or how feasible the assignment, sampling, and measurement strategies are.</p>
 <p>Almost by definition, pilot studies are inferentially weaker than main studies. We turn to them in response to constraints on our time, money, and capacity. If we were not constrained, we would run a first full-size study, learn what is wrong with our design, then run a corrected full-size study. Since running multiple full studies is too expensive or otherwise unfeasible, we run either smaller mini-studies or test out only a subset of the elements of our planned design. Accordingly, the diagnosands of a pilot design will not measure up to those of the main design. Pilots have much lower statistical power and may suffer from higher measurement error and less generalizability. Accordingly, the goal of pilot studies should not be to obtain a preliminary answer to the main inquiry, but instead to learn the information that will make the main study a success.</p>
 <p>Like main studies, pilot studies can be declared and diagnosed – but importantly, the diagnosands for main and pilot studies need not be the same. Statistical power for an average treatment effect may be an essential diagnosand for the main study, but owing to their small size, power for pilot studies will typically be abysmal. Pilot studies should be diagnosed with respect to the decisions they imply for the main study.</p>
-<p><a href="#fig-ch21num3">Figure&nbsp;<span>21.3</span></a> shows the relationship between effect size and the sample size required to achieve 80% statistical power for a two-arm trial using simple random assignment. Uncertainty about the true effect size has enormous design consequences. If the effect size is 0.17, we need about 1,100 subjects to achieve 80% power. If it’s 0.1, we need 3,200.</p>
-<div id="fig-ch21num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-21-3.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;21.3: Minimum required sample sizes and uncertainty over effect size</figcaption></figure>
+<p><a href="#fig-ch21num3" class="quarto-xref">Figure&nbsp;<span>21.3</span></a> shows the relationship between effect size and the sample size required to achieve 80% statistical power for a two-arm trial using simple random assignment. Uncertainty about the true effect size has enormous design consequences. If the effect size is 0.17, we need about 1,100 subjects to achieve 80% power. If it’s 0.1, we need 3,200.</p>
+<div id="fig-ch21num3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch21num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-21-3.svg" class="img-fluid figure-img">
 </div>
-<p>Suppose we have prior beliefs about the effect size that can be summarized as a normal distribution centered at 0.3 with a standard deviation of 0.1, as in the bottom panel of <a href="#fig-ch21num2">Figure&nbsp;<span>21.2</span></a>. We could choose a design that corresponds to this best guess, the average of our prior belief distribution. If the true effect size is 0.3, then a study with 350 subjects will have 80% power.</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch21num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.3: Minimum required sample sizes and uncertainty over effect size
+</figcaption></figure>
+</div>
+<p>Suppose we have prior beliefs about the effect size that can be summarized as a normal distribution centered at 0.3 with a standard deviation of 0.1, as in the bottom panel of <a href="#fig-ch21num2" class="quarto-xref">Figure&nbsp;<span>21.2</span></a>. We could choose a design that corresponds to this best guess, the average of our prior belief distribution. If the true effect size is 0.3, then a study with 350 subjects will have 80% power.</p>
 <p>However, redesigning the study to optimize for the “best guess” is risky because the true effect could be much smaller than 0.3. Suppose we adopt the redesign heuristic of powering the study for an effect size at the 10th percentile of our prior belief distribution, which works out here to be an effect size of 0.17. Following this rule, we would select a design with 1,100 subjects.</p>
 <p>Now suppose the true effect size is, in actuality, only 0.1, so we would need to sample 3,200 subjects for 80% power. The power of our chosen 1,100-subject design is a mere 38%. Here we see the consequences of having incorrect prior beliefs: our ex ante guess of the effect size was too optimistic. Even taking what we thought of as a conservative choice – the 10th percentile redesign heuristic – we ended up with too small a study.</p>
-<p>A pilot study can help researchers update their priors about important design parameters. If we do a small-scale pilot with 100 subjects, we’ll get a noisy but unbiased estimate of the true effect size. We can update prior beliefs by taking a precision weighted average of our priors and the estimate from the pilot, where the weights are the inverse of the variance of each guess. Our posterior beliefs will be closer to the truth, and our posterior uncertainty will be smaller. If we then follow the heuristic of powering the 10th percentile of our (now posterior) beliefs about effect size, we will have come closer to correctly powering our study. <a href="#fig-ch21num4">Figure&nbsp;<span>21.4</span></a> shows how large the studies would be, depending on how the pilot study came out if we were to follow the 10th percentile decision rule. On average, the pilot leads us to design the main study with 1,800 subjects, sometimes more and sometimes less.</p>
+<p>A pilot study can help researchers update their priors about important design parameters. If we do a small-scale pilot with 100 subjects, we’ll get a noisy but unbiased estimate of the true effect size. We can update prior beliefs by taking a precision weighted average of our priors and the estimate from the pilot, where the weights are the inverse of the variance of each guess. Our posterior beliefs will be closer to the truth, and our posterior uncertainty will be smaller. If we then follow the heuristic of powering the 10th percentile of our (now posterior) beliefs about effect size, we will have come closer to correctly powering our study. <a href="#fig-ch21num4" class="quarto-xref">Figure&nbsp;<span>21.4</span></a> shows how large the studies would be, depending on how the pilot study came out if we were to follow the 10th percentile decision rule. On average, the pilot leads us to design the main study with 1,800 subjects, sometimes more and sometimes less.</p>
 <p>This exercise reveals that a pilot study can be quite valuable. Without a pilot study, we would choose to sample 1,100 subjects, but since the true effect size is only 0.1 (not our best guess of 0.3), the experiment would be underpowered. The pilot study helps us correct our diffuse and incorrect prior beliefs. However, since the pilot is small, we don’t update our priors all the way to the truth. We still end up with a main study that is on average too small (1,800), with a corresponding power of 56%. That said, a 56% chance of finding a statistically significant result is better than a 38% chance.</p>
-<div id="fig-ch21num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-21-4.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;21.4: Distribution of post-pilot sample size choices</figcaption></figure>
+<div id="fig-ch21num4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch21num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-21-4.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch21num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.4: Distribution of post-pilot sample size choices
+</figcaption></figure>
 </div>
 <p>In summary, pilots are most useful when we are uncertain – or outright wrong – about important design parameters. This uncertainty can often be shrunk by quite a bit without running pilot studies by meta-analyzing past empirical studies. Some things are hard to learn by reading others’ work; pilot studies are especially useful tools for learning about those things.</p>
 </section><section id="criticism" class="level2" data-number="21.5"><h2 data-number="21.5" class="anchored" data-anchor-id="criticism">
 <span class="header-section-number">21.5</span> Criticism</h2>
 <p>A vital part of the research design process is gathering criticism and feedback from others. Timing is delicate here. Asking for comments on an underdeveloped project can sometimes lead to brainstorming sessions about what research questions one might look into. Such unstructured sessions can be quite useful but essentially restarts the research design lifecycle from the beginning. Sharing work only after a full draft has been produced is worse, since the data strategy will have already yielded the realized data. The investigators may have become attached to favored answer strategies and interpretations. While critics can always suggest changes to <em>I</em> and <em>A</em> post-data collection, an almost finished project is fundamentally constrained by the data strategy as it was implemented.</p>
-<p>The best moments to seek advice come before registering preanalysis plans or, if not writing a PAP, before implementing major data strategy elements. The point is not to seek advice exclusively on sampling, assignment, or measurement procedures; the important thing is that there’s still time to modify those design elements (<a href="../introduction/research-design-principles.html#exm-designearly">Principle&nbsp;<span>3.4</span></a>: <em>Design early</em>). Feedback about the design as a whole can inform changes to the data strategy before it is set in stone.</p>
+<p>The best moments to seek advice come before registering preanalysis plans or, if not writing a PAP, before implementing major data strategy elements. The point is not to seek advice exclusively on sampling, assignment, or measurement procedures; the important thing is that there’s still time to modify those design elements (<a href="../introduction/research-design-principles.html#exm-designearly" class="quarto-xref">Principle&nbsp;<span>3.4</span></a>: <em>Design early</em>). Feedback about the design as a whole can inform changes to the data strategy before it is set in stone.</p>
 <p>Feedback will come in many forms. Sometimes the comments are directly about diagnosands. The critic may think the design has too many arms and won’t be well powered for many inquiries. Or they may be concerned about bias due to excludability violations or selection issues. These comments are especially useful because they can easily be incorporated in design diagnosis and redesign exercises.</p>
 <p>Other comments are harder to pin down. A fruitful exercise in such cases is to understand how the criticism fits into <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em>. Comments like “I’m concerned about external validity here” might seem to be about the data strategy. If the units were not randomly sampled from some well-specified population, we can’t generalize from the sample to the population. But if the inquiry is not actually a population quantity, then this inability to use sample data to estimate a population quantity is irrelevant. The question then becomes whether knowing the answer to your sample inquiry helps make theoretical progress or whether we need to generalize – to switch the inquiry to the population quantity to make headway. Critics will not usually be specific about how their criticism relates to each element of design, so it is up to the criticism-seeker to understand the implications for design.</p>
 <p>Sometimes we seek feedback from smart people, but they do not immediately understand the design setting. If the critic hasn’t absorbed or taken into account important features of the design, their recommendations and amendments may be off-base. For this reason, it’s important to communicate the design features – the model, inquiry, data strategy, and answer strategy – at a high enough level of detail that the critic is up to speed before passing judgment.</p>
 </section><section id="sec-ch21s6" class="level2" data-number="21.6"><h2 data-number="21.6" class="anchored" data-anchor-id="sec-ch21s6">
 <span class="header-section-number">21.6</span> Preanalysis Plan</h2>
 <p>In many research communities, it is becoming standard practice to publicly register a preanalysis plan (PAP) before implementing some or all of the data strategy <span class="citation" data-cites="Casey2012">Miguel et al. (<a href="../references.html#ref-Miguel2014" role="doc-biblioref">2014</a>)</span>. PAPs serve many functions, but most importantly, they clarify which design choices were made before data collection and which were made after. Sometimes – perhaps every time! – we conduct a research study, and aspects of <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em> shift along the way. A concern is that they shift in ways that invalidate the apparent conclusions of the study. For example, “<em>p</em>-hacking” is the shady practice of trying out many regression specifications until the <em>p</em>-value associated with an important test attains statistical significance. PAPs protect researchers by communicating to skeptics <em>when</em> design decisions were made. If the regression specification were detailed in a PAP posted before any data were collected, the test could not have been the result of a <em>p</em>-hack.</p>
-<p>PAPs are sometimes misinterpreted as a binding commitment to report all pre-registered analyses and nothing but. This view is unrealistic and unnecessarily rigid. While we think that researchers should report all preregistered analyses <em>somewhere</em> (see <a href="realization.html#sec-ch22s2"><span>Section&nbsp;22.2</span></a> on “populated PAPs”), study write-ups inevitably deviate in some way from the PAP – and that’s a good thing. Researchers learn more by conducting research. This learning can and should be reflected in the finalized answer strategy. One guardrail against extensive post-PAP design changes can be a set of standard operating procedures that lays out what to do when circumstances change <span class="citation" data-cites="Green2015">(<a href="../references.html#ref-Green2015" role="doc-biblioref">Green and Lin 2016</a>)</span>.</p>
+<p>PAPs are sometimes misinterpreted as a binding commitment to report all pre-registered analyses and nothing but. This view is unrealistic and unnecessarily rigid. While we think that researchers should report all preregistered analyses <em>somewhere</em> (see <a href="realization.html#sec-ch22s2" class="quarto-xref"><span>Section 22.2</span></a> on “populated PAPs”), study write-ups inevitably deviate in some way from the PAP – and that’s a good thing. Researchers learn more by conducting research. This learning can and should be reflected in the finalized answer strategy. One guardrail against extensive post-PAP design changes can be a set of standard operating procedures that lays out what to do when circumstances change <span class="citation" data-cites="Green2015">(<a href="../references.html#ref-Green2015" role="doc-biblioref">Green and Lin 2016</a>)</span>.</p>
 <p>Our hunch is that the main consequence of actually writing PAPs is that research designs improve. Just like design declaration forces us to think through the details of our model, inquiry, data strategy, and answer strategy, describing those choices in a publicly posted document surely causes deeper reflection about the design. In this way, the main audience for a PAP is the study authors themselves.</p>
 <p>What belongs in a PAP? Recommendations for the set of decisions that should be specified in a PAP remain remarkably unclear and inconsistent across research communities. PAP templates and checklists are proliferating, and the number of items they suggest ranges from nine to 60. PAPs themselves are becoming longer and more detailed. Some in the American Economic Association and Evidence in Governance and Politics (EGAP) study registries reach hundreds of pages as researchers seek to be ever more comprehensive. Some registries emphasize the registration of the hypotheses to be tested, while others emphasize the registration of the tests that will be used. In a review of many PAPs, <span class="citation" data-cites="ofosu2021pre">Ofosu and Posner (<a href="../references.html#ref-ofosu2021pre" role="doc-biblioref">2022</a>)</span> find considerable variation in how often analytically relevant pieces of information appear in posted plans.</p>
 <p>In our view a PAP should center on a design declaration. Currently, most PAPs focus on the answer strategy <em>A</em>: what estimator to use, what covariates to condition on, and what subsets of the data to include. But of course, we also need to know the details of the data strategy <em>D</em>: how units will be sampled, how treatments will be assigned, and how the outcomes will be measured. We need these details to assess the properties of the design and gauge whether the principles of analysis respecting sampling, treatment assignment, and measurement procedures are being followed. We need to know about the inquiry <em>I</em> because we need to know the target of inference. A significant concern is “outcome switching,” wherein the eventual report focuses on different outcomes than initially intended. When we switch outcomes, we switch inquiries! We need enough of the model <em>M</em> in the plan to describe <em>I</em> in sufficient detail. In short, a design declaration is what belongs in a PAP because a design declaration specifies all of the analytically relevant design decisions.</p>
@@ -518,15 +574,19 @@ div.csl-indent {
 <p>PAPs can, optionally, include design diagnoses in addition to declarations, since it can be informative to describe why a particular design was chosen. For this reason, a PAP might include estimates of diagnosands like power, root-mean-squared error, or bias. If a researcher writes in a PAP that the power to detect a very small effect is large, then if the study comes back null, the eventual write-up can much more credibly rule out “low precision” as an explanation for the null.</p>
 <section id="example-preanalysis-plan" class="level3" data-number="21.6.1"><h3 data-number="21.6.1" class="anchored" data-anchor-id="example-preanalysis-plan">
 <span class="header-section-number">21.6.1</span> Example Preanalysis Plan</h3>
-<p>In <a href="#fig-papcontactsheet">Figure&nbsp;<span>21.5</span></a>, we provide an example preanalysis plan (see the appendix for <a href="../example-preanalysis-plan.pdf">the document itself</a>) for <span class="citation" data-cites="bonilla_tillery_2020">Bonilla and Tillery (<a href="../references.html#ref-bonilla_tillery_2020" role="doc-biblioref">2020</a>)</span>, a study of the effects of alternative framings of Black Lives Matter on support for the movement. The authors of that study posted a preanalysis plan to the <a href="https://aspredicted.org/q56qq.pdf">As Predicted registry</a>. These study authors are models of research transparency: they prominently link to the PAP in the published article, they conduct no non-preregistered analyses except those requested during the review process, and their replication archive includes all materials required to confirm their analyses, all of which we were able to reproduce exactly with minimal effort. Our goal with this alternative PAP is to show how design declaration can supplement and complement existing planning practices.</p>
-<p>We show in <a href="realization.html#sec-ch22s2"><span>Section&nbsp;22.2</span></a> how to “populate” this PAP once the data have been realized and collected.</p>
-<div id="fig-papcontactsheet" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/example-preanalysis-plan.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;21.5: Example preanalysis plan</figcaption></figure>
+<p>In <a href="#fig-papcontactsheet" class="quarto-xref">Figure&nbsp;<span>21.5</span></a>, we provide an example preanalysis plan (see the appendix for <a href="../example-preanalysis-plan.pdf">the document itself</a>) for <span class="citation" data-cites="bonilla_tillery_2020">Bonilla and Tillery (<a href="../references.html#ref-bonilla_tillery_2020" role="doc-biblioref">2020</a>)</span>, a study of the effects of alternative framings of Black Lives Matter on support for the movement. The authors of that study posted a preanalysis plan to the <a href="https://aspredicted.org/q56qq.pdf">As Predicted registry</a>. These study authors are models of research transparency: they prominently link to the PAP in the published article, they conduct no non-preregistered analyses except those requested during the review process, and their replication archive includes all materials required to confirm their analyses, all of which we were able to reproduce exactly with minimal effort. Our goal with this alternative PAP is to show how design declaration can supplement and complement existing planning practices.</p>
+<p>We show in <a href="realization.html#sec-ch22s2" class="quarto-xref"><span>Section 22.2</span></a> how to “populate” this PAP once the data have been realized and collected.</p>
+<div id="fig-papcontactsheet" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-papcontactsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/example-preanalysis-plan.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-papcontactsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.5: Example preanalysis plan
+</figcaption></figure>
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-young2020" class="csl-entry" role="listitem">
 Baron, Hannah, and Lauren E. Young. 2021. <span>“From Principles to Practice: Methods to Increase the Transparency of Research Ethics in Violent Contexts.”</span> <em>Political Science Research and Methods</em>, 1–8.
 </div>
@@ -620,18 +680,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -663,11 +712,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -677,8 +763,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -690,7 +785,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -734,6 +951,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -759,6 +977,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -818,12 +1062,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../lifecycle/" class="pagination-link">
+      <a href="../lifecycle/" class="pagination-link" aria-label="Research design lifecycle">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Research design lifecycle</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../lifecycle/realization.html" class="pagination-link">
+      <a href="../lifecycle/realization.html" class="pagination-link" aria-label="Realization">
         <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

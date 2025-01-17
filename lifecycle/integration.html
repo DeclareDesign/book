@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design in the Social Sciences - 23&nbsp; Integration</title>
+<title>23&nbsp; Integration – Research Design in the Social Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,7 +19,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -30,7 +30,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -55,6 +55,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -86,16 +87,22 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -104,11 +111,18 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style type="text/css" media="print">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MMK8CF9JC0"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
+</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
 </style>
 <script type="text/javascript">
@@ -146,25 +160,50 @@ div.csl-indent {
         createCookie('popupShown', 'yes', 1)
       }
     }
-</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lifecycle/">Research design lifecycle</a></li><li class="breadcrumb-item"><a href="../lifecycle/integration.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lifecycle/">Research design lifecycle</a></li><li class="breadcrumb-item"><a href="../lifecycle/integration.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
@@ -190,9 +229,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -225,9 +264,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -292,7 +331,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../library/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design library</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -333,7 +372,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design lifecycle</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -390,7 +429,7 @@ div.csl-indent {
 </li>
     </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
@@ -435,7 +474,7 @@ div.csl-indent {
   </div>
 </div>
 
-<header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lifecycle/">Research design lifecycle</a></li><li class="breadcrumb-item"><a href="../lifecycle/integration.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
 <span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span>
 </h1>
@@ -451,6 +490,7 @@ div.csl-indent {
   </div>
   
 
+
 </header><p>After publication, research studies leave the hands of their authors and enter the public domain.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>Most immediately, authors share their findings with the public through the media and with decision-makers. Design information is useful for helping journalists to emphasize design quality rather than splashy findings. Decision-makers may act on evidence from studies, and researchers who want to influence policymaking and business decisions may wish to consider diagnosands about the decisions these actors make.</p>
 <p>Researchers can prepare for the integration of their studies into scholarly debates through better archiving practices and better reporting of research designs in the published article. Future researchers may build on the results of a past study in three ways. First, they may <em>reanalyze</em> the original data. Reanalysts must be cognizant of the original data strategy <em>D</em> when working with the realized data <span class="math inline">\(d\)</span>. Changes to the answer strategy <em>A</em> must respect <em>D</em>, regardless of whether the purpose of the reanalysis is to answer the original inquiry <em>I</em> or to answer a different inquiry <span class="math inline">\(I'\)</span>. Second, future researchers may <em>replicate</em> the design. Typically, replicators provide a new answer to the same <em>I</em> with new data, possibly improving elements of <em>D</em> and <em>A</em> along the way. If the inquiry of the replication is too different from the inquiry of the original study, the fidelity of the replication study may be compromised. Lastly, future researchers may <em>meta-analyze</em> a study’s answer with other past studies. Meta-analysis is most meaningful when all of the included studies target a similar enough inquiry and when all studies rely on credible design.</p>
@@ -460,7 +500,7 @@ div.csl-indent {
 <p>The findings from studies are communicated to other scholars through academic publications. But some of the most important audiences – policymakers, businesses, journalists, and the public at large – do not read academic journals. These audiences learn about the study in other in other ways, through op-eds, blog posts, and policy reports that translate research for nonspecialist audiences.</p>
 <p>Too often, a casualty of translating the study from academic to other audiences is the design information. Emphasis gets placed on the study results, not on the reasons why the results of the study are to be believed. In sharing the research for nonspecialist audiences, we revert to saying <em>that</em> we think the findings are true and not <em>why</em> we think the findings are true. Explaining why requires explaining the research design, which in our view ought to be part of any public-facing communication about research.</p>
 <p>Looking at recent studies published in <em>The New York Times</em> Well section on health and fitness, we found that two dimensions of design quality were commonly ignored. First, experimental studies on new fitness regimens with very small samples, sometimes fewer than 10 units, are commonly highlighted. When both academic journals and reporters promote tiny studies, the likely result is that the published (and public) record contains many statistical flukes results reflecting noise rather than new discoveries. Second, very large studies that draw observational comparisons between large samples of dieters and non-dieters with millions of observations receive outsize attention. These designs are prone to bias from confounding, but these concerns are too often not described or discussed.</p>
-<p>How can we improve scientific communication so that we better communicate the credibility of findings? The market incentives for both journalists and authors reward striking and surprising findings, so any real solution to the problem likely requires addressing those incentives. Short of that, we recommend that authors who wish to communicate the high quality of their designs to the media do so by providing the design information in <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em> in lay terms. Science communicators can state the research question (<em>I</em>) and explain why applying the data and answer strategies is likely to yield a good answer to the question. The actual result is, of course, also important to communicate, but <em>why</em> it is a credible answer to the research question is just as important to share—specifically what has to be believed about <em>M</em> for the results to be on target (<a href="../introduction/research-design-principles.html#exm-designtoshare">Principle&nbsp;<span>3.6</span></a>: <em>Design to share</em>).</p>
+<p>How can we improve scientific communication so that we better communicate the credibility of findings? The market incentives for both journalists and authors reward striking and surprising findings, so any real solution to the problem likely requires addressing those incentives. Short of that, we recommend that authors who wish to communicate the high quality of their designs to the media do so by providing the design information in <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em> in lay terms. Science communicators can state the research question (<em>I</em>) and explain why applying the data and answer strategies is likely to yield a good answer to the question. The actual result is, of course, also important to communicate, but <em>why</em> it is a credible answer to the research question is just as important to share—specifically what has to be believed about <em>M</em> for the results to be on target (<a href="../introduction/research-design-principles.html#exm-designtoshare" class="quarto-xref">Principle&nbsp;<span>3.6</span></a>: <em>Design to share</em>).</p>
 <p>How can we as researchers communicate about other scholars’ work? Citations can’t covey the entirety of <em>MIDA</em> in one sentence, but they can give an inkling. Here’s an example of how we could cite a (hypothetical) study in a way that conveys at least some design information. “<span style="color:#81AFEF">Using a randomized experiment</span>, the researchers (Authors, Year) found that <span style="color:#DC5D86">donating to a campaign causes a large increase in the number of subsequent donation requests from other candidates</span>, which is consistent with <span style="color:#E6C560">theories of party behavior that predict</span><span style="color:#8DBA4C"> intra-party cooperation.”</span>.</p>
 <p>The citation explains that the <span style="color:#81AFEF">data strategy</span> included some kind of randomized experiment (we don’t know how many treatment arms or subjects, among other details), and that the <span style="color:#DC5D86">answer strategy</span> probably compared the counts of donation requests from any campaign (email requests, or phone, we don’t know) among the groups of subjects that were assigned to donate to a particular campaign. The citation mentions the <span style="color:#E6C560">models</span> described in an unspecified area of the scientific literature on party politics, which all predict cooperation like the sharing of donor lists. We can reason that, if the <span style="color:#8DBA4C">inquiry</span>, “Is the population average treatment effect of donating to one campaign on the number of donation requests from other campaigns positive?” were put to each of these theories, they would all respond “Yes.” The citation serves as a useful shorthand for the reader of what the claim of the paper is and why they should think it’s credible. By contrast, a citation like “The researchers found that party members cooperate (Author, Year).” doesn’t communicate any design information at all.</p>
 </section><section id="archiving" class="level2" data-number="23.2"><h2 data-number="23.2" class="anchored" data-anchor-id="archiving">
@@ -475,10 +515,14 @@ div.csl-indent {
 <p>To the extent possible we encourage you to describe data strategies also as a data-in data-out function. Functions that take in information about a known context, and use this, together with parameters that characterize your strategy, return a dataset similar in structure to the data you generated.</p>
 <p><strong>Design declaration.</strong> While typical replication archives include the data and code, we think that future replication archives should also have a design declaration that fully describes <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em>. This declaration should be done in code and words. A diagnosis can also be included, demonstrating the properties as understood by the author and indicating the diagnosands that the author considered in judging the quality of the design.</p>
 <p>Design details help future scholars not only assess, but replicate, reanalyze, and extend the study. Reanalysts need to understand the answer strategy to modify or extend it and the data strategy to ensure that their new analysis respects the details of the sampling, treatment assignment, and measurement procedures. Data and analysis sharing enables reanalysts to adopt or adapt the analysis strategy, but a declaration of the data strategy would help more. The same is true of meta-analysis authors, who need to understand the designs’ details to make good decisions about which studies to include and how to analyze them. Replicators who wish to exactly replicate or even just provide an answer to the same inquiry need to understand the inquiry, data strategy, and answer strategy.</p>
-<p><a href="#fig-filestructure">Figure&nbsp;<span>23.1</span></a> below shows the file structure for an example replication. Our view on replication archives shares much in common with the <a href="https://www.projecttier.org">TIER protocol</a> and the proposals in <span class="citation" data-cites="alvarez2018">Alvarez, Key, and Núñez (<a href="../references.html#ref-alvarez2018" role="doc-biblioref">2018</a>)</span>. It includes raw data in a platform-independent format (.csv) and cleaned data in a language-specific format (.rds, a format for R data files). Data features like labels, attributes, and factor levels are preserved when imported by the analysis scripts. The analysis scripts are labeled by the outputs they create, such as figures and tables. A main script is included that runs the cleaning and analysis scripts in the correct order. The documents folder consists of the paper, the supplemental appendix, the preanalysis plan, the populated analysis plan, and codebooks that describe the data. A README file explains each part of the replication archive. We also suggest that authors include a script that consists of a design declaration and diagnosis. <span class="citation" data-cites="Bowers2011">Bowers (<a href="../references.html#ref-Bowers2011" role="doc-biblioref">2011</a>)</span> offers one reason above and beyond research transparency to go to all this effort: good archiving is like collaborating with your future self.</p>
-<div id="fig-filestructure" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/file-structure.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;23.1: File structure for archiving</figcaption></figure>
+<p><a href="#fig-filestructure" class="quarto-xref">Figure&nbsp;<span>23.1</span></a> below shows the file structure for an example replication. Our view on replication archives shares much in common with the <a href="https://www.projecttier.org">TIER protocol</a> and the proposals in <span class="citation" data-cites="alvarez2018">Alvarez, Key, and Núñez (<a href="../references.html#ref-alvarez2018" role="doc-biblioref">2018</a>)</span>. It includes raw data in a platform-independent format (.csv) and cleaned data in a language-specific format (.rds, a format for R data files). Data features like labels, attributes, and factor levels are preserved when imported by the analysis scripts. The analysis scripts are labeled by the outputs they create, such as figures and tables. A main script is included that runs the cleaning and analysis scripts in the correct order. The documents folder consists of the paper, the supplemental appendix, the preanalysis plan, the populated analysis plan, and codebooks that describe the data. A README file explains each part of the replication archive. We also suggest that authors include a script that consists of a design declaration and diagnosis. <span class="citation" data-cites="Bowers2011">Bowers (<a href="../references.html#ref-Bowers2011" role="doc-biblioref">2011</a>)</span> offers one reason above and beyond research transparency to go to all this effort: good archiving is like collaborating with your future self.</p>
+<div id="fig-filestructure" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-filestructure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/file-structure.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-filestructure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;23.1: File structure for archiving
+</figcaption></figure>
 </div>
 </section><section id="reanalysis" class="level2" data-number="23.3"><h2 data-number="23.3" class="anchored" data-anchor-id="reanalysis">
 <span class="header-section-number">23.3</span> Reanalysis</h2>
@@ -491,7 +535,7 @@ div.csl-indent {
 <span class="header-section-number">23.3.1</span> Example</h3>
 <p>In this section, we illustrate the flaw in assessing reanalyses based on changing significance of results alone. We demonstrate how to assess the properties of reanalysis plans, comparing the properties of original answer strategies to proposed reanalysis answer strategies.</p>
 <p>The design we consider is an observational study with a binary treatment <span class="math inline">\(Z\)</span> that may or may not be confounded by a covariate <span class="math inline">\(X\)</span>. Suppose that the original researcher had in mind a model in which <span class="math inline">\(Z\)</span> is not confounded by <span class="math inline">\(X\)</span>:</p>
-<div class="cell" data-file="scripts_declarations/declaration_23.1a.R">
+<div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># X is not a confounder and is measured pretreatment</span></span>
 <span><span class="va">model_1</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -504,7 +548,7 @@ div.csl-indent {
 <span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The reanalyst has in mind a different model. In this second model, <span class="math inline">\(X\)</span> confounds the relationship between <span class="math inline">\(Z\)</span> and <span class="math inline">\(Y\)</span>:</p>
-<div class="cell" data-file="scripts_declarations/declaration_23.1b.R">
+<div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># X is a confounder and is measured pretreatment</span></span>
 <span><span class="va">model_2</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -517,7 +561,7 @@ div.csl-indent {
 <span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The original answer strategy <code>A</code> is a regression of the outcome <span class="math inline">\(Y\)</span> on the treatment <span class="math inline">\(Z\)</span>. The reanalyst collects the covariate <span class="math inline">\(X\)</span> and proposes to control for it in a linear regression; call that strategy <code>A_prime</code>.</p>
-<div class="cell" data-file="scripts_declarations/declaration_23.1c.R">
+<div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">A</span> <span class="op">&lt;-</span> <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, .method <span class="op">=</span> <span class="va">lm_robust</span>, label <span class="op">=</span> <span class="st">"A"</span><span class="op">)</span></span>
 <span><span class="va">A_prime</span> <span class="op">&lt;-</span> <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">X</span>, .method <span class="op">=</span> <span class="va">lm_robust</span>, label <span class="op">=</span> <span class="st">"A_prime"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -526,15 +570,18 @@ div.csl-indent {
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">draw_estimates</span><span class="op">(</span><span class="va">model_2</span> <span class="op">+</span> <span class="va">A</span> <span class="op">+</span> <span class="va">A_prime</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-reanalysisresults" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reanalysisresults-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;23.1: Results under A and A’
+</figcaption><div aria-describedby="tbl-reanalysisresults-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-reanalysisresults" class="anchored">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<caption>Table&nbsp;23.1: Results under A and A’</caption>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<caption>Analysis and reanalysis estiamtes</caption>
 <thead><tr class="header">
-<th style="text-align: center;" data-quarto-table-cell-role="th">estimator</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">estimate</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">std.error</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">p.value</th>
+<th style="text-align: center;">estimator</th>
+<th style="text-align: center;">estimate</th>
+<th style="text-align: center;">std.error</th>
+<th style="text-align: center;">p.value</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -552,14 +599,14 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>As we show now, these claims depend on the validity of the model and should be assessed with design diagnosis. Consider a third model in which <em>X</em> is affected by <em>Z</em> and <em>Y</em>. (In many observational settings, which variables are causally prior or posterior to others can be difficult to know with certainty.) We now diagnose both answer strategies under all three models.</p>
 <div id="def-ch23num1" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 23.1 </strong></span>Reanalysis declaration.</p>
-<div class="cell" data-file="scripts_declarations/declaration_23.1d.R">
+<p><span class="theorem-title"><strong>Declaration 23.1</strong></span> Reanalysis declaration.</p>
+<div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># X is not a confounder and is measured posttreatment</span></span>
 <span><span class="va">model_3</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -581,16 +628,16 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch23num1" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 23.1 </strong></span>Reanalysis diagnosis.</p>
+<p><span class="theorem-title"><strong>Diagnosis 23.1</strong></span> Reanalysis diagnosis.</p>
 <p>What we see in the diagnosis below is that <code>A_prime</code> is only preferred if we know for sure that <span class="math inline">\(X\)</span> is measured pretreatment. In design 3, where <span class="math inline">\(X\)</span> is measured posttreatment, <code>A</code> is preferred, because controlling for <span class="math inline">\(X\)</span> leads to posttreatment bias. This diagnosis indicates that the reanalyst needs to justify their beliefs about the causal ordering of <span class="math inline">\(X\)</span> and <span class="math inline">\(Z\)</span> to claim that <code>A_prime</code> is preferred to <code>A</code>. The reanalyst should not conclude on the basis of the realized estimates only that their answer strategy is preferred.</p>
 <div class="cell">
 <div class="cell-output-display">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <caption>Diagnosis of the reanalysis design under alternative models</caption>
 <thead><tr class="header">
-<th style="text-align: center;" data-quarto-table-cell-role="th">design</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">estimator</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">bias</th>
+<th style="text-align: center;">design</th>
+<th style="text-align: center;">estimator</th>
+<th style="text-align: center;">bias</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -650,25 +697,29 @@ div.csl-indent {
 <li><p>Is the original estimate within the replication 95% confidence interval?</p></li>
 <li><p>Do we fail to affirm equivalence<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> between the replication and original estimates, using a tolerance of 0.2?</p></li>
 </ol>
-<p><a href="#fig-ch23num2">Figure&nbsp;<span>23.2</span></a> shows that no matter how big we make the replication, we find that the rate of concluding the difference-in-SATEs is nonzero only occurs about 10% of the time. Similarly, the replication estimate is rarely outside of the original confidence interval, because it’s rare to be more extreme than a wide confidence interval. The relatively high variance of the original study means that it is so uncertain, it’s tough to distinguish it from any number in particular.</p>
+<p><a href="#fig-ch23num2" class="quarto-xref">Figure&nbsp;<span>23.2</span></a> shows that no matter how big we make the replication, we find that the rate of concluding the difference-in-SATEs is nonzero only occurs about 10% of the time. Similarly, the replication estimate is rarely outside of the original confidence interval, because it’s rare to be more extreme than a wide confidence interval. The relatively high variance of the original study means that it is so uncertain, it’s tough to distinguish it from any number in particular.</p>
 <p>Turning to the third metric (is the original outside the 95% confidence interval of the replication estimate), we that we become more and more likely to conclude that the original study fails to replicate as the quality replication study goes up. At very large sample sizes, the replication confidence intervals become extremely small, so in the limit, it will always exclude the original study estimate.</p>
 <p>The last metric, equivalence testing, has the nice property that, as the sample size grows, we get closer to the correct answer – the true SATEs are indeed within 0.2 standard units of each other. However, again because the original study is so noisy, it is difficult to affirm its equivalence with anything, even when the replication study is quite large.</p>
 <p>The upshot of this exercise is that, curiously, when original studies are weak (in that they generate imprecise estimates), it becomes <em>harder</em> to conclusively affirm that they did not replicate. This set of incentives is somewhat perverse: designers of original studies benefit from a lack of precision if it means they can’t “fail to replicate.”</p>
-<div id="fig-ch23num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-23-2.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;23.2: Rates of ‘failure to replicate’ according to four diagnosands. Original study N = 1000; True original SATE: 0.2; True replication SATE: 0.15.</figcaption></figure>
+<div id="fig-ch23num2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch23num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-23-2.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch23num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;23.2: Rates of ‘failure to replicate’ according to four diagnosands. Original study N = 1000; True original SATE: 0.2; True replication SATE: 0.15.
+</figcaption></figure>
 </div>
 </section></section><section id="meta-analysis" class="level2" data-number="23.5"><h2 data-number="23.5" class="anchored" data-anchor-id="meta-analysis">
 <span class="header-section-number">23.5</span> Meta-analysis</h2>
 <p>One of the last stages of the lifecycle of a research design is its eventual incorporation into our common scientific understanding of the world. Research findings are synthesized into our broader scientific understanding through systematic reviews and meta-analysis.</p>
-<p>Research synthesis takes two basic forms. The first is meta-analysis, in which a series of estimates are analyzed together in order to better understand features of the distribution of answers obtained in the literature (see <a href="../library/complex.html#sec-ch19s3"><span>Section&nbsp;19.3</span></a>). Studies can be averaged together in ways that are better or worse. Sometimes the answers are averaged together according to their precision. A precision-weighted average gives more weight to precise estimates and less weight to studies that are noisy. Sometimes studies are “averaged” by counting up how many of the estimates are positive and significant, how many are negative and significant, and how many are null. This is the typical approach taken in a literature review. Regardless of the averaging approach, the goal of this kind of synthesis is to learn as much as possible about a particular inquiry <em>I</em> by drawing on evidence from many studies.</p>
+<p>Research synthesis takes two basic forms. The first is meta-analysis, in which a series of estimates are analyzed together in order to better understand features of the distribution of answers obtained in the literature (see <a href="../library/complex.html#sec-ch19s3" class="quarto-xref"><span>Section 19.3</span></a>). Studies can be averaged together in ways that are better or worse. Sometimes the answers are averaged together according to their precision. A precision-weighted average gives more weight to precise estimates and less weight to studies that are noisy. Sometimes studies are “averaged” by counting up how many of the estimates are positive and significant, how many are negative and significant, and how many are null. This is the typical approach taken in a literature review. Regardless of the averaging approach, the goal of this kind of synthesis is to learn as much as possible about a particular inquiry <em>I</em> by drawing on evidence from many studies.</p>
 <p>A second kind of synthesis is an attempt to bring together the results of many designs, each of which targets a different inquiry about a common model. This is the kind of synthesis that takes place across an entire research literature. Different scholars focus on different nodes and edges of the common model, so a synthesis needs to incorporate the diverse sources of evidence. Such synthesis strategies include, for example, Bayesian model averaging approaches and stacking approaches (see, e.g., <span class="citation" data-cites="yao2018using">Yao et al. (<a href="../references.html#ref-yao2018using" role="doc-biblioref">2018</a>)</span>).</p>
 <p>How can you best anticipate how your research findings will be synthesized? For the first kind of synthesis—meta-analysis—you must be cognizant of keeping a commonly understood <em>I</em> in mind. You want to select inquiries not for their novelty, but because of their commonly understood importance. While the specifics of the model <em>M</em> might differ from study to study, the fact that the <em>I</em>s are all similar enough to be synthesized allows for a specific kind of knowledge accumulation.</p>
 <p>For the second kind of synthesis—literature-wide progress on a full causal model—even greater care is required. Specific studies cannot make up bespoke models <em>M</em> but instead must understand how the specific <em>M</em> adopted in the study is a special case of some broader <em>M</em> that is in principle agreed to by a wider research community. Perhaps in this spirit, <span class="citation" data-cites="Samii2016">Samii (<a href="../references.html#ref-Samii2016" role="doc-biblioref">2016</a>)</span> sets the role of “causal empiricists” apart from the role of theorists. The nonstop, never-ending proliferation of study-specific theories is a threat to this kind of knowledge accumulation. In a telling piece, <span class="citation" data-cites="mcphetres_2020">McPhetres et al. (<a href="../references.html#ref-mcphetres_2020" role="doc-biblioref">2020</a>)</span> document that in a decade of research articles published in <em>Psychological Science</em>, 359 specific theories were named. Of these 70% were named just once and a further 12% were named just twice.</p>
 <p>Design then with a view to integration. In the ideal case the meta-analytic design will already exist and your job will be to design a new study that can demonstrably add value to the collective design.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-alvarez2018" class="csl-entry" role="listitem">
 Alvarez, R. Michael, Ellen M. Key, and Lucas Núñez. 2018. <span>“<span>Research Replication: Practical Considerations</span>.”</span> <em>PS: Political Science <span>&amp;</span> Politics</em> 51 (2): 422–26.
 </div>
@@ -733,18 +784,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -776,11 +816,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -790,8 +867,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -803,7 +889,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -847,6 +1055,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -872,6 +1081,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -931,12 +1166,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../lifecycle/realization.html" class="pagination-link">
+      <a href="../lifecycle/realization.html" class="pagination-link" aria-label="Realization">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../epilogue.html" class="pagination-link">
+      <a href="../epilogue.html" class="pagination-link" aria-label="Epilogue">
         <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Epilogue</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design in the Social Sciences - 13&nbsp; Designing in code</title>
+<title>13&nbsp; Designing in code – Research Design in the Social Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,7 +19,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -30,7 +30,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -67,16 +67,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -85,11 +91,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style type="text/css" media="print">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MMK8CF9JC0"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
+</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
 </style>
 <script type="text/javascript">
@@ -128,25 +141,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
 </script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaration-in-code.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaration-in-code.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
@@ -172,9 +210,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,9 +245,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -274,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="../library/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design library</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -315,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design lifecycle</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -372,7 +410,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
     </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
@@ -442,7 +480,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </div>
 
-<header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaration-in-code.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title"><span id="sec-ch13" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Designing in code</span></span></h1>
 </div>
 
@@ -455,6 +493,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     
   </div>
   
+
 
 </header><p>The software package <code>DeclareDesign</code> provides tools for declaration, diagnosis, and redesign in code using the <code>R</code> statistical package. We introduce each step of the process sequentially in this chapter. The first goal is to get you started using the software for many common types of designs and to illustrate how the software works for a few less common ones. The second aim is to deepen understanding of the four elements of research design and our algorithm for selecting one. By working through each part in code, you get a second shot at grappling with how to build and assess research designs.</p>
 <section id="model-code" class="level2" data-number="13.1"><h2 data-number="13.1" class="anchored" data-anchor-id="model-code">
@@ -513,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You can use any of the enormous number of data simulation functions available in R for this purpose. Here we gather six functions we tend to use in our own declarations, but they are by no means exhaustive. Each function has arguments that govern exactly how the data are created; we chose arbitrary values here to show how they work. <a href="#fig-ch13num1">Figure&nbsp;<span>13.1</span></a> shows what these six look like for a 1,000 unit model.</p>
+<p>You can use any of the enormous number of data simulation functions available in R for this purpose. Here we gather six functions we tend to use in our own declarations, but they are by no means exhaustive. Each function has arguments that govern exactly how the data are created; we chose arbitrary values here to show how they work. <a href="#fig-ch13num1" class="quarto-xref">Figure&nbsp;<span>13.1</span></a> shows what these six look like for a 1,000 unit model.</p>
 <div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -526,9 +565,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    X6 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span><span class="op">)</span>, <span class="va">N</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch13num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-13-1.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;13.1: Six kinds of characteristics of units</figcaption></figure>
+<div id="fig-ch13num1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch13num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-13-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch13num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.1: Six kinds of characteristics of units
+</figcaption></figure>
 </div>
 <p>Binary variables are very important in the social sciences, but they can be particularly tricky to make, so we’ll spend a little more time on them. In a common way of thinking, binary variables are translations from latent, continuous variables into observed binary outcomes.</p>
 <p>We can draw binary outcomes in one of three ways. First, we can simulate binary outcomes using the <code>rbinom</code> function, as we have already seen. The function <code>rbinom(N, size = 1, prob = 0.5)</code> flips 1 coin for each of <code>N</code> subjects with a constant latent probability of success across units.</p>
@@ -582,7 +625,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="building-in-correlations-within-clusters" class="level4" data-number="13.1.2.2"><h4 data-number="13.1.2.2" class="anchored" data-anchor-id="building-in-correlations-within-clusters">
 <span class="header-section-number">13.1.2.2</span> Building in correlations within clusters</h4>
-<p>A second important form of correlation is correlation within clusters, described by the intra-cluster correlation coefficient (ICC). When ICC is low, units are not much more similar to other units in their cluster than they are to units in other clusters. When it is high, clusters are more homogeneous within themselves and more heterogeneous across themselves. For more on clustered designs for surveys and for experiments, see <a href="../library/observational-descriptive.html#sec-ch15s2"><span>Section&nbsp;15.2</span></a> and <a href="../library/experimental-causal.html#sec-ch18s3"><span>Section&nbsp;18.3</span></a>.</p>
+<p>A second important form of correlation is correlation within clusters, described by the intra-cluster correlation coefficient (ICC). When ICC is low, units are not much more similar to other units in their cluster than they are to units in other clusters. When it is high, clusters are more homogeneous within themselves and more heterogeneous across themselves. For more on clustered designs for surveys and for experiments, see <a href="../library/observational-descriptive.html#sec-ch15s2" class="quarto-xref"><span>Section 15.2</span></a> and <a href="../library/experimental-causal.html#sec-ch18s3" class="quarto-xref"><span>Section 18.3</span></a>.</p>
 <p>We can introduce ICC using the <code>draw_normal_icc</code> function:</p>
 <div class="cell">
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
@@ -632,7 +675,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    Y <span class="op">=</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">X</span> <span class="op">+</span> <span class="va">U</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><code>M2</code> is more worrisome. <code>U</code> now affects <code>X</code> as well, by affecting the probability of <code>X</code> equaling 1. See <a href="../library/observational-causal.html#sec-ch16s2"><span>Section&nbsp;16.2</span></a> for designs that face this sort of problem.</p>
+<p><code>M2</code> is more worrisome. <code>U</code> now affects <code>X</code> as well, by affecting the probability of <code>X</code> equaling 1. See <a href="../library/observational-causal.html#sec-ch16s2" class="quarto-xref"><span>Section 16.2</span></a> for designs that face this sort of problem.</p>
 <div class="cell">
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M2</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -642,7 +685,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    Y <span class="op">=</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">X</span> <span class="op">+</span> <span class="va">U</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>A further question for <code>U</code> is how much it should vary. This question is tougher to answer. <code>U</code> is an important source of variation in outcomes, so it needs to be calibrated in a way that the simulated data look like the data you expect to generate or encounter in the world. So our best advice here is to follow <a href="../introduction/research-design-principles.html#exm-designagnostically">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em> to figure out the conditions under which your design works well.</p>
+<p>A further question for <code>U</code> is how much it should vary. This question is tougher to answer. <code>U</code> is an important source of variation in outcomes, so it needs to be calibrated in a way that the simulated data look like the data you expect to generate or encounter in the world. So our best advice here is to follow <a href="../introduction/research-design-principles.html#exm-designagnostically" class="quarto-xref">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em> to figure out the conditions under which your design works well.</p>
 </section></section><section id="potential-outcomes" class="level3" data-number="13.1.3"><h3 data-number="13.1.3" class="anchored" data-anchor-id="potential-outcomes">
 <span class="header-section-number">13.1.3</span> Potential outcomes</h3>
 <p>We declare “potential” outcomes when describing counterfactual quantities.</p>
@@ -667,10 +710,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>By default, <code>potential_outcomes</code> imagines you are making two potential outcomes with respect to a treatment variable <code>Z</code> that can take on two values, 0 and 1.</p>
 <div class="cell">
+<div id="tbl-modelposdraw" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-modelposdraw-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;13.1: One draw of two potential outcomes
+</figcaption><div aria-describedby="tbl-modelposdraw-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-modelposdraw" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;13.1: One draw of two potential outcomes</caption>
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">ID</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">Y_Z_0</th>
@@ -705,8 +750,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>But we can use <code>potential_outcomes</code> to describe multiple treatment conditions:</p>
@@ -722,10 +767,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="fu">M</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-modelposdraw2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-modelposdraw2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;13.2: One draw of three potential outcomes
+</figcaption><div aria-describedby="tbl-modelposdraw2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-modelposdraw2" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;13.2: One draw of three potential outcomes</caption>
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">ID</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">Y_Z_0</th>
@@ -766,11 +813,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
-<p>Or to describe multiple treatment factors (see <a href="../library/experimental-causal.html#sec-ch18s5"><span>Section&nbsp;18.5</span></a> on factorial experiments):</p>
+<p>Or to describe multiple treatment factors (see <a href="../library/experimental-causal.html#sec-ch18s5" class="quarto-xref"><span>Section 18.5</span></a> on factorial experiments):</p>
 <div class="cell">
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -783,10 +830,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="fu">M</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-modelposdraw3" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-modelposdraw3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;13.3: One draw of four potential outcomes
+</figcaption><div aria-describedby="tbl-modelposdraw3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-modelposdraw3" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;13.3: One draw of four potential outcomes</caption>
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">ID</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">Y_Z1_0_Z2_0</th>
@@ -833,13 +882,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <section id="effect-sizes" class="level4" data-number="13.1.3.1"><h4 data-number="13.1.3.1" class="anchored" data-anchor-id="effect-sizes">
 <span class="header-section-number">13.1.3.1</span> Effect sizes</h4>
-<p>We often want to consider a range of plausible effect sizes, for example when estimating the minimum detectable effect of a design. A strategy we commonly use is to sample the treatment effect in the model declaration itself, and then draw the potential outcomes using that single number. When we diagnose many times, then we will get many different treatment effects (here, <code>tau</code>), which we can then summarize in a diagnosis. <a href="#sec-ch13s6ss1"><span>Section&nbsp;13.6.1</span></a> describes how to create a plot of the power across values of <code>tau</code>.</p>
+<p>We often want to consider a range of plausible effect sizes, for example when estimating the minimum detectable effect of a design. A strategy we commonly use is to sample the treatment effect in the model declaration itself, and then draw the potential outcomes using that single number. When we diagnose many times, then we will get many different treatment effects (here, <code>tau</code>), which we can then summarize in a diagnosis. <a href="#sec-ch13s6ss1" class="quarto-xref"><span>Section 13.6.1</span></a> describes how to create a plot of the power across values of <code>tau</code>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -849,7 +898,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">tau</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Where do our expectations about effect sizes, and the minimal plausible effect size, come from? We may conduct meta-analyses of past studies when there are sufficiently many with at least one relevant estimate of the same effect, or a systematic review or literature review when they are less comparable, but we want to find a range (see <a href="../library/experimental-causal.html#sec-ch18s3"><span>Section&nbsp;18.3</span></a> for a discussion of meta-analyses). We may be tempted to conduct a pilot study to estimate the effect size. We need to be careful when doing so about what to infer and how much to update from small pilot studies, as we discuss in <a href="../lifecycle/planning.html#sec-ch21s4"><span>Section&nbsp;21.4</span></a>, but we can often shrink our uncertainty over models. In the absence of pilot studies or past studies to draw on, we need to make educated guesses and understand under what true effect sizes our design will perform well and when it will not follow <a href="../introduction/research-design-principles.html#exm-designholistically">Principle&nbsp;<span>3.1</span></a>: <em>Design holistically</em>.</p>
+<p>Where do our expectations about effect sizes, and the minimal plausible effect size, come from? We may conduct meta-analyses of past studies when there are sufficiently many with at least one relevant estimate of the same effect, or a systematic review or literature review when they are less comparable, but we want to find a range (see <a href="../library/experimental-causal.html#sec-ch18s3" class="quarto-xref"><span>Section 18.3</span></a> for a discussion of meta-analyses). We may be tempted to conduct a pilot study to estimate the effect size. We need to be careful when doing so about what to infer and how much to update from small pilot studies, as we discuss in <a href="../lifecycle/planning.html#sec-ch21s4" class="quarto-xref"><span>Section 21.4</span></a>, but we can often shrink our uncertainty over models. In the absence of pilot studies or past studies to draw on, we need to make educated guesses and understand under what true effect sizes our design will perform well and when it will not follow <a href="../introduction/research-design-principles.html#exm-designholistically" class="quarto-xref">Principle&nbsp;<span>3.1</span></a>: <em>Design holistically</em>.</p>
 </section><section id="effect-heterogeneity" class="level4" data-number="13.1.3.2"><h4 data-number="13.1.3.2" class="anchored" data-anchor-id="effect-heterogeneity">
 <span class="header-section-number">13.1.3.2</span> Effect heterogeneity</h4>
 <p>Sometimes, the inquiry centers on treatment effect heterogeneity by subgroups. This heterogeneity has to be present in the model in order for the simulation to pick it up. Here we declare effect heterogeneity according to a binary covariate <code>X</code>. This example really shows off the utility of the formula syntax in the <code>potential_outcomes</code> function. We can write in our expectations about heterogeneity as if they were regression coefficients. Here, the “interaction term” is equal to <code>0.1</code>.</p>
@@ -864,7 +913,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="correlation-between-potential-outcomes" class="level4" data-number="13.1.3.3"><h4 data-number="13.1.3.3" class="anchored" data-anchor-id="correlation-between-potential-outcomes">
 <span class="header-section-number">13.1.3.3</span> Correlation between potential outcomes</h4>
-<p>Treated and untreated potential outcomes are typically highly correlated. When treatment effects are exactly homogeneous, the correlation is equal to 1. Rarely are potential outcomes <em>negatively</em> correlated, but it can occur. The sign and magnitude of the correlation especially affects the standard errors of estimates for causal effects (for more discussion of the correlation of potential outcomes in experiments and also standard error estimators, see <a href="redesigning.html#sec-ch10s3ss1"><span>Section&nbsp;11.3.1</span></a>).</p>
+<p>Treated and untreated potential outcomes are typically highly correlated. When treatment effects are exactly homogeneous, the correlation is equal to 1. Rarely are potential outcomes <em>negatively</em> correlated, but it can occur. The sign and magnitude of the correlation especially affects the standard errors of estimates for causal effects (for more discussion of the correlation of potential outcomes in experiments and also standard error estimators, see <a href="redesigning.html#sec-ch10s3ss1" class="quarto-xref"><span>Section 11.3.1</span></a>).</p>
 <p>We described some complexities of generating binary variables above. They transfer over to the generation of correlated potential outcomes in special ways. In the declarations below, <code>M1</code> generates uncorrelated potential outcomes, because the draws from <code>rbinom</code> are independent of one another. In <code>M2</code>, we still use <code>rbinom</code>, but with a transformation of the normally distributed variable into a probability via <code>pnorm</code>. This allows the potential outcomes to be correlated because they are both influenced by the same latent variable. Finally, in <code>M3</code>, we generate highly correlated potential outcomes because we peel off the layer of randomness introduced by <code>rbinom</code>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span> </span>
@@ -920,7 +969,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="inquiries-with-continuous-potential-outcomes" class="level3" data-number="13.2.2"><h3 data-number="13.2.2" class="anchored" data-anchor-id="inquiries-with-continuous-potential-outcomes">
 <span class="header-section-number">13.2.2</span> Inquiries with continuous potential outcomes</h3>
-<p>“Non-decomposable” inquiries are not as simple as an average over the units in the model. A common example arises with continuous potential outcomes. The regression discontinuity design described in <a href="../library/observational-causal.html#sec-ch16s5"><span>Section&nbsp;16.5</span></a> has an inquiry that is defined by two continuous functions of the running variable. The control function is a polynomial function representing the potential outcome under control and the treatment function is a different polynomial representing treated potential outcomes. The inquiry is the difference in the two functions evaluated at the cutoff point on the running variable. We declare it as follows:</p>
+<p>“Non-decomposable” inquiries are not as simple as an average over the units in the model. A common example arises with continuous potential outcomes. The regression discontinuity design described in <a href="../library/observational-causal.html#sec-ch16s5" class="quarto-xref"><span>Section 16.5</span></a> has an inquiry that is defined by two continuous functions of the running variable. The control function is a polynomial function representing the potential outcome under control and the treatment function is a different polynomial representing treated potential outcomes. The inquiry is the difference in the two functions evaluated at the cutoff point on the running variable. We declare it as follows:</p>
 <div class="cell">
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cutoff</span> <span class="op">&lt;-</span> <span class="fl">0.5</span></span>
 <span><span class="va">control</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">{</span></span>
@@ -942,7 +991,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  Difference_in_CATEs <span class="op">=</span> <span class="va">CATE_X1</span> <span class="op">-</span> <span class="va">CATE_X0</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In the multilevel regression and poststratification (MRP) design in <a href="../library/observational-descriptive.html#sec-ch15s3"><span>Section&nbsp;15.3</span></a>, we want to know what the average opinion is in each state.</p>
+<p>In the multilevel regression and poststratification (MRP) design in <a href="../library/observational-descriptive.html#sec-ch15s3" class="quarto-xref"><span>Section 15.3</span></a>, we want to know what the average opinion is in each state.</p>
 <p>We declare an inquiry at the county level below. We rely on <code>group_by</code> and <code>summarize</code> from <code>dplyr</code> to write a function <code>MRP_inquiry</code> that uses a pipeline to group the data into counties and take the average of individual values. Now, our design targets an inquiry for each state.</p>
 <div class="cell">
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
@@ -961,7 +1010,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span>handler <span class="op">=</span> <span class="va">MRP_inquiry</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We discuss further in <a href="#sec-ch13s4"><span>Section&nbsp;13.4</span></a> how to link inquiries to answer strategies, including the case of multiple inquiries.</p>
+<p>We discuss further in <a href="#sec-ch13s4" class="quarto-xref"><span>Section 13.4</span></a> how to link inquiries to answer strategies, including the case of multiple inquiries.</p>
 </section></section><section id="data-strategy-code" class="level2" data-number="13.3"><h2 data-number="13.3" class="anchored" data-anchor-id="data-strategy-code">
 <span class="header-section-number">13.3</span> Data strategy</h2>
 <p>The three data strategy functions, <code>declare_sampling</code>, <code>declare_assignment</code>, and <code>declare_measurement</code>, share most features in common. All three add variables to the running data frame. <code>declare_sampling</code> is special in that it has a filter argument that determines which (if any) of the units should be dropped from the data and which should be retained as the sample. <code>declare_assignment</code> and <code>declare_measurement</code> work in the exact same way as one another. The reason we separate them is to insist on the features of the data strategy, not for a deep programming reason.</p>
@@ -1076,10 +1125,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="statistical-modeling-functions" class="level3" data-number="13.4.1"><h3 data-number="13.4.1" class="anchored" data-anchor-id="statistical-modeling-functions">
 <span class="header-section-number">13.4.1</span> Statistical modeling functions</h3>
 <p>In <code>DeclareDesign</code>, we call these two steps <code>.method</code> and <code>.summary</code> (these arguments are preceded by <code>.</code>’s to avoid argument conflicts). The <code>.method</code> argument in <code>declare_estimator</code> can take almost any modelling function in <code>R</code> (e.g., <code>lm</code> for linear regression) and <code>.summary</code> consists of a summary function that calculates statistics from the fit such as <code>tidy</code> or <code>glance</code>. You can write your own <code>.method</code> or <code>.summary</code> functions. When your answer strategy does not fit this two-step structure, you can (as with all <code>declare_</code> functions) write your own handler.</p>
-<p>We break down each part of a standard answer strategy declaration using the example of a linear regression of the effect of a variable <code>Z</code> on an outcome <code>Y</code> in <a href="#def-ch13num1">Declaration&nbsp;<span>13.1</span></a>. The first argument in our <code>declare_estimator</code> step defines the method we will use, here <code>lm_robust</code>, which is our function in the <code>estimatr</code> package for running linear regressions with robust standard errors. The second is the main argument for <code>lm_robust</code>, the formula for the regression specification, in this case Y on Z with no controls.</p>
+<p>We break down each part of a standard answer strategy declaration using the example of a linear regression of the effect of a variable <code>Z</code> on an outcome <code>Y</code> in <a href="#def-ch13num1" class="quarto-xref">Declaration&nbsp;<span>13.1</span></a>. The first argument in our <code>declare_estimator</code> step defines the method we will use, here <code>lm_robust</code>, which is our function in the <code>estimatr</code> package for running linear regressions with robust standard errors. The second is the main argument for <code>lm_robust</code>, the formula for the regression specification, in this case Y on Z with no controls.</p>
 <div id="def-ch13num1" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 13.1 </strong></span>Linear regression design</p>
-<div class="cell" data-file="scripts_declarations/declaration_13.1.R">
+<p><span class="theorem-title"><strong>Declaration 13.1</strong></span> Linear regression design</p>
+<div class="cell">
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_13.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>                U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
@@ -1102,10 +1151,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">draw_estimates</span><span class="op">(</span><span class="va">declaration_13.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-linregest" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-linregest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;13.4: The estimate from one draw of the linear regression design
+</figcaption><div aria-describedby="tbl-linregest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-linregest" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;13.4: The estimate from one draw of the linear regression design</caption>
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">term</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">estimator</th>
@@ -1134,8 +1185,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr></tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 </section><section id="tidying-statistical-modelling-function-output" class="level3" data-number="13.4.2"><h3 data-number="13.4.2" class="anchored" data-anchor-id="tidying-statistical-modelling-function-output">
@@ -1155,10 +1206,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>When neither <code>tidy</code> nor <code>glance</code> works well for your answer strategy, you can write your own summary function. Below, we build up a tidy function for the <code>lm</code> model from scratch. (One is already built-in to the <code>broom</code> package, but we do so here to illustrate how you can write your own for a function that does not already have one.) Before you start to write your own summary function, check whether one exists on the <a href="https://broom.tidymodels.org/articles/available-methods.html">Broom website</a>.</p>
 <div class="cell">
+<div id="tbl-modelfitstats" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-modelfitstats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;13.5: The model fit statistics from one draw of the linear regression design
+</figcaption><div aria-describedby="tbl-modelfitstats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-modelfitstats" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;13.5: The model fit statistics from one draw of the linear regression design</caption>
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">r.squared</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">adj.r.squared</th>
@@ -1179,8 +1232,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr></tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>There are three steps for a tidy function:</p>
@@ -1243,10 +1296,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Often you may want to construct a test as part of your answer strategy that does not target an inquiry. Our <code>declare_test</code> function works just like <code>declare_estimator</code>, except you need not include an inquiry. The <code>label_test</code> infrastructure works just like <code>label_estimator</code> for custom test functions.</p>
 </section></section><section id="declaration-code" class="level2" data-number="13.5"><h2 data-number="13.5" class="anchored" data-anchor-id="declaration-code">
 <span class="header-section-number">13.5</span> Declaration</h2>
-<p>To construct a research <em>design</em> object that we can operate on — diagnose, redesign, draw data from it, etc. — we add research design elements together with the <code>+</code> operator. In <a href="#def-ch13num2">Declaration&nbsp;<span>13.2</span></a>, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.</p>
+<p>To construct a research <em>design</em> object that we can operate on — diagnose, redesign, draw data from it, etc. — we add research design elements together with the <code>+</code> operator. In <a href="#def-ch13num2" class="quarto-xref">Declaration&nbsp;<span>13.2</span></a>, we first create each design step separately, then concatenate the steps. This style of declaration is useful when you want to mix-and-match design elements. Usually, though, we just add steps together without creating the each step first.</p>
 <div id="def-ch13num2" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 13.2 </strong></span>Declaration of two-arm randomized experiment</p>
-<div class="cell" data-file="scripts_declarations/declaration_13.2.R">
+<p><span class="theorem-title"><strong>Declaration 13.2</strong></span> Declaration of two-arm randomized experiment</p>
+<div class="cell">
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">1000</span>,</span>
 <span>                U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
@@ -1311,7 +1364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">13.6</span> Diagnosis</h2>
 <p>Once a design is declared in code, diagnosing it is usually the easy part. <code>diagnose_design</code> handles all the details and bookkeeping for you. In this section, we outline how to conduct a diagnosis using our default tools for standard diagnoses and also how you might operate directly on the simulations for more complicated analyses.</p>
 <div id="lem-ch10num6" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 13.1 </strong></span>Diagnosis of two-arm randomized experiment</p>
+<p><span class="theorem-title"><strong>Diagnosis 13.1</strong></span> Diagnosis of two-arm randomized experiment</p>
 <p>Here we use <code>diagnose_design</code> to diagnose the design. By default, we conduct 500 simulations and characterize simulation error with 100 bootstraps of the diagnosands. <code>reshape_diagnosis</code> prepares the output for nice printing.</p>
 <div class="cell">
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_13.1</span> <span class="op">&lt;-</span></span>
@@ -1322,24 +1375,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>We can “tidy” the results of the diagnosis for easier printing and plotting of the results. Here, each row is an estimate of a diagnosand and then uncertainty statistics such as the standard error and 95% confidence interval around the diagnosand estimate.</p>
 <div class="cell">
+<div id="tbl-diagnosis13s1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-diagnosis13s1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;13.6: Design diagnosis of two-arm randomized experiment
+</figcaption><div aria-describedby="tbl-diagnosis13s1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-diagnosis13s1" class="anchored">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<caption>Table&nbsp;13.6: Design diagnosis of two-arm randomized experiment</caption>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 6%">
+<col style="width: 4%">
+<col style="width: 5%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 5%">
+<col style="width: 9%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 7%">
+</colgroup>
 <thead><tr class="header">
-<th style="text-align: center;" data-quarto-table-cell-role="th">Design</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Inquiry</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Estimator</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Outcome</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Term</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">N Sims</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Mean Estimand</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Mean Estimate</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Bias</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">SD Estimate</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">RMSE</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Power</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Coverage</th>
+<th style="text-align: center;">Design</th>
+<th style="text-align: center;">Inquiry</th>
+<th style="text-align: center;">Estimator</th>
+<th style="text-align: center;">Outcome</th>
+<th style="text-align: center;">Term</th>
+<th style="text-align: center;">N Sims</th>
+<th style="text-align: center;">Mean Estimand</th>
+<th style="text-align: center;">Mean Estimate</th>
+<th style="text-align: center;">Bias</th>
+<th style="text-align: center;">SD Estimate</th>
+<th style="text-align: center;">RMSE</th>
+<th style="text-align: center;">Power</th>
+<th style="text-align: center;">Coverage</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -1405,18 +1475,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tidy</span><span class="op">(</span><span class="va">diagnosis_13.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-diagnosis131tidy" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-diagnosis131tidy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;13.7: Tidied diagnosis of two-arm randomized experiment
+</figcaption><div aria-describedby="tbl-diagnosis131tidy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-diagnosis131tidy" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;13.7: Tidied diagnosis of two-arm randomized experiment</caption>
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">design</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">inquiry</th>
@@ -1601,8 +1673,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 </div>
@@ -1624,7 +1696,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Plotting simulations using <code>ggplot2</code> is often a great way to gain a deeper sense of the properties of the design.</p>
-<p>The answer strategy for <a href="#def-ch13num1">Declaration&nbsp;<span>13.1</span></a> includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using <code>geom_histogram</code>, then faceting by estimator using <code>facet_wrap</code>. We often want to overlay the true value of the estimand on these plots, which we do here with <code>geom_vline</code>. Notice that in order to do, we had to create a <code>summary_df</code> that includes the value of the estimand. The resulting plot in <a href="#fig-ch13num2">Figure&nbsp;<span>13.2</span></a> shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.</p>
+<p>The answer strategy for <a href="#def-ch13num1" class="quarto-xref">Declaration&nbsp;<span>13.1</span></a> includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using <code>geom_histogram</code>, then faceting by estimator using <code>facet_wrap</code>. We often want to overlay the true value of the estimand on these plots, which we do here with <code>geom_vline</code>. Notice that in order to do, we had to create a <code>summary_df</code> that includes the value of the estimand. The resulting plot in <a href="#fig-ch13num2" class="quarto-xref">Figure&nbsp;<span>13.2</span></a> shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.</p>
 <div class="cell">
 <div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># first create summary for vertical lines</span></span>
 <span><span class="va">summary_df</span> <span class="op">&lt;-</span> </span>
@@ -1645,11 +1717,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Estimate"</span>, y <span class="op">=</span> <span class="st">"Count of simulations"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch13num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-13-2.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;13.2: Example visualization of a diagnosis</figcaption></figure>
+<div id="fig-ch13num2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch13num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-13-2.svg" class="img-fluid figure-img">
 </div>
-<p>Diagnosing over model uncertainty is a crucial part of diagnosis. We want to understand when our design performs well and when it does not. A classical example of this in wide practice is the power curve. In a power curve (see <a href="#fig-ch13num3">Figure&nbsp;<span>13.3</span></a>), we display the power of a design (the probability of achieving statistical significance) along different possible effect sizes. In this setting, plotting the simulations directly with an indicator for whether that simulation’s estimate is statistically significant is the easiest way to learn about the properties of the design.</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch13num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.2: Example visualization of a diagnosis
+</figcaption></figure>
+</div>
+<p>Diagnosing over model uncertainty is a crucial part of diagnosis. We want to understand when our design performs well and when it does not. A classical example of this in wide practice is the power curve. In a power curve (see <a href="#fig-ch13num3" class="quarto-xref">Figure&nbsp;<span>13.3</span></a>), we display the power of a design (the probability of achieving statistical significance) along different possible effect sizes. In this setting, plotting the simulations directly with an indicator for whether that simulation’s estimate is statistically significant is the easiest way to learn about the properties of the design.</p>
 <div class="cell">
 <div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">design</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -1678,9 +1754,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>       y <span class="op">=</span> <span class="st">"Diagnosand: statistical power"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch13num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-13-3.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;13.3: Example visualization of a diagnosis</figcaption></figure>
+<div id="fig-ch13num3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch13num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-13-3.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch13num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.3: Example visualization of a diagnosis
+</figcaption></figure>
 </div>
 </section></section><section id="redesign-code" class="level2" data-number="13.7"><h2 data-number="13.7" class="anchored" data-anchor-id="redesign-code">
 <span class="header-section-number">13.7</span> Redesign</h2>
@@ -1734,18 +1814,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1777,11 +1846,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1791,8 +1897,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1804,7 +1919,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1848,6 +2085,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1873,6 +2111,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1932,12 +2196,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../declaration-diagnosis-redesign/design-example.html" class="pagination-link">
+      <a href="../declaration-diagnosis-redesign/design-example.html" class="pagination-link" aria-label="Design example">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../library/" class="pagination-link">
+      <a href="../library/" class="pagination-link" aria-label="Research design library">
         <span class="nav-page-text">Research design library</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

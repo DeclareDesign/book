@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design in the Social Sciences - 22&nbsp; Realization</title>
+<title>22&nbsp; Realization – Research Design in the Social Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -52,16 +53,22 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -70,11 +77,18 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style type="text/css" media="print">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MMK8CF9JC0"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
+</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
 </style>
 <script type="text/javascript">
@@ -112,25 +126,50 @@ div.csl-indent {
         createCookie('popupShown', 'yes', 1)
       }
     }
-</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lifecycle/">Research design lifecycle</a></li><li class="breadcrumb-item"><a href="../lifecycle/realization.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lifecycle/">Research design lifecycle</a></li><li class="breadcrumb-item"><a href="../lifecycle/realization.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
@@ -156,9 +195,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -191,9 +230,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -258,7 +297,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../library/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design library</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -299,7 +338,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design lifecycle</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -356,7 +395,7 @@ div.csl-indent {
 </li>
     </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
@@ -400,7 +439,7 @@ div.csl-indent {
   </div>
 </div>
 
-<header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lifecycle/">Research design lifecycle</a></li><li class="breadcrumb-item"><a href="../lifecycle/realization.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
 <span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Realization</span>
 </h1>
@@ -415,6 +454,7 @@ div.csl-indent {
     
   </div>
   
+
 
 </header><p>Realization is the implementation phase of a study. Implementing the data strategy means sampling the units as planned, allocating treatments according to the randomization procedure, and executing the measurement protocol. Implementing the answer strategy means applying the planned summary functions to the realized data. Of course, things never go so smoothly. Inevitably, some portion of the design fails to go according to plan: subjects do not comply with treatments, others cannot be located to answer survey questions, or governments interfere with the study as a whole. Sometimes, the answer strategies are discovered to be biased or imprecise or otherwise wanting. Declared designs can be adapted as the study changes, both to help make choices when you need to pivot and so that at the end there is a “realized design” to compare to the “planned design.”</p>
 <p>When implementation is complete, the design preregistered in an analysis plan can be “populated” to report on analyses as planned and the realized design reconciled with the planned design. In writing up the study, the design forms the center: why we should believe the answers we report. The declared design can be used in the write-up to convince reviewers of the study’s quality, and also as a tool to assess the impact of reviewer suggestions on the design.</p>
@@ -433,13 +473,17 @@ div.csl-indent {
 <span class="header-section-number">22.2</span> Populated preanalysis plan</h2>
 <p>A preanalysis plan describes how study data will eventually be analyzed, but those plans may change during the process of producing a finished report, article, or book. Inevitably, authors of preanalysis plans fail to anticipate how the data generated by the study will eventually be analyzed. Some reasons for discrepancies were discussed in the previous section on pivoting, but others intervene as well. A common reason is that PAPs promise too many analyses. In writing a concise paper, some analyses are dropped, others are combined, and still others are added during the writing and revision process. In the next section, we’ll describe how to reconcile analyses-as-planned with analyses-as-implemented, but this present section is about what to do with your analysis plan immediately after getting the data back.</p>
 <p>We echo proposals made in <span class="citation" data-cites="Banerjee2020">Banerjee et al. (<a href="../references.html#ref-Banerjee2020" role="doc-biblioref">2020</a>)</span> and <span class="citation" data-cites="alrababag_2020">Alrababa’h et al. (<a href="../references.html#ref-alrababag_2020" role="doc-biblioref">2022</a>)</span> that researchers should produce short reports that fulfill the promises made in their PAPs. <span class="citation" data-cites="Banerjee2020">Banerjee et al. (<a href="../references.html#ref-Banerjee2020" role="doc-biblioref">2020</a>)</span> emphasize that writing PAPs is difficult and usually time-constrained, so it is natural that the final paper will reflect further thinking about the full set of empirical approaches. A “populated PAP” serves to communicate the results of the promised analyses. <span class="citation" data-cites="alrababag_2020">Alrababa’h et al. (<a href="../references.html#ref-alrababag_2020" role="doc-biblioref">2022</a>)</span> cite the tendency of researchers to abandon the publication of studies that return null results. To address the resulting publication bias, they recommend “null results reports” that share the results of the preregistered analyses. We think these reports (whether the results come back null or otherwise) can easily be added to the appendix of the final write-up or posted to a study registry.</p>
-<p>We recommended in <a href="planning.html#sec-ch21s6"><span>Section&nbsp;21.6</span></a> that authors include mock analyses in their PAPs using simulated data. Doing so has the significant benefit of being specific about the details of the answer strategy. A further benefit comes when it is time to produce a populated PAP, since the realized data can quite straightforwardly be swapped in for the mock data. Given the time invested in building simulated analyses for the PAP, writing up a populated PAP takes only as much effort as is needed to clean the data (which will need to be done in any case).</p>
+<p>We recommended in <a href="planning.html#sec-ch21s6" class="quarto-xref"><span>Section 21.6</span></a> that authors include mock analyses in their PAPs using simulated data. Doing so has the significant benefit of being specific about the details of the answer strategy. A further benefit comes when it is time to produce a populated PAP, since the realized data can quite straightforwardly be swapped in for the mock data. Given the time invested in building simulated analyses for the PAP, writing up a populated PAP takes only as much effort as is needed to clean the data (which will need to be done in any case).</p>
 <section id="example" class="level3" data-number="22.2.1"><h3 data-number="22.2.1" class="anchored" data-anchor-id="example">
 <span class="header-section-number">22.2.1</span> Example</h3>
-<p>In <a href="planning.html"><span>Chapter&nbsp;21</span></a>, we declared the design for <span class="citation" data-cites="bonilla_tillery_2020">Bonilla and Tillery (<a href="../references.html#ref-bonilla_tillery_2020" role="doc-biblioref">2020</a>)</span> following their preanalysis plan. In doing so, we declared an answer strategy in code. In our populated PAP (shown in <a href="#fig-populatedpapcontactsheet">Figure&nbsp;<span>22.1</span></a> and <a href="../example-populated-pap.pdf">available in the appendix</a>), we can run that same answer strategy code, but swap out the simulated data for the real data collected during the study.</p>
-<div id="fig-populatedpapcontactsheet" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/example-populated-pap.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;22.1: Example populated PAP</figcaption></figure>
+<p>In <a href="planning.html" class="quarto-xref"><span>Chapter 21</span></a>, we declared the design for <span class="citation" data-cites="bonilla_tillery_2020">Bonilla and Tillery (<a href="../references.html#ref-bonilla_tillery_2020" role="doc-biblioref">2020</a>)</span> following their preanalysis plan. In doing so, we declared an answer strategy in code. In our populated PAP (shown in <a href="#fig-populatedpapcontactsheet" class="quarto-xref">Figure&nbsp;<span>22.1</span></a> and <a href="../example-populated-pap.pdf">available in the appendix</a>), we can run that same answer strategy code, but swap out the simulated data for the real data collected during the study.</p>
+<div id="fig-populatedpapcontactsheet" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-populatedpapcontactsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/example-populated-pap.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-populatedpapcontactsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;22.1: Example populated PAP
+</figcaption></figure>
 </div>
 </section></section><section id="reconciliation" class="level2" data-number="22.3"><h2 data-number="22.3" class="anchored" data-anchor-id="reconciliation">
 <span class="header-section-number">22.3</span> Reconciliation</h2>
@@ -448,10 +492,12 @@ div.csl-indent {
 <p>For this reason, we recommend that authors reconcile the design as planned with the design as implemented. A reconciliation can be a plain description of the deviations from the PAP, with justifications where appropriate. A more involved reconciliation would include a declaration of the planned design, a declaration of the implemented design, and a list of the differences. This “diff” of the designs can be automated through the declaration of both designs in computer code, then comparing the two design objects line by line (see the function <code>compare_designs()</code> in <code>DeclareDesign</code>).</p>
 <p>In some cases, reconciliation will lead to additional learning beyond what can be inferred from the final design itself. When some units refuse to be included in the study sample or some units refuse measurement, we get important information about those units. Understanding sample exclusions, noncompliance, and attrition not only may inform future research design planning choices, but also contribute substantively to our understanding of the social setting.</p>
 <p>There are no current standards for how to report reconciliation. We recommend, however, providing two types of tables, a qualitative <em>Inquiry reconciliation</em> table and a quantitative <em>Answer strategy reconciliation table</em>. In the latter case, especially, guiding readers to relevant discussions or sections of replication code can make the reconciliation tables easier to evaluate. Such answer strategy reconciliation tables could also usefully include output from diagnosis comparisons to provide motivation for change. In general they should also include brief explanations for decisions taken.</p>
-<p>We provide illustrations for both of these in <a href="#tbl-reconciliation1">Table&nbsp;<span>22.1</span></a> and <a href="#tbl-reconciliation2">Table&nbsp;<span>22.2</span></a>.</p>
-<div id="tbl-reconciliation1" class="anchored">
-<table class="table">
-<caption>Table&nbsp;22.1: Illustration of an inquiry reconciliation table.</caption>
+<p>We provide illustrations for both of these in <a href="#tbl-reconciliation1" class="quarto-xref">Table&nbsp;<span>22.1</span></a> and <a href="#tbl-reconciliation2" class="quarto-xref">Table&nbsp;<span>22.2</span></a>.</p>
+<div id="tbl-reconciliation1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reconciliation1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;22.1: Illustration of an inquiry reconciliation table.
+</figcaption><div aria-describedby="tbl-reconciliation1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 21%">
 <col style="width: 34%">
@@ -480,9 +526,13 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<div id="tbl-reconciliation2" class="anchored">
-<table class="table">
-<caption>Table&nbsp;22.2: Illustration of an answer strategy reconciliation table.</caption>
+</figure>
+</div>
+<div id="tbl-reconciliation2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reconciliation2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;22.2: Illustration of an answer strategy reconciliation table.
+</figcaption><div aria-describedby="tbl-reconciliation2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 16%">
@@ -503,14 +553,18 @@ div.csl-indent {
 </tr></tbody>
 </table>
 </div>
+</figure>
+</div>
 <section id="example-1" class="level3" data-number="22.3.1"><h3 data-number="22.3.1" class="anchored" data-anchor-id="example-1">
 <span class="header-section-number">22.3.1</span> Example</h3>
-<p>In <a href="planning.html"><span>Chapter&nbsp;21</span></a>, we described the preanalysis plan registered by <span class="citation" data-cites="bonilla_tillery_2020">Bonilla and Tillery (<a href="../references.html#ref-bonilla_tillery_2020" role="doc-biblioref">2020</a>)</span>. We reconcile the set of conditional average treatment effect (CATE) analyses planned in that PAP, the analyses reported in the paper, and those reported in the appendix at the request of reviewers in <a href="#tbl-reconciliation">Table&nbsp;<span>22.3</span></a>. In column two, we see that the authors planned four CATE estimations: effects by familiarity with Black Lives Matter; by gender; by LGBTQ status; and by linked fate. Only two of those are reported in the paper; the others may have been excluded for space reasons. Another way to handle these results would be to present them in a populated PAP posted on their Web site or in the paper’s appendix.</p>
+<p>In <a href="planning.html" class="quarto-xref"><span>Chapter 21</span></a>, we described the preanalysis plan registered by <span class="citation" data-cites="bonilla_tillery_2020">Bonilla and Tillery (<a href="../references.html#ref-bonilla_tillery_2020" role="doc-biblioref">2020</a>)</span>. We reconcile the set of conditional average treatment effect (CATE) analyses planned in that PAP, the analyses reported in the paper, and those reported in the appendix at the request of reviewers in <a href="#tbl-reconciliation" class="quarto-xref">Table&nbsp;<span>22.3</span></a>. In column two, we see that the authors planned four CATE estimations: effects by familiarity with Black Lives Matter; by gender; by LGBTQ status; and by linked fate. Only two of those are reported in the paper; the others may have been excluded for space reasons. Another way to handle these results would be to present them in a populated PAP posted on their Web site or in the paper’s appendix.</p>
 <p>In their appendix, the authors report on a set of analyses requested by reviewers. We see this as an excellent example of transparently presenting the set of planned analyses and highlighting the analyses that were added afterward and why they were added. They write: “We have been asked to consider other pertinent moderations beyond gender and LGBTQ+ status. They are contained in the four following sections.”</p>
 <p>This small Inquiry reconciliation table describes the heterogeneous effects analyses the researchers planned, those reported in the paper, and those reported in the appendix at the request of reviewers.</p>
-<div id="tbl-reconciliation" class="anchored">
-<table class="table">
-<caption>Table&nbsp;22.3: Inquiry reconciliation table based on Bonilla and Tillery (2020) analysis and their preanalysis plan.</caption>
+<div id="tbl-reconciliation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reconciliation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;22.3: Inquiry reconciliation table based on Bonilla and Tillery (2020) analysis and their preanalysis plan.
+</figcaption><div aria-describedby="tbl-reconciliation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 22%">
@@ -575,18 +629,24 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 </section></section><section id="writing" class="level2" data-number="22.4"><h2 data-number="22.4" class="anchored" data-anchor-id="writing">
 <span class="header-section-number">22.4</span> Writing</h2>
 <p>When writing up an empirical paper, authors have multiple goals. They want to convince reviewers and readers that the research question they are tackling is important and their research design provides useful answers to that question. They sometimes also want to influence decision-makers like policymakers, businesses, and journalists. Communicating the elements of MIDA and a diagnosis of the design in a study write-up serve both goals. The declaration in terms of MIDA in the paper enables readers to understand what research design was implemented, and the diagnosis the inferential properties of the design.</p>
-<p>Elements of MIDA may appear throughout a paper. In <a href="#fig-midamousa">Figure&nbsp;<span>22.2</span></a> below, we annotate <span class="citation" data-cites="mousa2020building">Mousa (<a href="../references.html#ref-mousa2020building" role="doc-biblioref">2020</a>)</span> by highlighting where in the article each design component is discussed. The study reports on the results of a randomized experiment in which Iraqi Christians were assigned either to an all-Christian soccer team or a team in which they would play alongside Muslims. The experiment tested whether being on a mixed team affected intergroup attitudes and behaviors, both among teammates and back at home after the games were over. We highlight in color areas discussing the model <em>M</em> in yellow, the inquiry <em>I</em> in green, the data strategy <em>D</em> in blue, and the answer strategy <em>A</em> in pink.</p>
-<div id="fig-midamousa" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/mousa-highlighted-sheet.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;22.2: Paper with <em>MIDA</em> elements highlighted (Mousa 2020).</figcaption></figure>
+<p>Elements of MIDA may appear throughout a paper. In <a href="#fig-midamousa" class="quarto-xref">Figure&nbsp;<span>22.2</span></a> below, we annotate <span class="citation" data-cites="mousa2020building">Mousa (<a href="../references.html#ref-mousa2020building" role="doc-biblioref">2020</a>)</span> by highlighting where in the article each design component is discussed. The study reports on the results of a randomized experiment in which Iraqi Christians were assigned either to an all-Christian soccer team or a team in which they would play alongside Muslims. The experiment tested whether being on a mixed team affected intergroup attitudes and behaviors, both among teammates and back at home after the games were over. We highlight in color areas discussing the model <em>M</em> in yellow, the inquiry <em>I</em> in green, the data strategy <em>D</em> in blue, and the answer strategy <em>A</em> in pink.</p>
+<div id="fig-midamousa" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-midamousa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/mousa-highlighted-sheet.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-midamousa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;22.2: Paper with <em>MIDA</em> elements highlighted (Mousa 2020).
+</figcaption></figure>
 </div>
 <p>The model and the inquiry largely appear in the abstract and introductory portion of the paper, though aspects of the model are discussed later on. Much of the first three pages are devoted to the data strategy, while the answer strategy only appears briefly. This division makes sense: in this paper, the action is all in the experimental design whereas the answer strategy follows straightforwardly from it. The paper mostly describes <em>M</em> and <em>D</em>, with only a small amount of text devoted to <em>I</em> and <em>A</em>. Finally, it is notable that the data strategy is interspersed with aspects of the model. The reason is that the author is justifying choices about randomization and measurement using features of the model. In our experience, describing each of the four dimensions of MIDA separately can be a clarifying structure when communicating designs.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-alrababag_2020" class="csl-entry" role="listitem">
 Alrababa’h, Ala’, Scott Williamson, Andrea Dillon, Jens Hainmueller, Dominik Hangartner, Michael Hotard, David Laitin, Duncan Lawrence, and Jeremy Weinstein. 2022. <span>“Learning from Null Effects: A Bottom-up Approach.”</span> <em>Political Analysis</em>.
 </div>
@@ -603,7 +663,7 @@ Mousa, Salma. 2020. <span>“Building Social Cohesion Between Christians and Mus
 </section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
 <ol>
 <li id="fn1"><p>We randomized half of the communities to receive the treatment film and half the placebo. We then used an over-time stepped-wedge design to study the effect of the text message, randomizing how many days after the film was distributed the text message was sent.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This conclusion follows the logic of the placebo-controlled design described in <a href="../library/experimental-causal.html#sec-ch18s7"><span>Section&nbsp;18.7</span></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This conclusion follows the logic of the placebo-controlled design described in <a href="../library/experimental-causal.html#sec-ch18s7" class="quarto-xref"><span>Section 18.7</span></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -639,18 +699,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -682,11 +731,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -696,8 +782,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -709,7 +804,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -753,6 +970,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -778,6 +996,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -837,12 +1081,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../lifecycle/planning.html" class="pagination-link">
+      <a href="../lifecycle/planning.html" class="pagination-link" aria-label="Planning">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Planning</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../lifecycle/integration.html" class="pagination-link">
+      <a href="../lifecycle/integration.html" class="pagination-link" aria-label="Integration">
         <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Integration</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

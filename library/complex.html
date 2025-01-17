@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design in the Social Sciences - 19&nbsp; Complex designs</title>
+<title>19&nbsp; Complex designs – Research Design in the Social Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,7 +19,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -30,7 +30,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -55,6 +55,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -86,16 +87,22 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -104,11 +111,18 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style type="text/css" media="print">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MMK8CF9JC0"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
+</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
 </style>
 <script type="text/javascript">
@@ -147,25 +161,50 @@ div.csl-indent {
       }
     }
 </script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/complex.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/complex.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
@@ -191,9 +230,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -226,9 +265,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -293,7 +332,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../library/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design library</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -334,7 +373,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design lifecycle</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -391,7 +430,7 @@ div.csl-indent {
 </li>
     </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
@@ -445,7 +484,7 @@ div.csl-indent {
   </div>
 </div>
 
-<header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/complex.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
 <span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Complex designs</span>
 </h1>
@@ -461,6 +500,7 @@ div.csl-indent {
   </div>
   
 
+
 </header><p>In the designs we presented thus far, the aim was generally to learn about the level of some variable or some particular causal effect. In most cases, a single set of data was collected and an answer strategy was applied directly to the data to generate an answer to a causal or descriptive inquiry.</p>
 <p>In practice, however, many published studies are more complicated than this and draw in complex ways on a series of research designs, each targeted to a different inquiry, that when brought together answer the deeper theoretical question at the heart of the research.</p>
 <p>But studies can also be complex in other ways. For instance, although we have assumed researchers start with well-defined inquiries, some studies focus on first figuring out what question to ask and then proceed to ask and answer it. Such studies engage first in model building, then report the results of a follow-on research design targeted at questions posed by the new model.</p>
@@ -472,18 +512,18 @@ div.csl-indent {
 </div>
 <p>In most designs that we have discussed, researchers have a clear idea what they are looking for when they begin the research. How big is some population? What is the size of some effect? But some research involves questions that are much more open in nature. We focus here on discovery research that has two types of more open inquiry. The first inquiry poses an open question of the form, “what matters?” (rather than the more common closed question of the form, “what is the effect of this on that?”). The second inquiry poses a question about an as-yet unspecified group — the people for whom effects are especially strong or weak.</p>
 <p>We imagine a setting in which a researcher has access to a large group of covariates <span class="math inline">\(X\)</span> and has conducted an experiment to assess the effects of <span class="math inline">\(Z\)</span> on <span class="math inline">\(Y\)</span>. The researcher is interested in the <em>heterogeneity</em> of effects of <span class="math inline">\(Z\)</span> as a function of variables in <span class="math inline">\(X\)</span> and poses two inquiries. First, which covariate in <span class="math inline">\(X\)</span> best “explains” variation in the effect of <span class="math inline">\(Z\)</span>? Second, what combination of values in <span class="math inline">\(X\)</span> characterize individuals for whom effects are particularly weak?</p>
-<p><a href="#def-ch19num1">Declaration&nbsp;<span>19.1</span></a> proceeds as follows.</p>
+<p><a href="#def-ch19num1" class="quarto-xref">Declaration&nbsp;<span>19.1</span></a> proceeds as follows.</p>
 <p>For the model, we imagine a possibly complex function linking <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span> in which the effect of <span class="math inline">\(Z\)</span> depends nonlinearly on some but not all variables in <span class="math inline">\(X\)</span>. As always, this model can and should be altered to help understand whether diagnosis depends on the particular type of structure assumed.</p>
 <p>We declare two inquiries beyond the standard average treatment effect. For the first inquiry we need to be specific about what we mean by “best explains.” We will imagine asking which covariate <span class="math inline">\(X\)</span> produces the lowest conditional variance <span class="math inline">\(\mathbb{E}(\mathbb{V}(Y_i(1)- Y_i(0)|X_i = x))\)</span>. Specifically, we partition each covariate into quantiles and take the average variance in treatment effect across each quantile. We will call this the <code>best_predictor</code> inquiry and calculate it using the <span class="math inline">\(R^2\)</span> from a fixed-effects model applied to the true treatment effects. The <code>best_predictor</code> function in <code>rdss</code> calculates this estimand, dividing covariates into 20 quantiles by default.</p>
 <p>There is both a simple and a more complex understanding of the second inquiry. The simple understanding is that we are interested in the average effect among the units whose effects are in the bottom 20% (say) of all effects. We will call this the <code>worst_effects</code> inquiry. This is a natural notion of the worst affected, but it is a very difficult quantity to estimate.</p>
 <p>The more complex understanding involves examining the realized data in order to identify a set of units (say of size 20%) that we think will have weak effects, and with this set identified return to <em>M</em> and ask what the average effect is for this set. We will call this the <code>weak_effects</code> inquiry, to acknowledge the fact that the effects for this group may not be the worst effects. This data-dependent inquiry is more complicated to articulate theoretically (it is, in fact, an answer strategy dependent inquiry), but it is more straightforward to estimate empirically.</p>
-<p>We assume the data strategy is the same as for a simple two arm trial (see <a href="experimental-causal.html#sec-ch18s1"><span>Section&nbsp;18.1</span></a>).</p>
+<p>We assume the data strategy is the same as for a simple two arm trial (see <a href="experimental-causal.html#sec-ch18s1" class="quarto-xref"><span>Section 18.1</span></a>).</p>
 <p>This causal forests design gets its name from the answer strategy. The “causal forests” algorithm randomly partitions data into a training and testing group. Within the training group it repeatedly generates “trees” by repartitioning the covariates (generating “branches”) to identify subgroups (“leafs”) with similar treatment effects. At each step, partitioning is implemented to yield estimated minimum variance in treatment effects. Unit level predictions of treatment effects (in both the training and the testing sets) are then generated by combining estimates of effects for units over different trees <span class="citation" data-cites="wager2018estimation">(see <a href="../references.html#ref-wager2018estimation" role="doc-biblioref">Wager and Athey 2018</a> for full details of the approach)</span>. Our estimate of the <code>best_predictor</code> is based on the variable that is most frequently partitioned to reduce variance, though we note that this indicator was not designed to capture the variable that induces the greatest reduction in variance. Including it here allows us to illustrate the ability of diagnosis to assess the performance of an estimator for a task for which it was not designed.</p>
 <p>To implement causal forests in <code>DeclareDesign</code>, we wrote a “handler” that calls a function from the <code>grf</code> (generalized random forests) package. This handler produces two types of quantities: estimates of unit level causal effects and the name of the variable that is most frequently partitioned to reduce variance (<code>var_imp</code>). Because the output includes a prediction for each unit it is natural to add the output to the primary data frame. For that reason, the causal forests estimation is introduced as a data strategy step and not specifically in an answer strategy step. The estimates of the unit level causal effects are used in order to identify the weakly performing group (within the test set and within the full set), which is in turn used to calculate the two versions of the <code>weak_effects</code> estimands, one for the test set and one for the full sample. To accommodate these complexities, the final inquiry declaration takes place after the implementation of the causal forests algorithm.</p>
 <p>Finally, we use regression to estimate the ATE as well as the weak effects and worst effects estimands, using both the identified low performing group in the test set data and the identified low performing group in the full data. We assess the performance of these against both the <code>weak_effects</code> inquiry and the <code>worst_effects</code> inquiry.</p>
 <div id="def-ch19num1" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 19.1 </strong></span>Random forests design</p>
-<div class="cell" data-file="scripts_declarations/declaration_19.1.R">
+<p><span class="theorem-title"><strong>Declaration 19.1</strong></span> Random forests design</p>
+<div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdss</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/grf-labs/grf">grf</a></span><span class="op">)</span></span>
 <span></span>
@@ -536,20 +576,28 @@ div.csl-indent {
 <span>                    inquiry <span class="op">=</span> <span class="st">"best_predictor"</span>, label <span class="op">=</span> <span class="st">"cf"</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>Before turning to diagnosis we can get a feel for the performance of the causal forest estimator by comparing the predicted effects for each unit generated by the estimator, with the actual unit level treatment effects generated by <em>M</em>, as shown in <a href="#fig-ch19num1">Figure&nbsp;<span>19.1</span></a>.</p>
-<div id="fig-ch19num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-19-1.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;19.1: One draw from the causal forests design</figcaption></figure>
+<p>Before turning to diagnosis we can get a feel for the performance of the causal forest estimator by comparing the predicted effects for each unit generated by the estimator, with the actual unit level treatment effects generated by <em>M</em>, as shown in <a href="#fig-ch19num1" class="quarto-xref">Figure&nbsp;<span>19.1</span></a>.</p>
+<div id="fig-ch19num1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch19num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-19-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch19num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19.1: One draw from the causal forests design
+</figcaption></figure>
 </div>
 <p>We see that we get some traction—but we also get a lot wrong. Estimating unit level causal effects is hard. We see in particular that the <em>range</em> of the predictions is narrower than the range of the true effects, which will mean that the average effects in the groups with the best or worst predicted effects will generally not be the same as the effects for the groups with the best and worst actual effects.</p>
-<p>To see how the design is choosing the best predictor, we illustrate the adjusted r-squared for a regression predicting the treatment effect with a partitioning of each variable, as well as the rank of predictors given the R-squared number in <a href="#fig-ch19num2">Figure&nbsp;<span>19.2</span></a>. We see that the third covariate <code>X.3</code> has a very high adjusted R-squared, and is ranked first, and most of the covariates are bunched at a very low R-squared.</p>
-<div id="fig-ch19num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-19-2.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;19.2: How the best predictor estimates are constructed, from ranking variables in terms of their prediction power of the individual treatment effects as measured by the r-squared in a regression.</figcaption></figure>
+<p>To see how the design is choosing the best predictor, we illustrate the adjusted r-squared for a regression predicting the treatment effect with a partitioning of each variable, as well as the rank of predictors given the R-squared number in <a href="#fig-ch19num2" class="quarto-xref">Figure&nbsp;<span>19.2</span></a>. We see that the third covariate <code>X.3</code> has a very high adjusted R-squared, and is ranked first, and most of the covariates are bunched at a very low R-squared.</p>
+<div id="fig-ch19num2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch19num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-19-2.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch19num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19.2: How the best predictor estimates are constructed, from ranking variables in terms of their prediction power of the individual treatment effects as measured by the r-squared in a regression.
+</figcaption></figure>
 </div>
 <div id="lem-ch19num1" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 19.1 </strong></span>Causal forests diagnosis</p>
-<p>For the diagnosis we need to take account of the fact that the answers to one of the inquiries (“Which X accounts for the most variation in effects?”) should be treated as categorical. For this reason, we report the modal estimate and estimand, rather than relying on the average estimate and average estimand. We calculate the probability that we get the correct answer, rather than relying on bias. We illustrate the diagnosis in <a href="#fig-ch19num3">Figure&nbsp;<span>19.3</span></a>.</p>
+<p><span class="theorem-title"><strong>Diagnosis 19.1</strong></span> Causal forests diagnosis</p>
+<p>For the diagnosis we need to take account of the fact that the answers to one of the inquiries (“Which X accounts for the most variation in effects?”) should be treated as categorical. For this reason, we report the modal estimate and estimand, rather than relying on the average estimate and average estimand. We calculate the probability that we get the correct answer, rather than relying on bias. We illustrate the diagnosis in <a href="#fig-ch19num3" class="quarto-xref">Figure&nbsp;<span>19.3</span></a>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">most_common</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
@@ -572,9 +620,13 @@ div.csl-indent {
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_19.1</span>, </span>
 <span>                  diagnosands <span class="op">=</span> <span class="va">discovery_diagnosands</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch19num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-19-3.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;19.3: Sampling distributions of estimates of five estimands from the causal forest design.</figcaption></figure>
+<div id="fig-ch19num3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch19num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-19-3.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch19num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19.3: Sampling distributions of estimates of five estimands from the causal forest design.
+</figcaption></figure>
 </div>
 <p>We see that we do very well in identifying the most powerful predictor of heterogeneity, correct nearly all of the time. (We are never “correct” for the continuous estimands, but we would never expect to be.) Our estimator for the effects for the weak group within the testing set is unbiased. This follows from the fact that we are in essence estimating the causal effect within a subgroup that has been selected without knowledge of the potential outcomes. Substantively the effects for this group are indeed considerably lower than the average treatment effects, and so we have been successful in identifying units that experience weak effects on average and estimating the effects for these. Thus we have been successful for a version of both inquiries.</p>
 <p>The other diagnoses sharpen our understanding of what questions cannot be so easily answered with this design. First we see that estimates of the effects for the weak performers do not do a good job of estimating effects for the <em>worst</em> performers. This highlights that the procedure can generate unbiased estimates for <em>a</em> group that does poorly but not <em>the</em> group that does most poorly. We can further see from the diagnosis that while we recover effects for the test group well, we have some bias when trying to estimate the effects for the weak performing set in the combined training and test data. The reason for bias here is that training group units enter the worse performing set in part because of their realized outcomes (which helped define the set) and not just on the basis of pretreatment features. The bias is small, however—so small it is barely discernible in the histograms—and so the restriction of analysis to the training set only ultimately increases mean-squared error here.</p>
@@ -590,9 +642,9 @@ div.csl-indent {
 <div class="ddbox">
 <p>We declare a design in which a researcher wants to use experimental data to estimate the parameters of a game-theoretic model. The premise of the approach is that, to the extent that the model is correct, in-sample parameter estimation allows the researcher to make interesting external inferences about effects in other settings. The risk is that bad models will produce bad inferences.</p>
 </div>
-<p>Structural estimation is used when researchers have in mind a model for how processes work and their goal is to estimate the parameters of that model. We referred to this type of a model as an “inquiry model” in <a href="../introduction/what-is-a-research-design.html#sec-ch2s2ss1"><span>Section&nbsp;2.1.2</span></a> to distinguish it from the reference models that are required to provide a setting in which to assess the performance of a design. If only they knew the parameters of the model, they could draw inferences about levels of unobserved variables, treatment effects, or other quantities. They might even extrapolate to estimate counterfactual quantities, such as the effects of interventions that have not been implemented <span class="citation" data-cites="reiss2007structural">(<a href="../references.html#ref-reiss2007structural" role="doc-biblioref">Reiss and Wolak 2007</a>)</span>.</p>
+<p>Structural estimation is used when researchers have in mind a model for how processes work and their goal is to estimate the parameters of that model. We referred to this type of a model as an “inquiry model” in <a href="../introduction/what-is-a-research-design.html#sec-ch2s2ss1" class="quarto-xref"><span>Section 2.1.2</span></a> to distinguish it from the reference models that are required to provide a setting in which to assess the performance of a design. If only they knew the parameters of the model, they could draw inferences about levels of unobserved variables, treatment effects, or other quantities. They might even extrapolate to estimate counterfactual quantities, such as the effects of interventions that have not been implemented <span class="citation" data-cites="reiss2007structural">(<a href="../references.html#ref-reiss2007structural" role="doc-biblioref">Reiss and Wolak 2007</a>)</span>.</p>
 <p>We illustrate this design with a bargaining game, drawing on an example used in <span class="citation" data-cites="wilke2020field">Wilke and Humphreys (<a href="../references.html#ref-wilke2020field" role="doc-biblioref">2020</a>)</span>. We imagine a customer <span class="math inline">\(i\)</span> makes payments from some endowment to a taxi driver. Bargaining proceeds as one player makes an offer that is accepted or rejected; if rejected the other player makes a counteroffer. The game continues for <span class="math inline">\(n\)</span> rounds with zero payoffs if no deal is made. Our main interest is the share of the endowment retained by the customer.</p>
-<p>In <a href="#def-ch19num2">Declaration&nbsp;<span>19.2</span></a>, we imagine two types of customers, strategic (<span class="math inline">\(\theta_i = 0\)</span>) and nonstrategic (<span class="math inline">\(\theta_i = 1\)</span>). If a customer is strategic, the equilibrium offer made by the first mover is the one predicted by the solution given in <span class="citation" data-cites="rubinstein1982perfect">Rubinstein (<a href="../references.html#ref-rubinstein1982perfect" role="doc-biblioref">1982</a>)</span>. If, however, the player is nonstrategic, then they always (successfully) insist on invoking a payment norm that lets them retain a fixed share of their endowment, <span class="math inline">\(\tilde{\pi}\)</span>. We let <span class="math inline">\(\alpha\)</span> denote the probability that a player is nonstrategic. A player’s payoff then is given by:</p>
+<p>In <a href="#def-ch19num2" class="quarto-xref">Declaration&nbsp;<span>19.2</span></a>, we imagine two types of customers, strategic (<span class="math inline">\(\theta_i = 0\)</span>) and nonstrategic (<span class="math inline">\(\theta_i = 1\)</span>). If a customer is strategic, the equilibrium offer made by the first mover is the one predicted by the solution given in <span class="citation" data-cites="rubinstein1982perfect">Rubinstein (<a href="../references.html#ref-rubinstein1982perfect" role="doc-biblioref">1982</a>)</span>. If, however, the player is nonstrategic, then they always (successfully) insist on invoking a payment norm that lets them retain a fixed share of their endowment, <span class="math inline">\(\tilde{\pi}\)</span>. We let <span class="math inline">\(\alpha\)</span> denote the probability that a player is nonstrategic. A player’s payoff then is given by:</p>
 <p><span class="math display">\[\pi_i =  (1-\theta_i)(z_i\hat{\pi} + (1-z_i)(1-\pi)) + \theta_i\tilde{\pi}\]</span></p>
 <p>where <span class="math display">\[\hat{\pi} = \sum_{j = 2}^n(-1^{j})\delta^{j-1}\]</span></p>
 <p>is the Rubinstein solution. The customer’s payoff depends on whether they goes first (<span class="math inline">\(z_i = 1\)</span>) or second (<span class="math inline">\(z_i = 0\)</span>) and on the common discount factor <span class="math inline">\(\delta\)</span>.</p>
@@ -602,9 +654,9 @@ div.csl-indent {
 <p>The answer strategy is implemented using maximum likelihood to identify which parameter values are most consistent with the data. More specifically, this approach takes the model as true and asks for what collection of parameter values the observed data is most likely. See <span class="citation" data-cites="king1998unifying">King (<a href="../references.html#ref-king1998unifying" role="doc-biblioref">1998</a>)</span> for an introduction to the method of maximum likelihood. One nice feature of the method is that the problem of maximizing the likelihood is (asymptotically) equivalent to finding the probability distribution that minimizes the Kullback–Leibler divergence to the true probability distribution (of course, all that within the class of distributions that can be specified under the model). For more, see <span class="citation" data-cites="white1982maximum">White (<a href="../references.html#ref-white1982maximum" role="doc-biblioref">1982</a>)</span>.</p>
 <p>The heart of the estimation strategy is the specification of the likelihood function. The likelihood function reports the probability of the data given particular stipulated values of the parameters. This value is different depending on <span class="math inline">\(n\)</span> so in fact we write down a function that writes a function given <span class="math inline">\(n\)</span>. The likelihood function reflects the theoretical model described above, which means that in this declaration, the same event generating process is used in <em>M</em> and in the construction of the likelihood function in <em>A</em>. In other words, the “reference model is the same as the”inquiry model.” An optimistic assumption.</p>
 <div id="def-ch19num2" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 19.2 </strong></span>Structural estimation declaration.</p>
+<p><span class="theorem-title"><strong>Declaration 19.2</strong></span> Structural estimation declaration.</p>
 <p>With the likelihood function defined, we can declare a design with an estimation step that uses the <code>bbmle</code> package</p>
-<div class="cell" data-file="scripts_declarations/declaration_19.2.R">
+<div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/bbolker/bbmle">bbmle</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Equilibrium offers for a game of length n</span></span>
@@ -656,15 +708,17 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch19num2" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 19.2 </strong></span>Structural estimation diagnosis.</p>
+<p><span class="theorem-title"><strong>Diagnosis 19.2</strong></span> Structural estimation diagnosis.</p>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_19.2</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_19.2</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-structuraldiagnosisa" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-structuraldiagnosisa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;19.1: Estimation of structural parameters from behavior in a bargaining game
+</figcaption><div aria-describedby="tbl-structuraldiagnosisa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-structuraldiagnosisa" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;19.1: Estimation of structural parameters from behavior in a bargaining game</caption>
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Inquiry</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Mean Estimand</th>
@@ -711,18 +765,22 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>Turning to diagnosis we see first that we do a good job in recovering parameter values. All three parameters are estimated precisely. From these, we can calculate estimates of causal quantities such as the first mover advantage and assess the extent to which this depends on features such as the length of the game.</p>
-<p>As always, diagnosis can be used to fine-tune designs. In <a href="#fig-ch19num4">Figure&nbsp;<span>19.4</span></a>, we compare design performance as we vary <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(n\)</span>. We see from the comparison of designs that estimates are less accurate when either longer games are used or when there are many nonstrategic players. Shorter games have an advantage here of producing a more pronounced difference in the payoffs of first and second movers. The gains from shorter games are especially pronounced in settings in which many nonstrategic players dampen the variation in payoffs. Though not shown here, we can also use design diagnosis to show that the design fails if we set <span class="math inline">\(n\)</span> at 3 (for instance) as in this case <span class="math inline">\(\delta\)</span> is not identified (the same probability distribution is consistent with different values for <span class="math inline">\(\delta\)</span>).</p>
-<div id="fig-ch19num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-19-4.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;19.4: Performance of the structural estimation design depends on the number of rounds and the types of players.</figcaption></figure>
+<p>As always, diagnosis can be used to fine-tune designs. In <a href="#fig-ch19num4" class="quarto-xref">Figure&nbsp;<span>19.4</span></a>, we compare design performance as we vary <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(n\)</span>. We see from the comparison of designs that estimates are less accurate when either longer games are used or when there are many nonstrategic players. Shorter games have an advantage here of producing a more pronounced difference in the payoffs of first and second movers. The gains from shorter games are especially pronounced in settings in which many nonstrategic players dampen the variation in payoffs. Though not shown here, we can also use design diagnosis to show that the design fails if we set <span class="math inline">\(n\)</span> at 3 (for instance) as in this case <span class="math inline">\(\delta\)</span> is not identified (the same probability distribution is consistent with different values for <span class="math inline">\(\delta\)</span>).</p>
+<div id="fig-ch19num4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch19num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-19-4.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch19num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19.4: Performance of the structural estimation design depends on the number of rounds and the types of players.
+</figcaption></figure>
 </div>
 <p>The basic structure used here can be used for a wide range of structural models. The first step is to write down the theory well enough to specify the implied likelihood function. Doing so might require adding noise to the model so that the data that are seen in practice can be seen in theory. The next step is to estimate the model parameters that have the greatest likelihood of having produced the observed data. (The same fundamental approach can be used with estimation via Bayesian methods or methods of moments.)</p>
-<p>The payoffs from structural estimation can be great: we can operationalize our theoretical models to make specific real-world predictions by disciplining them with real-world information. The risks are large, too. Because the inferences are necessarily model-dependent, model misspecification can lead to faulty conclusions. When doing structural estimation, apply <a href="../introduction/research-design-principles.html#exm-designagnostically">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em> liberally.</p>
+<p>The payoffs from structural estimation can be great: we can operationalize our theoretical models to make specific real-world predictions by disciplining them with real-world information. The risks are large, too. Because the inferences are necessarily model-dependent, model misspecification can lead to faulty conclusions. When doing structural estimation, apply <a href="../introduction/research-design-principles.html#exm-designagnostically" class="quarto-xref">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em> liberally.</p>
 </div>
 <section id="design-examples-1" class="level3" data-number="19.2.1"><h3 data-number="19.2.1" class="anchored" data-anchor-id="design-examples-1">
 <span class="header-section-number">19.2.1</span> Design examples</h3>
@@ -739,10 +797,10 @@ div.csl-indent {
 <p>The PATE inquiry, however, might not be so interesting if the constituent inquiries – the site-level ATEs – vary greatly from context to context. The ATEs that make up the PATE might vary because of the contextual features that condition the effect. <span class="citation" data-cites="galos_coppock_2022">Galos and Coppock (<a href="../references.html#ref-galos_coppock_2022" role="doc-biblioref">2022</a>)</span>, for example, reanalyze audit studies of gender-based employment discrimination to find that the ATE on callbacks of being a woman is strongly positive in women-dominated sectors and is strongly negative in men-dominated sections. For this reason, meta-analyses often include inquiries about the variance of effects across studies or the covariance of effects with groups.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>The largest choice in the data strategy for a meta-analysis is the set of study inclusion and exclusion criteria. These criteria should be guided by the inquiries of the meta-analysis and whether the designs of the constituent studies appropriately inform the meta-analytic inquiry. If the inquiry is the population mean and standard deviation of the site-level ATEs of treatment <span class="math inline">\(Z\)</span> on outcome <span class="math inline">\(Y\)</span>, we want to include only studies that credibly estimate the effect of <span class="math inline">\(Z\)</span> on <span class="math inline">\(Y\)</span>. This requirement means checking that all included studies use similar-enough treatments and similar-enough measurements of the outcome. It also means excluding studies that are prone to bias. For example, <span class="citation" data-cites="Pettigrew:2006th">Pettigrew and Tropp (<a href="../references.html#ref-Pettigrew:2006th" role="doc-biblioref">2006</a>)</span> assemble 515 studies of the contact hypothesis, but <span class="citation" data-cites="paluck_green_green_2019">Paluck, Green, and Green (<a href="../references.html#ref-paluck_green_green_2019" role="doc-biblioref">2019</a>)</span> exclude all but 5% of these studies in their updated meta-analysis for failing to randomize intergroup contact. Meta-analyses that include biased studies can compound biases, giving us falsely precise and incorrect answers. Finally, inclusion decisions should be made on the basis of the designs of the constituent studies and <em>not</em> their results. For example, we should not exclude studies that fail to reach statistical significance or yield unexpected answers.</p>
 <p>The answer strategies for meta-analyses often amount to a weighted average of the individual study estimates. We take a weighted average instead of a simple average because we want to give different studies different amounts of pull in the overall estimate. In particular, we often want to give studies that are more precise more weight and studies that are less precise less weight. In fixed-effect estimation, for example, study weights are often proportional to the inverse of the estimated variance from the study. In random-effects estimation, by contrast, the weights are often proportional to the inverse of the estimated variance from the study, plus an estimate of the between-study variance in effects. With this adjustment, the study weights are less extreme in random effects relative to fixed effect <span class="citation" data-cites="borenstein2021introduction">(for more, see <a href="../references.html#ref-borenstein2021introduction" role="doc-biblioref">Borenstein et al. 2021</a>, ch.&nbsp;13)</span>. Fixed-effect meta-analysis may be appropriate in settings in which we have a strong theoretical reason to think the site-level inquiries are all equal to the PATE, but typically we think effects vary from site to site, so random effects is usually the meta-analytic answer strategy of choice.</p>
-<p>In <a href="#def-ch19num3">Declaration&nbsp;<span>19.3</span></a>, we declare a meta-analytic research design for 100 studies with a true PATE (<span class="math inline">\(\mu\)</span>) of 0.2. We represent the standard deviation of the study-level ATEs with <span class="math inline">\(\tau\)</span>, which we vary between 0 and 1. When <span class="math inline">\(\tau&gt;0\)</span> the true effects vary across contexts. The studies each have different measurement precision, with standard errors between 0.025 and 0.6. The inquiries are <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\tau^2\)</span>. In the answer strategy, we use both fixed effect and random effects meta-analysis.</p>
+<p>In <a href="#def-ch19num3" class="quarto-xref">Declaration&nbsp;<span>19.3</span></a>, we declare a meta-analytic research design for 100 studies with a true PATE (<span class="math inline">\(\mu\)</span>) of 0.2. We represent the standard deviation of the study-level ATEs with <span class="math inline">\(\tau\)</span>, which we vary between 0 and 1. When <span class="math inline">\(\tau&gt;0\)</span> the true effects vary across contexts. The studies each have different measurement precision, with standard errors between 0.025 and 0.6. The inquiries are <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\tau^2\)</span>. In the answer strategy, we use both fixed effect and random effects meta-analysis.</p>
 <div id="def-ch19num3" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 19.3 </strong></span>Meta-analysis design</p>
-<div class="cell" data-file="scripts_declarations/declaration_19.3.R">
+<p><span class="theorem-title"><strong>Declaration 19.3</strong></span> Meta-analysis design</p>
+<div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.metafor-project.org">metafor</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">mu</span> <span class="op">&lt;-</span> <span class="fl">0.2</span> <span class="co"># true PATE</span></span>
@@ -772,14 +830,18 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch19num3" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 19.3 </strong></span>Meta-analysis diagnosis</p>
-<p><a href="#fig-ch19num5">Figure&nbsp;<span>19.5</span></a> explores the bias and coverage of the two estimators under each model both for the mean effects inquiry <span class="math inline">\(\mu\)</span> and for the variance of effects inquiry <span class="math inline">\(\tau^2\)</span>. We find that the random effects estimator, across both models of how effects are realized, performs best. Whether the variance of site-level ATEs is 1 or 0, random effects estimates both inquiries without bias and coverage is nominal. By contrast, the fixed effect estimator has two problems. When <span class="math inline">\(\tau^2\)</span> is 1, the estimator gets the variance in estimates wrong, because it <em>assumes</em> it is 0. Second, the estimator is extremely overconfident, generating confidence intervals that are drastically too small, as reflected in the poor coverage. This overconfidence stems from the fixed effect assumption that the only reason study-to-study estimates differ is due to estimation noise, not true differences across sites.</p>
+<p><span class="theorem-title"><strong>Diagnosis 19.3</strong></span> Meta-analysis diagnosis</p>
+<p><a href="#fig-ch19num5" class="quarto-xref">Figure&nbsp;<span>19.5</span></a> explores the bias and coverage of the two estimators under each model both for the mean effects inquiry <span class="math inline">\(\mu\)</span> and for the variance of effects inquiry <span class="math inline">\(\tau^2\)</span>. We find that the random effects estimator, across both models of how effects are realized, performs best. Whether the variance of site-level ATEs is 1 or 0, random effects estimates both inquiries without bias and coverage is nominal. By contrast, the fixed effect estimator has two problems. When <span class="math inline">\(\tau^2\)</span> is 1, the estimator gets the variance in estimates wrong, because it <em>assumes</em> it is 0. Second, the estimator is extremely overconfident, generating confidence intervals that are drastically too small, as reflected in the poor coverage. This overconfidence stems from the fixed effect assumption that the only reason study-to-study estimates differ is due to estimation noise, not true differences across sites.</p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_19.3</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_19.3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch19num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-19-5.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;19.5: Coverage and bias of the fixed effect and random effects under two settings, effect homogeneity and effect heterogeneity.</figcaption></figure>
+<div id="fig-ch19num5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch19num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-19-5.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch19num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19.5: Coverage and bias of the fixed effect and random effects under two settings, effect homogeneity and effect heterogeneity.
+</figcaption></figure>
 </div>
 </div>
 <section id="design-examples-2" class="level3" data-number="19.3.1"><h3 data-number="19.3.1" class="anchored" data-anchor-id="design-examples-2">
@@ -797,13 +859,13 @@ div.csl-indent {
 <p>We explore a third approach here: coordinated multi-site studies. The idea here is to implement the same research design (or one as close as possible) across multiple contexts at the same time, each targeting the same inquiry with similar methods with the explicit intention of meta-analyzing the eventual results. In the previous chapter, we described <em>retrospective</em> meta-analysis in which a meta-analyst gathers together previous scholarship on a research question; harmonization of the studies is achieved <em>ex post</em> by including the studies that target the same theoretical quantity well and excluding those that do not. A coordinated multi-site study is a <em>prospective</em> meta-analysis; harmonization is achieved <em>ex ante</em> through the sometimes painstaking process of ensuring comparability of treatments, outcomes, and units across contexts.</p>
 <p>How much we can learn about the generalizability of effects depends on how many sites we study, how we <em>select</em> the sites, our beliefs about effect heterogeneity, and the level of harmonization across studies. Of these, the harmonization level is most important. Without harmonization of research designs across sites, researchers risk answering different questions in different sites. If the goal is to understand a common inquiry and how values of the inquiry vary across contexts, then each site must provide answers to (essentially) the same inquiry. For this, researchers coordinate measurement strategies so as to collect the same outcome measures and coordinate the details of treatment procedures to ensure they are studying the effects of the same intervention. They may also wish to coordinate on details like sampling to ensure the same types of subjects are enrolled at each site and on the consent and enrollment procedures so as to avoid introducing selection or demand effects differentially across sites.</p>
 <p>The disadvantage of harmonization is that researchers might end up answering a <em>different</em> question than the one they started out with. In the worst case, they end up answering one common question across all sites that is interesting for none. We explore these trade-offs by declaring a modified multi-site design in which different treatments have different effects in different sites.</p>
-<p><a href="#def-ch19num4">Declaration&nbsp;<span>19.4</span></a> describes a multi-site study with five sites. A conceptual challenge with multi-site studies is that in practice a single design has to take account of various differences across sites, such as differences in sample sizes, assignment probabilities, or expectations. The design below shows how these multi-site features can be introduced in a simple way as part of a single “meta-design.” The design allows for variation across sites, implements analysis separately using data from different sites, and then combines findings for an overall conclusion. Note that the inquiries here are defined by creating site-level inquiries and averaging over these. Implicitly each <em>site</em> is weighted equally in the inquiry, so you can see a clear similarity between <em>I</em> and <em>A</em>. You could alternatively use different weighting schemes if you wanted each unit in the sample to have equal weight or if you wanted each each unit in the population to have equal weight—and of course, adjust <em>A</em> accordingly.</p>
+<p><a href="#def-ch19num4" class="quarto-xref">Declaration&nbsp;<span>19.4</span></a> describes a multi-site study with five sites. A conceptual challenge with multi-site studies is that in practice a single design has to take account of various differences across sites, such as differences in sample sizes, assignment probabilities, or expectations. The design below shows how these multi-site features can be introduced in a simple way as part of a single “meta-design.” The design allows for variation across sites, implements analysis separately using data from different sites, and then combines findings for an overall conclusion. Note that the inquiries here are defined by creating site-level inquiries and averaging over these. Implicitly each <em>site</em> is weighted equally in the inquiry, so you can see a clear similarity between <em>I</em> and <em>A</em>. You could alternatively use different weighting schemes if you wanted each unit in the sample to have equal weight or if you wanted each each unit in the population to have equal weight—and of course, adjust <em>A</em> accordingly.</p>
 <p>We imagine two possible treatments that might be implemented in each site. One, with treatment effect <code>tau_1</code> (possibly different in each site), is the treatment that researchers are meant to coordinate on. The second, with treatment effect <code>tau_2</code>, is an alternative treatment that researchers could implement if they were not coordinating. We imagine that if there is no strong coordination, then researchers select which version of the treatment to implement (here, we imagine they implement the treatment they think will yield larger effects).</p>
 <p>We specify two inquiries. The first is for the coordinated treatment, with a focus on the average effect across studies. The second is less easy to describe: it is the average effect, again across cases, of whatever treatment was implemented in those cases. Though unusual, this inquiry is still well defined.</p>
-<p>Estimation proceeds in two steps: first we calculate site-level effects, just as we do for a meta-analysis, then we meta-analyze those site-level effects. We use here a random effects model, reflecting our expectation that true site effects differ <a href="#sec-ch19s3">see&nbsp;<span>19.3</span></a>.</p>
+<p>Estimation proceeds in two steps: first we calculate site-level effects, just as we do for a meta-analysis, then we meta-analyze those site-level effects. We use here a random effects model, reflecting our expectation that true site effects differ <a href="#sec-ch19s3" class="quarto-xref">see&nbsp;<span>19.3</span></a>.</p>
 <div id="def-ch19num4" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 19.4 </strong></span>Multi-site studies with and without coordination.</p>
-<div class="cell" data-file="scripts_declarations/declaration_19.4.R">
+<p><span class="theorem-title"><strong>Declaration 19.4</strong></span> Multi-site studies with and without coordination.</p>
+<div class="cell">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.metafor-project.org">metafor</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Idiosyncratic features of studies</span></span>
@@ -889,11 +951,15 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch19num4" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 19.4 </strong></span>Multi-site studies diagnosis</p>
-<p>We now diagnose the two designs, with and without coordination, and assess the bias for the average common effect treatment and the average effect of the site-specific optimal treatment inquiries. <a href="#fig-ch19num6">Figure&nbsp;<span>19.6</span></a> displays the sampling distribution of the estimates from the two designs along with the estimands from these two inquiries in each case.</p>
-<div id="fig-ch19num6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-19-6.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;19.6: Sampling distribution of the meta-analytic estimates from a multi-site trial compared to the true average common treatment effect and the true average effect of the site-specific optimal treatment effect.</figcaption></figure>
+<p><span class="theorem-title"><strong>Diagnosis 19.4</strong></span> Multi-site studies diagnosis</p>
+<p>We now diagnose the two designs, with and without coordination, and assess the bias for the average common effect treatment and the average effect of the site-specific optimal treatment inquiries. <a href="#fig-ch19num6" class="quarto-xref">Figure&nbsp;<span>19.6</span></a> displays the sampling distribution of the estimates from the two designs along with the estimands from these two inquiries in each case.</p>
+<div id="fig-ch19num6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch19num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-19-6.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch19num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19.6: Sampling distribution of the meta-analytic estimates from a multi-site trial compared to the true average common treatment effect and the true average effect of the site-specific optimal treatment effect.
+</figcaption></figure>
 </div>
 <p>In the coordinated trial, of course, the common treatment and the implemented treatment are the same. Only the coordinated study produces unbiased estimates for the coordinated inquiry. However, the diagnosis shows that <em>both</em> approaches (strongly and weakly coordinated trials) are unbiased for the (more powerful) “selected treatment” inquiry. This inquiry then is well defined and can be estimated without bias, even when coordination fails. The difficulty with this inquiry though is that being able to make an out-of-sample prediction for it requires information you might not have: what version of a treatment is likely to be selected in that new context.</p>
 </div>
@@ -905,7 +971,7 @@ div.csl-indent {
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Bauer2021" class="csl-entry" role="listitem">
 Bauer, Paul C., and Bernhard Clemm von Hohenberg. 2021. <span>“Believing and Sharing Information by Fake Sources: An Experiment.”</span> <em>Political Communication</em> 38 (6): 647–71.
 </div>
@@ -1002,18 +1068,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1045,11 +1100,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1059,8 +1151,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1072,7 +1173,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1116,6 +1339,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1141,6 +1365,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1200,12 +1450,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../library/experimental-causal.html" class="pagination-link">
+      <a href="../library/experimental-causal.html" class="pagination-link" aria-label="Experimental : causal">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../lifecycle/" class="pagination-link">
+      <a href="../lifecycle/" class="pagination-link" aria-label="Research design lifecycle">
         <span class="nav-page-text">Research design lifecycle</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

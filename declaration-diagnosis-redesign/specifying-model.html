@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design in the Social Sciences - 6&nbsp; Specifying the model</title>
+<title>6&nbsp; Specifying the model – Research Design in the Social Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -52,16 +53,22 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -70,11 +77,18 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style type="text/css" media="print">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MMK8CF9JC0"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
+</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
 </style>
 <script type="text/javascript">
@@ -112,25 +126,50 @@ div.csl-indent {
         createCookie('popupShown', 'yes', 1)
       }
     }
-</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/specifying-model.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/specifying-model.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
@@ -156,9 +195,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -191,9 +230,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -258,7 +297,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../library/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design library</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -299,7 +338,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design lifecycle</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -356,7 +395,7 @@ div.csl-indent {
 </li>
     </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
@@ -408,7 +447,7 @@ div.csl-indent {
   </div>
 </div>
 
-<header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/declaring-designs.html">Declaration, Diagnosis, Redesign</a></li><li class="breadcrumb-item"><a href="../declaration-diagnosis-redesign/specifying-model.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title"><span id="sec-ch6" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Specifying the model</span></span></h1>
 </div>
 
@@ -422,9 +461,10 @@ div.csl-indent {
   </div>
   
 
+
 </header><p>Models are theoretical abstractions we use to make sense of the world and organize our understanding of it. They play many critical roles in research design. First and foremost, models describe the units, conditions, and outcomes that define inquiries. Without well-specified models, we cannot pose well-specified inquiries. Second, models provide a framework to evaluate the sampling, assignment, and measurement procedures that form the data strategy. Models encode our beliefs about the kinds of information that might result when we conduct empirical observations. Third, they guide the selection of answer strategies: what variables should we condition on, what variables should we <strong>not</strong> condition on, how flexible or rigid should our estimation procedure be? Whenever we rely on assumptions in the model—for example, normality of errors, conditional independencies, or latent scores—we are betting that the real causal model <span class="math inline">\(m^*\)</span> has these properties.</p>
 <p>We need to imagine models in order to declare and diagnose research designs. This need often generates discomfort among students and researchers who are new to thinking about research design this way. In order to compute the root-mean-squared error, bias, or statistical power of a design, we need to write down <strong>more than we know for sure</strong> in the model. We have to describe joint distributions of covariates, treatments, and outcomes, which entails making guesses about the very means, covariances, and effect sizes (among many other things) that the empirical research design is supposed to measure. “What do you mean, write down the potential outcomes—that’s what I’m trying to learn about!”</p>
-<p>The discomfort arises because we do not know the true causal model of the world—what we referred to as <span class="math inline">\(m^*\)</span> in <a href="declaring-designs.html#fig-ch2num1">Figure&nbsp;<span>5.1</span></a> We are uncertain about which of the many plausible models of the world we entertain is the correct one. In fact we can be fairly certain that none of them is really correct.</p>
+<p>The discomfort arises because we do not know the true causal model of the world—what we referred to as <span class="math inline">\(m^*\)</span> in <a href="declaring-designs.html#fig-ch2num1" class="quarto-xref">Figure&nbsp;<span>5.1</span></a> We are uncertain about which of the many plausible models of the world we entertain is the correct one. In fact we can be fairly certain that none of them is really correct.</p>
 <p>The good news is that they do not have to be correct. The <em>M</em> in <em>MIDA</em> refers to these possible models, which we call “reference models.” <em>M</em> is a set of reference models. Their role is to provide a stipulation of how the world works, which allows us to answer some questions about our research design. <em>If</em> the reference model were true, what <em>then</em> would the value of the inquiry be? Would the estimator generate unbiased estimates? How many units would we need to achieve an RMSE of 0.5? Critically, whether a design is good or bad depends on the reference models. A data and analysis strategy might fare very well under one model of the world but poorly under another. Thus to get to the point where we can assess a design we need to make the family of reference models explicit. Our hope is that when we apply <em>A</em> and <em>I</em> to the real event generating processes we will have a similar relation between the answer we seek and the answers we get as we have between conjectured estimands and simulated estimates. Beyond that, we don’t have to actually believe any of the models in <em>M</em>.</p>
 <section id="elements-of-models" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="elements-of-models">
 <span class="header-section-number">6.1</span> Elements of models</h2>
@@ -444,10 +484,14 @@ div.csl-indent {
 <p><span class="math display">\[\begin{align*}
 Y &amp;= f_Y(Z, U).
 \end{align*}\]</span></p>
-<p>Here, the outcome <span class="math inline">\(Y\)</span> is related to <span class="math inline">\(Z\)</span> and <span class="math inline">\(U\)</span> by some function <span class="math inline">\(f_Y\)</span>, but the details of the function <span class="math inline">\(f_Y\)</span>—whether <span class="math inline">\(Z\)</span> has a positive or negative effect on <span class="math inline">\(Y\)</span>, for example—are left unstated in this nonparametric model. The DAG in <a href="#fig-ch6num1">Figure&nbsp;<span>6.1</span></a> encodes this model in graphical form. We use a blue circle around the treatment assignment to indicate that <span class="math inline">\(Z\)</span> is randomly assigned as part of the data strategy.</p>
-<div id="fig-ch6num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-6-1.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.1: Directed acyclic graph of a randomized experiment</figcaption></figure>
+<p>Here, the outcome <span class="math inline">\(Y\)</span> is related to <span class="math inline">\(Z\)</span> and <span class="math inline">\(U\)</span> by some function <span class="math inline">\(f_Y\)</span>, but the details of the function <span class="math inline">\(f_Y\)</span>—whether <span class="math inline">\(Z\)</span> has a positive or negative effect on <span class="math inline">\(Y\)</span>, for example—are left unstated in this nonparametric model. The DAG in <a href="#fig-ch6num1" class="quarto-xref">Figure&nbsp;<span>6.1</span></a> encodes this model in graphical form. We use a blue circle around the treatment assignment to indicate that <span class="math inline">\(Z\)</span> is randomly assigned as part of the data strategy.</p>
+<div id="fig-ch6num1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch6num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-6-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch6num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Directed acyclic graph of a randomized experiment
+</figcaption></figure>
 </div>
 <p>To assess many properties of a research design we often need to make the leap from nonparametric models to <em>parametric</em> structural causal models. We need to enumerate beliefs about effect sizes, correlations between variables, intra-cluster correlations (ICCs), specific functional forms, and so forth. Since any particular choice for these parameters could be close or far from the truth, we will typically consider a range of plausible values for each model parameter.</p>
 <p>One possible parametric model is given by the following:</p>
@@ -458,7 +502,7 @@ Y &amp;= 0.5 \times Z + U.
 <p><span class="math display">\[\begin{align*}
 Y &amp;= -0.25 \times Z - 0.05\times Z \times U + U
 \end{align*}\]</span></p>
-<p>Both of these parameterizations are equally consistent with the DAG in <a href="#fig-ch6num1">Figure&nbsp;<span>6.1</span></a>, which underlines the powerful simplicity of DAGs, but also their theoretical sparsity. The two parametric models are theoretically quite different from one another. In the first, the effects of the treatment <span class="math inline">\(Z\)</span> are positive and the same for all units; in the second, the effects may be negative and quite different from unit to unit, depending on the value of <span class="math inline">\(U\)</span>. If both of these reference models are plausible, we’ll want to include them both in <em>M</em>, to ensure that our design is robust to both possibilities. Here we have a small instance of Principle <a href="../introduction/research-design-principles.html#exm-designagnostically">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em>. We want to consider a wide range of plausible parameterizations since we are ignorant of the true causal model (<span class="math inline">\(m^*\)</span>).</p>
+<p>Both of these parameterizations are equally consistent with the DAG in <a href="#fig-ch6num1" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>, which underlines the powerful simplicity of DAGs, but also their theoretical sparsity. The two parametric models are theoretically quite different from one another. In the first, the effects of the treatment <span class="math inline">\(Z\)</span> are positive and the same for all units; in the second, the effects may be negative and quite different from unit to unit, depending on the value of <span class="math inline">\(U\)</span>. If both of these reference models are plausible, we’ll want to include them both in <em>M</em>, to ensure that our design is robust to both possibilities. Here we have a small instance of Principle <a href="../introduction/research-design-principles.html#exm-designagnostically" class="quarto-xref">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em>. We want to consider a wide range of plausible parameterizations since we are ignorant of the true causal model (<span class="math inline">\(m^*\)</span>).</p>
 <p>The <strong>potential outcomes</strong> formalization emphasizes a counterfactual notion of causality. <span class="math inline">\(Y_i(Z_i = 0)\)</span> is the outcome for unit <span class="math inline">\(i\)</span> that would occur were the causal variable <span class="math inline">\(Z_i\)</span> were set to 0 and <span class="math inline">\(Y_i(Z_i = 1)\)</span> is the outcome that would occur if <span class="math inline">\(Z_i\)</span> were set to 1. The difference between them defines the effect of the treatment on the outcome for unit <span class="math inline">\(i\)</span>. Since at most only one potential outcome can ever be revealed, at least one of the two potential outcomes is necessarily counterfactual, meaning not observable. Usually, the potential outcomes notation <span class="math inline">\(Y_i(Z_i)\)</span> reports how outcomes depend on one feature, <span class="math inline">\(Z_i\)</span>, ignoring all other determinants of outcomes. That’s not to say those other causes don’t matter—they might—they are just not the focus. In a sense, they are contained in the subscript <span class="math inline">\(i\)</span> since the units carry with them all relevant features other than <span class="math inline">\(Z_i\)</span>. We can generalize to settings where we want to consider more than one cause, in which case we use expressions of the form <span class="math inline">\(Y_i(Z_i = 0, X_i = 0)\)</span> or <span class="math inline">\(Y_i(Z_i = 0, X_i = 1)\)</span>.</p>
 <p>The potential outcomes version of the first structural causal model might be written for <span class="math inline">\(i \in \{1,2,\dots, n\}\)</span> as:</p>
 <p><span class="math display">\[\begin{align*}
@@ -480,24 +524,28 @@ Y_i(1) &amp;= -0.25 - 0.05 \times U_i + U_i.
 <p>Any particular causal model can be a complex web of exogenous and endogenous variables woven together via a set of functional relationships. Despite the heterogeneity across models, we can describe the roles variables play in a research design with reference to the roles they play in structural causal models. There are seven roles:</p>
 <ol type="1">
 <li>
-<strong>Outcomes</strong>: Variables whose level or responses we want to understand, generally referred to as <span class="math inline">\(Y\)</span>, as in <a href="#fig-ch6num2">Figure&nbsp;<span>6.2</span></a>. Variously described as “dependent variables,” “endogenous variables,” “left-hand side variables,” or “response variables.”</li>
+<strong>Outcomes</strong>: Variables whose level or responses we want to understand, generally referred to as <span class="math inline">\(Y\)</span>, as in <a href="#fig-ch6num2" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>. Variously described as “dependent variables,” “endogenous variables,” “left-hand side variables,” or “response variables.”</li>
 <li>
 <strong>Treatments</strong>: Variables that affect outcomes. We will most often use <span class="math inline">\(D\)</span> to refer to the main causal variable of interest in a particular study. Sometimes labeled as “independent variables,” or “right-hand side variables.”</li>
 <li>
-<strong>Moderators</strong>: Variables that condition the effects of treatment variables on outcomes: depending on the level of a moderator, treatments might have stronger or weaker effects on outcomes. Nonparametric structural causal models (like those represented in DAGs) represent moderators as additional causes of <em>Y</em>. See, for example, <span class="math inline">\(X2\)</span> in <a href="#fig-ch6num2">Figure&nbsp;<span>6.2</span></a>. Be warned however that the fact that moderators are represented as additional causes of an outcome does not imply that every additional cause of an outcome is necessarily a moderator.</li>
+<strong>Moderators</strong>: Variables that condition the effects of treatment variables on outcomes: depending on the level of a moderator, treatments might have stronger or weaker effects on outcomes. Nonparametric structural causal models (like those represented in DAGs) represent moderators as additional causes of <em>Y</em>. See, for example, <span class="math inline">\(X2\)</span> in <a href="#fig-ch6num2" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>. Be warned however that the fact that moderators are represented as additional causes of an outcome does not imply that every additional cause of an outcome is necessarily a moderator.</li>
 <li>
-<strong>Mediators</strong>: Variables “along the path” from treatment variables to outcomes. <span class="math inline">\(M\)</span> is an example of a mediator in <a href="#fig-ch6num2">Figure&nbsp;<span>6.2</span></a>. Mediators are often studied to assess “how” or “why” <span class="math inline">\(D\)</span> causes <span class="math inline">\(Y\)</span>.</li>
+<strong>Mediators</strong>: Variables “along the path” from treatment variables to outcomes. <span class="math inline">\(M\)</span> is an example of a mediator in <a href="#fig-ch6num2" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>. Mediators are often studied to assess “how” or “why” <span class="math inline">\(D\)</span> causes <span class="math inline">\(Y\)</span>.</li>
 <li>
-<strong>Confounders</strong>: Variables that introduce a non-causal dependence between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. In <a href="#fig-ch6num2">Figure&nbsp;<span>6.2</span></a>, <span class="math inline">\(X1\)</span> is a confounder because it causes both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> and could introduce a dependence between them even if <span class="math inline">\(D\)</span> did not cause <span class="math inline">\(Y\)</span>.</li>
+<strong>Confounders</strong>: Variables that introduce a non-causal dependence between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. In <a href="#fig-ch6num2" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>, <span class="math inline">\(X1\)</span> is a confounder because it causes both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> and could introduce a dependence between them even if <span class="math inline">\(D\)</span> did not cause <span class="math inline">\(Y\)</span>.</li>
 <li>
-<strong>Instruments</strong>: An instrumental variable is an exogenous variable that affects a treatment variable which itself causes an outcome variable. We give a much more detailed treatment of these variables in <a href="../library/observational-causal.html#sec-ch16s4"><span>Section&nbsp;16.4</span></a>. We reserve the letter <span class="math inline">\(Z\)</span> for instruments. Random assignments are instruments in the sense that the assignment is the instrument and the actual treatment received is the treatment variable.</li>
+<strong>Instruments</strong>: An instrumental variable is an exogenous variable that affects a treatment variable which itself causes an outcome variable. We give a much more detailed treatment of these variables in <a href="../library/observational-causal.html#sec-ch16s4" class="quarto-xref"><span>Section 16.4</span></a>. We reserve the letter <span class="math inline">\(Z\)</span> for instruments. Random assignments are instruments in the sense that the assignment is the instrument and the actual treatment received is the treatment variable.</li>
 <li>
-<strong>Colliders</strong>: Colliders are variables that are caused by two other variables. Colliders can be important because conditioning on a collider introduces a non-causal relationship between all parents of the collider. The intuition is that if you learn that a child is tall, then learning that one parent is small makes you more likely to believe that the other parent is tall. In <a href="#fig-ch6num2">Figure&nbsp;<span>6.2</span></a>, <span class="math inline">\(K\)</span> is a collider that can create a non-causal dependence between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> (via <span class="math inline">\(U\)</span>) if conditioned upon.</li>
+<strong>Colliders</strong>: Colliders are variables that are caused by two other variables. Colliders can be important because conditioning on a collider introduces a non-causal relationship between all parents of the collider. The intuition is that if you learn that a child is tall, then learning that one parent is small makes you more likely to believe that the other parent is tall. In <a href="#fig-ch6num2" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>, <span class="math inline">\(K\)</span> is a collider that can create a non-causal dependence between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> (via <span class="math inline">\(U\)</span>) if conditioned upon.</li>
 </ol>
 <p>These labels reflect the researcher’s interest as much as their position in a model. Another researcher examining the same graph might, for instance, label <span class="math inline">\(M\)</span> as their treatment variable or <span class="math inline">\(K\)</span> as their outcome of interest.</p>
-<div id="fig-ch6num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-6-2.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.2: A directed acyclic graph with a treatment of interest (D), an outcome of interest (Y), a mediator (M), a confounder (X1), a moderator (X2), an instrument (Z), and a collider (K).</figcaption></figure>
+<div id="fig-ch6num2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch6num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-6-2.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch6num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: A directed acyclic graph with a treatment of interest (D), an outcome of interest (Y), a mediator (M), a confounder (X1), a moderator (X2), an instrument (Z), and a collider (K).
+</figcaption></figure>
 </div>
 <section id="what-variables-are-needed" class="level3" data-number="6.2.1"><h3 data-number="6.2.1" class="anchored" data-anchor-id="what-variables-are-needed">
 <span class="header-section-number">6.2.1</span> What variables are needed?</h3>
@@ -505,32 +553,32 @@ Y_i(1) &amp;= -0.25 - 0.05 \times U_i + U_i.
 <p><em>Inquiry</em>: In order to reason about whether the model is sufficient to define the inquiry, we need to define the units, conditions, and outcomes used to construct our inquiry. If the inquiry is an average causal effect among a subgroup, we need to specify the relevant potential outcomes, the treatment, and the covariate that describes the subgroup.</p>
 <p><em>Data strategy</em>: If a sampling procedure involves stratification or clustering, then in the model, we need to define the variables that will be used to stratify and cluster. Similarly, treatment assignment might be blocked or clustered; correspondingly, the variables that are used to construct blocks or clusters must be defined in the model. Finally, all of the variables that will be measured should also be defined in the model. When we measure latent variables imperfectly, the model describes the latent trait and how measured responses may deviate from it. If you expect to encounter complexities in <em>D</em> that you need to take account of in <em>A</em>, such as missing data, non compliance or attritition, then possible drivers of these should also be included in <em>M</em>.</p>
 <p><em>Answer strategy</em>: Any measured variable that will be used in the answer strategy should be included in the model. This requirement clearly includes the observed outcomes and treatments, but also any covariates that are used to address confounding or to increase precision.</p>
-<p>The variables required by the inquiry, data strategy, and answer strategy are necessary components of the model, but they are not always sufficient. For example, we might be worried about an unobserved confounder. Such a confounder would not be obviously included in any of the other research design elements, but is clearly important to include in the model. Ultimately, we need to specify all variables that are required for “diagnosand completeness” (see <a href="diagnosing-designs.html"><span>Chapter&nbsp;10</span></a>), which is achieved when research designs are described in sufficient detail that diagnosands can be calculated.</p>
+<p>The variables required by the inquiry, data strategy, and answer strategy are necessary components of the model, but they are not always sufficient. For example, we might be worried about an unobserved confounder. Such a confounder would not be obviously included in any of the other research design elements, but is clearly important to include in the model. Ultimately, we need to specify all variables that are required for “diagnosand completeness” (see <a href="diagnosing-designs.html" class="quarto-xref"><span>Chapter 10</span></a>), which is achieved when research designs are described in sufficient detail that diagnosands can be calculated.</p>
 </section></section><section id="how-to-specify-models" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="how-to-specify-models">
 <span class="header-section-number">6.3</span> How to Specify Models</h2>
 <p>To this point, we have described formal considerations, but we have not described substantive considerations, for including particular variables or stipulating particular relations between them. The justification for the choice of reference models will depend on the purpose of the design. Broadly, we distinguish between two desiderata for selecting reference models: reality tracking and agnosticism.</p>
 <section id="reality-tracking" class="level3" data-number="6.3.1"><h3 data-number="6.3.1" class="anchored" data-anchor-id="reality-tracking">
 <span class="header-section-number">6.3.1</span> Reality tracking</h3>
 <p>In stipulating reference models, we have incentives to focus on models that we think track reality (<span class="math inline">\(m^*\)</span>) as well as possible. Why waste time and effort stipulating processes we don’t think will happen?</p>
-<p>The justification for a claim that a model is reality tracking typically comes from two places: past literature and qualitative research. Past theoretical work can guide the set of variables that are relevant and how they relate to one another. Past empirical work can provide further insight into the distributions and dependencies across variables. However, when past research is thin, there is no substitute for insights gained through qualitative data collection: focus groups and interviews with key informants who know aspects of the model that are hidden from the researcher, archival investigations to understand a causal process, or immersive participant observation to see with your own eyes how social actors behave. <span class="citation" data-cites="fenno1978home">Fenno (<a href="../references.html#ref-fenno1978home" role="doc-biblioref">1978</a>)</span> memorably describes this process as “soaking and poking.” This mode of model development is separate from the qualitative research designs that provide answers to well-specified inquiries (see the process tracing entry, <a href="../library/observational-causal.html#sec-ch16s1"><span>Section&nbsp;16.1</span></a> for an example of such a design). Instead, qualitative insights such as this, which <span class="citation" data-cites="lieberman2005nested">Lieberman (<a href="../references.html#ref-lieberman2005nested" role="doc-biblioref">2005</a>)</span> labels “model-building” case studies, do not aim to answer a question, but rather yield a new theoretical model. Quantitative research is often seen as distinct from qualitative research, but the model building phase in both is itself qualitative.</p>
+<p>The justification for a claim that a model is reality tracking typically comes from two places: past literature and qualitative research. Past theoretical work can guide the set of variables that are relevant and how they relate to one another. Past empirical work can provide further insight into the distributions and dependencies across variables. However, when past research is thin, there is no substitute for insights gained through qualitative data collection: focus groups and interviews with key informants who know aspects of the model that are hidden from the researcher, archival investigations to understand a causal process, or immersive participant observation to see with your own eyes how social actors behave. <span class="citation" data-cites="fenno1978home">Fenno (<a href="../references.html#ref-fenno1978home" role="doc-biblioref">1978</a>)</span> memorably describes this process as “soaking and poking.” This mode of model development is separate from the qualitative research designs that provide answers to well-specified inquiries (see the process tracing entry, <a href="../library/observational-causal.html#sec-ch16s1" class="quarto-xref"><span>Section 16.1</span></a> for an example of such a design). Instead, qualitative insights such as this, which <span class="citation" data-cites="lieberman2005nested">Lieberman (<a href="../references.html#ref-lieberman2005nested" role="doc-biblioref">2005</a>)</span> labels “model-building” case studies, do not aim to answer a question, but rather yield a new theoretical model. Quantitative research is often seen as distinct from qualitative research, but the model building phase in both is itself qualitative.</p>
 <p>The next step — selecting statistical distributions and their parameters to describe exogenous variables and the functional forms of endogenous variables — is often more uncomfortable. We do not know the magnitude of the effect of an intervention or the correlation between two outcomes before we do the research; that’s why we are conducting the study. However, we are not fully in the dark in most cases and can make educated guesses about most parameters.</p>
 <p>We can conduct meta-analyses of past relevant studies on the same topic to identify the range of plausible effect sizes, intra-cluster correlations, correlations between variables, and other model parameters. Conducting such a meta-analysis might be as simple as collecting the three papers that measured similar outcomes in the past and calculating the intra-cluster correlations in each of them. How informative past studies are for your research setting depends on the similarity of units, treatments, and outcomes. Except in the case of pure replication studies, we are typically studying a (possibly new) treatment in a new setting, with new participants, or with new outcomes, so there will not be perfect overlap. However, the variation in effects across contexts and these other dimensions will help structure the range of our guesses specified in the model.</p>
-<p>When there are past studies that are especially close to our own, we may want our model to match the observed empirical distribution from that past study as closely as possible. To do so, we can resample or bootstrap from the past data in order to simulate realistic data. Where there are no past studies that are sufficiently similar in some dimensions, we can collect new data through pilot studies (see <a href="../lifecycle/planning.html#sec-ch21s4"><span>Section&nbsp;21.4</span></a>) or baseline surveys to serve a similar purpose.</p>
-<p>It is also possible to use the distribution over quantities in a model to represent our <em>uncertainty</em> over some quantities and in this way let our diagnostics integrate over our uncertainty. We did this already in <a href="../introduction/what-is-a-research-design.html#def-ch2num1">Declaration&nbsp;<span>2.1</span></a>, where we let the treatment effect be a random draw from a stipulated distribution. In doing this, the success function represents expected success with respect to this distribution over treatment effects.</p>
-<p>Since it excludes cases we deem improbable, a focus on reality tracking models seems to contradict <a href="../introduction/research-design-principles.html#exm-designagnostically">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em> (see also below, <a href="#sec-ch6s3ss2"><span>Section&nbsp;6.3.2</span></a>). However, by focusing on reality-tracking models, we aim to contain the smallest set of plausible models that are needed to capture the essentials of the true process. In practice, of course, we might never represent <span class="math inline">\(m^*\)</span> accurately. For instance, we might contemplate a set of worlds in which an effect lies between 0 and 1 yet not include the true value of 2. This is not necessarily a cause for concern. The lessons learned from a diagnosis do not depend on the realized world <span class="math inline">\(m^*\)</span> being among the set of possible draws of <em>M</em>, the relevant question is only whether the kinds of inferences one might draw given stipulated reference models would also hold reasonably well for the true event generating process. For instance, if our aim is to assess whether an analysis strategy generates an unbiased estimate of a treatment effect we may go to pains to make sure to model treatment assignment carefully, but modeling the size of a treatment effect correctly may not be important. The idea is that what you learn from the models that you do study is <em>sufficient</em> for inferences about a broader class of models within which the true event generating process might lie.</p>
+<p>When there are past studies that are especially close to our own, we may want our model to match the observed empirical distribution from that past study as closely as possible. To do so, we can resample or bootstrap from the past data in order to simulate realistic data. Where there are no past studies that are sufficiently similar in some dimensions, we can collect new data through pilot studies (see <a href="../lifecycle/planning.html#sec-ch21s4" class="quarto-xref"><span>Section 21.4</span></a>) or baseline surveys to serve a similar purpose.</p>
+<p>It is also possible to use the distribution over quantities in a model to represent our <em>uncertainty</em> over some quantities and in this way let our diagnostics integrate over our uncertainty. We did this already in <a href="../introduction/what-is-a-research-design.html#def-ch2num1" class="quarto-xref">Declaration&nbsp;<span>2.1</span></a>, where we let the treatment effect be a random draw from a stipulated distribution. In doing this, the success function represents expected success with respect to this distribution over treatment effects.</p>
+<p>Since it excludes cases we deem improbable, a focus on reality tracking models seems to contradict <a href="../introduction/research-design-principles.html#exm-designagnostically" class="quarto-xref">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em> (see also below, <a href="#sec-ch6s3ss2" class="quarto-xref"><span>Section 6.3.2</span></a>). However, by focusing on reality-tracking models, we aim to contain the smallest set of plausible models that are needed to capture the essentials of the true process. In practice, of course, we might never represent <span class="math inline">\(m^*\)</span> accurately. For instance, we might contemplate a set of worlds in which an effect lies between 0 and 1 yet not include the true value of 2. This is not necessarily a cause for concern. The lessons learned from a diagnosis do not depend on the realized world <span class="math inline">\(m^*\)</span> being among the set of possible draws of <em>M</em>, the relevant question is only whether the kinds of inferences one might draw given stipulated reference models would also hold reasonably well for the true event generating process. For instance, if our aim is to assess whether an analysis strategy generates an unbiased estimate of a treatment effect we may go to pains to make sure to model treatment assignment carefully, but modeling the size of a treatment effect correctly may not be important. The idea is that what you learn from the models that you do study is <em>sufficient</em> for inferences about a broader class of models within which the true event generating process might lie.</p>
 </section><section id="sec-ch6s3ss2" class="level3" data-number="6.3.2"><h3 data-number="6.3.2" class="anchored" data-anchor-id="sec-ch6s3ss2">
 <span class="header-section-number">6.3.2</span> Agnosticism</h3>
 <p>For some purposes, the reference model might be developed not to track reality, as you see it, but rather to reflect assumptions in a scholarly debate. For instance, the purpose might be to question whether a given conclusion is valid <em>under the assumptions maintained by some scholarly community</em>. Indeed, it is possible that a reference model is used specifically because the researcher thinks it is inaccurate, allowing them to show that even if they are wrong about some assumptions about the world in <em>M</em>, their analysis will produce useful answers.</p>
-<p>One useful exercise is to return to and question the assumptions you have built into your model. Many of these can be read directly from a DAG, but some are more subtle. In a directed acyclic graph, every arrow indicates a possible relation between a cause and an outcome. The big assumptions in these models, however, are seen not in the arrows but in the absence of arrows: every missing arrow represents a claim that an outcome is not affected by a possible cause. Answer strategies often depend upon such assumptions. Even when arrows are included, functional relations might presuppose particular features that are important for inference. For instance, a researcher using instrumental variables analysis (see <a href="../library/observational-causal.html#sec-ch16s4"><span>Section&nbsp;16.4</span></a>) will generally assume that <span class="math inline">\(Z\)</span> causes <span class="math inline">\(Y\)</span> through <span class="math inline">\(D\)</span> but not through other paths. This “excludability” assumption is about absent arrows. The same analysis might also assume that <span class="math inline">\(Z\)</span> never affects <span class="math inline">\(D\)</span> negatively. That “monotonicity” assumption is about functional forms. An agnostic reference model might loosen these assumptions to allow for possible violations of the excludability or monotonicity assumptions.</p>
+<p>One useful exercise is to return to and question the assumptions you have built into your model. Many of these can be read directly from a DAG, but some are more subtle. In a directed acyclic graph, every arrow indicates a possible relation between a cause and an outcome. The big assumptions in these models, however, are seen not in the arrows but in the absence of arrows: every missing arrow represents a claim that an outcome is not affected by a possible cause. Answer strategies often depend upon such assumptions. Even when arrows are included, functional relations might presuppose particular features that are important for inference. For instance, a researcher using instrumental variables analysis (see <a href="../library/observational-causal.html#sec-ch16s4" class="quarto-xref"><span>Section 16.4</span></a>) will generally assume that <span class="math inline">\(Z\)</span> causes <span class="math inline">\(Y\)</span> through <span class="math inline">\(D\)</span> but not through other paths. This “excludability” assumption is about absent arrows. The same analysis might also assume that <span class="math inline">\(Z\)</span> never affects <span class="math inline">\(D\)</span> negatively. That “monotonicity” assumption is about functional forms. An agnostic reference model might loosen these assumptions to allow for possible violations of the excludability or monotonicity assumptions.</p>
 <p>When we are agnostic, we admit we don’t know whether the truth is in the set of models we consider reasonable—so we entertain a wider set than we might think plausible. We suggest three guides for choosing these ranges: the logical minimum and maximum bounds of a parameter, a meta-analytic summary of past studies, or best- and worst-case bounds, based on the substantive interpretations of previous work. A design that performs well in terms of power and bias under many such ranges might be labeled “robust to multiple models.”</p>
 <p>A separate goal is assessing the performance of a research design under different models implied by alternative theories. A good design will provide probative evidence no matter the treue event generating process. A poor design might provide reliable answers only for specific types of event generating processes.</p>
 <p>An important example is the performance of a research design under a “null model,” where the true effect size is zero. A good research design should report with a high probability that there is insufficient evidence to reject a null effect. That same research design, under an alternative model with a large effect size, should with a high probability return evidence rejecting the null hypothesis of zero effect. The example makes clear that in order to understand whether the research design is strong, we need to understand how it performs under different models.</p>
 </section></section><section id="summary" class="level2" data-number="6.4"><h2 data-number="6.4" class="anchored" data-anchor-id="summary">
 <span class="header-section-number">6.4</span> Summary</h2>
-<p>If this section left you spinning from the array of choices we have to make in declaring a model, in some ways that was our goal. Inside every power calculator and bespoke design simulation code is an array of assumptions. Some crucially determine design quality and others are unimportant. The salve to the dizziness is in <a href="../introduction/research-design-principles.html#exm-designagnostically">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em>. Where you are uncertain, explore whether both options produce similar diagnosands. The goal is for our data and answer strategies to hold up under many models.</p>
+<p>If this section left you spinning from the array of choices we have to make in declaring a model, in some ways that was our goal. Inside every power calculator and bespoke design simulation code is an array of assumptions. Some crucially determine design quality and others are unimportant. The salve to the dizziness is in <a href="../introduction/research-design-principles.html#exm-designagnostically" class="quarto-xref">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em>. Where you are uncertain, explore whether both options produce similar diagnosands. The goal is for our data and answer strategies to hold up under many models.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-fenno1978home" class="csl-entry" role="listitem">
 Fenno, Richard F. 1978. <em>Home Style: House Members in Their Districts</em>. New York: Longman.
 </div>
@@ -579,18 +627,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -622,11 +659,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -636,8 +710,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -649,7 +732,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -693,6 +898,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -718,6 +924,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -777,12 +1009,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="pagination-link">
+      <a href="../declaration-diagnosis-redesign/declaring-designs.html" class="pagination-link" aria-label="Declaring designs">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Declaring designs</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="pagination-link">
+      <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="pagination-link" aria-label="Defining the inquiry">
         <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

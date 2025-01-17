@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design in the Social Sciences - 17&nbsp; Experimental : descriptive</title>
+<title>17&nbsp; Experimental : descriptive – Research Design in the Social Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,7 +19,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -30,7 +30,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -55,6 +55,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -86,16 +87,22 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -104,11 +111,18 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style type="text/css" media="print">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MMK8CF9JC0"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
+</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
 </style>
 <script type="text/javascript">
@@ -147,25 +161,50 @@ div.csl-indent {
       }
     }
 </script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/experimental-descriptive.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/experimental-descriptive.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
@@ -191,9 +230,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -226,9 +265,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -293,7 +332,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../library/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design library</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -334,7 +373,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design lifecycle</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -391,7 +430,7 @@ div.csl-indent {
 </li>
     </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
@@ -447,7 +486,7 @@ div.csl-indent {
   </div>
 </div>
 
-<header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../library/">Research design library</a></li><li class="breadcrumb-item"><a href="../library/experimental-descriptive.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
 <span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Experimental : descriptive</span>
 </h1>
@@ -463,6 +502,7 @@ div.csl-indent {
   </div>
   
 
+
 </header><p>We use <em>experiments</em> to target descriptive inquiries when units do not naturally reveal a characteristic that we want to measure. Instead, we must assign units into more than one condition that we can use to figure out what characteristic the units hold. Each experiment we discuss is simply another kind of measurement tool (albeit often a very useful one!). Importantly, the fact that we are using an experiment does not switch our inquiry from descriptive to causal. In each entry in this chapter, we define the inquiry as a summary of unit characteristics in the population, and not as a function of potential outcomes.</p>
 <p>We study four kinds of experiments for descriptive inference. Audit experiments estimate the fraction of units that <em>discriminate.</em> List experiments estimate the prevalence rate of holding a sensitive characteristic such as drug use or support for an insurgent group. Conjoint experiments measure (aggregations of) preferences over choices such as candidates for election. Experimental behavioral games measure trust.</p>
 <p>We need audit experiments because we typically cannot identify whether someone discriminates naturally by measuring a single interaction with another person. We need to see how that person interacts with multiple others, some that they might discriminate against and some not, and then compare their behaviors. We also cannot ask people if they discriminate in a survey and expect useful answers: people typically do not think of themselves as discriminatory. Trust games are motivated by the same idea: people may think of themselves as more trusting than they are. The list experiment is motivated by a related concern: people may not answer sensitive questions when they think others can learn their answer and might punish them socially or physically for giving a sensitive answer. If we measured these sensitive characteristics by asking, people might misreport their answers, so we use the experiment to ask in a way that provides plausible deniability (but still allows us to estimate the prevalence rate). Conjoint experiments address the problem that it is difficult to learn about multidimensional preferences over choices by asking about a single choice. In each case, the experiment allows us to randomize people into multiple conditions that let us figure out a descriptive characteristic we could not otherwise measure.</p>
@@ -472,12 +512,14 @@ div.csl-indent {
 <p>We declare an audit experiment design in which the name of a citizen requesting service from government is randomized to be Latino-sounding or White-sounding and the government official either responds or does not. We then declare an augmented design in which a treatment to reduce discrimination is cross-randomized. The declaration highlights the behavioral assumptions that must be made to interpret the estimated treatment effect of the name as discrimination, and the diagnosis of the anti-discrimination treatment highlights how large a sample would be required for high power.</p>
 </div>
 <p>Audit experiments are used to measure discrimination against one group in favor of another group. The design is used commonly to measure whether job applications that are otherwise similar but come from candidates from different genders, races, or social backgrounds receive the same rate of job interview invitations. The same approach has been applied to a very wide range of settings, including education, housing, and requests to politicians.</p>
-<p>The audit experiment design we’ll explore in this chapter has data and answer strategies that are identical to the two-arm trial for causal inference described in <a href="experimental-causal.html#sec-ch18s1"><span>Section&nbsp;18.1</span></a>. The difference between an audit study and the typical randomized experiment lies in the model and inquiry. In a two-arm trial, a common (causal) inquiry is the average difference between the treated and untreated potential outcomes, the ATE. In an audit experiment, by contrast, the inquiry is descriptive: what is the fraction of the sample that discriminates?</p>
+<p>The audit experiment design we’ll explore in this chapter has data and answer strategies that are identical to the two-arm trial for causal inference described in <a href="experimental-causal.html#sec-ch18s1" class="quarto-xref"><span>Section 18.1</span></a>. The difference between an audit study and the typical randomized experiment lies in the model and inquiry. In a two-arm trial, a common (causal) inquiry is the average difference between the treated and untreated potential outcomes, the ATE. In an audit experiment, by contrast, the inquiry is descriptive: what is the fraction of the sample that discriminates?</p>
 <p>We can hear our colleagues objecting now – the inquiry in an audit study can of course be conceived of as causal! It’s the average effect of signaling membership in one social group on a resume versus signaling membership in another. We agree, of course, that this interpretation is possible and technically correct. But when we think of the inquiry as descriptive, we usefully put our focus on the behaviors of people who do and do not discriminate.</p>
-<p>Consider <span class="citation" data-cites="WHITE_NATHAN_FALLER_2015">White, Nathan, and Faller (<a href="../references.html#ref-WHITE_NATHAN_FALLER_2015" role="doc-biblioref">2015</a>)</span>, which seeks to measure discrimination against Latinos by election officials through assessing whether election officials respond to emailed requests for information from putatively Latino or White voters. We imagine three types of election officials: those who would always respond to the request (regardless of the emailer’s ethnicity), those who would never respond to the request (again regardless of the emailer’s ethnicity), and officials who discriminate against Latinos. Here, discriminators are defined by their behavior: they would respond to the White voter but not to the Latino voter. These three types are given in <a href="#tbl-audittypes">Table&nbsp;<span>17.1</span></a>.</p>
-<div id="tbl-audittypes" class="anchored">
-<table class="table">
-<caption>Table&nbsp;17.1: Audit experiment response types</caption>
+<p>Consider <span class="citation" data-cites="WHITE_NATHAN_FALLER_2015">White, Nathan, and Faller (<a href="../references.html#ref-WHITE_NATHAN_FALLER_2015" role="doc-biblioref">2015</a>)</span>, which seeks to measure discrimination against Latinos by election officials through assessing whether election officials respond to emailed requests for information from putatively Latino or White voters. We imagine three types of election officials: those who would always respond to the request (regardless of the emailer’s ethnicity), those who would never respond to the request (again regardless of the emailer’s ethnicity), and officials who discriminate against Latinos. Here, discriminators are defined by their behavior: they would respond to the White voter but not to the Latino voter. These three types are given in <a href="#tbl-audittypes" class="quarto-xref">Table&nbsp;<span>17.1</span></a>.</p>
+<div id="tbl-audittypes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-audittypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;17.1: Audit experiment response types
+</figcaption><div aria-describedby="tbl-audittypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 32%">
 <col style="width: 33%">
@@ -507,12 +549,14 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>Our descriptive inquiry is the fraction of the sample that discriminates: <span class="math inline">\(\mathbb{E}[\textrm{Type}_i = \textrm{Anti}~\textrm{Latino}~\textrm{discriminator}]\)</span>. Under the behavioral assumptions about these three types enumerated in <a href="#tbl-audittypes">Table&nbsp;<span>17.1</span></a> (whether these types would respond depending on the ethnicity of the sender), <span class="math inline">\(\mathbb{E}[\textrm{Type}_i = \textrm{Anti}~\textrm{Latino}~\textrm{discriminator}] = \mathbb{E}[Y_i(Z_i = \textrm{White}) - Y_i(Z_i = \textrm{Latino})]\)</span>. Because this is the expected difference between two outcomes, we can use a randomized experiment that randomizes ethnicity to measure this descriptive quantity. In the data strategy, we randomly sample from the <span class="math inline">\(Y_i(Z_i = \textrm{White})\)</span>’s and from the <span class="math inline">\(Y_i(Z_i = \textrm{Latino})\)</span>’s, then in the answer strategy, we take a difference-in-means, generating an estimate of the fraction of the sample that discriminates.</p>
+</figure>
+</div>
+<p>Our descriptive inquiry is the fraction of the sample that discriminates: <span class="math inline">\(\mathbb{E}[\textrm{Type}_i = \textrm{Anti}~\textrm{Latino}~\textrm{discriminator}]\)</span>. Under the behavioral assumptions about these three types enumerated in <a href="#tbl-audittypes" class="quarto-xref">Table&nbsp;<span>17.1</span></a> (whether these types would respond depending on the ethnicity of the sender), <span class="math inline">\(\mathbb{E}[\textrm{Type}_i = \textrm{Anti}~\textrm{Latino}~\textrm{discriminator}] = \mathbb{E}[Y_i(Z_i = \textrm{White}) - Y_i(Z_i = \textrm{Latino})]\)</span>. Because this is the expected difference between two outcomes, we can use a randomized experiment that randomizes ethnicity to measure this descriptive quantity. In the data strategy, we randomly sample from the <span class="math inline">\(Y_i(Z_i = \textrm{White})\)</span>’s and from the <span class="math inline">\(Y_i(Z_i = \textrm{Latino})\)</span>’s, then in the answer strategy, we take a difference-in-means, generating an estimate of the fraction of the sample that discriminates.</p>
 <p>Some finer points about these behavioral assumptions. First, we assume that always-responders and never-responders do not engage in discrimination. It could be that some never-responders don’t respond to Latino voters out of racial animus, but do not respond to White voters out of laziness. In this model, such officials would be not be classified as anti-Latino discriminators by assumption. Second, we assume that there are no anti-White discriminators. If there were, then the difference-in-means would not be unbiased for the fraction of anti-Latino discriminators. Instead, it would be unbiased for “net” discrimination, i.e., how much more election officials discriminate against Latinos versus how much they discriminate against Whites. Anti-Latino discrimination and net discrimination are theoretically separate inquiries. To assess whether the no anti-White discriminators assumption is appropriate in a given setting, substantive knowledge is needed. It is not an assumption that can be directly tested empirically (unless of course <em>most</em> discrimination goes in this direction).</p>
-<p><a href="#def-ch17num1">Declaration&nbsp;<span>17.1</span></a> connects the behavioral assumptions we make about subjects to the randomized experiment we use to infer the value of a descriptive quantity. Only never-responders fail to respond to the White request while only always-responders respond to the Latino request. The inquiry is the proportion of the sample that is an anti-Latino discriminator. The data strategy involves randomly assigning the putative ethnicity of the voter making the request and recording whether it was responded to. The answer strategy compares average response rates by randomly assigned group.</p>
+<p><a href="#def-ch17num1" class="quarto-xref">Declaration&nbsp;<span>17.1</span></a> connects the behavioral assumptions we make about subjects to the randomized experiment we use to infer the value of a descriptive quantity. Only never-responders fail to respond to the White request while only always-responders respond to the Latino request. The inquiry is the proportion of the sample that is an anti-Latino discriminator. The data strategy involves randomly assigning the putative ethnicity of the voter making the request and recording whether it was responded to. The answer strategy compares average response rates by randomly assigned group.</p>
 <div id="def-ch17num1" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 17.1 </strong></span>Audit experiment design.</p>
-<div class="cell" data-file="scripts_declarations/declaration_17.1.R">
+<p><span class="theorem-title"><strong>Declaration 17.1</strong></span> Audit experiment design.</p>
+<div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_17.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">500</span>,</span>
@@ -539,10 +583,10 @@ div.csl-indent {
 <section id="intervening-to-decrease-discrimination" class="level3" data-number="17.1.1"><h3 data-number="17.1.1" class="anchored" data-anchor-id="intervening-to-decrease-discrimination">
 <span class="header-section-number">17.1.1</span> Intervening to decrease discrimination</h3>
 <p><span class="citation" data-cites="butler_crabtree_2017">Butler and Crabtree (<a href="../references.html#ref-butler_crabtree_2017" role="doc-biblioref">2017</a>)</span> prompt researchers to “move beyond measurement” in audit studies. Under the model assumptions in the design, audit experiments measure the level of discrimination, but of course they do not do anything to reduce it. To move beyond measurement, we intervene in the world to reduce discrimination in a treatment group but not in a control group, then measure the level of discrimination in both arms using the audit experiment technology.</p>
-<p>This two-stage design is illustrated in <a href="#def-ch17num2">Declaration&nbsp;<span>17.2</span></a>. The first half of the design is about causal inference: we want to learn about the effect of the intervention on discrimination. The second half of the design is about descriptive inference – <em>within each treatment arm</em>. We incorporate both stages of the design in the answer strategy, in which the coefficient on the interaction of the intervention indicator with the audit indicator is our estimator of the effect on discrimination.</p>
+<p>This two-stage design is illustrated in <a href="#def-ch17num2" class="quarto-xref">Declaration&nbsp;<span>17.2</span></a>. The first half of the design is about causal inference: we want to learn about the effect of the intervention on discrimination. The second half of the design is about descriptive inference – <em>within each treatment arm</em>. We incorporate both stages of the design in the answer strategy, in which the coefficient on the interaction of the intervention indicator with the audit indicator is our estimator of the effect on discrimination.</p>
 <div id="def-ch17num2" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 17.2 </strong></span>Audit experiment intervention study design.</p>
-<div class="cell" data-file="scripts_declarations/declaration_17.2.R">
+<p><span class="theorem-title"><strong>Declaration 17.2</strong></span> Audit experiment intervention study design.</p>
+<div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_17.2</span> <span class="op">&lt;-</span></span>
 <span>  <span class="co"># This part of the design is about causal inference</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -582,19 +626,21 @@ div.csl-indent {
 </div>
 <p>Even at 5,000 subjects, the power to detect the effect of the intervention is quite poor, at approximately 15%. This low power stems from the small treatment effect (reducing discrimination by 50% from 5.0% to 2.5%) and from the noisy measurement strategy.</p>
 <div id="lem-ch17num1" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 17.1 </strong></span>Audit experiment intervention study diagnosis</p>
+<p><span class="theorem-title"><strong>Diagnosis 17.1</strong></span> Audit experiment intervention study diagnosis</p>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_17.1</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_17.2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-auditdiagnosis" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-auditdiagnosis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;17.2: Audit experiment power analysis
+</figcaption><div aria-describedby="tbl-auditdiagnosis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-auditdiagnosis" class="anchored">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<caption>Table&nbsp;17.2: Audit experiment power analysis</caption>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead><tr class="header">
-<th style="text-align: center;" data-quarto-table-cell-role="th">power</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">se(power)</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">n_sims</th>
+<th style="text-align: center;">power</th>
+<th style="text-align: center;">se(power)</th>
+<th style="text-align: center;">n_sims</th>
 </tr></thead>
 <tbody><tr class="odd">
 <td style="text-align: center;">0.15</td>
@@ -603,8 +649,8 @@ div.csl-indent {
 </tr></tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 </div>
@@ -623,10 +669,11 @@ div.csl-indent {
 </div>
 <p>Sometimes, subjects might not tell the truth about certain attitudes or behaviors when asked directly. Responses may be affected by sensitivity bias, or the tendency of survey subjects to misreport their answers for fear of negative repercussions if some individual or group learns their true response <span class="citation" data-cites="blair2018list">(<a href="../references.html#ref-blair2018list" role="doc-biblioref">Blair, Coppock, and Moor 2020</a>)</span>. In such cases, standard survey estimates based on direct questions will be biased. One class of solutions to this problem is to obscure individual responses, providing protection from social or legal pressures. When we obscure responses systematically through an experiment, we can often still identify average quantities of interest. One such design is the list experiment (introduced in <span class="citation" data-cites="miller1984new">Miller (<a href="../references.html#ref-miller1984new" role="doc-biblioref">1984</a>)</span>), which asks respondents for the count of the number of “yes” responses to a series of questions including the sensitive item, rather than for a yes or no answer on the sensitive item itself. List experiments give subjects cover by aggregating their answer to the sensitive item with responses to other questions.</p>
 <p>For example, <span class="citation" data-cites="creightonjamal2015">Creighton and Jamal (<a href="../references.html#ref-creightonjamal2015" role="doc-biblioref">2015</a>)</span> study preferences for religious discrimination in immigration policy among Americans. They worried that direct measures of Americans’ willingness to grant citizenship to Muslims would be distorted by sensitivity bias, so they turned to a list experiment. Subjects in the control and treatment groups were asked: “Below you will read [three/four] things that sometimes people oppose or are against. After you read all [three/four], just tell us HOW MANY of them you OPPOSE. We don’t want to know which ones, just HOW MANY.”</p>
-<div id="tbl-listquestions" class="anchored">
-<table class="table">
-<caption>Table&nbsp;17.3: List experiment conditions in <span class="citation" data-cites="creightonjamal2015">Creighton and Jamal (<a href="../references.html#ref-creightonjamal2015" role="doc-biblioref">2015</a>)</span>
-</caption>
+<div id="tbl-listquestions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-listquestions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;17.3: List experiment conditions in <span class="citation" data-cites="creightonjamal2015">Creighton and Jamal (<a href="../references.html#ref-creightonjamal2015" role="doc-biblioref">2015</a>)</span>
+</figcaption><div aria-describedby="tbl-listquestions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 62%">
 <col style="width: 37%">
@@ -655,6 +702,8 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <p>The treatment group averaged 2.123 items while the control group averaged 1.904 items, for a difference-in-means estimate of 0.219. Under the usual assumptions of randomized experiments, the difference-in-means is an unbiased estimator for the average treatment effect of <em>being asked</em> to respond to the treated list versus the control list. But our (descriptive) inquiry is the proportion of people who would grant citizenship to a legal immigrant who is Muslim.</p>
 <p>For the difference-in-means to be an unbiased estimator for that inquiry, we invoke two additional assumptions <span class="citation" data-cites="Imai2011">(<a href="../references.html#ref-Imai2011" role="doc-biblioref">Imai 2011</a>)</span>:</p>
 <ul>
@@ -662,16 +711,20 @@ div.csl-indent {
 <li><p><strong>No liars</strong>: Subjects with the sensitive trait truthfully increment their count when assigned to the treatment group.</p></li>
 </ul>
 <p>Under these two extra assumptions, the list experimental estimate of the prevalence of opposition to granting Muslim immigrants citizenship is 21.9%.</p>
-<div id="fig-ch17num1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-17-1.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;17.1: Directed acyclic graph for the list experiment.</figcaption></figure>
+<div id="fig-ch17num1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch17num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-17-1.svg" class="img-fluid figure-img">
 </div>
-<p><a href="#fig-ch17num1">Figure&nbsp;<span>17.1</span></a> represents the list experimental design. The no liars assumption is represented by the lack of an edge from sensitivity bias <span class="math inline">\(S\)</span> to the list experiment outcome <span class="math inline">\(Y^L\)</span>. The no design effects assumption is not represented on the DAG.</p>
-<p><a href="#def-ch17num3">Declaration&nbsp;<span>17.3</span></a> describes a list experimental design. The model includes subjects’ true attitude (<code>Y_star</code>) and whether or not their direct question answers are contaminated by sensitivity bias (<code>S</code>). These two variables combine to determine how subjects will respond when asked directly about support for the policy. The potential outcomes model combines three types of information to determine how subjects will respond to the list experiment: their responses to the three control items (<code>control_count</code>), their true attitude (<code>Y_star</code>), and whether they are assigned to see the treatment or the control list (<code>Z</code>). Our definition of the potential outcomes embeds the no liars and no design effects assumptions.</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch17num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17.1: Directed acyclic graph for the list experiment.
+</figcaption></figure>
+</div>
+<p><a href="#fig-ch17num1" class="quarto-xref">Figure&nbsp;<span>17.1</span></a> represents the list experimental design. The no liars assumption is represented by the lack of an edge from sensitivity bias <span class="math inline">\(S\)</span> to the list experiment outcome <span class="math inline">\(Y^L\)</span>. The no design effects assumption is not represented on the DAG.</p>
+<p><a href="#def-ch17num3" class="quarto-xref">Declaration&nbsp;<span>17.3</span></a> describes a list experimental design. The model includes subjects’ true attitude (<code>Y_star</code>) and whether or not their direct question answers are contaminated by sensitivity bias (<code>S</code>). These two variables combine to determine how subjects will respond when asked directly about support for the policy. The potential outcomes model combines three types of information to determine how subjects will respond to the list experiment: their responses to the three control items (<code>control_count</code>), their true attitude (<code>Y_star</code>), and whether they are assigned to see the treatment or the control list (<code>Z</code>). Our definition of the potential outcomes embeds the no liars and no design effects assumptions.</p>
 <p>The inquiry is the prevalence rate of the sensitive item. In the data strategy, we randomly assign 50% of our 500 subjects to treatment and the remainder to control. In the survey, we ask subjects the list experiment question (<code>Y_list</code>). Our answer strategy estimates the prevalence rate by calculating the difference-in-means in the list outcome between treatment and control.</p>
 <div id="def-ch17num3" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 17.3 </strong></span>List experiment design.</p>
-<div class="cell" data-file="scripts_declarations/declaration_17.3.R">
+<p><span class="theorem-title"><strong>Declaration 17.3</strong></span> List experiment design.</p>
+<div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_17.3</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">500</span>,</span>
@@ -687,7 +740,7 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch17num2" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 17.2 </strong></span>List experiment diagnosis</p>
+<p><span class="theorem-title"><strong>Diagnosis 17.2</strong></span> List experiment diagnosis</p>
 <div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosands</span> <span class="op">&lt;-</span> <span class="fu">declare_diagnosands</span><span class="op">(</span></span>
 <span>  bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span>,</span>
@@ -696,10 +749,12 @@ div.csl-indent {
 <span><span class="va">diagnosis_17.2</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_17.3</span>, diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div id="tbl-diagnosislist" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-diagnosislist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;17.4: Diagnosis of a list experiment.
+</figcaption><div aria-describedby="tbl-diagnosislist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-diagnosislist" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;17.4: Diagnosis of a list experiment.</caption>
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">Bias</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">Mean CI width</th>
@@ -710,16 +765,16 @@ div.csl-indent {
 </tr></tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>We see in the diagnosis that the list experiment generates unbiased estimates of the prevalence rate, but it is extremely imprecise: the average width of the confidence interval is enormous at 33 percentage points. If the estimate from a list experiment using this design is 25%, this would imply a confidence interval ranging from about 9% to 41% holding the sensitive item, ranging from rare to common and thus providing only a limited amount of information about the prevalence rate.</p>
 </div>
-<p>The diagnosis above shows that the list experiment (under its assumptions) is unbiased but has high variance. In the presence of sensitivity bias, direct questions are biased, but has much lower variance. The choice between these two technologies therefore amounts to a bias-variance trade-off (see <span class="citation" data-cites="blair2018list">Blair, Coppock, and Moor (<a href="../references.html#ref-blair2018list" role="doc-biblioref">2020</a>)</span> for more on this point). <a href="#def-ch17num3">Declaration&nbsp;<span>17.3</span></a> wraps up both approaches in one design so we can compare them.</p>
+<p>The diagnosis above shows that the list experiment (under its assumptions) is unbiased but has high variance. In the presence of sensitivity bias, direct questions are biased, but has much lower variance. The choice between these two technologies therefore amounts to a bias-variance trade-off (see <span class="citation" data-cites="blair2018list">Blair, Coppock, and Moor (<a href="../references.html#ref-blair2018list" role="doc-biblioref">2020</a>)</span> for more on this point). <a href="#def-ch17num3" class="quarto-xref">Declaration&nbsp;<span>17.3</span></a> wraps up both approaches in one design so we can compare them.</p>
 <div id="def-ch17num4" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 17.4 </strong></span>Comparing list experiments with direct questions.</p>
-<div class="cell" data-file="scripts_declarations/declaration_17.4.R">
+<p><span class="theorem-title"><strong>Declaration 17.4</strong></span> Comparing list experiments with direct questions.</p>
+<div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_17.4</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="va">N</span>,</span>
@@ -739,7 +794,7 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch17num3" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 17.3 </strong></span>Comparison of list experiment and direct questions diagnosis</p>
+<p><span class="theorem-title"><strong>Diagnosis 17.3</strong></span> Comparison of list experiment and direct questions diagnosis</p>
 <p>Diagnosing this design, we see that at low levels of sensitivity bias and low sample sizes, the direct question is preferred on RMSE grounds. This is because though the direct question is biased for the prevalence rate in the presence of any sensitivity bias (positive <code>proportion_hiding</code>), it is much more precise than the list experiment. When we have a large sample size, then we begin to prefer the list experiment for its low bias. At high levels of sensitivity bias, we prefer the list experiment on RMSE grounds despite its inefficiency, because bias will be so large.</p>
 <div class="cell">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_17.3</span> <span class="op">&lt;-</span> </span>
@@ -749,9 +804,13 @@ div.csl-indent {
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="fig-ch17num2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-17-2.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;17.2: Redesign to illustrate tradeoffs in RMSE between list experiment and direct question</figcaption></figure>
+<div id="fig-ch17num2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch17num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-17-2.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch17num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17.2: Redesign to illustrate tradeoffs in RMSE between list experiment and direct question
+</figcaption></figure>
 </div>
 <section id="design-examples-1" class="level3" data-number="17.2.1"><h3 data-number="17.2.1" class="anchored" data-anchor-id="design-examples-1">
 <span class="header-section-number">17.2.1</span> Design examples</h3>
@@ -782,10 +841,10 @@ div.csl-indent {
 <p>Finally, the right number of choice tasks usually depends on the survey budget. We can always add more conjoint tasks and the only cost is the opportunity cost of asking a different question of the survey that may serve another scientific purpose. If we’re worried that respondents will get bored with the task, we can always throw out profile pairs that come later in the survey. <span class="citation" data-cites="bansak_hainmueller_hopkins_yamamoto_2019">Bansak et al. (<a href="../references.html#ref-bansak_hainmueller_hopkins_yamamoto_2019" role="doc-biblioref">2021</a>)</span> suggest that you can ask many tasks without much loss of data quality.</p>
 <p>The declaration of conjoint experiments is complex, so we provide a series of helper functions specifically for forced-choice conjoint design in the <code>rdss</code> companion software package.</p>
 <p>We begin by establishing the number of subjects and the number of tasks they will accomplish. We then establish the attributes and their levels (this design assumes complete random assignment of all attributes with equal probabilities). Finally, we describe a utility function that governs subject preferences. This function can be simple, as we have it here, or it can be complex, building in differences in preferences by subject type or other details.</p>
-<p>In <a href="#def-ch17num5">Declaration&nbsp;<span>17.5</span></a>, we imagine a forced-choice candidate choice conjoint in which the attributes are gender, party, and region. We sample 500 subjects and ask them to complete three tasks each.</p>
+<p>In <a href="#def-ch17num5" class="quarto-xref">Declaration&nbsp;<span>17.5</span></a>, we imagine a forced-choice candidate choice conjoint in which the attributes are gender, party, and region. We sample 500 subjects and ask them to complete three tasks each.</p>
 <div id="def-ch17num5" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 17.5 </strong></span>Conjoint experiment design.</p>
-<div class="cell" data-file="scripts_declarations/declaration_17.5.R">
+<p><span class="theorem-title"><strong>Declaration 17.5</strong></span> Conjoint experiment design.</p>
+<div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdss</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">cjoint</span><span class="op">)</span></span>
 <span></span>
@@ -832,15 +891,19 @@ div.csl-indent {
 </div>
 </div>
 <div id="lem-ch17num4" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 17.4 </strong></span>Diagnosis of the conjoint experiment design</p>
+<p><span class="theorem-title"><strong>Diagnosis 17.4</strong></span> Diagnosis of the conjoint experiment design</p>
 <div class="cell">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_17.4</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_17.4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch17num3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-17-3.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;17.3: Sampling Distribution of five AMCE estimators. Bands are constructed by sorting and stacking the confidence intervals generated from many simulations. Statistical significance of estimates indicated by color</figcaption></figure>
+<div id="fig-ch17num3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch17num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-17-3.svg" class="img-fluid figure-img">
 </div>
-<p><a href="#fig-ch17num3">Figure&nbsp;<span>17.3</span></a> shows the sampling distribution of the five AMCE estimators. All five are unbiased, but with only 500 subjects evaluating three pairs of candidates, the power for the smaller AMCEs is less than ideal.</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch17num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17.3: Sampling Distribution of five AMCE estimators. Bands are constructed by sorting and stacking the confidence intervals generated from many simulations. Statistical significance of estimates indicated by color
+</figcaption></figure>
+</div>
+<p><a href="#fig-ch17num3" class="quarto-xref">Figure&nbsp;<span>17.3</span></a> shows the sampling distribution of the five AMCE estimators. All five are unbiased, but with only 500 subjects evaluating three pairs of candidates, the power for the smaller AMCEs is less than ideal.</p>
 </div>
 <section id="design-examples-2" class="level3" data-number="17.3.1"><h3 data-number="17.3.1" class="anchored" data-anchor-id="design-examples-2">
 <span class="header-section-number">17.3.1</span> Design examples</h3>
@@ -854,7 +917,7 @@ div.csl-indent {
 </div>
 <p>Behavioral games are often used to study difficult-to-measure characteristics of subjects like risk attitudes, altruism, prejudice, and trust. The approach involves using labs or other mechanisms to control contexts. A high level of control brings two distinct benefits. First, it can eliminate noise: we obtain estimates under a particular well-defined set of conditions rather than estimates generated from averaging over a range of possibly unknown conditions. Second, more subtly, it can prevent various forms of confounding. For instance, outside the lab we might observe how people act when they work on tasks with an out-group member. But we only observe the responses among those that <em>do</em> work with out-group members, not among those that do not. By studying behaviors in a controlled setting we can see how people <em>would</em> react when put into particular situations.</p>
 <p>The approach holds enormous value. But, as highlighted by <span class="citation" data-cites="green2012statistical">Green and Tusicisny (<a href="../references.html#ref-green2012statistical" role="doc-biblioref">2012</a>)</span>, it also introduces many subtle design choices. Many of these can be revealed through declaration and diagnosis.</p>
-<p>We illustrate using the “trust” game, in which we specify three common inquiries and use a standard design in <a href="#def-ch17num6">Declaration&nbsp;<span>17.6</span></a>. The design is successful at generating unbiased estimates of the first inquiry but runs into problems with the other two.</p>
+<p>We illustrate using the “trust” game, in which we specify three common inquiries and use a standard design in <a href="#def-ch17num6" class="quarto-xref">Declaration&nbsp;<span>17.6</span></a>. The design is successful at generating unbiased estimates of the first inquiry but runs into problems with the other two.</p>
 <p>The trust game has been implemented hundreds of times to understand levels and correlates of social trust. Following the meta-analysis given in <span class="citation" data-cites="johnson2011trust">Johnson and Mislin (<a href="../references.html#ref-johnson2011trust" role="doc-biblioref">2011</a>)</span> we consider a game in which one player (Player 1, the “trustor”) can invest some share of $1. Whatever is invested is then doubled. A second player (Player 2, “the trustee”) can then decide what share of the doubled amount to keep for themself and what share to return to the trustor.</p>
 <p>As described by <span class="citation" data-cites="johnson2011trust">Johnson and Mislin (<a href="../references.html#ref-johnson2011trust" role="doc-biblioref">2011</a>)</span>, “trust” is commonly measured by the share given and “trustworthiness” is measured by the share returned. With the <em>MIDA</em> framework in mind, we will be more specific and define the inquiry independently of the measurement. We define “trust” as the share that <em>would</em> be invested by a trustor when confronted with a random trustee, whereas “trustworthiness” is the average share that <em>would</em> be returned over a range of possible investments.</p>
 <p>To motivate <em>M</em> we assume the following decision-making model. We assume that each person <span class="math inline">\(i\)</span> seeks to maximize a weighted average of logged payoffs:</p>
@@ -877,13 +940,17 @@ div.csl-indent {
 <p><span class="math display">\[u_1 = (1-a_1) \log\left(1 - x\right) + a_1 \log\left(2x\right)\]</span></p>
 <p>which is maximized at: <span class="math inline">\(x = a_1\)</span>.</p>
 <p>The global maximum depends on which of these yields higher utility.</p>
-<p><a href="#fig-ch17num4">Figure&nbsp;<span>17.4</span></a> shows the returns to the trustor from different investments given their own and the trustee’s other-regarding preferences. We see that when other-regarding preferences are weak for both players, the largest payoffs arise when nothing is given and nothing is returned. When other regarding preferences are strong for player 1, they optimally offer substantial amounts even when nothing is expected in return. When other-regarding preferences are sufficiently strong for player 2, player 1 invests fully in anticipation of a return.</p>
-<div id="fig-ch17num4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-17-4.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;17.4: Illustration of a trust game</figcaption></figure>
+<p><a href="#fig-ch17num4" class="quarto-xref">Figure&nbsp;<span>17.4</span></a> shows the returns to the trustor from different investments given their own and the trustee’s other-regarding preferences. We see that when other-regarding preferences are weak for both players, the largest payoffs arise when nothing is given and nothing is returned. When other regarding preferences are strong for player 1, they optimally offer substantial amounts even when nothing is expected in return. When other-regarding preferences are sufficiently strong for player 2, player 1 invests fully in anticipation of a return.</p>
+<div id="fig-ch17num4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch17num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-17-4.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch17num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17.4: Illustration of a trust game
+</figcaption></figure>
 </div>
 <p>The predictions of this model are then used to define the inquiry and predict outcomes in the model declaration. The model part of the design includes information on underlying preferences. For this we make use of a set of functions that characterize stipulated beliefs about behavior.</p>
-<div class="cell" data-file="scripts_declarations/declaration_17.6_a.R">
+<div class="cell">
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">invested</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a_1</span>, <span class="va">a_2</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">u_a</span> <span class="op">=</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_1</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_1</span><span class="op">)</span> <span class="op">+</span> <span class="va">a_1</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="va">a_1</span><span class="op">)</span>  <span class="co"># give a1</span></span>
 <span>  <span class="va">u_b</span> <span class="op">=</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_1</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="va">a_2</span><span class="op">)</span> <span class="op">+</span> <span class="va">a_1</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">2</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">a_2</span><span class="op">)</span><span class="op">)</span> <span class="co"># give 1</span></span>
@@ -902,8 +969,8 @@ div.csl-indent {
 </div>
 <p>The inquiries for this design are the expected share offered to different types of trustees, the expected returns, averaged over possible offers, and the expected action by a trustee when the full amount is invested. The data strategy involves assigning players to pairs and orderings. The first player in each pair is assigned to the trustor role and the second to the trustee role. For the answer strategy, we simply measure average behavior across subjects. As a wrinkle, we include the possibility that the experimenter confronts the returners with random offers rather than the ones actually made by their partners. This aspect of the design is controlled by an argument called <code>deceive</code> and turns out to be important for inference.</p>
 <div id="def-ch17num6" class="declaration theorem definition">
-<p><span class="theorem-title"><strong>Declaration 17.6 </strong></span>Trust game design.</p>
-<div class="cell" data-file="scripts_declarations/declaration_17.6_b.R">
+<p><span class="theorem-title"><strong>Declaration 17.6</strong></span> Trust game design.</p>
+<div class="cell">
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span></span>
 <span><span class="va">rho</span>     <span class="op">&lt;-</span> <span class="fl">0.8</span></span>
 <span><span class="va">n_pairs</span> <span class="op">&lt;-</span> <span class="fl">200</span></span>
@@ -945,20 +1012,22 @@ div.csl-indent {
 </div>
 </div>
 <p>A few features are worth highlighting. First, the inquiries are defined using a set of hypothetical responses under the model using a specified response function. However the inquiry is robust to the model in the sense that it remains well defined even if you stipulate very different behaviors. Second, the declaration involves a step where we shift from a “long” data frame with a row per subject to a “wide” data frame with a row per game. Third, the design orders steps so that an estimation stage is implemented before a measurement stage; this is a little unusual but it is done in this way to allow the researchers to analyze Player 1 investment decisions before (possibly) replacing them with fabricated decisions.</p>
-<p>A sample of data that might be produced by this design is shown in <a href="#tbl-behavioralgames">Table&nbsp;<span>17.5</span></a>.</p>
+<p>A sample of data that might be produced by this design is shown in <a href="#tbl-behavioralgames" class="quarto-xref">Table&nbsp;<span>17.5</span></a>.</p>
 <div class="cell">
+<div id="tbl-behavioralgames" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-behavioralgames-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;17.5: Behavioral games diagnosis
+</figcaption><div aria-describedby="tbl-behavioralgames-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-behavioralgames" class="anchored">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<caption>Table&nbsp;17.5: Behavioral games diagnosis</caption>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead><tr class="header">
-<th style="text-align: center;" data-quarto-table-cell-role="th">pair</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">ID_2</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">ID_1</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">a_2</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">a_1</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">invested</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">returned</th>
+<th style="text-align: center;">pair</th>
+<th style="text-align: center;">ID_2</th>
+<th style="text-align: center;">ID_1</th>
+<th style="text-align: center;">a_2</th>
+<th style="text-align: center;">a_1</th>
+<th style="text-align: center;">invested</th>
+<th style="text-align: center;">returned</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -1018,23 +1087,27 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-
-
+</div>
+</figure>
 </div>
 </div>
 <p>We have a row for each game, we have the (unobserved) <span class="math inline">\(a_i, a_j\)</span> parameters as well as actions by both players in the data.</p>
-<p><a href="#lem-ch17num5">Diagnosis&nbsp;<span>17.5</span></a> illustrates the properties of the trust game design.</p>
+<p><a href="#lem-ch17num5" class="quarto-xref">Diagnosis&nbsp;<span>17.5</span></a> illustrates the properties of the trust game design.</p>
 <div id="lem-ch17num5" class="theorem lemma">
-<p><span class="theorem-title"><strong>Diagnosis 17.5 </strong></span>Trust game diagnosis</p>
+<p><span class="theorem-title"><strong>Diagnosis 17.5</strong></span> Trust game diagnosis</p>
 <div class="cell">
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_17.5</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">declaration_17.6</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">redesign</span><span class="op">(</span>deceive <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch17num5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../figures/figure-17-5.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;17.5: Diagnosis of bias in the analysis of trust games with and without deception.</figcaption></figure>
+<div id="fig-ch17num5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch17num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/figure-17-5.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch17num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17.5: Diagnosis of bias in the analysis of trust games with and without deception.
+</figcaption></figure>
 </div>
 <p>We see that we do well for the first inquiry whether or not deception is used. The first inquiry–<em>trusting</em>–is after all a simple measurement of choices albeit in a controlled setting. But we do poorly for the second and third inquiries.</p>
 <p>Whether we have bias in the measure of <em>trustworthy</em> depends on the use of deception, however, and so presents researchers with a serious design challenge.</p>
@@ -1051,7 +1124,7 @@ div.csl-indent {
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-aguilar2015" class="csl-entry" role="listitem">
 Aguilar, Rosario, Saul Cunow, and Scott Desposato. 2015. <span>“Choice Sets, Gender, and Candidate Choice in Brazil.”</span> <em>Electoral Studies</em> 39: 230–42. https://doi.org/<a href="https://doi.org/10.1016/j.electstud.2015.03.011">https://doi.org/10.1016/j.electstud.2015.03.011</a>.
 </div>
@@ -1113,7 +1186,7 @@ White, Ariel R., Noah L. Nathan, and Julie K. Faller. 2015. <span>“<span class
 </section></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
 <ol>
 <li id="fn1"><p>The AMCE need not be data-dependent. We could write down one distribution of profiles in the model to establish the AMCE inquiry, then randomly sample the profiles shown to respondents for a different distribution. This would be a headache, because the estimator would need to be reweighted to successfully target the AMCE inquiry. Better to bring the data strategy in line with the model in the first place.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p><span class="math inline">\(a_2 + (1-a_2)\frac{x-1}{2x}\geq 0\)</span> requires <span class="math inline">\(x \geq \frac{1-a_2}{1+a_2}\)</span><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><span class="math inline">\(a_2 + (1-a_2)\frac{x-1}{2x}\geq 0\)</span> requires <span class="math inline">\(x  \geq \frac{1-a_2}{1+a_2}\)</span><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1149,18 +1222,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1192,11 +1254,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1206,8 +1305,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1219,7 +1327,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1263,6 +1493,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1288,6 +1519,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1347,12 +1604,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../library/observational-causal.html" class="pagination-link">
+      <a href="../library/observational-causal.html" class="pagination-link" aria-label="Observational : causal">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Observational : causal</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../library/experimental-causal.html" class="pagination-link">
+      <a href="../library/experimental-causal.html" class="pagination-link" aria-label="Experimental : causal">
         <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Experimental : causal</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

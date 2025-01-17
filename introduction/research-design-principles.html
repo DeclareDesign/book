@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Research Design in the Social Sciences - 3&nbsp; Research design principles</title>
+<title>3&nbsp; Research design principles – Research Design in the Social Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,16 +33,22 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -51,11 +57,18 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style type="text/css" media="print">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MMK8CF9JC0"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
+</script><style type="text/css" media="print">
     body { visibility: hidden; display: none }
 </style>
 <script type="text/javascript">
@@ -93,25 +106,50 @@ ul.task-list li input[type="checkbox"] {
         createCookie('popupShown', 'yes', 1)
       }
     }
-</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../introduction/preface.html">Introduction</a></li><li class="breadcrumb-item"><a href="../introduction/research-design-principles.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../introduction/preface.html">Introduction</a></li><li class="breadcrumb-item"><a href="../introduction/research-design-principles.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Research Design in the Social Sciences</a> 
     </div>
@@ -137,9 +175,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -172,9 +210,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Declaration, Diagnosis, Redesign</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -239,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../library/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design library</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -280,7 +318,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../lifecycle/" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research design lifecycle</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -337,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
     </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p align="center">
@@ -364,7 +402,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </div>
 
-<header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../introduction/preface.html">Introduction</a></li><li class="breadcrumb-item"><a href="../introduction/research-design-principles.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title"><span id="sec-ch3" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research design principles</span></span></h1>
 </div>
 
@@ -377,6 +415,7 @@ ul.task-list li input[type="checkbox"] {
     
   </div>
   
+
 
 </header><p>With the <em>MIDA</em> framework and the declare, diagnose, redesign algorithm in hand, we can articulate a set of six principles for research design.</p>
 <p>This section offers succinct discussions of each principle. We will expand on the implications of these principles for specific design choices throughout the book.</p>
@@ -394,32 +433,32 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 </div>
 <div id="exm-designholistically" class="theorem example">
-<p><span class="theorem-title"><strong>Principle 3.1 </strong></span>Design holistically</p>
+<p><span class="theorem-title"><strong>Principle 3.1</strong></span> Design holistically</p>
 <p>This is perhaps the most important of our principles. Designs are good not because they have good components but because the components work together to get a good result. Too often, researchers develop and evaluate parts of their designs in isolation: Is this a good question? Is this a good estimator? What’s the best way to sample? But if you design with a view to diagnosis you are forced to focus on how each part of the design fits together. An estimator might be appropriate if you use one assignment scheme but not another. The evaluation of data and answer strategies depends on whether your model and inquiry call for descriptive inference, causal inference, or generalization inference (or perhaps, all three at once).If we ask, “What’s your research design?” and you respond “It’s a regression discontinuity design,” we’ve learned something about what class your answer strategy might fall into, but we don’t have enough information to decide whether it’s a strong design until we learn about the model, inquiry, data strategy, and other parts of the answer strategy. Ultimately design evaluation comes not from assessment of the parts but from diagnosis of the full design.</p>
-<p>When we consider whole designs rather than just thinking about one aspect at a time, we notice how designs that have “parallel” theoretical and empirical sides tend to be strong. We develop this idea in <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html#sec-ch9s3"><span>Section&nbsp;9.3</span></a>. If you want your estimate <span class="math inline">\(a_{d^*} = A(d^*)\)</span> to be close to the estimand <span class="math inline">\(a_{m^*} = I(m^*)\)</span>, it’s often best to choose data strategies that parallel models and answer strategies that parallel inquiries, i.e., to make sure that this rough analogy holds: <em>M</em>:<em>I</em>::<em>D</em>:<em>A</em>.</p>
+<p>When we consider whole designs rather than just thinking about one aspect at a time, we notice how designs that have “parallel” theoretical and empirical sides tend to be strong. We develop this idea in <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html#sec-ch9s3" class="quarto-xref"><span>Section 9.3</span></a>. If you want your estimate <span class="math inline">\(a_{d^*} = A(d^*)\)</span> to be close to the estimand <span class="math inline">\(a_{m^*} = I(m^*)\)</span>, it’s often best to choose data strategies that parallel models and answer strategies that parallel inquiries, i.e., to make sure that this rough analogy holds: <em>M</em>:<em>I</em>::<em>D</em>:<em>A</em>.</p>
 </div>
 <div id="exm-designagnostically" class="theorem example">
-<p><span class="theorem-title"><strong>Principle 3.2 </strong></span>Design agnostically</p>
+<p><span class="theorem-title"><strong>Principle 3.2</strong></span> Design agnostically</p>
 <p>When we design a research study, we have in mind a model of how the world works. But a good design should work, and work well, even when the world is different from what we expect. One implication is that we should entertain many models, seeking not just to ensure the design produces good results for models that we think likely but trying to expand the set of possible models for which the design delivers good results. A second implication is that inquiries and answer strategies should still <em>work</em> when the world looks different from what we expect. Inquiries should have answers even when event generating processes are different to how you imagine them. In the same way, the ability to apply an answer strategy should depend as little as possible on strong expectations of how the data you will get will look.</p>
 <p>A corollary to “Design agnostically” is that we should know for which models our design performs well and for which models it performs poorly. We want to diagnose over many models to find where designs break. All designs break under some models, so the fact that a design ever breaks is no criticism. As research designers, we just want to know which models pose problems and which do not.</p>
 </div>
 <div id="exm-designforpurpose" class="theorem example">
-<p><span class="theorem-title"><strong>Principle 3.3 </strong></span>Design for purpose</p>
+<p><span class="theorem-title"><strong>Principle 3.3</strong></span> Design for purpose</p>
 <p>When we say a design is good we mean it is good for some specific purpose. That purpose should be captured by the diagnosands used to assess design quality and design decisions should then be taken with respect to the specified purpose. Too often, researchers focus on a narrow set of diagnosands, and consider them in isolation. Is the estimator unbiased? Do I have statistical power? The evaluation of a design nearly always requires balancing multiple criteria: scientific precision, logistical constraints, policy goals, as well as ethical considerations. And oftentimes these might come into conflict with each other. Thus one design might be best if the goal is to assessing whether a treatment has any effect, another if the goal is to assess the size of an effect. One design might be optimal if the goal is to contribute to general knowledge about how processes work, but another if the goal is to make a decision about whether to move forward with a policy in a given context.</p>
 <p>In the MIDA framework, the goals of a design are not formally a part of a design. They enter at the diagnosis stage, and, of course, a single design might be assessed for performance for different purposes.</p>
 </div>
 <div id="exm-designearly" class="theorem example">
-<p><span class="theorem-title"><strong>Principle 3.4 </strong></span>Design early</p>
+<p><span class="theorem-title"><strong>Principle 3.4</strong></span> Design early</p>
 <p>Designing an empirical project entails declaring, diagnosing, and redesigning the components of a research design: its model, inquiry, data strategy, and answer strategy. The design phase yields the biggest gains when we design early. By frontloading design decisions, we can learn about the properties of a design while there is still time to improve them. Once data strategies are implemented — units sampled, treatments assigned, and outcomes measured — there’s no going back. While applying the answer strategy to the revealed dataset, you might well wish you’d gathered data differently, or asked different questions. Post-hoc, we always wish our previous selves had planned ahead.</p>
 <p>A reason deeper than regret for designing early is that the declaration, diagnosis, and redesign process inevitably changes designs, almost always for the better. Revealing how each of the four design elements are interconnected yields improvements to each. These choices are almost always better made before any data are collected or analyzed.</p>
 </div>
 <div id="exm-designoften" class="theorem example">
-<p><span class="theorem-title"><strong>Principle 3.5 </strong></span>Design often</p>
+<p><span class="theorem-title"><strong>Principle 3.5</strong></span> Design often</p>
 <p>Designing early does not mean being inflexible. In practice, unforeseen circumstances may change the set of feasible data and answer strategies. Implementation failures due to nonresponse, noncompliance, spillovers, inability to link datasets, funding contractions, or logistical errors are common ways the set of feasible designs might contract. The set of feasible designs might expand if new data sources are discovered, additional funding is secured, or if you learn about a new piece of software. Whether the set expands or contracts, we benefit from declaring, diagnosing, and redesigning given the new realities.</p>
 <p>In Part IV on the research design lifecycle, we push this principle to the limit, encouraging you to keep on designing even after research is completed, arguing that <em>ex post</em> design can help you assess the robustness of your claims and help decide how to respond to criticism of your work.</p>
 </div>
 <div id="exm-designtoshare" class="theorem example">
-<p><span class="theorem-title"><strong>Principle 3.6 </strong></span>Design to share</p>
+<p><span class="theorem-title"><strong>Principle 3.6</strong></span> Design to share</p>
 <p>The <em>MIDA</em> framework and the declaration, diagnosis, and redesign algorithm can improve the quality of your research designs. It can also help you communicate your work, justify your decisions, and contribute to the scientific enterprise. Formalizing design declaration makes this sharing easier. By coding up a design as an object that can be run, diagnosed, and redesigned, you help other researchers see, understand, and question the logic of your research.</p>
 <p>We urge you to keep this sharing function in mind as you write code, explore alternatives, and optimize over designs. An answer strategy that is hard-coded to capture your final decisions might break when researchers try to modify parts. Alternatively, designs can be created specifically to make it easier to explore neighboring designs, let others see why you chose the design you chose, and give them a leg up in their own work. In our ideal world, when you create a design, you contribute it to a design library so others can check it out and build on your good work.</p>
 </div>
@@ -461,18 +500,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -504,11 +532,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -518,8 +583,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -531,7 +605,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -575,6 +771,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -600,6 +797,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -659,12 +882,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../introduction/what-is-a-research-design.html" class="pagination-link">
+      <a href="../introduction/what-is-a-research-design.html" class="pagination-link" aria-label="What is a research design?">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is a research design?</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../introduction/getting-started.html" class="pagination-link">
+      <a href="../introduction/getting-started.html" class="pagination-link" aria-label="Getting started">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting started</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
