@@ -668,7 +668,7 @@ Figure&nbsp;9.2: Sampling distribution of the test answer strategy
 <div id="def-ch9num3" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 9.3</strong></span> Italian village design a la Bayes.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rdss</span><span class="op">)</span> <span class="co"># for helper functions</span></span>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/bbolker/broom.mixed">broom.mixed</a></span><span class="op">)</span> <span class="co"># for helper functions</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mc-stan.org/rstanarm/">rstanarm</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">declaration_9.3</span> <span class="op">&lt;-</span></span>
@@ -680,7 +680,8 @@ Figure&nbsp;9.2: Sampling distribution of the test answer strategy
 <span>    .method <span class="op">=</span> <span class="va">stan_glm</span>,</span>
 <span>    family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/family.html">gaussian</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"log"</span><span class="op">)</span>,</span>
 <span>    prior_intercept <span class="op">=</span> <span class="fu"><a href="https://mc-stan.org/rstanarm/reference/priors.html">normal</a></span><span class="op">(</span><span class="fl">50</span>, <span class="fl">5</span><span class="op">)</span>,</span>
-<span>    .summary <span class="op">=</span> <span class="op">~</span><span class="fu"><a href="https://rdrr.io/pkg/rdss/man/tidy_stan.html">tidy_stan</a></span><span class="op">(</span><span class="va">.</span>, exponentiate <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    refresh <span class="op">=</span> <span class="fl">0</span>, <span class="co"># less verbose output</span></span>
+<span>    .summary <span class="op">=</span> <span class="op">~</span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">.</span>, exponentiate <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>    inquiry <span class="op">=</span> <span class="st">"mean_age"</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
