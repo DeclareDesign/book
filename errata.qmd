@@ -7,4 +7,10 @@ These errata are errors in the printed book. These changes are implemented in th
 - On pg. 101: "The $p$-value is the probability this also goes with the misplaced section estimates of 15 or larger" should read "The $p$-value is the probability under the null model of obtaining estimates of 15 or larger."
 - On pg. 158: The second code block, which includes the code `MASS::mvrnorm`, should read `n = 1000` not `N = 1000`.
 
-*Due to final copyediting by the Press, the website version may differ slightly from the print version. If you discover a discrepency, please email us at graeme.blair@gmail.com, alexander.coppock@yale.edu, and macartan@gmail.com and we will fix it and send you DeclareDesign stickers!*
+*Due to final copyediting by the Press, the website version may differ slightly from the print version. If you discover a discrepency, please email us at graeme.blair@gmail.com, acoppock@gmail.com, and macartan@gmail.com and we will fix it and send you DeclareDesign stickers!*
+
+## Code updates
+
+We are committed to maintaining the code in this book as the R ecosystem evolves. The following changes reflect differences between the printed book and the online version. 
+
+- On pg. 103, Declaration 9.3 now reads `.summary = ~tidy(., exponentiate = TRUE)` instead of `.summary = ~tidy_stan(., exponentiate = TRUE)`, reflecting the use of the standard `broom.mixed` package for tidying stan objects. In addition, the library `rdss` is replaced with the library `broom.mixed` in the declaration.
