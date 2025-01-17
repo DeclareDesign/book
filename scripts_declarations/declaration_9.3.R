@@ -1,4 +1,4 @@
-library(rdss) # for helper functions
+library(broom.mixed) # for helper functions
 library(rstanarm)
 
 declaration_9.3 <-
@@ -10,6 +10,7 @@ declaration_9.3 <-
     .method = stan_glm,
     family = gaussian(link = "log"),
     prior_intercept = normal(50, 5),
-    .summary = ~tidy_stan(., exponentiate = TRUE),
+    refresh = 0, # less verbose output
+    .summary = ~tidy(., exponentiate = TRUE),
     inquiry = "mean_age"
   )
