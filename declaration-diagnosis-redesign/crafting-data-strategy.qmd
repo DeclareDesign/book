@@ -50,13 +50,13 @@ Owing to the natural appeal of design-based inference, we start off with randomi
 | Simple random sampling      | "Coin flip" or Bernoulli random sampling. All units have the same inclusion probability p                                      |
 |                             |                                                                                                                                |
 |                             | ```                                                                                                                            |      
-|                             | simple_rs(N = 100, p = 0.25)                                                                                                   |
+|                             | simple_rs(N = 100, prob = 0.25)                                                                                                   |
 |                             | ```                                                                                                                            | 
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | Complete random sampling    | Exactly n of N units are sampled, and all units have the same inclusion probability n/N                                        |
 |                             |                                                                                                                                |
 |                             | ```                                                                                                                            |      
-|                             | simple_rs(N = 100, p = 0.25)                                                                                                   |
+|                             | complete_rs(N = 100, n = 25)                                                                                                   |
 |                             | ```                                                                                                                            | 
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | Stratified random sampling  | Complete random sampling within pre-defined strata. Units within the same strata have the same inclusion probability n_s / N_s |
