@@ -10,22 +10,22 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Install Quarto
-        uses: quarto-dev/quarto-actions/install-quarto@v1
+        uses: quarto-dev/quarto-actions/install-quarto@v2
         # with:
           # uncomment below and fill to pin a version
           # version: 0.9.105
-          
+
       - name: Install R
         uses: r-lib/actions/setup-r@v2
-        
+
       - name: Install packages
         uses: r-lib/actions/setup-r-dependencies@v2
-        with: 
-          cache-version: 6
-          
+        with:
+          cache-version: 7
+
       # - name: Install remotes
       #   run: |
       #      remotes::install_github("acoppock/vayr", auth_token = "${{ secrets.GITHUB_TOKEN }}")
@@ -34,7 +34,7 @@ jobs:
       #      remotes::install_github("szonszein/interference", auth_token = "${{ secrets.GITHUB_TOKEN }}")
       #      remotes::install_github("DeclareDesign/rdss", auth_token = "${{ secrets.GITHUB_TOKEN }}")
       #   shell: Rscript {0}
-        
+
       - name: Prep Dropbox files
         run: |
           mkdir ~/Dropbox
@@ -46,7 +46,7 @@ jobs:
         # Add any command line argument needed
         run: |
           quarto render --to html
-          
+
       - name: Deploy 🚀
         # only deploy when push to main
         if: github.event_name != 'pull_request'
