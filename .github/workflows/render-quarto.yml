@@ -14,20 +14,16 @@ jobs:
 
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        # with:
-          # uncomment below and fill to pin a version
-          # version: 0.9.105
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
 
-      - name: Install pandoc
-        run: sudo apt-get install pandoc-citeproc
-
       - name: Install packages
         uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          cache-version: 7
+        # with:
+        #   cache-version: 7
 
       # - name: Install remotes
       #   run: |
@@ -45,17 +41,25 @@ jobs:
           wget -O ~/Dropbox/files.zip https://www.dropbox.com/sh/fqjlu8k90sx6kv8/AADcmSxqO35f4LEvHyJjl1Dwa?dl=1
           unzip ~/Dropbox/files.zip -d ~/Dropbox/DeclareDesign_book_rfiles -x /
 
-      - name: Render book to all formats
-        # Add any command line argument needed
-        run: |
-          quarto render --to html
+      # - name: Render book to all formats
+      #   # Add any command line argument needed
+      #   run: |
+      #     quarto render --to html
 
-      - name: Deploy 🚀
-        # only deploy when push to main
-        if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Publish to GitHub Pages (and render)
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
-          # The branch the action should deploy to.
-          branch: gh-pages
-          # The folder the action should deploy. Adapt if you changed in Quarto config
-          folder: _book
+          target: gh-pages
+          to: html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Deploy 🚀
+      #   # only deploy when push to main
+      #   if: github.event_name != 'pull_request'
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     # The branch the action should deploy to.
+      #     branch: gh-pages
+      #     # The folder the action should deploy. Adapt if you changed in Quarto config
+      #     folder: _book
