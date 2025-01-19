@@ -117,6 +117,7 @@ language:
 format:
   html:
     theme: cosmo
+    lightbox: true
     # number-offset: -1
     default-image-extension: svg
     code-link: true
