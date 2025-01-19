@@ -54,10 +54,9 @@ In @fig-midaplot, we describe *M* as the "the worlds you'll consider." The reaso
 
 How can we construct a sufficiently varied set of models of the world? For this we can draw on existing data from past studies or on new information gathered from pilot studies. Getting a reasonable characterization of the set of plausible models is a core purpose of theoretical reflection, literature review, meta-analysis, and formative research.  If there are important known features about your context it generally makes sense to include them in $M$.
 
-:::: {.ddbox}
-::: {.ddbox-title}
-Examples of models
-:::
+::: {.callout-note icon=false appearance="minimal"}
+
+## Examples of models
 
 1. Contact theory: When two members of different groups come into contact under specific conditions, they learn more about each other, which reduces prejudice, which in turn reduces discrimination.
 
@@ -65,7 +64,7 @@ Examples of models
 
 3. Health intervention with externalities. When individuals receive deworming medication, school attendance rates increase for them and for their neighbors, leading to improved labor market outcomes in the long run. 
 
-::::
+:::
 
 ### Inquiry {#sec-ch2s2ss1}
 
@@ -81,10 +80,9 @@ As with models, inquiries are also defined with respect to *units*, *conditions*
 
 \index{Inquiry!Examples}
 
-:::: {.ddbox}
-::: {.ddbox-title}
-Examples of inquiries
-:::
+::: {.callout-note icon=false appearance="simple"}
+
+## Examples of inquiries
 
 1. What proportion of voters lives with limited exposure to voters from another party in its neighborhood?
 
@@ -96,7 +94,7 @@ Examples of inquiries
 
 3. What types of people will benefit most from a vaccine?
 
-::::
+:::
 
 ### Data strategy
 
