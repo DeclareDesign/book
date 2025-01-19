@@ -124,8 +124,12 @@ format:
     include-in-header:
       - header-additions.html
     include-before-body: buy-book.html
-    template-partials:
-      - partials/toc.html
+    code-links:
+      - text: Replication data and code
+        icon: database-fill
+        href: https://doi.org/10.7910/DVN/HYVPO5
+    # template-partials:
+    #   - partials/toc.html
     # self-contained: true
     # self-contained-math: true
   # pdf:
