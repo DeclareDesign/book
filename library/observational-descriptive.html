@@ -509,17 +509,14 @@ window.Quarto = {
 </header><p>An observational design for descriptive inference usually has an inquiry like a population mean, covariance, or distribution as the main research goal. In an observational research design, the data strategy includes sampling and measurement components, but no treatments are allocated by the researcher. Put differently, in an observational design for descriptive inference, researchers seek to measure and summarize the world. This class of research designs encompasses a huge portion of research activity – many surveys fall into this class, as do large-scale data collections of economic and sociopolitical indicators, classic case studies focused on “thick description,” and many text analysis projects.</p>
 <section id="simple-random-sampling" class="level2" data-number="15.1"><h2 data-number="15.1" class="anchored" data-anchor-id="simple-random-sampling">
 <span class="header-section-number">15.1</span> Simple random sampling</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container">
 <p>We declare a design in which a researcher takes a simple random sample of a population and uses a survey instrument to measure a latent quantity. The inquiry is the population average of the measured quantity. We show how to declare this design and an approach to incorporate concerns about non random non response in the design.</p>
+</div>
 </div>
 </div>
 <p>Descriptive inquiries like the population mean of one variable or the population correlation between two variables are defined with respect to a specific group of units: the population about which we want to draw inferences.</p>
@@ -645,17 +642,14 @@ Figure&nbsp;15.2: Redesigning the random sampling design over researcher effort
 <li><p>Simple random sampling is also used when researchers need to take manual measurements of a large number of observations. <span class="citation" data-cites="merkley_stecula_2021">Merkley and Stecula (<a href="../references.html#ref-merkley_stecula_2021" role="doc-biblioref">2021</a>)</span> hand-code a simple random sample of 3,000 newspaper articles about climate changes out of the many hundreds of thousands of articles about climate change identified by an automatic search process, allowing them to characterize their population of observations without hand-coding each one.</p></li>
 </ul></section></section><section id="sec-ch15s2" class="level2" data-number="15.2"><h2 data-number="15.2" class="anchored" data-anchor-id="sec-ch15s2">
 <span class="header-section-number">15.2</span> Cluster random sampling</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container">
 <p>We declare a design in which a researcher takes a clustered random sample of a population and uses the design to ask whether they should invest in sampling more clusters or in more individuals per cluster. The design includes a budget constraint that affects how many can be sampled within clusters as a function of the number of clusters sampled.</p>
+</div>
 </div>
 </div>
 <p>Researchers often cannot randomly sample at the individual level because it may, among other reasons, be too costly or logistically impractical. Instead, they may choose to sample clusters at random first, then randomly sample units within clusters. Clusters might be schools, localities, or households.</p>
@@ -758,17 +752,14 @@ Figure&nbsp;15.3: Trading off the number of clusters and the number of individua
 <li><p><span class="citation" data-cites="Paler2018">Paler, Marshall, and Atallah (<a href="../references.html#ref-Paler2018" role="doc-biblioref">2018</a>)</span> use a multistage clustered sampling design to study Lebanese citizen’s willingness to sign a petition condemning sectarian politics. The clusters were localities (villages in rural areas, neighborhoods in urban areas), which were stratified by population size. Within selected localities, simple random samples of households were drawn; within households, a single adult was selected at random. The study also included a randomized treatment that manipulated whether petition signatures were public or private.</p></li>
 </ul></section></section><section id="sec-ch15s3" class="level2" data-number="15.3"><h2 data-number="15.3" class="anchored" data-anchor-id="sec-ch15s3">
 <span class="header-section-number">15.3</span> Multi-level regression and poststratification</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container">
 <p>We declare a design in which researchers reweight the responses of different units in a sample in order to better estimate a population-level quantity. Reweighting depends on how much units are thought to “represent” other nonsampled units and requires making decisions about how much units of different types should be pooled together. Design performance of a partially pooled model is compared against designs that involve no pooling and full pooling.</p>
+</div>
 </div>
 </div>
 <p>Multilevel regression and poststratification (MRP) is a technique used primarily for “small area estimation.” In the prototypical setting, we conduct a nationally-representative survey of public opinion, but our goal is to generate estimates of the average level of public opinion for many subnational units. In the United States context, these “small area” units are often the 50 states. The main problem is that in a national poll of 2,000 Americans, we might only have four respondents from small states like Alaska, Wyoming, or Vermont, but more than 100 from large states like California, New York, or Texas. Accordingly, it is harder to estimate opinion in small states than in large states. The key insight of an MRP design is that we can “borrow strength” across states and kinds of people in order to improve state level estimates.</p>
@@ -888,17 +879,14 @@ Figure&nbsp;15.5: Comparison of three answer strategies
 <li><p><span class="citation" data-cites="Tausanovitch:2013wp">Tausanovitch and Warshaw (<a href="../references.html#ref-Tausanovitch:2013wp" role="doc-biblioref">2013</a>)</span> apply multilevel regression and poststratification to large polls of Americans’ policy preferences to generate estimates of policy opinions at the Congressional district, state legislative district, and municipality levels.</p></li>
 </ul></section></section><section id="index-creation" class="level2" data-number="15.4"><h2 data-number="15.4" class="anchored" data-anchor-id="index-creation">
 <span class="header-section-number">15.4</span> Index creation</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container">
 <p>We declare a design is which we take multiple measures and combine them to learn about a latent, unobservable quantity. The design diagnosis shows that it is possible to generate interpretable conditional estimates of this quantity and assess bias even though the metric of the unobservable quantity is unknown. The diagnosis highlights how subtle differences in scale construction generate different biases.</p>
+</div>
 </div>
 </div>
 <p>Models often specify a latent variable (<code>Y_star</code>) that we can’t observe directly. The measurement procedures we use involve imperfect proxies (<code>Y_1</code>, <code>Y_2</code>, <code>Y_3</code>): observed values for these proxies may be related to the latent variables but are often on different scales. A common strategy for addressing measurement error is to combine multiple measures of the same latent variable into an index. The basic intuition for this procedure is that when we combine multiple measures, the errors attending to each measure will tend to cancel one another out. When this happens, the index itself has lower measurement error than any of the constituent parts.</p>
