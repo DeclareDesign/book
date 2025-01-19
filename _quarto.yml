@@ -124,6 +124,7 @@ format:
     include-in-header:
       - header-additions.html
     callout-icon: false
+    callout-appearance: minimal
     include-before-body: buy-book.html
     code-links:
       - text: Replication data and code

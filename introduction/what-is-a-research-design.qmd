@@ -54,7 +54,7 @@ In @fig-midaplot, we describe *M* as the "the worlds you'll consider." The reaso
 
 How can we construct a sufficiently varied set of models of the world? For this we can draw on existing data from past studies or on new information gathered from pilot studies. Getting a reasonable characterization of the set of plausible models is a core purpose of theoretical reflection, literature review, meta-analysis, and formative research.  If there are important known features about your context it generally makes sense to include them in $M$.
 
-::: {.callout-note icon=false}
+::: {.callout-note  appearance="default"}
 ## Examples of models
 
 1. Contact theory: When two members of different groups come into contact under specific conditions, they learn more about each other, which reduces prejudice, which in turn reduces discrimination.
@@ -78,7 +78,7 @@ As with models, inquiries are also defined with respect to *units*, *conditions*
 
 \index{Inquiry!Examples}
 
-::: {.callout-note icon=false}
+::: {.callout-note  appearance="default"}
 ## Examples of inquiries
 
 1. What proportion of voters lives with limited exposure to voters from another party in its neighborhood?
@@ -109,7 +109,7 @@ Measurement procedures are the ways in which researchers reduce the complex and 
 
 \index{Data strategy!Examples}
 
-::: {.callout-note icon=false}
+::: {.callout-note  appearance="default"}
 ## Examples of data strategies
 
 *Sampling procedures.*
@@ -155,7 +155,7 @@ The answer strategy is more than the choice of an estimator. It includes the ful
 
 \index{Answer strategy!Examples}
 
-::: {.callout-note icon=false}
+::: {.callout-note appearance="default"}
 ## Examples of answer strategies
 
 1. Multilevel modeling and poststratification

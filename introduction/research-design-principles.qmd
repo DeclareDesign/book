@@ -11,7 +11,7 @@ With the *MIDA* framework and the declare, diagnose, redesign algorithm in hand,
 
 This section offers succinct discussions of each principle. We will expand on the implications of these principles for specific design choices throughout the book.
 
-::: {.callout-note icon=false}
+::: {.callout-note appearance="default"}
 ## Design principles
 
 1. [Design holistically](#exm-designholistically)
