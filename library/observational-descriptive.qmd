@@ -11,7 +11,7 @@ An observational design for descriptive inference usually has an inquiry like a 
 
 ## Simple random sampling 
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a design in which a researcher takes a simple random sample of a population and uses a survey instrument to measure a latent quantity. The inquiry is the population average of the measured quantity. We show how to declare this design and an approach to incorporate concerns about non random non response in the design.
 :::
 
@@ -134,7 +134,7 @@ diagnosis_15.2 <- get_rdddr_file_local("diagnosis_15.2")
 
 ## Cluster random sampling {#sec-ch15s2}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a design in which a researcher takes a clustered random sample of a population and uses the design to ask whether they should invest in sampling more clusters or in more individuals per cluster. The design includes a budget constraint that affects how many can be sampled within clusters as a function of the number of clusters sampled.
 :::
 
@@ -199,7 +199,7 @@ diagnosis_15.3 <- get_rdddr_file_local("diagnosis_15.3")
 
 ## Multi-level regression and poststratification {#sec-ch15s3}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a design in which researchers reweight the responses of different units in a sample in order to better estimate a population-level quantity. Reweighting depends on how much units are thought to "represent" other nonsampled units and requires making decisions about how much units of different types should be pooled together. Design performance of a partially pooled model is compared against designs that involve no pooling and full pooling. 
 :::
 
@@ -266,7 +266,7 @@ Partial pooling represents a Goldilocks compromise between full and no pooling. 
 
 ## Index creation 
 
-::: {.ddbox} 
+::: {.callout-note icon=false} 
 We declare a design is which we take multiple measures and combine them to learn about a latent, unobservable quantity. The design diagnosis shows that it is possible to generate interpretable conditional estimates of this quantity and assess bias even though the metric of the unobservable quantity is unknown. The diagnosis highlights how subtle differences in scale construction generate different biases.
 :::
 

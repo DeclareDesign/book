@@ -123,6 +123,7 @@ format:
     code-link: true
     include-in-header:
       - header-additions.html
+    callout-icon: false
     include-before-body: buy-book.html
     code-links:
       - text: Replication data and code

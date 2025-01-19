@@ -54,8 +54,7 @@ In @fig-midaplot, we describe *M* as the "the worlds you'll consider." The reaso
 
 How can we construct a sufficiently varied set of models of the world? For this we can draw on existing data from past studies or on new information gathered from pilot studies. Getting a reasonable characterization of the set of plausible models is a core purpose of theoretical reflection, literature review, meta-analysis, and formative research.  If there are important known features about your context it generally makes sense to include them in $M$.
 
-::: {.callout-note icon=false appearance="minimal"}
-
+::: {.callout-note icon=false}
 ## Examples of models
 
 1. Contact theory: When two members of different groups come into contact under specific conditions, they learn more about each other, which reduces prejudice, which in turn reduces discrimination.
@@ -63,7 +62,6 @@ How can we construct a sufficiently varied set of models of the world? For this 
 2. Prisoner's dilemma. When facing a collective action problem, each of two people will choose non-cooperative actions independent of what the other will do. 
 
 3. Health intervention with externalities. When individuals receive deworming medication, school attendance rates increase for them and for their neighbors, leading to improved labor market outcomes in the long run. 
-
 :::
 
 ### Inquiry {#sec-ch2s2ss1}
@@ -80,8 +78,7 @@ As with models, inquiries are also defined with respect to *units*, *conditions*
 
 \index{Inquiry!Examples}
 
-::: {.callout-note icon=false appearance="simple"}
-
+::: {.callout-note icon=false}
 ## Examples of inquiries
 
 1. What proportion of voters lives with limited exposure to voters from another party in its neighborhood?
@@ -93,7 +90,6 @@ As with models, inquiries are also defined with respect to *units*, *conditions*
 <!-- https://www.aeaweb.org/articles?id=10.1257/app.20180435 --> 
 
 3. What types of people will benefit most from a vaccine?
-
 :::
 
 ### Data strategy
@@ -113,10 +109,8 @@ Measurement procedures are the ways in which researchers reduce the complex and 
 
 \index{Data strategy!Examples}
 
-:::: {.ddbox}
-::: {.ddbox-title}
-Examples of data strategies
-:::
+::: {.callout-note icon=false}
+## Examples of data strategies
 
 *Sampling procedures.*
 
@@ -140,7 +134,7 @@ Examples of data strategies
 
 8. Measurement of stress using cortisol readings
 
-::::
+:::
 
 
 ### Answer strategy
@@ -161,10 +155,8 @@ The answer strategy is more than the choice of an estimator. It includes the ful
 
 \index{Answer strategy!Examples}
 
-:::: {.ddbox}
-::: {.ddbox-title}
-Examples of answer strategies
-:::
+::: {.callout-note icon=false}
+## Examples of answer strategies
 
 1. Multilevel modeling and poststratification
 
@@ -172,7 +164,7 @@ Examples of answer strategies
 
 3. Difference-in-means estimation 
 
-::::
+:::
 
 ## Declaration, diagnosis, redesign
 

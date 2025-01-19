@@ -16,7 +16,7 @@ Many other innovative designs have been developed to try to estimate causal quan
 
 ## Process tracing {#sec-ch16s1}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a qualitative design in which researchers seek to learn about the effect of a cause on a single unit. The diagnosis helps evaluate the gains from different within-case data gathering strategies.
 :::
 
@@ -115,7 +115,7 @@ We see only modest declines in expected errors from observation of the mediator 
 
 ## Selection-on-observables {#sec-ch16s2}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a design in which a researcher tries to address concerns about confounding by conditioning on other observable variables. In the design, the researcher has to specify how the other variable create a risk of confounding and how exactly they will take account of these variables to minimize bias.
 :::
 
@@ -169,7 +169,7 @@ In @fig-ch16num4, we see that the raw, unmatched estimate is upwardly biased (by
 
 ## Difference-in-differences {#sec-ch16s3}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a differences-in-differences design in which the effect of a treatment is assessed by comparing changes over time for a unit that gets treated to changes over time in the same period for a unit the does not get treated. The declaration and diagnosis help clarify when effect heterogeneity threatens causal inferences drawn from this design.
 :::
 
@@ -233,7 +233,7 @@ When treatment effects happen to be homogeneous (middle panel), both estimators 
 
 ## Instrumental variables {#sec-ch16s4}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a design in which a researcher addresses confounding concerns by using an instrumental variable. Under the right conditions, the approach can generate unbiased estimates for treatment effects for units whose treatment status is sensitive to the instrument. 
 :::
 
@@ -308,7 +308,7 @@ How can you use this declaration? Many instrumental variables designs involve hi
 
 ## Regression discontinuity designs {#sec-ch16s5}
 
-:::: {.ddbox}
+:::: {.callout-note icon=false}
 
 We declare a design in which the assignment of a treatment is determined by whether a characteristic of a unit exceeds a certain threshold value. We demonstrate through diagnosis the bias-variance trade-off at the heart of the choice of answer strategies that target the local average treatment effect inquiry, defined right at the cutoff.
 

@@ -18,7 +18,7 @@ Some studies seek not to learn about levels and effects but search explicitly fo
 
 ## Discovery using causal forests
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a design in which a researcher examines a large set of continuous covariates to discover (i) which covariate best explains heterogeneity in the effects of a treatment and (ii) which subjects experience the weakest or strongest effects. The design declaration clarifies the inquiries when the goal of the study is discovery and can be used to guide design decisions regarding how best to split data into training and testing sets.  
 :::
 
@@ -114,7 +114,7 @@ Overall the approach fares well and through diagnosis we get clarity over which 
 
 ## Structural estimation {#sec-ch19s2}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a design in which a researcher wants to use experimental data to estimate the parameters of a game-theoretic model. The premise of the approach is that, to the extent that the model is correct, in-sample parameter estimation allows the researcher to make interesting external inferences about effects in other settings. The risk is that bad models will produce bad inferences. 
 ::: 
 
@@ -200,7 +200,7 @@ The payoffs from structural estimation can be great: we can operationalize our t
 
 ## Meta-analysis {#sec-ch19s3}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a design for a meta-analytic study in which a researcher seeks to combine findings from a collection of existing studies to form an overall conclusion. Declaration helps clarify the estimand in such studies. Diagnosis highlights risks associated with a common estimator used in meta-analysis, the fixed effect estimator.
 :::
 
@@ -254,7 +254,7 @@ diagnosis_19.3 <- get_rdddr_file_local("diagnosis_19.3")
 
 ## Multi-site studies 
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a design for a coordinated research project in which multiple research teams combine data gathering and analysis strategies to address a common inquiry. Diagnosis clarifies the benefits and risks of coordination versus tailoring of treatments to contexts.    
 :::
 

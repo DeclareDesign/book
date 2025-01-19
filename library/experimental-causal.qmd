@@ -20,7 +20,7 @@ The designs in this chapter proceed from the simplest experimental design -- the
 
 ## Two-arm randomized experiments {#sec-ch18s1}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a canonical two-arm trial, motivate key diagnosands for assessing the quality of the design, use diagnosis and redesign to explore the properties of two-arm trials, and discuss key risks to inference. 
 :::
 
@@ -174,7 +174,7 @@ All along this range, however, the Lin estimator dominates OLS and difference-in
 
 ## Block-randomized experiments 
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a block-randomized trial in which subjects are assigned to treatment and control conditions within groups. We use design diagnosis to assess the variance reductions that can be achieved from block randomization.        
 :::
 
@@ -216,7 +216,7 @@ This intuition behind blocking is illustrated in @fig-ch18num4, which shows the 
 
 ## Cluster-randomized experiments {#sec-ch18s3}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a cluster-randomized trial in which subjects are assigned to treatment and control conditions in groups. We use design diagnosis to quantify how the magnitude of the efficiency losses from clustering depends on the intra-cluster correlation.
 :::
 
@@ -271,7 +271,7 @@ This diagnosis clarifies the *costs* of cluster assignment. These costs are grea
 
 ## Subgroup designs {#sec-ch18s4}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare and diagnose a design that is targeted at understanding the difference in treatment effects between subgroups. The design combines a sampling strategy that ensures reasonable numbers within each group of interest and a blocking assignment strategy to minimize variance.  
 :::
 
@@ -327,7 +327,7 @@ diagnosis_18.6 <-
 
 ## Factorial experiments {#sec-ch18s5}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare and diagnose a simple factorial design in which two different treatments are crossed. The design allows for unbiased estimation of a number of estimands, including conditional effects and interaction effects. We highlight the difficulty of achieving statistical power for interaction terms and the risks of treating a difference between a significant conditional effect and a nonsignificant effect as itself significant. 
 :::
 
@@ -415,7 +415,7 @@ diagnosis_18.8 <-
 
 ## Encouragement designs {#sec-ch18s6}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare an encouragement design in which units are assigned to be encouraged to take up a treatment and the average treatment effect is measured among those who comply with the encouragement. The declaration highlights the many changes to the design that are needed to consider noncompliance and what inquiries can be estimated with the design.
 :::
 
@@ -524,7 +524,7 @@ diagnosis_18.9 <- diagnose_design(declaration_18.8)
 
 ## Placebo-controlled experiments {#sec-ch18s7}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We compare an encouragement design to a placebo-controlled trial in which units are selected into treatment based on whether they receive *either* treatment or a placebo treatment with a similar deployment method. At low levels of compliance, the diagnosis reveals the placebo-controlled design is preferred, but then the encouragement design is preferred as compliance increases.
 :::
 
@@ -591,7 +591,7 @@ diagnosis_18.10_placebo <-
 
 ## Stepped-wedge experiments 
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a stepped-wedge design in which units are assigned a *sequence* of treatments across multiple periods. In each period, one third are treated successively. Diagnosis of this design and of similar-cost standard two-arm trials suggests that a double-sized two-arm trial is preferable in terms of power but that the stepped-wedge experiment is useful when the number of study units is limited.
 :::
 
@@ -678,7 +678,7 @@ We plot power curves for the three comparison designs in @fig-ch18num13. The top
 
 ## Randomized saturation experiments {#sec-ch18s9}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a multilevel design in which we randomize first the "saturation" or probability of assignment with clusters and then randomly assign within the clusters based on that saturation probability. The diagnosis highlights that the efficiency for estimating the causal effect of the saturation level is low, because assignment is clustered, and is higher for estimating the individual treatment effect within clusters of a given saturation.
 :::
 
@@ -737,7 +737,7 @@ The diagnosis plot in @fig-ch18num14 shows the sampling distribution of the two 
 
 ## Experiments over networks {#sec-ch18s10}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a design for a randomized trial in which the researcher controls the assignment of direct treatment, but then assesses the effects of direct treatment *and* of being indirectly treated by being geographically proximate to a unit directly treated. The diagnosis demonstrates both can be estimated without bias if the probability of indirect treatment is estimated through simulation, but that common estimators differ greatly in efficiency.  
 :::
 

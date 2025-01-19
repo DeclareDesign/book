@@ -16,7 +16,7 @@ We need audit experiments because we typically cannot identify whether someone d
 
 ## Audit experiments 
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare an audit experiment design in which the name of a citizen requesting service from government is randomized to be Latino-sounding or White-sounding and the government official either responds or does not. We then declare an augmented design in which a treatment to reduce discrimination is cross-randomized. The declaration highlights the behavioral assumptions that must be made to interpret the estimated treatment effect of the name as discrimination, and the diagnosis of the anti-discrimination treatment highlights how large a sample would be required for high power.
 :::
 
@@ -113,7 +113,7 @@ diagnosis_17.1 |>
 
 ## List experiments 
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a list experiment design, highlighting that the inquiry is a descriptive one despite the use of an experiment. We then declare a design comparing the list experiment to direct questioning in estimating the prevalence of a sensitive item, and clarify when one survey technology is preferred to the other as a function of sensitivity bias levels and sample size.
 :::
 
@@ -232,7 +232,7 @@ diagnosis_17.3 <-
 
 ## Conjoint experiments {#sec-ch17s3}
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a forced-choice conjoint experiment design in which respondents choose one of two profiles in three sets of tasks, each with three attributes. The design highlights the complexity of defining the inquiries for conjoints, and their lower power at common sample sizes. 
 :::
 
@@ -303,7 +303,7 @@ diagnosis_17.4 <- diagnose_design(declaration_17.4)
 
 ## Behavioral games 
 
-::: {.ddbox}
+::: {.callout-note icon=false}
 We declare a trust game and explore the implications of using deception in the game setup. The diagnosis highlights how the choices in the first round of a game, which are not randomized, affect our ability to study the behaviors of the player in the second round without bias.
 :::
 
