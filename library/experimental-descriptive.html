@@ -511,8 +511,18 @@ window.Quarto = {
 <p>We need audit experiments because we typically cannot identify whether someone discriminates naturally by measuring a single interaction with another person. We need to see how that person interacts with multiple others, some that they might discriminate against and some not, and then compare their behaviors. We also cannot ask people if they discriminate in a survey and expect useful answers: people typically do not think of themselves as discriminatory. Trust games are motivated by the same idea: people may think of themselves as more trusting than they are. The list experiment is motivated by a related concern: people may not answer sensitive questions when they think others can learn their answer and might punish them socially or physically for giving a sensitive answer. If we measured these sensitive characteristics by asking, people might misreport their answers, so we use the experiment to ask in a way that provides plausible deniability (but still allows us to estimate the prevalence rate). Conjoint experiments address the problem that it is difficult to learn about multidimensional preferences over choices by asking about a single choice. In each case, the experiment allows us to randomize people into multiple conditions that let us figure out a descriptive characteristic we could not otherwise measure.</p>
 <section id="audit-experiments" class="level2" data-number="17.1"><h2 data-number="17.1" class="anchored" data-anchor-id="audit-experiments">
 <span class="header-section-number">17.1</span> Audit experiments</h2>
-<div class="ddbox">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>We declare an audit experiment design in which the name of a citizen requesting service from government is randomized to be Latino-sounding or White-sounding and the government official either responds or does not. We then declare an augmented design in which a treatment to reduce discrimination is cross-randomized. The declaration highlights the behavioral assumptions that must be made to interpret the estimated treatment effect of the name as discrimination, and the diagnosis of the anti-discrimination treatment highlights how large a sample would be required for high power.</p>
+</div>
 </div>
 <p>Audit experiments are used to measure discrimination against one group in favor of another group. The design is used commonly to measure whether job applications that are otherwise similar but come from candidates from different genders, races, or social backgrounds receive the same rate of job interview invitations. The same approach has been applied to a very wide range of settings, including education, housing, and requests to politicians.</p>
 <p>The audit experiment design we’ll explore in this chapter has data and answer strategies that are identical to the two-arm trial for causal inference described in <a href="experimental-causal.html#sec-ch18s1" class="quarto-xref"><span>Section 18.1</span></a>. The difference between an audit study and the typical randomized experiment lies in the model and inquiry. In a two-arm trial, a common (causal) inquiry is the average difference between the treated and untreated potential outcomes, the ATE. In an audit experiment, by contrast, the inquiry is descriptive: what is the fraction of the sample that discriminates?</p>
@@ -667,8 +677,18 @@ Table&nbsp;17.2: Audit experiment power analysis
 <li><p><span class="citation" data-cites="fang2019can">Fang, Guess, and Humphreys (<a href="../references.html#ref-fang2019can" role="doc-biblioref">2019</a>)</span> “move beyond measurement” by randomizing a New York City government intervention designed to stop housing discrimination, which was then measured by an audit study design.</p></li>
 </ul></section></section><section id="list-experiments" class="level2" data-number="17.2"><h2 data-number="17.2" class="anchored" data-anchor-id="list-experiments">
 <span class="header-section-number">17.2</span> List experiments</h2>
-<div class="ddbox">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>We declare a list experiment design, highlighting that the inquiry is a descriptive one despite the use of an experiment. We then declare a design comparing the list experiment to direct questioning in estimating the prevalence of a sensitive item, and clarify when one survey technology is preferred to the other as a function of sensitivity bias levels and sample size.</p>
+</div>
 </div>
 <p>Sometimes, subjects might not tell the truth about certain attitudes or behaviors when asked directly. Responses may be affected by sensitivity bias, or the tendency of survey subjects to misreport their answers for fear of negative repercussions if some individual or group learns their true response <span class="citation" data-cites="blair2018list">(<a href="../references.html#ref-blair2018list" role="doc-biblioref">Blair, Coppock, and Moor 2020</a>)</span>. In such cases, standard survey estimates based on direct questions will be biased. One class of solutions to this problem is to obscure individual responses, providing protection from social or legal pressures. When we obscure responses systematically through an experiment, we can often still identify average quantities of interest. One such design is the list experiment (introduced in <span class="citation" data-cites="miller1984new">Miller (<a href="../references.html#ref-miller1984new" role="doc-biblioref">1984</a>)</span>), which asks respondents for the count of the number of “yes” responses to a series of questions including the sensitive item, rather than for a yes or no answer on the sensitive item itself. List experiments give subjects cover by aggregating their answer to the sensitive item with responses to other questions.</p>
 <p>For example, <span class="citation" data-cites="creightonjamal2015">Creighton and Jamal (<a href="../references.html#ref-creightonjamal2015" role="doc-biblioref">2015</a>)</span> study preferences for religious discrimination in immigration policy among Americans. They worried that direct measures of Americans’ willingness to grant citizenship to Muslims would be distorted by sensitivity bias, so they turned to a list experiment. Subjects in the control and treatment groups were asked: “Below you will read [three/four] things that sometimes people oppose or are against. After you read all [three/four], just tell us HOW MANY of them you OPPOSE. We don’t want to know which ones, just HOW MANY.”</p>
@@ -822,8 +842,18 @@ Figure&nbsp;17.2: Redesign to illustrate tradeoffs in RMSE between list experime
 <li><p><span class="citation" data-cites="Cruz2019">Cruz (<a href="../references.html#ref-Cruz2019" role="doc-biblioref">2019</a>)</span> uses a list experiment to estimate the rate of vote buying in the Philippines, though comparison to direct question estimates yields no evidence of sensitivity bias.</p></li>
 </ul></section></section><section id="sec-ch17s3" class="level2" data-number="17.3"><h2 data-number="17.3" class="anchored" data-anchor-id="sec-ch17s3">
 <span class="header-section-number">17.3</span> Conjoint experiments</h2>
-<div class="ddbox">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>We declare a forced-choice conjoint experiment design in which respondents choose one of two profiles in three sets of tasks, each with three attributes. The design highlights the complexity of defining the inquiries for conjoints, and their lower power at common sample sizes.</p>
+</div>
 </div>
 <p>Conjoint survey experiments have become hugely popular in political science and beyond for describing multidimensional preferences over profiles <span class="citation" data-cites="Hainmueller2014">(<a href="../references.html#ref-Hainmueller2014" role="doc-biblioref">Hainmueller, Hopkins, and Yamamoto 2014</a>)</span>. The designs have been used to study preferences over political candidates, types of immigrants to admit, neighborhoods to live in, policies to select, and many more questions. Conjoint experiments come in two basic varieties: the single profile design and the forced-choice design. Throughout this chapter, we’ll discuss these studies in the context of hypothetical candidate experiments, in which candidates are described in terms of a number of attributes each of which can take on multiple values, known as levels. In the single profile design, subjects are asked to rate one profile at a time using, for example, a 1 - 7 support scale. In a forced-choice conjoint experiment, subjects are shown two profiles at a time, then asked to make a binary choice between them. Forced choice conjoint experiments are especially useful for studying electoral behavior because they closely mirror the real-world behavior of choosing between two candidates at the ballot box. A similar logic applies to purchasing behavior when consumers have to choose one product over another. Occasionally, forced-choice conjoint experiments are applied even when no real-world analogue for the binary choice exists. For example, we rarely face a binary choice between two immigrants or between two refugees.</p>
 <p>We take the unorthodox position that conjoint experiments target descriptive, rather than casual, inquiries. The reason can be most easily seen in the single profile design case. For concreteness, imagine subjects are presented with one profile at a time that describes the age (young, middle-aged, old), gender (woman, man), and employment sector (public, private) of a candidate for office and are asked to rate their support for the candidate on a 1-7 Likert scale. This set of attributes and levels generates <span class="math inline">\(2 * 3 * 2 = 12\)</span> possible profiles. We <em>could</em> ask subjects to rate all 12, but we typically ask them instead to rate only a random subset. If our goal were to estimate the average ratings of each of the 12 profiles, clearly we would be targeting descriptive quantities.</p>
@@ -915,8 +945,18 @@ Figure&nbsp;17.3: Sampling Distribution of five AMCE estimators. Bands are const
 <li><p><span class="citation" data-cites="aguilar2015">Aguilar, Cunow, and Desposato (<a href="../references.html#ref-aguilar2015" role="doc-biblioref">2015</a>)</span> conduct a candidate choice experiment to measure the difference in how voters evaluate candidates depending on whether they are identified as a man or a woman in Brazil.</p></li>
 </ul></section></section><section id="behavioral-games" class="level2" data-number="17.4"><h2 data-number="17.4" class="anchored" data-anchor-id="behavioral-games">
 <span class="header-section-number">17.4</span> Behavioral games</h2>
-<div class="ddbox">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>We declare a trust game and explore the implications of using deception in the game setup. The diagnosis highlights how the choices in the first round of a game, which are not randomized, affect our ability to study the behaviors of the player in the second round without bias.</p>
+</div>
 </div>
 <p>Behavioral games are often used to study difficult-to-measure characteristics of subjects like risk attitudes, altruism, prejudice, and trust. The approach involves using labs or other mechanisms to control contexts. A high level of control brings two distinct benefits. First, it can eliminate noise: we obtain estimates under a particular well-defined set of conditions rather than estimates generated from averaging over a range of possibly unknown conditions. Second, more subtly, it can prevent various forms of confounding. For instance, outside the lab we might observe how people act when they work on tasks with an out-group member. But we only observe the responses among those that <em>do</em> work with out-group members, not among those that do not. By studying behaviors in a controlled setting we can see how people <em>would</em> react when put into particular situations.</p>
 <p>The approach holds enormous value. But, as highlighted by <span class="citation" data-cites="green2012statistical">Green and Tusicisny (<a href="../references.html#ref-green2012statistical" role="doc-biblioref">2012</a>)</span>, it also introduces many subtle design choices. Many of these can be revealed through declaration and diagnosis.</p>
