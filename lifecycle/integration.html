@@ -90,7 +90,10 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -518,7 +521,7 @@ window.Quarto = {
 <p><a href="#fig-filestructure" class="quarto-xref">Figure&nbsp;<span>23.1</span></a> below shows the file structure for an example replication. Our view on replication archives shares much in common with the <a href="https://www.projecttier.org">TIER protocol</a> and the proposals in <span class="citation" data-cites="alvarez2018">Alvarez, Key, and Núñez (<a href="../references.html#ref-alvarez2018" role="doc-biblioref">2018</a>)</span>. It includes raw data in a platform-independent format (.csv) and cleaned data in a language-specific format (.rds, a format for R data files). Data features like labels, attributes, and factor levels are preserved when imported by the analysis scripts. The analysis scripts are labeled by the outputs they create, such as figures and tables. A main script is included that runs the cleaning and analysis scripts in the correct order. The documents folder consists of the paper, the supplemental appendix, the preanalysis plan, the populated analysis plan, and codebooks that describe the data. A README file explains each part of the replication archive. We also suggest that authors include a script that consists of a design declaration and diagnosis. <span class="citation" data-cites="Bowers2011">Bowers (<a href="../references.html#ref-Bowers2011" role="doc-biblioref">2011</a>)</span> offers one reason above and beyond research transparency to go to all this effort: good archiving is like collaborating with your future self.</p>
 <div id="fig-filestructure" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-filestructure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/file-structure.svg" class="img-fluid figure-img">
+<a href="../figures/file-structure.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;23.1: File structure for archiving"><img src="../figures/file-structure.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-filestructure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;23.1: File structure for archiving
@@ -703,7 +706,7 @@ Table&nbsp;23.1: Results under A and A’
 <p>The upshot of this exercise is that, curiously, when original studies are weak (in that they generate imprecise estimates), it becomes <em>harder</em> to conclusively affirm that they did not replicate. This set of incentives is somewhat perverse: designers of original studies benefit from a lack of precision if it means they can’t “fail to replicate.”</p>
 <div id="fig-ch23num2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch23num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-23-2.svg" class="img-fluid figure-img">
+<a href="../figures/figure-23-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;23.2: Rates of ‘failure to replicate’ according to four diagnosands. Original study N = 1000; True original SATE: 0.2; True replication SATE: 0.15."><img src="../figures/figure-23-2.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch23num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;23.2: Rates of ‘failure to replicate’ according to four diagnosands. Original study N = 1000; True original SATE: 0.2; True replication SATE: 0.15.
@@ -1177,7 +1180,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 </body></html>

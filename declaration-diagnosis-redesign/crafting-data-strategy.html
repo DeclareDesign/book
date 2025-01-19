@@ -56,7 +56,10 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -468,7 +471,7 @@ window.Quarto = {
 <p>In <a href="#fig-ch8num1" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>, we illustrate these three elements of data strategies: sampling (<span class="math inline">\(S\)</span>), treatment assignment (<span class="math inline">\(Z\)</span>), and measurement (<span class="math inline">\(Q\)</span>). These nodes are highlighted by blue boxes to emphasize that they are in the control of the researcher. No arrows go into the <span class="math inline">\(S\)</span>, <span class="math inline">\(Z\)</span>, or <span class="math inline">\(Q\)</span> nodes; they are <em>set</em> by the researcher. In each case, the strategy selected by the researcher affects a corresponding endogenous variable. The sampling procedure causes changes in the endogenous response (<span class="math inline">\(R\)</span>), which represents whether participants provide outcome data, for example responding to survey questions. <span class="math inline">\(R\)</span> is not under the full control the researchers: it is affected by <span class="math inline">\(S\)</span>, the sampling procedure, but also by the idiosyncratic choices of participants who have higher and lower interest and ability to respond and participate in the study (<span class="math inline">\(U\)</span>). Similarly, the endogenous variable treatment <span class="math inline">\(D\)</span> represents whether participants <em>actually</em> receive the treatment, regardless of their assignment <span class="math inline">\(Z\)</span>. <span class="math inline">\(D\)</span> is affected by the treatment assignment procedure (<span class="math inline">\(Z\)</span>) of course. But except in cases when <span class="math inline">\(Z\)</span> fully determines <span class="math inline">\(D\)</span> (no noncompliance), we are concerned that it will be affected by unobserved idiosyncratic features of individuals <span class="math inline">\(U\)</span>. The third researcher node is <span class="math inline">\(Q\)</span>, the measurement procedure. <span class="math inline">\(Q\)</span> affects <span class="math inline">\(Y\)</span>, the observed outcome, measured by the researcher. <span class="math inline">\(Y\)</span> is also affected by a latent variable <span class="math inline">\(Y^*\)</span>, which cannot be directly observed. The measurement procedure provides an imperfect measurement of that latent variable, which is (potentially) affected by treatment <span class="math inline">\(D\)</span> and unobserved heterogeneity <span class="math inline">\(U\)</span>. In the robustness section at the end of the chapter, we explore further variations of this DAG that incorporate threats to inference from noncompliance, attrition, excludability violations, and interference.</p>
 <div id="fig-ch8num1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-8-1.svg" class="img-fluid figure-img">
+<a href="../figures/figure-8-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;8.1: Directed acyclic graph illustrating three elements of a data strategy: sampling, assignment, and measurement."><img src="../figures/figure-8-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8.1: Directed acyclic graph illustrating three elements of a data strategy: sampling, assignment, and measurement.
@@ -573,7 +576,7 @@ strata_rs(strata = villages)</code></pre>
 <p>The bottom row of the figure illustrates some approaches to multistage sampling. In the bottom left panel, we conduct a simple random sample of individuals in each sampled cluster. In the bottom center, we draw a complete random sample of individuals in each sampled household. And in the bottom right, we stratify on an individual-level characteristic – we always draw one individual from each row of the household (substantively, we could imagine that “row” could refer to the age of the household members). This doubly stratified multistage random sampling procedure ensures that we sample two households from each village, and within those households, one older member and one younger member.</p>
 <div id="fig-ch8num2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-8-2.svg" class="img-fluid figure-img">
+<a href="../figures/figure-8-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;9.1: Nine kinds of random sampling. In the first row individuals are the sampling units, in the second row clusters are sampled, in the third clusters are sampled and then individuals within these clusters are sampled. In the first column units are sampled independently, in the second units are sampled to hit a target, in the third units are sampled to hit targets within strata."><img src="../figures/figure-8-2.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9.1: Nine kinds of random sampling. In the first row individuals are the sampling units, in the second row clusters are sampled, in the third clusters are sampled and then individuals within these clusters are sampled. In the first column units are sampled independently, in the second units are sampled to hit a target, in the third units are sampled to hit targets within strata.
@@ -589,7 +592,7 @@ Figure&nbsp;9.1: Nine kinds of random sampling. In the first row individuals are
 <p>Each of these three nonrandom sampling procedures – convenience, quota, and respondent-driven – is illustrated in <a href="#fig-ch8num3" class="quarto-xref">Figure&nbsp;<span>9.2</span></a>. Imagining that village A is easier to reach, we could obtain a convenience sample by contacting everyone we can reach in village A before moving on to village B. This process doesn’t yield good coverage across villages. For that, we can turn to quota sampling scheme in which we talk to the five people who are easiest to reach in each of the four villages. Finally, if we conduct a respondent-driven sample, we select a seed that person recruits their four closest friends (who may or may not reside in the same village), who in turn recruit from their friends, and so on.</p>
 <div id="fig-ch8num3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-8-3.svg" class="img-fluid figure-img">
+<a href="../figures/figure-8-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;9.2: Three forms of non-random sampling."><img src="../figures/figure-8-3.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9.2: Three forms of non-random sampling.
@@ -687,7 +690,7 @@ block_ra(blocks = villages, prob_unit = saturation)</code></pre>
 <p>The final row of <a href="#fig-ch8num4" class="quarto-xref">Figure&nbsp;<span>9.3</span></a> shows a series of designs that are analogous to the multi-stage sampling designs shown in <a href="#fig-ch8num2" class="quarto-xref">Figure&nbsp;<span>9.1</span></a> – but their purpose is subtly different in spirit. Multi-stage sampling designs are employed to reduce costs – first clusters are sampled but not all units within a cluster are sampled. A saturation randomization design (sometimes called a “partial population design”, see <a href="../library/experimental-causal.html#sec-ch18s10" class="quarto-xref"><span>Section 18.10</span></a>) uses a similar procedure to both contain and learn about spillover effects. Some clusters are chosen for treatment, but some units <em>within</em> those clusters are not treated. Units that are untreated in treated clusters can be compared with units that are untreated in untreated clusters in order to suss out intra-cluster spillover effects <span class="citation" data-cites="betsy2012detecting">(<a href="../references.html#ref-betsy2012detecting" role="doc-biblioref">Sinclair, McConnell, and Green 2012</a>)</span>. <a href="#fig-ch8num4" class="quarto-xref">Figure&nbsp;<span>9.3</span></a> shows how the saturation design comes in simple, complete, and blocked varieties.</p>
 <div id="fig-ch8num4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-8-4.svg" class="img-fluid figure-img">
+<a href="../figures/figure-8-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;9.3: Nine kinds of random assignment. In the first row individuals are the units of assignment, in the second row clusters are randomly assigned, in the third clusters are randomly assigned a saturation level and then individuals within these clusters are randomly assigned. In the first column units are assigned independently, in the second units are assigned to hit a target, in the third units are assigned to hit targets within strata."><img src="../figures/figure-8-4.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9.3: Nine kinds of random assignment. In the first row individuals are the units of assignment, in the second row clusters are randomly assigned, in the third clusters are randomly assigned a saturation level and then individuals within these clusters are randomly assigned. In the first column units are assigned independently, in the second units are assigned to hit a target, in the third units are assigned to hit targets within strata.
@@ -739,7 +742,7 @@ Z2 = Z %in% c("T1", "T3")</code></pre>
 <p>The two-by-two factorial design in the center panel shares similarities with both the three-arm and the four-arm trials. Like the three-arm, it considers two treatments T1 and T2, but it also includes a fourth condition in which both treatments are applied. Factorial designs can be analyzed like a four-arm trial, but the structure of the design also enables further analyses. In particular, the factorial structure allows researchers to investigate whether the effects of one treatment depend on the level of the other treatment.</p>
 <div id="fig-ch8num5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-8-5.svg" class="img-fluid figure-img">
+<a href="../figures/figure-8-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;9.4: Multi-arm random assignment."><img src="../figures/figure-8-5.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9.4: Multi-arm random assignment.
@@ -751,7 +754,7 @@ Figure&nbsp;9.4: Multi-arm random assignment.
 <p>A stepped-wedge random assignment procedure involves assigning a subset of units to treatment in the first period, a subset of those who were not treated in the first in the second period, and so on. In the final period, all units are treated. In this design, once you are treated in a period, you are treated in all subsequent periods. For example, once you receive information in a treatment about how to vote, you already have that information in later periods. In <a href="#fig-ch8num6" class="quarto-xref">Figure&nbsp;<span>9.5</span></a>, we illustrate a three-period step-wedge design, in which one third of units are assigned in the first period, a second third are treated in the second period, and the remainder in the third and final period. In such a design, we can make two comparisons: the treatment versus control contrast in each period, and the within-units over-time contrast before and after treatment. By combining these two comparisons, we have a more efficient estimate of the average treatment effect than if we had randomly assigned one half of units to treatment and the other half to control in a single period. However, we must invoke a no carryover assumption that in the second and third periods, potential outcomes are only a function of the current treatment status, not whether (or not) the unit was treated earlier.</p>
 <div id="fig-ch8num6" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-8-6.svg" class="img-fluid figure-img">
+<a href="../figures/figure-8-6.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;9.5: Step-wedge random assignment."><img src="../figures/figure-8-6.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9.5: Step-wedge random assignment.
@@ -800,7 +803,7 @@ Figure&nbsp;9.5: Step-wedge random assignment.
 <p><a href="#fig-ch8num7" class="quarto-xref">Figure&nbsp;<span>9.6</span></a> adapts <a href="#fig-ch8num1" class="quarto-xref">Figure&nbsp;<span>8.1</span></a> to introduce each of these threats. The remainder of this section discusses these four threats in turn.</p>
 <div id="fig-ch8num7" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-8-7.svg" class="img-fluid figure-img">
+<a href="../figures/figure-8-7.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;9.6: Directed acyclic graph of random sampling, random assignment, and measurement with exclusion restriction violations as dotted lines."><img src="../figures/figure-8-7.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9.6: Directed acyclic graph of random sampling, random assignment, and measurement with exclusion restriction violations as dotted lines.
@@ -1343,7 +1346,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 </body></html>

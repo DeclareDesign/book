@@ -90,7 +90,10 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -509,7 +512,7 @@ window.Quarto = {
 <p>A comparison of the top row to the bottom three rows of <a href="#fig-ch10num1" class="quarto-xref">Figure&nbsp;<span>10.1</span></a> shows how actual research designs differ from simulated research designs. Actual research designs are influenced by reality: we learn about the real world by conducting empirical research. We don’t learn about the real world from simulated research designs. Instead, we learn about research designs themselves. We learn how the research design would behave <em>if</em> the real world <span class="math inline">\(m^*\)</span> were like the model draw <span class="math inline">\(m_1\)</span>—or like <span class="math inline">\(m_{100}\)</span>. The diagnosis of the design is then a summary of the performance of the model over the multiple models in M. Of course, we only diagnose under the possibilities we consider in <span class="math inline">\(M\)</span>. If the world <span class="math inline">\(m^*\)</span> is not in that set of possibilities, we won’t have evaluated the design under the most important setting, i.e., in reality. We want to follow <a href="../introduction/research-design-principles.html#exm-designagnostically" class="quarto-xref">Principle&nbsp;<span>3.2</span></a> to “design agnostically” or in order words, to consider such a wide range of possibilities that some <span class="math inline">\(a_{m_j}\)</span> will be close enough to <span class="math inline">\(a_{m^*}\)</span>.</p>
 <div id="fig-ch10num1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch10num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-10-1.svg" class="img-fluid figure-img">
+<a href="../figures/figure-10-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;10.1: Simulations in the MIDA framework"><img src="../figures/figure-10-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch10num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.1: Simulations in the <em>MIDA</em> framework
@@ -538,7 +541,7 @@ Figure&nbsp;10.1: Simulations in the <em>MIDA</em> framework
 <p>The payoff from thinking about uncertainty statistics as estimates of diagnosands is in drawing attention to the fact that uncertainty statistics can be poor estimators of diagnosands and to the fact that their performance can be assessed. For example, social scientists criticize one another’s choice of standard error—classical or robust, clustered or not, bootstrapped, jackknifed, and on and on. The reason for this debate is that when the procedures we follow to form uncertainty statistics are inappropriate for the design setting, we can be falsely confident in our answers.</p>
 <div id="fig-ch10num2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch10num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-10-2.svg" class="img-fluid figure-img">
+<a href="../figures/figure-10-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;10.2: Why robust standard errors are preferred to classical standard errors"><img src="../figures/figure-10-2.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch10num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.2: Why robust standard errors are preferred to classical standard errors
@@ -898,7 +901,7 @@ Table&nbsp;10.5: One simulation draw
 <p><a href="#fig-ch10num3" class="quarto-xref">Figure&nbsp;<span>10.3</span></a> shows the information we might obtain from a single run of the simulation. The filled point is the estimate <span class="math inline">\(a_{d_j}\)</span>. The open triangle is the estimand <span class="math inline">\(a_{m_j}\)</span>. The bell-shaped curve is our normal-approximation based estimate of the sampling distribution. The standard deviation of this estimated distribution is our estimated standard error, which expresses our uncertainty. The confidence interval around the estimate is another expression of our uncertainty: We’re not sure where <span class="math inline">\(a_{d_j}\)</span> is, but if things are going according to plan, confidence intervals constructed this way will bracket <span class="math inline">\(a_{m_j}\)</span> 95% of the time.</p>
 <div id="fig-ch10num3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch10num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-10-3.svg" class="img-fluid figure-img">
+<a href="../figures/figure-10-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;10.3: Visualization of one draw from a design diagnosis."><img src="../figures/figure-10-3.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch10num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.3: Visualization of one draw from a design diagnosis.
@@ -909,7 +912,7 @@ Figure&nbsp;10.3: Visualization of one draw from a design diagnosis.
 <p><a href="#fig-ch10num4" class="quarto-xref">Figure&nbsp;<span>10.4</span></a> visualizes 10 runs of the simulation. We can see that some of the draws produce statistically significant estimates (the shaded areas are small and the confidence intervals don’t overlap with zero), but not all. We get a sense of the <em>true</em> standard error (the standard deviation of the estimates over multiple runs of the design) by seeing how the point estimates bounce around. We get a feel for the difference between the estimates of the standard error and true standard error. Design diagnosis is the process of learning about many ways the study might come out, not just the one way that it will.</p>
 <div id="fig-ch10num4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch10num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-10-4.svg" class="img-fluid figure-img">
+<a href="../figures/figure-10-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;10.4: Visualization of ten draws from a design diagnosis."><img src="../figures/figure-10-4.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch10num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.4: Visualization of ten draws from a design diagnosis.
@@ -973,7 +976,7 @@ Table&nbsp;10.6: Diagnosand estimates with bootstrapped standard errors in paren
 <p>To illustrate, consider the following three designs as represented by three targets. The inquiry is the bullseye of the target. The data and answer strategies combine to generate a process by which arrows are shot toward the target. On the left, we have a very bad archer: even though the estimates are unbiased in the sense that they hit the bullseye “on average”, very few of the arrows are on target. In the middle, we have an excellent shot: they are both on target and low variance. On the right, we have an archer who is very consistent (low variance) but biased. The mean squared error is highest on the left and lowest in the middle.</p>
 <div id="fig-ch10num5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch10num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-10-5.svg" class="img-fluid figure-img">
+<a href="../figures/figure-10-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;10.5: Visualization of the bias and variance of three ‘estimators’ of the bullseye"><img src="../figures/figure-10-5.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch10num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.5: Visualization of the bias and variance of three ‘estimators’ of the bullseye
@@ -982,7 +985,7 @@ Figure&nbsp;10.5: Visualization of the bias and variance of three ‘estimators�
 <p>The archery metaphor is common in research design textbooks because it effectively conveys the difference between variance and bias, but it does elide an important point. It really matters <strong>which target</strong> the archer is shooting at. <a href="#fig-ch10num6" class="quarto-xref">Figure&nbsp;<span>10.6</span></a> shows a bizarre double-target representing two inquiries. The empirical strategy is unbiased and precise for the left inquiry, but it is clearly biased for the right inquiry. When we are describing the properties of an answer strategy, we have to be clear about which inquiry it is associated with.</p>
 <div id="fig-ch10num6" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch10num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-10-6.svg" class="img-fluid figure-img">
+<a href="../figures/figure-10-6.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;10.6: The bias, variance, and RMSE of an answer strategy depend on the inquiry."><img src="../figures/figure-10-6.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch10num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.6: The bias, variance, and RMSE of an answer strategy depend on the inquiry.
@@ -1018,7 +1021,7 @@ Figure&nbsp;10.6: The bias, variance, and RMSE of an answer strategy depend on t
 <p>What is “the” power of this design? Under one view, the true power of the design is the whichever value for power is associated with the effect size. But under an agnostic view, the ex ante “power” of the design is a weighted average of all these power values, weighted by the researcher’s prior beliefs over the distribution of possible effect sizes.</p>
 <div id="fig-ch10num7" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch10num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-10-7.svg" class="img-fluid figure-img">
+<a href="../figures/figure-10-7.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;10.7: Diagnosing an experiment over uncertainty about the true effect size"><img src="../figures/figure-10-7.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch10num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.7: Diagnosing an experiment over uncertainty about the true effect size
@@ -1563,7 +1566,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 </body></html>

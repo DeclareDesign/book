@@ -56,7 +56,10 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -487,7 +490,7 @@ window.Quarto = {
 <p>Calculations of this form, however, always open up risks that researchers overestimate the importance of their research or are blind to ethical costs (in this case, for instance, an additional cost might arise if, because of the study, subjects, or other officials, became more skeptical of future real applicants). In practice, strategies that maximize autonomy for implicated actors can make these choices easier. In this case, for instance, prior consultations with members of the subject population that assessed how <em>they</em> saw the benefits of the research relative to the costs, and how they assessed the costs from this type of deception, would go a long way to allay ethical concerns.</p>
 <div id="fig-ch21num1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch21num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-21-1.svg" class="img-fluid figure-img">
+<a href="../figures/figure-21-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;21.1: Tradeoffs between ethical costs and scientific benefits. A design might have too many subjects but also too few subjects."><img src="../figures/figure-21-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch21num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;21.1: Tradeoffs between ethical costs and scientific benefits. A design might have too <em>many</em> subjects but also too <em>few</em> subjects.
@@ -507,7 +510,7 @@ Figure&nbsp;21.1: Tradeoffs between ethical costs and scientific benefits. A des
 <p>A researcher might use this graph together with the partner to jointly select the design that has the highest power that has a sufficiently high proportion treated to meet the partner’s needs. This is represented in the “zone of agreement” in gray: in this region, the design has at least 80% power and at least two thirds of the sample are treated. Deciding within this region involves a trade-off between power (which is decreasing in the proportion treated here) and the partner’s utility (which is increasing in the proportion treated). The diagnosis surfaces the zone of the agreement and clarifies the choice between designs in that region. Unfortunately, some partnerships simply will not work out if the zone of agreement is empty.</p>
 <div id="fig-ch21num2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch21num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-21-2.svg" class="img-fluid figure-img">
+<a href="../figures/figure-21-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;21.2: Finding the zone of agreement in a research partnership."><img src="../figures/figure-21-2.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch21num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;21.2: Finding the zone of agreement in a research partnership.
@@ -536,7 +539,7 @@ Figure&nbsp;21.2: Finding the zone of agreement in a research partnership.
 <p><a href="#fig-ch21num3" class="quarto-xref">Figure&nbsp;<span>21.3</span></a> shows the relationship between effect size and the sample size required to achieve 80% statistical power for a two-arm trial using simple random assignment. Uncertainty about the true effect size has enormous design consequences. If the effect size is 0.17, we need about 1,100 subjects to achieve 80% power. If it’s 0.1, we need 3,200.</p>
 <div id="fig-ch21num3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch21num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-21-3.svg" class="img-fluid figure-img">
+<a href="../figures/figure-21-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;21.3: Minimum required sample sizes and uncertainty over effect size"><img src="../figures/figure-21-3.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch21num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;21.3: Minimum required sample sizes and uncertainty over effect size
@@ -549,7 +552,7 @@ Figure&nbsp;21.3: Minimum required sample sizes and uncertainty over effect size
 <p>This exercise reveals that a pilot study can be quite valuable. Without a pilot study, we would choose to sample 1,100 subjects, but since the true effect size is only 0.1 (not our best guess of 0.3), the experiment would be underpowered. The pilot study helps us correct our diffuse and incorrect prior beliefs. However, since the pilot is small, we don’t update our priors all the way to the truth. We still end up with a main study that is on average too small (1,800), with a corresponding power of 56%. That said, a 56% chance of finding a statistically significant result is better than a 38% chance.</p>
 <div id="fig-ch21num4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch21num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-21-4.svg" class="img-fluid figure-img">
+<a href="../figures/figure-21-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;21.4: Distribution of post-pilot sample size choices"><img src="../figures/figure-21-4.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch21num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;21.4: Distribution of post-pilot sample size choices
@@ -578,7 +581,7 @@ Figure&nbsp;21.4: Distribution of post-pilot sample size choices
 <p>We show in <a href="realization.html#sec-ch22s2" class="quarto-xref"><span>Section 22.2</span></a> how to “populate” this PAP once the data have been realized and collected.</p>
 <div id="fig-papcontactsheet" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-papcontactsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/example-preanalysis-plan.svg" class="img-fluid figure-img">
+<a href="../figures/example-preanalysis-plan.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;21.5: Example preanalysis plan"><img src="../figures/example-preanalysis-plan.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-papcontactsheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;21.5: Example preanalysis plan
@@ -1073,7 +1076,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 </body></html>

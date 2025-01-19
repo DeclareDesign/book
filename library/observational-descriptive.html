@@ -90,7 +90,10 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -517,7 +520,7 @@ window.Quarto = {
 <p>The model and data strategy are represented by the DAG in <a href="#fig-ch15num1" class="quarto-xref">Figure&nbsp;<span>15.1</span></a>. The DAG shows that the observed outcome <span class="math inline">\(Y\)</span> is a function of the latent score <span class="math inline">\(Y^*\)</span> and the survey question <span class="math inline">\(Q\)</span>. The observed outcome <span class="math inline">\(Y\)</span> is only measured for sampled units, i.e., units that have <span class="math inline">\(S = 1\)</span>. This simple diagram represents important design assumptions. First, no arrow leads from <span class="math inline">\(Y^*\)</span> to <span class="math inline">\(S\)</span>. If such an arrow were present, then units with higher or lower latent ideologies would be more likely to be sampled. Second, an arrow does lead from <span class="math inline">\(Y^*\)</span> to <span class="math inline">\(Y\)</span>, indicating that we assume the measured variable does indeed respond to the latent variable. Finally, the diagram includes an explicit role for the survey question, which helps us to consider how alternative wordings of <span class="math inline">\(Q\)</span> might change the observed variable <span class="math inline">\(Y\)</span>.</p>
 <div id="fig-ch15num1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch15num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-15-1.svg" class="img-fluid figure-img">
+<a href="../figures/figure-15-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;15.1: Directed acyclic graph for the simple random sampling design"><img src="../figures/figure-15-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch15num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.1: Directed acyclic graph for the simple random sampling design
@@ -618,7 +621,7 @@ Table&nbsp;15.1: Complete random sampling design diagnosis.
 </div>
 <div id="fig-ch15num2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch15num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-15-2.svg" class="img-fluid figure-img">
+<a href="../figures/figure-15-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;15.2: Redesigning the random sampling design over researcher effort"><img src="../figures/figure-15-2.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch15num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.2: Redesigning the random sampling design over researcher effort
@@ -721,7 +724,7 @@ Figure&nbsp;15.2: Redesigning the random sampling design over researcher effort
 </div>
 <div id="fig-ch15num3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch15num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-15-3.svg" class="img-fluid figure-img">
+<a href="../figures/figure-15-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;15.3: Trading off the number of clusters and the number of individuals per cluster"><img src="../figures/figure-15-3.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch15num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.3: Trading off the number of clusters and the number of individuals per cluster
@@ -795,7 +798,7 @@ Figure&nbsp;15.3: Trading off the number of clusters and the number of individua
 <p><a href="#fig-ch15num4" class="quarto-xref">Figure&nbsp;<span>15.4</span></a> shows one draw from this design, plotting the MRP estimates against the true level of opinion.</p>
 <div id="fig-ch15num4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch15num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-15-4.svg" class="img-fluid figure-img">
+<a href="../figures/figure-15-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;15.4: Estimates of state-level option plotted against their true levels"><img src="../figures/figure-15-4.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch15num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.4: Estimates of state-level option plotted against their true levels
@@ -838,7 +841,7 @@ Figure&nbsp;15.4: Estimates of state-level option plotted against their true lev
 </div>
 <div id="fig-ch15num5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch15num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-15-5.svg" class="img-fluid figure-img">
+<a href="../figures/figure-15-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;15.5: Comparison of three answer strategies"><img src="../figures/figure-15-5.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch15num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.5: Comparison of three answer strategies
@@ -907,7 +910,7 @@ Figure&nbsp;15.5: Comparison of three answer strategies
 <p>In <a href="#fig-ch15num6" class="quarto-xref">Figure&nbsp;<span>15.6</span></a> we show that the correlation between all the indices and the underlying quantity is quite good, even though the strength of the correlations for some of the components is weak. Trickier, however, is being sure we have an interpretable <em>scale</em>.</p>
 <div id="fig-ch15num6" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch15num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-15-6.svg" class="img-fluid figure-img">
+<a href="../figures/figure-15-6.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;15.6: Correlations between the latent variable, measured components, and indices."><img src="../figures/figure-15-6.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch15num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.6: Correlations between the latent variable, measured components, and indices.
@@ -923,7 +926,7 @@ Figure&nbsp;15.6: Correlations between the latent variable, measured components,
 <p>Scaling by units with <code>X = 1</code> does best in this case. The key insight here is that the total variation in the latent variable combines the variation within groups and between them: we want to measure outcomes on a scale benchmarked to the within-group variation and so have to take out the between-group variation when rescaling.</p>
 <div id="fig-ch15num7" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch15num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-15-7.svg" class="img-fluid figure-img">
+<a href="../figures/figure-15-7.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;15.7: Distribution of estimates from different approaches to generating indices"><img src="../figures/figure-15-7.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch15num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.7: Distribution of estimates from different approaches to generating indices
@@ -1406,7 +1409,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 </body></html>

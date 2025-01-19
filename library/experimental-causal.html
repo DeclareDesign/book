@@ -90,7 +90,10 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -572,7 +575,7 @@ window.Quarto = {
 <p>The DAG corresponding to a two-arm randomized trial is very simple. An outcome <span class="math inline">\(Y\)</span> is affected by unknown factors <span class="math inline">\(U\)</span> and a treatment <span class="math inline">\(Z\)</span>. The measurement procedure <span class="math inline">\(Q\)</span> affects <span class="math inline">\(Y\)</span> in the sense that it measures a latent outcome and records the measurement in a dataset. No arrows lead into <span class="math inline">\(Z\)</span> because it is randomly assigned. No arrow leads from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Q\)</span>, because we assume no excludability violations wherein the treatment changes how units are measured. This simple DAG confirms that the average causal effect of <span class="math inline">\(Z\)</span> on <span class="math inline">\(Y\)</span> is nonparametrically identified because no back-door paths lead from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span>.</p>
 <div id="fig-ch18num1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-1.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;18.1: Directed acyclic graph of a two-arm randomized experiment"><img src="../figures/figure-18-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.1: Directed acyclic graph of a two-arm randomized experiment
@@ -668,7 +671,7 @@ Table&nbsp;18.1: Bias, power, and true standard error for a two-arm randomized t
 <p><a href="#fig-ch18num2" class="quarto-xref">Figure&nbsp;<span>18.2</span></a> plots sample size on the horizontal axis and diagnosand estimates on the vertical axis. In the left-hand panel, we see that, as usual, statistical power increases with sample size. Different values of <span class="math inline">\(R^2\)</span> are distinguished by colored lines. Higher values of <span class="math inline">\(R^2\)</span> lead to higher statistical power. The gains can be dramatic. The no-adjustment benchmark is represented by the <span class="math inline">\(R^2 = 0\)</span> line. We achieve approximately the same statistical power as a 1,000 unit experiment with no adjustment when the pretreatment covariates yield an <span class="math inline">\(R^2\)</span> of 0.8 and we have just 200 units. The right panel tells a similar story, though it emphasizes that the marginal benefits of covariate adjustment get smaller as the sample size gets bigger. In any real experimental scenario, designers should take care to generate informed guesses about the probable <span class="math inline">\(R^2\)</span> of the covariates and then explore the trade-offs between pretreatment data collection and additional sample size.</p>
 <div id="fig-ch18num2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-2.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;18.2: Power and precision increases from covariate adjustment"><img src="../figures/figure-18-2.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.2: Power and precision increases from covariate adjustment
@@ -712,7 +715,7 @@ Figure&nbsp;18.2: Power and precision increases from covariate adjustment
 </div>
 <div id="fig-ch18num3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-3.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;18.3: Comparing the Lin estimator to OLS and difference-in-means, varying fraction assigned to treatment and correlation of potential outcomes with the covariate."><img src="../figures/figure-18-3.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.3: Comparing the Lin estimator to OLS and difference-in-means, varying fraction assigned to treatment and correlation of potential outcomes with the covariate.
@@ -771,7 +774,7 @@ Figure&nbsp;18.3: Comparing the Lin estimator to OLS and difference-in-means, va
 <p>This intuition behind blocking is illustrated in <a href="#fig-ch18num4" class="quarto-xref">Figure&nbsp;<span>18.4</span></a>, which shows the sampling distribution of the difference-in-means estimator under <em>complete</em> random assignment. The histogram is shaded according to whether the particular random assignment is permissible under a procedure that blocks on the binary covariate <span class="math inline">\(X\)</span>. The sampling distribution of the estimator among the set of assignments that are permissible under blocking is more tightly distributed around the true average treatment effect than the estimates associated with assignments that are not perfectly balanced. Here we can see the value of a blocking procedure – <em>it rules out by design</em> those assignments that are not perfectly balanced.</p>
 <div id="fig-ch18num4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-4.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;18.4: Sampling distribution under complete random assignment, by covariate balance"><img src="../figures/figure-18-4.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.4: Sampling distribution under complete random assignment, by covariate balance
@@ -836,7 +839,7 @@ Figure&nbsp;18.4: Sampling distribution under complete random assignment, by cov
 <p>The top row of panels plot the treatment effect on the vertical axis and the untreated potential outcome on the horizontal axis. Clusters of units are circled. At low levels of ICC, the circles all overlap, because the differences across clusters are smaller than the differences within a cluster. At high levels of ICC, the differences across clusters are more pronounced than differences within a cluster. The bottom row of panels shows that the sampling distribution of the difference-in-means estimator spreads out as the ICC increases. At low levels of ICC, the standard error is small; at high levels the standard error is high.</p>
 <div id="fig-ch18num5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-5.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;18.5: Sampling distribution under differenct ICCs"><img src="../figures/figure-18-5.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.5: Sampling distribution under differenct ICCs
@@ -905,7 +908,7 @@ Figure&nbsp;18.5: Sampling distribution under differenct ICCs
 </div>
 <div id="fig-ch18num6" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-6.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-6.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;18.6: Performance of the subgroup depending on oversampling strategy."><img src="../figures/figure-18-6.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.6: Performance of the subgroup depending on oversampling strategy.
@@ -995,7 +998,7 @@ Figure&nbsp;18.6: Performance of the subgroup depending on oversampling strategy
 </div>
 <div id="fig-ch18num7" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-7.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-7.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;18.7: Power curves for factorial inquires"><img src="../figures/figure-18-7.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.7: Power curves for factorial inquires
@@ -1021,7 +1024,7 @@ Figure&nbsp;18.7: Power curves for factorial inquires
 <p><a href="#fig-ch18num8" class="quarto-xref">Figure&nbsp;<span>18.8</span></a> shows that the error rate when we consider the statistical significance of the interaction term is nominal. Only 5% of the time do we falsely reject the null that the difference-in-CATEs is zero, which is what we expect when we adopt an <span class="math inline">\(\alpha = 0.05\)</span> threshold. But when we claim “treatment effect heterogeneity!” when one CATE is significant but not the other, we make egregious errors. When the true (constant) average effect of <code>Z1</code> approaches 0.2, we falsely conclude that the treatment has heterogeneous effects nearly 50% of the time!</p>
 <div id="fig-ch18num8" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-8.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-8.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;18.8: Comparing the significance of CATE estimates generates misleading inferences."><img src="../figures/figure-18-8.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.8: Comparing the significance of CATE estimates generates misleading inferences.
@@ -1167,7 +1170,7 @@ Table&nbsp;18.2: Compliance types
 <p><a href="#fig-ch18num9" class="quarto-xref">Figure&nbsp;<span>18.9</span></a> represents the encouragement design as a DAG. No arrows lead into <span class="math inline">\(Z\)</span>, because the treatment was randomly assigned. The compliance type <span class="math inline">\(C\)</span>, the assignment <span class="math inline">\(Z\)</span>, and unobserved heterogeneity <span class="math inline">\(U\)</span> conspire to set the level of <span class="math inline">\(D\)</span>. The outcome <span class="math inline">\(Y\)</span> is affected by the treatment <span class="math inline">\(D\)</span> of course, but also by compliance type <span class="math inline">\(C\)</span> and unobserved heterogeneity <span class="math inline">\(U\)</span>. The required exclusion restriction that <span class="math inline">\(Z\)</span> only affect <span class="math inline">\(Y\)</span> through <span class="math inline">\(D\)</span> is represented by the <em>lack</em> of an arrow from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span>. The deficiencies of the as-treated and per-protocol analysis strategies can be learned from the DAG as well. <span class="math inline">\(D\)</span> is a collider, so conditioning on it would open up backdoor paths between <span class="math inline">\(Z\)</span>, <span class="math inline">\(C\)</span>, and <span class="math inline">\(U\)</span>, leading to bias of unknown direction and magnitude.</p>
 <div id="fig-ch18num9" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-9.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-9.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;18.9: Directed acyclic graph of the encouragement design"><img src="../figures/figure-18-9.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.9: Directed acyclic graph of the encouragement design
@@ -1182,7 +1185,7 @@ Figure&nbsp;18.9: Directed acyclic graph of the encouragement design
 </div>
 <div id="fig-ch18num10" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-10.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-10.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;18.10: Sampling distributions of the two-stage least squares, per protocol, and as-treated answer strategies."><img src="../figures/figure-18-10.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.10: Sampling distributions of the two-stage least squares, per protocol, and as-treated answer strategies.
@@ -1284,7 +1287,7 @@ Figure&nbsp;18.10: Sampling distributions of the two-stage least squares, per pr
 </div>
 <div id="fig-ch18num11" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-11.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-11.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;18.11: Comparison of the placebo-controlled design to a standard encouragment design"><img src="../figures/figure-18-11.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.11: Comparison of the placebo-controlled design to a standard encouragment design
@@ -1304,7 +1307,7 @@ Figure&nbsp;18.11: Comparison of the placebo-controlled design to a standard enc
 <p>We often face an ethical dilemma in allocating treatments to some units but not others, since we would rather not withhold treatment from anyone. However, practical constraints often make it impossible to allocate treatments to everyone at the same time. In these circumstances, a stepped-wedge experiment, also known as a waitlist design, can help. Under a stepped-wedge design, we follow an allocation rule that randomly assigns a portion of units to treatment in each of one or more periods, and then in a final period everyone is allocated treatment. We conduct posttreatment measurement after each period except for the last one. <a href="#fig-ch18num12" class="quarto-xref">Figure&nbsp;<span>18.12</span></a> illustrates the allocation procedure. A common design is allocating one third to treatment in the first period, an additional third in the second period, and the remaining third in the final period.</p>
 <div id="fig-ch18num12" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-12.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-12.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figure&nbsp;18.12: Illustration of random assignment in a stepped-wedge design."><img src="../figures/figure-18-12.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.12: Illustration of random assignment in a stepped-wedge design.
@@ -1428,7 +1431,7 @@ Table&nbsp;18.3: Design parameters in the comparison between stepped-wedge and t
 </div>
 <div id="fig-ch18num13" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-13.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-13.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figure&nbsp;18.13: Power analysis of three designs: stepped wedge with 100 units and 1/3-1/3-1/3 allocation, two-arm experiment with 100 units, and two-arm experiment with 200 units."><img src="../figures/figure-18-13.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.13: Power analysis of three designs: stepped wedge with 100 units and 1/3-1/3-1/3 allocation, two-arm experiment with 100 units, and two-arm experiment with 200 units.
@@ -1510,7 +1513,7 @@ Figure&nbsp;18.13: Power analysis of three designs: stepped wedge with 100 units
 <p>The diagnosis plot in <a href="#fig-ch18num14" class="quarto-xref">Figure&nbsp;<span>18.14</span></a> shows the sampling distribution of the two estimators with the value of the relevant inquiry overlaid. Both estimators are unbiased for their targets, but the thing to notice from this plot is that the estimator of the saturation inquiry is far more variable than the estimator of the direct treatment inquiry. Saturation is by its nature a group-level treatment, so must be assigned at a group level. The clustered nature of the assignment to saturation level brings extra uncertainty. When designing randomized saturation experiments, researchers should be aware that we typically have much better precision for individually randomized treatments than cluster-randomized treatments, and should plan accordingly.</p>
 <div id="fig-ch18num14" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-14.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-14.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figure&nbsp;18.14: Sampling distributions of indirect and direct treatment effect estimators"><img src="../figures/figure-18-14.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.14: Sampling distributions of indirect and direct treatment effect estimators
@@ -1572,7 +1575,7 @@ Table&nbsp;18.4: Example treatment conditions for an experiment over a network.
 <p>To do this, we load the Fairfax County, Virginia, voting precincts shapefile, and remove the state capital which is not part of the county. We plot the precincts in <a href="#fig-ch18num5" class="quarto-xref">Figure&nbsp;<span>18.15</span></a>.</p>
 <div id="fig-ch18num5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-5.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figure&nbsp;18.15: Voting Precincts in Fairfax County, Virginia"><img src="../figures/figure-18-5.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.15: Voting Precincts in Fairfax County, Virginia
@@ -1634,7 +1637,7 @@ Figure&nbsp;18.15: Voting Precincts in Fairfax County, Virginia
 <p>The maps in <a href="#fig-ch18num16" class="quarto-xref">Figure&nbsp;<span>18.16</span></a> show how this procedure generates differential probabilities of assignment to each exposure condition. Units that are in denser areas of the county are more likely to be in the <code>Indirect Exposure Only</code> and <code>Direct and Indirect Exposure</code> conditions than those in less dense areas.</p>
 <div id="fig-ch18num16" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-16.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-16.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figure&nbsp;18.16: Probabilities of assignment to each of four conditions depend on position in geographic space."><img src="../figures/figure-18-16.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.16: Probabilities of assignment to each of four conditions depend on position in geographic space.
@@ -1648,7 +1651,7 @@ Figure&nbsp;18.16: Probabilities of assignment to each of four conditions depend
 </div>
 <div id="fig-ch18num17" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch18num17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-18-17.svg" class="img-fluid figure-img">
+<a href="../figures/figure-18-17.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Figure&nbsp;18.17: Sampling distribution of the Hajek and Horvitz-Thompson estimators of direct, indirect, and direct plus indirect effects. The vertical lines refer to the true values of the inquiries."><img src="../figures/figure-18-17.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch18num17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;18.17: Sampling distribution of the Hajek and Horvitz-Thompson estimators of direct, indirect, and direct plus indirect effects. The vertical lines refer to the true values of the inquiries.
@@ -2200,7 +2203,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 </body></html>

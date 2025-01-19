@@ -90,7 +90,10 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -578,7 +581,7 @@ window.Quarto = {
 <p>Imagine we ran the design once and obtained one estimate (20) and its associated standard error (7). The reported standard error seeks to capture the standard deviation of this sampling distribution. In this case the standard deviation of the distribution in <a href="#fig-ch9num1" class="quarto-xref">Figure&nbsp;<span>9.1</span></a> is about 13. The standard error in this one run, however, is much smaller, which highlights the fact that our estimates of uncertainty are themselves uncertain.</p>
 <div id="fig-ch9num1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch9num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-9-1.svg" class="img-fluid figure-img">
+<a href="../figures/figure-9-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;9.1: Sampling distribution of the estimates from the point estimator answer strategy"><img src="../figures/figure-9-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch9num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9.1: Sampling distribution of the estimates from the point estimator answer strategy
@@ -645,7 +648,7 @@ Table&nbsp;9.1: Estimates from the test of the mean age equalling 20 from Italia
 </div>
 <div id="fig-ch9num2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch9num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-9-2.svg" class="img-fluid figure-img">
+<a href="../figures/figure-9-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;9.2: Sampling distribution of the test answer strategy"><img src="../figures/figure-9-2.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch9num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9.2: Sampling distribution of the test answer strategy
@@ -695,7 +698,7 @@ Figure&nbsp;9.2: Sampling distribution of the test answer strategy
 <p>What we see in <a href="#fig-ch9num3" class="quarto-xref">Figure&nbsp;<span>9.3</span></a> is that using the same (poor) data strategy as before, a Bayesian answer strategy gets us a somewhat tighter distribution on our answer, but exhibits greater bias: the average estimate is higher than the estimand. We might accept higher bias for lower variance if overall, the root-mean-squared error is lower for the Bayesian approach. See <a href="diagnosing-designs.html#sec-ch10s4ss1" class="quarto-xref"><span>Section 10.4.1</span></a> for a further discussion of RMSE. A major difference between the Bayesian and classical approaches is the handling of prior beliefs, which carry a lot of weight in the Bayesian estimation, but no weight in the classical approach.</p>
 <div id="fig-ch9num3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch9num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-9-3.svg" class="img-fluid figure-img">
+<a href="../figures/figure-9-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;9.3: Sampling distribution of the Bayesian answer strategy"><img src="../figures/figure-9-3.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch9num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9.3: Sampling distribution of the Bayesian answer strategy
@@ -767,7 +770,7 @@ Table&nbsp;9.2: One draw of the answer strategy.
 </div>
 <div id="fig-ch9num4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch9num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-9-4.svg" class="img-fluid figure-img">
+<a href="../figures/figure-9-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;9.4: Type II error rates of the Italian village design"><img src="../figures/figure-9-4.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch9num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9.4: Type II error rates of the Italian village design
@@ -975,7 +978,7 @@ Table&nbsp;9.6: Analytic standard error estimate
 </div>
 <div id="fig-ch9num5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch9num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-9-5.svg" class="img-fluid figure-img">
+<a href="../figures/figure-9-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;9.5: When data and answer strategies are mismatched, we obtain bias."><img src="../figures/figure-9-5.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch9num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9.5: When data and answer strategies are mismatched, we obtain bias.
@@ -1584,7 +1587,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 </body></html>

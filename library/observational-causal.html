@@ -90,7 +90,10 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -536,7 +539,7 @@ window.Quarto = {
 <p>The DAG of the causal model is shown in <a href="#fig-ch16num1" class="quarto-xref">Figure&nbsp;<span>16.1</span></a>.</p>
 <div id="fig-ch16num1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-16-1.svg" class="img-fluid figure-img">
+<a href="../figures/figure-16-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;16.1: Directed acyclic graph of a process tracing model"><img src="../figures/figure-16-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;16.1: Directed acyclic graph of a process tracing model
@@ -623,7 +626,7 @@ Table&nbsp;16.1: Beliefs about the probability <span class="math inline">\(X\)</
 <p>We see only modest declines in expected errors from observation of the mediator <span class="math inline">\(M\)</span> (consistent with the manual calculation above), but large declines from observing <span class="math inline">\(W\)</span>. If we have already observed <span class="math inline">\(W\)</span> the gains from observing <span class="math inline">\(M\)</span> are still more slight. Broadly this confirms a more general observation that mediators can often provide limited traction for learning about causes of effects relative to moderators <span class="citation" data-cites="dawid2022bounding">(<a href="../references.html#ref-dawid2022bounding" role="doc-biblioref">Dawid, Humphreys, and Musio 2022</a>)</span>.</p>
 <div id="fig-ch16num2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-16-2.svg" class="img-fluid figure-img">
+<a href="../figures/figure-16-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;16.2: Inferences from four different process tracing data strategies on whether X caused Y given four different observed X,Y data patterns."><img src="../figures/figure-16-2.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;16.2: Inferences from four different process tracing data strategies on whether <span class="math inline">\(X\)</span> caused <span class="math inline">\(Y\)</span> given four different observed <span class="math inline">\(X,Y\)</span> data patterns.
@@ -646,7 +649,7 @@ Figure&nbsp;16.2: Inferences from four different process tracing data strategies
 <p>The problems don’t end there. We risk bias if we fail to adjust for <span class="math inline">\(X\)</span> under some models — but we will also risk bias if we <em>do</em> adjust for <span class="math inline">\(X\)</span> under other models. In <a href="#fig-ch16num3" class="quarto-xref">Figure&nbsp;<span>16.3</span></a> we illustrate four of the possible roles for an observable variable <span class="math inline">\(X\)</span>: as a confounder of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; as a collider, which is affected by both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; as a mediator of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>; and as a predictor of <span class="math inline">\(Y\)</span> with no connection to <span class="math inline">\(D\)</span>. We set aside in these DAGs the possible roles of an unobservable variable <span class="math inline">\(U\)</span> that would introduce additional problems of confounding.</p>
 <div id="fig-ch16num3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-16-3.svg" class="img-fluid figure-img">
+<a href="../figures/figure-16-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;16.3: Four roles for an observable variable X."><img src="../figures/figure-16-3.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;16.3: Four roles for an observable variable X.
@@ -696,7 +699,7 @@ Figure&nbsp;16.3: Four roles for an observable variable X.
 <p>In <a href="#fig-ch16num4" class="quarto-xref">Figure&nbsp;<span>16.4</span></a>, we see that the raw, unmatched estimate is upwardly biased (by about 20% of the average estimate) and that the matched estimate is unbiased. If we fail to adjust for the observable features of the selection process, we have biased answers. But if we do control in this case, we obtain unbiased answers. However, as highlighted earlier, these results depend on the plausibility of our model, which in this case involves observed confounding of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> by <span class="math inline">\(X\)</span>. If there was <em>unobservable</em> confounding from <span class="math inline">\(U\)</span>, or if <span class="math inline">\(X\)</span> were a collider or mediator, there would be bias even if we control for <span class="math inline">\(X\)</span>.</p>
 <div id="fig-ch16num4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-16-4.svg" class="img-fluid figure-img">
+<a href="../figures/figure-16-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;16.4: Sampling distribution of two estimators."><img src="../figures/figure-16-4.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;16.4: Sampling distribution of two estimators.
@@ -785,7 +788,7 @@ Figure&nbsp;16.4: Sampling distribution of two estimators.
 </div>
 <div id="fig-ch16num5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-16-5.svg" class="img-fluid figure-img">
+<a href="../figures/figure-16-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;16.5: Sampling distributions of two difference-in-differences estimators."><img src="../figures/figure-16-5.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;16.5: Sampling distributions of two difference-in-differences estimators.
@@ -800,7 +803,7 @@ Figure&nbsp;16.5: Sampling distributions of two difference-in-differences estima
 <p>When treatment effects happen to be homogeneous (middle panel), both estimators recover unbiased estimates of both the ATT and the ATT for switchers, which of course are equal to one another because of treatment effect homogeneity. However, when treatment effects vary with the timing of treatment (left or right panels), the two-way fixed effects estimator is biased for both inquiries. The <span class="citation" data-cites="chaisemartin">Chaisemartin and d’Haultfoeuille (<a href="../references.html#ref-chaisemartin" role="doc-biblioref">2020</a>)</span> estimator is also biased for the ATT, but remains unbiased for the ATT among switchers regardless of the pattern of treatment effect heterogeneity.</p>
 <div id="fig-ch16num6" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-16-6.svg" class="img-fluid figure-img">
+<a href="../figures/figure-16-6.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;16.6: Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes."><img src="../figures/figure-16-6.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;16.6: Diagnoses of two generalized difference-in-differences estimators under three types of potential outcomes.
@@ -823,7 +826,7 @@ Figure&nbsp;16.6: Diagnoses of two generalized difference-in-differences estimat
 <p>We illustrate the logic of instrumental variables with the DAG shown in <a href="#fig-ch16num7" class="quarto-xref">Figure&nbsp;<span>16.7</span></a>. An instrument <span class="math inline">\(Z\)</span> affects an endogenous treatment <span class="math inline">\(D\)</span> which subsequently affects an outcome <span class="math inline">\(Y\)</span>. Many other common causes, summarized in terms of unknown heterogeneity <span class="math inline">\(U\)</span>, affect both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. It is because of this unmeasured confounding that we cannot learn about the effect of <span class="math inline">\(D\)</span> on <span class="math inline">\(Y\)</span> directly using standard tools.</p>
 <div id="fig-ch16num7" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-16-7.svg" class="img-fluid figure-img">
+<a href="../figures/figure-16-7.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;16.7: Directed acyclic graph of an instrumental variables design."><img src="../figures/figure-16-7.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;16.7: Directed acyclic graph of an instrumental variables design.
@@ -922,7 +925,7 @@ Table&nbsp;16.2: Compliance types
 <p>The regression discontinuity design is closely related to the selection-on-observables design in that we exploit precise knowledge of the assignment mechanism. In <a href="#fig-ch16num8" class="quarto-xref">Figure&nbsp;<span>16.8</span></a>, we illustrate the DAG for the RD design, which includes a treatment with a known assignment mechanism (that units with <span class="math inline">\(X&gt;\mathrm{cutoff}\)</span> are treated and the others are not). The running variable <span class="math inline">\(X\)</span> is a common cause both of treatment and the outcome, and so must be adjusted for (indicated by the dashed box) in order to identify the effect of treatment on the outcome and avoid confounding bias.</p>
 <div id="fig-ch16num8" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-16-8.svg" class="img-fluid figure-img">
+<a href="../figures/figure-16-8.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;16.8: Directed acyclic graph for the regression discontinuity design."><img src="../figures/figure-16-8.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;16.8: Directed acyclic graph for the regression discontinuity design.
@@ -931,7 +934,7 @@ Figure&nbsp;16.8: Directed acyclic graph for the regression discontinuity design
 <p><a href="#fig-ch16num9" class="quarto-xref">Figure&nbsp;<span>16.9</span></a> illustrates the major features of the model for the regression discontinuity using simulated data. The untreated units (blue points) are plotted to the left of the cutoff (vertical line), and the treated units (red points) are plotted to the right. The true conditional expectation functions for both the treated and untreated potential outcomes are displayed as colored lines, dashed where they are unobservable, and solid where they are observable.</p>
 <div id="fig-ch16num9" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-16-9.svg" class="img-fluid figure-img">
+<a href="../figures/figure-16-9.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;16.9: Data from a regression discontinuity design. On the x-axis is the running variable, which defines the cutoff between control (here, below 0 on the running variable) and treatment (above 0). The outcome Y is on the y-axis. We illustrate smooth potential outcomes by showing the observed data curve (solid) and the counterfactual potential outcome (dashed)."><img src="../figures/figure-16-9.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;16.9: Data from a regression discontinuity design. On the x-axis is the running variable, which defines the cutoff between control (here, below 0 on the running variable) and treatment (above 0). The outcome Y is on the y-axis. We illustrate smooth potential outcomes by showing the observed data curve (solid) and the counterfactual potential outcome (dashed).
@@ -997,7 +1000,7 @@ Figure&nbsp;16.9: Data from a regression discontinuity design. On the x-axis is 
 </div>
 <div id="fig-ch16num10" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch16num10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/figure-16-10.svg" class="img-fluid figure-img">
+<a href="../figures/figure-16-10.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;16.10: Bias-variance tradeoff in bandwidth selection for the regression discontinuity design."><img src="../figures/figure-16-10.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch16num10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;16.10: Bias-variance tradeoff in bandwidth selection for the regression discontinuity design.
@@ -1515,7 +1518,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 </body></html>
