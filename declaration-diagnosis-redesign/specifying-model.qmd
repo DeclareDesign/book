@@ -89,7 +89,7 @@ In general, multiple distributions can behave equivalently in a model. For insta
 
 
 
-## Types of Variables in models
+## Types of variables in models
 
 Any particular causal model can be a complex web of exogenous and endogenous variables woven together via a set of functional relationships. Despite the heterogeneity across models, we can describe the roles variables play in a research design with reference to the roles they play in structural causal models. There are seven roles:
 
@@ -117,7 +117,7 @@ Our models of the world can be more or less complex, or at least articulated at 
 
 The variables required by the inquiry, data strategy, and answer strategy are necessary components of the model, but they are not always sufficient. For example, we might be worried about an unobserved confounder. Such a confounder would not be obviously included in any of the other research design elements, but is clearly important to include in the model. Ultimately, we need to specify all variables that are required for "diagnosand completeness" (see @sec-ch10), which is achieved when research designs are described in sufficient detail that diagnosands can be calculated.
 
-## How to Specify Models
+## How to specify models
 
 To this point, we have described formal considerations, but we have not described substantive considerations, for including particular variables or stipulating particular relations between them. The justification for the choice of reference models will depend on the purpose of the design. Broadly, we distinguish between two desiderata for selecting reference models: reality tracking and agnosticism. 
 
