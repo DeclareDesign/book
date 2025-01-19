@@ -55,8 +55,7 @@ book:
     - errata.qmd
 
   sidebar:
-    - title: "Research Design in the Social Sciences"
-      style: "floating"
+    - style: "floating"
       collapse-level: 2
       align: left
       contents:
