@@ -8,6 +8,7 @@ These errata are errors in the printed book. These changes are implemented in th
 - On pg. 158: The second code block, which includes the code `MASS::mvrnorm`, should read `n = 1000` not `N = 1000`.
 - On pgs. 221-224: We corrected an error in Declaration 16.5 and Declaration 16.6 that erroneously switched the values of the treated and control potential outcomes when X = 0 with the values when X is at the cutoff. We modified Declaration 16.5 and Figure 16.9 to describe the design with respect to the cutoff and updated the figure caption and text to reflect these changes.
 - On pg. 225: The last line of the code was changed from `diagnose_designs` to `diagnose_designs()`.
+- On pgs. 124-125: We removed a reference to the power formula from Gerber and Green (2012). We now discuss a generic restatement of statistical power.
 
 *Due to final copyediting by the Press, the website version may differ slightly from the print version. If you discover a discrepency, please email us at graeme.blair@gmail.com, acoppock@gmail.com, and macartan@gmail.com and we will fix it and send you DeclareDesign stickers!*
 

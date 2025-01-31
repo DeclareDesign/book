@@ -117,16 +117,24 @@ As described above, a diagnostic statistic is any summary function of $a_m$ and 
 
 ### Analytic design diagnosis
 
-Diagnosis can be done with analytic, pencil-and-paper methods. In an analytic design diagnosis, we typically derive a formula that returns the value of a diagnosand under a stipulated set of beliefs about the model, inquiry, data strategy, and answer strategy. For example, research design textbooks often contain analytic design diagnoses for statistical power. @Gerber2012 write:
+Diagnosis can be done with analytic, pencil-and-paper methods. In an analytic design diagnosis, we typically derive a formula that returns the value of a diagnosand under a stipulated set of beliefs about the model, inquiry, data strategy, and answer strategy. 
 
-> "To illustrate a power analysis, consider a completely randomized experiment where $N>2$ of $N$ units are selected into a binary treatment. The researcher must now make assumptions about the distributions of outcomes for treatment and for control units. In this example, the researcher assumes that the control group has a normally distributed outcome with mean $\mu_c$, the treatment group has a normally distributed outcome with mean $\mu_t$, and both group's outcomes have a standard deviation $\sigma$. The researcher must also choose $\alpha$, the desired level of statistical significance (typically 0.05).
-Under this scenario, there exists a simple asymptotic approximation for the power of the experiment (assuming that the significance test is two-tailed):
-> $$
-\beta = \Phi \bigg(\frac{|\mu_t - \mu_c| \sqrt{N}}{2\sigma} - \Phi^{-1} \left(1 - \frac{\alpha}{2}\right) \bigg)
-> $$
-where $\beta$ is the statistical power of the experiment, $\Phi(\cdot)$ is the normal cumulative distribution function (CDF), and $\Phi^{-1}(\cdot)$ is the inverse of the normal CDF."
+For example, suppose a standard error of an effect estimate is given by:
 
-This power formula is usually motivated by a set of assumptions about *M*, *I*, *D*, and *A*. Under *M*, it usually assumes that both potential outcomes are normally distributed with group specific means and a common variance. Under *I*, it usually assumes the average treatment effect. Under *D*, it usually assumes a particular randomization strategy (simple random assignment). Under *A*, it usually assumes a particular hypothesis testing approach (equal variance $t$-test with $N - 2$ degrees of freedom). Whether this set of assumptions is "close enough" will depend on the research setting.
+$$
+\text{se} =  \frac{2 \sigma}{\sqrt{N-1}}
+$$
+
+and the critical value is:
+
+$$z_{\alpha/2} = \Phi^{-1}(1-\alpha/2)$$
+
+We can then define the statistical power as:
+
+$$
+1 - \beta = 1 - \Phi \left( z_{\alpha/2} - \frac{|\mu_t - \mu_c| }{\text{se}} \right) + \Phi \left( -z_{\alpha/2} - \frac{|\mu_t - \mu_c| }{\text{se}} \right)
+$$
+This power formula is motivated by a set of assumptions about *M*, *I*, *D*, and *A*. Under *M*, it assumes that both potential outcomes are normally distributed with group specific means and a common variance. Under *I*, it assumes a choice of the average treatment effect. Under *D*, it assumes a particular randomization strategy (simple random assignment). Under *A*, it assumes a particular hypothesis testing approach (equal variance $t$-test with $N - 2$ degrees of freedom). Whether this set of assumptions is "close enough" will depend on the research setting.
 
 Analytic design diagnosis can be hugely useful, since they cover a large families of designs that meet the scope criteria. For example, consider the "standard error" diagnosand $\sqrt{\mathbb{E}[(a_{d_j} - \mathbb{E}[a_{d_j}])^2]}$ for the Sample Average Treatment Effect estimate in a two arm trial with complete random assignment and estimation via difference in means. This has been worked out by statisticians to be $\sqrt{\frac{1}{n-1}\left\{\frac{m\mathbb{V}(Y_i(0))}{n-m} + \frac{(N-m)\mathbb{V}(Y_i(1))}{m} + 2\mathrm{Cov}(Y_i(0), Y_i(1))\right\}}$, where $N$ is the number of units and $m$ is the number in treatment. The Neyman standard error estimator targets this quantity (see @eq-neymanse). Many advances in our understanding of the properties of research design come from analytic design diagnosis. For example, @middleton2008bias and @imai2009essential show that cluster randomized trials with heterogeneous cluster sizes are not unbiased for the ATE, which leads to the design recommendation that clustered trials should block on cluster size. These lessons apply broadly, more broadly perhaps than the lessons learned about a specific design in a specific Monte Carlo simulation.
 
