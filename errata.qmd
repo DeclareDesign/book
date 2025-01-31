@@ -6,6 +6,8 @@ These errata are errors in the printed book. These changes are implemented in th
 - On pg. 69, Table 8.1, row 1 now reads `simple_rs(N = 100, prob = .25)` instead of `simple_rs(N = 100, p = .25)`; row 2 now reads `complete_rs(N = 100, n = 25)` instead of `simple_rs(N = 100, p = 0.25)`; row 4: `cluster_ra` should be `cluster_rs`; and in row 6, `cluster_ra` should be `cluster_rs` and `strata_ra` should be `strata_rs`. Thanks to Bjorn Van Campenhout for identifying the first two errors.
 - On pg. 101: "The $p$-value is the probability this also goes with the misplaced section estimates of 15 or larger" should read "The $p$-value is the probability under the null model of obtaining estimates of 15 or larger."
 - On pg. 158: The second code block, which includes the code `MASS::mvrnorm`, should read `n = 1000` not `N = 1000`.
+- On pgs. 221-224: We corrected an error in Declaration 16.5 and Declaration 16.6 that erroneously switched the values of the treated and control potential outcomes when X = 0 with the values when X is at the cutoff. We modified Declaration 16.5 and Figure 16.9 to describe the design with respect to the cutoff and updated the figure caption and text to reflect these changes.
+- On pg. 225: The last line of the code was changed from `diagnose_designs` to `diagnose_designs()`.
 
 *Due to final copyediting by the Press, the website version may differ slightly from the print version. If you discover a discrepency, please email us at graeme.blair@gmail.com, acoppock@gmail.com, and macartan@gmail.com and we will fix it and send you DeclareDesign stickers!*
 
