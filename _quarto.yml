@@ -23,7 +23,7 @@ book:
         - introduction/what-is-a-research-design.qmd
         - introduction/research-design-principles.qmd
         - introduction/getting-started.qmd
-    - part: "Declaration, Diagnosis, Redesign"
+    - part: "Declaration, diagnosis, redesign"
       chapters:
         - declaration-diagnosis-redesign/declaring-designs.qmd
         - declaration-diagnosis-redesign/specifying-model.qmd
@@ -67,7 +67,7 @@ book:
             - introduction/what-is-a-research-design.qmd
             - introduction/research-design-principles.qmd
             - introduction/getting-started.qmd
-        - section: "Declaration, Diagnosis, Redesign"
+        - section: "Declaration, diagnosis, redesign"
           contents:
             - declaration-diagnosis-redesign/declaring-designs.qmd
             - declaration-diagnosis-redesign/specifying-model.qmd
