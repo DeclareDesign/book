@@ -90,7 +90,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-72c93205fb41c15e2e398b4f9a505ee2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-2ce9fc9ac8b614e7ffef13962cc12eaf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
@@ -949,7 +949,7 @@ Figure&nbsp;15.6: Correlations between the latent variable, measured components,
 <div class="cell">
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_15.5</span> <span class="op">&lt;-</span> <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_15.6</span>, make_groups <span class="op">=</span> <span class="fu">vars</span><span class="op">(</span><span class="va">outcome</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Figure <span class="math inline">\(\ref{fig:figure-15-7}\)</span> shows the distribution of estimates from different approaches to generating indices. A few features stand out from the distribution of estimates.</p>
+<p>Figure <span class="math inline">\(\ref{fig-ch15num7}\)</span> shows the distribution of estimates from different approaches to generating indices. A few features stand out from the distribution of estimates.</p>
 <p>The simple averaging of the normalized scales also generates estimates that are too small. Rescaling the scaled components instead of taking the average helps only a small amount. The principal component version appears to do especially poorly, but there is a simple reason for this: the method does not presuppose knowledge of the <em>direction</em> of the scale of the latent variable and can come up with an index that reverses the actual scale of interest. Avoiding this requires an interpretative step after the principal components analysis is implemented (more subtly, the averaging approach also has an interpretative step <em>before</em> averaging, when components are introduced with a metric that presupposes a positive correlation with the underlying quantity). Even accounting for the different sign patterns however, the estimates are too small.</p>
 <p>Scaling by units with <code>X = 1</code> does best in this case. The key insight here is that the total variation in the latent variable combines the variation within groups and between them: we want to measure outcomes on a scale benchmarked to the within-group variation and so have to take out the between-group variation when rescaling.</p>
 <div id="fig-ch15num7" class="quarto-float quarto-figure quarto-figure-center anchored">
