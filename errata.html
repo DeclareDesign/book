@@ -474,6 +474,7 @@ window.Quarto = {
 <p>We are committed to maintaining the code in this book as the R ecosystem evolves. The following changes reflect differences between the printed book and the online version.</p>
 <ul>
 <li>On pg. 103, Declaration 9.3 now reads <code>.summary = ~tidy(., exponentiate = TRUE)</code> instead of <code>.summary = ~tidy_stan(., exponentiate = TRUE)</code>, reflecting the use of the standard <code>broom.mixed</code> package for tidying stan objects. In addition, the library <code>rdss</code> is replaced with the library <code>broom.mixed</code> in the declaration.</li>
+<li>On pg. 212-213, Declaration 16.3 now uses updated syntax from the <code>DIDmultiplegt</code> package, specifically <code>mode = 'old'</code> is added. We also add <code>Sys.setenv(RGL_USE_NULL = TRUE)</code> to address package dependency issues.</li>
 </ul>
 
 
