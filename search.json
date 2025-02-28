@@ -1438,7 +1438,17 @@
     "href": "errata.html",
     "title": "Errata",
     "section": "",
-    "text": "Code updates\nThese errata are errors in the printed book. These changes are implemented in this online version.\nDue to final copyediting by the Press, the website version may differ slightly from the print version. If you discover a discrepency, please email us at graeme.blair@gmail.com, acoppock@gmail.com, and macartan@gmail.com and we will fix it and send you DeclareDesign stickers!\nWe are committed to maintaining the code in this book as the R ecosystem evolves. The following changes reflect differences between the printed book and the online version.",
+    "text": "Substantive changes\nThese errata are errors in the printed book. These changes are implemented in this online version.\nDue to final copyediting by the Press, the website version may differ slightly from the print version. If you discover a discrepency, please email us at graeme.blair@gmail.com, acoppock@gmail.com, and macartan@gmail.com and we will fix it and send you DeclareDesign stickers!",
+    "crumbs": [
+      "Errata"
+    ]
+  },
+  {
+    "objectID": "errata.html#substantive-changes",
+    "href": "errata.html#substantive-changes",
+    "title": "Errata",
+    "section": "",
+    "text": "On pg. 210-211, we changed the inquiry to be the ATT rather than the ATE, to reflect the more common practice of targeting the ATT in matching designs. Declaration 16.2 now declares the ATT as the inquiry; we now write “Our inquiry is the average treatment effect on the treated (ATT). This is the average treatment effect among the units who are in fact treated.”; and Figure 16.4 is updated to reflect the change in the x-axis title.",
     "crumbs": [
       "Errata"
     ]
@@ -1447,8 +1457,8 @@
     "objectID": "errata.html#code-updates",
     "href": "errata.html#code-updates",
     "title": "Errata",
-    "section": "",
-    "text": "On pg. 103, Declaration 9.3 now reads .summary = ~tidy(., exponentiate = TRUE) instead of .summary = ~tidy_stan(., exponentiate = TRUE), reflecting the use of the standard broom.mixed package for tidying stan objects. In addition, the library rdss is replaced with the library broom.mixed in the declaration.",
+    "section": "Code updates",
+    "text": "Code updates\nWe are committed to maintaining the code in this book as the R ecosystem evolves. The following changes reflect differences between the printed book and the online version.\n\nOn pg. 103, Declaration 9.3 now reads .summary = ~tidy(., exponentiate = TRUE) instead of .summary = ~tidy_stan(., exponentiate = TRUE), reflecting the use of the standard broom.mixed package for tidying stan objects. In addition, the library rdss is replaced with the library broom.mixed in the declaration.",
     "crumbs": [
       "Errata"
     ]
