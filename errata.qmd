@@ -21,3 +21,4 @@ These errata are errors in the printed book. These changes are implemented in th
 We are committed to maintaining the code in this book as the R ecosystem evolves. The following changes reflect differences between the printed book and the online version. 
 
 - On pg. 103, Declaration 9.3 now reads `.summary = ~tidy(., exponentiate = TRUE)` instead of `.summary = ~tidy_stan(., exponentiate = TRUE)`, reflecting the use of the standard `broom.mixed` package for tidying stan objects. In addition, the library `rdss` is replaced with the library `broom.mixed` in the declaration.
+- On pg. 212-213, Declaration 16.3 now uses updated syntax from the `DIDmultiplegt` package, specifically `mode = 'old'` is added. We also add `Sys.setenv(RGL_USE_NULL = TRUE)` to address package dependency issues.
