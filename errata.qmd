@@ -12,6 +12,10 @@ These errata are errors in the printed book. These changes are implemented in th
 
 *Due to final copyediting by the Press, the website version may differ slightly from the print version. If you discover a discrepency, please email us at graeme.blair@gmail.com, acoppock@gmail.com, and macartan@gmail.com and we will fix it and send you DeclareDesign stickers!*
 
+## Substantive changes
+
+- On pg. 210-211, we changed the inquiry to be the ATT rather than the ATE, to reflect the more common practice of targeting the ATT in matching designs. Declaration 16.2 now declares the ATT as the inquiry; we now write "Our inquiry is the average treatment effect on the treated (ATT). This is the average treatment effect among the units who are in fact treated."; and Figure 16.4 is updated to reflect the change in the x-axis title. 
+
 ## Code updates
 
 We are committed to maintaining the code in this book as the R ecosystem evolves. The following changes reflect differences between the printed book and the online version. 
