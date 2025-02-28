@@ -150,6 +150,8 @@ We declare beliefs about the selection process and how $D$, $Y$, and $X$ are rel
 
 In our model, $U$ is not a confounder, because it affects $Y$ but not $D$; this is a strong excludability assumption on which our causal inferences depend. The assumption is strong because ruling out all unobservable confounders is typically impossible. Most causal factors in nature are affected by many variables, only some of which we can imagine and measure. The first estimator, with adjustment, uses the weights from the exact matching estimator. The matching procedure adjusts for differences in the probability of selection into treatment according to $X$. The second, unadjusted, estimator does not control for $X$. It suffers from unobserved confounding, because $X$ predicts both treatment and the outcome. 
 
+Our inquiry is the average treatment effect on the treated (ATT). This is the average treatment effect among the units who are in fact treated. 
+
 ::: {#lem-ch16num2} 
 
 Matching design diagnosis
