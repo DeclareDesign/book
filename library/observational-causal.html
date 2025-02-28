@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>16&nbsp; Observational : causal – Research Design in the Social Sciences</title>
 <style>
@@ -87,10 +87,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2ce9fc9ac8b614e7ffef13962cc12eaf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a34d670291f06f286357e447776a572a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
@@ -678,36 +678,38 @@ Figure&nbsp;16.3: Four roles for an observable variable X.
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://kosukeimai.github.io/MatchIt/">MatchIt</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">exact_matching</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span> </span>
-<span>    <span class="va">matched</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://kosukeimai.github.io/MatchIt/reference/matchit.html">matchit</a></span><span class="op">(</span><span class="va">D</span> <span class="op">~</span> <span class="va">X</span>, method <span class="op">=</span> <span class="st">"exact"</span>, data <span class="op">=</span> <span class="va">data</span><span class="op">)</span> </span>
-<span>    <span class="fu"><a href="https://kosukeimai.github.io/MatchIt/reference/match_data.html">match.data</a></span><span class="op">(</span><span class="va">matched</span><span class="op">)</span> </span>
+<span><span class="va">exact_matching</span> <span class="op">&lt;-</span></span>
+<span>  <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">matched</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://kosukeimai.github.io/MatchIt/reference/matchit.html">matchit</a></span><span class="op">(</span><span class="va">D</span> <span class="op">~</span> <span class="va">X</span>, method <span class="op">=</span> <span class="st">"exact"</span>, data <span class="op">=</span> <span class="va">data</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://kosukeimai.github.io/MatchIt/reference/match_data.html">match.data</a></span><span class="op">(</span><span class="va">matched</span><span class="op">)</span></span>
 <span>  <span class="op">}</span></span>
-<span></span>
 <span></span>
 <span><span class="va">declaration_16.2</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
-<span>    N <span class="op">=</span> <span class="fl">100</span>, </span>
-<span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>, </span>
+<span>    N <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
 <span>    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
 <span>    D <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.25</span> <span class="op">+</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="va">X</span><span class="op">)</span>,</span>
 <span>    Y_D_0 <span class="op">=</span> <span class="fl">0.2</span> <span class="op">*</span> <span class="va">X</span> <span class="op">+</span> <span class="va">U</span>,</span>
 <span>    Y_D_1 <span class="op">=</span> <span class="va">Y_D_0</span> <span class="op">+</span> <span class="fl">0.5</span></span>
-<span>  <span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_D_1</span> <span class="op">-</span> <span class="va">Y_D_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">declare_inquiry</span><span class="op">(</span>ATT <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_D_1</span><span class="op">[</span><span class="va">D</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span> <span class="op">-</span> <span class="va">Y_D_0</span><span class="op">[</span><span class="va">D</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_step</span><span class="op">(</span>handler <span class="op">=</span> <span class="va">exact_matching</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">D</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">D</span>,</span>
 <span>                    weights <span class="op">=</span> <span class="va">weights</span>,</span>
 <span>                    .method <span class="op">=</span> <span class="va">difference_in_means</span>,</span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"ATT"</span>,</span>
 <span>                    label <span class="op">=</span> <span class="st">"Matched difference-in-means"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">D</span>, </span>
-<span>                    .method <span class="op">=</span> <span class="va">difference_in_means</span>, </span>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">D</span>,</span>
+<span>                    .method <span class="op">=</span> <span class="va">difference_in_means</span>,</span>
+<span>                    inquiry <span class="op">=</span> <span class="st">"ATT"</span>,</span>
 <span>                    label <span class="op">=</span> <span class="st">"Raw difference-in-means"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>We declare beliefs about the selection process and how <span class="math inline">\(D\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(X\)</span> are related. The model needs to include potential outcomes for the main outcome of interest (<span class="math inline">\(Y\)</span>) and a specification of the assignment of the key causal variable (in this case, <span class="math inline">\(D\)</span>). Here, we have defined the assignment process as a function of an observable variable <span class="math inline">\(X\)</span>. In fact, <span class="math inline">\(X\)</span> is the only variable that affects selection into treatment: <span class="math inline">\(X\)</span> is a binary variable (i.e., two groups), and the probability of treatment is 0.4 when <span class="math inline">\(X=0\)</span> and 0.6 when <span class="math inline">\(X=1\)</span>. In addition, we define the potential outcomes for <span class="math inline">\(Y\)</span>, which invoke confounding by <span class="math inline">\(X\)</span> because it affects both <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span>. We only invoke one possible relationship between <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(D\)</span>, and so do not consider the possibilities of colliders or mediators.</p>
 <p>In our model, <span class="math inline">\(U\)</span> is not a confounder, because it affects <span class="math inline">\(Y\)</span> but not <span class="math inline">\(D\)</span>; this is a strong excludability assumption on which our causal inferences depend. The assumption is strong because ruling out all unobservable confounders is typically impossible. Most causal factors in nature are affected by many variables, only some of which we can imagine and measure. The first estimator, with adjustment, uses the weights from the exact matching estimator. The matching procedure adjusts for differences in the probability of selection into treatment according to <span class="math inline">\(X\)</span>. The second, unadjusted, estimator does not control for <span class="math inline">\(X\)</span>. It suffers from unobserved confounding, because <span class="math inline">\(X\)</span> predicts both treatment and the outcome.</p>
+<p>Our inquiry is the average treatment effect on the treated (ATT). This is the average treatment effect among the units who are in fact treated.</p>
 <div id="lem-ch16num2" class="theorem lemma">
 <p><span class="theorem-title"><strong>Diagnosis 16.2</strong></span> Matching design diagnosis</p>
 <p>In <a href="#fig-ch16num4" class="quarto-xref">Figure&nbsp;<span>16.4</span></a>, we see that the raw, unmatched estimate is upwardly biased (by about 20% of the average estimate) and that the matched estimate is unbiased. If we fail to adjust for the observable features of the selection process, we have biased answers. But if we do control in this case, we obtain unbiased answers. However, as highlighted earlier, these results depend on the plausibility of our model, which in this case involves observed confounding of the relationship between <span class="math inline">\(D\)</span> and <span class="math inline">\(Y\)</span> by <span class="math inline">\(X\)</span>. If there was <em>unobservable</em> confounding from <span class="math inline">\(U\)</span>, or if <span class="math inline">\(X\)</span> were a collider or mediator, there would be bias even if we control for <span class="math inline">\(X\)</span>.</p>
