@@ -1,0 +1,22 @@
+# Changes Report
+
+This document tracks all changes made to the book chapters.
+
+| file | line | text before | text after |
+|------|------|-------------|------------|
+| introduction/getting-started.qmd | 141 | The fact that that the estimate | The fact that the estimate |
+| introduction/getting-started.qmd | 176 | with`DeclareDesign` | with `DeclareDesign` |
+| declaration-diagnosis-redesign/diagnosing-designs.qmd | 112 | Examples of iagnosands | Examples of diagnosands |
+| declaration-diagnosis-redesign/diagnosing-designs.qmd | 345 | The mean squared error is highest on the left and lowest in the middle. | The mean squared error is highest on the left and lowest in the middle. @fig-ch10num5 visualizes this. |
+| introduction/what-is-a-research-design.qmd | 233 | in 60% of our the models | in 60% of the models |
+| introduction/what-is-a-research-design.qmd | 281 | intact and, but we have to work | intact, but we have to work |
+| introduction/what-is-a-research-design.qmd | 320 | not sigificant | not significant |
+| introduction/what-is-a-research-design.qmd | 348 | Finally with look your designs | Finally, looking at your designs, they |
+| library/experimental-causal.qmd | 258 | differenct ICCs | different ICCs |
+| library/experimental-causal.qmd | 376 | factorial inquires | factorial inquiries |
+| library/experimental-causal.qmd | 581 | encouragment design | encouragement design |
+| library/experimental-causal.qmd | 53 | This simple DAG confirms... | This simple DAG confirms... @fig-ch18num1 illustrates this. |
+| library/experimental-causal.qmd | 512 | ![Sampling distributions... | @fig-ch18num10 shows the sampling distributions... |
+| library/experimental-causal.qmd | 627 | : Design parameters... | @tbl-steppedwedgedesigns summarizes the design parameters. |
+| declaration-diagnosis-redesign/defining-inquiry.qmd | 20 | complex inquires | complex inquiries |
+

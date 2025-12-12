@@ -48,7 +48,7 @@ $$ {#eq-neymanse}
 
 The estimated standard error can be used as an input for two other statistical procedures: null hypothesis significance testing via a $t$-test and the construction of a 95% confidence interval.
 
-The DAG corresponding to a two-arm randomized trial is very simple. An outcome $Y$ is affected by unknown factors $U$ and a treatment $Z$. The measurement procedure $Q$ affects $Y$ in the sense that it measures a latent outcome and records the measurement in a dataset. No arrows lead into $Z$ because it is randomly assigned. No arrow leads from $Z$ to $Q$, because we assume no excludability violations wherein the treatment changes how units are measured. This simple DAG confirms that the average causal effect of $Z$ on $Y$ is nonparametrically identified because no back-door paths lead from $Z$ to $Y$.
+The DAG corresponding to a two-arm randomized trial is very simple. An outcome $Y$ is affected by unknown factors $U$ and a treatment $Z$. The measurement procedure $Q$ affects $Y$ in the sense that it measures a latent outcome and records the measurement in a dataset. No arrows lead into $Z$ because it is randomly assigned. No arrow leads from $Z$ to $Q$, because we assume no excludability violations wherein the treatment changes how units are measured. This simple DAG confirms that the average causal effect of $Z$ on $Y$ is nonparametrically identified because no back-door paths lead from $Z$ to $Y$. @fig-ch18num1 illustrates this.
 
 ![Directed acyclic graph of a two-arm randomized experiment](/figures/figure-18-1){#fig-ch18num1}
 
@@ -255,7 +255,7 @@ diagnosis_18.5 <-
 
 The top row of panels plot the treatment effect on the vertical axis and the untreated potential outcome on the horizontal axis. Clusters of units are circled. At low levels of ICC, the circles all overlap, because the differences across clusters are smaller than the differences within a cluster. At high levels of ICC, the differences across clusters are more pronounced than differences within a cluster. The bottom row of panels shows that the sampling distribution of the difference-in-means estimator spreads out as the ICC increases. At low levels of ICC, the standard error is small; at high levels the standard error is high.
 
-![Sampling distribution under differenct ICCs](/figures/figure-18-5){#fig-ch18num5}
+![Sampling distribution under different ICCs](/figures/figure-18-5){#fig-ch18num5}
 
 This diagnosis clarifies the *costs* of cluster assignment. These costs are greatest when there are few clusters and when units within clusters have similar potential outcomes. Diagnosis can be further used to compare these costs to advantages and assess the merits of variations in the design that seek to alter the number or size of clusters.
 
@@ -373,7 +373,7 @@ diagnosis_18.7 <-
   diagnose_designs()
 ```
 
-![Power curves for factorial inquires](/figures/figure-18-7){#fig-ch18num7}
+![Power curves for factorial inquiries](/figures/figure-18-7){#fig-ch18num7}
 
 :::
 
@@ -509,6 +509,8 @@ Two-stage least squares does a much better job of estimating the complier averag
 diagnosis_18.9 <- diagnose_design(declaration_18.8)
 ``` 
 
+@fig-ch18num10 shows the sampling distributions of the two-stage least squares, per protocol, and as-treated answer strategies.
+
 ![Sampling distributions of the two-stage least squares, per protocol, and as-treated answer strategies.](/figures/figure-18-10){#fig-ch18num10}
 
 :::
@@ -578,7 +580,7 @@ diagnosis_18.10_placebo <-
   diagnose_designs(sims = sims, bootstrap_sims = bootstrap_sims)
 ```
 
-![Comparison of the placebo-controlled design to a standard encouragment design](/figures/figure-18-11){#fig-ch18num11}
+![Comparison of the placebo-controlled design to a standard encouragement design](/figures/figure-18-11){#fig-ch18num11}
 
 :::
 
@@ -626,7 +628,7 @@ We compare the stepped-wedge design to a two-arm randomized experiment with vary
 
 : Design parameters in the comparison between stepped-wedge and two-arm experimental designs. {#tbl-steppedwedgedesigns} 
 
-We declare a comparable two-arm experimental design in @def-ch18num11, with the wrinkle being that the estimand is slightly different by necessity. In the stepped-wedge design, we target the average treatment effect averaging over all periods up to the penultimate one, because there is no information about the control group from the last period. In a single period design, by its nature, we cannot average over time. We would obtain a biased answer if we targeted an out-of-sample time period. The average treatment effect we target is the current-period ATE for the period that is chosen. We cannot extrapolate beyond that if treatment effects vary over time. If we expect time heterogeneity in effects, we may *not* want to use a stepped-wedge design but instead to design a new experiment that efficiently targets the conditional average treatment effects within each period. Then we could describe both the average effect and how effects vary over time.
+@tbl-steppedwedgedesigns summarizes the design parameters. We declare a comparable two-arm experimental design in @def-ch18num11, with the wrinkle being that the estimand is slightly different by necessity. In the stepped-wedge design, we target the average treatment effect averaging over all periods up to the penultimate one, because there is no information about the control group from the last period. In a single period design, by its nature, we cannot average over time. We would obtain a biased answer if we targeted an out-of-sample time period. The average treatment effect we target is the current-period ATE for the period that is chosen. We cannot extrapolate beyond that if treatment effects vary over time. If we expect time heterogeneity in effects, we may *not* want to use a stepped-wedge design but instead to design a new experiment that efficiently targets the conditional average treatment effects within each period. Then we could describe both the average effect and how effects vary over time.
 
 ::: {#def-ch18num11 .declaration} 
 

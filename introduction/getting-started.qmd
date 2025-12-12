@@ -138,7 +138,7 @@ diagnosis_4.1 |>
 
 :::
 
-The output of the diagnosis includes the diagnosand values (top row), such as bias of $-0.02$, and our uncertainty about the diagnosand value (bootstrapped standard error in parentheses in the bottom row). The uncertainty estimates tell us whether we have conducted enough simulations to precisely estimate the diagnosands. The fact that that the estimate of bias is $-0.02$ and the standard error is $0.03$ means that we cannot distinguish the amount of bias from no bias at all. 
+The output of the diagnosis includes the diagnosand values (top row), such as bias of $-0.02$, and our uncertainty about the diagnosand value (bootstrapped standard error in parentheses in the bottom row). The uncertainty estimates tell us whether we have conducted enough simulations to precisely estimate the diagnosands. The fact that the estimate of bias is $-0.02$ and the standard error is $0.03$ means that we cannot distinguish the amount of bias from no bias at all. 
 
 ## Redesign {#redesign-function}
 
@@ -173,7 +173,7 @@ block_cluster_design <-
 
 ## Long term code usability 
 
-We have written the code examples with`DeclareDesign` version 1.0.0, the package version we released along with the book. We are committed to the long-term maintenance of this software, but inevitably, the evolution of the `R` ecosystem and further package development will mean that some of the printed code will break in the future. 
+We have written the code examples with `DeclareDesign` version 1.0.0, the package version we released along with the book. We are committed to the long-term maintenance of this software, but inevitably, the evolution of the `R` ecosystem and further package development will mean that some of the printed code will break in the future. 
 
 However, even if code eventually becomes obsolete, a virtue of writing out designs in code is that they are explicit: the entire design is encoded in the declarations we provide. Even if the code itself won't run, you can still use it to understand the design and to draw insights from the diagnosis.
 

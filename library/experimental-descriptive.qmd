@@ -191,7 +191,7 @@ We see in the diagnosis that the list experiment generates unbiased estimates of
 
 :::
 
-The diagnosis above shows that the list experiment (under its assumptions) is unbiased but has high variance. In the presence of sensitivity bias, direct questions are biased, but has much lower variance. The choice between these two technologies therefore amounts to a bias-variance trade-off (see @blair2018list for more on this point). @def-ch17num3 wraps up both approaches in one design so we can compare them.
+The diagnosis above shows that the list experiment (under its assumptions) is unbiased but has high variance. In the presence of sensitivity bias, direct questions are biased, but has much lower variance. The choice between these two technologies therefore amounts to a bias-variance trade-off (see @blair2018list for more on this point). @def-ch17num4 wraps up both approaches in one design so we can compare them.
 
 ::: {#def-ch17num4 .declaration} 
 
