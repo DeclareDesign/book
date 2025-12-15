@@ -192,7 +192,7 @@ The payoffs from structural estimation can be great: we can operationalize our t
 
 - @Samii2016 enumerates some examples of structural estimation in economics and predicts future political scientists will take to structural estimation in earnest.
 
-- @francois2015power provides a structural model to explain how leaders allocate cabinet positions to bolseter coalitions; the analysis compares the performance of a preferred theory to rival theories. 
+- @francois2015power provides a structural model to explain how leaders allocate cabinet positions to bolster coalitions; the analysis compares the performance of a preferred theory to rival theories. 
 
 - @Frey2022 estimates a structural model of party competition and coalitions on the basis of a regression discontinuity design. With the model parameters estimated, the authors simulate counterfactual scenarios without party coalitions.
 

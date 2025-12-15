@@ -223,7 +223,7 @@ Multilevel regression and poststratification design.
 
 @fig-ch15num4 shows one draw from this design, plotting the MRP estimates against the true level of opinion. 
 
-![Estimates of state-level option plotted against their true levels](/figures/figure-15-4){#fig-ch15num4}
+![Estimates of state-level opinion plotted against their true levels](/figures/figure-15-4){#fig-ch15num4}
 
 ### Redesign over answer strategies
 
