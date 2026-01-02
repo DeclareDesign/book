@@ -106,9 +106,11 @@ But that doesn't tell us much about how confident we should be in this answer. T
 
 Italian village design.
 
-```{r, file = "scripts_declarations/declaration_9.1.R"}
-```
+```{r, echo= FALSE}
 
+source("scripts_declarations/declaration_9.1.R")
+
+```
 $~$
 
 :::

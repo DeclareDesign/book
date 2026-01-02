@@ -3,13 +3,16 @@ get_dropbox_path <- function(section){
   if(.Platform$OS.type == "unix"){
     path <- file.path("~", "Dropbox", "DeclareDesign_book_rfiles", section)
   } else if (.Platform$OS.type == "windows") {
-    
-    if (file.exists("C:/Dropbox")) 
+
+    if (file.exists("C:/Dropbox"))
       path <- file.path("C:", "Dropbox", "DeclareDesign_book_rfiles", section)
-    
+
     if (file.exists("C:/Dropbox (WZB)"))
       path <- file.path("C:", "Dropbox (WZB)", "DeclareDesign_book_rfiles", section)
-  
+
+    if (file.exists("C:/WZB Dropbox/Macartan Humphreys"))
+      path <- file.path("C:", "WZB Dropbox", "Macartan Humphreys", "1_Projects", "DeclareDesign_book_rfiles", section)
+
   }
   dir.create(path, showWarnings = FALSE)
   return(path)
