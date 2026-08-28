@@ -186,11 +186,11 @@ Here we have an original study design of size 1,000. The original study design's
 
 @fig-ch23num2 shows that no matter how big we make the replication, we find that the rate of concluding the difference-in-SATEs is nonzero only occurs about 10% of the time. Similarly, the replication estimate is rarely outside of the original confidence interval, because it's rare to be more extreme than a wide confidence interval. The relatively high variance of the original study means that it is so uncertain, it's tough to distinguish it from any number in particular. 
 
-Turning to the third metric (is the original outside the 95% confidence interval of the replication estimate), we see that we become more and more likely to conclude that the original study fails to replicate as the quality replication study goes up. At very large sample sizes, the replication confidence intervals become extremely small, so in the limit, it will always exclude the original study estimate.
+Turning to the third metric (is the original outside the 95% confidence interval of the replication estimate), we find that we become more and more likely to conclude that the original study fails to replicate as the quality of the replication study goes up. At very large sample sizes, the replication confidence intervals become extremely small, so in the limit, it will always exclude the original study estimate.
 
 The last metric, equivalence testing, has the nice property that, as the sample size grows, we get closer to the correct answer -- the true SATEs are indeed within 0.2 standard units of each other. However, again because the original study is so noisy, it is difficult to affirm its equivalence with anything, even when the replication study is quite large.
 
-The upshot of this exercise is that, curiously, when original studies are weak (in that they generate imprecise estimates), it becomes *harder* to conclusively affirm that they did not replicate. This set of incentives is somewhat perverse: designers of original studies benefit from a lack of precision if it means they can't "fail to replicate."
+The upshot of this exercise is that, curiously, when original studies are weak (in that they generate imprecise estimates), it becomes *harder* to conclusively affirm that they did not replicate. This set of incentives is somewhat perverse: designers of original studies benefit from a lack of precision if it means the studies can't "fail to replicate."
 
 ![Rates of 'failure to replicate' according to four diagnosands. Original study N = 1000; True original SATE: 0.2; True replication SATE: 0.15.](/figures/figure-23-2){#fig-ch23num2}
 

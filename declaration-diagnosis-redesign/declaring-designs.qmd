@@ -115,4 +115,4 @@ Example declaration
 
 :::
 
-This design declaration includes a specification of all four design elements: model, inquiry, data strategy, and answer strategy. The next four chapters will describe each of these four design elements in great detail. For now, notice that the declaration does not include a specification of $m^*$ (the true causal model), only $M$, a model we entertain for research planning purposes.
+This design declaration includes a specification of all four design elements: model, inquiry, data strategy, and answer strategy. The next four chapters will describe each of these four design elements in great detail. For now, notice that the declaration does not include a specification of $m^*$ (the true causal model), and includes only $M$, a model we entertain for research planning purposes.
