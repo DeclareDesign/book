@@ -1029,7 +1029,7 @@ More often, you'll vary designs over a parameter with `redesign`. Any quantity t
 designs <- redesign(design, N = c(100, 200, 300))
 ```
 
-Whichever way you use to create `designs`, you can then diagnose all of the designs in the list with:
+Whichever way you create `designs`, you can then diagnose all of the designs in the list with:
 
 ```{r, eval=FALSE}
 designs <- diagnose_designs(designs)

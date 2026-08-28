@@ -158,7 +158,7 @@ The diagnosis is represented in @fig-ch11num3. The top panel shows the cost of e
 
 ## Redesigning over answer strategies
 
-Redesign can also take place over possible answer strategies. An inquiry like the average treatment effect could be estimated using many different estimators: difference-in-means, logistic regression, covariate-adjusted ordinary least squares, the stratified estimator, doubly robust regression, targeted maximum likelihood regression, regression trees -- the list of possibilities is long. Redesign is an opportunity to explore how many alternative analysis approaches work.
+Redesign can also take place over possible answer strategies. An inquiry like the average treatment effect could be estimated using many different estimators: difference-in-means, logistic regression, covariate-adjusted ordinary least squares, the stratified estimator, doubly robust regression, targeted maximum likelihood regression, regression trees -- the list of possibilities is long. Redesign is an opportunity to explore how alternative analysis approaches work.
 
 A key trade-off in the choice of answer strategy is the bias-variance trade-off. Some answer strategies exhibit higher bias but lower variance while others have lower bias but higher variance. Choosing which side of the bias-variance trade-off to take is complicated and the process for choosing among alternatives must be motivated by the scientific goals at hand. 
 
