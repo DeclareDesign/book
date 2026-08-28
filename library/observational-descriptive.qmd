@@ -195,7 +195,7 @@ diagnosis_15.3 <- get_rdddr_file_local("diagnosis_15.3")
 
 - @stokes_2005 uses a stratified cluster sampling design to estimate the prevalence of vote buying in Argentina. The strata were provinces and the clusters were census tracts. A simple random sample of individuals residing in selected census tracts were ultimately interviewed.
 
-- @Paler2018 use a multistage clustered sampling design to study Lebanese citizen's willingness to sign a petition condemning sectarian politics. The clusters were localities (villages in rural areas, neighborhoods in urban areas), which were stratified by population size. Within selected localities, simple random samples of households were drawn; within households, a single adult was selected at random. The study also included a randomized treatment that manipulated whether petition signatures were public or private. 
+- @Paler2018 use a multistage clustered sampling design to study Lebanese citizens' willingness to sign a petition condemning sectarian politics. The clusters were localities (villages in rural areas, neighborhoods in urban areas), which were stratified by population size. Within selected localities, simple random samples of households were drawn; within households, a single adult was selected at random. The study also included a randomized treatment that manipulated whether petition signatures were public or private. 
 
 
 ## Multi-level regression and poststratification {#sec-ch15s3}

@@ -7,7 +7,7 @@
 source("scripts/before_chapter_script.R")
 ```
 
-A research design begins with a spark of inspiration or an opportunity, develops through a planning phase, comes to fruition in the stages of realization, and adds to knowledge and influences decisions as it is integrated into collective scientific understanding. At each step in the research design lifecycle, your specification of *M*, *I*, *D*, and *A* shapes your choices and how others will learn from your work.
+A research design begins with a spark of inspiration or an opportunity, develops through a planning phase, comes to fruition in the stages of realization, and adds to knowledge and influences decisions as it is integrated into collective scientific understanding. At each step in the research design lifecycle, your specification of *M*, *I*, *D*, and *A* can shape your choices and how others will learn from your work.
 
 This part of the book works through stages of the research design lifecycle. We describe in each entry how we can use the declaration, diagnosis, and redesign framework to make progress at each step. Of course, not every research project will feature each and every stage but Part IV should serve we hope as a useful checklist as you work through the major phases of your research.
 

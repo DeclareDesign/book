@@ -115,7 +115,7 @@ As described above, a diagnostic statistic is any summary function of $a_m$ and 
 
 ## Estimation of diagnosands
 
-### Analytic design diagnosis
+### Analytic design diagnosis {#sec-ch10s3ss1}
 
 Diagnosis can be done with analytic, pencil-and-paper methods. In an analytic design diagnosis, we typically derive a formula that returns the value of a diagnosand under a stipulated set of beliefs about the model, inquiry, data strategy, and answer strategy. 
 
