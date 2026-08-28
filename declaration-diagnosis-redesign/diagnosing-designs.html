@@ -2,14 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.10.18">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>10&nbsp; Diagnosing designs – Research Design in the Social Sciences</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -18,8 +24,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -30,7 +37,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -55,7 +62,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -82,15 +88,16 @@ div.csl-indent {
 <meta name="quarto:offset" content="../">
 <link href="../declaration-diagnosis-redesign/redesigning.html" rel="next">
 <link href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a34d670291f06f286357e447776a572a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
@@ -164,7 +171,7 @@ gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
       }
     }
 </script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -175,7 +182,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -191,7 +198,7 @@ window.Quarto = {
 };
 </script>
 </head>
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
@@ -612,7 +619,7 @@ Table&nbsp;10.1: Examples of diagnostic statistics.
 </div>
 <div id="tbl-diagnosands" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-diagnosands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;10.2: Examples of iagnosands.
+Table&nbsp;10.2: Examples of diagnosands.
 </figcaption><div aria-describedby="tbl-diagnosands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
@@ -678,7 +685,7 @@ Table&nbsp;10.2: Examples of iagnosands.
 </tr>
 <tr class="odd">
 <td>Bias‐eliminated coverage</td>
-<td>Probability confidence interval overlaps average estimate (<span class="citation" data-cites="morrisetal2019">Morris, White, and Crowther (<a href="../references.html#ref-morrisetal2019" role="doc-biblioref">2021</a>)</span>)</td>
+<td>Probability confidence interval overlaps average estimate (<span class="citation" data-cites="morrisetal2019">Morris et al. (<a href="../references.html#ref-morrisetal2019" role="doc-biblioref">2021</a>)</span>)</td>
 <td><span class="math inline">\(\Pr(\mathrm{covers}_{a_d})\)</span></td>
 </tr>
 <tr class="even">
@@ -705,7 +712,7 @@ Table&nbsp;10.2: Examples of iagnosands.
 </tr>
 <tr class="even">
 <td>Sampling bias</td>
-<td>Expected difference between population average treatment effect and sample average treatment effect <span class="citation" data-cites="imai2008essential">(<a href="../references.html#ref-imai2008essential" role="doc-biblioref">Imai, King, and Stuart 2008</a>)</span>
+<td>Expected difference between population average treatment effect and sample average treatment effect <span class="citation" data-cites="imai2008essential">(<a href="../references.html#ref-imai2008essential" role="doc-biblioref">Imai et al. 2008</a>)</span>
 </td>
 <td><span class="math inline">\(\mathbb{E}(a_{m_{\mathrm{sample}}} - a_{m_{\mathrm{population}}})\)</span></td>
 </tr>
@@ -764,7 +771,7 @@ Table&nbsp;10.2: Examples of iagnosands.
 <p><span class="math display">\[
 1 - \beta = 1 - \Phi \left( z_{\alpha/2} - \frac{|\mu_t - \mu_c| }{\text{se}} \right) + \Phi \left( -z_{\alpha/2} - \frac{|\mu_t - \mu_c| }{\text{se}} \right)
 \]</span> This power formula is motivated by a set of assumptions about <em>M</em>, <em>I</em>, <em>D</em>, and <em>A</em>. Under <em>M</em>, it assumes that both potential outcomes are normally distributed with group specific means and a common variance. Under <em>I</em>, it assumes a choice of the average treatment effect. Under <em>D</em>, it assumes a particular randomization strategy (complete random assignment into two equally-sized groups). Under <em>A</em>, it assumes a particular hypothesis testing approach (a two-sample <span class="math inline">\(Z\)</span>-test). Whether this set of assumptions is “close enough” will depend on the research setting.</p>
-<p>Analytic design diagnosis can be hugely useful, since they cover a large families of designs that meet the scope criteria. For example, consider the “standard error” diagnosand <span class="math inline">\(\sqrt{\mathbb{E}[(a_{d_j} - \mathbb{E}[a_{d_j}])^2]}\)</span> for the Sample Average Treatment Effect estimate in a two arm trial with complete random assignment and estimation via difference in means. This has been worked out by statisticians to be <span class="math inline">\(\sqrt{\frac{1}{n-1}\left\{\frac{m\mathbb{V}(Y_i(0))}{n-m} + \frac{(N-m)\mathbb{V}(Y_i(1))}{m} + 2\mathrm{Cov}(Y_i(0), Y_i(1))\right\}}\)</span>, where <span class="math inline">\(N\)</span> is the number of units and <span class="math inline">\(m\)</span> is the number in treatment. The Neyman standard error estimator targets this quantity (see <a href="../library/experimental-causal.html#eq-neymanse" class="quarto-xref">Equation&nbsp;<span>18.2</span></a>). Many advances in our understanding of the properties of research design come from analytic design diagnosis. For example, <span class="citation" data-cites="middleton2008bias">Middleton (<a href="../references.html#ref-middleton2008bias" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="imai2009essential">Imai, King, and Nall (<a href="../references.html#ref-imai2009essential" role="doc-biblioref">2009</a>)</span> show that cluster randomized trials with heterogeneous cluster sizes are not unbiased for the ATE, which leads to the design recommendation that clustered trials should block on cluster size. These lessons apply broadly, more broadly perhaps than the lessons learned about a specific design in a specific Monte Carlo simulation.</p>
+<p>Analytic design diagnosis can be hugely useful, since they cover a large families of designs that meet the scope criteria. For example, consider the “standard error” diagnosand <span class="math inline">\(\sqrt{\mathbb{E}[(a_{d_j} - \mathbb{E}[a_{d_j}])^2]}\)</span> for the Sample Average Treatment Effect estimate in a two arm trial with complete random assignment and estimation via difference in means. This has been worked out by statisticians to be <span class="math inline">\(\sqrt{\frac{1}{n-1}\left\{\frac{m\mathbb{V}(Y_i(0))}{n-m} + \frac{(N-m)\mathbb{V}(Y_i(1))}{m} + 2\mathrm{Cov}(Y_i(0), Y_i(1))\right\}}\)</span>, where <span class="math inline">\(N\)</span> is the number of units and <span class="math inline">\(m\)</span> is the number in treatment. The Neyman standard error estimator targets this quantity (see <a href="../library/experimental-causal.html#eq-neymanse" class="quarto-xref">Equation&nbsp;<span>18.2</span></a>). Many advances in our understanding of the properties of research design come from analytic design diagnosis. For example, <span class="citation" data-cites="middleton2008bias">Middleton (<a href="../references.html#ref-middleton2008bias" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="imai2009essential">Imai et al. (<a href="../references.html#ref-imai2009essential" role="doc-biblioref">2009</a>)</span> show that cluster randomized trials with heterogeneous cluster sizes are not unbiased for the ATE, which leads to the design recommendation that clustered trials should block on cluster size. These lessons apply broadly, more broadly perhaps than the lessons learned about a specific design in a specific Monte Carlo simulation.</p>
 <p>That said, scholars conducting analytic design diagnosis have only worked out a few diagnosands for a limited set of designs. Since designs are so heterogeneous and can vary on so many dimensions, computer simulation is often the only feasible way to diagnose. We learn a lot from analytic design diagnosis—what the important parameters to consider are, what the important inferential problems are—but they often cannot provide direct answers to practical questions like, how many subjects do I need for my conjoint experiment? For that reason, we turn to design diagnosis via Monte Carlo simulation.</p>
 </section><section id="design-diagnosis-by-simulation" class="level3" data-number="10.3.2"><h3 data-number="10.3.2" class="anchored" data-anchor-id="design-diagnosis-by-simulation">
 <span class="header-section-number">10.3.2</span> Design diagnosis by simulation</h3>
@@ -774,7 +781,7 @@ Table&nbsp;10.2: Examples of iagnosands.
 <div id="lem-ch10num1" class="theorem lemma">
 <p><span class="theorem-title"><strong>Diagnosis 10.1</strong></span> By-hand diagnosis example.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sims</span> <span class="op">&lt;-</span> <span class="fl">500</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sims</span> <span class="op">&lt;-</span> <span class="fl">500</span></span>
 <span><span class="va">p.values</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="va">sims</span><span class="op">)</span></span>
 <span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">sims</span><span class="op">)</span><span class="op">{</span></span>
@@ -785,7 +792,7 @@ Table&nbsp;10.2: Examples of iagnosands.
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="va">power</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">p.values</span> <span class="op">&lt;=</span> <span class="fl">0.05</span><span class="op">)</span></span>
-<span><span class="va">power</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">power</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div id="tbl-forloop" class="cell quarto-float quarto-figure quarto-figure-center anchored">
@@ -793,7 +800,7 @@ Table&nbsp;10.2: Examples of iagnosands.
 Table&nbsp;10.3: By-hand design diagnosis with a for-loop
 </figcaption><div aria-describedby="tbl-forloop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table cell caption-top table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">power</th>
 </tr></thead>
@@ -811,7 +818,7 @@ Table&nbsp;10.3: By-hand design diagnosis with a for-loop
 <div id="def-ch10num1" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 10.1</strong></span> Example of declaration using DeclareDesign</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_10.1</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_10.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
@@ -820,20 +827,20 @@ Table&nbsp;10.3: By-hand design diagnosis with a for-loop
 <span>  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="lem-ch10num2" class="theorem lemma">
 <p><span class="theorem-title"><strong>Diagnosis 10.2</strong></span> Diagnosis in DeclareDesign</p>
 <p>We can now diagnose the declared design. For comparison with the loop, we calculate just one diagnosand: statistical power. Both approaches return approximately the same answer. Any difference between the two can be attributed to simulation error, which is why <code>DeclareDesign</code> by default returns a bootstrapped standard error for each diagnosand estimate. If we were to increase the number of simulations for both approaches dramatically (100,000 simulations would be plenty), the differences would vanish.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosands</span> <span class="op">&lt;-</span> <span class="fu">declare_diagnosands</span><span class="op">(</span>power <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">p.value</span> <span class="op">&lt;=</span> <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosands</span> <span class="op">&lt;-</span> <span class="fu">declare_diagnosands</span><span class="op">(</span>power <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">p.value</span> <span class="op">&lt;=</span> <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">diagnosis</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_10.1</span>, </span>
 <span>                  diagnosands <span class="op">=</span> <span class="va">diagnosands</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">diagnosis</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">diagnosis</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div id="tbl-diagnsissimplydd" class="cell quarto-float quarto-figure quarto-figure-center anchored">
@@ -841,7 +848,7 @@ Table&nbsp;10.3: By-hand design diagnosis with a for-loop
 Table&nbsp;10.4: Design diagnosis using DeclareDesign
 </figcaption><div aria-describedby="tbl-diagnsissimplydd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table cell caption-top table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">power</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">se(power)</th>
@@ -861,15 +868,15 @@ Table&nbsp;10.4: Design diagnosis using DeclareDesign
 </div>
 <p>Backing up, we now construct that same diagnosis step-by-step. We build up from a single simulation run of the design to the distribution of simulations, to summaries of that distribution.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">343</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">343</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">simulation_10.1</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">simulate_design</span><span class="op">(</span><span class="va">declaration_10.1</span>, sims <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>significant <span class="op">=</span> <span class="va">p.value</span> <span class="op">&lt;=</span> <span class="fl">0.05</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">mutate</span><span class="op">(</span>significant <span class="op">=</span> <span class="va">p.value</span> <span class="op">&lt;=</span> <span class="fl">0.05</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can run this simulation a single time with <code>run_design</code>:</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">run_design</span><span class="op">(</span><span class="va">declaration_10.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">run_design</span><span class="op">(</span><span class="va">declaration_10.1</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div id="tbl-onesimulationdraw" class="cell quarto-float quarto-figure quarto-figure-center anchored">
@@ -877,7 +884,7 @@ Table&nbsp;10.4: Design diagnosis using DeclareDesign
 Table&nbsp;10.5: One simulation draw
 </figcaption><div aria-describedby="tbl-onesimulationdraw-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table cell caption-top table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">estimand</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">estimate</th>
@@ -926,7 +933,7 @@ Figure&nbsp;10.4: Visualization of ten draws from a design diagnosis.
 <div id="lem-ch10num2" class="theorem lemma">
 <p><span class="theorem-title"><strong>Diagnosis 10.3</strong></span> Design diagnosis in one step</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_10.3</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_10.3</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span></span>
 <span>    <span class="va">declaration_10.1</span>,</span>
 <span>    diagnosands <span class="op">=</span> <span class="fu">declare_diagnosands</span><span class="op">(</span></span>
@@ -936,7 +943,7 @@ Figure&nbsp;10.4: Visualization of ten draws from a design diagnosis.
 <span>      coverage <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimand</span> <span class="op">&lt;=</span> <span class="va">conf.high</span> <span class="op">&amp;</span></span>
 <span>                        <span class="va">estimand</span> <span class="op">&gt;=</span> <span class="va">conf.low</span><span class="op">)</span></span>
 <span>    <span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div id="tbl-estimateddiagnosands" class="cell quarto-float quarto-figure quarto-figure-center anchored">
@@ -944,7 +951,7 @@ Figure&nbsp;10.4: Visualization of ten draws from a design diagnosis.
 Table&nbsp;10.6: Diagnosand estimates with bootstrapped standard errors in parentheses
 </figcaption><div aria-describedby="tbl-estimateddiagnosands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table cell caption-top table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">bias</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">true se</th>
@@ -977,7 +984,7 @@ Table&nbsp;10.6: Diagnosand estimates with bootstrapped standard errors in paren
 <p>Choosing among designs means choosing which diagnosands are important—and not all diagnosands are equally important for every study. For example, in a descriptive study whose goal is to estimate the fraction of people in France who are left-handed, statistical power is likely irrelevant. A hypothesis test against the null hypothesis that zero percent of the people in France are left-handed is preposterous (though we could of course have other policy relevant hypotheses). A much more important diagnosand for this study would be RMSE (root-mean-squared error), which is a measure of how well estimated the estimand is that incorporates both bias and variance.</p>
 <p>Often, we need to look at several diagnosands in order to understand what might be going wrong. If our design exhibits “undercoverage” (e.g., a procedure for constructing “95%” confidence interval only covers the estimand 50% of the time), that might be because the standard errors are too small or because the point estimator is biased, or some combination of the two. In really perverse instances, we might have a biased point estimator which, thanks to overly wide confidence intervals, just happens to cover the estimand 95% of the time.</p>
 <p>Many research design decisions involve trading off bias and variance. In trade-off settings, we may need to accept higher variance in order to decrease bias. Likewise, we may need to accept a bit of bias in order to achieve lower variance. The trade-off is captured by mean-squared error, which is the average squared distance between <span class="math inline">\(a_d\)</span> and <span class="math inline">\(a_m\)</span>. Of course, we would ideally like to have as low a mean-squared error as possible, that is, we would like to achieve low variance and low bias simultaneously.</p>
-<p>To illustrate, consider the following three designs as represented by three targets. The inquiry is the bullseye of the target. The data and answer strategies combine to generate a process by which arrows are shot toward the target. On the left, we have a very bad archer: even though the estimates are unbiased in the sense that they hit the bullseye “on average”, very few of the arrows are on target. In the middle, we have an excellent shot: they are both on target and low variance. On the right, we have an archer who is very consistent (low variance) but biased. The mean squared error is highest on the left and lowest in the middle.</p>
+<p>To illustrate, consider the following three designs as represented by three targets. The inquiry is the bullseye of the target. The data and answer strategies combine to generate a process by which arrows are shot toward the target. On the left, we have a very bad archer: even though the estimates are unbiased in the sense that they hit the bullseye “on average”, very few of the arrows are on target. In the middle, we have an excellent shot: they are both on target and low variance. On the right, we have an archer who is very consistent (low variance) but biased. The mean squared error is highest on the left and lowest in the middle. <a href="#fig-ch10num5" class="quarto-xref">Figure&nbsp;<span>10.5</span></a> visualizes this.</p>
 <div id="fig-ch10num5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch10num5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="../figures/figure-10-5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;10.5: Visualization of the bias and variance of three ‘estimators’ of the bullseye"><img src="../figures/figure-10-5.svg" class="img-fluid figure-img"></a>
@@ -1007,7 +1014,7 @@ Figure&nbsp;10.6: The bias, variance, and RMSE of an answer strategy depend on t
 <div id="diagnosishetfx" class="definition">
 <p>Declaration including model uncertainty</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_10.2</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_10.2</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">200</span>, U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
 <span>    <span class="co"># this runif(n = 1, min = 0, max = 0.5) </span></span>
@@ -1016,7 +1023,7 @@ Figure&nbsp;10.6: The bias, variance, and RMSE of an answer strategy depend on t
 <span>  <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="lem-ch10num4" class="theorem lemma">
@@ -1038,7 +1045,7 @@ Figure&nbsp;10.7: Diagnosing an experiment over uncertainty about the true effec
 <div id="diagnosisadjudicating" class="definition">
 <p>Declaration of competing models.</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">200</span>,</span>
 <span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
@@ -1064,17 +1071,17 @@ Figure&nbsp;10.7: Diagnosing an experiment over uncertainty about the true effec
 <span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y2</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE2"</span>, label <span class="op">=</span> <span class="st">"DIM2"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">declaration_10.3a</span> <span class="op">&lt;-</span> <span class="va">M1</span> <span class="op">+</span> <span class="va">IDA</span></span>
-<span><span class="va">declaration_10.3b</span> <span class="op">&lt;-</span> <span class="va">M2</span> <span class="op">+</span> <span class="va">IDA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">declaration_10.3b</span> <span class="op">&lt;-</span> <span class="va">M2</span> <span class="op">+</span> <span class="va">IDA</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="lem-ch10num5" class="theorem lemma">
 <p><span class="theorem-title"><strong>Diagnosis 10.5</strong></span> Diagnosis of competing models</p>
 <p>To diagnose these alternative models, we count how frequently each perspective receives support. If we define support by statistical significance (other metrics are of course possible), then your model is supported if the effect of treatment on <span class="math inline">\(Y1\)</span> is significant but the effect on <span class="math inline">\(Y2\)</span> is not significant. If the reverse pattern is obtained, your rival can claim victory. Two kinds of split decisions are possible: neither estimate is significant, or both are. By simulation, we can estimate the rates of these four possibilities, under both your beliefs and those of your theoretical adversary.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_10.5</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_10.5</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">declaration_10.3a</span>, <span class="va">declaration_10.3b</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div id="tbl-adjudicating" class="cell quarto-float quarto-figure quarto-figure-center anchored">
@@ -1082,7 +1089,7 @@ Figure&nbsp;10.7: Diagnosing an experiment over uncertainty about the true effec
 Table&nbsp;10.7: Design diagnosis under two alternative theories
 </figcaption><div aria-describedby="tbl-adjudicating-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table cell caption-top table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">design</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">Only theory 1 supported</th>
@@ -1119,7 +1126,7 @@ Table&nbsp;10.7: Design diagnosis under two alternative theories
 <p>Diagnosis is the process of estimating the properties of research designs under uncertain beliefs about the world. We simulate under many alternative designs because we want to choose designs that are strong under a large range of model possibilities. Each run of a design generates a diagnostic statistic. We learn about the distribution of the diagnostic statistic by running the design repeatedly. Diagnosands are summaries of the distribution of diagnostic statistics. Which diagnosands are most important will vary from study to study, and depend on the relative weight you place on one diagnosand versus another. Analytic design diagnosis is possible and can be quite powerful—we nevertheless recommend full simulation of research designs in order to learn about a range of diagnosands.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-Gelman2014b" class="csl-entry" role="listitem">
 Gelman, Andrew, and John Carlin. 2014. <span>“Beyond Power Calculations Assessing Type s (Sign) and Type m (Magnitude) Errors.”</span> <em>Perspectives on Psychological Science</em> 9 (6): 641–51.
 </div>
@@ -1133,243 +1140,250 @@ Imai, Kosuke, Gary King, and Elizabeth A. Stuart. 2008. <span>“Misunderstandin
 Middleton, Joel A. 2008. <span>“Bias of the Regression Estimator for Experiments Using Clustered Random Assignment.”</span> <em>Statistics &amp; Probability Letters</em> 78 (16): 2654–59.
 </div>
 <div id="ref-morrisetal2019" class="csl-entry" role="listitem">
-Morris, Tim P., Ian R. White, and Michael J. Crowther. 2021. <span>“Using Simulation Studies to Evaluate Statistical Methods.”</span> <em>Statistics in Medicine</em> 38 (11): 2074–2102.
+Morris, Tim P., Ian R. White, and Michael J. Crowther. 2021. <span>“Using Simulation Studies to Evaluate Statistical Methods.”</span> <em>Statistics in Medicine</em> 38 (11): 2074–102.
 </div>
 <div id="ref-samii2012equivalencies" class="csl-entry" role="listitem">
 Samii, Cyrus, and Peter M. Aronow. 2012. <span>“On Equivalencies Between Design-Based and Regression-Based Variance Estimators for Randomized Experiments.”</span> <em>Statistics &amp; Probability Letters</em> 82 (2): 365–70.
 </div>
 </div>
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1377,185 +1391,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" class="pagination-link" aria-label="Choosing an answer strategy">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing an answer strategy</span></span>
       </a>          

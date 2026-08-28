@@ -2,14 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.10.18">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>8&nbsp; Crafting a data strategy – Research Design in the Social Sciences</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -21,7 +27,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -48,15 +53,16 @@ div.csl-indent {
 <meta name="quarto:offset" content="../">
 <link href="../declaration-diagnosis-redesign/choosing-answer-strategy.html" rel="next">
 <link href="../declaration-diagnosis-redesign/defining-inquiry.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a34d670291f06f286357e447776a572a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
@@ -129,7 +135,7 @@ gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
         createCookie('popupShown', 'yes', 1)
       }
     }
-</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -140,7 +146,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -156,7 +162,7 @@ window.Quarto = {
 };
 </script>
 </head>
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
@@ -683,7 +689,7 @@ block_ra(blocks = villages, prob_unit = saturation)</code></pre>
 </div>
 <p><a href="#fig-ch8num4" class="quarto-xref">Figure&nbsp;<span>8.4</span></a> visualizes nine kinds of random assignment, arranged according to whether the assignment procedure is simple, complete, or blocked and according to whether the assignment procedure is carried out at the individual, cluster, or saturation level. In the top left facet, we have simple (or Bernoulli) random assignment, in which all units have a 50% probability of treatment, but the total number of treated units can bounce around from assignment to assignment. In the top center, this problem is fixed: under complete random assignment, exactly <span class="math inline">\(m\)</span> of <span class="math inline">\(N\)</span> units are assigned to treatment and the <span class="math inline">\(N - m\)</span> are assigned to control. While complete random assignment fixes the number of units treated at exactly <span class="math inline">\(m\)</span>, the number of units that are treated within any particular group of units (defined by a pre-treatment covariate) could vary. Under block random assignment, we conduct complete random assignment within each block separately, so we directly control the number treated within each block. Moving from simple to complete random assignment tends to decrease sampling variability a bit, by ruling out highly unbalanced allocations. Moving from complete to blocked can help more, so long as the blocking variable is correlated with the outcome. Blocking rules out assignments in which too many or too few units in a particular subgroup are treated.</p>
 <p>The second row of <a href="#fig-ch8num4" class="quarto-xref">Figure&nbsp;<span>8.4</span></a> shows clustered designs in which all units within a cluster receive the same treatment assignment. Clustered designs are common for household-level, school-level, or village-level designs, where it would be impractical or unfeasible to conduct individual level assignment. When units within the same cluster are more alike than units in different clusters (as in most cases), clustering increases sampling variability relative to individual level assignment. Just like in individual level designs, moving from simple to complete or from complete to blocked tends to result in lower sampling variability.</p>
-<p>The final row of <a href="#fig-ch8num4" class="quarto-xref">Figure&nbsp;<span>8.4</span></a> shows a series of designs that are analogous to the multi-stage sampling designs shown in <a href="#fig-ch8num2" class="quarto-xref">Figure&nbsp;<span>8.2</span></a> – but their purpose is subtly different in spirit. Multi-stage sampling designs are employed to reduce costs – first clusters are sampled but not all units within a cluster are sampled. A saturation randomization design (sometimes called a “partial population design”, see <a href="../library/experimental-causal.html#sec-ch18s10" class="quarto-xref"><span>Section 18.10</span></a>) uses a similar procedure to both contain and learn about spillover effects. Some clusters are chosen for treatment, but some units <em>within</em> those clusters are not treated. Units that are untreated in treated clusters can be compared with units that are untreated in untreated clusters in order to suss out intra-cluster spillover effects <span class="citation" data-cites="betsy2012detecting">(<a href="../references.html#ref-betsy2012detecting" role="doc-biblioref">Sinclair, McConnell, and Green 2012</a>)</span>. <a href="#fig-ch8num4" class="quarto-xref">Figure&nbsp;<span>8.4</span></a> shows how the saturation design comes in simple, complete, and blocked varieties.</p>
+<p>The final row of <a href="#fig-ch8num4" class="quarto-xref">Figure&nbsp;<span>8.4</span></a> shows a series of designs that are analogous to the multi-stage sampling designs shown in <a href="#fig-ch8num2" class="quarto-xref">Figure&nbsp;<span>8.2</span></a> – but their purpose is subtly different in spirit. Multi-stage sampling designs are employed to reduce costs – first clusters are sampled but not all units within a cluster are sampled. A saturation randomization design (sometimes called a “partial population design”, see <a href="../library/experimental-causal.html#sec-ch18s10" class="quarto-xref"><span>Section 18.10</span></a>) uses a similar procedure to both contain and learn about spillover effects. Some clusters are chosen for treatment, but some units <em>within</em> those clusters are not treated. Units that are untreated in treated clusters can be compared with units that are untreated in untreated clusters in order to suss out intra-cluster spillover effects <span class="citation" data-cites="betsy2012detecting">(<a href="../references.html#ref-betsy2012detecting" role="doc-biblioref">Sinclair et al. 2012</a>)</span>. <a href="#fig-ch8num4" class="quarto-xref">Figure&nbsp;<span>8.4</span></a> shows how the saturation design comes in simple, complete, and blocked varieties.</p>
 <div id="fig-ch8num4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch8num4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="../figures/figure-8-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;8.4: Nine kinds of random assignment. In the first row individuals are the units of assignment, in the second row clusters are randomly assigned, in the third clusters are randomly assigned a saturation level and then individuals within these clusters are randomly assigned. In the first column units are assigned independently, in the second units are assigned to hit a target, in the third units are assigned to hit targets within strata."><img src="../figures/figure-8-4.svg" class="img-fluid figure-img"></a>
@@ -761,7 +767,7 @@ Figure&nbsp;8.6: Step-wedge random assignment.
 <span class="header-section-number">8.1.2.4</span> Data-adaptive assignment strategies</h4>
 <p>We usually think of data strategies as static: a survey asks a fixed set of questions, a randomization protocol has a fixed probability of assignment, sampling designs are designed to yield a fixed number of subjects. But they can also be dynamic. For example, the GRE standardized test many graduate students take is data-adaptive: if you answer the easy questions right, they skip you to harder ones. This process uses fewer questions to figure out test-takers’ scores, saving everyone the laborious effort of taking and grading long examinations (see <a href="#sec-ch8s1ss3sss3" class="quarto-xref"><span>Section 8.1.3.3</span></a> for more on data-adaptive measurement).</p>
 <p>Data-adaptive designs are also used when the space of possible treatments to choose from is large. We could conduct a static multi-arm trial to evaluate all of them, but experiments with too many conditions tend to have low precision because the sample is spread too thinly across conditions. The usual response to this cost problem is to turn to theory to consider which treatments are most likely to work and test those options only.</p>
-<p>“Response-adaptive” designs are an alternative that may be appropriate in these settings. The subject pool is split into sequential “batches.” The first batch does the experiment, then the second, and so on. The probabilities of assignment to each condition (or arm) start out equal, but we tweak them between batches. We assign a higher fraction of the second batch to conditions that performed well in the first batch. This process continues until the sample pool is exhausted. Many algorithms for deciding how to update between batches are available, but the most common (Thompson sampling) estimates the probability that each arm is the best arm, then randomly allocates subjects to arms using these probabilities. See <span class="citation" data-cites="offer-westort_coppock_green_2021">Offer-Westort, Coppock, and Green (<a href="../references.html#ref-offer-westort_coppock_green_2021" role="doc-biblioref">2021</a>)</span> for a recent introduction to this algorithm and elaborations.</p>
+<p>“Response-adaptive” designs are an alternative that may be appropriate in these settings. The subject pool is split into sequential “batches.” The first batch does the experiment, then the second, and so on. The probabilities of assignment to each condition (or arm) start out equal, but we tweak them between batches. We assign a higher fraction of the second batch to conditions that performed well in the first batch. This process continues until the sample pool is exhausted. Many algorithms for deciding how to update between batches are available, but the most common (Thompson sampling) estimates the probability that each arm is the best arm, then randomly allocates subjects to arms using these probabilities. See <span class="citation" data-cites="offer-westort_coppock_green_2021">Offer-Westort et al. (<a href="../references.html#ref-offer-westort_coppock_green_2021" role="doc-biblioref">2021</a>)</span> for a recent introduction to this algorithm and elaborations.</p>
 </section><section id="non-randomized-assignment" class="level4" data-number="8.1.2.5"><h4 data-number="8.1.2.5" class="anchored" data-anchor-id="non-randomized-assignment">
 <span class="header-section-number">8.1.2.5</span> Non-randomized assignment</h4>
 <p>Strong causal inferences can sometimes be drawn from treatment allocation strategies that do not involve random assignment. We outline four such strategies below, with their costs and benefits.</p>
@@ -772,8 +778,8 @@ Figure&nbsp;8.6: Step-wedge random assignment.
 <span class="header-section-number">8.1.3</span> Measurement</h3>
 <p>Measurement is the part of the data strategy in which variables are collected about the population of units to enable sampling; variables are collected about the sample and outcomes are collected, following any treatment assignment. All variables used in the answer strategy are collected in measurement, aside from any treatment assignment variables and assignment and sample inclusion probabilities.</p>
 <p>Descriptive inference is threatened whenever measurements differ from the quantities they are meant to measure. For example when we want to measure “latent variables” such as fear, support for a political candidate, or economic well-being, we use a measurement technology to imperfectly observe them. We might represent that measurement technology as the function <span class="math inline">\(Q\)</span> that yields the observed outcome <span class="math inline">\(Y^{\mathrm obs}\)</span>: <span class="math inline">\(Q(Y^*) = Y^{\mathrm obs}\)</span>. Our measurement strategy is a set of such functions for each variable we measure.</p>
-<p>Some measurement strategies exhibit little to no measurement error. It’s easy enough to measure some plain matters of fact, like whether a country is a member of the European Union (though clerical errors could still crop up). In the social sciences, most measurement strategies are threatened by the possibility of measurement errors due to any number of biases (e.g., recall bias, observer bias, Hawthorn effects, demand effects, sensitivity bias, response substitution, among many others).</p>
-<p>We often describe measurement error in two ways, measurement <em>validity</em>, and measurement <em>reliability</em>. Validity is the difference between the observed and latent outcome, <span class="math inline">\(Y^{\mathrm obs} - Y^*\)</span>. Reliability is the consistency of the measurements we would obtain if we were to repeat the measurement many times, which we can operationalize as low variance of the measurements:, <span class="math inline">\(\mathbb{V}(Y_1^{\mathrm obs}, Y_2^{\mathrm obs}, \ldots, Y_k^{\mathrm obs})\)</span>. We would of course like to always select valid, reliable measurement strategies. When no perfect measure is available, choices among alternative measurement strategies typically reduce to tradeoffs between their validity and reliability.</p>
+<p>Some measurement strategies exhibit little to no measurement error. It’s easy enough to measure some plain matters of fact, like whether a country is a member of the European Union (though clerical errors could still crop up). In the social sciences, most measurement strategies are threatened by the possibility of measurement errors due to any number of biases (e.g., recall bias, observer bias, Hawthorne effects, demand effects, sensitivity bias, response substitution, among many others).</p>
+<p>We often describe measurement error in two ways, measurement <em>validity</em>, and measurement <em>reliability</em>. Validity is the difference between the observed and latent outcome, <span class="math inline">\(Y^{\mathrm obs} - Y^*\)</span>. Reliability is the consistency of the measurements we would obtain if we were to repeat the measurement many times, which we can operationalize as low variance of the measurements, <span class="math inline">\(\mathbb{V}(Y_1^{\mathrm obs}, Y_2^{\mathrm obs}, \ldots, Y_k^{\mathrm obs})\)</span>. We would of course like to always select valid, reliable measurement strategies. When no perfect measure is available, choices among alternative measurement strategies typically reduce to tradeoffs between their validity and reliability.</p>
 <p>To make these choices, we depend on methodological research whose main~inquiries are the reliability and validity of particular measurement procedures. Sometimes measurement studies are presented as “validation” studies that compare a proposed measure to a “ground truth.” But even “ground truths” must be measured, usually with an expensive or otherwise unfeasible approach (otherwise they would be no need for the alternative measurement). Further, neither measurement is known to be exactly <span class="math inline">\(Y^*\)</span>, so ultimately validation studies are comparisons of multiple techniques each with their own advantages and disadvantages. This fact does not make these studies useless, but rather underlines that they rely on our faith in ground truths.</p>
 <p>Researchers select several characteristics of a measurement strategy: who collects the measures, the mode of measurement, how often and when measures are taken, how many different observed measures of the latent outcome <span class="math inline">\(Y^*\)</span> are collected, and how they are summarized into a single measure. These design characteristics may affect validity, reliability, cost, or all three.</p>
 <p>Data may be collected by researchers themselves, by participants, or by third parties. In some forms of qualitative research such as participant-observation and interview-based research, the researcher may be the primary data collector. In survey research, interviewers are typically a hired agents of the researcher, each of whom may ask questions differently. Participants are sometimes asked to collect data on themselves, either through self-administered surveys, journaling, or taking measurements of themselves using thermometers or scales. A primary concern with self-reports is validity: do respondents report their measurements truthfully? A parallel concern is raised when participants do not collect their own data, but are made aware of the fact that they are being measured by others. Finally, data may be collected by agents of governments or other organizations, yielding so-called “administrative” data.</p>
@@ -836,7 +842,7 @@ Figure&nbsp;8.7: Directed acyclic graph of random sampling, random assignment, a
 <p>Data strategies are made of up three kinds of empirical strategies: sampling strategies, assignment strategies, and measurement strategies. All research designs have a data strategy – even just downloading a dataset curated by others constitutes a data strategy (the original researcher’s data strategy). The blizzard of choices enumerated in this chapter underlines the central importance of the data strategy in developing strong research designs. The data strategy is where we exert researcher control over how, over the conditions under which, and over the population from which we collect the empirical information we will use when generating answers to our research questions.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-bai2021randomize" class="csl-entry" role="listitem">
 Bai, Yuehao. 2021. <span>“Why Randomize? Minimax Optimality Under Permutation Invariance.”</span> <em>Journal of Econometrics</em>.
 </div>
@@ -847,10 +853,10 @@ Collier, David, David A Freedman, James D Fearon, David D Laitin, John Gerring, 
 Coppock, Alexander, Alan S. Gerber, Donald P. Green, and Holger L. Kern. 2017. <span>“Combining Double Sampling and Bounds to Address Nonignorable Missing Outcomes in Randomized Experiments.”</span> <em>Political Analysis</em> 25 (2): 188–206.
 </div>
 <div id="ref-fearon2008integrating" class="csl-entry" role="listitem">
-Fearon, James, and David Laitin. 2008. <span>“Integrating Qualitative and Quantitative Methods.”</span> In <em>Oxford Handbook of Political Methodology</em>, edited by Janet M. Box-Steffenmeier, David Collier, and Henry E Brady, 756–76. London, England: Oxford University Press.
+Fearon, James, and David Laitin. 2008. <span>“Integrating Qualitative and Quantitative Methods.”</span> In <em>Oxford Handbook of Political Methodology</em>, edited by Janet M. Box-Steffenmeier, David Collier, and Henry E Brady. Oxford University Press.
 </div>
 <div id="ref-geddes2003paradigms" class="csl-entry" role="listitem">
-Geddes, Barbara. 2003. <em>Paradigms and Sand Castles: Theory Building and Research Design in Comparative Politics</em>. Ann Arbor, Michigan: University of Michigan Press.
+Geddes, Barbara. 2003. <em>Paradigms and Sand Castles: Theory Building and Research Design in Comparative Politics</em>. University of Michigan Press.
 </div>
 <div id="ref-gerring2016selecting" class="csl-entry" role="listitem">
 Gerring, John, and Lee Cojocaru. 2016. <span>“Selecting Cases for Intensive Analysis: A Diversity of Goals and Methods.”</span> <em>Sociological Methods &amp; Research</em> 45 (3): 392–423.
@@ -877,13 +883,13 @@ Levy, Jack S. 2008. <span>“Case Studies: Types, Designs, and Logics of Inferen
 Lieberman, Evan S. 2005. <span>“Nested Analysis as a Mixed-Method Strategy for Comparative Research.”</span> <em>American Political Science Review</em> 99 (3): 435–52.
 </div>
 <div id="ref-Martin1992" class="csl-entry" role="listitem">
-Martin, Lisa. 1992. <em><span>Coercive Cooperation: Explaining Multilateral Economic Sanctions</span></em>. Princeton: Princeton University Press.
+Martin, Lisa. 1992. <em><span>Coercive Cooperation: Explaining Multilateral Economic Sanctions</span></em>. Princeton University Press.
 </div>
 <div id="ref-mellon_2021" class="csl-entry" role="listitem">
 Mellon, Jonathan. 2021. <span>“Rain, Rain, Go Away: 176 Potential Exclusion-Restriction Violations for Studies Using Weather as an Instrumental Variable.”</span> <em>Unpublished Manuscript</em>.
 </div>
 <div id="ref-mill1884system" class="csl-entry" role="listitem">
-Mill, John Stuart. 1869. <em>A System of Logic, Ratiocinative and Inductive: Being a Connected View of the Principles of Evidence and the Methods of Scientific Investigation</em>. New York: Harper &amp; Brothers.
+Mill, John Stuart. 1869. <em>A System of Logic, Ratiocinative and Inductive: Being a Connected View of the Principles of Evidence and the Methods of Scientific Investigation</em>. Harper &amp; Brothers.
 </div>
 <div id="ref-montgomery2020so" class="csl-entry" role="listitem">
 Montgomery, Jacob M., and Erin L. Rossiter. 2020. <span>“So Many Questions, so Little Time: Integrating Adaptive Inventories into Public Opinion Research.”</span> <em>Journal of Survey Statistics and Methodology</em> 8 (4): 667–90.
@@ -901,250 +907,257 @@ Seawright, Jason, and John Gerring. 2008. <span>“Case Selection Techniques in 
 Sinclair, Betsy, Margaret McConnell, and Donald P. Green. 2012. <span>“Detecting Spillover Effects: Design and Analysis of Multilevel Experiments.”</span> <em>American Journal of Political Science</em> 56 (4): 1055–69.
 </div>
 <div id="ref-skocpol1979states" class="csl-entry" role="listitem">
-Skocpol, Theda. 1979. <em>States and Social Revolutions: A Comparative Analysis of France, Russia and China</em>. Cambridge, UK: Cambridge University Press.
+Skocpol, Theda. 1979. <em>States and Social Revolutions: A Comparative Analysis of France, Russia and China</em>. Cambridge University Press.
 </div>
 <div id="ref-Swank2002" class="csl-entry" role="listitem">
-Swank, Duane. 2002. <em><span class="nocase">Global Capital, Political Institutions, and Policy Change in Developed Welfare States</span></em>. New York: Cambridge University Press.
+Swank, Duane. 2002. <em><span class="nocase">Global Capital, Political Institutions, and Policy Change in Developed Welfare States</span></em>. Cambridge University Press.
 </div>
 </div>
 </section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
 <ol>
 <li id="fn1"><p>To convince yourself of the difference between simple and complete random sampling, run <code>table(simple_rs(N = 100, prob = 0.5))</code> a few times and compare the results with <code>table(complete_rs(N = 100, n = 50))</code><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>To convince yourself of the difference between complete and stratified sampling, run <code>age &lt;- rep(c("Y", "O"), 50); table(age, complete_rs(N = 100, n = 50))</code> a few times and compare the results with <code>table(age, strata_rs(strata = age))</code><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>See <span class="citation" data-cites="gerring2016selecting">Gerring and Cojocaru (<a href="../references.html#ref-gerring2016selecting" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="plumper2010case">Plümper, Troeger, and Neumayer (<a href="../references.html#ref-plumper2010case" role="doc-biblioref">2019</a>)</span> for still larger lists.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>See <span class="citation" data-cites="gerring2016selecting">Gerring and Cojocaru (<a href="../references.html#ref-gerring2016selecting" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="plumper2010case">Plümper et al. (<a href="../references.html#ref-plumper2010case" role="doc-biblioref">2019</a>)</span> for still larger lists.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>This problem does not arise if cases are selected to be similar on background features other than <span class="math inline">\(X\)</span> <em>when <span class="math inline">\(Y\)</span> is unknown</em> — in this case there is learning about effects from later observation of <span class="math inline">\(Y\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>Strictly speaking, this claim only holds under a noninterference assumption; if the usual noninterference assumption is incorrect, we have to redefine potential outcomes in order to recover “stability.” Assignment strategies sample from possible worlds of stable potential outcomes that we imagine in <em>M</em>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1152,185 +1165,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../declaration-diagnosis-redesign/defining-inquiry.html" class="pagination-link" aria-label="Defining the inquiry">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Defining the inquiry</span></span>
       </a>          

@@ -2,14 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.10.18">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>13&nbsp; Designing in code – Research Design in the Social Sciences</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -18,8 +24,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -30,7 +37,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -62,15 +69,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../library/" rel="next">
 <link href="../declaration-diagnosis-redesign/design-example.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a34d670291f06f286357e447776a572a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
@@ -144,7 +152,7 @@ gtag('config', 'G-MMK8CF9JC0', { 'anonymize_ip': true});
       }
     }
 </script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -155,7 +163,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -171,7 +179,7 @@ window.Quarto = {
 };
 </script>
 </head>
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
@@ -506,11 +514,11 @@ window.Quarto = {
 <span class="header-section-number">13.1.1</span> Units</h3>
 <p>The model is first defined by the units under study. If there are 1,000 people who live in a city that you wish to learn about, but you don’t know anything else about them, you can declare:</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Units often sit within multiple, sometimes overlapping geographic and social hierarchies. Households live on blocks that make up neighborhoods. Workers have jobs at firms and also often are represented by unions that sometimes represent workers in multiple firms (a non-nested hierarchy). These hierarchies are important to declare in the model as they often form the basis for why units are similar or different. Within <code>declare_model</code>, we define hierarchy using <code>add_level</code>, which adds a new level of hierarchy. This model declaration creates 100 households of varying sizes, then creates the appropriate number of individuals within households.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    households <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
 <span>      N <span class="op">=</span> <span class="fl">100</span>, </span>
@@ -521,11 +529,11 @@ window.Quarto = {
 <span>      N <span class="op">=</span> <span class="va">N_members</span>, </span>
 <span>      age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">18</span><span class="op">:</span><span class="fl">90</span>, <span class="va">N</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span>    <span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Panel data have a different structure. For example, in a country-year panel dataset, we observe every country in every year. To create data with this structure, we first declare a country-level dataset, then a years-level dataset, then we join them. The join is accomplished in the <code>cross_levels</code> call, which defines the variables we join by with <code>by = join_using(countries, years)</code>. In <code>cross_levels</code>, we also create the observation-level outcome variable, which is a function in this case of a country shock, a year shock, an observation shock, and a time trend.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    countries <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
 <span>      N <span class="op">=</span> <span class="fl">196</span>, </span>
@@ -542,22 +550,22 @@ window.Quarto = {
 <span>      observation_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
 <span>      Y <span class="op">=</span> <span class="fl">0.01</span> <span class="op">*</span> <span class="va">time_trend</span> <span class="op">+</span> <span class="va">country_shock</span> <span class="op">+</span> <span class="va">year_shock</span> <span class="op">+</span> <span class="va">observation_shock</span> </span>
 <span>    <span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="sec-ch13s1ss2" class="level3" data-number="13.1.2"><h3 data-number="13.1.2" class="anchored" data-anchor-id="sec-ch13s1ss2">
 <span class="header-section-number">13.1.2</span> Unit characteristics</h3>
 <p>We can describe the characteristics of units by either supplying existing data or generating simulated data.</p>
 <p>Here is an example of the simulation approach. We imagine 100 units with a characteristic <code>X</code> that is uniformly distributed between 0 and 100.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>, </span>
 <span>    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can use any of the enormous number of data simulation functions available in R for this purpose. Here we gather six functions we tend to use in our own declarations, but they are by no means exhaustive. Each function has arguments that govern exactly how the data are created; we chose arbitrary values here to show how they work. <a href="#fig-ch13num1" class="quarto-xref">Figure&nbsp;<span>13.1</span></a> shows what these six look like for a 1,000 unit model.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">1000</span>,</span>
 <span>    X1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, mean <span class="op">=</span> <span class="fl">5</span>, sd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span>
@@ -566,7 +574,7 @@ window.Quarto = {
 <span>    X4 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">5</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
 <span>    X5 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Lognormal.html">rlnorm</a></span><span class="op">(</span><span class="va">N</span>, meanlog <span class="op">=</span> <span class="fl">0</span>, sdlog <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
 <span>    X6 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span><span class="op">)</span>, <span class="va">N</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="fig-ch13num1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch13num1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -579,59 +587,59 @@ Figure&nbsp;13.1: Six kinds of characteristics of units
 <p>Binary variables are very important in the social sciences, but they can be particularly tricky to make, so we’ll spend a little more time on them. In a common way of thinking, binary variables are translations from latent, continuous variables into observed binary outcomes.</p>
 <p>We can draw binary outcomes in one of three ways. First, we can simulate binary outcomes using the <code>rbinom</code> function, as we have already seen. The function <code>rbinom(N, size = 1, prob = 0.5)</code> flips 1 coin for each of <code>N</code> subjects with a constant latent probability of success across units.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">1000</span>, </span>
 <span>    Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If you believe the latent probability varies across units, you might want to set up a latent variable first before the call to <code>rbinom</code>. A major reason to do it this way is to build in correlation between the binary outcome <code>Y</code> and some other variable, like <code>X</code> in this model declaration.</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M2</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M2</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">1000</span>, </span>
 <span>    latent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
 <span>    Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="va">latent</span><span class="op">)</span>,</span>
 <span>    X <span class="op">=</span> <span class="va">latent</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A third way to create binary variable skips the call to <code>rbinom</code> altogether and creates a binary variable by assessing whether the latent variable exceeds some threshold, here <code>0.75</code>. A major reason to do this is when we want to control the sources of randomness. The latent variable is random because of the call to the <code>runif</code> function. If we pass the resulting latent probabilities to <code>rbinom</code> as in <code>M2</code>, then we add a <em>second</em> layer of randomness, the coin flips. If one layer is enough, then <code>M3</code> might be a more appropriate model declaration.</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M3</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M3</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">1000</span>, </span>
 <span>    latent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>, </span>
 <span>    Y <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">latent</span> <span class="op">&gt;</span> <span class="fl">0.75</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="building-in-correlations-between-simulated-variables" class="level4" data-number="13.1.2.1"><h4 data-number="13.1.2.1" class="anchored" data-anchor-id="building-in-correlations-between-simulated-variables">
 <span class="header-section-number">13.1.2.1</span> Building in correlations between simulated variables</h4>
 <p>Most social science variables are interrelated. The correlations between variables may affect the quality of a research design in many ways. If we control for a variable in a regression to improve power, how much power we gain depends on the correlation between that variable and the outcome.</p>
 <p>Here we walk through two main ways to create correlated variables. The first way is simply to make one variable a function of another:</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">1000</span>,</span>
 <span>    X1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
 <span>    X2 <span class="op">=</span> <span class="va">X1</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The second way uses an explicit draw from a <em>multivariate</em> distribution. The <code>mvrnorm</code> function in the <code>MASS</code> package generates draws from the multivariate normal distribution. We have to give it a two dimensional mean (<code>mu</code>) and a variance-covariance matrix (<code>Sigma</code>). The <code>draw_multivariate</code> function is a wrapper that makes these functions (which return more than one column of data!) play nicely with <code>declare_model</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M2</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M2</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    <span class="fu">draw_multivariate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">X1</span>, <span class="va">X2</span><span class="op">)</span> <span class="op">~</span> <span class="fu">MASS</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/MASS/man/mvrnorm.html">mvrnorm</a></span><span class="op">(</span></span>
 <span>      n <span class="op">=</span> <span class="fl">1000</span>,</span>
 <span>      mu <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span>,</span>
 <span>      Sigma <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0.3</span>, <span class="fl">0.3</span>, <span class="fl">1</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span>    <span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>    <span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="building-in-correlations-within-clusters" class="level4" data-number="13.1.2.2"><h4 data-number="13.1.2.2" class="anchored" data-anchor-id="building-in-correlations-within-clusters">
 <span class="header-section-number">13.1.2.2</span> Building in correlations within clusters</h4>
 <p>A second important form of correlation is correlation within clusters, described by the intra-cluster correlation coefficient (ICC). When ICC is low, units are not much more similar to other units in their cluster than they are to units in other clusters. When it is high, clusters are more homogeneous within themselves and more heterogeneous across themselves. For more on clustered designs for surveys and for experiments, see <a href="../library/observational-descriptive.html#sec-ch15s2" class="quarto-xref"><span>Section 15.2</span></a> and <a href="../library/experimental-causal.html#sec-ch18s3" class="quarto-xref"><span>Section 18.3</span></a>.</p>
 <p>We can introduce ICC using the <code>draw_normal_icc</code> function:</p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>households <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span>,</span>
 <span>                individuals <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
 <span>                  N <span class="op">=</span> <span class="fl">4</span>,</span>
@@ -640,28 +648,28 @@ Figure&nbsp;13.1: Six kinds of characteristics of units
 <span>                    clusters <span class="op">=</span> <span class="va">households</span>,</span>
 <span>                    ICC <span class="op">=</span> <span class="fl">0.65</span></span>
 <span>                  <span class="op">)</span></span>
-<span>                <span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>                <span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="drawing-on-baseline-data" class="level4" data-number="13.1.2.3"><h4 data-number="13.1.2.3" class="anchored" data-anchor-id="drawing-on-baseline-data">
 <span class="header-section-number">13.1.2.3</span> Drawing on baseline data</h4>
 <p>In some cases, you will be in possession of baseline data about the units you plan to study. In the model, you can replace simulations with these data, as long as your goal is to make inferences just about those units you have data for. If you have a census of the dwelling characteristics of all houses in Philadelphia and you plan to conduct a survey of homeowner attitudes toward a new tax based on a sample stratified by dwelling type, you don’t need to simulate data for the dwelling characteristics. They are known. You will still need to simulate the data on attitudes, which you have not yet collected.</p>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    data <span class="op">=</span> <span class="va">baseline_data</span>,</span>
 <span>    attitudes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, <span class="va">N</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="drawing-on-data-about-similar-units" class="level4" data-number="13.1.2.4"><h4 data-number="13.1.2.4" class="anchored" data-anchor-id="drawing-on-data-about-similar-units">
 <span class="header-section-number">13.1.2.4</span> Drawing on data about similar units</h4>
 <p>More commonly, you may have data on similar units from past studies or from a pilot study of your own. In these cases, you will not want to take their data as fixed, but resample from the data to simulate the population you are now drawing from. For example, if your baseline data is a random sample of households in Philadelphia, you may want to resample from that data to construct a simulated population of Philadelphia from which you can sample.</p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    data <span class="op">=</span> <span class="va">baseline_data</span>, </span>
 <span>    N <span class="op">=</span> <span class="fl">619505</span>, </span>
 <span>    handler <span class="op">=</span> <span class="va">resample_data</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Drawing on past data holds several advantages. The natural correlations with clusters and across background characteristics are already built into your data. Using past data makes declaring your model easier, and in some cases can provide more realistic simulation of the data you end up collecting.</p>
 </section><section id="unknown-heterogeneity" class="level4" data-number="13.1.2.5"><h4 data-number="13.1.2.5" class="anchored" data-anchor-id="unknown-heterogeneity">
@@ -670,23 +678,23 @@ Figure&nbsp;13.1: Six kinds of characteristics of units
 <p>At the point of declaration we face problems immediately: how much heterogeneity do we introduce, where, and of what kind?</p>
 <p><code>M1</code> shows how to make rather benign unknown heterogeneity. <code>U</code> is normally distributed and only affects <code>Y</code>. The observed binary variable <code>X</code> is independent of <code>U</code> and affects <code>Y</code> in its own way.</p>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
 <span>    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
 <span>    Y <span class="op">=</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">X</span> <span class="op">+</span> <span class="va">U</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><code>M2</code> is more worrisome. <code>U</code> now affects <code>X</code> as well, by affecting the probability of <code>X</code> equaling 1. See <a href="../library/observational-causal.html#sec-ch16s2" class="quarto-xref"><span>Section 16.2</span></a> for designs that face this sort of problem.</p>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M2</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M2</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
 <span>    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="va">U</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    Y <span class="op">=</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">X</span> <span class="op">+</span> <span class="va">U</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A further question for <code>U</code> is how much it should vary. This question is tougher to answer. <code>U</code> is an important source of variation in outcomes, so it needs to be calibrated in a way that the simulated data look like the data you expect to generate or encounter in the world. So our best advice here is to follow <a href="../introduction/research-design-principles.html#exm-designagnostically" class="quarto-xref">Principle&nbsp;<span>3.2</span></a>: <em>Design agnostically</em> to figure out the conditions under which your design works well.</p>
 </section></section><section id="potential-outcomes" class="level3" data-number="13.1.3"><h3 data-number="13.1.3" class="anchored" data-anchor-id="potential-outcomes">
@@ -694,22 +702,22 @@ Figure&nbsp;13.1: Six kinds of characteristics of units
 <p>We declare “potential” outcomes when describing counterfactual quantities.</p>
 <p>The most straightforward way to declare potential outcomes is to make one variable per potential outcome. Here the two potential outcomes come from coin flip distributions with different success probabilities.</p>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>    Y_Z_0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
 <span>    Y_Z_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The <code>potential_outcomes</code> function can do the same thing, but using R’s “formula” syntax, allowing us to write down potential outcomes in a “regression-like” way.</p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>, </span>
 <span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="fu">M</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">M</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>By default, <code>potential_outcomes</code> imagines you are making two potential outcomes with respect to a treatment variable <code>Z</code> that can take on two values, 0 and 1.</p>
 <div class="cell">
@@ -718,7 +726,7 @@ Figure&nbsp;13.1: Six kinds of characteristics of units
 Table&nbsp;13.1: One draw of two potential outcomes
 </figcaption><div aria-describedby="tbl-modelposdraw-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table cell caption-top table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">ID</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">Y_Z_0</th>
@@ -759,7 +767,7 @@ Table&nbsp;13.1: One draw of two potential outcomes
 </div>
 <p>But we can use <code>potential_outcomes</code> to describe multiple treatment conditions:</p>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>, </span>
 <span>    <span class="fu">potential_outcomes</span><span class="op">(</span></span>
@@ -767,7 +775,7 @@ Table&nbsp;13.1: One draw of two potential outcomes
 <span>      conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="fu">M</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">M</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div id="tbl-modelposdraw2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
@@ -775,7 +783,7 @@ Table&nbsp;13.1: One draw of two potential outcomes
 Table&nbsp;13.2: One draw of three potential outcomes
 </figcaption><div aria-describedby="tbl-modelposdraw2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table cell caption-top table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">ID</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">Y_Z_0</th>
@@ -822,7 +830,7 @@ Table&nbsp;13.2: One draw of three potential outcomes
 </div>
 <p>Or to describe multiple treatment factors (see <a href="../library/experimental-causal.html#sec-ch18s5" class="quarto-xref"><span>Section 18.5</span></a> on factorial experiments):</p>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>, </span>
 <span>    <span class="fu">potential_outcomes</span><span class="op">(</span></span>
@@ -830,7 +838,7 @@ Table&nbsp;13.2: One draw of three potential outcomes
 <span>      conditions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Z1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Z2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="fu">M</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">M</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div id="tbl-modelposdraw3" class="cell quarto-float quarto-figure quarto-figure-center anchored">
@@ -838,7 +846,7 @@ Table&nbsp;13.2: One draw of three potential outcomes
 Table&nbsp;13.3: One draw of four potential outcomes
 </figcaption><div aria-describedby="tbl-modelposdraw3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table cell caption-top table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">ID</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">Y_Z1_0_Z2_0</th>
@@ -893,33 +901,33 @@ Table&nbsp;13.3: One draw of four potential outcomes
 <span class="header-section-number">13.1.3.1</span> Effect sizes</h4>
 <p>We often want to consider a range of plausible effect sizes, for example when estimating the minimum detectable effect of a design. A strategy we commonly use is to sample the treatment effect in the model declaration itself, and then draw the potential outcomes using that single number. When we diagnose many times, then we will get many different treatment effects (here, <code>tau</code>), which we can then summarize in a diagnosis. <a href="#sec-ch13s6ss1" class="quarto-xref"><span>Section 13.6.1</span></a> describes how to create a plot of the power across values of <code>tau</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>, </span>
 <span>    tau <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">1</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>, </span>
 <span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>, </span>
 <span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">tau</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Where do our expectations about effect sizes, and the minimal plausible effect size, come from? We may conduct meta-analyses of past studies when there are sufficiently many with at least one relevant estimate of the same effect, or a systematic review or literature review when they are less comparable, but we want to find a range (see <a href="../library/experimental-causal.html#sec-ch18s3" class="quarto-xref"><span>Section 18.3</span></a> for a discussion of meta-analyses). We may be tempted to conduct a pilot study to estimate the effect size. We need to be careful when doing so about what to infer and how much to update from small pilot studies, as we discuss in <a href="../lifecycle/planning.html#sec-ch21s4" class="quarto-xref"><span>Section 21.4</span></a>, but we can often shrink our uncertainty over models. In the absence of pilot studies or past studies to draw on, we need to make educated guesses and understand under what true effect sizes our design will perform well and when it will not follow <a href="../introduction/research-design-principles.html#exm-designholistically" class="quarto-xref">Principle&nbsp;<span>3.1</span></a>: <em>Design holistically</em>.</p>
 </section><section id="effect-heterogeneity" class="level4" data-number="13.1.3.2"><h4 data-number="13.1.3.2" class="anchored" data-anchor-id="effect-heterogeneity">
 <span class="header-section-number">13.1.3.2</span> Effect heterogeneity</h4>
 <p>Sometimes, the inquiry centers on treatment effect heterogeneity by subgroups. This heterogeneity has to be present in the model in order for the simulation to pick it up. Here we declare effect heterogeneity according to a binary covariate <code>X</code>. This example really shows off the utility of the formula syntax in the <code>potential_outcomes</code> function. We can write in our expectations about heterogeneity as if they were regression coefficients. Here, the “interaction term” is equal to <code>0.1</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>, </span>
 <span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>, </span>
 <span>    X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
 <span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span>  <span class="fl">0.3</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="fl">0.2</span><span class="op">*</span><span class="va">X</span> <span class="op">+</span> <span class="fl">0.1</span><span class="op">*</span><span class="va">Z</span><span class="op">*</span><span class="va">X</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="correlation-between-potential-outcomes" class="level4" data-number="13.1.3.3"><h4 data-number="13.1.3.3" class="anchored" data-anchor-id="correlation-between-potential-outcomes">
 <span class="header-section-number">13.1.3.3</span> Correlation between potential outcomes</h4>
 <p>Treated and untreated potential outcomes are typically highly correlated. When treatment effects are exactly homogeneous, the correlation is equal to 1. Rarely are potential outcomes <em>negatively</em> correlated, but it can occur. The sign and magnitude of the correlation especially affects the standard errors of estimates for causal effects (for more discussion of the correlation of potential outcomes in experiments and also standard error estimators, see <a href="redesigning.html#sec-ch10s3ss1" class="quarto-xref"><span>Section 11.3.1</span></a>).</p>
 <p>We described some complexities of generating binary variables above. They transfer over to the generation of correlated potential outcomes in special ways. In the declarations below, <code>M1</code> generates uncorrelated potential outcomes, because the draws from <code>rbinom</code> are independent of one another. In <code>M2</code>, we still use <code>rbinom</code>, but with a transformation of the normally distributed variable into a probability via <code>pnorm</code>. This allows the potential outcomes to be correlated because they are both influenced by the same latent variable. Finally, in <code>M3</code>, we generate highly correlated potential outcomes because we peel off the layer of randomness introduced by <code>rbinom</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>, </span>
 <span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span><span class="op">)</span></span>
@@ -937,25 +945,25 @@ Table&nbsp;13.3: One draw of four potential outcomes
 <span>    N <span class="op">=</span> <span class="fl">100</span>, </span>
 <span>    latent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>, </span>
 <span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">latent</span> <span class="op">+</span> <span class="fl">0.2</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">&gt;</span> <span class="fl">0.5</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section></section><section id="inquiry-code" class="level2" data-number="13.2"><h2 data-number="13.2" class="anchored" data-anchor-id="inquiry-code">
 <span class="header-section-number">13.2</span> Inquiry</h2>
 <p>An inquiry is a summary function of events generated by a model. When we declare inquiries in code, we declare this summary function. Here, we declare a causal inquiry, the <code>mean</code> of the differences in two potential outcomes described in the model:</p>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>, <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>, <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span>ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Descriptive inquiries can be declared in a similar way: they are just functions of outcomes rather than comparisons of potential outcomes.</p>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span>mean_Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span>mean_Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="inquiries-among-subsets-of-units" class="level3" data-number="13.2.1"><h3 data-number="13.2.1" class="anchored" data-anchor-id="inquiries-among-subsets-of-units">
 <span class="header-section-number">13.2.1</span> Inquiries among subsets of units</h3>
 <p>We often want to learn about an inquiry defined among a subgroup of units. For example, if we are interested in the conditional average treatment effect (CATE) among units with X = 1, we can use the subset argument.</p>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
@@ -964,40 +972,40 @@ Table&nbsp;13.3: One draw of four potential outcomes
 <span>  <span class="op">)</span></span>
 <span><span class="va">I</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_inquiry</span><span class="op">(</span>CATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span>,</span>
-<span>                  subset <span class="op">=</span> <span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>                  subset <span class="op">=</span> <span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Equivalently, we could use R’s <code>[]</code> syntax for subsetting:</p>
 <div class="cell">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span>CATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span>CATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="inquiries-with-continuous-potential-outcomes" class="level3" data-number="13.2.2"><h3 data-number="13.2.2" class="anchored" data-anchor-id="inquiries-with-continuous-potential-outcomes">
 <span class="header-section-number">13.2.2</span> Inquiries with continuous potential outcomes</h3>
 <p>“Non-decomposable” inquiries are not as simple as an average over the units in the model. A common example arises with continuous potential outcomes. The regression discontinuity design described in <a href="../library/observational-causal.html#sec-ch16s5" class="quarto-xref"><span>Section 16.5</span></a> has an inquiry that is defined by two continuous functions of the running variable. The control function is a polynomial function representing the potential outcome under control and the treatment function is a different polynomial representing treated potential outcomes. The inquiry is the difference in the two functions evaluated at the cutoff point on the running variable. We declare it as follows:</p>
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cutoff</span> <span class="op">&lt;-</span> <span class="fl">0.5</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cutoff</span> <span class="op">&lt;-</span> <span class="fl">0.5</span></span>
 <span><span class="va">control</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/poly.html">poly</a></span><span class="op">(</span><span class="va">X</span>, <span class="fl">4</span>, raw <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html">%*%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.7</span>, <span class="op">-</span><span class="fl">0.8</span>, <span class="fl">0.5</span>, <span class="fl">1.0</span><span class="op">)</span><span class="op">)</span><span class="op">}</span></span>
 <span><span class="va">treatment</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/poly.html">poly</a></span><span class="op">(</span><span class="va">X</span>, <span class="fl">4</span>, raw <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html">%*%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.0</span>, <span class="op">-</span><span class="fl">1.5</span>, <span class="fl">0.5</span>, <span class="fl">0.8</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">0.15</span><span class="op">}</span></span>
 <span></span>
-<span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span>LATE <span class="op">=</span> <span class="fu">treatment</span><span class="op">(</span><span class="va">cutoff</span><span class="op">)</span> <span class="op">-</span> <span class="fu">control</span><span class="op">(</span><span class="va">cutoff</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span>LATE <span class="op">=</span> <span class="fu">treatment</span><span class="op">(</span><span class="va">cutoff</span><span class="op">)</span> <span class="op">-</span> <span class="fu">control</span><span class="op">(</span><span class="va">cutoff</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="multiple-inquiries" class="level3" data-number="13.2.3"><h3 data-number="13.2.3" class="anchored" data-anchor-id="multiple-inquiries">
 <span class="header-section-number">13.2.3</span> Multiple inquiries</h3>
 <p>In some designs, we are interested in the value of an inquiry for many units or for many types of units.</p>
 <p>We can enumerate them one by one, to describe the average treatment effect, two conditional average treatment effects, and the difference between them.</p>
 <div class="cell">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span></span>
 <span>  ATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span><span class="op">)</span>,</span>
 <span>  CATE_X0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span><span class="op">)</span>,</span>
 <span>  CATE_X1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">[</span><span class="va">X</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span><span class="op">)</span>,</span>
 <span>  Difference_in_CATEs <span class="op">=</span> <span class="va">CATE_X1</span> <span class="op">-</span> <span class="va">CATE_X0</span></span>
-<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In the multilevel regression and poststratification (MRP) design in <a href="../library/observational-descriptive.html#sec-ch15s3" class="quarto-xref"><span>Section 15.3</span></a>, we want to know what the average opinion is in each state.</p>
 <p>We declare an inquiry at the county level below. We rely on <code>group_by</code> and <code>summarize</code> from <code>dplyr</code> to write a function <code>MRP_inquiry</code> that uses a pipeline to group the data into counties and take the average of individual values. Now, our design targets an inquiry for each state.</p>
 <div class="cell">
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    counties <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">5</span>, county_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    individuals <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">50</span>, Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, mean <span class="op">=</span> <span class="va">county_mean</span><span class="op">)</span><span class="op">)</span></span>
@@ -1011,7 +1019,7 @@ Table&nbsp;13.3: One draw of four potential outcomes
 <span>      <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="op">}</span></span>
 <span></span>
-<span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span>handler <span class="op">=</span> <span class="va">MRP_inquiry</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fu">declare_inquiry</span><span class="op">(</span>handler <span class="op">=</span> <span class="va">MRP_inquiry</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We discuss further in <a href="#sec-ch13s4" class="quarto-xref"><span>Section 13.4</span></a> how to link inquiries to answer strategies, including the case of multiple inquiries.</p>
 </section></section><section id="data-strategy-code" class="level2" data-number="13.3"><h2 data-number="13.3" class="anchored" data-anchor-id="data-strategy-code">
@@ -1021,11 +1029,11 @@ Table&nbsp;13.3: One draw of four potential outcomes
 <span class="header-section-number">13.3.1</span> Sampling</h3>
 <p>Declaring a sampling procedure involves constructing a variable indicating whether a unit is sampled or not and then filtering to sampled units. By default, you should create a variable <code>S</code> and <code>declare_sampling</code> will filter to sampled units by selecting those for which <code>S == 1</code>. You can rename your sampling variable or you can create more sampling variables to develop multistage sampling procedures, though you will need to alter the <code>filter</code> argument to reflect your changed procedure.</p>
 <div class="cell">
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">D</span> <span class="op">&lt;-</span> <span class="fu">declare_sampling</span><span class="op">(</span>S <span class="op">=</span> <span class="fu">complete_rs</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">D</span> <span class="op">&lt;-</span> <span class="fu">declare_sampling</span><span class="op">(</span>S <span class="op">=</span> <span class="fu">complete_rs</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>For a multistage sample of districts, then villages, then households, we start out with all the data and sample at each stage then combine the three sampling indicators to form the final indicator <code>S</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">D</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">D</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_sampling</span><span class="op">(</span></span>
 <span>    <span class="co"># sample 20 districts</span></span>
 <span>    S_districts <span class="op">=</span> <span class="fu">cluster_rs</span><span class="op">(</span>clusters <span class="op">=</span> <span class="va">districts</span>, n <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>,</span>
@@ -1043,11 +1051,11 @@ Table&nbsp;13.3: One draw of four potential outcomes
 <span>    <span class="op">)</span>,</span>
 <span>    S <span class="op">=</span> <span class="va">S_districts</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="va">S_villages</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="va">S_households</span> <span class="op">==</span> <span class="fl">1</span>,</span>
 <span>    filter <span class="op">=</span> <span class="va">S</span> <span class="op">==</span> <span class="fl">1</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You could also perform each of these steps in separate calls, and the data will be filtered appropriately step-to-step.</p>
 <div class="cell">
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">D</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">D</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_sampling</span><span class="op">(</span>S <span class="op">=</span> <span class="fu">cluster_rs</span><span class="op">(</span>clusters <span class="op">=</span> <span class="va">districts</span>, n <span class="op">=</span> <span class="fl">20</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_sampling</span><span class="op">(</span>S <span class="op">=</span> <span class="fu">strata_and_cluster_rs</span><span class="op">(</span></span>
 <span>    strata <span class="op">=</span> <span class="va">districts</span>,</span>
@@ -1058,11 +1066,11 @@ Table&nbsp;13.3: One draw of four potential outcomes
 <span>    strata <span class="op">=</span> <span class="va">villages</span>,</span>
 <span>    clusters <span class="op">=</span> <span class="va">households</span>,</span>
 <span>    strata_n <span class="op">=</span> <span class="fl">25</span></span>
-<span>  <span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span><span class="op">)</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>For many sampling designs, the probabilities of inclusion are not constant across units. We often need to adjust the answer strategy by reweighting the data according to the inverse of the inclusion probabilities. For common sampling designs in <code>randomizr</code>, we provide a built-in function for calculating these. If you use your own sampling function, you will need to calculate them yourself. Here we show how to include probabilities from a stratified sampling design.</p>
 <div class="cell">
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>                X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
@@ -1072,31 +1080,31 @@ Table&nbsp;13.3: One draw of four potential outcomes
 <span>    S_inclusion_probability <span class="op">=</span></span>
 <span>      <span class="fu">strata_rs_probabilities</span><span class="op">(</span>strata <span class="op">=</span> <span class="va">X</span>,</span>
 <span>                              strata_prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="treatment-assignment" class="level3" data-number="13.3.2"><h3 data-number="13.3.2" class="anchored" data-anchor-id="treatment-assignment">
 <span class="header-section-number">13.3.2</span> Treatment assignment</h3>
 <p>The declaration of treatment assignment procedures works similarly to sampling, but we don’t drop any units. Treatment assignment probabilities often come into play just like sampling inclusion probabilities. You can use <code>randomizr</code> to calculate them for many common designs in a similar fashion, except that for treatment assignment in order to know with what probability you were assigned to the condition you are in we have to know what condition you are in. To obtain condition assignment probabilities we can declare:</p>
 <div class="cell">
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">D</span> <span class="op">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">D</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_assignment</span><span class="op">(</span></span>
 <span>    Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, m <span class="op">=</span> <span class="fl">50</span><span class="op">)</span>,</span>
 <span>    Z_condition_probability <span class="op">=</span> </span>
 <span>      <span class="fu">obtain_condition_probabilities</span><span class="op">(</span>assignment <span class="op">=</span> <span class="va">Z</span>, m <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="measurement" class="level3" data-number="13.3.3"><h3 data-number="13.3.3" class="anchored" data-anchor-id="measurement">
 <span class="header-section-number">13.3.3</span> Measurement</h3>
 <p>Measurement procedures can be declared with <code>declare_measurement</code>. A common use is to generate an observed measurement from a latent value:</p>
 <div class="cell">
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, latent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">D</span> <span class="op">&lt;-</span> <span class="fu">declare_measurement</span><span class="op">(</span>observed <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="va">latent</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>, latent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">D</span> <span class="op">&lt;-</span> <span class="fu">declare_measurement</span><span class="op">(</span>observed <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, prob <span class="op">=</span> <span class="va">latent</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="revealing-potential-outcomes" class="level4" data-number="13.3.3.1"><h4 data-number="13.3.3.1" class="anchored" data-anchor-id="revealing-potential-outcomes">
 <span class="header-section-number">13.3.3.1</span> Revealing potential outcomes</h4>
 <p>A very common use of <code>declare_measurement</code> in this book is for the “revelation” of potential outcomes according to treatment assignments. We build potential outcomes in <code>declare_model</code>, randomly assign in <code>declare_assignment</code>, then reveal outcomes in <code>declare_measurement</code>. We use the <code>reveal_outcomes</code> function to pick out the right potential outcome to reveal for each unit.</p>
 <div class="cell">
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>    <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
@@ -1104,13 +1112,13 @@ Table&nbsp;13.3: One draw of four potential outcomes
 <span></span>
 <span><span class="va">D</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span>, m <span class="op">=</span> <span class="fl">50</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="index-creation" class="level4" data-number="13.3.3.2"><h4 data-number="13.3.3.2" class="anchored" data-anchor-id="index-creation">
 <span class="header-section-number">13.3.3.2</span> Index creation</h4>
 <p>Many designs use multiple measures of the same outcome, which are then combined into an index. For example, here’s a design with three measures of <code>Y</code> that we will combine using factor analysis. Here we use the <code>fa</code> function from the <code>psych</code> package which can be installed with <code>install.packages('psych')</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psych</a></span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psych</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">D</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_measurement</span><span class="op">(</span></span>
@@ -1119,7 +1127,7 @@ Table&nbsp;13.3: One draw of four potential outcomes
 <span>      nfactors <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>      rotate <span class="op">=</span> <span class="st">"varimax"</span></span>
 <span>    <span class="op">)</span><span class="op">$</span><span class="va">scores</span></span>
-<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section></section><section id="sec-ch13s4" class="level2" data-number="13.4"><h2 data-number="13.4" class="anchored" data-anchor-id="sec-ch13s4">
 <span class="header-section-number">13.4</span> Answer strategy</h2>
@@ -1132,7 +1140,7 @@ Table&nbsp;13.3: One draw of four potential outcomes
 <div id="def-ch13num1" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 13.1</strong></span> Linear regression design</p>
 <div class="cell">
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_13.1</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">declaration_13.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>                U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
 <span>                <span class="fu">potential_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="fl">0.2</span> <span class="op">*</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -1146,12 +1154,12 @@ Table&nbsp;13.3: One draw of four potential outcomes
 <span>    term <span class="op">=</span> <span class="st">"Z"</span>,</span>
 <span>    inquiry <span class="op">=</span> <span class="st">"ATE"</span>,</span>
 <span>    label <span class="op">=</span> <span class="st">"OLS"</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><span class="math inline">\(~\)</span></p>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">draw_estimates</span><span class="op">(</span><span class="va">declaration_13.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">draw_estimates</span><span class="op">(</span><span class="va">declaration_13.1</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div id="tbl-linregest" class="cell quarto-float quarto-figure quarto-figure-center anchored">
@@ -1159,7 +1167,7 @@ Table&nbsp;13.3: One draw of four potential outcomes
 Table&nbsp;13.4: The estimate from one draw of the linear regression design
 </figcaption><div aria-describedby="tbl-linregest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table cell caption-top table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">term</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">estimator</th>
@@ -1199,13 +1207,13 @@ Table&nbsp;13.4: The estimate from one draw of the linear regression design
 <p>The <code>inquiry</code> argument defines which inquiry or inquiries the estimates will be linked to. In this case, we link to a single inquiry, the ATE. You can also declare an estimator that shoots at multiple inquiries: <code>declare_estimator(Y ~ Z, .method = lm_robust, term = "Z", inquiry = c("ATE", "ATT"))</code>, useful for learning how well an estimator does for different targets. When we run the answer strategy on data, we get two additional pieces of information tacked on to the model summary data frame: the name of the estimator, which comes from the <code>label</code> argument, and the inquiry. The unit of analysis of a diagnosis is the inquiry-estimator pair, so if you link an estimator to multiple inquiries, then there will be a row for each inquiry.</p>
 <p>We can use other summary functions to obtain other summaries of the fitted model. For example <code>glance</code> will provide model fit statistics such as the R-squared:</p>
 <div class="cell">
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">A</span> <span class="op">&lt;-</span> <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">A</span> <span class="op">&lt;-</span> <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, </span>
 <span>                       .method <span class="op">=</span> <span class="va">lm_robust</span>, </span>
 <span>                       .summary <span class="op">=</span> <span class="va">glance</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">declaration_13.1</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">draw_data</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">A</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">A</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>When neither <code>tidy</code> nor <code>glance</code> works well for your answer strategy, you can write your own summary function. Below, we build up a tidy function for the <code>lm</code> model from scratch. (One is already built-in to the <code>broom</code> package, but we do so here to illustrate how you can write your own for a function that does not already have one.) Before you start to write your own summary function, check whether one exists on the <a href="https://broom.tidymodels.org/articles/available-methods.html">Broom website</a>.</p>
 <div class="cell">
@@ -1214,7 +1222,7 @@ Table&nbsp;13.4: The estimate from one draw of the linear regression design
 Table&nbsp;13.5: The model fit statistics from one draw of the linear regression design
 </figcaption><div aria-describedby="tbl-modelfitstats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table cell caption-top table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">r.squared</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">adj.r.squared</th>
@@ -1246,7 +1254,7 @@ Table&nbsp;13.5: The model fit statistics from one draw of the linear regression
 <li>Name your estimates in a common format that works across all tidy functions. The estimate column should be called “estimate”, the standard error column “std.error”, etc., as described earlier. However, if you want to add other statistics from the model fit that you will diagnose, you can, and you can name them whatever you want.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tidy_lm</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">fit</span><span class="op">)</span> <span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tidy_lm</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">fit</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="co"># calculate estimates by grabbing the coefficients from the model fit</span></span>
 <span>  <span class="va">estimate</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">lm</span><span class="op">)</span></span>
 <span>  </span>
@@ -1267,11 +1275,11 @@ Table&nbsp;13.5: The model fit statistics from one draw of the linear regression
 <span>  <span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>,</span>
 <span>  .method <span class="op">=</span> <span class="va">lm</span>,</span>
 <span>  .summary <span class="op">=</span> <span class="va">tidy_lm</span></span>
-<span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="op">)</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In other cases, you may want to build on functions that interoperate with the <code>broom</code> functions to do specialized summary tasks like calculating marginal effects or predicted effects. The <code>margins</code> function from the <code>margins</code> package calculates marginal effects and the <code>predictions</code> function from the <code>predictions</code> package constructs predictions. These two functions are especially useful and work well with the <code>tidy</code> workflow. To calculate marginal effects, run margins and then tidy as your model summary:</p>
 <div class="cell">
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tidy_margins</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tidy_margins</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu">tidy</span><span class="op">(</span><span class="fu">margins</span><span class="op">(</span><span class="va">x</span>, data <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">data</span><span class="op">)</span>, conf.int <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
@@ -1281,20 +1289,20 @@ Table&nbsp;13.5: The model fit statistics from one draw of the linear regression
 <span>  family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/family.html">binomial</a></span><span class="op">(</span><span class="st">"logit"</span><span class="op">)</span>,</span>
 <span>  .summary <span class="op">=</span> <span class="va">tidy_margins</span>,</span>
 <span>  term <span class="op">=</span> <span class="st">"Z"</span></span>
-<span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="op">)</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="custom-answer-strategies" class="level3" data-number="13.4.3"><h3 data-number="13.4.3" class="anchored" data-anchor-id="custom-answer-strategies">
 <span class="header-section-number">13.4.3</span> Custom answer strategies</h3>
 <p>If your answer strategy does not use a <code>.method</code> function, you’ll need to provide a function that takes <code>data</code> as an input and returns a data frame with the estimate. Set the handler to be <code>label_estimator(your_function_name)</code> to take advantage of <code>DeclareDesigns</code>’s mechanism for matching inquiries to estimators. When you use <code>label_estimator</code>, you can provide an inquiry, and <code>DeclareDesign</code> will keep track of which estimates match each inquiry. (It simply adds a column to your tidy estimates data frame for the name of the estimator and the inquiry.) For example, to calculate the mean of an outcome, you could write your own estimator in this way:</p>
 <div class="cell">
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_estimator</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_estimator</span> <span class="op">&lt;-</span></span>
 <span>  <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>estimate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">Y</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="op">}</span></span>
 <span></span>
 <span><span class="fu">declare_estimator</span><span class="op">(</span>handler <span class="op">=</span> <span class="fu">label_estimator</span><span class="op">(</span><span class="va">my_estimator</span><span class="op">)</span>,</span>
 <span>                  label <span class="op">=</span> <span class="st">"mean"</span>,</span>
-<span>                  inquiry <span class="op">=</span> <span class="st">"Y_bar"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>                  inquiry <span class="op">=</span> <span class="st">"Y_bar"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Often you may want to construct a test as part of your answer strategy that does not target an inquiry. Our <code>declare_test</code> function works just like <code>declare_estimator</code>, except you need not include an inquiry. The <code>label_test</code> infrastructure works just like <code>label_estimator</code> for custom test functions.</p>
 </section></section><section id="declaration-code" class="level2" data-number="13.5"><h2 data-number="13.5" class="anchored" data-anchor-id="declaration-code">
@@ -1303,7 +1311,7 @@ Table&nbsp;13.5: The model fit statistics from one draw of the linear regression
 <div id="def-ch13num2" class="declaration theorem definition">
 <p><span class="theorem-title"><strong>Declaration 13.2</strong></span> Declaration of two-arm randomized experiment</p>
 <div class="cell">
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span>N <span class="op">=</span> <span class="fl">1000</span>,</span>
 <span>                U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
 <span>                X <span class="op">=</span> <span class="va">U</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span>, sd <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
@@ -1342,26 +1350,26 @@ Table&nbsp;13.5: The model fit statistics from one draw of the linear regression
 <span>  <span class="fu">declare_assignment</span><span class="op">(</span>Z <span class="op">=</span> <span class="fu">complete_ra</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_measurement</span><span class="op">(</span>Y <span class="op">=</span> <span class="fu">reveal_outcomes</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span>, label <span class="op">=</span> <span class="st">"DIM"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">X</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span>, label <span class="op">=</span> <span class="st">"OLS"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">declare_estimator</span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">Z</span> <span class="op">+</span> <span class="va">X</span>, inquiry <span class="op">=</span> <span class="st">"ATE"</span>, label <span class="op">=</span> <span class="st">"OLS"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>Order matters in declaring designs. We can think of the order of the declaration as the temporal order in which the elements are realized. Below, since the inquiry comes before sampling and assignment, the inquiry is a <em>population</em> inquiry, the population average treatment effect.</p>
 <div class="cell">
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model</span> <span class="op">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_inquiry</span><span class="op">(</span>PATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="va">sampling</span> <span class="op">+</span></span>
 <span>  <span class="va">assignment</span> <span class="op">+</span></span>
 <span>  <span class="va">measurement</span> <span class="op">+</span></span>
-<span>  <span class="va">answer_strategy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="va">answer_strategy</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We could instead define our inquiry as a <em>sample</em> average treatment effect by putting the inquiry after sampling:</p>
 <div class="cell">
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model</span> <span class="op">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">model</span> <span class="op">+</span></span>
 <span>  <span class="va">sampling</span> <span class="op">+</span></span>
 <span>  <span class="fu">declare_inquiry</span><span class="op">(</span>SATE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Y_Z_1</span> <span class="op">-</span> <span class="va">Y_Z_0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="va">assignment</span> <span class="op">+</span></span>
 <span>  <span class="va">measurement</span> <span class="op">+</span> </span>
-<span>  <span class="va">answer_strategy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="va">answer_strategy</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="diagnosis-code" class="level2" data-number="13.6"><h2 data-number="13.6" class="anchored" data-anchor-id="diagnosis-code">
 <span class="header-section-number">13.6</span> Diagnosis</h2>
@@ -1370,11 +1378,11 @@ Table&nbsp;13.5: The model fit statistics from one draw of the linear regression
 <p><span class="theorem-title"><strong>Diagnosis 13.1</strong></span> Diagnosis of two-arm randomized experiment</p>
 <p>Here we use <code>diagnose_design</code> to diagnose the design. By default, we conduct 500 simulations and characterize simulation error with 100 bootstraps of the diagnosands. <code>reshape_diagnosis</code> prepares the output for nice printing.</p>
 <div class="cell">
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_13.1</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diagnosis_13.1</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">diagnose_design</span><span class="op">(</span><span class="va">declaration_13.2</span>,</span>
 <span>                  sims <span class="op">=</span> <span class="fl">500</span>,</span>
 <span>                  bootstrap_sims <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
-<span><span class="fu">reshape_diagnosis</span><span class="op">(</span><span class="va">diagnosis_13.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">reshape_diagnosis</span><span class="op">(</span><span class="va">diagnosis_13.1</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can “tidy” the results of the diagnosis for easier printing and plotting of the results. Here, each row is an estimate of a diagnosand and then uncertainty statistics such as the standard error and 95% confidence interval around the diagnosand estimate.</p>
 <div class="cell">
@@ -1383,7 +1391,7 @@ Table&nbsp;13.5: The model fit statistics from one draw of the linear regression
 Table&nbsp;13.6: Design diagnosis of two-arm randomized experiment
 </figcaption><div aria-describedby="tbl-diagnosis13s1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 13%">
 <col style="width: 6%">
@@ -1483,7 +1491,7 @@ Table&nbsp;13.6: Design diagnosis of two-arm randomized experiment
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tidy</span><span class="op">(</span><span class="va">diagnosis_13.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tidy</span><span class="op">(</span><span class="va">diagnosis_13.1</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div id="tbl-diagnosis131tidy" class="cell quarto-float quarto-figure quarto-figure-center anchored">
@@ -1491,7 +1499,7 @@ Table&nbsp;13.6: Design diagnosis of two-arm randomized experiment
 Table&nbsp;13.7: Tidied diagnosis of two-arm randomized experiment
 </figcaption><div aria-describedby="tbl-diagnosis131tidy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table cell caption-top table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">design</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">inquiry</th>
@@ -1685,23 +1693,23 @@ Table&nbsp;13.7: Tidied diagnosis of two-arm randomized experiment
 <span class="header-section-number">13.6.1</span> Working directly with the simulations data frame</h3>
 <p>In some cases, it is useful to operate directly on the simulations produced by <code>diagnose_design</code>. For example, we might want to calculate diagnosands manually or plot simulations.</p>
 <div class="cell">
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">simulations_df</span> <span class="op">&lt;-</span> <span class="fu">get_simulations</span><span class="op">(</span><span class="va">diagnosis_13.1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">simulations_df</span> <span class="op">&lt;-</span> <span class="fu">get_simulations</span><span class="op">(</span><span class="va">diagnosis_13.1</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Once we have the simulations, we can summarize them using <code>dplyr</code> tools:</p>
 <div class="cell">
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">simulations_df</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">simulations_df</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">design</span>, <span class="va">inquiry</span>, <span class="va">estimator</span>, <span class="va">term</span>, <span class="va">outcome</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">summarize</span><span class="op">(</span></span>
 <span>    bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span>,</span>
 <span>    rmse <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">estimate</span> <span class="op">-</span> <span class="va">estimand</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    power <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">p.value</span> <span class="op">&lt;=</span> <span class="fl">0.05</span><span class="op">)</span>,</span>
 <span>    coverage <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">estimand</span> <span class="op">&lt;=</span> <span class="va">conf.high</span> <span class="op">&amp;</span> <span class="va">estimand</span> <span class="op">&gt;=</span> <span class="va">conf.low</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Plotting simulations using <code>ggplot2</code> is often a great way to gain a deeper sense of the properties of the design.</p>
 <p>The answer strategy for <a href="#def-ch13num1" class="quarto-xref">Declaration&nbsp;<span>13.1</span></a> includes two estimators, so our aim here is to create histograms of the sampling distribution for each of them. This goal is best accomplished using <code>geom_histogram</code>, then faceting by estimator using <code>facet_wrap</code>. We often want to overlay the true value of the estimand on these plots, which we do here with <code>geom_vline</code>. Notice that in order to do, we had to create a <code>summary_df</code> that includes the value of the estimand. The resulting plot in <a href="#fig-ch13num2" class="quarto-xref">Figure&nbsp;<span>13.2</span></a> shows that both the adjusted and unadjusted estimators are unbiased, but that the sampling distribution of the adjusted estimator is tighter.</p>
 <div class="cell">
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># first create summary for vertical lines</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># first create summary for vertical lines</span></span>
 <span><span class="va">summary_df</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">simulations_df</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">estimator</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -1718,7 +1726,7 @@ Table&nbsp;13.7: Tidied diagnosis of two-arm randomized experiment
 <span>           color <span class="op">=</span> <span class="st">"#C6227F"</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">estimator</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Estimate"</span>, y <span class="op">=</span> <span class="st">"Count of simulations"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="fig-ch13num2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch13num2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1730,7 +1738,7 @@ Figure&nbsp;13.2: Example visualization of a diagnosis
 </div>
 <p>Diagnosing over model uncertainty is a crucial part of diagnosis. We want to understand when our design performs well and when it does not. A classical example of this in wide practice is the power curve. In a power curve (see <a href="#fig-ch13num3" class="quarto-xref">Figure&nbsp;<span>13.3</span></a>), we display the power of a design (the probability of achieving statistical significance) along different possible effect sizes. In this setting, plotting the simulations directly with an indicator for whether that simulation’s estimate is statistically significant is the easiest way to learn about the properties of the design.</p>
 <div class="cell">
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">design</span> <span class="op">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">design</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
 <span>    N <span class="op">=</span> <span class="fl">200</span>,</span>
 <span>    U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
@@ -1755,7 +1763,7 @@ Figure&nbsp;13.2: Example visualization of a diagnosis
 <span>  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Model parameter: true effect size"</span>,</span>
 <span>       y <span class="op">=</span> <span class="st">"Diagnosand: statistical power"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="fig-ch13num3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ch13num3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1770,249 +1778,256 @@ Figure&nbsp;13.3: Example visualization of a diagnosis
 <p>The basic principle is that we need to create a list of designs which then get passed to <code>simulate_designs</code> or <code>diagnose_designs</code>. (The plural versions of these functions are identical to their singular counterparts, we just provide both to allow the code to speak for itself a little more easily).</p>
 <p>You can make lists of designs to redesign across directly with <code>list</code>:</p>
 <div class="cell">
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">design1</span>, <span class="va">design2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">design1</span>, <span class="va">design2</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>More often, you’ll vary designs over a parameter with <code>redesign</code>. Any quantity that you define in the global environment and use in a declaration step can become a parameter like this and then altered via redesign. Here, we’re imagining we’ve already declared a <code>design</code> that has an <code>N</code> parameter that we allow to have 3 values.</p>
 <div class="cell">
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu">redesign</span><span class="op">(</span><span class="va">design</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">200</span>, <span class="fl">300</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu">redesign</span><span class="op">(</span><span class="va">design</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">200</span>, <span class="fl">300</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Whichever way you use to create <code>designs</code>, you can then diagnose all of the designs in the list with:</p>
 <div class="cell">
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu">diagnose_designs</span><span class="op">(</span><span class="va">designs</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">designs</span> <span class="op">&lt;-</span> <span class="fu">diagnose_designs</span><span class="op">(</span><span class="va">designs</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2020,185 +2035,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../declaration-diagnosis-redesign/design-example.html" class="pagination-link" aria-label="Design example">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Design example</span></span>
       </a>          
