@@ -28,5 +28,6 @@ declaration_18.10 <-
   declare_measurement(Y = reveal_outcomes(Y ~ Z)) +
   declare_estimator(Y ~ Z, fixed_effects = ~ periods + units, 
                     clusters = units, 
+                    se_type = "CR2",
                     subset = time < max(time),
                     inquiry = "ATE", label = "TWFE") 
