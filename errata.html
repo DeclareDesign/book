@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -43,10 +43,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fd0503e23dce65854c81c5baaade3bdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -491,6 +491,7 @@ window.Quarto = {
 <ul>
 <li>On pg. 103, Declaration 9.3 now reads <code>.summary = ~tidy(., exponentiate = TRUE)</code> instead of <code>.summary = ~tidy_stan(., exponentiate = TRUE)</code>, reflecting the use of the standard <code>broom.mixed</code> package for tidying stan objects. In addition, the library <code>rdss</code> is replaced with the library <code>broom.mixed</code> in the declaration.</li>
 <li>On pg. 212-213, Declaration 16.3 now uses updated syntax from the <code>DIDmultiplegt</code> package, specifically <code>mode = 'old'</code> is added. We also add <code>Sys.setenv(RGL_USE_NULL = TRUE)</code> to address package dependency issues.</li>
+<li>On pgs. 284-285, Declaration 18.10 now writes <code>se_type = "CR2"</code> in its <code>declare_estimator()</code> call. Under estimatr 1.x, a fit with both <code>fixed_effects</code> and <code>clusters</code> used CR2 standard errors by default, so this is the estimator the printed book ran; estimatr 2.0 changed that default to CR0 and warns when the choice is left implicit. Naming CR2 keeps the diagnosis as printed and removes the warning.</li>
 </ul>
 
 
