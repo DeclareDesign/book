@@ -1,5 +1,5 @@
 library(rdss) # for helper functions
-# DIDmultiplegt needs polars: install.packages("polars", repos = "https://rpolars.r-universe.dev")
+library(polars) # needed by DIDmultiplegt: install.packages("polars", repos = "https://rpolars.r-universe.dev")
 
 N_units <- 20
 N_time_periods <- 20

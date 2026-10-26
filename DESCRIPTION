@@ -1,5 +1,5 @@
 Package: rdssbook
 Title: Research Design: Declare, Diagnose, Redesign
 Version: 0.0.1
-Suggests: psych, rdrobust, DIDmultiplegt, car, dagitty, downlit, dplyr, estimatr, fabricatr, forcats, ggdag, ggforce, ggplot2, ggraph, ggrepel, ggtext, grid, gridExtra, haven, kableExtra, knitr, latex2exp, lme4, MASS, metafor, patchwork, purrr, randomizr, readr, rmarkdown, sf, stringr, texreg, tibble, tidyr, tidyverse, broom.mixed, rstanarm, CausalQueries, DeclareDesign, DesignLibrary, ragg, margins, MatchIt, cjoint, spdep, grf, bbmle, rdss, dddag, interference
+Suggests: psych, rdrobust, DIDmultiplegt, car, dagitty, downlit, dplyr, estimatr, fabricatr, forcats, ggdag, ggforce, ggplot2, ggraph, ggrepel, ggtext, grid, gridExtra, haven, kableExtra, knitr, latex2exp, lme4, MASS, metafor, patchwork, purrr, randomizr, readr, rmarkdown, sf, stringr, texreg, tibble, tidyr, tidyverse, broom.mixed, rstanarm, CausalQueries, DeclareDesign, DesignLibrary, ragg, margins, MatchIt, cjoint, spdep, grf, bbmle, rdss, dddag, interference, polars
 Remotes: DeclareDesign/dddag, szonszein/interference
