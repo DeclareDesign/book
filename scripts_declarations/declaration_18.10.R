@@ -6,14 +6,13 @@ declaration_18.10 <-
       N = 100, 
       U_unit = rnorm(N)
     ),
-    periods = add_level(
+    periods = declare_level(
       N = 3,
       time = 1:max(periods),
-      U_time = rnorm(N),
-      nest = FALSE
+      U_time = rnorm(N)
     ),
     unit_period = cross_levels(
-      by = join_using(units, periods),
+      .by = c("units", "periods"),
       U = rnorm(N),
       potential_outcomes(
         Y ~ scale(U_unit + U_time + time + U) + effect_size * Z

@@ -42,7 +42,7 @@ M <-
   )
 ```
 
-Panel data have a different structure. For example, in a country-year panel dataset, we observe every country in every year. To create data with this structure, we first declare a country-level dataset, then a years-level dataset, then we join them. The join is accomplished in the `cross_levels` call, which defines the variables we join by with `by = join_using(countries, years)`. In `cross_levels`, we also create the observation-level outcome variable, which is a function in this case of a country shock, a year shock, an observation shock, and a time trend.
+Panel data have a different structure. For example, in a country-year panel dataset, we observe every country in every year. To create data with this structure, we first declare a country-level dataset, then a years-level dataset, then we join them. The join is accomplished in the `cross_levels` call, which defines the levels we join with `.by = c("countries", "years")`. In `cross_levels`, we also create the observation-level outcome variable, which is a function in this case of a country shock, a year shock, an observation shock, and a time trend.
 
 ```{r}
 #| results: hide
@@ -53,14 +53,13 @@ M <-
       N = 196, 
       country_shock = rnorm(N)
     ),
-    years = add_level(
+    years = declare_level(
       N = 100, 
       time_trend = 1:N,
-      year_shock = runif(N, 1, 10), 
-      nest = FALSE
+      year_shock = runif(N, 1, 10)
     ),
     observation = cross_levels(
-      by = join_using(countries, years),
+      .by = c("countries", "years"),
       observation_shock = rnorm(N),
       Y = 0.01 * time_trend + country_shock + year_shock + observation_shock 
     )
