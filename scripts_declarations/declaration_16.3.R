@@ -1,6 +1,5 @@
 library(rdss) # for helper functions
-Sys.setenv(RGL_USE_NULL = TRUE) # required to use DIDmultiplegt
-library(DIDmultiplegt)
+# DIDmultiplegt needs polars: install.packages("polars", repos = "https://rpolars.r-universe.dev")
 
 N_units <- 20
 N_time_periods <- 20
@@ -13,13 +12,12 @@ declaration_16.3 <-
     D_unit = if_else(U_unit > median(U_unit), 1, 0),
     D_time = sample(1:N_time_periods, N, replace = TRUE)
   ),
-  periods = add_level(
+  periods = declare_level(
     N = N_time_periods,
-    U_time = rnorm(N),
-    nest = FALSE
+    U_time = rnorm(N)
   ),
   unit_period = cross_levels(
-    by = join_using(units, periods),
+    .by = c("units", "periods"),
     U = rnorm(N),
     potential_outcomes(Y ~ U + U_unit + U_time +
                          D * (0.2 - 1 * (D_time - as.numeric(periods))),
@@ -44,11 +42,12 @@ declaration_16.3 <-
     label = "twoway-fe"
   ) +
   declare_estimator(
-    Y = "Y",
-    G = "units",
-    T = "periods",
-    D = "D",
-    mode = "old",
+    mode = "dyn",
+    outcome = "Y",
+    group = "units",
+    time = "periods",
+    treatment = "D",
+    effects = 1,
     handler = label_estimator(did_multiplegt_tidy),
     inquiry = c("ATT", "ATT_switchers"),
     label = "chaisemartin"
