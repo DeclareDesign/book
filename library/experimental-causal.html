@@ -1390,14 +1390,13 @@ Figure&nbsp;18.12: Illustration of random assignment in a stepped-wedge design.
 <span>      N <span class="op">=</span> <span class="fl">100</span>, </span>
 <span>      U_unit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span></span>
 <span>    <span class="op">)</span>,</span>
-<span>    periods <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>    periods <span class="op">=</span> <span class="fu">declare_level</span><span class="op">(</span></span>
 <span>      N <span class="op">=</span> <span class="fl">3</span>,</span>
 <span>      time <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">periods</span><span class="op">)</span>,</span>
-<span>      U_time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
-<span>      nest <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>      U_time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span></span>
 <span>    <span class="op">)</span>,</span>
 <span>    unit_period <span class="op">=</span> <span class="fu">cross_levels</span><span class="op">(</span></span>
-<span>      by <span class="op">=</span> <span class="fu">join_using</span><span class="op">(</span><span class="va">units</span>, <span class="va">periods</span><span class="op">)</span>,</span>
+<span>      .by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"units"</span>, <span class="st">"periods"</span><span class="op">)</span>,</span>
 <span>      U <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
 <span>      <span class="fu">potential_outcomes</span><span class="op">(</span></span>
 <span>        <span class="va">Y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">U_unit</span> <span class="op">+</span> <span class="va">U_time</span> <span class="op">+</span> <span class="va">time</span> <span class="op">+</span> <span class="va">U</span><span class="op">)</span> <span class="op">+</span> <span class="va">effect_size</span> <span class="op">*</span> <span class="va">Z</span></span>

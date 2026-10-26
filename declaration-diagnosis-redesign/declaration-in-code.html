@@ -531,7 +531,7 @@ window.Quarto = {
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Panel data have a different structure. For example, in a country-year panel dataset, we observe every country in every year. To create data with this structure, we first declare a country-level dataset, then a years-level dataset, then we join them. The join is accomplished in the <code>cross_levels</code> call, which defines the variables we join by with <code>by = join_using(countries, years)</code>. In <code>cross_levels</code>, we also create the observation-level outcome variable, which is a function in this case of a country shock, a year shock, an observation shock, and a time trend.</p>
+<p>Panel data have a different structure. For example, in a country-year panel dataset, we observe every country in every year. To create data with this structure, we first declare a country-level dataset, then a years-level dataset, then we join them. The join is accomplished in the <code>cross_levels</code> call, which defines the levels we join with <code>.by = c("countries", "years")</code>. In <code>cross_levels</code>, we also create the observation-level outcome variable, which is a function in this case of a country shock, a year shock, an observation shock, and a time trend.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">declare_model</span><span class="op">(</span></span>
@@ -539,14 +539,13 @@ window.Quarto = {
 <span>      N <span class="op">=</span> <span class="fl">196</span>, </span>
 <span>      country_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span></span>
 <span>    <span class="op">)</span>,</span>
-<span>    years <span class="op">=</span> <span class="fu">add_level</span><span class="op">(</span></span>
+<span>    years <span class="op">=</span> <span class="fu">declare_level</span><span class="op">(</span></span>
 <span>      N <span class="op">=</span> <span class="fl">100</span>, </span>
 <span>      time_trend <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="va">N</span>,</span>
-<span>      year_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, <span class="fl">10</span><span class="op">)</span>, </span>
-<span>      nest <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>      year_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, <span class="fl">10</span><span class="op">)</span></span>
 <span>    <span class="op">)</span>,</span>
 <span>    observation <span class="op">=</span> <span class="fu">cross_levels</span><span class="op">(</span></span>
-<span>      by <span class="op">=</span> <span class="fu">join_using</span><span class="op">(</span><span class="va">countries</span>, <span class="va">years</span><span class="op">)</span>,</span>
+<span>      .by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"countries"</span>, <span class="st">"years"</span><span class="op">)</span>,</span>
 <span>      observation_shock <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
 <span>      Y <span class="op">=</span> <span class="fl">0.01</span> <span class="op">*</span> <span class="va">time_trend</span> <span class="op">+</span> <span class="va">country_shock</span> <span class="op">+</span> <span class="va">year_shock</span> <span class="op">+</span> <span class="va">observation_shock</span> </span>
 <span>    <span class="op">)</span></span>
@@ -1170,7 +1169,6 @@ Table&nbsp;13.4: The estimate from one draw of the linear regression design
 <table class="table cell caption-top table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">term</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">estimator</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">estimate</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">std.error</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">statistic</th>
@@ -1179,20 +1177,23 @@ Table&nbsp;13.4: The estimate from one draw of the linear regression design
 <th style="text-align: center;" data-quarto-table-cell-role="th">conf.high</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">df</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">outcome</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">estimator</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">inquiry</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">estimand</th>
 </tr></thead>
 <tbody><tr class="odd">
 <td style="text-align: center;">Z</td>
-<td style="text-align: center;">OLS</td>
-<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">0.36</td>
 <td style="text-align: center;">0.2</td>
-<td style="text-align: center;">0.16</td>
-<td style="text-align: center;">0.87</td>
-<td style="text-align: center;">-0.36</td>
-<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">1.8</td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;">-0.04</td>
+<td style="text-align: center;">0.75</td>
 <td style="text-align: center;">98</td>
 <td style="text-align: center;">Y</td>
+<td style="text-align: center;">OLS</td>
 <td style="text-align: center;">ATE</td>
+<td style="text-align: center;">0.2</td>
 </tr></tbody>
 </table>
 </div>
@@ -1233,10 +1234,10 @@ Table&nbsp;13.5: The model fit statistics from one draw of the linear regression
 <th style="text-align: center;" data-quarto-table-cell-role="th">se_type</th>
 </tr></thead>
 <tbody><tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">-0.01</td>
-<td style="text-align: center;">0.16</td>
-<td style="text-align: center;">0.69</td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">7.8</td>
+<td style="text-align: center;">0.01</td>
 <td style="text-align: center;">98</td>
 <td style="text-align: center;">100</td>
 <td style="text-align: center;">HC2</td>
